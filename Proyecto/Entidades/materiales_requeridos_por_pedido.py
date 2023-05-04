@@ -25,7 +25,7 @@ class materiales_requerido_por_pedido:
         unidad_de_medida: {self.unidad_de_medida},
         precio_por_unidad_de_medida: {self.precio_por_unidad_de_medida},
         precio_total: {self.precio_total},
-        estado: {estado}        
+        estado: {self.estado}        
         '''
 
     #Metodo para delvolver el objeto
@@ -123,3 +123,12 @@ class materiales_requerido_por_pedido:
     @estado.setter
     def  estado(self, estado):
         self._estado = estado
+
+
+if __name__ == '__main__':
+    hola = materiales_requerido_por_pedido(1,"Hola", 2, "lb", 10.0, 100, 1)
+    print(hola)
+
+
+
+    

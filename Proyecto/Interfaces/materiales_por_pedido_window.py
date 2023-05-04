@@ -132,15 +132,15 @@ class Ui_materiales_por_pedido_window(object):
     def retranslateUi(self, materiales_por_pedido_window):
         _translate = QtCore.QCoreApplication.translate
         materiales_por_pedido_window.setWindowTitle(_translate("materiales_por_pedido_window", "Materiales por pedido"))
-        self.label_4.setText(_translate("materiales_por_pedido_window", "TextLabel"))
-        self.label_5.setText(_translate("materiales_por_pedido_window", "TextLabel"))
-        self.label_2.setText(_translate("materiales_por_pedido_window", "TextLabel"))
-        self.label.setText(_translate("materiales_por_pedido_window", "TextLabel"))
-        self.label_3.setText(_translate("materiales_por_pedido_window", "TextLabel"))
-        self.pushButton.setText(_translate("materiales_por_pedido_window", "PushButton"))
-        self.pushButton_2.setText(_translate("materiales_por_pedido_window", "PushButton"))
-        self.pushButton_3.setText(_translate("materiales_por_pedido_window", "PushButton"))
-        self.pushButton_4.setText(_translate("materiales_por_pedido_window", "PushButton"))
+        self.label_4.setText(_translate("materiales_por_pedido_window", "Cantidad"))
+        self.label_5.setText(_translate("materiales_por_pedido_window", "Precio Total"))
+        self.label_2.setText(_translate("materiales_por_pedido_window", "Descripcion"))
+        self.label.setText(_translate("materiales_por_pedido_window", "Material"))
+        self.label_3.setText(_translate("materiales_por_pedido_window", "Precio por Unidad"))
+        self.pushButton.setText(_translate("materiales_por_pedido_window", "Guardar"))
+        self.pushButton_2.setText(_translate("materiales_por_pedido_window", "Editar"))
+        self.pushButton_3.setText(_translate("materiales_por_pedido_window", "Eliminar"))
+        self.pushButton_4.setText(_translate("materiales_por_pedido_window", "Vaciar Campos"))
 
 
 if __name__ == "__main__":

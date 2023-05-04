@@ -53,7 +53,7 @@
          <item row="0" column="0">
           <widget class="QLabel" name="label_4">
            <property name="text">
-            <string>TextLabel</string>
+            <string>Cantidad</string>
            </property>
           </widget>
          </item>
@@ -67,7 +67,7 @@
          <item row="1" column="0">
           <widget class="QLabel" name="label_5">
            <property name="text">
-            <string>TextLabel</string>
+            <string>Precio Total</string>
            </property>
           </widget>
          </item>
@@ -94,21 +94,21 @@
          <item row="1" column="0">
           <widget class="QLabel" name="label_2">
            <property name="text">
-            <string>TextLabel</string>
+            <string>Descripcion</string>
            </property>
           </widget>
          </item>
          <item row="0" column="0">
           <widget class="QLabel" name="label">
            <property name="text">
-            <string>TextLabel</string>
+            <string>Material</string>
            </property>
           </widget>
          </item>
          <item row="2" column="0">
           <widget class="QLabel" name="label_3">
            <property name="text">
-            <string>TextLabel</string>
+            <string>Precio por Unidad</string>
            </property>
           </widget>
          </item>
@@ -156,7 +156,7 @@
             <string notr="true">background-color: rgb(255, 255, 255);</string>
            </property>
            <property name="text">
-            <string>PushButton</string>
+            <string>Guardar</string>
            </property>
           </widget>
          </item>
@@ -166,7 +166,7 @@
             <string notr="true">background-color: rgb(255, 255, 255);</string>
            </property>
            <property name="text">
-            <string>PushButton</string>
+            <string>Editar</string>
            </property>
           </widget>
          </item>
@@ -176,7 +176,7 @@
             <string notr="true">background-color: rgb(255, 255, 255);</string>
            </property>
            <property name="text">
-            <string>PushButton</string>
+            <string>Eliminar</string>
            </property>
           </widget>
          </item>
@@ -187,7 +187,7 @@
 background-color: rgb(255, 255, 255);</string>
            </property>
            <property name="text">
-            <string>PushButton</string>
+            <string>Vaciar Campos</string>
            </property>
           </widget>
          </item>
