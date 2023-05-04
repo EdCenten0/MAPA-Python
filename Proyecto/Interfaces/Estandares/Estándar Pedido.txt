@@ -1,0 +1,39 @@
+Estandares de la ventana Pedido:
+
+Recursos:
+
+Fondo:
+Colores del Background:
+HEX : #3f4964
+RGB : 63, 73, 100
+HSL  : 223, 22%, 31%
+
+
+
+Letra:
+- Tipo de letra: MS Shell Dlg 2 (Negrita)
+- Tamaño: 14
+
+
+
+QMainWindow: Background
+
+
+Line Edits:
+- line_Id
+- line_Nombre
+- line_Descripcion
+- Date Edit: dt_pedido
+
+
+
+Botones:
+- bt_Guardar
+- bt_Eliminar
+- bt_Editar
+- bt_Vaciar
+
+
+
+QTableWidget: tb_Pedidos
+

@@ -17,7 +17,7 @@ from Datos import dt_Usuario, dt_Rol, dt_Opcion
 class Form_Principal(QtWidgets.QMainWindow):
     def __init__(self):
         super(Form_Principal,self).__init__()
-        loadUi("./VentanaPrincipal.ui",self)
+        loadUi("./Seguridad.ui",self)
 
         #Acciones de botones
 
