@@ -1,5 +1,5 @@
 # Francisco de Jesús Melendez Simplina
-#Entidad Rol
+#Entidad de Rol
 
 class Rol:
     def __init__(self, idRol, rol, estado):

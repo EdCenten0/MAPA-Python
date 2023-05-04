@@ -30,7 +30,7 @@ class Conexion:
                     print(f"Error {e}")
 
             else:
-                print("Ya estabas conectado la base de datos")
+                print("Ya estabas conectado a la base de datos")
 
             return cls._conexion
 

@@ -1,5 +1,5 @@
 # Francisco de Jesús Melendez Simplina
-#Entidad Usuario
+#Entidad de Usuario
 
 class Usuarios:
     def __init__(self,idUsuario, nombre, apellido, user, password, fechaCreacion, estado):

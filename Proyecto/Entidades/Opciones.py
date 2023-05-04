@@ -1,5 +1,5 @@
 # Francisco de Jesús Melendez Simplina
-#Entidad Opcion
+# Entidad de Opcion
 
 
 class Opcion:
