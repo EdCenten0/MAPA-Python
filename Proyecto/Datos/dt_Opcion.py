@@ -13,8 +13,6 @@ class Dt_Opcion:
         cursor.close()
         return querys
 
-
-
     @classmethod
     def guardarOpcion(cls, descripcion):
 
