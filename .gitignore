@@ -112,8 +112,14 @@ celerybeat.pid
 *.sage.py
 
 # Environments
-
-
+.env
+.venv
+env/
+venv/
+ENV/
+env.bak/
+venv.bak/
+>>>>>>> parent of dbb07e0 (Si)
 
 # Spyder project settings
 .spyderproject
