@@ -89,12 +89,18 @@
             <property name="text">
              <string>Descripcion</string>
             </property>
+            <property name="alignment">
+             <set>Qt::AlignRight|Qt::AlignTop|Qt::AlignTrailing</set>
+            </property>
            </widget>
           </item>
           <item row="0" column="0">
            <widget class="QLabel" name="label">
             <property name="text">
              <string>Material</string>
+            </property>
+            <property name="alignment">
+             <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
             </property>
            </widget>
           </item>
