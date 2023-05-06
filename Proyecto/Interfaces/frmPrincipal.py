@@ -9,7 +9,7 @@ from PyQt5.QtWidgets import QTableWidgetItem, QMessageBox
 from PyQt5.uic import loadUi
 
 from Datos import dt_Usuario, dt_Rol, dt_Opcion
-
+from Entidades.Usuarios import Usuarios
 
 # Indicador obtiende de las carpeta de las clases de Datos, un valor verdadero o falso para asi poder mostrar un mensaje de confirmación ya se ha guardar, editar o eliminar datos
 
@@ -102,9 +102,17 @@ class Form_Principal(QtWidgets.QMainWindow):
             fecha_objeto = datetime.strptime(fecha, "%d/%m/%Y")
             fechaTransformada = fecha_objeto.strftime("%Y-%m-%d")
 
+            #Programación orientada a objetos
+
+            Usuarios.nombre = self.line_Usuario_Nombre.text()
+            Usuarios.apellido = self.line_Usuario_Apellido.text()
+            Usuarios.user = self.line_Usuario_User.text()
+            Usuarios.password = self.line_Usuario_Password.text()
+            Usuarios.fechaCreacion = fechaTransformada
+
             if self.line_Usuario_Id.text()== "" and not self.line_Usuario_Nombre.text()== "" and not self.line_Usuario_Apellido.text()== "" and not self.line_Usuario_User.text()== "" and not self.line_Usuario_Password.text()== "" and not self.line_Usuario_Fecha.text()== "":
 
-                indicador = dt_Usuario.Dt_Usuarios.guardarUsuario(self.line_Usuario_Nombre.text(),self.line_Usuario_Apellido.text(),self.line_Usuario_User.text(),self.line_Usuario_Password.text(), fechaTransformada)  # Recoge los datos en los "Lines" de Qt Desinger para editarlos en la base de datos
+                indicador = dt_Usuario.Dt_Usuarios.guardarUsuario(Usuarios)  # Recoge los datos en los "Lines" de Qt Desinger para editarlos en la base de datos
 
                 self.notifMensaje(indicador,"Guardados")
 
@@ -131,9 +139,16 @@ class Form_Principal(QtWidgets.QMainWindow):
             fecha_objeto = datetime.strptime(fecha, "%d/%m/%Y")
             fechaTransformada = fecha_objeto.strftime("%Y-%m-%d")
 
+            Usuarios.idUsuario = self.line_Usuario_Id.text()
+            Usuarios.nombre = self.line_Usuario_Nombre.text()
+            Usuarios.apellido = self.line_Usuario_Apellido.text()
+            Usuarios.user = self.line_Usuario_User.text()
+            Usuarios.password = self.line_Usuario_Password.text()
+            Usuarios.fechaCreacion = fechaTransformada
+
             if not self.line_Usuario_Id.text()== "" and not self.line_Usuario_Nombre.text()== "" and not self.line_Usuario_Apellido.text()== "" and not self.line_Usuario_User.text()== "" and not self.line_Usuario_Password.text()== "" and not self.line_Usuario_Fecha.text()== "":
 
-                indicador = dt_Usuario.Dt_Usuarios.editarUsuario(self.line_Usuario_Id.text(),self.line_Usuario_Nombre.text(),self.line_Usuario_Apellido.text(),self.line_Usuario_User.text(),self.line_Usuario_Password.text(), fechaTransformada)  # Recoge los datos en los "Lines" de Qt Desinger para editarlos en la base de datos
+                indicador = dt_Usuario.Dt_Usuarios.editarUsuario(Usuarios)  # Recoge los datos en los "Lines" de Qt Desinger para editarlos en la base de datos
 
                 self.notifMensaje(indicador,"Editados")
 
@@ -155,9 +170,11 @@ class Form_Principal(QtWidgets.QMainWindow):
 
         try:
 
+            Usuarios.idUsuario = self.line_Usuario_Id.text()
+
             if not self.line_Usuario_Id.text()== "" and not self.line_Usuario_Nombre.text()== "" and not self.line_Usuario_Apellido.text()== "" and not self.line_Usuario_User.text()== "" and not self.line_Usuario_Password.text()== "" and not self.line_Usuario_Fecha.text()== "":
 
-                indicador = dt_Usuario.Dt_Usuarios.eliminarUsuario(self.line_Usuario_Id.text())
+                indicador = dt_Usuario.Dt_Usuarios.eliminarUsuario(Usuarios)
 
                 self.notifMensaje(indicador,"Eliminados")
 
