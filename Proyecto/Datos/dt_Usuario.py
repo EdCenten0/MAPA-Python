@@ -13,15 +13,14 @@ class Dt_Usuarios:
         cursor.close()
         return querys
 
-
     @classmethod
-    def guardarUsuario(cls, nombre, apellido, user, clave, fecha):
+    def guardarUsuario(cls, Usuarios):
 
         indicador = False
 
         try:
             cursor = Conexion.Conexion.obtenerConexion().cursor()
-            sql = (f'''INSERT INTO usuario ( nombre, apellido, user, clave, fecha_creacion, estado) VALUES ('{nombre}','{apellido}','{user}','{clave}','{fecha}','{1}')''')
+            sql = (f'''INSERT INTO usuario ( nombre, apellido, user, clave, fecha_creacion, estado) VALUES ('{Usuarios.nombre}','{Usuarios.apellido}','{Usuarios.user}','{Usuarios.apellido}','{Usuarios.fechaCreacion}','{1}')''')
             cursor.execute(sql)
             cursor.connection.commit()
             cursor.close()
@@ -36,13 +35,13 @@ class Dt_Usuarios:
 
 
     @classmethod
-    def editarUsuario(cls, id, nombre, apellido, user, clave, fecha):
+    def editarUsuario(cls, Usuarios):
 
         indicador = False
 
         try:
             cursor = Conexion.Conexion.obtenerConexion().cursor()
-            sql = (f'''UPDATE usuario SET nombre = "{nombre}" , apellido = "{apellido}" , user = "{user}", clave = "{clave}", fecha_creacion = "{fecha}", estado = "{2}" WHERE idusuario = {id}''')
+            sql = (f'''UPDATE usuario SET nombre = "{Usuarios.nombre}" , apellido = "{Usuarios.apellido}" , user = "{Usuarios.user}", clave = "{Usuarios.password}", fecha_creacion = "{Usuarios.fechaCreacion}", estado = "{2}" WHERE idusuario = {Usuarios.idUsuario}''')
             cursor.execute(sql)
             cursor.connection.commit()
             cursor.close()
@@ -57,13 +56,13 @@ class Dt_Usuarios:
 
 
     @classmethod
-    def eliminarUsuario(cls, id):
+    def eliminarUsuario(cls, Usuarios):
 
         indicador = False
 
         try:
             cursor = Conexion.Conexion.obtenerConexion().cursor()
-            sql = (f'''DELETE FROM usuario WHERE idusuario = {id}''')
+            sql = (f'''DELETE FROM usuario WHERE idusuario = {Usuarios.idUsuario}''')
             cursor.execute(sql)
             cursor.connection.commit()
             cursor.close()

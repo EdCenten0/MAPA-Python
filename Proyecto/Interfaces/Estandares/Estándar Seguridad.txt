@@ -1,4 +1,16 @@
-Estructura de formularios 
+Estándar de la ventana Seguridad:
+
+Fondo:
+Colores del Background:
+HEX : #3f4964
+RGB : 63, 73, 100
+HSL  : 223, 22%, 31%
+
+
+
+Letra:
+- Tipo de letra: MS Shell Dlg 2 (Negrita)
+- Tamaño: 14
 
 
 1)Login:
