@@ -9,7 +9,9 @@ from PyQt5.QtWidgets import QTableWidgetItem, QMessageBox
 from PyQt5.uic import loadUi
 
 from Datos import dt_Usuario, dt_Rol, dt_Opcion
-
+from Entidades.Usuarios import Usuarios
+from Entidades.Roles import Rol
+from Entidades.Opciones import Opcion
 
 # Indicador obtiende de las carpeta de las clases de Datos, un valor verdadero o falso para asi poder mostrar un mensaje de confirmación ya se ha guardar, editar o eliminar datos
 
@@ -102,9 +104,17 @@ class Form_Principal(QtWidgets.QMainWindow):
             fecha_objeto = datetime.strptime(fecha, "%d/%m/%Y")
             fechaTransformada = fecha_objeto.strftime("%Y-%m-%d")
 
+            #Programación orientada a objetos
+
+            Usuarios.nombre = self.line_Usuario_Nombre.text()
+            Usuarios.apellido = self.line_Usuario_Apellido.text()
+            Usuarios.user = self.line_Usuario_User.text()
+            Usuarios.password = self.line_Usuario_Password.text()
+            Usuarios.fechaCreacion = fechaTransformada
+
             if self.line_Usuario_Id.text()== "" and not self.line_Usuario_Nombre.text()== "" and not self.line_Usuario_Apellido.text()== "" and not self.line_Usuario_User.text()== "" and not self.line_Usuario_Password.text()== "" and not self.line_Usuario_Fecha.text()== "":
 
-                indicador = dt_Usuario.Dt_Usuarios.guardarUsuario(self.line_Usuario_Nombre.text(),self.line_Usuario_Apellido.text(),self.line_Usuario_User.text(),self.line_Usuario_Password.text(), fechaTransformada)  # Recoge los datos en los "Lines" de Qt Desinger para editarlos en la base de datos
+                indicador = dt_Usuario.Dt_Usuarios.guardarUsuario(Usuarios)  # Recoge los datos en los "Lines" de Qt Desinger para editarlos en la base de datos
 
                 self.notifMensaje(indicador,"Guardados")
 
@@ -131,9 +141,16 @@ class Form_Principal(QtWidgets.QMainWindow):
             fecha_objeto = datetime.strptime(fecha, "%d/%m/%Y")
             fechaTransformada = fecha_objeto.strftime("%Y-%m-%d")
 
+            Usuarios.idUsuario = self.line_Usuario_Id.text()
+            Usuarios.nombre = self.line_Usuario_Nombre.text()
+            Usuarios.apellido = self.line_Usuario_Apellido.text()
+            Usuarios.user = self.line_Usuario_User.text()
+            Usuarios.password = self.line_Usuario_Password.text()
+            Usuarios.fechaCreacion = fechaTransformada
+
             if not self.line_Usuario_Id.text()== "" and not self.line_Usuario_Nombre.text()== "" and not self.line_Usuario_Apellido.text()== "" and not self.line_Usuario_User.text()== "" and not self.line_Usuario_Password.text()== "" and not self.line_Usuario_Fecha.text()== "":
 
-                indicador = dt_Usuario.Dt_Usuarios.editarUsuario(self.line_Usuario_Id.text(),self.line_Usuario_Nombre.text(),self.line_Usuario_Apellido.text(),self.line_Usuario_User.text(),self.line_Usuario_Password.text(), fechaTransformada)  # Recoge los datos en los "Lines" de Qt Desinger para editarlos en la base de datos
+                indicador = dt_Usuario.Dt_Usuarios.editarUsuario(Usuarios)  # Recoge los datos en los "Lines" de Qt Desinger para editarlos en la base de datos
 
                 self.notifMensaje(indicador,"Editados")
 
@@ -155,9 +172,11 @@ class Form_Principal(QtWidgets.QMainWindow):
 
         try:
 
+            Usuarios.idUsuario = self.line_Usuario_Id.text()
+
             if not self.line_Usuario_Id.text()== "" and not self.line_Usuario_Nombre.text()== "" and not self.line_Usuario_Apellido.text()== "" and not self.line_Usuario_User.text()== "" and not self.line_Usuario_Password.text()== "" and not self.line_Usuario_Fecha.text()== "":
 
-                indicador = dt_Usuario.Dt_Usuarios.eliminarUsuario(self.line_Usuario_Id.text())
+                indicador = dt_Usuario.Dt_Usuarios.eliminarUsuario(Usuarios)
 
                 self.notifMensaje(indicador,"Eliminados")
 
@@ -226,9 +245,11 @@ class Form_Principal(QtWidgets.QMainWindow):
 
         try:
 
+            Rol.rol = self.line_Rol.text()
+
             if self.line_Rol_Id.text() == "" and not self.line_Rol.text() == "":
 
-                indicador = dt_Rol.Dt_Rol.guardarRol(self.line_Rol.text())
+                indicador = dt_Rol.Dt_Rol.guardarRol(Rol)
 
                 self.notifMensaje(indicador,"Guardados")
 
@@ -248,10 +269,12 @@ class Form_Principal(QtWidgets.QMainWindow):
     def editarRol(self):
 
         try:
+            Rol.idRol = self.line_Rol_Id.text()
+            Rol.rol = self.line_Rol.text()
 
             if not self.line_Rol_Id.text() == "" and not self.line_Rol.text() == "":
 
-                indicador = dt_Rol.Dt_Rol.editarRol(self.line_Rol_Id.text(),self.line_Rol.text())
+                indicador = dt_Rol.Dt_Rol.editarRol(Rol)
 
                 self.notifMensaje(indicador,"Editados")
 
@@ -272,10 +295,11 @@ class Form_Principal(QtWidgets.QMainWindow):
     def eliminarRol(self):
 
         try:
+            Rol.idRol = self.line_Rol_Id.text()
 
             if not self.line_Rol_Id.text() == "" and not self.line_Rol.text() == "":
 
-                indicador = dt_Rol.Dt_Rol.eliminarRol(self.line_Rol_Id.text())
+                indicador = dt_Rol.Dt_Rol.eliminarRol(Rol)
 
                 self.notifMensaje(indicador,"Eliminados")
 
@@ -325,9 +349,11 @@ class Form_Principal(QtWidgets.QMainWindow):
 
         try:
 
+            Opcion.opcion = self.line_Opcion.text()
+
             if self.line_Opcion_Id.text() == "" and not self.line_Opcion.text() == "":
 
-                indicador = dt_Opcion.Dt_Opcion.guardarOpcion(self.line_Opcion.text())
+                indicador = dt_Opcion.Dt_Opcion.guardarOpcion(Opcion)
 
                 self.notifMensaje(indicador, "Guardados")
 
@@ -347,10 +373,12 @@ class Form_Principal(QtWidgets.QMainWindow):
     def editarOpcion(self):
 
         try:
+            Opcion.idOpcion = self.line_Opcion_Id.text()
+            Opcion.opcion = self.line_Opcion.text()
 
             if not self.line_Opcion_Id.text() == "" and not self.line_Opcion.text() == "":
 
-                indicador = dt_Opcion.Dt_Opcion.editarOpcion(self.line_Opcion_Id.text(), self.line_Opcion.text())
+                indicador = dt_Opcion.Dt_Opcion.editarOpcion(Opcion)
 
                 self.notifMensaje(indicador, "Editados")
 
@@ -371,10 +399,11 @@ class Form_Principal(QtWidgets.QMainWindow):
     def eliminarOpcion(self):
 
         try:
+            Opcion.idOpcion = self.line_Opcion_Id.text()
 
             if not self.line_Opcion_Id.text() == "" and not self.line_Opcion.text() == "":
 
-                indicador = dt_Opcion.Dt_Opcion.eliminarOpcion(self.line_Opcion_Id.text())
+                indicador = dt_Opcion.Dt_Opcion.eliminarOpcion(Opcion)
 
                 self.notifMensaje(indicador, "Eliminados")
 

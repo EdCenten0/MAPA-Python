@@ -16,13 +16,13 @@ class Dt_Rol:
 
 
     @classmethod
-    def guardarRol(cls, descripcion):
+    def guardarRol(cls, Rol):
 
         indicador = False
 
         try:
             cursor = Conexion.Conexion.obtenerConexion().cursor()
-            sql = (f'''INSERT INTO rol (descripcion) VALUES ('{descripcion}')''')
+            sql = (f'''INSERT INTO rol (descripcion) VALUES ('{Rol.rol}')''')
             cursor.execute(sql)
             cursor.connection.commit()
             cursor.close()
@@ -37,13 +37,13 @@ class Dt_Rol:
 
 
     @classmethod
-    def editarRol(cls, id, descripcion):
+    def editarRol(cls, Rol):
 
         indicador = False
 
         try:
             cursor = Conexion.Conexion.obtenerConexion().cursor()
-            sql = (f'''UPDATE rol SET descripcion = "{descripcion}" WHERE idrol = {id}''')
+            sql = (f'''UPDATE rol SET descripcion = "{Rol.rol}" WHERE idrol = {Rol.idRol}''')
             cursor.execute(sql)
             cursor.connection.commit()
             cursor.close()
@@ -58,13 +58,13 @@ class Dt_Rol:
 
 
     @classmethod
-    def eliminarRol(cls, id):
+    def eliminarRol(cls, Rol):
 
         indicador = False
 
         try:
             cursor = Conexion.Conexion.obtenerConexion().cursor()
-            sql = (f'''DELETE FROM rol WHERE idrol = {id}''')
+            sql = (f'''DELETE FROM rol WHERE idrol = {Rol.idRol}''')
             cursor.execute(sql)
             cursor.connection.commit()
             cursor.close()

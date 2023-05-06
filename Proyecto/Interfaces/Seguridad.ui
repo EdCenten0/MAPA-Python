@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ui version="4.0">
- <class>MainWindow</class>
- <widget class="QMainWindow" name="MainWindow">
+ <class>Background</class>
+ <widget class="QMainWindow" name="Background">
   <property name="geometry">
    <rect>
     <x>0</x>
@@ -46,7 +46,7 @@ background-color: rgb(63, 73, 100);</string>
      <enum>QTabWidget::Rounded</enum>
     </property>
     <property name="currentIndex">
-     <number>0</number>
+     <number>1</number>
     </property>
     <widget class="QWidget" name="Usuario">
      <attribute name="title">
@@ -62,7 +62,7 @@ background-color: rgb(63, 73, 100);</string>
        </rect>
       </property>
       <property name="cursor" stdset="0">
-       <cursorShape>CrossCursor</cursorShape>
+       <cursorShape>PointingHandCursor</cursorShape>
       </property>
       <property name="styleSheet">
        <string notr="true">background-color: rgb(255, 255, 255);</string>
@@ -475,6 +475,9 @@ color: rgb(255, 255, 255);</string>
         <height>341</height>
        </rect>
       </property>
+      <property name="cursor" stdset="0">
+       <cursorShape>PointingHandCursor</cursorShape>
+      </property>
       <property name="styleSheet">
        <string notr="true">background-color: rgb(255, 255, 255);
 </string>
@@ -489,7 +492,7 @@ color: rgb(255, 255, 255);</string>
        <bool>false</bool>
       </attribute>
       <attribute name="horizontalHeaderDefaultSectionSize">
-       <number>349</number>
+       <number>347</number>
       </attribute>
       <attribute name="horizontalHeaderMinimumSectionSize">
        <number>40</number>
@@ -612,6 +615,9 @@ color: rgb(255, 255, 255);</string>
         <height>341</height>
        </rect>
       </property>
+      <property name="cursor" stdset="0">
+       <cursorShape>PointingHandCursor</cursorShape>
+      </property>
       <property name="layoutDirection">
        <enum>Qt::LeftToRight</enum>
       </property>
@@ -625,7 +631,7 @@ color: rgb(255, 255, 255);</string>
        <bool>false</bool>
       </attribute>
       <attribute name="horizontalHeaderDefaultSectionSize">
-       <number>349</number>
+       <number>348</number>
       </attribute>
       <attribute name="horizontalHeaderMinimumSectionSize">
        <number>40</number>

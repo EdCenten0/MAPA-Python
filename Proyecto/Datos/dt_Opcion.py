@@ -16,13 +16,13 @@ class Dt_Opcion:
 
 
     @classmethod
-    def guardarOpcion(cls, descripcion):
+    def guardarOpcion(cls, Opcion):
 
         indicador = False
 
         try:
             cursor = Conexion.Conexion.obtenerConexion().cursor()
-            sql = (f'''INSERT INTO opcion (descripcion) VALUES ('{descripcion}')''')
+            sql = (f'''INSERT INTO opcion (descripcion) VALUES ('{Opcion.opcion}')''')
             cursor.execute(sql)
             cursor.connection.commit()
             cursor.close()
@@ -37,13 +37,13 @@ class Dt_Opcion:
 
 
     @classmethod
-    def editarOpcion(cls, id, descripcion):
+    def editarOpcion(cls, Opcion):
 
         indicador = False
 
         try:
             cursor = Conexion.Conexion.obtenerConexion().cursor()
-            sql = (f'''UPDATE opcion SET descripcion = "{descripcion}" WHERE idopcion = {id}''')
+            sql = (f'''UPDATE opcion SET descripcion = "{Opcion.opcion}" WHERE idopcion = {Opcion.idOpcion}''')
             cursor.execute(sql)
             cursor.connection.commit()
             cursor.close()
@@ -58,13 +58,13 @@ class Dt_Opcion:
 
 
     @classmethod
-    def eliminarOpcion(cls, id):
+    def eliminarOpcion(cls, Opcion):
 
         indicador = False
 
         try:
             cursor = Conexion.Conexion.obtenerConexion().cursor()
-            sql = (f'''DELETE FROM opcion WHERE idopcion = {id}''')
+            sql = (f'''DELETE FROM opcion WHERE idopcion = {Opcion.idOpcion}''')
             cursor.execute(sql)
             cursor.connection.commit()
             cursor.close()
