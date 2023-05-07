@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-# Form implementation generated from reading ui file 'vista_previa_pedidos_window.ui'
+# Form implementation generated from reading ui file 'Vista_previa_pedidos_window.ui'
 #
 # Created by: PyQt5 UI code generator 5.15.9
 #

@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-# Form implementation generated from reading ui file 'vw_taller.ui'
+# Form implementation generated from reading ui file 'Vw_taller.ui'
 #
 # Created by: PyQt5 UI code generator 5.15.9
 #
