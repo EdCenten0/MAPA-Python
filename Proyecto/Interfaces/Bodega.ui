@@ -70,7 +70,7 @@
        <enum>QAbstractScrollArea::AdjustToContents</enum>
       </property>
       <attribute name="horizontalHeaderDefaultSectionSize">
-       <number>111</number>
+       <number>197</number>
       </attribute>
       <attribute name="verticalHeaderDefaultSectionSize">
        <number>25</number>
@@ -154,7 +154,7 @@ color: rgb(255, 255, 255);</string>
       <property name="geometry">
        <rect>
         <x>670</x>
-        <y>70</y>
+        <y>20</y>
         <width>101</width>
         <height>31</height>
        </rect>
@@ -170,7 +170,7 @@ color: rgb(255, 255, 255);</string>
       <property name="geometry">
        <rect>
         <x>670</x>
-        <y>20</y>
+        <y>70</y>
         <width>101</width>
         <height>31</height>
        </rect>

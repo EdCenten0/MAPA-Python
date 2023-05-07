@@ -163,3 +163,13 @@ class Ui_MainWindow(object):
         self.label_5.setText(_translate("MainWindow", "Telefono:"))
         self.label_6.setText(_translate("MainWindow", "Correo:"))
         self.tabWidget.setTabText(self.tabWidget.indexOf(self.Cliente), _translate("MainWindow", "Cliente"))
+
+
+if __name__ == "__main__":
+    import sys
+    app = QtWidgets.QApplication(sys.argv)
+    MainWindow = QtWidgets.QMainWindow()
+    ui = Ui_MainWindow()
+    ui.setupUi(MainWindow)
+    MainWindow.show()
+    sys.exit(app.exec_())

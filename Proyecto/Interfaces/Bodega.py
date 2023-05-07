@@ -116,3 +116,12 @@ class Ui_MainWindow(object):
         self.bt_Eliminar_Bodega.setText(_translate("MainWindow", "Eliminar"))
         self.bt_Vaciar_Bodega.setText(_translate("MainWindow", "Vaciar Campos"))
         self.tabWidget.setTabText(self.tabWidget.indexOf(self.Bodega), _translate("MainWindow", "Bodega"))
+
+if __name__ == "__main__":
+    import sys
+    app = QtWidgets.QApplication(sys.argv)
+    MainWindow = QtWidgets.QMainWindow()
+    ui = Ui_MainWindow()
+    ui.setupUi(MainWindow)
+    MainWindow.show()
+    sys.exit(app.exec_())
