@@ -16,9 +16,9 @@ from Entidades.Opciones import Opcion
 # Indicador obtiende de las carpeta de las clases de Datos, un valor verdadero o falso para asi poder mostrar un mensaje de confirmación ya se ha guardar, editar o eliminar datos
 
 
-class Form_Principal(QtWidgets.QMainWindow):
+class Frm_principal(QtWidgets.QMainWindow):
     def __init__(self):
-        super(Form_Principal,self).__init__()
+        super(Frm_principal,self).__init__()
         loadUi("./Seguridad.ui",self)
 
         #Acciones de botones
@@ -454,6 +454,6 @@ class Form_Principal(QtWidgets.QMainWindow):
 
 if __name__ == '__main__':
     app = QtWidgets.QApplication(sys.argv)
-    aplicacion = Form_Principal()
+    aplicacion = Frm_principal()
     aplicacion.show()
     app.exec()
