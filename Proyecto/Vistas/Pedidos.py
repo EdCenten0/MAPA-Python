@@ -14,7 +14,7 @@ from PyQt5 import QtCore, QtGui, QtWidgets
 class Ui_Background(object):
     def setupUi(self, Background):
         Background.setObjectName("Background")
-        Background.resize(800, 600)
+        Background.resize(811, 600)
         Background.setStyleSheet("background-color: rgb(63, 73, 100);\n"
 "")
         self.centralwidget = QtWidgets.QWidget(Background)
@@ -114,10 +114,6 @@ class Ui_Background(object):
         self.cb_cliente.setStyleSheet("background-color: rgb(255, 255, 255);")
         self.cb_cliente.setObjectName("cb_cliente")
         Background.setCentralWidget(self.centralwidget)
-        self.menubar = QtWidgets.QMenuBar(Background)
-        self.menubar.setGeometry(QtCore.QRect(0, 0, 800, 21))
-        self.menubar.setObjectName("menubar")
-        Background.setMenuBar(self.menubar)
         self.statusbar = QtWidgets.QStatusBar(Background)
         self.statusbar.setObjectName("statusbar")
         Background.setStatusBar(self.statusbar)
