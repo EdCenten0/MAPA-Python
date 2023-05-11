@@ -41,7 +41,7 @@ class Dt_Usuarios:
 
         try:
             cursor = Conexion.Conexion.obtenerConexion().cursor()
-            sql = (f'''UPDATE usuario SET nombre = "{Usuarios.nombre}" , apellido = "{Usuarios.apellido}" , user = "{Usuarios.user}", clave = "{Usuarios.password}", fecha_creacion = "{Usuarios.fechaCreacion}", estado = "{2}" WHERE idusuario = {Usuarios.idUsuario}''')
+            sql = (f'''UPDATE usuario SET nombre = "{Usuarios.nombre}" , apellido = "{Usuarios.apellido}" , user = "{Usuarios.user}", clave = "{Usuarios.password}", fecha_creacion = "{Usuarios.fechaCreacion}", estado = "{2}" WHERE id_usuario = {Usuarios.id_usuario}''')
             cursor.execute(sql)
             cursor.connection.commit()
             cursor.close()
@@ -62,7 +62,7 @@ class Dt_Usuarios:
 
         try:
             cursor = Conexion.Conexion.obtenerConexion().cursor()
-            sql = (f'''DELETE FROM usuario WHERE idusuario = {Usuarios.idUsuario}''')
+            sql = (f'''DELETE FROM usuario WHERE id_usuario = {Usuarios.id_usuario}''')
             cursor.execute(sql)
             cursor.connection.commit()
             cursor.close()

@@ -4,7 +4,7 @@ import pymysql.cursors
 
 class Conexion:
     #recolecta los datos de la BD
-    _DATABASE = 'seguridad'
+    _DATABASE = 'mapa'
     _USERNAME = 'francisco'
     _PASSWORD = '1234'
     _HOST = 'localhost'

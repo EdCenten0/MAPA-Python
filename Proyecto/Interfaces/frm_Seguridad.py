@@ -16,9 +16,9 @@ from Entidades.Opciones import Opcion
 # Indicador obtiende de las carpeta de las clases de Datos, un valor verdadero o falso para asi poder mostrar un mensaje de confirmación ya se ha guardar, editar o eliminar datos
 
 
-class Form_Principal(QtWidgets.QMainWindow):
+class frm_Seguridad(QtWidgets.QMainWindow):
     def __init__(self):
-        super(Form_Principal,self).__init__()
+        super(frm_Seguridad,self).__init__()
         loadUi("./Seguridad.ui",self)
 
         #Acciones de botones
@@ -141,7 +141,7 @@ class Form_Principal(QtWidgets.QMainWindow):
             fecha_objeto = datetime.strptime(fecha, "%d/%m/%Y")
             fechaTransformada = fecha_objeto.strftime("%Y-%m-%d")
 
-            Usuarios.idUsuario = self.line_Usuario_Id.text()
+            Usuarios.id_usuario = self.line_Usuario_Id.text()
             Usuarios.nombre = self.line_Usuario_Nombre.text()
             Usuarios.apellido = self.line_Usuario_Apellido.text()
             Usuarios.user = self.line_Usuario_User.text()
@@ -172,7 +172,7 @@ class Form_Principal(QtWidgets.QMainWindow):
 
         try:
 
-            Usuarios.idUsuario = self.line_Usuario_Id.text()
+            Usuarios.id_usuario = self.line_Usuario_Id.text()
 
             if not self.line_Usuario_Id.text()== "" and not self.line_Usuario_Nombre.text()== "" and not self.line_Usuario_Apellido.text()== "" and not self.line_Usuario_User.text()== "" and not self.line_Usuario_Password.text()== "" and not self.line_Usuario_Fecha.text()== "":
 
@@ -227,7 +227,7 @@ class Form_Principal(QtWidgets.QMainWindow):
 
         for row in datos:
             print(row)
-            self.tb_Usuario.setItem(tablerow, 0, QTableWidgetItem(str(row["idusuario"])))
+            self.tb_Usuario.setItem(tablerow, 0, QTableWidgetItem(str(row["id_usuario"])))
             self.tb_Usuario.setItem(tablerow, 1, QTableWidgetItem((row["nombre"])))
             self.tb_Usuario.setItem(tablerow, 2, QTableWidgetItem((row["apellido"])))
             self.tb_Usuario.setItem(tablerow, 3, QTableWidgetItem((row["user"])))
@@ -269,7 +269,7 @@ class Form_Principal(QtWidgets.QMainWindow):
     def editarRol(self):
 
         try:
-            Rol.idRol = self.line_Rol_Id.text()
+            Rol.id_rol = self.line_Rol_Id.text()
             Rol.rol = self.line_Rol.text()
 
             if not self.line_Rol_Id.text() == "" and not self.line_Rol.text() == "":
@@ -295,7 +295,7 @@ class Form_Principal(QtWidgets.QMainWindow):
     def eliminarRol(self):
 
         try:
-            Rol.idRol = self.line_Rol_Id.text()
+            Rol.id_rol = self.line_Rol_Id.text()
 
             if not self.line_Rol_Id.text() == "" and not self.line_Rol.text() == "":
 
@@ -339,7 +339,7 @@ class Form_Principal(QtWidgets.QMainWindow):
 
         for row in datos:
             print(row)
-            self.tb_Rol.setItem(tablerow, 0, QTableWidgetItem(str(row["idrol"])))
+            self.tb_Rol.setItem(tablerow, 0, QTableWidgetItem(str(row["id_rol"])))
             self.tb_Rol.setItem(tablerow, 1, QTableWidgetItem((row["descripcion"])))
             tablerow = tablerow + 1
 
@@ -454,6 +454,6 @@ class Form_Principal(QtWidgets.QMainWindow):
 
 if __name__ == '__main__':
     app = QtWidgets.QApplication(sys.argv)
-    aplicacion = Form_Principal()
+    aplicacion = frm_Seguridad()
     aplicacion.show()
     app.exec()

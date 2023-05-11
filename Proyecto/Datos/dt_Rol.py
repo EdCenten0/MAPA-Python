@@ -43,7 +43,7 @@ class Dt_Rol:
 
         try:
             cursor = Conexion.Conexion.obtenerConexion().cursor()
-            sql = (f'''UPDATE rol SET descripcion = "{Rol.rol}" WHERE idrol = {Rol.idRol}''')
+            sql = (f'''UPDATE rol SET descripcion = "{Rol.rol}" WHERE id_rol = {Rol.id_rol}''')
             cursor.execute(sql)
             cursor.connection.commit()
             cursor.close()
@@ -64,7 +64,7 @@ class Dt_Rol:
 
         try:
             cursor = Conexion.Conexion.obtenerConexion().cursor()
-            sql = (f'''DELETE FROM rol WHERE idrol = {Rol.idRol}''')
+            sql = (f'''DELETE FROM rol WHERE id_rol = {Rol.id_rol}''')
             cursor.execute(sql)
             cursor.connection.commit()
             cursor.close()
