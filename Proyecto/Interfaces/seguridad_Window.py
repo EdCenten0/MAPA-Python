@@ -16,10 +16,10 @@ from PyQt5.QtWidgets import QApplication, QMainWindow
 from Interfaces import vw_Seguridad
 
 
-class seguridad_Window(QMainWindow, vw_Seguridad.Ui_Seguridad):
-    def __init__(self, parent=None):
-        super(seguridad_Window, self).__init__(parent)
-        self.setupUi(self)
+class Frm_principal(QtWidgets.QMainWindow):
+    def __init__(self):
+        super(Frm_principal,self).__init__()
+        loadUi("./Seguridad.ui",self)
 
         # Acciones de botones
 
@@ -428,7 +428,7 @@ class seguridad_Window(QMainWindow, vw_Seguridad.Ui_Seguridad):
 
 
 if __name__ == '__main__':
-    app = QApplication(sys.argv)
-    mw = seguridad_Window()
-    mw.show()
+    app = QtWidgets.QApplication(sys.argv)
+    aplicacion = Frm_principal()
+    aplicacion.show()
     app.exec()

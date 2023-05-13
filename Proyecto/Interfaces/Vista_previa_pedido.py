@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-# Form implementation generated from reading ui file 'vista_previa_pedidos_window.ui'
+# Form implementation generated from reading ui file 'Vista_previa_pedidos_window.ui'
 #
 # Created by: PyQt5 UI code generator 5.15.9
 #
@@ -31,30 +31,9 @@ class Ui_MainWindow(object):
         self.label.setAlignment(QtCore.Qt.AlignCenter)
         self.label.setObjectName("label")
         self.verticalLayout.addWidget(self.label)
-        self.pushButton = QtWidgets.QPushButton(self.centralwidget)
-        self.pushButton.setStyleSheet("background-color: rgb(255, 255, 255);")
-        self.pushButton.setObjectName("pushButton")
-        self.verticalLayout.addWidget(self.pushButton)
-        self.pushButton_6 = QtWidgets.QPushButton(self.centralwidget)
-        self.pushButton_6.setStyleSheet("background-color: rgb(255, 255, 255);")
-        self.pushButton_6.setObjectName("pushButton_6")
-        self.verticalLayout.addWidget(self.pushButton_6)
-        self.pushButton_5 = QtWidgets.QPushButton(self.centralwidget)
-        self.pushButton_5.setStyleSheet("background-color: rgb(255, 255, 255);")
-        self.pushButton_5.setObjectName("pushButton_5")
-        self.verticalLayout.addWidget(self.pushButton_5)
-        self.pushButton_2 = QtWidgets.QPushButton(self.centralwidget)
-        self.pushButton_2.setStyleSheet("background-color: rgb(255, 255, 255);")
-        self.pushButton_2.setObjectName("pushButton_2")
-        self.verticalLayout.addWidget(self.pushButton_2)
-        self.pushButton_4 = QtWidgets.QPushButton(self.centralwidget)
-        self.pushButton_4.setStyleSheet("background-color: rgb(255, 255, 255);")
-        self.pushButton_4.setObjectName("pushButton_4")
-        self.verticalLayout.addWidget(self.pushButton_4)
-        self.pushButton_3 = QtWidgets.QPushButton(self.centralwidget)
-        self.pushButton_3.setStyleSheet("background-color: rgb(255, 255, 255);")
-        self.pushButton_3.setObjectName("pushButton_3")
-        self.verticalLayout.addWidget(self.pushButton_3)
+        self.comboBox = QtWidgets.QComboBox(self.centralwidget)
+        self.comboBox.setObjectName("comboBox")
+        self.verticalLayout.addWidget(self.comboBox)
         spacerItem = QtWidgets.QSpacerItem(11, 30, QtWidgets.QSizePolicy.Minimum, QtWidgets.QSizePolicy.Expanding)
         self.verticalLayout.addItem(spacerItem)
         self.horizontalLayout.addLayout(self.verticalLayout)
@@ -124,12 +103,6 @@ class Ui_MainWindow(object):
         _translate = QtCore.QCoreApplication.translate
         MainWindow.setWindowTitle(_translate("MainWindow", "Vista previa de pedidos"))
         self.label.setText(_translate("MainWindow", "Pedidos"))
-        self.pushButton.setText(_translate("MainWindow", "Pedido 1"))
-        self.pushButton_6.setText(_translate("MainWindow", "Pedido 2"))
-        self.pushButton_5.setText(_translate("MainWindow", "Pedido 3"))
-        self.pushButton_2.setText(_translate("MainWindow", "Pedido 4"))
-        self.pushButton_4.setText(_translate("MainWindow", "Pedido 5"))
-        self.pushButton_3.setText(_translate("MainWindow", "Pedido 6"))
         self.label_4.setText(_translate("MainWindow", "Descripcion del pedido:"))
         self.label_2.setText(_translate("MainWindow", "Cliente: "))
         self.label_6.setText(_translate("MainWindow", "0  materiales agregados..."))
