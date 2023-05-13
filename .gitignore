@@ -1,3 +1,6 @@
+# Conexion con la base de datos
+Conexion.py
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
