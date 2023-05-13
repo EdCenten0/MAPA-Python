@@ -30,4 +30,4 @@ class Dt_Proveedor:
 
 
 if __name__ == '__main__':
-    print(dt_Proveedor.listarProveedor())
+    print(Dt_Proveedor.listarProveedor())
