@@ -21,7 +21,7 @@ class Proveedor:
         nombre = {self.nombre}
         ruc = {self.ruc}
         correo = {self.correo}
-        catalogo = {self.telefono}
+        catalogo = {self.catalogo}
         direccion = {self.direccion}
         estado = {self.estado}
         '''
@@ -81,6 +81,14 @@ class Proveedor:
     @direccion.setter
     def direccion(self, direccion):
         self.direccion = direccion
+
+    @property
+    def catalogo(self):
+        return self.catalogo
+
+    @catalogo.setter
+    def catalogo(self, catalogo):
+        self.catalogo = catalogo
 
     @property
     def estado(self):

@@ -108,8 +108,7 @@ class seguridad_Window(QMainWindow, vw_Seguridad.Ui_Seguridad):
 
             if self.line_Usuario_Id.text() == "" and not self.line_Usuario_Nombre.text() == "" and not self.line_Usuario_Apellido.text() == "" and not self.line_Usuario_User.text() == "" and not self.line_Usuario_Password.text() == "" and not self.line_Usuario_Fecha.text() == "":
 
-                indicador = dt_Usuario.Dt_Usuarios.guardarUsuario(
-                    Usuarios)  # Recoge los datos en los "Lines" de Qt Desinger para editarlos en la base de datos
+                indicador = dt_Usuario.Dt_Usuarios.guardarUsuario(Usuarios)  # Recoge los datos en los "Lines" de Qt Desinger para guardarlos en la base de datos
 
                 self.notifMensaje(indicador, "Guardados")
 

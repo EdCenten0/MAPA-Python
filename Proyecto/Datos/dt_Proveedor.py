@@ -17,7 +17,7 @@ class Dt_Proveedor:
 
         try:
             cursor = Conexion.Conexion.obtenerConexion().cursor()
-            sql = (f"INSERT INTO proveedores ( nombre, email, telefono, catalogo, ruc, direccion, id_tienda) VALUES ( {Proveedor.nombre}, {Proveedor.correo}, {Proveedor.telefono}, {Proveedor.catalogo}, {Proveedor.ruc}, {Proveedor.direccion}, 1 )")
+            sql = (f"INSERT INTO proveedores ( nombre, email, telefono, catalogo, ruc, direccion, id_tienda) VALUES ( '{Proveedor.nombre}', '{Proveedor.correo}', '{Proveedor.telefono}', '{Proveedor.catalogo}', '{Proveedor.ruc}', '{Proveedor.direccion}' , 1 )")
             cursor.execute(sql)
             cursor.connection.commit()
             cursor.close()
@@ -26,8 +26,9 @@ class Dt_Proveedor:
 
 
         except Exception as e:
-            print(e)
+            print(f"Error en dt_Proveedor Guardar: {e}")
 
+        return indicador
 
 if __name__ == '__main__':
     print(Dt_Proveedor.listarProveedor())

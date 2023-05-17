@@ -3,9 +3,10 @@
 
 import sys
 
-from PyQt5.QtWidgets import QMainWindow, QApplication, QTableWidgetItem
+from PyQt5.QtWidgets import QMainWindow, QApplication, QTableWidgetItem, QMessageBox
 
 from Datos import dt_Proveedor
+from Entidades.Proveedores import Proveedor
 from Interfaces import vw_Proveedores
 
 
@@ -14,9 +15,24 @@ class proveedor_Window(QMainWindow, vw_Proveedores.Ui_Proveedores):
     def __init__(self, parent=None):
         super(proveedor_Window, self).__init__(parent)
         self.setupUi(self)
+
+        #Tabla
         self.llenarTablaProveedor(dt_Proveedor.Dt_Proveedor.listarProveedor())
         self.tb_Proveedor.itemSelectionChanged.connect(self.obtenerDatosTablaProveedor)
 
+        #Botones
+        self.bt_Guardar.clicked.connect(self.guardarProveedor)
+        self.bt_Vaciar.clicked.connect(self.limpiarCampos)
+
+
+    def limpiarCampos(self):
+        self.line_Id.setText("")
+        self.line_Nombre.setText("")
+        self.line_Ruc.setText("")
+        self.line_Correo.setText("")
+        self.line_Catalogo.setText("")
+        self.line_Direccion.setText("")
+        self.line_Telefono.setText("")
 
     def obtenerDatosTablaProveedor(self):
         # Selecciona la fila de la tabla
@@ -38,6 +54,15 @@ class proveedor_Window(QMainWindow, vw_Proveedores.Ui_Proveedores):
         self.line_Ruc.setText(ruc)
         self.line_Direccion.setText(direccion)
 
+    def notifMensaje(self, indicador, resultado):
+
+        if indicador == True:  # Se hizo correctamente la consulta a la base de datos
+            QMessageBox.about(self, "Exito!", "Los Datos Fueron " + resultado + " Correctamente")
+
+        else:  # No se hizo correctamente la consulta a la base de datos
+            QMessageBox.about(self, "Error", "Ha Ocurrido un Error")
+
+
 
     def llenarTablaProveedor(self, datos):
         print("\nDatos de la Tabla Proveedor")
@@ -55,6 +80,34 @@ class proveedor_Window(QMainWindow, vw_Proveedores.Ui_Proveedores):
             self.tb_Proveedor.setItem(tablerow, 5, QTableWidgetItem((row["telefono"])))
             self.tb_Proveedor.setItem(tablerow, 6, QTableWidgetItem(str(row["direccion"])))
             tablerow = tablerow + 1
+
+    def guardarProveedor(self):
+
+        try:
+            Proveedor.nombre = self.line_Nombre.text()
+            Proveedor.correo = self.line_Correo.text()
+            Proveedor.direccion = self.line_Direccion.toPlainText()
+            Proveedor.catalogo = self.line_Catalogo.toPlainText()
+            Proveedor.ruc = self.line_Ruc.text()
+            Proveedor.telefono = self.line_Telefono.text()
+
+
+            if self.line_Id.text() == "" and not self.line_Nombre.text() == "" and not self.line_Correo.text() == "" and not self.line_Ruc.text() == "" and not self.line_Telefono.text() == "" and not self.line_Direccion.toPlainText() == "" and not self.line_Catalogo.toPlainText() == "":
+                indicador = dt_Proveedor.Dt_Proveedor.guardarProveedor(Proveedor)  # Recoge los datos en los "Lines" de Qt Desinger para guardarlos en la base de datos
+
+                self.notifMensaje(indicador, "Guardados")
+
+                self.limpiarCampos()
+
+                self.llenarTablaUsuario(dt_Proveedor.Dt_Proveedor.listarProveedor())  # Se reinicia la tabla para poder recargar los datos guardados
+
+            else:
+
+                self.notifMensaje(False, "")
+                self.limpiarCampos()
+
+        except Exception as e:
+            print(f"Error en GuardarProveedor: {e}")
 
 
 if __name__ == '__main__':

@@ -1,0 +1,5 @@
+<RCC>
+  <qresource prefix="Imagenes">
+    <file>Fondo MAPA.jpeg</file>
+  </qresource>
+</RCC>
