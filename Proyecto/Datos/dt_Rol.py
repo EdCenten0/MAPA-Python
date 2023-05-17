@@ -1,6 +1,7 @@
 # Francisco de Jesús Melendez Simplina
 
 from Datos import Conexion
+from Entidades import Roles
 
 
 class Dt_Rol:
@@ -76,7 +77,38 @@ class Dt_Rol:
 
         return indicador
 
+    @classmethod
+    def listarAsinarRol(cls):
+        try:
+            cursor = Conexion.Conexion.obtenerConexion().cursor()
+            cursor.execute(f'''Select * FROM usuario_rol''')
+            querys = cursor.fetchall()
+            cursor.close()
+            return querys
+
+        except Exception as ex:
+            print(f"Error en llenarComboxRol: {ex}")
+
+    @classmethod
+    def ExisteRol(cls,Rol):
+        try:
+
+            existe = False
+            cursor = Conexion.Conexion.obtenerConexion().cursor()
+            cursor.execute(f"Select * FROM rol WHERE descripcion = '{Rol.rol}' ")
+            consulta = cursor.fetchall()
+
+            if consulta:
+                existe = True
+
+            return existe
+
+        except Exception as ex:
+            print(f"Error en Rol Existente:{ex}")
+
 
 
 if __name__ == '__main__':
-    print(Dt_Rol.listarRol())
+    print(Dt_Rol.ExisteRol())
+
+

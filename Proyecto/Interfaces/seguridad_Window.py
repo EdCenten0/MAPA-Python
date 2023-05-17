@@ -56,7 +56,19 @@ class seguridad_Window(QMainWindow, vw_Seguridad.Ui_Seguridad):
         self.llenarTablaOpcion(dt_Opcion.Dt_Opcion.listarOpcion())
         self.tb_Opcion.itemSelectionChanged.connect(self.obtenerDatosTablaOpcion)
 
+        #Asignar Rol
+        self.tablaAsignarRol(dt_Rol.Dt_Rol.listarAsinarRol())
+
+
+        #Combo Box
+        self.llenarComboxRoles(dt_Rol.Dt_Rol.listarRol())
+        self.llenarComboxUsuarios(dt_Usuario.Dt_Usuarios.listarUsuarios())
+        self.llenarComboxOpcion(dt_Opcion.Dt_Opcion.listarOpcion())
+
+
+
     '''***********************************************  Funciones reutilizables   ******************************************'''
+
 
     def limpiarCampos(self):
 
@@ -80,6 +92,7 @@ class seguridad_Window(QMainWindow, vw_Seguridad.Ui_Seguridad):
             self.line_Opcion_Id.clear()
             self.line_Opcion.clear()
 
+
     def notifMensaje(self, indicador, resultado):
 
         if indicador == True:  # Se hizo correctamente la consulta a la base de datos
@@ -89,6 +102,7 @@ class seguridad_Window(QMainWindow, vw_Seguridad.Ui_Seguridad):
             QMessageBox.about(self, "Error", "Ha Ocurrido un Error")
 
         '''***********************************************  Usuario   ******************************************'''
+
 
     def guardarUsuario(self):
 
@@ -125,6 +139,7 @@ class seguridad_Window(QMainWindow, vw_Seguridad.Ui_Seguridad):
         except Exception as e:
             print(f"Error: {e}")
 
+
     def editarUsuario(self):
 
         try:
@@ -156,10 +171,12 @@ class seguridad_Window(QMainWindow, vw_Seguridad.Ui_Seguridad):
             else:
 
                 self.notifMensaje(False, "")
+                self.limpiarCampos()
 
 
         except Exception as e:
             print(f"Error: {e}")
+
 
     def eliminarUsuario(self):
 
@@ -181,10 +198,12 @@ class seguridad_Window(QMainWindow, vw_Seguridad.Ui_Seguridad):
             else:
 
                 self.notifMensaje(False, "")
+                self.limpiarCampos()
 
 
         except Exception as e:
             print(f"Error: {e}")
+
 
     def obtenerDatosTablaUsuario(self):
 
@@ -208,15 +227,16 @@ class seguridad_Window(QMainWindow, vw_Seguridad.Ui_Seguridad):
         self.line_Usuario_Password.setText(clave)
         self.line_Usuario_Fecha.setDate(fechaTransformada)
 
+
     def llenarTablaUsuario(self, datos):
 
+        vacio = ""
         print("\nDatos de la Tablas Usuarios")
         i = len(datos)
         self.tb_Usuario.setRowCount(i)
         tablerow = 0
 
         for row in datos:
-            print(row)
             self.tb_Usuario.setItem(tablerow, 0, QTableWidgetItem(str(row["id_usuario"])))
             self.tb_Usuario.setItem(tablerow, 1, QTableWidgetItem((row["nombre"])))
             self.tb_Usuario.setItem(tablerow, 2, QTableWidgetItem((row["apellido"])))
@@ -226,7 +246,9 @@ class seguridad_Window(QMainWindow, vw_Seguridad.Ui_Seguridad):
             self.tb_Usuario.setItem(tablerow, 6, QTableWidgetItem(str(row["estado"])))
             tablerow = tablerow + 1
 
+
         '''******************************************  Rol   ******************************************'''
+
 
     def guardarRol(self):
 
@@ -248,9 +270,11 @@ class seguridad_Window(QMainWindow, vw_Seguridad.Ui_Seguridad):
             else:
 
                 self.notifMensaje(False, "")
+                self.limpiarCampos()
 
         except Exception as e:
             print(f"Error: {e}")
+
 
     def editarRol(self):
 
@@ -272,10 +296,12 @@ class seguridad_Window(QMainWindow, vw_Seguridad.Ui_Seguridad):
             else:
 
                 self.notifMensaje(False, "")
+                self.limpiarCampos()
 
 
         except Exception as e:
             print(f"Error: {e}")
+
 
     def eliminarRol(self):
 
@@ -296,10 +322,12 @@ class seguridad_Window(QMainWindow, vw_Seguridad.Ui_Seguridad):
             else:
 
                 self.notifMensaje(False, "")
+                self.limpiarCampos()
 
 
         except Exception as e:
             print(f"Error: {e}")
+
 
     def obtenerDatosTablaRol(self):
 
@@ -311,6 +339,7 @@ class seguridad_Window(QMainWindow, vw_Seguridad.Ui_Seguridad):
         # Asigna el contenido de la tabla seleccionada a los Edits Lines Correspondientes
         self.line_Rol_Id.setText(id)
         self.line_Rol.setText(rol)
+
 
     def llenarTablaRol(self, datos):
 
@@ -325,7 +354,9 @@ class seguridad_Window(QMainWindow, vw_Seguridad.Ui_Seguridad):
             self.tb_Rol.setItem(tablerow, 1, QTableWidgetItem((row["descripcion"])))
             tablerow = tablerow + 1
 
+
         '''******************************************  Opcion   ******************************************'''
+
 
     def guardarOpcion(self):
 
@@ -347,9 +378,11 @@ class seguridad_Window(QMainWindow, vw_Seguridad.Ui_Seguridad):
             else:
 
                 self.notifMensaje(False, "")
+                self.limpiarCampos()
 
         except Exception as e:
             print(f"Error: {e}")
+
 
     def editarOpcion(self):
 
@@ -376,6 +409,7 @@ class seguridad_Window(QMainWindow, vw_Seguridad.Ui_Seguridad):
         except Exception as e:
             print(f"Error: {e}")
 
+
     def eliminarOpcion(self):
 
         try:
@@ -400,6 +434,7 @@ class seguridad_Window(QMainWindow, vw_Seguridad.Ui_Seguridad):
         except Exception as e:
             print(f"Error: {e}")
 
+
     def obtenerDatosTablaOpcion(self):
 
         # Selecciona la fila de la tabla
@@ -410,6 +445,7 @@ class seguridad_Window(QMainWindow, vw_Seguridad.Ui_Seguridad):
         # Asigna el contenido de la tabla seleccionada a los Edits Lines Correspondientes
         self.line_Opcion_Id.setText(id)
         self.line_Opcion.setText(opcion)
+
 
     def llenarTablaOpcion(self, datos):
 
@@ -422,6 +458,51 @@ class seguridad_Window(QMainWindow, vw_Seguridad.Ui_Seguridad):
             print(row)
             self.tb_Opcion.setItem(tablerow, 0, QTableWidgetItem(str(row["idopcion"])))
             self.tb_Opcion.setItem(tablerow, 1, QTableWidgetItem((row["descripcion"])))
+            tablerow = tablerow + 1
+
+        '''******************************************  Asignar Rol y Opcion   ******************************************'''
+
+    def llenarComboxRoles(self, datos):
+        print("\nDatos de la combo box Rol")
+        i = len(datos)
+
+        for registro in datos:
+            print(registro)
+            self.cb_Asignar_Rol_idRol.addItem(registro["descripcion"])
+            self.cb_Asignar_Opcion_idRol.addItem(registro["descripcion"])
+
+
+    def llenarComboxUsuarios(self, datos):
+        print("\nDatos de la Combo Box Usuarios")
+        i = len(datos)
+
+        for registro in datos:
+            print(registro)
+            self.cb_Asignar_Rol_idUsuario.addItem(registro["user"])
+
+
+    def llenarComboxOpcion(self, datos):
+        print("\nDatos de la combo box Opcion")
+        i = len(datos)
+
+        for registro in datos:
+            print(registro)
+            self.cb_Asignar_Opcion_idOpcion.addItem(registro["descripcion"])
+
+
+    def tablaAsignarRol(self, datos):
+        print("\nDatos de la Tabla Asignar Rol")
+        i = len(datos)
+        self.tb_Asignar_Rol.setRowCount(i)
+        tablerow = 0
+
+        for row in datos:
+            print(row)
+            self.tb_Asignar_Rol.setItem(tablerow, 0, QTableWidgetItem(str(row["usuario_rol_id"])))
+
+            self.tb_Asignar_Rol.setItem(tablerow, 1, QTableWidgetItem(str(row["id_usuario"])))
+
+            self.tb_Asignar_Rol.setItem(tablerow, 2, QTableWidgetItem(str(row["id_rol"])))
             tablerow = tablerow + 1
 
         '''******************************************  Menu Principal   ******************************************'''

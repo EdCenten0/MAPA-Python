@@ -74,8 +74,23 @@ class Dt_Usuarios:
 
         return indicador
 
+    @classmethod
+    def ExisteUsuario(cls,Usuarios):
+        try:
 
+            existe = False
+            cursor = Conexion.Conexion.obtenerConexion().cursor()
+            cursor.execute(f"Select * FROM usuario WHERE user = '{Usuarios.user}' ")
+            consulta = cursor.fetchall()
+
+            if consulta:
+                existe = True
+
+            return existe
+
+        except Exception as ex:
+            print(f"Error en Usuario Existente:{ex}")
 
 if __name__ == '__main__':
-    print(Dt_Usuarios.listarUsuarios)
+    print(Dt_Usuarios.llenarComboxUsuario())
 

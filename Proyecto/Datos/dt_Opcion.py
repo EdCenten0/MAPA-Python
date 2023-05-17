@@ -74,6 +74,34 @@ class Dt_Opcion:
 
         return indicador
 
+    @classmethod
+    def tablaAsignarOpcion(cls):
+        try:
+            cursor = Conexion.Conexion.obtenerConexion().cursor()
+            cursor.execute(f'''Select descripcion FROM opcion''')
+            querys = cursor.fetchall()
+            cursor.close()
+            return querys
+
+        except Exception as ex:
+            print(f"Error en llenarComboxOpcion: {ex}")
+
+    @classmethod
+    def ExisteRol(cls,Opcion):
+        try:
+
+            existe = False
+            cursor = Conexion.Conexion.obtenerConexion().cursor()
+            cursor.execute(f"Select * FROM opcion WHERE descripcion = '{Opcion.opcion}' ")
+            consulta = cursor.fetchall()
+
+            if consulta:
+                existe = True
+
+            return existe
+
+        except Exception as ex:
+            print(f"Error en Opcion Existente:{ex}")
 
 
 if __name__ == '__main__':
