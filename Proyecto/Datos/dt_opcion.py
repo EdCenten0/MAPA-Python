@@ -20,7 +20,7 @@ class Dt_Opcion:
 
         try:
             cursor = Conexion.Conexion.obtenerConexion().cursor()
-            sql = (f'''INSERT INTO opcion (descripcion) VALUES ('{Opcion.opcion}')''')
+            sql = (f'''INSERT INTO opcion (descripcion ,estado) VALUES ('{Opcion.opcion}', '{1}')''')
             cursor.execute(sql)
             cursor.connection.commit()
             cursor.close()
@@ -41,7 +41,7 @@ class Dt_Opcion:
 
         try:
             cursor = Conexion.Conexion.obtenerConexion().cursor()
-            sql = (f'''UPDATE opcion SET descripcion = "{Opcion.opcion}" WHERE idopcion = {Opcion.idOpcion}''')
+            sql = (f'''UPDATE opcion SET descripcion = "{Opcion.opcion}", estado = '{2}' WHERE idopcion = {Opcion.idOpcion}''')
             cursor.execute(sql)
             cursor.connection.commit()
             cursor.close()

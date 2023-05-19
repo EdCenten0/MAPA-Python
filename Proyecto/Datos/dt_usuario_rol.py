@@ -21,7 +21,7 @@ class Dt_Usuario_rol:
         try:
 
             cursor = Conexion.Conexion.obtenerConexion().cursor()
-            sql = (f'''INSERT INTO usuario_rol (id_usuario, id_rol) VALUES ('{Usuario_rol.id_usuario}','{Usuario_rol.id_rol}')''')
+            sql = (f'''INSERT INTO usuario_rol (id_usuario, id_rol, estado) VALUES ('{Usuario_rol.id_usuario}','{Usuario_rol.id_rol}', '{1}')''')
             cursor.execute(sql)
             cursor.connection.commit()
             cursor.close()
