@@ -2,6 +2,8 @@ import sys
 
 from PyQt5.QtWidgets import QMainWindow, QApplication
 
+from Datos import dt_Rol
+from Entidades import Usuario_rol
 from Interfaces import vw_Registrar
 from Interfaces.vw_Login import Ui_Login
 
@@ -11,18 +13,39 @@ class registrar_Window(QMainWindow, vw_Registrar.Ui_Registrar):
         super(registrar_Window, self).__init__()
         self.setupUi(self)
 
-        self.bt_registrar.clicked.connect(self.abrirLogin)
+        self.bt_registrar.clicked.connect(self.registrarUsuario)
+        self.cb_rol.addItem(self.llenarComboxRol(dt_Rol.Dt_Rol.listarRol()))
 
-    def abrirLogin(self):
+    def registrarUsuario(self):
         try:
+            if not self.line_usuario.text() == "" and not self.line_clave.text() == "" and not self.line_nombre.text() == "" and not self.line_apellido.text() == "" and not self.cb_rol.itemText():
+                pass
+
+            else:
+                pass
+
             self.close()
-            self.ventana = QMainWindow()
-            self.ventana_login = Ui_Login()
-            self.ventana_login.setupUi(self.ventana)
-            self.ventana.show()
 
         except Exception as e:
             print(f"ERROR: {e}")
+
+
+    def llenarComboxRol(self, datos):
+        try:
+            index = 0
+            print("\nDatos de la combo box Rol")
+            for registro in datos:
+                print(registro)
+                self.cb_rol.addItem(registro["descripcion"],registro["id_rol"])
+
+            print(self.cb_rol.itemData(index))
+            print(self.cb_rol.itemText(index))
+
+
+        except Exception as e:
+            print(f"ERROR: {e}")
+
+
 
 
 if __name__ == '__main__':
@@ -30,4 +53,5 @@ if __name__ == '__main__':
     mw = registrar_Window()
     mw.show()
     sys.exit(app.exec_())
+
 

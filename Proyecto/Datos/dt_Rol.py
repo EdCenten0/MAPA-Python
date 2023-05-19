@@ -77,17 +77,7 @@ class Dt_Rol:
 
         return indicador
 
-    @classmethod
-    def listarAsinarRol(cls):
-        try:
-            cursor = Conexion.Conexion.obtenerConexion().cursor()
-            cursor.execute(f'''Select * FROM usuario_rol''')
-            querys = cursor.fetchall()
-            cursor.close()
-            return querys
 
-        except Exception as ex:
-            print(f"Error en llenarComboxRol: {ex}")
 
     @classmethod
     def ExisteRol(cls,Rol):

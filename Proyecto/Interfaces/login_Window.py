@@ -13,7 +13,6 @@ class login_Window(QMainWindow, vw_Login.Ui_Login):
 
     def abrirRegistrar(self):
         try:
-            self.close()
             self.ventana2 = QMainWindow()
             self.ventana_registrar = Ui_Registrar()
             self.ventana_registrar.setupUi(self.ventana2)
