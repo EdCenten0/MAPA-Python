@@ -6,7 +6,9 @@ from datetime import datetime
 from PyQt5.QtCore import QDate
 from PyQt5.QtWidgets import QTableWidgetItem, QMessageBox
 
-from Datos import dt_usuario, dt_rol, dt_opcion
+from Datos import dt_usuario, dt_rol, dt_opcion, dt_rol_opcion, dt_usuario_rol
+from Entidades import usuario_rol
+from Entidades.rol_opcion import Rol_opcion
 from Entidades.usuarios import Usuarios
 from Entidades.roles import Rol
 from Entidades.opciones import Opcion
@@ -51,25 +53,25 @@ class seguridad_Window(QMainWindow, vw_seguridad.Ui_Seguridad):
         # Acciones de las tablas
 
         # Usuarios
-        self.llenarTablaUsuario(dt_Usuario.Dt_Usuarios.listarUsuarios())
+        self.llenarTablaUsuario(dt_usuario.Dt_Usuarios.listarUsuarios())
         self.tb_Usuario.itemSelectionChanged.connect(self.obtenerDatosTablaUsuario)
 
         # Roles
-        self.llenarTablaRol(dt_Rol.Dt_Rol.listarRol())
+        self.llenarTablaRol(dt_rol.Dt_Rol.listarRol())
         self.tb_Rol.itemSelectionChanged.connect(self.obtenerDatosTablaRol)
 
         # Opciones
-        self.llenarTablaOpcion(dt_Opcion.Dt_Opcion.listarOpcion())
+        self.llenarTablaOpcion(dt_opcion.Dt_Opcion.listarOpcion())
         self.tb_Opcion.itemSelectionChanged.connect(self.obtenerDatosTablaOpcion)
 
         #Asignar Rol
-        self.llenarTablaUsuarioRol(dt_Usuario_rol.Dt_Usuario_rol.listarUsuario_rol())
+        self.llenarTablaUsuarioRol(dt_usuario_rol.Dt_Usuario_rol.listarUsuario_rol())
         self.llenarTablaRolOpcion(dt_rol_opcion.Dt_rol_opcion.listarRolOpcion())
 
         #Combo Box
-        self.llenarComboxRoles(dt_Rol.Dt_Rol.listarRol())
-        self.llenarComboxUsuarios(dt_Usuario.Dt_Usuarios.listarUsuarios())
-        self.llenarComboxOpcion(dt_Opcion.Dt_Opcion.listarOpcion())
+        self.llenarComboxRoles(dt_rol.Dt_Rol.listarRol())
+        self.llenarComboxUsuarios(dt_usuario.Dt_Usuarios.listarUsuarios())
+        self.llenarComboxOpcion(dt_opcion.Dt_Opcion.listarOpcion())
 
 
 
@@ -128,14 +130,14 @@ class seguridad_Window(QMainWindow, vw_seguridad.Ui_Seguridad):
 
             if self.line_Usuario_Id.text() == "" and not self.line_Usuario_Nombre.text() == "" and not self.line_Usuario_Apellido.text() == "" and not self.line_Usuario_User.text() == "" and not self.line_Usuario_Password.text() == "" and not self.line_Usuario_Fecha.text() == "":
 
-                indicador = dt_Usuario.Dt_Usuarios.guardarUsuario(Usuarios)  # Recoge los datos en los "Lines" de Qt Desinger para guardarlos en la base de datos
+                indicador = dt_usuario.Dt_Usuarios.guardarUsuario(Usuarios)  # Recoge los datos en los "Lines" de Qt Desinger para guardarlos en la base de datos
 
                 self.notifMensaje(indicador, "Guardados")
 
                 self.limpiarCampos()
 
                 self.llenarTablaUsuario(
-                    dt_Usuario.Dt_Usuarios.listarUsuarios())  # Se reinicia la tabla para poder recargar los datos guardados
+                    dt_usuario.Dt_Usuarios.listarUsuarios())  # Se reinicia la tabla para poder recargar los datos guardados
 
             else:
 
@@ -164,7 +166,7 @@ class seguridad_Window(QMainWindow, vw_seguridad.Ui_Seguridad):
 
             if not self.line_Usuario_Id.text() == "" and not self.line_Usuario_Nombre.text() == "" and not self.line_Usuario_Apellido.text() == "" and not self.line_Usuario_User.text() == "" and not self.line_Usuario_Password.text() == "" and not self.line_Usuario_Fecha.text() == "":
 
-                indicador = dt_Usuario.Dt_Usuarios.editarUsuario(
+                indicador = dt_usuario.Dt_Usuarios.editarUsuario(
                     Usuarios)  # Recoge los datos en los "Lines" de Qt Desinger para editarlos en la base de datos
 
                 self.notifMensaje(indicador, "Editados")
@@ -172,7 +174,7 @@ class seguridad_Window(QMainWindow, vw_seguridad.Ui_Seguridad):
                 self.limpiarCampos()
 
                 self.llenarTablaUsuario(
-                    dt_Usuario.Dt_Usuarios.listarUsuarios())  # Se reinicia la tabla para poder recargar los datos guardados
+                    dt_usuario.Dt_Usuarios.listarUsuarios())  # Se reinicia la tabla para poder recargar los datos guardados
 
             else:
 
@@ -192,14 +194,14 @@ class seguridad_Window(QMainWindow, vw_seguridad.Ui_Seguridad):
 
             if not self.line_Usuario_Id.text() == "" and not self.line_Usuario_Nombre.text() == "" and not self.line_Usuario_Apellido.text() == "" and not self.line_Usuario_User.text() == "" and not self.line_Usuario_Password.text() == "" and not self.line_Usuario_Fecha.text() == "":
 
-                indicador = dt_Usuario.Dt_Usuarios.eliminarUsuario(Usuarios)
+                indicador = dt_usuario.Dt_Usuarios.eliminarUsuario(Usuarios)
 
                 self.notifMensaje(indicador, "Eliminados")
 
                 self.limpiarCampos()
 
                 self.llenarTablaUsuario(
-                    dt_Usuario.Dt_Usuarios.listarUsuarios())  # Se reinicia la tabla para poder recargar los datos guardados
+                    dt_usuario.Dt_Usuarios.listarUsuarios())  # Se reinicia la tabla para poder recargar los datos guardados
 
             else:
 
@@ -264,14 +266,14 @@ class seguridad_Window(QMainWindow, vw_seguridad.Ui_Seguridad):
 
             if self.line_Rol_Id.text() == "" and not self.line_Rol.text() == "":
 
-                indicador = dt_Rol.Dt_Rol.guardarRol(Rol)
+                indicador = dt_rol.Dt_Rol.guardarRol(Rol)
 
                 self.notifMensaje(indicador, "Guardados")
 
                 self.limpiarCampos()
 
                 self.llenarTablaRol(
-                    dt_Rol.Dt_Rol.listarRol())  # Se reinicia la tabla para poder recargar los datos guardados
+                    dt_rol.Dt_Rol.listarRol())  # Se reinicia la tabla para poder recargar los datos guardados
 
             else:
 
@@ -290,14 +292,14 @@ class seguridad_Window(QMainWindow, vw_seguridad.Ui_Seguridad):
 
             if not self.line_Rol_Id.text() == "" and not self.line_Rol.text() == "":
 
-                indicador = dt_Rol.Dt_Rol.editarRol(Rol)
+                indicador = dt_rol.Dt_Rol.editarRol(Rol)
 
                 self.notifMensaje(indicador, "Editados")
 
                 self.limpiarCampos()
 
                 self.llenarTablaRol(
-                    dt_Rol.Dt_Rol.listarRol())  # Se reinicia la tabla para poder recargar los datos guardados
+                    dt_rol.Dt_Rol.listarRol())  # Se reinicia la tabla para poder recargar los datos guardados
 
             else:
 
@@ -316,14 +318,14 @@ class seguridad_Window(QMainWindow, vw_seguridad.Ui_Seguridad):
 
             if not self.line_Rol_Id.text() == "" and not self.line_Rol.text() == "":
 
-                indicador = dt_Rol.Dt_Rol.eliminarRol(Rol)
+                indicador = dt_rol.Dt_Rol.eliminarRol(Rol)
 
                 self.notifMensaje(indicador, "Eliminados")
 
                 self.limpiarCampos()
 
                 self.llenarTablaRol(
-                    dt_Rol.Dt_Rol.listarRol())  # Se reinicia la tabla para poder recargar los datos guardados
+                    dt_rol.Dt_Rol.listarRol())  # Se reinicia la tabla para poder recargar los datos guardados
 
             else:
 
@@ -372,14 +374,14 @@ class seguridad_Window(QMainWindow, vw_seguridad.Ui_Seguridad):
 
             if self.line_Opcion_Id.text() == "" and not self.line_Opcion.text() == "":
 
-                indicador = dt_Opcion.Dt_Opcion.guardarOpcion(Opcion)
+                indicador = dt_opcion.Dt_Opcion.guardarOpcion(Opcion)
 
                 self.notifMensaje(indicador, "Guardados")
 
                 self.limpiarCampos()
 
                 self.llenarTablaOpcion(
-                    dt_Opcion.Dt_Opcion.listarOpcion())  # Se reinicia la tabla para poder recargar los datos guardados
+                    dt_opcion.Dt_Opcion.listarOpcion())  # Se reinicia la tabla para poder recargar los datos guardados
 
             else:
 
@@ -398,14 +400,14 @@ class seguridad_Window(QMainWindow, vw_seguridad.Ui_Seguridad):
 
             if not self.line_Opcion_Id.text() == "" and not self.line_Opcion.text() == "":
 
-                indicador = dt_Opcion.Dt_Opcion.editarOpcion(Opcion)
+                indicador = dt_opcion.Dt_Opcion.editarOpcion(Opcion)
 
                 self.notifMensaje(indicador, "Editados")
 
                 self.limpiarCampos()
 
                 self.llenarTablaOpcion(
-                    dt_Opcion.Dt_Opcion.listarOpcion())  # Se reinicia la tabla para poder recargar los datos guardados
+                    dt_opcion.Dt_Opcion.listarOpcion())  # Se reinicia la tabla para poder recargar los datos guardados
 
             else:
 
@@ -423,14 +425,14 @@ class seguridad_Window(QMainWindow, vw_seguridad.Ui_Seguridad):
 
             if not self.line_Opcion_Id.text() == "" and not self.line_Opcion.text() == "":
 
-                indicador = dt_Opcion.Dt_Opcion.eliminarOpcion(Opcion)
+                indicador = dt_opcion.Dt_Opcion.eliminarOpcion(Opcion)
 
                 self.notifMensaje(indicador, "Eliminados")
 
                 self.limpiarCampos()
 
                 self.llenarTablaOpcion(
-                    dt_Opcion.Dt_Opcion.listarOpcion())  # Se reinicia la tabla para poder recargar los datos guardados
+                    dt_opcion.Dt_Opcion.listarOpcion())  # Se reinicia la tabla para poder recargar los datos guardados
 
             else:
 
@@ -530,14 +532,14 @@ class seguridad_Window(QMainWindow, vw_seguridad.Ui_Seguridad):
     def guardarUsuarioRol(self):
         try:
 
-            Usuario_rol.id_rol = self.cb_Asignar_Rol_idRol.itemData(self.cb_Asignar_Rol_idRol.currentIndex())
+            usuario_rol.id_rol = self.cb_Asignar_Rol_idRol.itemData(self.cb_Asignar_Rol_idRol.currentIndex())
 
-            Usuario_rol.id_usuario = self.cb_Asignar_Rol_idUsuario.itemData(self.cb_Asignar_Rol_idUsuario.currentIndex())
+            usuario_rol.id_usuario = self.cb_Asignar_Rol_idUsuario.itemData(self.cb_Asignar_Rol_idUsuario.currentIndex())
 
-            indicador = dt_Usuario_rol.Dt_Usuario_rol.guardarUsuarioRol(Usuario_rol)
+            indicador = dt_usuario_rol.Dt_Usuario_rol.guardarUsuarioRol(usuario_rol)
 
 
-            self.llenarTablaUsuarioRol(dt_Usuario_rol.Dt_Usuario_rol.listarUsuario_rol())
+            self.llenarTablaUsuarioRol(dt_usuario_rol.Dt_Usuario_rol.listarUsuario_rol())
 
 
         except Exception as e:
@@ -548,8 +550,8 @@ class seguridad_Window(QMainWindow, vw_seguridad.Ui_Seguridad):
 
             Rol_opcion.id_rol = self.cb_Asignar_Opcion_idRol.itemData(self.cb_Asignar_Opcion_idRol.currentIndex())
 
-            Rol_opcion.id_opcion = self.cb_Asignar_Opcion_idRol.itemData(
-                    self.cb_Asignar_Opcion_idRol.currentIndex())
+            Rol_opcion.id_opcion = self.cb_Asignar_Opcion_idOpcion.itemData(
+                    self.cb_Asignar_Opcion_idOpcion.currentIndex())
 
             indicador = dt_rol_opcion.Dt_rol_opcion.guardarRolOpcion(Rol_opcion)
 

@@ -17,7 +17,7 @@ class proveedor_Window(QMainWindow, vw_proveedor.Ui_Proveedores):
         self.setupUi(self)
 
         #Tabla
-        self.llenarTablaProveedor(dt_Proveedor.Dt_Proveedor.listarProveedor())
+        self.llenarTablaProveedor(dt_proveedor.Dt_Proveedor.listarProveedor())
         self.tb_Proveedor.itemSelectionChanged.connect(self.obtenerDatosTablaProveedor)
 
         #Botones
@@ -93,13 +93,13 @@ class proveedor_Window(QMainWindow, vw_proveedor.Ui_Proveedores):
 
 
             if self.line_Id.text() == "" and not self.line_Nombre.text() == "" and not self.line_Correo.text() == "" and not self.line_Ruc.text() == "" and not self.line_Telefono.text() == "" and not self.line_Direccion.toPlainText() == "" and not self.line_Catalogo.toPlainText() == "":
-                indicador = dt_Proveedor.Dt_Proveedor.guardarProveedor(Proveedor)  # Recoge los datos en los "Lines" de Qt Desinger para guardarlos en la base de datos
+                indicador = dt_proveedor.Dt_Proveedor.guardarProveedor(Proveedor)  # Recoge los datos en los "Lines" de Qt Desinger para guardarlos en la base de datos
 
                 self.notifMensaje(indicador, "Guardados")
 
                 self.limpiarCampos()
 
-                self.llenarTablaUsuario(dt_Proveedor.Dt_Proveedor.listarProveedor())  # Se reinicia la tabla para poder recargar los datos guardados
+                self.llenarTablaUsuario(dt_proveedor.Dt_Proveedor.listarProveedor())  # Se reinicia la tabla para poder recargar los datos guardados
 
             else:
 

@@ -2,6 +2,7 @@ import sys
 
 from PyQt5.QtWidgets import QMainWindow, QApplication
 
+from Datos import dt_rol
 from Interfaces import vw_registrar_usuario_login
 from Interfaces.vw_login import Ui_Login
 
@@ -12,7 +13,7 @@ class registrar_Window(QMainWindow, vw_registrar_usuario_login.Ui_Registrar):
         self.setupUi(self)
 
         self.bt_registrar.clicked.connect(self.registrarUsuario)
-        self.cb_rol.addItem(self.llenarComboxRol(dt_Rol.Dt_Rol.listarRol()))
+        self.cb_rol.addItem(self.llenarComboxRol(dt_rol.Dt_Rol.listarRol()))
 
     def registrarUsuario(self):
         try:
