@@ -3,8 +3,9 @@
 
 class Proveedor:
 
-    def __init__(self, idProveedor, nombre, ruc, correo, catalogo, telefono, direccion,estado):
-        self.idProveedor = idProveedor
+    def __init__(self, id_proveedor, id_tienda, nombre, ruc, correo, catalogo, telefono, direccion,estado):
+        self.id_proveedor = id_proveedor
+        self.id_tienda = id_tienda
         self.nombre = nombre
         self.ruc = ruc
         self.correo = correo
@@ -15,22 +16,31 @@ class Proveedor:
 
     def __str__(self):
         return f'''
-        idProveedor = {self.idProveedor}
+        id_proveedor = {self.id_proveedor}
+        id_tienda = {self.id_tienda}
         nombre = {self.nombre}
         ruc = {self.ruc}
         correo = {self.correo}
-        catalogo = {self.telefono}
+        catalogo = {self.catalogo}
         direccion = {self.direccion}
         estado = {self.estado}
         '''
 
     @property
-    def idProveedor(self):
-        return self.idProveedor
+    def id_proveedor(self):
+        return self.id_proveedor
 
-    @idProveedor.setter
-    def idProveedor(self, idProveedor):
-        self.idProveedor = idProveedor
+    @id_proveedor.setter
+    def id_proveedor(self, id_proveedor):
+        self.id_proveedor = id_proveedor
+
+    @property
+    def id_tienda(self):
+        return self.id_tienda
+
+    @id_tienda.setter
+    def id_tienda(self, id_tienda):
+        self.id_tienda = id_tienda
 
     @property
     def nombre(self):
@@ -71,6 +81,14 @@ class Proveedor:
     @direccion.setter
     def direccion(self, direccion):
         self.direccion = direccion
+
+    @property
+    def catalogo(self):
+        return self.catalogo
+
+    @catalogo.setter
+    def catalogo(self, catalogo):
+        self.catalogo = catalogo
 
     @property
     def estado(self):

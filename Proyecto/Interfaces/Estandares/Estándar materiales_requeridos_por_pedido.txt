@@ -1,0 +1,36 @@
+Estandares de la ventana materiales_requeridos_por_pedido:
+
+Recursos:
+
+Fondo:
+Colores del Background:
+HEX : #3f4964
+RGB : 63, 73, 100
+HSL  : 223, 22%, 31%
+
+Letra:
+- Tipo de letra: Ubuntu regular
+- Tamaño: 11
+
+QMainWindow: background
+
+Line Edits:
+- line_material
+- line_descripcion
+- line_precio_por_unidad
+- line_cantidad
+- line_precio_total
+
+ComboBoxes:
+- combobox_cantidad
+
+Botones:
+- bt_guardar
+- bt_editar
+- bt_eliminar
+- bt_vaciar_campos
+
+
+QTableWidget:
+- table_materiales_requeridos_por_pedido
+

@@ -1,3 +1,6 @@
+# Conexion con la base de datos
+Conexion.py
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
@@ -119,6 +122,7 @@ venv/
 ENV/
 env.bak/
 venv.bak/
+>>>>>>> parent of dbb07e0 (Si)
 
 # Spyder project settings
 .spyderproject

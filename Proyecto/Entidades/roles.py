@@ -2,25 +2,25 @@
 #Entidad de Rol
 
 class Rol:
-    def __init__(self, idRol, rol, estado):
-        self.idRol = idRol
+    def __init__(self, id_rol, rol, estado):
+        self.id_rol = id_rol
         self.rol = rol
         self.estado = estado
 
     def __str__(self):
         return f'''
-        idRol: {self.idRol}
+        id_rol: {self.id_rol}
         rol: {self.rol}
         estado: {self.estado}
         '''
 
     @property
-    def idRol(self):
-        return self.idRol
+    def id_rol(self):
+        return self.id_rol
 
-    @idRol.setter
-    def idRol(self, idRol):
-        self.idRol = idRol
+    @id_rol.setter
+    def id_rol(self, id_rol):
+        self.id_rol = id_rol
 
     @property
     def rol(self):

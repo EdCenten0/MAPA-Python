@@ -2,8 +2,8 @@
 #Entidad de Usuario
 
 class Usuarios:
-    def __init__(self,idUsuario, nombre, apellido, user, password, fechaCreacion, estado):
-        self.idUsuario = idUsuario
+    def __init__(self,id_usuario, nombre, apellido, user, password, fechaCreacion, estado):
+        self.id_usuario = id_usuario
         self.nombre = nombre
         self.apellido = apellido
         self.user = user
@@ -13,7 +13,7 @@ class Usuarios:
 
     def __str__(self):
         return f'''
-        idUsuario: {self.idUsuario}
+        id_usuario: {self.id_usuario}
         nombre: {self.nombre}
         apellido: {self.apellido}
         user: {self.user}
@@ -23,12 +23,12 @@ class Usuarios:
         '''
 
     @property
-    def idUsuario(self):
-        return self.idUsuario
+    def id_usuario(self):
+        return self.id_usuario
 
-    @idUsuario.setter
-    def idUsuario(self, idUsuario):
-        self.idUsuario = idUsuario
+    @id_usuario.setter
+    def id_usuario(self, id_usuario):
+        self.id_usuario = id_usuario
 
     @property
     def nombre(self):

@@ -16,7 +16,7 @@ Letra:
 
 
 
-QMainWindow: Background
+QMainWindow: Proveedores
 
 
 Line Edits:

@@ -1,4 +1,16 @@
-Estructura de formularios 
+Estándar de la ventana Seguridad:
+
+Fondo:
+Colores del Background:
+HEX : #3f4964
+RGB : 63, 73, 100
+HSL  : 223, 22%, 31%
+
+
+
+Letra:
+- Tipo de letra: MS Shell Dlg 2 (Negrita)
+- Tamaño: 14
 
 
 1)Login:
@@ -65,5 +77,36 @@ Botones:
 
 Tabla Widget:
 - tb_Opcion
+
+
+IV)Asignar Rol
+
+Line:
+- line_Asignar_Rol_Id (Enabled)
+- cb_Asignar_Rol_idUsuario
+- cb_Asignar_Rol_idRol
+
+Botones:
+- bt_Eliminar_Asignar_Rol
+
+
+Tabla Widget: 
+- tb_Asignar_Rol
+
+
+V)Asignar Opcion
+
+Line:
+- line_Asignar_Opcion_Id (Enabled)
+- cb_Asignar_Opcion_idRol
+- cb_Asignar_Opcion_idOpcion
+
+
+Botones:
+- bt_Eliminar_Asignar_Opcion
+
+
+Tabla Widget: 
+- tb_Asignar_Opcion
 
 

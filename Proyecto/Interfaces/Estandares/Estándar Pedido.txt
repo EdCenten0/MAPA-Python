@@ -1,4 +1,4 @@
-Estandares de la ventana Pedido:
+Estándar de la ventana Pedido:
 
 Recursos:
 
@@ -13,8 +13,6 @@ HSL  : 223, 22%, 31%
 Letra:
 - Tipo de letra: MS Shell Dlg 2 (Negrita)
 - Tamaño: 14
-
-
 
 QMainWindow: Background
 
