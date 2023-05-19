@@ -1,10 +1,10 @@
 import sys
 from PyQt5.QtWidgets import QMainWindow, QApplication, QMessageBox, QWidget
-from Interfaces import vw_Login, vw_Registrar
-from Interfaces.vw_Registrar import Ui_Registrar
-from registrar_Window import registrar_Window
+from Interfaces import vw_login, vw_registrar_usuario_login
+from Interfaces.vw_registrar_usuario_login import Ui_Registrar
+from vw_registrar_usuario import registrar_Window
 
-class login_Window(QMainWindow, vw_Login.Ui_Login):
+class login_Window(QMainWindow, vw_login.Ui_Login):
     def __init__(self, parent=None):
         super(login_Window, self).__init__(parent)
         self.setupUi(self)

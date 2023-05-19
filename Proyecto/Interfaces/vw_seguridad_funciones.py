@@ -6,19 +6,17 @@ from datetime import datetime
 from PyQt5.QtCore import QDate
 from PyQt5.QtWidgets import QTableWidgetItem, QMessageBox
 
-from Datos import dt_Usuario, dt_Rol, dt_Opcion, dt_Usuario_rol, dt_rol_opcion
-from Entidades import Usuario_rol
-from Entidades.Usuarios import Usuarios
-from Entidades.Roles import Rol
-from Entidades.Opciones import Opcion
+from Datos import dt_usuario, dt_rol, dt_opcion
+from Entidades.usuarios import Usuarios
+from Entidades.roles import Rol
+from Entidades.opciones import Opcion
 
 from PyQt5.QtWidgets import QApplication, QMainWindow
 
-from Entidades.rol_opcion import Rol_opcion
-from Interfaces import vw_Seguridad
+from Interfaces import vw_seguridad
 
 
-class seguridad_Window(QMainWindow, vw_Seguridad.Ui_Seguridad):
+class seguridad_Window(QMainWindow, vw_seguridad.Ui_Seguridad):
     def __init__(self, parent=None):
         super(seguridad_Window, self).__init__(parent)
         self.setupUi(self)

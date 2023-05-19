@@ -5,12 +5,12 @@ import sys
 
 from PyQt5.QtWidgets import QMainWindow, QApplication, QTableWidgetItem, QMessageBox
 
-from Datos import dt_Proveedor
-from Entidades.Proveedores import Proveedor
-from Interfaces import vw_Proveedores
+from Datos import dt_proveedor
+from Entidades.proveedores import Proveedor
+from Interfaces import vw_proveedor
 
 
-class proveedor_Window(QMainWindow, vw_Proveedores.Ui_Proveedores):
+class proveedor_Window(QMainWindow, vw_proveedor.Ui_Proveedores):
 
     def __init__(self, parent=None):
         super(proveedor_Window, self).__init__(parent)
