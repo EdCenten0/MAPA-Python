@@ -23,6 +23,9 @@ class proveedor_Window(QMainWindow, vw_proveedor.Ui_Proveedores):
         #Botones
         self.bt_Guardar.clicked.connect(self.guardarProveedor)
         self.bt_Vaciar.clicked.connect(self.limpiarCampos)
+        self.bt_Editar.clicked.connect(self.editarProveedor)
+        self.bt_Eliminar.clicked.connect(self.eliminarProveedor)
+
 
 
     def limpiarCampos(self):
@@ -99,7 +102,7 @@ class proveedor_Window(QMainWindow, vw_proveedor.Ui_Proveedores):
 
                 self.limpiarCampos()
 
-                self.llenarTablaUsuario(dt_proveedor.Dt_Proveedor.listarProveedor())  # Se reinicia la tabla para poder recargar los datos guardados
+                self.llenarTablaProveedor(dt_proveedor.Dt_Proveedor.listarProveedor())  # Se reinicia la tabla para poder recargar los datos guardados
 
             else:
 
@@ -108,6 +111,61 @@ class proveedor_Window(QMainWindow, vw_proveedor.Ui_Proveedores):
 
         except Exception as e:
             print(f"Error en GuardarProveedor: {e}")
+
+
+    def editarProveedor(self):
+
+        try:
+            Proveedor.id_proveedor = self.line_Id.text()
+            Proveedor.nombre = self.line_Nombre.text()
+            Proveedor.correo = self.line_Correo.text()
+            Proveedor.direccion = self.line_Direccion.toPlainText()
+            Proveedor.catalogo = self.line_Catalogo.toPlainText()
+            Proveedor.ruc = self.line_Ruc.text()
+            Proveedor.telefono = self.line_Telefono.text()
+
+
+            if not self.line_Id.text() == "" and not self.line_Nombre.text() == "" and not self.line_Correo.text() == "" and not self.line_Ruc.text() == "" and not self.line_Telefono.text() == "" and not self.line_Direccion.toPlainText() == "" and not self.line_Catalogo.toPlainText() == "":
+                indicador = dt_proveedor.Dt_Proveedor.editarProveedor(Proveedor)  # Recoge los datos en los "Lines" de Qt Desinger para guardarlos en la base de datos
+
+                self.notifMensaje(indicador, "Editados")
+
+                self.limpiarCampos()
+
+                self.llenarTablaProveedor(dt_proveedor.Dt_Proveedor.listarProveedor())  # Se reinicia la tabla para poder recargar los datos guardados
+
+            else:
+
+                self.notifMensaje(False, "")
+                self.limpiarCampos()
+
+        except Exception as e:
+            print(f"Error en EditarProveedor: {e}")
+
+
+    def eliminarProveedor(self):
+
+        try:
+            Proveedor.id_proveedor = self.line_Id.text()
+
+            if not self.line_Id.text() == "" :
+                indicador = dt_proveedor.Dt_Proveedor.eliminarProveedor(Proveedor)  # Recoge los datos en los "Lines" de Qt Desinger para guardarlos en la base de datos
+
+                self.notifMensaje(indicador, "Eliminados")
+
+                self.limpiarCampos()
+
+                self.llenarTablaProveedor(dt_proveedor.Dt_Proveedor.listarProveedor())  # Se reinicia la tabla para poder recargar los datos guardados
+
+            else:
+
+                self.notifMensaje(False, "")
+                self.limpiarCampos()
+
+        except Exception as e:
+            print(f"Error en EliminarProveedor: {e}")
+
+
 
 
 if __name__ == '__main__':
