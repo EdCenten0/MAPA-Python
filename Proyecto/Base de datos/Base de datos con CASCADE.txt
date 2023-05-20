@@ -1,0 +1,297 @@
+-- MySQL Workbench Forward Engineering
+
+SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0;
+SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0;
+SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='ONLY_FULL_GROUP_BY,STRICT_TRANS_TABLES,NO_ZERO_IN_DATE,NO_ZERO_DATE,ERROR_FOR_DIVISION_BY_ZERO,NO_ENGINE_SUBSTITUTION';
+
+-- -----------------------------------------------------
+-- Schema MAPA
+-- -----------------------------------------------------
+
+-- -----------------------------------------------------
+-- Schema MAPA
+-- -----------------------------------------------------
+CREATE SCHEMA IF NOT EXISTS `MAPA` DEFAULT CHARACTER SET utf8mb4 ;
+USE `MAPA` ;
+
+-- -----------------------------------------------------
+-- Table `MAPA`.`tienda`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `MAPA`.`tienda` (
+  `id_tienda` INT NOT NULL AUTO_INCREMENT,
+  `nombre` NVARCHAR(50) NOT NULL,
+  `direccion` NVARCHAR(200) NOT NULL,
+  `telefono` NVARCHAR(12) NOT NULL,
+  `email` NVARCHAR(50) NOT NULL,
+  `estado` INT NOT NULL,
+  PRIMARY KEY (`id_tienda`))
+ENGINE = InnoDB;
+
+
+-- -----------------------------------------------------
+-- Table `MAPA`.`taller`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `MAPA`.`taller` (
+  `id_taller` INT NOT NULL AUTO_INCREMENT,
+  `id_tienda` INT NOT NULL,
+  `nombre` NVARCHAR(50) NOT NULL,
+  `direccion` NVARCHAR(200) NOT NULL,
+  `telefono` NVARCHAR(12) NOT NULL,
+  `email` NVARCHAR(50) NOT NULL,
+  `estado` INT NOT NULL,
+  PRIMARY KEY (`id_taller`),
+  INDEX `fk_taller_tienda_idx` (`id_tienda` ASC) VISIBLE,
+  CONSTRAINT `fk_taller_tienda`
+    FOREIGN KEY (`id_tienda`)
+    REFERENCES `MAPA`.`tienda` (`id_tienda`)
+    ON DELETE CASCADE
+    ON UPDATE CASCADE)
+ENGINE = InnoDB;
+
+
+-- -----------------------------------------------------
+-- Table `MAPA`.`clientes`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `MAPA`.`clientes` (
+  `id_cliente` INT NOT NULL AUTO_INCREMENT,
+  `id_tienda` INT NOT NULL,
+  `nombre` NVARCHAR(50) NOT NULL,
+  `apellido` NVARCHAR(50) NOT NULL,
+  `cedula` NVARCHAR(20) NOT NULL,
+  `email` NVARCHAR(30) NOT NULL,
+  `telefono` NVARCHAR(12) NOT NULL,
+  `estado` INT NOT NULL,
+  PRIMARY KEY (`id_cliente`),
+  INDEX `fk_clientes_tienda1_idx` (`id_tienda` ASC) VISIBLE,
+  CONSTRAINT `fk_clientes_tienda1`
+    FOREIGN KEY (`id_tienda`)
+    REFERENCES `MAPA`.`tienda` (`id_tienda`)
+    ON DELETE CASCADE
+    ON UPDATE CASCADE)
+ENGINE = InnoDB;
+
+
+-- -----------------------------------------------------
+-- Table `MAPA`.`pedidos`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `MAPA`.`pedidos` (
+  `id_pedido` INT NOT NULL AUTO_INCREMENT,
+  `id_cliente` INT NOT NULL,
+  `descripcion` NVARCHAR(300) NOT NULL,
+  `fecha_pedido` DATE NOT NULL,
+  `estado` INT NOT NULL,
+  PRIMARY KEY (`id_pedido`),
+  INDEX `fk_pedidos_clientes1_idx` (`id_cliente` ASC) VISIBLE,
+  CONSTRAINT `fk_pedidos_clientes1`
+    FOREIGN KEY (`id_cliente`)
+    REFERENCES `MAPA`.`clientes` (`id_cliente`)
+    ON DELETE CASCADE
+    ON UPDATE CASCADE)
+ENGINE = InnoDB;
+
+
+-- -----------------------------------------------------
+-- Table `MAPA`.`facturas`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `MAPA`.`facturas` (
+  `id_factura` INT NOT NULL AUTO_INCREMENT,
+  `id_pedido` INT NOT NULL,
+  `fecha` DATE NOT NULL,
+  `precio_materiales` FLOAT NOT NULL,
+  `mano_de_obra` FLOAT NOT NULL,
+  `precio_total` FLOAT NOT NULL,
+  `estado` INT NOT NULL,
+  PRIMARY KEY (`id_factura`),
+  INDEX `fk_facturas_pedidos1_idx` (`id_pedido` ASC) VISIBLE,
+  CONSTRAINT `fk_facturas_pedidos1`
+    FOREIGN KEY (`id_pedido`)
+    REFERENCES `MAPA`.`pedidos` (`id_pedido`)
+    ON DELETE CASCADE
+    ON UPDATE CASCADE)
+ENGINE = InnoDB;
+
+
+-- -----------------------------------------------------
+-- Table `MAPA`.`proveedores`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `MAPA`.`proveedores` (
+  `id_proveedor` INT NOT NULL AUTO_INCREMENT,
+  `id_tienda` INT NOT NULL,
+  `nombre` NVARCHAR(50) NOT NULL,
+  `email` NVARCHAR(50) NOT NULL,
+  `telefono` NVARCHAR(12) NOT NULL,
+  `catalogo` NVARCHAR(100) NOT NULL,
+  `ruc` NVARCHAR(15) NOT NULL,
+  `direccion` NVARCHAR(300) NOT NULL,
+  `estado` INT NOT NULL,
+  PRIMARY KEY (`id_proveedor`),
+  INDEX `fk_proveedores_tienda1_idx` (`id_tienda` ASC) VISIBLE,
+  CONSTRAINT `fk_proveedores_tienda1`
+    FOREIGN KEY (`id_tienda`)
+    REFERENCES `MAPA`.`tienda` (`id_tienda`)
+    ON DELETE CASCADE
+    ON UPDATE CASCADE)
+ENGINE = InnoDB;
+
+
+-- -----------------------------------------------------
+-- Table `MAPA`.`materiales`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `MAPA`.`materiales` (
+  `id_material` INT NOT NULL AUTO_INCREMENT,
+  `id_pedido` INT NOT NULL,
+  `nombre_material` NVARCHAR(50) NOT NULL,
+  `descripcion` NVARCHAR(300) NOT NULL,
+  `cantidad` INT NOT NULL,
+  `unidad_de_medida` NVARCHAR(5) NOT NULL,
+  `precio_por_unidad` FLOAT NOT NULL,
+  `precio_total` FLOAT NOT NULL,
+  `estado` INT NOT NULL,
+  PRIMARY KEY (`id_material`),
+  INDEX `fk_materiales_pedidos1_idx` (`id_pedido` ASC) VISIBLE,
+  CONSTRAINT `fk_materiales_pedidos1`
+    FOREIGN KEY (`id_pedido`)
+    REFERENCES `MAPA`.`pedidos` (`id_pedido`)
+    ON DELETE CASCADE
+    ON UPDATE CASCADE)
+ENGINE = InnoDB;
+
+
+-- -----------------------------------------------------
+-- Table `MAPA`.`materiales_por_proveedor`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `MAPA`.`materiales_por_proveedor` (
+  `id_materiales_por_proveedor` INT NOT NULL AUTO_INCREMENT,
+  `id_proveedor` INT NOT NULL,
+  `id_material` INT NOT NULL,
+  `estado` INT NOT NULL,
+  PRIMARY KEY (`id_materiales_por_proveedor`),
+  INDEX `fk_materiales_por_proveedor_proveedores1_idx` (`id_proveedor` ASC) VISIBLE,
+  INDEX `fk_materiales_por_proveedor_materiales1_idx` (`id_material` ASC) VISIBLE,
+  CONSTRAINT `fk_materiales_por_proveedor_proveedores1`
+    FOREIGN KEY (`id_proveedor`)
+    REFERENCES `MAPA`.`proveedores` (`id_proveedor`)
+    ON DELETE CASCADE
+    ON UPDATE CASCADE,
+  CONSTRAINT `fk_materiales_por_proveedor_materiales1`
+    FOREIGN KEY (`id_material`)
+    REFERENCES `MAPA`.`materiales` (`id_material`)
+    ON DELETE CASCADE
+    ON UPDATE CASCADE)
+ENGINE = InnoDB;
+
+
+-- -----------------------------------------------------
+-- Table `MAPA`.`ventas`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `MAPA`.`ventas` (
+  `id_venta` INT NOT NULL AUTO_INCREMENT,
+  `id_tienda` INT NOT NULL,
+  `id_factura` INT NOT NULL,
+  `cantidad` FLOAT NOT NULL,
+  `descripcion` NVARCHAR(200) NOT NULL,
+  `estado` INT NOT NULL,
+  PRIMARY KEY (`id_venta`),
+  INDEX `fk_ventas_tienda1_idx` (`id_tienda` ASC) VISIBLE,
+  INDEX `fk_ventas_facturas1_idx` (`id_factura` ASC) VISIBLE,
+  CONSTRAINT `fk_ventas_tienda1`
+    FOREIGN KEY (`id_tienda`)
+    REFERENCES `MAPA`.`tienda` (`id_tienda`)
+    ON DELETE CASCADE
+    ON UPDATE CASCADE,
+  CONSTRAINT `fk_ventas_facturas1`
+    FOREIGN KEY (`id_factura`)
+    REFERENCES `MAPA`.`facturas` (`id_factura`)
+    ON DELETE CASCADE
+    ON UPDATE CASCADE)
+ENGINE = InnoDB;
+
+
+-- -----------------------------------------------------
+-- Table `MAPA`.`usuario`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `MAPA`.`usuario` (
+  `id_usuario` INT NOT NULL AUTO_INCREMENT,
+  `nombre` NVARCHAR(50) NOT NULL,
+  `apellido` NVARCHAR(50) NOT NULL,
+  `user` NVARCHAR(50) NOT NULL,
+  `clave` NVARCHAR(50) NOT NULL,
+  `fecha_creacion` DATE NOT NULL,
+  `estado` INT NOT NULL,
+  PRIMARY KEY (`id_usuario`))
+ENGINE = InnoDB;
+
+
+-- -----------------------------------------------------
+-- Table `MAPA`.`rol`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `MAPA`.`rol` (
+  `id_rol` INT NOT NULL AUTO_INCREMENT,
+  `descripcion` NVARCHAR(80) NOT NULL,
+  `estado` INT NOT NULL,
+  PRIMARY KEY (`id_rol`))
+ENGINE = InnoDB;
+
+
+-- -----------------------------------------------------
+-- Table `MAPA`.`usuario_rol`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `MAPA`.`usuario_rol` (
+  `usuario_rol_id` INT NOT NULL AUTO_INCREMENT,
+  `id_usuario` INT NOT NULL,
+  `id_rol` INT NOT NULL,
+  `estado` INT NOT NULL,
+  PRIMARY KEY (`usuario_rol_id`),
+  INDEX `fk_usuario_rol_usuario1_idx` (`id_usuario` ASC) VISIBLE,
+  INDEX `fk_usuario_rol_rol1_idx` (`id_rol` ASC) VISIBLE,
+  CONSTRAINT `fk_usuario_rol_usuario1`
+    FOREIGN KEY (`id_usuario`)
+    REFERENCES `MAPA`.`usuario` (`id_usuario`)
+    ON DELETE CASCADE
+    ON UPDATE CASCADE,
+  CONSTRAINT `fk_usuario_rol_rol1`
+    FOREIGN KEY (`id_rol`)
+    REFERENCES `MAPA`.`rol` (`id_rol`)
+    ON DELETE CASCADE
+    ON UPDATE CASCADE)
+ENGINE = InnoDB;
+
+
+-- -----------------------------------------------------
+-- Table `MAPA`.`opcion`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `MAPA`.`opcion` (
+  `idopcion` INT NOT NULL AUTO_INCREMENT,
+  `descripcion` VARCHAR(45) NOT NULL,
+  `estado` INT NOT NULL,
+  PRIMARY KEY (`idopcion`))
+ENGINE = InnoDB;
+
+
+-- -----------------------------------------------------
+-- Table `MAPA`.`rol_opcion`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `MAPA`.`rol_opcion` (
+  `rol_opcion_id` INT NOT NULL AUTO_INCREMENT,
+  `id_rol` INT NOT NULL,
+  `id_opcion` INT NOT NULL,
+  `estado` INT NOT NULL,
+  PRIMARY KEY (`rol_opcion_id`),
+  INDEX `fk_rol_opcion_rol1_idx` (`id_rol` ASC) VISIBLE,
+  INDEX `fk_rol_opcion_opcion1_idx` (`id_opcion` ASC) VISIBLE,
+  CONSTRAINT `fk_rol_opcion_rol1`
+    FOREIGN KEY (`id_rol`)
+    REFERENCES `MAPA`.`rol` (`id_rol`)
+    ON DELETE CASCADE
+    ON UPDATE CASCADE,
+  CONSTRAINT `fk_rol_opcion_opcion1`
+    FOREIGN KEY (`id_opcion`)
+    REFERENCES `MAPA`.`opcion` (`idopcion`)
+    ON DELETE CASCADE
+    ON UPDATE CASCADE)
+ENGINE = InnoDB;
+
+
+SET SQL_MODE=@OLD_SQL_MODE;
+SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS;
+SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS;

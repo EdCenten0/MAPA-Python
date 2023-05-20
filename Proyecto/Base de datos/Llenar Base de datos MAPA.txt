@@ -156,3 +156,47 @@ INSERT INTO MAPA.ventas (cantidad, descripcion, id_tienda, id_factura, estado) V
 INSERT INTO MAPA.ventas (cantidad, descripcion, id_tienda, id_factura, estado) VALUES (500.00, 'Sofá cama con chaise longue', 1, 8, 1);
 INSERT INTO MAPA.ventas (cantidad, descripcion, id_tienda, id_factura, estado) VALUES (900.00, 'Armario de baño con espejo y luces LED', 1, 9, 1);
 INSERT INTO MAPA.ventas (cantidad, descripcion, id_tienda, id_factura, estado) VALUES (700.00, 'Silla ergonómica para oficina', 1, 10, 1);
+
+
+INSERT INTO `MAPA`.`usuario` (`nombre`, `apellido`, `user`, `clave`, `fecha_creacion`, `estado`) VALUES
+('John', 'Doe', 'johndoe', 'password123', '2023-05-01', 1),
+('Jane', 'Smith', 'janesmith', 'password456', '2023-05-02', 1),
+('Michael', 'Johnson', 'michaeljohnson', 'password789', '2023-05-03', 1),
+('Emily', 'Williams', 'emilywilliams', 'passwordabc', '2023-05-04', 1),
+('David', 'Brown', 'davidbrown', 'passworddef', '2023-05-05', 1);
+
+
+INSERT INTO `MAPA`.`rol` (`descripcion`, `estado`) VALUES
+('Admin', 1),
+('Supervisor', 1),
+('Operador', 1),
+('Guest', 1),
+('Analyst', 1);
+
+INSERT INTO `MAPA`.`usuario_rol` (`id_usuario`, `id_rol`, `estado`) VALUES
+(1, 1, 1),
+(2, 2, 1),
+(3, 2, 1),
+(4, 3, 1),
+(5, 4, 1);
+
+
+INSERT INTO `MAPA`.`opcion` (`descripcion`, `estado`) VALUES
+('Crear', 1),
+('Leer', 1),
+('Actualizar', 1),
+('Eliminar', 1),
+('Listar', 1);
+
+
+INSERT INTO `MAPA`.`rol_opcion` (`id_rol`, `id_opcion`, `estado`) VALUES
+(1, 1, 1),
+(1, 2, 1),
+(1, 3, 1),
+(1, 4, 1),
+(1, 5, 1),
+(2, 2, 1),
+(2, 5, 1),
+(3, 1, 1),
+(3, 3, 1),
+(4, 2, 1);
