@@ -43,10 +43,10 @@ class proveedor_Window(QMainWindow, vw_proveedor.Ui_Proveedores):
 
         id = self.tb_Proveedor.item(filaSeleccionada, 0).text()
         nombre = self.tb_Proveedor.item(filaSeleccionada, 1).text()
-        email = self.tb_Proveedor.item(filaSeleccionada, 2).text()
-        telefono = self.tb_Proveedor.item(filaSeleccionada, 3).text()
+        ruc = self.tb_Proveedor.item(filaSeleccionada, 2).text()
+        email = self.tb_Proveedor.item(filaSeleccionada, 3).text()
         catalogo = self.tb_Proveedor.item(filaSeleccionada, 4).text()
-        ruc = self.tb_Proveedor.item(filaSeleccionada, 5).text()
+        telefono = self.tb_Proveedor.item(filaSeleccionada, 5).text()
         direccion = self.tb_Proveedor.item(filaSeleccionada, 6).text()
 
         self.line_Id.setText(id)

@@ -67,6 +67,7 @@ class seguridad_Window(QMainWindow, vw_seguridad.Ui_Seguridad):
 
         #Asignar Rol
         self.llenarTablaUsuarioRol(dt_usuario_rol.Dt_Usuario_rol.listarUsuario_rol())
+        self.tb_Asignar_Rol.itemSelectionChanged.connect(self.obtenerDatosTablaUsuarioRol)
 
         #Asignar Opcion
         self.llenarTablaRolOpcion(dt_rol_opcion.Dt_rol_opcion.listarRolOpcion())
@@ -139,6 +140,10 @@ class seguridad_Window(QMainWindow, vw_seguridad.Ui_Seguridad):
 
                 self.limpiarCampos()
 
+                self.llenarComboxUsuarios(dt_usuario.Dt_Usuarios.listarUsuarios()) #Combobox
+
+                self.llenarTablaUsuarioRol(dt_usuario_rol.Dt_Usuario_rol.listarUsuario_rol()) #Tabla de Asignar el rol
+
                 self.llenarTablaUsuario(
                     dt_usuario.Dt_Usuarios.listarUsuarios())  # Se reinicia la tabla para poder recargar los datos guardados
 
@@ -177,6 +182,10 @@ class seguridad_Window(QMainWindow, vw_seguridad.Ui_Seguridad):
 
                 self.limpiarCampos()
 
+                self.llenarComboxUsuarios(dt_usuario.Dt_Usuarios.listarUsuarios()) #Combobox
+
+                self.llenarTablaUsuarioRol(dt_usuario_rol.Dt_Usuario_rol.listarUsuario_rol())  # Tabla de Asignar el rol
+
                 self.llenarTablaUsuario(
                     dt_usuario.Dt_Usuarios.listarUsuarios())  # Se reinicia la tabla para poder recargar los datos guardados
 
@@ -203,6 +212,10 @@ class seguridad_Window(QMainWindow, vw_seguridad.Ui_Seguridad):
                 self.notifMensaje(indicador, "Eliminados")
 
                 self.limpiarCampos()
+
+                self.llenarComboxUsuarios(dt_usuario.Dt_Usuarios.listarUsuarios()) #Combobox
+
+                self.llenarTablaUsuarioRol(dt_usuario_rol.Dt_Usuario_rol.listarUsuario_rol()) #Tabla de Asignar el rol
 
                 self.llenarTablaUsuario(
                     dt_usuario.Dt_Usuarios.listarUsuarios())  # Se reinicia la tabla para poder recargar los datos guardados
@@ -277,8 +290,13 @@ class seguridad_Window(QMainWindow, vw_seguridad.Ui_Seguridad):
 
                 self.limpiarCampos()
 
-                self.llenarTablaRol(
-                    dt_rol.Dt_Rol.listarRol())  # Se reinicia la tabla para poder recargar los datos guardados
+                self.llenarComboxRoles(dt_rol.Dt_Rol.listarRol()) #Combobox
+
+                self.llenarTablaUsuarioRol(dt_usuario_rol.Dt_Usuario_rol.listarUsuario_rol())  # Tabla de Asignar el rol
+
+                self.llenarTablaRolOpcion(dt_rol_opcion.Dt_rol_opcion.listarRolOpcion())  # Tabla de Asignar el Opcion
+
+                self.llenarTablaRol(dt_rol.Dt_Rol.listarRol())  # Se reinicia la tabla para poder recargar los datos guardados
 
 
             else:
@@ -304,8 +322,13 @@ class seguridad_Window(QMainWindow, vw_seguridad.Ui_Seguridad):
 
                 self.limpiarCampos()
 
-                self.llenarTablaRol(
-                    dt_rol.Dt_Rol.listarRol())  # Se reinicia la tabla para poder recargar los datos guardados
+                self.llenarComboxRoles(dt_rol.Dt_Rol.listarRol()) #Combobox
+
+                self.llenarTablaUsuarioRol(dt_usuario_rol.Dt_Usuario_rol.listarUsuario_rol())  # Tabla de Asignar el rol
+
+                self.llenarTablaRolOpcion(dt_rol_opcion.Dt_rol_opcion.listarRolOpcion())  # Tabla de Asignar el Opcion
+
+                self.llenarTablaRol(dt_rol.Dt_Rol.listarRol())  # Se reinicia la tabla para poder recargar los datos guardados
 
             else:
 
@@ -330,8 +353,13 @@ class seguridad_Window(QMainWindow, vw_seguridad.Ui_Seguridad):
 
                 self.limpiarCampos()
 
-                self.llenarTablaRol(
-                    dt_rol.Dt_Rol.listarRol())  # Se reinicia la tabla para poder recargar los datos guardados
+                self.llenarComboxRoles(dt_rol.Dt_Rol.listarRol()) #Combobox
+
+                self.llenarTablaUsuarioRol(dt_usuario_rol.Dt_Usuario_rol.listarUsuario_rol())  # Tabla de Asignar el rol
+
+                self.llenarTablaRolOpcion(dt_rol_opcion.Dt_rol_opcion.listarRolOpcion())  # Tabla de Asignar el Opcion
+
+                self.llenarTablaRol(dt_rol.Dt_Rol.listarRol())  # Se reinicia la tabla para poder recargar los datos guardados
 
 
             else:
@@ -387,8 +415,11 @@ class seguridad_Window(QMainWindow, vw_seguridad.Ui_Seguridad):
 
                 self.limpiarCampos()
 
-                self.llenarTablaOpcion(
-                    dt_opcion.Dt_Opcion.listarOpcion())  # Se reinicia la tabla para poder recargar los datos guardados
+                self.llenarComboxOpcion(dt_opcion.Dt_Opcion.listarOpcion()) #Combobox
+
+                self.llenarTablaRolOpcion(dt_rol_opcion.Dt_rol_opcion.listarRolOpcion())  # Tabla de Asignar el Opcion
+
+                self.llenarTablaOpcion(dt_opcion.Dt_Opcion.listarOpcion())  # Se reinicia la tabla para poder recargar los datos guardados
 
             else:
 
@@ -413,8 +444,11 @@ class seguridad_Window(QMainWindow, vw_seguridad.Ui_Seguridad):
 
                 self.limpiarCampos()
 
-                self.llenarTablaOpcion(
-                    dt_opcion.Dt_Opcion.listarOpcion())  # Se reinicia la tabla para poder recargar los datos guardados
+                self.llenarTablaRolOpcion(dt_rol_opcion.Dt_rol_opcion.listarRolOpcion())  # Tabla de Asignar el Opcion
+
+                self.llenarComboxOpcion(dt_opcion.Dt_Opcion.listarOpcion()) #Combobox
+
+                self.llenarTablaOpcion(dt_opcion.Dt_Opcion.listarOpcion())  # Se reinicia la tabla para poder recargar los datos guardados
 
             else:
 
@@ -437,6 +471,8 @@ class seguridad_Window(QMainWindow, vw_seguridad.Ui_Seguridad):
                 self.notifMensaje(indicador, "Eliminados")
 
                 self.limpiarCampos()
+
+                self.llenarComboxOpcion(dt_opcion.Dt_Opcion.listarOpcion()) #Combobox
 
                 self.llenarTablaOpcion(dt_opcion.Dt_Opcion.listarOpcion())  # Se reinicia la tabla para poder recargar los datos guardados
 
@@ -480,7 +516,8 @@ class seguridad_Window(QMainWindow, vw_seguridad.Ui_Seguridad):
 
     def llenarComboxRoles(self, datos):
         print("\nDatos de la combo box Rol")
-        i = len(datos)
+        self.cb_Asignar_Rol_idRol.clear()
+        self.cb_Asignar_Opcion_idRol.clear()
 
         for registro in datos:
             print(registro)
@@ -490,8 +527,7 @@ class seguridad_Window(QMainWindow, vw_seguridad.Ui_Seguridad):
 
     def llenarComboxUsuarios(self, datos):
         print("\nDatos de la Combo Box Usuarios")
-        i = len(datos)
-
+        self.cb_Asignar_Rol_idUsuario.clear()
 
         for registro in datos:
             print(registro)
@@ -501,6 +537,7 @@ class seguridad_Window(QMainWindow, vw_seguridad.Ui_Seguridad):
 
     def llenarComboxOpcion(self, datos):
         print("\nDatos de la combo box Opcion")
+        self.cb_Asignar_Opcion_idOpcion.clear()
 
         for registro in datos:
             print(registro)
@@ -524,6 +561,18 @@ class seguridad_Window(QMainWindow, vw_seguridad.Ui_Seguridad):
             self.tb_Asignar_Rol.setItem(tablerow, 2, QTableWidgetItem(str(row["id_rol"])))
             tablerow = tablerow + 1
 
+    def obtenerDatosTablaUsuarioRol(self): #No se como agregarlo al elemento click de la tabla
+        # Selecciona la fila de la tabla
+        filaSeleccionada = self.tb_Asignar_Rol.currentRow()
+        id = self.tb_Asignar_Rol.item(filaSeleccionada, 0).text()
+        id_usuario = self.tb_Asignar_Rol.item(filaSeleccionada, 1).text()
+        id_rol = self.tb_Asignar_Rol.item(filaSeleccionada, 2).text()
+
+        print(int(id_usuario) - 1)
+        print(int(id_rol) - 1)
+
+        print(self.cb_Asignar_Rol_idUsuario.itemText(int(id_rol) - 1))
+        print(self.cb_Asignar_Rol_idRol.itemText(int(id_rol) - 1))
 
 
     def vaciarUsuarioRol(self):
@@ -561,6 +610,8 @@ class seguridad_Window(QMainWindow, vw_seguridad.Ui_Seguridad):
 
             self.notifMensaje(indicador, "Guardados")
 
+
+
             self.llenarTablaUsuarioRol(dt_usuario_rol.Dt_Usuario_rol.listarUsuario_rol())
 
 
@@ -587,6 +638,7 @@ class seguridad_Window(QMainWindow, vw_seguridad.Ui_Seguridad):
 
         except Exception as e:
             print(f"ERROR en guardarRolOpcion: {e}")
+
 
 
         '''******************************************  Menu Principal   ******************************************'''
