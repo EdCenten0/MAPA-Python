@@ -16,8 +16,6 @@ class Dt_Usuario_rol:
 
         indicador = False
 
-
-
         try:
 
             cursor = Conexion.Conexion.obtenerConexion().cursor()
@@ -26,6 +24,43 @@ class Dt_Usuario_rol:
             cursor.connection.commit()
             cursor.close()
             print("Guardado")
+            indicador = True
+
+        except Exception as e:
+            print(f"Error en guardarUsuario_Rol: {e}")
+
+        return indicador
+
+    @classmethod
+    def editarUsuarioRol(self, Usuario_rol):
+
+        try:
+            indicador = False
+            cursor = Conexion.Conexion.obtenerConexion().cursor()
+            sql = (f'''UPDATE usuario_rol SET id_usuario = {Usuario_rol.id_usuario}, id_rol = {Usuario_rol.id_rol}, estado = {2} WHERE usuario_rol_id = {Usuario_rol.usuario_rol_id}''')
+            cursor.execute(sql)
+            cursor.connection.commit()
+            cursor.close()
+            print("Editado")
+            indicador = True
+
+        except Exception as e:
+            print(f"Error en guardarUsuario_Rol: {e}")
+
+        return indicador
+
+
+    @classmethod
+    def eliminarUsuarioRol(self, Usuario_rol):
+
+        try:
+            indicador = False
+            cursor = Conexion.Conexion.obtenerConexion().cursor()
+            sql = (f'''DELETE FROM usuario_rol WHERE usuario_rol_id = {Usuario_rol.usuario_rol_id}''')
+            cursor.execute(sql)
+            cursor.connection.commit()
+            cursor.close()
+            print("Editado")
             indicador = True
 
         except Exception as e:
