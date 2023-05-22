@@ -37,7 +37,7 @@
            <number>0</number>
           </property>
           <item row="0" column="1">
-           <widget class="QComboBox" name="comboBox"/>
+           <widget class="QComboBox" name="cb_material"/>
           </item>
           <item row="1" column="0">
            <widget class="QLabel" name="label_5">
@@ -47,7 +47,7 @@
            </widget>
           </item>
           <item row="1" column="1">
-           <widget class="QComboBox" name="comboBox_2"/>
+           <widget class="QComboBox" name="cb_proveedor"/>
           </item>
           <item row="0" column="0">
            <widget class="QLabel" name="label_4">
@@ -61,28 +61,28 @@
         <item row="0" column="1">
          <layout class="QVBoxLayout" name="verticalLayout_8">
           <item>
-           <widget class="QPushButton" name="pushButton_2">
+           <widget class="QPushButton" name="bt_guardar">
             <property name="text">
              <string>Guardar</string>
             </property>
            </widget>
           </item>
           <item>
-           <widget class="QPushButton" name="pushButton">
+           <widget class="QPushButton" name="bt_editar">
             <property name="text">
              <string>Editar</string>
             </property>
            </widget>
           </item>
           <item>
-           <widget class="QPushButton" name="pushButton_3">
+           <widget class="QPushButton" name="bt_borrar">
             <property name="text">
              <string>Borrar</string>
             </property>
            </widget>
           </item>
           <item>
-           <widget class="QPushButton" name="pushButton_4">
+           <widget class="QPushButton" name="bt_vaciar_campos">
             <property name="text">
              <string>Vaciar Campos</string>
             </property>
