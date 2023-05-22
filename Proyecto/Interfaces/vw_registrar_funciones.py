@@ -3,11 +3,11 @@ import sys
 from PyQt5.QtWidgets import QMainWindow, QApplication
 
 from Datos import dt_rol
-from Interfaces import vw_registrar_usuario_login
+from Interfaces import vw_registrar_funciones, vw_registrar
 from Interfaces.vw_login import Ui_Login
 
 
-class registrar_Window(QMainWindow, vw_registrar_usuario_login.Ui_Registrar):
+class registrar_Window(QMainWindow, vw_registrar.Ui_Registrar):
     def __init__(self):
         super(registrar_Window, self).__init__()
         self.setupUi(self)

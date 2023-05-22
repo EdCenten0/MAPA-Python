@@ -104,5 +104,25 @@ class Dt_Opcion:
             print(f"Error en Opcion Existente:{ex}")
 
 
+    @classmethod
+    def buscarIndexOpcion(cls, id):
+
+        try:
+
+            listaOpcion = Dt_Opcion.listarOpcion()
+            indice = 0
+
+            for row in listaOpcion:
+                indice += 1
+                if row["idopcion"] == id:
+                    break
+
+            return indice
+
+        except Exception as e:
+            print(f"Error en buscarUsuario_Rol: {e}")
+
+
+
 if __name__ == '__main__':
-    print(Dt_Opcion.listarOpcion())
+    print(Dt_Opcion.buscarIndexOpcion(3))

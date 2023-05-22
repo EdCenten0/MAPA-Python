@@ -96,9 +96,26 @@ class Dt_Rol:
         except Exception as ex:
             print(f"Error en Rol Existente:{ex}")
 
+    @classmethod
+    def buscarIndexRol(cls, id):
+
+        try:
+
+            listaRol = Dt_Rol.listarRol()
+            indice = 0
+
+            for row in listaRol:
+                indice += 1
+                if row["id_rol"] == id:
+                    break
+
+            return indice
+
+        except Exception as e:
+            print(f"Error en buscarRol_Opcion: {e}")
 
 
 if __name__ == '__main__':
-    print(Dt_Rol.ExisteRol())
+    print(Dt_Rol.buscarIndexRol(4))
 
 

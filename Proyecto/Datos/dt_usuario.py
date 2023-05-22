@@ -91,6 +91,26 @@ class Dt_Usuarios:
         except Exception as ex:
             print(f"Error en Usuario Existente:{ex}")
 
+    @classmethod
+    def buscarIndexUsuario(cls, id):
+
+        try:
+
+            listaUsuario = Dt_Usuarios.listarUsuarios()
+            indice = 0
+
+            for row in listaUsuario:
+                indice += 1
+                if row["id_usuario"] == id:
+                    break
+
+            return indice
+
+        except Exception as e:
+            print(f"Error en buscarUsuario_Rol: {e}")
+
+
+
 if __name__ == '__main__':
-    print(Dt_Usuarios.llenarComboxUsuario())
+    print(Dt_Usuarios.buscarIndexUsuario(3))
 

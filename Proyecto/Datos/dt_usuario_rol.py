@@ -1,4 +1,6 @@
 from Datos import Conexion
+from Datos.dt_usuario import Dt_Usuarios
+from Entidades.usuario_rol import Usuario_rol
 
 
 class Dt_Usuario_rol:
@@ -32,7 +34,7 @@ class Dt_Usuario_rol:
         return indicador
 
     @classmethod
-    def editarUsuarioRol(self, Usuario_rol):
+    def editarUsuarioRol(cls, Usuario_rol):
 
         try:
             indicador = False
@@ -51,7 +53,7 @@ class Dt_Usuario_rol:
 
 
     @classmethod
-    def eliminarUsuarioRol(self, Usuario_rol):
+    def eliminarUsuarioRol(cls, Usuario_rol):
 
         try:
             indicador = False
@@ -67,3 +69,9 @@ class Dt_Usuario_rol:
             print(f"Error en guardarUsuario_Rol: {e}")
 
         return indicador
+
+
+
+
+if __name__ == '__main__':
+    print(Dt_Usuario_rol.eliminarUsuarioRol())

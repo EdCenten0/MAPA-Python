@@ -576,13 +576,14 @@ class seguridad_Window(QMainWindow, vw_seguridad.Ui_Seguridad):
         id_usuario = self.tb_Asignar_Rol.item(filaSeleccionada, 1).text() #Obtener el id de la base de datos a travez de la tabla
         id_rol = self.tb_Asignar_Rol.item(filaSeleccionada, 2).text() #Obtener el id de la base de datos a travez de la tabla
 
-        usuario = self.cb_Asignar_Rol_idUsuario.itemText(int(id_usuario) - 1)
-        rol = self.cb_Asignar_Rol_idRol.itemText(int(id_rol) - 1)
+        #Buscar el la posicion exacta en el combobox
+        usuario = dt_usuario.Dt_Usuarios.buscarIndexUsuario(int(id_usuario))
+        rol = dt_rol.Dt_Rol.buscarIndexRol(int(id_rol))
 
         #Se asignan los valores de los text line y combobox
         self.line_Asignar_Rol_Id.setText(id)
-        self.cb_Asignar_Rol_idUsuario.setCurrentText(usuario)
-        self.cb_Asignar_Rol_idRol.setCurrentText(rol)
+        self.cb_Asignar_Rol_idUsuario.setCurrentIndex(usuario-1)
+        self.cb_Asignar_Rol_idRol.setCurrentIndex(rol - 1)
 
 
     def vaciarUsuarioRol(self):
@@ -613,13 +614,15 @@ class seguridad_Window(QMainWindow, vw_seguridad.Ui_Seguridad):
         id_rol = self.tb_Asignar_Opcion.item(filaSeleccionada, 1).text() #Obtener el id de la base de datos a travez de la tabla
         id_opcion = self.tb_Asignar_Opcion.item(filaSeleccionada, 2).text() #Obtener el id de la base de datos a travez de la tabla
 
-        id_rol = self.cb_Asignar_Opcion_idRol.itemText(int(id_rol) - 1)
-        id_opcion = self.cb_Asignar_Opcion_idOpcion.itemText(int(id_opcion) - 1)
+        # Buscar el la posicion exacta en el combobox
+        rol = dt_rol.Dt_Rol.buscarIndexRol(int(id_rol))
+        opcion = dt_opcion.Dt_Opcion.buscarIndexOpcion(int(id_opcion))
+
 
         #Se asignan los valores de los text line y combobox
         self.line_Asignar_Opcion_Id.setText(id)
-        self.cb_Asignar_Opcion_idRol.setCurrentText(id_rol)
-        self.cb_Asignar_Opcion_idOpcion.setCurrentText(id_opcion)
+        self.cb_Asignar_Opcion_idRol.setCurrentIndex(rol-1)
+        self.cb_Asignar_Opcion_idOpcion.setCurrentIndex(opcion-1)
 
 
     def vaciarRolOpcion(self):
@@ -631,16 +634,22 @@ class seguridad_Window(QMainWindow, vw_seguridad.Ui_Seguridad):
     #Usuario Rol
     def guardarUsuarioRol(self):
         try:
+            if self.line_Asignar_Rol_Id.text() == "":
 
-            Usuario_rol.id_rol = self.cb_Asignar_Rol_idRol.itemData(self.cb_Asignar_Rol_idRol.currentIndex())
+                Usuario_rol.id_rol = self.cb_Asignar_Rol_idRol.itemData(self.cb_Asignar_Rol_idRol.currentIndex())
 
-            Usuario_rol.id_usuario = self.cb_Asignar_Rol_idUsuario.itemData(self.cb_Asignar_Rol_idUsuario.currentIndex())
+                Usuario_rol.id_usuario = self.cb_Asignar_Rol_idUsuario.itemData(self.cb_Asignar_Rol_idUsuario.currentIndex())
 
-            indicador = dt_usuario_rol.Dt_Usuario_rol.guardarUsuarioRol(Usuario_rol)
+                indicador = dt_usuario_rol.Dt_Usuario_rol.guardarUsuarioRol(Usuario_rol)
 
-            self.notifMensaje(indicador, "Guardados")
+                self.notifMensaje(indicador, "Guardados")
 
-            self.llenarTablaUsuarioRol(dt_usuario_rol.Dt_Usuario_rol.listarUsuario_rol())
+                self.llenarTablaUsuarioRol(dt_usuario_rol.Dt_Usuario_rol.listarUsuario_rol())
+
+            else:
+
+                self.notifMensaje(False, "Guardados")
+
 
 
         except Exception as e:
@@ -648,19 +657,23 @@ class seguridad_Window(QMainWindow, vw_seguridad.Ui_Seguridad):
 
     def editarUsuarioRol(self):
         try:
+            if not self.line_Asignar_Rol_Id.text() == "":
 
-            Usuario_rol.usuario_rol_id = self.line_Asignar_Rol_Id.text()
+                Usuario_rol.usuario_rol_id = self.line_Asignar_Rol_Id.text()
 
-            Usuario_rol.id_rol = self.cb_Asignar_Rol_idRol.itemData(self.cb_Asignar_Rol_idRol.currentIndex())
+                Usuario_rol.id_rol = self.cb_Asignar_Rol_idRol.itemData(self.cb_Asignar_Rol_idRol.currentIndex())
 
-            Usuario_rol.id_usuario = self.cb_Asignar_Rol_idUsuario.itemData(self.cb_Asignar_Rol_idUsuario.currentIndex())
+                Usuario_rol.id_usuario = self.cb_Asignar_Rol_idUsuario.itemData(self.cb_Asignar_Rol_idUsuario.currentIndex())
 
-            indicador = dt_usuario_rol.Dt_Usuario_rol.editarUsuarioRol(Usuario_rol)
+                indicador = dt_usuario_rol.Dt_Usuario_rol.editarUsuarioRol(Usuario_rol)
 
-            self.notifMensaje(indicador, "Editados")
+                self.notifMensaje(indicador, "Editados")
 
-            self.llenarTablaUsuarioRol(dt_usuario_rol.Dt_Usuario_rol.listarUsuario_rol())
+                self.llenarTablaUsuarioRol(dt_usuario_rol.Dt_Usuario_rol.listarUsuario_rol())
 
+            else:
+
+                self.notifMensaje(False, "Error")
 
         except Exception as e:
             print(f"ERROR en editarUsuarioRol: {e}")
@@ -668,15 +681,19 @@ class seguridad_Window(QMainWindow, vw_seguridad.Ui_Seguridad):
 
     def eliminarUsuario_Rol(self):
         try:
+            if not self.line_Asignar_Rol_Id.text() == "":
 
-            Usuario_rol.usuario_rol_id = self.line_Asignar_Rol_Id.text()
+                Usuario_rol.usuario_rol_id = self.line_Asignar_Rol_Id.text()
 
-            indicador = dt_usuario_rol.Dt_Usuario_rol.eliminarUsuarioRol(Usuario_rol)
+                indicador = dt_usuario_rol.Dt_Usuario_rol.eliminarUsuarioRol(Usuario_rol)
 
-            self.notifMensaje(indicador, "Eliminados")
+                self.notifMensaje(indicador, "Eliminados")
 
-            self.llenarTablaUsuarioRol(dt_usuario_rol.Dt_Usuario_rol.listarUsuario_rol())
+                self.llenarTablaUsuarioRol(dt_usuario_rol.Dt_Usuario_rol.listarUsuario_rol())
 
+            else:
+
+                self.notifMensaje(False, "Error")
 
         except Exception as e:
             print(f"ERROR en eliminarUsuarioRol: {e}")
@@ -685,17 +702,21 @@ class seguridad_Window(QMainWindow, vw_seguridad.Ui_Seguridad):
     #Rol Opcion
     def guardarRolOpcion(self):
         try:
+            if self.line_Asignar_Opcion_Id.text() == "":
 
-            Rol_opcion.id_rol = self.cb_Asignar_Opcion_idRol.itemData(self.cb_Asignar_Opcion_idRol.currentIndex())
+                Rol_opcion.id_rol = self.cb_Asignar_Opcion_idRol.itemData(self.cb_Asignar_Opcion_idRol.currentIndex())
 
-            Rol_opcion.id_opcion = self.cb_Asignar_Opcion_idOpcion.itemData(self.cb_Asignar_Opcion_idOpcion.currentIndex())
+                Rol_opcion.id_opcion = self.cb_Asignar_Opcion_idOpcion.itemData(self.cb_Asignar_Opcion_idOpcion.currentIndex())
 
-            indicador = dt_rol_opcion.Dt_rol_opcion.guardarRolOpcion(Rol_opcion)
+                indicador = dt_rol_opcion.Dt_rol_opcion.guardarRolOpcion(Rol_opcion)
 
-            self.notifMensaje(indicador, "Guardados")
+                self.notifMensaje(indicador, "Guardados")
 
-            self.llenarTablaRolOpcion(dt_rol_opcion.Dt_rol_opcion.listarRolOpcion())
+                self.llenarTablaRolOpcion(dt_rol_opcion.Dt_rol_opcion.listarRolOpcion())
 
+            else:
+
+                self.notifMensaje(False, "Error")
 
         except Exception as e:
             print(f"ERROR en guardarRolOpcion: {e}")
@@ -703,19 +724,23 @@ class seguridad_Window(QMainWindow, vw_seguridad.Ui_Seguridad):
 
     def editarRolOpcion(self):
         try:
+            if not self.line_Asignar_Opcion_Id.text() == "":
 
-            Rol_opcion.rol_opcion_id = self.line_Asignar_Opcion_Id.text()
+                Rol_opcion.rol_opcion_id = self.line_Asignar_Opcion_Id.text()
 
-            Rol_opcion.id_rol = self.cb_Asignar_Opcion_idRol.itemData(self.cb_Asignar_Opcion_idRol.currentIndex())
+                Rol_opcion.id_rol = self.cb_Asignar_Opcion_idRol.itemData(self.cb_Asignar_Opcion_idRol.currentIndex())
 
-            Rol_opcion.id_opcion = self.cb_Asignar_Opcion_idOpcion.itemData(self.cb_Asignar_Opcion_idOpcion.currentIndex())
+                Rol_opcion.id_opcion = self.cb_Asignar_Opcion_idOpcion.itemData(self.cb_Asignar_Opcion_idOpcion.currentIndex())
 
-            indicador = dt_rol_opcion.Dt_rol_opcion.editarRolOpcion(Rol_opcion)
+                indicador = dt_rol_opcion.Dt_rol_opcion.editarRolOpcion(Rol_opcion)
 
-            self.notifMensaje(indicador, "Editados")
+                self.notifMensaje(indicador, "Editados")
 
-            self.llenarTablaRolOpcion(dt_rol_opcion.Dt_rol_opcion.listarRolOpcion())
+                self.llenarTablaRolOpcion(dt_rol_opcion.Dt_rol_opcion.listarRolOpcion())
 
+            else:
+
+                self.notifMensaje(False, "Error")
 
         except Exception as e:
             print(f"ERROR en editarolOpcion: {e}")
@@ -723,15 +748,19 @@ class seguridad_Window(QMainWindow, vw_seguridad.Ui_Seguridad):
 
     def eliminarRolOpcion(self):
         try:
+            if not self.line_Asignar_Opcion_Id.text() == "":
 
-            Rol_opcion.rol_opcion_id = self.line_Asignar_Opcion_Id.text()
+                Rol_opcion.rol_opcion_id = self.line_Asignar_Opcion_Id.text()
 
-            indicador = dt_rol_opcion.Dt_rol_opcion.eliminarRolOpcion(Rol_opcion)
+                indicador = dt_rol_opcion.Dt_rol_opcion.eliminarRolOpcion(Rol_opcion)
 
-            self.notifMensaje(indicador, "Eliminados")
+                self.notifMensaje(indicador, "Eliminados")
 
-            self.llenarTablaRolOpcion(dt_rol_opcion.Dt_rol_opcion.listarRolOpcion())
+                self.llenarTablaRolOpcion(dt_rol_opcion.Dt_rol_opcion.listarRolOpcion())
 
+            else:
+
+                self.notifMensaje(False, "Error")
 
         except Exception as e:
             print(f"ERROR en eliminarRolOpcion: {e}")

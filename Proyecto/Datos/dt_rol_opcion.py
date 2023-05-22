@@ -31,7 +31,7 @@ class Dt_rol_opcion:
 
 
     @classmethod
-    def editarRolOpcion(self, Rol_opcion):
+    def editarRolOpcion(cls, Rol_opcion):
 
         try:
             indicador = False
@@ -50,7 +50,7 @@ class Dt_rol_opcion:
 
 
     @classmethod
-    def eliminarRolOpcion(self, Rol_opcion):
+    def eliminarRolOpcion(cls, Rol_opcion):
 
         try:
             indicador = False

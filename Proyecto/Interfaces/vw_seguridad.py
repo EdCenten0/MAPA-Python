@@ -369,7 +369,7 @@ class Ui_Seguridad(object):
         Seguridad.setCentralWidget(self.centralwidget)
 
         self.retranslateUi(Seguridad)
-        self.tabWidget.setCurrentIndex(4)
+        self.tabWidget.setCurrentIndex(0)
         QtCore.QMetaObject.connectSlotsByName(Seguridad)
 
     def retranslateUi(self, Seguridad):

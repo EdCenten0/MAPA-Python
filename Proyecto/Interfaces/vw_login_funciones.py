@@ -1,14 +1,14 @@
 import sys
 from PyQt5.QtWidgets import QMainWindow, QApplication, QMessageBox, QWidget
-from Interfaces import vw_login, vw_registrar_usuario_login
-from Interfaces.vw_registrar_usuario_login import Ui_Registrar
-from vw_registrar_usuario import registrar_Window
+from Interfaces import vw_login, vw_registrar_funciones
+from Interfaces.vw_registrar_funciones import Ui_Registrar
+from vw_registrar_funciones import registrar_Window
 
 class login_Window(QMainWindow, vw_login.Ui_Login):
     def __init__(self, parent=None):
         super(login_Window, self).__init__(parent)
         self.setupUi(self)
-        self.bt_ingresar.clicked.connect(self.abrirRegistrar)
+        self.lb_crear_Usuario.mouseDoubleClickEvent(self.abrirRegistrar)
 
 
     def abrirRegistrar(self):
