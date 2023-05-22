@@ -7,7 +7,6 @@ from PyQt5.QtCore import QDate
 from PyQt5.QtWidgets import QTableWidgetItem, QMessageBox
 
 from Datos import dt_usuario, dt_rol, dt_opcion, dt_rol_opcion, dt_usuario_rol
-from Entidades import usuario_rol
 from Entidades.rol_opcion import Rol_opcion
 from Entidades.usuario_rol import Usuario_rol
 from Entidades.usuarios import Usuarios

@@ -20,7 +20,7 @@ class Dt_Usuarios:
 
         try:
             cursor = Conexion.Conexion.obtenerConexion().cursor()
-            sql = (f'''INSERT INTO usuario ( nombre, apellido, user, clave, fecha_creacion, estado ) VALUES ('{Usuarios.nombre}','{Usuarios.apellido}','{Usuarios.user}','{Usuarios.apellido}','{Usuarios.fechaCreacion}','{1}')''')
+            sql = (f'''INSERT INTO usuario ( nombre, apellido, user, clave, fecha_creacion, estado ) VALUES ('{Usuarios.nombre}','{Usuarios.apellido}','{Usuarios.user}','{Usuarios.apellido}', now(),'{1}')''')
             cursor.execute(sql)
             cursor.connection.commit()
             cursor.close()
