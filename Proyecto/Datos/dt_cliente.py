@@ -18,7 +18,9 @@ class Dt_Clientes:
 
         try:
             cursor = Conexion.Conexion.obtenerConexion().cursor()
-            sql = (f'''INSERT INTO usuario ( nombre, apellido, correo, telefono, cedula, id_tienda) VALUES ('{cliente.nombre}','{cliente.apellido}','{cliente.correo}','{cliente.telefono}','{cliente.cedula}','{cliente.id_tienda}','{1}')''')
+            sql = f'''INSERT INTO clientes (nombre, apellido, email, telefono, cedula, id_tienda, estado) 
+                      VALUES ('{cliente.nombre}', '{cliente.apellido}', '{cliente.email}', '{cliente.telefono}', '{cliente.cedula}', '{cliente.id_tienda}', '1')'''
+
             cursor.execute(sql)
             cursor.connection.commit()
             cursor.close()
@@ -39,7 +41,7 @@ class Dt_Clientes:
 
         try:
             cursor = Conexion.Conexion.obtenerConexion().cursor()
-            sql = (f'''UPDATE usuario SET nombre = "{cliente.nombre}" , apellido = "{cliente.apellido}" , direccion = "{cliente.direccion}", correo = "{cliente.correo}", telefono = "{cliente.telefono}", cedula = "{cliente.cedula}", estado = "{2}" WHERE id_cliente = {cliente.id_cliente}''')
+            sql = (f'''UPDATE usuario SET nombre = "{cliente.nombre}" , apellido = "{cliente.apellido}", emauk = "{cliente.email}", telefono = "{cliente.telefono}", cedula = "{cliente.cedula}"''')
             cursor.execute(sql)
             cursor.connection.commit()
             cursor.close()

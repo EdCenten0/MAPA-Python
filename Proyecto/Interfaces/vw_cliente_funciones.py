@@ -3,7 +3,7 @@
 
 import sys
 from PyQt5.QtWidgets import QMainWindow, QApplication, QTableWidgetItem, QMessageBox
-from Proyecto.Interfaces import vw_cliente
+from Proyecto.Interfaces import vw_Cliente
 from Proyecto.Datos import dt_cliente
 from Proyecto.Entidades import clientes
 from Proyecto.Datos import Conexion
@@ -11,7 +11,7 @@ from Proyecto.Datos import Conexion
 
 
 
-class cliente_Window(QMainWindow, vw_cliente.Ui_MainWindow):
+class cliente_Window(QMainWindow, vw_Cliente.Ui_MainWindow):
 
     def __init__(self, parent=None):
         super(cliente_Window, self).__init__(parent)
@@ -28,30 +28,34 @@ class cliente_Window(QMainWindow, vw_cliente.Ui_MainWindow):
 
     def limpiarCampos(self):
         self.line_Cliente_Nombre.setText("")
+        self.line_Cliente_Apellido_5.setText("")
+        self.line_Cliente_Apellido_4.setText("")
+        self.line_Cliente_Apellido_3.setText("")
+        self.line_Cliente_Apellido_2.setText("")
         self.line_Cliente_Apellido.setText("")
-        self.line_Cliente_Cedula.setText("")
-        self.line_Cliente_Correo.setText("")
-        self.line_Cliente_Telefono.setText("")
-        self.line_Cliente_id_tienda.setText("")
+        self.line_Cliente_Direccion.setText("")
 
     def obtenerDatosTablaCliente(self):
         # Selecciona la fila de la tabla
         filaSeleccionada = self.tb_Cliente.currentRow()
 
-
+        id = self.tb_Cliente.item(filaSeleccionada, 0).text()
         nombre = self.tb_Cliente.item(filaSeleccionada, 1).text()
         apellido = self.tb_Cliente.item(filaSeleccionada, 2).text()
         cedula = self.tb_Cliente.item(filaSeleccionada, 3).text()
-        correo = self.tb_Cliente.item(filaSeleccionada, 4).text()
+        email = self.tb_Cliente.item(filaSeleccionada, 4).text()
         telefono = self.tb_Cliente.item(filaSeleccionada, 5).text()
+        id_tienda = self.tb_Cliente.item(filaSeleccionada, 6).text()
+        estado = self.tb_Cliente.item(filaSeleccionada, 6).text()
 
-
-        self.line_Cliente_Nombre.setText(nombre)
+        self.line_Cliente_Nombre.setText(id)
+        self.line_Cliente_Apellido_5.setText(nombre)
         self.line_Cliente_Apellido.setText(apellido)
-        self.line_Cliente_Cedula.setText(cedula)
-        self.line_Cliente_Correo.setText(correo)
-        self.line_Cliente_Telefono.setText(telefono)
-
+        self.line_Cliente_Apellido_2.setText(cedula)
+        self.line_Cliente_Apellido_4.setText(email)
+        self.line_Cliente_Apellido_3.setText(telefono)
+        self.line_Cliente_Direccion.setText(id_tienda)
+        self.line_Cliente_Direccion.setText(estado)
     def notifMensaje(self, indicador, resultado):
 
         if indicador == True:  # Se hizo correctamente la consulta a la base de datos
@@ -70,25 +74,31 @@ class cliente_Window(QMainWindow, vw_cliente.Ui_MainWindow):
 
         for row in datos:
             print(row)
-            self.tb_Cliente.setItem(tablerow, 0, QTableWidgetItem(str(row["nombre"])))
-            self.tb_Cliente.setItem(tablerow, 1, QTableWidgetItem((row["apellido"])))
-            self.tb_Cliente.setItem(tablerow, 2, QTableWidgetItem(str(row["cedula"])))
-            self.tb_Cliente.setItem(tablerow, 3, QTableWidgetItem(str(row["correo"])))
-            self.tb_Cliente.setItem(tablerow, 4, QTableWidgetItem((row["telefono"])))
+            self.tb_Cliente.setItem(tablerow, 0, QTableWidgetItem(str(row["id"])))
+            self.tb_Cliente.setItem(tablerow, 1, QTableWidgetItem(str(row["nombre"])))
+            self.tb_Cliente.setItem(tablerow, 2, QTableWidgetItem((row["apellido"])))
+            self.tb_Cliente.setItem(tablerow, 3, QTableWidgetItem(str(row["cedula"])))
+            self.tb_Cliente.setItem(tablerow, 4, QTableWidgetItem(str(row["email"])))
+            self.tb_Cliente.setItem(tablerow, 5, QTableWidgetItem((row["telefono"])))
+            self.tb_Cliente.setItem(tablerow, 6, QTableWidgetItem(str(row["id_tienda"])))
             tablerow = tablerow + 1
 
     def guardarCliente(self):
 
         try:
-            clientes.nombre = self.line_Cliente_Nombre.text()
+            clientes.id = self.line_Cliente_Nombre.text()
+            clientes.nombre = self.line_Cliente_Apellido_5.text()
             clientes.apellido = self.line_Cliente_Apellido.text()
-            clientes.cedula = self.line_Cliente_Cedula.text()
-            clientes.correo = self.line_Cliente_Correo.text()
-            clientes.telefono = self.line_Cliente_Telefono.text()
+            clientes.cedula = self.line_Cliente_Apellido_2.text()
+            clientes.email = self.line_Cliente_Apellido_4.text()
+            clientes.telefono = self.line_Cliente_Apellido_3.text()
+            clientes.id_tienda = self.line_Cliente_Direccion.text()
+            clientes.estado = self.line_Cliente_Direccion.text()
 
 
-            if self.line_Cliente_Nombre.text() == "" and not self.line_Cliente_Apellido.text() == "" and not self.line_Cliente_Cedula.text() == "" and not self.line_Cliente_Correo.text() == "" and not self.line_Cliente_Telefono.text() == "":
-                indicador = dt_cliente.Dt_Clientes.guardarCliente(clientes)  # Recoge los datos en los "Lines" de Qt Desinger para guardarlos en la base de datos
+
+            if self.line_Cliente_Nombre.text() == "" and not self.line_Cliente_Apellido_5.text() == "" and not self.line_Cliente_Apellido.text() == "" and not self.line_Cliente_Apellido_2.text() == "" and not self.line_Cliente_Apellido_4.text() == "" and not self.line_Cliente_Apellido_3.text() == "" and not self.line_Cliente_Direccion.text() == "" and not self.line_Cliente_Direccion.text() == "":
+                indicador = dt_cliente.Dt_Clientes.guardarClientes(clientes)  # Recoge los datos en los "Lines" de Qt Desinger para guardarlos en la base de datos
 
                 self.notifMensaje(indicador, "Guardados")
 
@@ -102,7 +112,7 @@ class cliente_Window(QMainWindow, vw_cliente.Ui_MainWindow):
                 self.limpiarCampos()
 
         except Exception as e:
-            print(f"Error en GuardarProveedor: {e}")
+            print(f"Error en GuardarCliente: {e}")
 
 
 if __name__ == '__main__':
