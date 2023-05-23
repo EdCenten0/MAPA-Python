@@ -1,7 +1,6 @@
 # Francisco de Jesús Melendez Simplina
 
-from Datos import Conexion
-
+import Conexion
 
 class Dt_Clientes:
 
@@ -14,12 +13,12 @@ class Dt_Clientes:
         return querys
 
     @classmethod
-    def guardarClientes(cls, Clientes):
+    def guardarClientes(cls, cliente):
 
 
         try:
             cursor = Conexion.Conexion.obtenerConexion().cursor()
-            sql = (f'''INSERT INTO usuario ( nombre, apellido, direccion, correo, telefono, cedula) VALUES ('{Clientes.nombre}','{Clientes.apellido}','{Clientes.direccion}','{Clientes.correo}','{Clientes.telefono}','{Clientes.cedula}','{1}')''')
+            sql = (f'''INSERT INTO usuario ( nombre, apellido, direccion, correo, telefono, cedula) VALUES ('{cliente.nombre}','{cliente.apellido}','{cliente.direccion}','{cliente.correo}','{cliente.telefono}','{cliente.cedula}','{1}')''')
             cursor.execute(sql)
             cursor.connection.commit()
             cursor.close()
@@ -34,13 +33,13 @@ class Dt_Clientes:
 
 
     @classmethod
-    def editarClientes(cls, Clientes):
+    def editarClientes(cls, cliente):
 
         indicador = False
 
         try:
             cursor = Conexion.Conexion.obtenerConexion().cursor()
-            sql = (f'''UPDATE usuario SET nombre = "{Clientes.nombre}" , apellido = "{Clientes.apellido}" , direccion = "{Clientes.direccion}", correo = "{Clientes.correo}", telefono = "{Clientes.telefono}", cedula = "{Clientes.cedula}", estado = "{2}" WHERE id_cliente = {Clientes.id_cliente}''')
+            sql = (f'''UPDATE usuario SET nombre = "{cliente.nombre}" , apellido = "{cliente.apellido}" , direccion = "{cliente.direccion}", correo = "{cliente.correo}", telefono = "{cliente.telefono}", cedula = "{cliente.cedula}", estado = "{2}" WHERE id_cliente = {cliente.id_cliente}''')
             cursor.execute(sql)
             cursor.connection.commit()
             cursor.close()
@@ -55,13 +54,13 @@ class Dt_Clientes:
 
 
     @classmethod
-    def eliminarClientes(cls, Clientes):
+    def eliminarClientes(cls, cliente):
 
         indicador = False
 
         try:
             cursor = Conexion.Conexion.obtenerConexion().cursor()
-            sql = (f'''DELETE FROM usuario WHERE id_usuario = {Clientes.id_usuario}''')
+            sql = (f'''DELETE FROM usuario WHERE id_usuario = {cliente.id_usuario}''')
             cursor.execute(sql)
             cursor.connection.commit()
             cursor.close()
@@ -74,12 +73,12 @@ class Dt_Clientes:
         return indicador
 
     @classmethod
-    def ExisteClientes(cls,Clientes):
+    def ExisteClientes(cls,cliente):
         try:
 
             existe = False
             cursor = Conexion.Conexion.obtenerConexion().cursor()
-            cursor.execute(f"Select * FROM clientes WHERE id_cliente = '{Clientes.id_cliente}' ")
+            cursor.execute(f"Select * FROM clientes WHERE id_cliente = '{cliente.id_cliente}' ")
             consulta = cursor.fetchall()
 
             if consulta:
@@ -91,5 +90,5 @@ class Dt_Clientes:
             print(f"Error en Cliente Existente:{ex}")
 
 if __name__ == '__main__':
-    print(Dt_Clientes.llenarComboxCliente())
+    print(Dt_Clientes.listarClientes())
 
