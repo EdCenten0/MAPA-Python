@@ -235,22 +235,22 @@ color: rgb(255, 255, 255);</string>
     </column>
     <column>
      <property name="text">
-      <string>Direccion</string>
-     </property>
-    </column>
-    <column>
-     <property name="text">
       <string>Cedula</string>
      </property>
     </column>
     <column>
      <property name="text">
-      <string>Fecha creación</string>
+      <string>Email</string>
      </property>
     </column>
     <column>
      <property name="text">
-      <string>Correo</string>
+      <string>Telefono</string>
+     </property>
+    </column>
+    <column>
+     <property name="text">
+      <string>ID_Tienda</string>
      </property>
     </column>
    </widget>
