@@ -11,7 +11,6 @@
 from PyQt5 import QtCore, QtGui, QtWidgets
 
 
-
 class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
         MainWindow.setObjectName("MainWindow")
@@ -20,11 +19,11 @@ class Ui_MainWindow(object):
         self.centralwidget = QtWidgets.QWidget(MainWindow)
         self.centralwidget.setObjectName("centralwidget")
         self.line_Cliente_Nombre = QtWidgets.QLineEdit(self.centralwidget)
-        self.line_Cliente_Nombre.setGeometry(QtCore.QRect(100, 20, 201, 25))
+        self.line_Cliente_Nombre.setGeometry(QtCore.QRect(50, 20, 201, 25))
         self.line_Cliente_Nombre.setStyleSheet("background-color: rgb(246, 245, 244);")
         self.line_Cliente_Nombre.setObjectName("line_Cliente_Nombre")
         self.label_3 = QtWidgets.QLabel(self.centralwidget)
-        self.label_3.setGeometry(QtCore.QRect(10, 70, 91, 17))
+        self.label_3.setGeometry(QtCore.QRect(10, 130, 91, 17))
         self.label_3.setStyleSheet("font: 14pt \"Ubuntu\";\n"
 "color: rgb(255, 255, 255);")
         self.label_3.setObjectName("label_3")
@@ -33,7 +32,7 @@ class Ui_MainWindow(object):
         self.bt_Eliminar_Cliente.setStyleSheet("background-color: rgb(165, 215, 232);")
         self.bt_Eliminar_Cliente.setObjectName("bt_Eliminar_Cliente")
         self.label_6 = QtWidgets.QLabel(self.centralwidget)
-        self.label_6.setGeometry(QtCore.QRect(320, 160, 121, 17))
+        self.label_6.setGeometry(QtCore.QRect(320, 180, 71, 17))
         self.label_6.setStyleSheet("font: 14pt \"Ubuntu\";\n"
 "color: rgb(255, 255, 255);")
         self.label_6.setObjectName("label_6")
@@ -46,15 +45,10 @@ class Ui_MainWindow(object):
         self.bt_Guardar_Cliente.setStyleSheet("background-color: rgb(165, 215, 232);")
         self.bt_Guardar_Cliente.setObjectName("bt_Guardar_Cliente")
         self.label = QtWidgets.QLabel(self.centralwidget)
-        self.label.setGeometry(QtCore.QRect(10, 20, 91, 17))
+        self.label.setGeometry(QtCore.QRect(10, 20, 31, 17))
         self.label.setStyleSheet("font: 14pt \"Ubuntu\";\n"
 "color: rgb(255, 255, 255);")
         self.label.setObjectName("label")
-        self.line_Cliente_Cedula = QtWidgets.QLineEdit(self.centralwidget)
-        self.line_Cliente_Cedula.setGeometry(QtCore.QRect(400, 70, 231, 25))
-        self.line_Cliente_Cedula.setStyleSheet("background-color: rgb(246, 245, 244);")
-        self.line_Cliente_Cedula.setEchoMode(QtWidgets.QLineEdit.Password)
-        self.line_Cliente_Cedula.setObjectName("line_Cliente_Cedula")
         self.label_2 = QtWidgets.QLabel(self.centralwidget)
         self.label_2.setGeometry(QtCore.QRect(320, 20, 81, 21))
         self.label_2.setStyleSheet("font: 14pt \"Ubuntu\";\n"
@@ -65,7 +59,7 @@ class Ui_MainWindow(object):
         self.bt_Editar_Cliente.setStyleSheet("background-color: rgb(165, 215, 232);")
         self.bt_Editar_Cliente.setObjectName("bt_Editar_Cliente")
         self.line_Cliente_Direccion = QtWidgets.QLineEdit(self.centralwidget)
-        self.line_Cliente_Direccion.setGeometry(QtCore.QRect(100, 70, 201, 161))
+        self.line_Cliente_Direccion.setGeometry(QtCore.QRect(100, 130, 201, 21))
         self.line_Cliente_Direccion.setStyleSheet("background-color: rgb(246, 245, 244);")
         self.line_Cliente_Direccion.setObjectName("line_Cliente_Direccion")
         self.tb_Cliente = QtWidgets.QTableWidget(self.centralwidget)
@@ -95,22 +89,10 @@ class Ui_MainWindow(object):
         self.tb_Cliente.verticalHeader().setDefaultSectionSize(25)
         self.tb_Cliente.verticalHeader().setMinimumSectionSize(23)
         self.label_5 = QtWidgets.QLabel(self.centralwidget)
-        self.label_5.setGeometry(QtCore.QRect(320, 120, 121, 17))
+        self.label_5.setGeometry(QtCore.QRect(320, 120, 81, 17))
         self.label_5.setStyleSheet("font: 14pt \"Ubuntu\";\n"
 "color: rgb(255, 255, 255);")
         self.label_5.setObjectName("label_5")
-        self.line_Cliente_Correo = QtWidgets.QLineEdit(self.centralwidget)
-        self.line_Cliente_Correo.setEnabled(True)
-        self.line_Cliente_Correo.setGeometry(QtCore.QRect(400, 160, 241, 25))
-        self.line_Cliente_Correo.setStyleSheet("background-color: rgb(246, 245, 244);")
-        self.line_Cliente_Correo.setEchoMode(QtWidgets.QLineEdit.Password)
-        self.line_Cliente_Correo.setObjectName("line_Cliente_Correo")
-        self.line_Cliente_Telefono = QtWidgets.QLineEdit(self.centralwidget)
-        self.line_Cliente_Telefono.setEnabled(True)
-        self.line_Cliente_Telefono.setGeometry(QtCore.QRect(410, 120, 231, 25))
-        self.line_Cliente_Telefono.setStyleSheet("background-color: rgb(246, 245, 244);")
-        self.line_Cliente_Telefono.setEchoMode(QtWidgets.QLineEdit.Password)
-        self.line_Cliente_Telefono.setObjectName("line_Cliente_Telefono")
         self.bt_Vaciar_Cliente = QtWidgets.QPushButton(self.centralwidget)
         self.bt_Vaciar_Cliente.setGeometry(QtCore.QRect(670, 170, 101, 31))
         self.bt_Vaciar_Cliente.setStyleSheet("background-color: rgb(165, 215, 232);")
@@ -120,6 +102,27 @@ class Ui_MainWindow(object):
         self.label_4.setStyleSheet("font: 14pt \"Ubuntu\";\n"
 "color: rgb(255, 255, 255);")
         self.label_4.setObjectName("label_4")
+        self.line_Cliente_Apellido_2 = QtWidgets.QLineEdit(self.centralwidget)
+        self.line_Cliente_Apellido_2.setGeometry(QtCore.QRect(400, 70, 241, 25))
+        self.line_Cliente_Apellido_2.setStyleSheet("background-color: rgb(246, 245, 244);")
+        self.line_Cliente_Apellido_2.setObjectName("line_Cliente_Apellido_2")
+        self.line_Cliente_Apellido_3 = QtWidgets.QLineEdit(self.centralwidget)
+        self.line_Cliente_Apellido_3.setGeometry(QtCore.QRect(400, 120, 241, 25))
+        self.line_Cliente_Apellido_3.setStyleSheet("background-color: rgb(246, 245, 244);")
+        self.line_Cliente_Apellido_3.setObjectName("line_Cliente_Apellido_3")
+        self.line_Cliente_Apellido_4 = QtWidgets.QLineEdit(self.centralwidget)
+        self.line_Cliente_Apellido_4.setGeometry(QtCore.QRect(390, 180, 241, 25))
+        self.line_Cliente_Apellido_4.setStyleSheet("background-color: rgb(246, 245, 244);")
+        self.line_Cliente_Apellido_4.setObjectName("line_Cliente_Apellido_4")
+        self.line_Cliente_Apellido_5 = QtWidgets.QLineEdit(self.centralwidget)
+        self.line_Cliente_Apellido_5.setGeometry(QtCore.QRect(100, 70, 201, 25))
+        self.line_Cliente_Apellido_5.setStyleSheet("background-color: rgb(246, 245, 244);")
+        self.line_Cliente_Apellido_5.setObjectName("line_Cliente_Apellido_5")
+        self.label_7 = QtWidgets.QLabel(self.centralwidget)
+        self.label_7.setGeometry(QtCore.QRect(10, 70, 91, 17))
+        self.label_7.setStyleSheet("font: 14pt \"Ubuntu\";\n"
+"color: rgb(255, 255, 255);")
+        self.label_7.setObjectName("label_7")
         MainWindow.setCentralWidget(self.centralwidget)
 
         self.retranslateUi(MainWindow)
@@ -127,12 +130,12 @@ class Ui_MainWindow(object):
 
     def retranslateUi(self, MainWindow):
         _translate = QtCore.QCoreApplication.translate
-        MainWindow.setWindowTitle(_translate("MainWindow", "Cliente"))
-        self.label_3.setText(_translate("MainWindow", "Direccion:"))
+        MainWindow.setWindowTitle(_translate("MainWindow", "Principal"))
+        self.label_3.setText(_translate("MainWindow", "Id tienda:"))
         self.bt_Eliminar_Cliente.setText(_translate("MainWindow", "Eliminar"))
         self.label_6.setText(_translate("MainWindow", "Correo:"))
         self.bt_Guardar_Cliente.setText(_translate("MainWindow", "Guardar"))
-        self.label.setText(_translate("MainWindow", "Nombre:"))
+        self.label.setText(_translate("MainWindow", "ID:"))
         self.label_2.setText(_translate("MainWindow", "Apellido:"))
         self.bt_Editar_Cliente.setText(_translate("MainWindow", "Editar"))
         item = self.tb_Cliente.horizontalHeaderItem(0)
@@ -152,7 +155,7 @@ class Ui_MainWindow(object):
         self.label_5.setText(_translate("MainWindow", "Telefono:"))
         self.bt_Vaciar_Cliente.setText(_translate("MainWindow", "Vaciar Campos"))
         self.label_4.setText(_translate("MainWindow", "Cedula:"))
-
+        self.label_7.setText(_translate("MainWindow", "Nombre:"))
 if __name__ == "__main__":
     import sys
     app = QtWidgets.QApplication(sys.argv)
@@ -161,3 +164,4 @@ if __name__ == "__main__":
     ui.setupUi(MainWindow)
     MainWindow.show()
     sys.exit(app.exec_())
+
