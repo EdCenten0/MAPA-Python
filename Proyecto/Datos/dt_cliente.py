@@ -1,6 +1,6 @@
 # Francisco de Jesús Melendez Simplina
 
-import Conexion
+from Proyecto.Datos import Conexion
 
 class Dt_Clientes:
 
@@ -18,7 +18,7 @@ class Dt_Clientes:
 
         try:
             cursor = Conexion.Conexion.obtenerConexion().cursor()
-            sql = (f'''INSERT INTO usuario ( nombre, apellido, direccion, correo, telefono, cedula) VALUES ('{cliente.nombre}','{cliente.apellido}','{cliente.direccion}','{cliente.correo}','{cliente.telefono}','{cliente.cedula}','{1}')''')
+            sql = (f'''INSERT INTO usuario ( nombre, apellido, correo, telefono, cedula, id_tienda) VALUES ('{cliente.nombre}','{cliente.apellido}','{cliente.correo}','{cliente.telefono}','{cliente.cedula}','{cliente.id_tienda}','{1}')''')
             cursor.execute(sql)
             cursor.connection.commit()
             cursor.close()

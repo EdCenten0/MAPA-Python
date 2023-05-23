@@ -17,10 +17,10 @@ class bodega:
         id: {self._id}
         nombre: {self._nombre},
         apellido: {self._apellido},
-        direccion: {self._direccion}
         correo: {self._correo},
         telefono: {self._telefono},
-        cedula: {self._cedula}        
+        cedula: {self._cedula},    
+        id_tienda: {self._id_tienda}
 
         '''
 
@@ -29,10 +29,10 @@ class bodega:
         u.id = u._id
         u.nombre = u._nombre
         u.apellido = u._apellido
-        u.direccion = u._direccion
         u.correo = u._correo
         u.telefono = u._telefono
         u.cedula = u._cedula
+        u.id_tienda = u._id_tienda
         return u
 
     #GET
@@ -63,14 +63,6 @@ class bodega:
         self._apellido = apellido
 
     @property
-    def direccion(self):
-        return self._direccion
-
-    @direccion.setter
-    def direccion(self, direccion):
-        self._direccion = direccion
-
-    @property
     def correo(self):
         return self._correo
 
@@ -91,3 +83,11 @@ class bodega:
     @cedula.setter
     def cedula(self, cedula):
         self._cedula = cedula
+
+    @property
+    def id_tienda(self):
+        return self._direccion
+
+    @id_tienda.setter
+    def id_tienda(self, id_tienda):
+        self._id_tienda = id_tienda
