@@ -20,7 +20,7 @@
    <widget class="QLineEdit" name="line_Cliente_Nombre">
     <property name="geometry">
      <rect>
-      <x>100</x>
+      <x>50</x>
       <y>20</y>
       <width>201</width>
       <height>25</height>
@@ -34,7 +34,7 @@
     <property name="geometry">
      <rect>
       <x>10</x>
-      <y>70</y>
+      <y>130</y>
       <width>91</width>
       <height>17</height>
      </rect>
@@ -44,7 +44,7 @@
 color: rgb(255, 255, 255);</string>
     </property>
     <property name="text">
-     <string>Direccion:</string>
+     <string>Id tienda:</string>
     </property>
    </widget>
    <widget class="QPushButton" name="bt_Eliminar_Cliente">
@@ -67,8 +67,8 @@ color: rgb(255, 255, 255);</string>
     <property name="geometry">
      <rect>
       <x>320</x>
-      <y>160</y>
-      <width>121</width>
+      <y>180</y>
+      <width>71</width>
       <height>17</height>
      </rect>
     </property>
@@ -114,7 +114,7 @@ color: rgb(255, 255, 255);</string>
      <rect>
       <x>10</x>
       <y>20</y>
-      <width>91</width>
+      <width>31</width>
       <height>17</height>
      </rect>
     </property>
@@ -123,23 +123,7 @@ color: rgb(255, 255, 255);</string>
 color: rgb(255, 255, 255);</string>
     </property>
     <property name="text">
-     <string>Nombre:</string>
-    </property>
-   </widget>
-   <widget class="QLineEdit" name="line_Cliente_Cedula">
-    <property name="geometry">
-     <rect>
-      <x>400</x>
-      <y>70</y>
-      <width>231</width>
-      <height>25</height>
-     </rect>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">background-color: rgb(246, 245, 244);</string>
-    </property>
-    <property name="echoMode">
-     <enum>QLineEdit::Password</enum>
+     <string>ID:</string>
     </property>
    </widget>
    <widget class="QLabel" name="label_2">
@@ -179,9 +163,9 @@ color: rgb(255, 255, 255);</string>
     <property name="geometry">
      <rect>
       <x>100</x>
-      <y>70</y>
+      <y>130</y>
       <width>201</width>
-      <height>161</height>
+      <height>21</height>
      </rect>
     </property>
     <property name="styleSheet">
@@ -259,7 +243,7 @@ color: rgb(255, 255, 255);</string>
      <rect>
       <x>320</x>
       <y>120</y>
-      <width>121</width>
+      <width>81</width>
       <height>17</height>
      </rect>
     </property>
@@ -269,44 +253,6 @@ color: rgb(255, 255, 255);</string>
     </property>
     <property name="text">
      <string>Telefono:</string>
-    </property>
-   </widget>
-   <widget class="QLineEdit" name="line_Cliente_Correo">
-    <property name="enabled">
-     <bool>true</bool>
-    </property>
-    <property name="geometry">
-     <rect>
-      <x>400</x>
-      <y>160</y>
-      <width>241</width>
-      <height>25</height>
-     </rect>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">background-color: rgb(246, 245, 244);</string>
-    </property>
-    <property name="echoMode">
-     <enum>QLineEdit::Password</enum>
-    </property>
-   </widget>
-   <widget class="QLineEdit" name="line_Cliente_Telefono">
-    <property name="enabled">
-     <bool>true</bool>
-    </property>
-    <property name="geometry">
-     <rect>
-      <x>410</x>
-      <y>120</y>
-      <width>231</width>
-      <height>25</height>
-     </rect>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">background-color: rgb(246, 245, 244);</string>
-    </property>
-    <property name="echoMode">
-     <enum>QLineEdit::Password</enum>
     </property>
    </widget>
    <widget class="QPushButton" name="bt_Vaciar_Cliente">
@@ -340,6 +286,75 @@ color: rgb(255, 255, 255);</string>
     </property>
     <property name="text">
      <string>Cedula:</string>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="line_Cliente_Apellido_2">
+    <property name="geometry">
+     <rect>
+      <x>400</x>
+      <y>70</y>
+      <width>241</width>
+      <height>25</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: rgb(246, 245, 244);</string>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="line_Cliente_Apellido_3">
+    <property name="geometry">
+     <rect>
+      <x>400</x>
+      <y>120</y>
+      <width>241</width>
+      <height>25</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: rgb(246, 245, 244);</string>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="line_Cliente_Apellido_4">
+    <property name="geometry">
+     <rect>
+      <x>390</x>
+      <y>180</y>
+      <width>241</width>
+      <height>25</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: rgb(246, 245, 244);</string>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="line_Cliente_Apellido_5">
+    <property name="geometry">
+     <rect>
+      <x>100</x>
+      <y>70</y>
+      <width>201</width>
+      <height>25</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: rgb(246, 245, 244);</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_7">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>70</y>
+      <width>91</width>
+      <height>17</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">font: 14pt &quot;Ubuntu&quot;;
+color: rgb(255, 255, 255);</string>
+    </property>
+    <property name="text">
+     <string>Nombre:</string>
     </property>
    </widget>
   </widget>
