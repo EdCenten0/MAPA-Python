@@ -2,25 +2,23 @@
 
 import Conexion
 
-
-class Dt_Opcion:
+class Dt_Clientes:
 
     @classmethod
-    def listarOpcion(cls):
+    def listarClientes(cls):
         cursor = Conexion.Conexion.obtenerConexion().cursor()
-        cursor.execute("SELECT * FROM opcion")
+        cursor.execute("SELECT * FROM clientes")
         querys = cursor.fetchall()
         cursor.close()
         return querys
 
     @classmethod
-    def guardarOpcion(cls, Opcion):
+    def guardarClientes(cls, cliente):
 
-        indicador = False
 
         try:
             cursor = Conexion.Conexion.obtenerConexion().cursor()
-            sql = (f'''INSERT INTO opcion (descripcion) VALUES ('{Opcion.opcion}')''')
+            sql = (f'''INSERT INTO usuario ( nombre, apellido, direccion, correo, telefono, cedula) VALUES ('{cliente.nombre}','{cliente.apellido}','{cliente.direccion}','{cliente.correo}','{cliente.telefono}','{cliente.cedula}','{1}')''')
             cursor.execute(sql)
             cursor.connection.commit()
             cursor.close()
@@ -28,20 +26,20 @@ class Dt_Opcion:
             indicador = True
 
         except Exception as e:
-            print(f"Error en guardarOpcion: {e}")
+            print(f"Error en guardarUsuario: {e}")
 
         return indicador
 
 
 
     @classmethod
-    def editarOpcion(cls, Opcion):
+    def editarClientes(cls, cliente):
 
         indicador = False
 
         try:
             cursor = Conexion.Conexion.obtenerConexion().cursor()
-            sql = (f'''UPDATE opcion SET descripcion = "{Opcion.opcion}" WHERE idopcion = {Opcion.idOpcion}''')
+            sql = (f'''UPDATE usuario SET nombre = "{cliente.nombre}" , apellido = "{cliente.apellido}" , direccion = "{cliente.direccion}", correo = "{cliente.correo}", telefono = "{cliente.telefono}", cedula = "{cliente.cedula}", estado = "{2}" WHERE id_cliente = {cliente.id_cliente}''')
             cursor.execute(sql)
             cursor.connection.commit()
             cursor.close()
@@ -49,20 +47,20 @@ class Dt_Opcion:
             indicador = True
 
         except Exception as e:
-            print(f"Error en editarOpcion: {e}")
+            print(f"Error en editarUsuario: {e}")
 
         return indicador
 
 
 
     @classmethod
-    def eliminarOpcion(cls, Opcion):
+    def eliminarClientes(cls, cliente):
 
         indicador = False
 
         try:
             cursor = Conexion.Conexion.obtenerConexion().cursor()
-            sql = (f'''DELETE FROM opcion WHERE idopcion = {Opcion.idOpcion}''')
+            sql = (f'''DELETE FROM usuario WHERE id_usuario = {cliente.id_usuario}''')
             cursor.execute(sql)
             cursor.connection.commit()
             cursor.close()
@@ -70,29 +68,17 @@ class Dt_Opcion:
             indicador = True
 
         except Exception as ex:
-            print(f"Error en eliminarOpcion: {ex}")
+            print(f"Error en eliminarClientes: {ex}")
 
         return indicador
 
     @classmethod
-    def tablaAsignarOpcion(cls):
-        try:
-            cursor = Conexion.Conexion.obtenerConexion().cursor()
-            cursor.execute(f'''Select descripcion FROM opcion''')
-            querys = cursor.fetchall()
-            cursor.close()
-            return querys
-
-        except Exception as ex:
-            print(f"Error en llenarComboxOpcion: {ex}")
-
-    @classmethod
-    def ExisteRol(cls,Opcion):
+    def ExisteClientes(cls,cliente):
         try:
 
             existe = False
             cursor = Conexion.Conexion.obtenerConexion().cursor()
-            cursor.execute(f"Select * FROM opcion WHERE descripcion = '{Opcion.opcion}' ")
+            cursor.execute(f"Select * FROM clientes WHERE id_cliente = '{cliente.id_cliente}' ")
             consulta = cursor.fetchall()
 
             if consulta:
@@ -101,8 +87,8 @@ class Dt_Opcion:
             return existe
 
         except Exception as ex:
-            print(f"Error en Opcion Existente:{ex}")
-
+            print(f"Error en Cliente Existente:{ex}")
 
 if __name__ == '__main__':
-    print(Dt_Opcion.listarOpcion())
+    print(Dt_Clientes.listarClientes())
+

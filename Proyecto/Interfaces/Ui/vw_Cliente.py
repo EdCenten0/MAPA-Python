@@ -11,6 +11,7 @@
 from PyQt5 import QtCore, QtGui, QtWidgets
 
 
+
 class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
         MainWindow.setObjectName("MainWindow")
@@ -126,7 +127,7 @@ class Ui_MainWindow(object):
 
     def retranslateUi(self, MainWindow):
         _translate = QtCore.QCoreApplication.translate
-        MainWindow.setWindowTitle(_translate("MainWindow", "Principal"))
+        MainWindow.setWindowTitle(_translate("MainWindow", "Cliente"))
         self.label_3.setText(_translate("MainWindow", "Direccion:"))
         self.bt_Eliminar_Cliente.setText(_translate("MainWindow", "Eliminar"))
         self.label_6.setText(_translate("MainWindow", "Correo:"))
