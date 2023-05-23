@@ -32,9 +32,8 @@ class Ui_MainWindow(object):
         self.gridLayout.setObjectName("gridLayout")
         self.frame_2 = QtWidgets.QFrame(self.frame)
         self.frame_2.setStyleSheet("background-color: rgb(240, 213, 209);\n"
-"\n"
-"\n"
-"")
+"border-radius:10%;\n"
+"color: rgb(45, 44, 44);")
         self.frame_2.setFrameShape(QtWidgets.QFrame.StyledPanel)
         self.frame_2.setFrameShadow(QtWidgets.QFrame.Raised)
         self.frame_2.setObjectName("frame_2")

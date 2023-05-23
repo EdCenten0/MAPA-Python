@@ -37,9 +37,8 @@ font-family:&quot;Inter&quot;, sans-serif;</string>
           <widget class="QFrame" name="frame_2">
            <property name="styleSheet">
             <string notr="true">background-color: rgb(240, 213, 209);
-
-
-</string>
+border-radius:10%;
+color: rgb(45, 44, 44);</string>
            </property>
            <property name="frameShape">
             <enum>QFrame::StyledPanel</enum>
