@@ -19,8 +19,7 @@ class Dt_Clientes:
         try:
             cursor = Conexion.Conexion.obtenerConexion().cursor()
             sql = f'''INSERT INTO clientes (nombre, apellido, email, telefono, cedula, id_tienda, estado) 
-                      VALUES ('{cliente.nombre}', '{cliente.apellido}', '{cliente.email}', '{cliente.telefono}', '{cliente.cedula}', '{cliente.id_tienda}', '1')'''
-
+                      VALUES ('{cliente.nombre}', '{cliente.apellido}', '{cliente.email}', '{cliente.telefono}', '{cliente.cedula}', 1 , 1)'''
             cursor.execute(sql)
             cursor.connection.commit()
             cursor.close()
