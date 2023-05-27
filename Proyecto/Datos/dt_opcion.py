@@ -20,7 +20,7 @@ class Dt_Opcion:
 
         try:
             cursor = Conexion.Conexion.obtenerConexion().cursor()
-            sql = (f'''INSERT INTO opcion (descripcion) VALUES ('{Opcion.opcion}')''')
+            sql = (f'''INSERT INTO opcion (descripcion ,estado) VALUES ('{Opcion.opcion}', '{1}')''')
             cursor.execute(sql)
             cursor.connection.commit()
             cursor.close()
@@ -41,7 +41,7 @@ class Dt_Opcion:
 
         try:
             cursor = Conexion.Conexion.obtenerConexion().cursor()
-            sql = (f'''UPDATE opcion SET descripcion = "{Opcion.opcion}" WHERE idopcion = {Opcion.idOpcion}''')
+            sql = (f'''UPDATE opcion SET descripcion = "{Opcion.opcion}", estado = '{2}' WHERE idopcion = {Opcion.idOpcion}''')
             cursor.execute(sql)
             cursor.connection.commit()
             cursor.close()
@@ -104,5 +104,25 @@ class Dt_Opcion:
             print(f"Error en Opcion Existente:{ex}")
 
 
+    @classmethod
+    def buscarIndexOpcion(cls, id):
+
+        try:
+
+            listaOpcion = Dt_Opcion.listarOpcion()
+            indice = 0
+
+            for row in listaOpcion:
+                indice += 1
+                if row["idopcion"] == id:
+                    break
+
+            return indice
+
+        except Exception as e:
+            print(f"Error en buscarUsuario_Rol: {e}")
+
+
+
 if __name__ == '__main__':
-    print(Dt_Opcion.listarOpcion())
+    print(Dt_Opcion.buscarIndexOpcion(3))

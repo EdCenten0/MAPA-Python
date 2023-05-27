@@ -7,8 +7,8 @@ from PyQt5.QtCore import QDate
 from PyQt5.QtWidgets import QTableWidgetItem, QMessageBox
 
 from Datos import dt_usuario, dt_rol, dt_opcion, dt_rol_opcion, dt_usuario_rol
-from Entidades import usuario_rol
 from Entidades.rol_opcion import Rol_opcion
+from Entidades.usuario_rol import Usuario_rol
 from Entidades.usuarios import Usuarios
 from Entidades.roles import Rol
 from Entidades.opciones import Opcion
@@ -46,9 +46,16 @@ class seguridad_Window(QMainWindow, vw_seguridad.Ui_Seguridad):
 
         # Botones de UsuarioRol
         self.bt_Guardar_Usuario_rol.clicked.connect(self.guardarUsuarioRol)
+        self.bt_Vaciar_Usuario_rol.clicked.connect(self.vaciarUsuarioRol)
+        self.bt_Editar_Usuario_rol.clicked.connect(self.editarUsuarioRol)
+        self.bt_Eliminar_Usuario_rol.clicked.connect(self.eliminarUsuario_Rol)
 
         # Botones de RolOpcion
         self.bt_Guardar_Rol_opcion.clicked.connect(self.guardarRolOpcion)
+        self.bt_Vaciar_Rol_opcion.clicked.connect(self.vaciarRolOpcion)
+        self.bt_Eliminar_Rol_opcion.clicked.connect(self.eliminarRolOpcion)
+        self.bt_Editar_Rol_opcion.clicked.connect(self.editarRolOpcion)
+
 
         # Acciones de las tablas
 
@@ -66,7 +73,11 @@ class seguridad_Window(QMainWindow, vw_seguridad.Ui_Seguridad):
 
         #Asignar Rol
         self.llenarTablaUsuarioRol(dt_usuario_rol.Dt_Usuario_rol.listarUsuario_rol())
+        self.tb_Asignar_Rol.itemSelectionChanged.connect(self.obtenerDatosTablaUsuarioRol)
+
+        #Asignar Opcion
         self.llenarTablaRolOpcion(dt_rol_opcion.Dt_rol_opcion.listarRolOpcion())
+        self.tb_Asignar_Opcion.itemSelectionChanged.connect(self.obtenerDatosTablaRolOpcion)
 
         #Combo Box
         self.llenarComboxRoles(dt_rol.Dt_Rol.listarRol())
@@ -136,8 +147,13 @@ class seguridad_Window(QMainWindow, vw_seguridad.Ui_Seguridad):
 
                 self.limpiarCampos()
 
+                self.llenarComboxUsuarios(dt_usuario.Dt_Usuarios.listarUsuarios()) #Combobox
+
+                self.llenarTablaUsuarioRol(dt_usuario_rol.Dt_Usuario_rol.listarUsuario_rol()) #Tabla de Asignar el rol
+
                 self.llenarTablaUsuario(
                     dt_usuario.Dt_Usuarios.listarUsuarios())  # Se reinicia la tabla para poder recargar los datos guardados
+
 
             else:
 
@@ -173,6 +189,10 @@ class seguridad_Window(QMainWindow, vw_seguridad.Ui_Seguridad):
 
                 self.limpiarCampos()
 
+                self.llenarComboxUsuarios(dt_usuario.Dt_Usuarios.listarUsuarios()) #Combobox
+
+                self.llenarTablaUsuarioRol(dt_usuario_rol.Dt_Usuario_rol.listarUsuario_rol())  # Tabla de Asignar el rol
+
                 self.llenarTablaUsuario(
                     dt_usuario.Dt_Usuarios.listarUsuarios())  # Se reinicia la tabla para poder recargar los datos guardados
 
@@ -200,8 +220,13 @@ class seguridad_Window(QMainWindow, vw_seguridad.Ui_Seguridad):
 
                 self.limpiarCampos()
 
+                self.llenarComboxUsuarios(dt_usuario.Dt_Usuarios.listarUsuarios()) #Combobox
+
+                self.llenarTablaUsuarioRol(dt_usuario_rol.Dt_Usuario_rol.listarUsuario_rol()) #Tabla de Asignar el rol
+
                 self.llenarTablaUsuario(
                     dt_usuario.Dt_Usuarios.listarUsuarios())  # Se reinicia la tabla para poder recargar los datos guardados
+
 
             else:
 
@@ -272,8 +297,14 @@ class seguridad_Window(QMainWindow, vw_seguridad.Ui_Seguridad):
 
                 self.limpiarCampos()
 
-                self.llenarTablaRol(
-                    dt_rol.Dt_Rol.listarRol())  # Se reinicia la tabla para poder recargar los datos guardados
+                self.llenarComboxRoles(dt_rol.Dt_Rol.listarRol()) #Combobox
+
+                self.llenarTablaUsuarioRol(dt_usuario_rol.Dt_Usuario_rol.listarUsuario_rol())  # Tabla de Asignar el rol
+
+                self.llenarTablaRolOpcion(dt_rol_opcion.Dt_rol_opcion.listarRolOpcion())  # Tabla de Asignar el Opcion
+
+                self.llenarTablaRol(dt_rol.Dt_Rol.listarRol())  # Se reinicia la tabla para poder recargar los datos guardados
+
 
             else:
 
@@ -298,8 +329,13 @@ class seguridad_Window(QMainWindow, vw_seguridad.Ui_Seguridad):
 
                 self.limpiarCampos()
 
-                self.llenarTablaRol(
-                    dt_rol.Dt_Rol.listarRol())  # Se reinicia la tabla para poder recargar los datos guardados
+                self.llenarComboxRoles(dt_rol.Dt_Rol.listarRol()) #Combobox
+
+                self.llenarTablaUsuarioRol(dt_usuario_rol.Dt_Usuario_rol.listarUsuario_rol())  # Tabla de Asignar el rol
+
+                self.llenarTablaRolOpcion(dt_rol_opcion.Dt_rol_opcion.listarRolOpcion())  # Tabla de Asignar el Opcion
+
+                self.llenarTablaRol(dt_rol.Dt_Rol.listarRol())  # Se reinicia la tabla para poder recargar los datos guardados
 
             else:
 
@@ -324,8 +360,14 @@ class seguridad_Window(QMainWindow, vw_seguridad.Ui_Seguridad):
 
                 self.limpiarCampos()
 
-                self.llenarTablaRol(
-                    dt_rol.Dt_Rol.listarRol())  # Se reinicia la tabla para poder recargar los datos guardados
+                self.llenarComboxRoles(dt_rol.Dt_Rol.listarRol()) #Combobox
+
+                self.llenarTablaUsuarioRol(dt_usuario_rol.Dt_Usuario_rol.listarUsuario_rol())  # Tabla de Asignar el rol
+
+                self.llenarTablaRolOpcion(dt_rol_opcion.Dt_rol_opcion.listarRolOpcion())  # Tabla de Asignar el Opcion
+
+                self.llenarTablaRol(dt_rol.Dt_Rol.listarRol())  # Se reinicia la tabla para poder recargar los datos guardados
+
 
             else:
 
@@ -380,8 +422,11 @@ class seguridad_Window(QMainWindow, vw_seguridad.Ui_Seguridad):
 
                 self.limpiarCampos()
 
-                self.llenarTablaOpcion(
-                    dt_opcion.Dt_Opcion.listarOpcion())  # Se reinicia la tabla para poder recargar los datos guardados
+                self.llenarComboxOpcion(dt_opcion.Dt_Opcion.listarOpcion()) #Combobox
+
+                self.llenarTablaRolOpcion(dt_rol_opcion.Dt_rol_opcion.listarRolOpcion())  # Tabla de Asignar el Opcion
+
+                self.llenarTablaOpcion(dt_opcion.Dt_Opcion.listarOpcion())  # Se reinicia la tabla para poder recargar los datos guardados
 
             else:
 
@@ -406,8 +451,11 @@ class seguridad_Window(QMainWindow, vw_seguridad.Ui_Seguridad):
 
                 self.limpiarCampos()
 
-                self.llenarTablaOpcion(
-                    dt_opcion.Dt_Opcion.listarOpcion())  # Se reinicia la tabla para poder recargar los datos guardados
+                self.llenarTablaRolOpcion(dt_rol_opcion.Dt_rol_opcion.listarRolOpcion())  # Tabla de Asignar el Opcion
+
+                self.llenarComboxOpcion(dt_opcion.Dt_Opcion.listarOpcion()) #Combobox
+
+                self.llenarTablaOpcion(dt_opcion.Dt_Opcion.listarOpcion())  # Se reinicia la tabla para poder recargar los datos guardados
 
             else:
 
@@ -431,8 +479,9 @@ class seguridad_Window(QMainWindow, vw_seguridad.Ui_Seguridad):
 
                 self.limpiarCampos()
 
-                self.llenarTablaOpcion(
-                    dt_opcion.Dt_Opcion.listarOpcion())  # Se reinicia la tabla para poder recargar los datos guardados
+                self.llenarComboxOpcion(dt_opcion.Dt_Opcion.listarOpcion()) #Combobox
+
+                self.llenarTablaOpcion(dt_opcion.Dt_Opcion.listarOpcion())  # Se reinicia la tabla para poder recargar los datos guardados
 
             else:
 
@@ -470,9 +519,12 @@ class seguridad_Window(QMainWindow, vw_seguridad.Ui_Seguridad):
 
         '''******************************************  Asignar Rol y Opcion   ******************************************'''
 
+    #Comboboxs
+
     def llenarComboxRoles(self, datos):
         print("\nDatos de la combo box Rol")
-        i = len(datos)
+        self.cb_Asignar_Rol_idRol.clear()
+        self.cb_Asignar_Opcion_idRol.clear()
 
         for registro in datos:
             print(registro)
@@ -482,15 +534,17 @@ class seguridad_Window(QMainWindow, vw_seguridad.Ui_Seguridad):
 
     def llenarComboxUsuarios(self, datos):
         print("\nDatos de la Combo Box Usuarios")
-        i = len(datos)
+        self.cb_Asignar_Rol_idUsuario.clear()
 
         for registro in datos:
             print(registro)
-            self.cb_Asignar_Rol_idUsuario.addItem(registro["user"],registro["id_usuario"])
+            self.cb_Asignar_Rol_idUsuario.addItem(registro["user"], registro["id_usuario"])
+
 
 
     def llenarComboxOpcion(self, datos):
         print("\nDatos de la combo box Opcion")
+        self.cb_Asignar_Opcion_idOpcion.clear()
 
         for registro in datos:
             print(registro)
@@ -514,6 +568,29 @@ class seguridad_Window(QMainWindow, vw_seguridad.Ui_Seguridad):
             self.tb_Asignar_Rol.setItem(tablerow, 2, QTableWidgetItem(str(row["id_rol"])))
             tablerow = tablerow + 1
 
+    def obtenerDatosTablaUsuarioRol(self): #No se como agregarlo al elemento click de la tabla
+        # Selecciona la fila de la tabla
+        filaSeleccionada = self.tb_Asignar_Rol.currentRow()
+        id = self.tb_Asignar_Rol.item(filaSeleccionada, 0).text()
+        id_usuario = self.tb_Asignar_Rol.item(filaSeleccionada, 1).text() #Obtener el id de la base de datos a travez de la tabla
+        id_rol = self.tb_Asignar_Rol.item(filaSeleccionada, 2).text() #Obtener el id de la base de datos a travez de la tabla
+
+        #Buscar el la posicion exacta en el combobox
+        usuario = dt_usuario.Dt_Usuarios.buscarIndexUsuario(int(id_usuario))
+        rol = dt_rol.Dt_Rol.buscarIndexRol(int(id_rol))
+
+        #Se asignan los valores de los text line y combobox
+        self.line_Asignar_Rol_Id.setText(id)
+        self.cb_Asignar_Rol_idUsuario.setCurrentIndex(usuario-1)
+        self.cb_Asignar_Rol_idRol.setCurrentIndex(rol - 1)
+
+
+    def vaciarUsuarioRol(self):
+        self.line_Asignar_Rol_Id.setText("")
+        self.cb_Asignar_Rol_idUsuario.setCurrentIndex(0)
+        self.cb_Asignar_Rol_idRol.setCurrentIndex(0)
+
+
     def llenarTablaRolOpcion(self, datos):
         print("\nDatos de la Tabla Asignar Opcion")
         i = len(datos)
@@ -529,39 +606,165 @@ class seguridad_Window(QMainWindow, vw_seguridad.Ui_Seguridad):
             self.tb_Asignar_Opcion.setItem(tablerow, 2, QTableWidgetItem(str(row["id_opcion"])))
             tablerow = tablerow + 1
 
+    def obtenerDatosTablaRolOpcion(self): #No se como agregarlo al elemento click de la tabla
+        # Selecciona la fila de la tabla
+        filaSeleccionada = self.tb_Asignar_Opcion.currentRow()
+        id = self.tb_Asignar_Opcion.item(filaSeleccionada, 0).text()
+        id_rol = self.tb_Asignar_Opcion.item(filaSeleccionada, 1).text() #Obtener el id de la base de datos a travez de la tabla
+        id_opcion = self.tb_Asignar_Opcion.item(filaSeleccionada, 2).text() #Obtener el id de la base de datos a travez de la tabla
+
+        # Buscar el la posicion exacta en el combobox
+        rol = dt_rol.Dt_Rol.buscarIndexRol(int(id_rol))
+        opcion = dt_opcion.Dt_Opcion.buscarIndexOpcion(int(id_opcion))
+
+
+        #Se asignan los valores de los text line y combobox
+        self.line_Asignar_Opcion_Id.setText(id)
+        self.cb_Asignar_Opcion_idRol.setCurrentIndex(rol-1)
+        self.cb_Asignar_Opcion_idOpcion.setCurrentIndex(opcion-1)
+
+
+    def vaciarRolOpcion(self):
+        self.line_Asignar_Opcion_Id.setText("")
+        self.cb_Asignar_Opcion_idOpcion.setCurrentIndex(0)
+        self.cb_Asignar_Opcion_idRol.setCurrentIndex(0)
+
+
+    #Usuario Rol
     def guardarUsuarioRol(self):
         try:
+            if self.line_Asignar_Rol_Id.text() == "":
 
-            usuario_rol.id_rol = self.cb_Asignar_Rol_idRol.itemData(self.cb_Asignar_Rol_idRol.currentIndex())
+                Usuario_rol.id_rol = self.cb_Asignar_Rol_idRol.itemData(self.cb_Asignar_Rol_idRol.currentIndex())
 
-            usuario_rol.id_usuario = self.cb_Asignar_Rol_idUsuario.itemData(self.cb_Asignar_Rol_idUsuario.currentIndex())
+                Usuario_rol.id_usuario = self.cb_Asignar_Rol_idUsuario.itemData(self.cb_Asignar_Rol_idUsuario.currentIndex())
 
-            indicador = dt_usuario_rol.Dt_Usuario_rol.guardarUsuarioRol(usuario_rol)
+                indicador = dt_usuario_rol.Dt_Usuario_rol.guardarUsuarioRol(Usuario_rol)
 
+                self.notifMensaje(indicador, "Guardados")
 
-            self.llenarTablaUsuarioRol(dt_usuario_rol.Dt_Usuario_rol.listarUsuario_rol())
+                self.llenarTablaUsuarioRol(dt_usuario_rol.Dt_Usuario_rol.listarUsuario_rol())
+
+            else:
+
+                self.notifMensaje(False, "Guardados")
+
 
 
         except Exception as e:
             print(f"ERROR en guardarUsuarioRol: {e}")
 
+    def editarUsuarioRol(self):
+        try:
+            if not self.line_Asignar_Rol_Id.text() == "":
+
+                Usuario_rol.usuario_rol_id = self.line_Asignar_Rol_Id.text()
+
+                Usuario_rol.id_rol = self.cb_Asignar_Rol_idRol.itemData(self.cb_Asignar_Rol_idRol.currentIndex())
+
+                Usuario_rol.id_usuario = self.cb_Asignar_Rol_idUsuario.itemData(self.cb_Asignar_Rol_idUsuario.currentIndex())
+
+                indicador = dt_usuario_rol.Dt_Usuario_rol.editarUsuarioRol(Usuario_rol)
+
+                self.notifMensaje(indicador, "Editados")
+
+                self.llenarTablaUsuarioRol(dt_usuario_rol.Dt_Usuario_rol.listarUsuario_rol())
+
+            else:
+
+                self.notifMensaje(False, "Error")
+
+        except Exception as e:
+            print(f"ERROR en editarUsuarioRol: {e}")
+
+
+    def eliminarUsuario_Rol(self):
+        try:
+            if not self.line_Asignar_Rol_Id.text() == "":
+
+                Usuario_rol.usuario_rol_id = self.line_Asignar_Rol_Id.text()
+
+                indicador = dt_usuario_rol.Dt_Usuario_rol.eliminarUsuarioRol(Usuario_rol)
+
+                self.notifMensaje(indicador, "Eliminados")
+
+                self.llenarTablaUsuarioRol(dt_usuario_rol.Dt_Usuario_rol.listarUsuario_rol())
+
+            else:
+
+                self.notifMensaje(False, "Error")
+
+        except Exception as e:
+            print(f"ERROR en eliminarUsuarioRol: {e}")
+
+
+    #Rol Opcion
     def guardarRolOpcion(self):
         try:
+            if self.line_Asignar_Opcion_Id.text() == "":
 
-            Rol_opcion.id_rol = self.cb_Asignar_Opcion_idRol.itemData(self.cb_Asignar_Opcion_idRol.currentIndex())
+                Rol_opcion.id_rol = self.cb_Asignar_Opcion_idRol.itemData(self.cb_Asignar_Opcion_idRol.currentIndex())
 
-            Rol_opcion.id_opcion = self.cb_Asignar_Opcion_idOpcion.itemData(
-                    self.cb_Asignar_Opcion_idOpcion.currentIndex())
+                Rol_opcion.id_opcion = self.cb_Asignar_Opcion_idOpcion.itemData(self.cb_Asignar_Opcion_idOpcion.currentIndex())
 
-            indicador = dt_rol_opcion.Dt_rol_opcion.guardarRolOpcion(Rol_opcion)
+                indicador = dt_rol_opcion.Dt_rol_opcion.guardarRolOpcion(Rol_opcion)
 
-            self.llenarTablaRolOpcion(dt_rol_opcion.Dt_rol_opcion.listarRolOpcion())
+                self.notifMensaje(indicador, "Guardados")
 
+                self.llenarTablaRolOpcion(dt_rol_opcion.Dt_rol_opcion.listarRolOpcion())
+
+            else:
+
+                self.notifMensaje(False, "Error")
 
         except Exception as e:
             print(f"ERROR en guardarRolOpcion: {e}")
 
-        '''******************************************  Menu Principal   ******************************************'''
+
+    def editarRolOpcion(self):
+        try:
+            if not self.line_Asignar_Opcion_Id.text() == "":
+
+                Rol_opcion.rol_opcion_id = self.line_Asignar_Opcion_Id.text()
+
+                Rol_opcion.id_rol = self.cb_Asignar_Opcion_idRol.itemData(self.cb_Asignar_Opcion_idRol.currentIndex())
+
+                Rol_opcion.id_opcion = self.cb_Asignar_Opcion_idOpcion.itemData(self.cb_Asignar_Opcion_idOpcion.currentIndex())
+
+                indicador = dt_rol_opcion.Dt_rol_opcion.editarRolOpcion(Rol_opcion)
+
+                self.notifMensaje(indicador, "Editados")
+
+                self.llenarTablaRolOpcion(dt_rol_opcion.Dt_rol_opcion.listarRolOpcion())
+
+            else:
+
+                self.notifMensaje(False, "Error")
+
+        except Exception as e:
+            print(f"ERROR en editarolOpcion: {e}")
+
+
+    def eliminarRolOpcion(self):
+        try:
+            if not self.line_Asignar_Opcion_Id.text() == "":
+
+                Rol_opcion.rol_opcion_id = self.line_Asignar_Opcion_Id.text()
+
+                indicador = dt_rol_opcion.Dt_rol_opcion.eliminarRolOpcion(Rol_opcion)
+
+                self.notifMensaje(indicador, "Eliminados")
+
+                self.llenarTablaRolOpcion(dt_rol_opcion.Dt_rol_opcion.listarRolOpcion())
+
+            else:
+
+                self.notifMensaje(False, "Error")
+
+        except Exception as e:
+            print(f"ERROR en eliminarRolOpcion: {e}")
+
+        '''****************************************** Main  ******************************************'''
 
 
 if __name__ == '__main__':
