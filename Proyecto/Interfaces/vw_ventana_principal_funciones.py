@@ -5,7 +5,7 @@ from PyQt5.QtWidgets import QMainWindow
 
 from vw_ventana_principal import Ui_MainWindow
 from PyQt5 import QtCore, QtGui, QtWidgets
-from Interfaces import vw_ventana_principal
+from Interfaces import vw_ventana_principal, vw_cliente_funciones
 from Interfaces import vw_vista_previa_pedido_funciones
 
 # Carlos Eduardo Chavarria Centeno (EdCenten0)
@@ -19,7 +19,7 @@ class VentanaPrincipal(QtWidgets.QMainWindow, vw_ventana_principal.Ui_MainWindow
 
         # EVENTOS EN BOTONES
         self.bt_vista_previa_pedidos.clicked.connect(lambda: self.mostrar_formularios(vw_vista_previa_pedido_funciones.VwVistaPreviaPedidosFunciones()))
-
+        self.bt_clientes.clicked.connect(lambda: self.mostrar_formularios(vw_cliente_funciones.Cliente_Window()))
 
     # Para este metodo es obligatorio pasar la clase del formulario, por
     # lo que se tiene que hacer referencia hasta llegar a la clase
