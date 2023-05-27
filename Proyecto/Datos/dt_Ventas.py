@@ -25,5 +25,41 @@ class Dt_Ventas:
 
         return indicador
 
-        if __name__ == '__main__':
-            print(Dt_Ventas.listarVentas())
+    @classmethod
+    def editarVenta(cls, Venta):
+        indicador = False
+
+        try:
+            cursor = Conexion.Conexion.obtenerConexion().cursor()
+            sql = (f'''UPDATE venta SET id_tienda = {Venta.id_tienda},  id_factura = {Venta.id_factura}, cantidad = {Venta.cantidad}, descripcion = "{Venta.descripcion}"''')
+            cursor.execute(sql)
+            cursor.connection.commit()
+            cursor.close()
+            print("Venta editada")
+            indicador = True
+
+        except Exception as ex:
+            print(f"Error al editar venta: {ex}")
+        return indicador
+
+    @classmethod
+    def eliminarVenta(cls, Venta):
+        indicador = False
+        try:
+            cursor = Conexion.Conexion.obtenerConexion().cursor()
+            sql = (f'''DELETE FROM venta WHERE id_venta = {Venta.id_Venta}''')
+            cursor.execute(sql)
+            cursor.connection.commit()
+            cursor.close()
+            print("Registro de venta eliminado")
+            indicador = True
+
+        except Exception as ex:
+            print(f"Error al eliminar Venta: {ex}")
+
+        return indicador
+
+
+
+if __name__ == '__main__':
+    print(Dt_Ventas.listarVentas())
