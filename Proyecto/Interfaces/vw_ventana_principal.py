@@ -60,7 +60,7 @@ class Ui_MainWindow(object):
         self.label_2 = QtWidgets.QLabel(self.frame_2)
         self.label_2.setFrameShape(QtWidgets.QFrame.NoFrame)
         self.label_2.setText("")
-        self.label_2.setPixmap(QtGui.QPixmap("../../../../../../Recursos/Logo-MAPA.ico"))
+        self.label_2.setPixmap(QtGui.QPixmap("../../../../../../../../../../Recursos/Logo-MAPA.ico"))
         self.label_2.setAlignment(QtCore.Qt.AlignCenter)
         self.label_2.setObjectName("label_2")
         self.verticalLayout_2.addWidget(self.label_2)
@@ -87,10 +87,10 @@ class Ui_MainWindow(object):
         self.bt_ventas.setFlat(False)
         self.bt_ventas.setObjectName("bt_ventas")
         self.verticalLayout_2.addWidget(self.bt_ventas)
-        self.pushButton_3 = QtWidgets.QPushButton(self.frame_2)
-        self.pushButton_3.setMinimumSize(QtCore.QSize(0, 44))
-        self.pushButton_3.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
-        self.pushButton_3.setStyleSheet("QPushButton{\n"
+        self.bt_vista_previa_pedidos = QtWidgets.QPushButton(self.frame_2)
+        self.bt_vista_previa_pedidos.setMinimumSize(QtCore.QSize(0, 44))
+        self.bt_vista_previa_pedidos.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
+        self.bt_vista_previa_pedidos.setStyleSheet("QPushButton{\n"
 "        background-color: rgb(255, 255, 255);    \n"
 "        border:1px solid #c7c7c7;\n"
 "\n"
@@ -101,12 +101,12 @@ class Ui_MainWindow(object):
 "        border:1px solid rgb(255,255,255);\n"
 "}\n"
 "")
-        self.pushButton_3.setObjectName("pushButton_3")
-        self.verticalLayout_2.addWidget(self.pushButton_3)
-        self.pushButton_2 = QtWidgets.QPushButton(self.frame_2)
-        self.pushButton_2.setMinimumSize(QtCore.QSize(0, 44))
-        self.pushButton_2.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
-        self.pushButton_2.setStyleSheet("QPushButton{\n"
+        self.bt_vista_previa_pedidos.setObjectName("bt_vista_previa_pedidos")
+        self.verticalLayout_2.addWidget(self.bt_vista_previa_pedidos)
+        self.bt_clientes = QtWidgets.QPushButton(self.frame_2)
+        self.bt_clientes.setMinimumSize(QtCore.QSize(0, 44))
+        self.bt_clientes.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
+        self.bt_clientes.setStyleSheet("QPushButton{\n"
 "        background-color: rgb(255, 255, 255);    \n"
 "        border:1px solid #c7c7c7;\n"
 "\n"
@@ -117,12 +117,12 @@ class Ui_MainWindow(object):
 "        border:1px solid rgb(255,255,255);\n"
 "}\n"
 "")
-        self.pushButton_2.setObjectName("pushButton_2")
-        self.verticalLayout_2.addWidget(self.pushButton_2)
-        self.pushButton = QtWidgets.QPushButton(self.frame_2)
-        self.pushButton.setMinimumSize(QtCore.QSize(0, 44))
-        self.pushButton.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
-        self.pushButton.setStyleSheet("QPushButton{\n"
+        self.bt_clientes.setObjectName("bt_clientes")
+        self.verticalLayout_2.addWidget(self.bt_clientes)
+        self.bt_proveedores = QtWidgets.QPushButton(self.frame_2)
+        self.bt_proveedores.setMinimumSize(QtCore.QSize(0, 44))
+        self.bt_proveedores.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
+        self.bt_proveedores.setStyleSheet("QPushButton{\n"
 "        background-color: rgb(255, 255, 255);    \n"
 "        border:1px solid #c7c7c7;\n"
 "\n"
@@ -133,12 +133,12 @@ class Ui_MainWindow(object):
 "        border:1px solid rgb(255,255,255);\n"
 "}\n"
 "")
-        self.pushButton.setObjectName("pushButton")
-        self.verticalLayout_2.addWidget(self.pushButton)
-        self.pushButton_4 = QtWidgets.QPushButton(self.frame_2)
-        self.pushButton_4.setMinimumSize(QtCore.QSize(0, 44))
-        self.pushButton_4.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
-        self.pushButton_4.setStyleSheet("QPushButton{\n"
+        self.bt_proveedores.setObjectName("bt_proveedores")
+        self.verticalLayout_2.addWidget(self.bt_proveedores)
+        self.bt_ajustes = QtWidgets.QPushButton(self.frame_2)
+        self.bt_ajustes.setMinimumSize(QtCore.QSize(0, 44))
+        self.bt_ajustes.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
+        self.bt_ajustes.setStyleSheet("QPushButton{\n"
 "        background-color: rgb(255, 255, 255);    \n"
 "        border:1px solid #c7c7c7;\n"
 "\n"
@@ -149,8 +149,8 @@ class Ui_MainWindow(object):
 "        border:1px solid rgb(255,255,255);\n"
 "}\n"
 "")
-        self.pushButton_4.setObjectName("pushButton_4")
-        self.verticalLayout_2.addWidget(self.pushButton_4)
+        self.bt_ajustes.setObjectName("bt_ajustes")
+        self.verticalLayout_2.addWidget(self.bt_ajustes)
         spacerItem1 = QtWidgets.QSpacerItem(20, 40, QtWidgets.QSizePolicy.Minimum, QtWidgets.QSizePolicy.Expanding)
         self.verticalLayout_2.addItem(spacerItem1)
         self.label_3 = QtWidgets.QLabel(self.frame_2)
@@ -172,7 +172,13 @@ class Ui_MainWindow(object):
         self.frame_3 = QtWidgets.QFrame(self.frame)
         self.frame_3.setFrameShape(QtWidgets.QFrame.StyledPanel)
         self.frame_3.setFrameShadow(QtWidgets.QFrame.Raised)
+        self.frame_3.setLineWidth(1)
         self.frame_3.setObjectName("frame_3")
+        self.gridLayout_4 = QtWidgets.QGridLayout(self.frame_3)
+        self.gridLayout_4.setObjectName("gridLayout_4")
+        self.ly_contenedor = QtWidgets.QVBoxLayout()
+        self.ly_contenedor.setObjectName("ly_contenedor")
+        self.gridLayout_4.addLayout(self.ly_contenedor, 0, 0, 1, 1)
         self.gridLayout.addWidget(self.frame_3, 0, 1, 1, 1)
         self.gridLayout.setColumnStretch(0, 1)
         self.gridLayout.setColumnStretch(1, 4)
@@ -188,10 +194,10 @@ class Ui_MainWindow(object):
         MainWindow.setWindowTitle(_translate("MainWindow", "MainWindow"))
         self.label.setText(_translate("MainWindow", "MAPA Furniture"))
         self.bt_ventas.setText(_translate("MainWindow", "Ventas"))
-        self.pushButton_3.setText(_translate("MainWindow", "Pedidos"))
-        self.pushButton_2.setText(_translate("MainWindow", "Clientes"))
-        self.pushButton.setText(_translate("MainWindow", "Proveedores"))
-        self.pushButton_4.setText(_translate("MainWindow", "Ajustes"))
+        self.bt_vista_previa_pedidos.setText(_translate("MainWindow", "Pedidos"))
+        self.bt_clientes.setText(_translate("MainWindow", "Clientes"))
+        self.bt_proveedores.setText(_translate("MainWindow", "Proveedores"))
+        self.bt_ajustes.setText(_translate("MainWindow", "Ajustes"))
         self.label_3.setText(_translate("MainWindow", "Usuario"))
         self.label_4.setText(_translate("MainWindow", "Rol"))
 
