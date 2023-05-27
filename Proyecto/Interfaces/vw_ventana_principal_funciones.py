@@ -8,21 +8,28 @@ from PyQt5 import QtCore, QtGui, QtWidgets
 from Interfaces import vw_ventana_principal
 from Interfaces import vw_vista_previa_pedido_funciones
 
+# Carlos Eduardo Chavarria Centeno (EdCenten0)
+# Universidad Centroamericana
 
 class VentanaPrincipal(QtWidgets.QMainWindow, vw_ventana_principal.Ui_MainWindow):
     def __init__(self, parent=None):
         super(VentanaPrincipal, self).__init__(parent)
         self.setupUi(self)
-        self.showWindows = None
-        self.lista_usuarios = None
+        self.currentForm = None
 
-        # Eventos en Botones
-        self.bt_vista_previa_pedidos.clicked.connect(self.mostrar_formulario)
+        # EVENTOS EN BOTONES
+        self.bt_vista_previa_pedidos.clicked.connect(lambda: self.mostrar_formularios(vw_vista_previa_pedido_funciones.VwVistaPreviaPedidosFunciones()))
 
-    def mostrar_formulario(self):
-        self.lista_usuarios = vw_vista_previa_pedido_funciones.VwVistaPreviaPedidosFunciones()
-        self.ly_contenedor.addWidget(self.lista_usuarios)
-        self.showWindows = self.lista_usuarios
+
+    # Para este metodo es obligatorio pasar la clase del formulario, por
+    # lo que se tiene que hacer referencia hasta llegar a la clase
+    # por ejemplo archivo.clase o import la clase desde antes
+    def mostrar_formularios(self, form):
+        if (self.currentForm is not None):
+            self.currentForm.close()
+        else:
+            self.currentForm = form
+            self.ly_contenedor.addWidget(self.currentForm)
 
 
 if __name__ == '__main__':
