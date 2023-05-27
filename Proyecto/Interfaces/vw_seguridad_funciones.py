@@ -2,7 +2,6 @@
 
 import sys
 from datetime import datetime
-
 from PyQt5.QtCore import QDate
 from PyQt5.QtWidgets import QTableWidgetItem, QMessageBox
 
@@ -12,10 +11,16 @@ from Entidades.usuario_rol import Usuario_rol
 from Entidades.usuarios import Usuarios
 from Entidades.roles import Rol
 from Entidades.opciones import Opcion
+from Proyecto.Datos import dt_usuario, dt_rol, dt_opcion, dt_rol_opcion, dt_usuario_rol
+from Proyecto.Entidades import usuario_rol
+from Proyecto.Entidades.rol_opcion import Rol_opcion
+from Proyecto.Entidades.usuarios import Usuarios
+from Proyecto.Entidades.roles import Rol
+from Proyecto.Entidades.opciones import Opcion
 
 from PyQt5.QtWidgets import QApplication, QMainWindow
 
-from Interfaces import vw_seguridad
+from Proyecto.Interfaces import vw_seguridad
 
 
 class seguridad_Window(QMainWindow, vw_seguridad.Ui_Seguridad):
