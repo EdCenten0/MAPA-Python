@@ -15,7 +15,7 @@ class VentanaPrincipal(QtWidgets.QMainWindow, vw_ventana_principal.Ui_MainWindow
     def __init__(self, parent=None):
         super(VentanaPrincipal, self).__init__(parent)
         self.setupUi(self)
-        self.currentForm = None
+        self.openedForms = []
 
         # EVENTOS EN BOTONES
         self.bt_vista_previa_pedidos.clicked.connect(lambda: self.mostrar_formularios(vw_vista_previa_pedido_funciones.VwVistaPreviaPedidosFunciones()))
@@ -25,11 +25,17 @@ class VentanaPrincipal(QtWidgets.QMainWindow, vw_ventana_principal.Ui_MainWindow
     # lo que se tiene que hacer referencia hasta llegar a la clase
     # por ejemplo archivo.clase o import la clase desde antes
     def mostrar_formularios(self, form):
-        if (self.currentForm is not None):
-            self.currentForm.close()
-        else:
-            self.currentForm = form
-            self.ly_contenedor.addWidget(self.currentForm)
+        # Cerrar todas las ventanas abiertas
+        for openedForm in self.openedForms:
+            openedForm.close()
+            self.ly_contenedor.removeWidget(openedForm)
+
+        # Limpiar la lista de ventanas abiertas
+        self.openedForms = []
+
+        # Agregar la nueva ventana al layout
+        self.ly_contenedor.addWidget(form)
+        self.openedForms.append(form)
 
 
 if __name__ == '__main__':
