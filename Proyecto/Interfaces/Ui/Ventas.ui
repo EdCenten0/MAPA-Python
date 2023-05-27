@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>810</width>
+    <width>772</width>
     <height>600</height>
    </rect>
   </property>
@@ -14,7 +14,7 @@
    <string>Ventas.ui</string>
   </property>
   <widget class="QWidget" name="centralwidget">
-   <widget class="QTabWidget" name="tabWidget">
+   <widget class="QTabWidget" name="tab_Ventas">
     <property name="geometry">
      <rect>
       <x>0</x>
@@ -34,6 +34,9 @@
     </property>
     <property name="autoFillBackground">
      <bool>false</bool>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: rgb(98, 160, 234);</string>
     </property>
     <property name="tabShape">
      <enum>QTabWidget::Rounded</enum>
@@ -82,12 +85,17 @@
       </column>
       <column>
        <property name="text">
-        <string>No. Factura</string>
+        <string>ID Tienda</string>
        </property>
       </column>
       <column>
        <property name="text">
-        <string>New Column</string>
+        <string>Factura No.</string>
+       </property>
+      </column>
+      <column>
+       <property name="text">
+        <string>Descripcion</string>
        </property>
       </column>
       <column>
@@ -281,6 +289,41 @@ color: rgb(255, 255, 255);</string>
       </property>
       <property name="echoMode">
        <enum>QLineEdit::Password</enum>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_5">
+      <property name="geometry">
+       <rect>
+        <x>376</x>
+        <y>70</y>
+        <width>91</width>
+        <height>20</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>14</pointsize>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">color: rgb(255, 255, 255);</string>
+      </property>
+      <property name="text">
+       <string>ID Tienda:</string>
+      </property>
+     </widget>
+     <widget class="QLineEdit" name="lineEdit">
+      <property name="geometry">
+       <rect>
+        <x>470</x>
+        <y>70</y>
+        <width>171</width>
+        <height>25</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">
+background-color: rgb(255, 255, 255);</string>
       </property>
      </widget>
     </widget>
