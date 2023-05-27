@@ -82,5 +82,5 @@ class Taller:
         self._id_tienda = id_tienda
 
 if __name__ == '__main__':
-    t = Taller(2, 'MAPA', 'managua', 45786532, 'hpalacios@gmail.com', 1)
-    print(t)
+    '''Taller('MAPA', 'managua', '45786535', 'hpalacios@gmail.com', 1)'''
+    #print(t)
