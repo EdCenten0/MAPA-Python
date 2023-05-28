@@ -2,7 +2,7 @@
 
 import sys
 from PyQt5.QtWidgets import QApplication, QMainWindow
-from Interfaces import vw_pedido
+from Proyecto.Interfaces import vw_pedido
 
 
 class pedido_Window(QMainWindow, vw_pedido.Ui_Pedidos):

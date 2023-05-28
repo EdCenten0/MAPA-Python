@@ -2,8 +2,8 @@
 
 import sys
 from PyQt5.QtWidgets import QMainWindow, QApplication, QMessageBox, QWidget
-from Interfaces import vw_login
-from Interfaces.vw_registrar_funciones import registrar_Window
+from Proyecto.Interfaces import vw_login
+from Proyecto.Interfaces.vw_registrar_funciones import registrar_Window
 
 from Proyecto.Interfaces import vw_login, vw_registrar_usuario_login
 from Proyecto.Interfaces.vw_registrar_usuario_login import Ui_Registrar

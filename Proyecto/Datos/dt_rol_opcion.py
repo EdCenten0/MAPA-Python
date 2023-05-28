@@ -1,4 +1,4 @@
-from Datos import Conexion
+from Proyecto.Datos import Conexion
 
 
 class Dt_rol_opcion:
@@ -6,7 +6,7 @@ class Dt_rol_opcion:
     @classmethod
     def listarRolOpcion(cls):
         cursor = Conexion.Conexion.obtenerConexion().cursor()
-        cursor.execute("SELECT * FROM rol_opcion")
+        cursor.execute("SELECT * FROM vista_rol_opcion")
         querys = cursor.fetchall()
         cursor.close()
         return querys

@@ -317,7 +317,7 @@ color: rgb(255, 255, 255);</string>
                     <number>15</number>
                    </property>
                    <property name="leftMargin">
-                    <number>0</number>
+                    <number>10</number>
                    </property>
                    <property name="topMargin">
                     <number>0</number>
@@ -545,14 +545,14 @@ QTableView::item {
                    <attribute name="horizontalHeaderCascadingSectionResizes">
                     <bool>false</bool>
                    </attribute>
+                   <attribute name="horizontalHeaderMinimumSectionSize">
+                    <number>55</number>
+                   </attribute>
                    <attribute name="horizontalHeaderDefaultSectionSize">
                     <number>130</number>
                    </attribute>
                    <attribute name="horizontalHeaderHighlightSections">
                     <bool>true</bool>
-                   </attribute>
-                   <attribute name="horizontalHeaderMinimumSectionSize">
-                    <number>55</number>
                    </attribute>
                    <attribute name="horizontalHeaderShowSortIndicator" stdset="0">
                     <bool>false</bool>
@@ -561,19 +561,19 @@ QTableView::item {
                     <bool>true</bool>
                    </attribute>
                    <attribute name="verticalHeaderVisible">
-                    <bool>false</bool>
+                    <bool>true</bool>
                    </attribute>
                    <attribute name="verticalHeaderCascadingSectionResizes">
                     <bool>false</bool>
+                   </attribute>
+                   <attribute name="verticalHeaderMinimumSectionSize">
+                    <number>28</number>
                    </attribute>
                    <attribute name="verticalHeaderDefaultSectionSize">
                     <number>29</number>
                    </attribute>
                    <attribute name="verticalHeaderHighlightSections">
                     <bool>false</bool>
-                   </attribute>
-                   <attribute name="verticalHeaderMinimumSectionSize">
-                    <number>28</number>
                    </attribute>
                    <attribute name="verticalHeaderShowSortIndicator" stdset="0">
                     <bool>false</bool>
@@ -856,7 +856,7 @@ font: 10pt &quot;MS Shell Dlg 2&quot;;</string>
                   <number>24</number>
                  </property>
                  <property name="leftMargin">
-                  <number>0</number>
+                  <number>10</number>
                  </property>
                  <property name="topMargin">
                   <number>0</number>
@@ -959,14 +959,17 @@ font: 12pt &quot;MS Shell Dlg 2&quot;;</string>
                 <attribute name="horizontalHeaderCascadingSectionResizes">
                  <bool>false</bool>
                 </attribute>
-                <attribute name="horizontalHeaderDefaultSectionSize">
-                 <number>347</number>
-                </attribute>
                 <attribute name="horizontalHeaderMinimumSectionSize">
                  <number>40</number>
                 </attribute>
+                <attribute name="horizontalHeaderDefaultSectionSize">
+                 <number>347</number>
+                </attribute>
                 <attribute name="horizontalHeaderStretchLastSection">
                  <bool>true</bool>
+                </attribute>
+                <attribute name="verticalHeaderVisible">
+                 <bool>false</bool>
                 </attribute>
                 <column>
                  <property name="text">
@@ -1188,10 +1191,13 @@ font: 10pt &quot;MS Shell Dlg 2&quot;;</string>
                   <number>0</number>
                  </property>
                  <property name="leftMargin">
-                  <number>0</number>
+                  <number>10</number>
                  </property>
                  <property name="topMargin">
                   <number>0</number>
+                 </property>
+                 <property name="rightMargin">
+                  <number>10</number>
                  </property>
                  <property name="bottomMargin">
                   <number>0</number>
@@ -1287,14 +1293,20 @@ font: 12pt &quot;MS Shell Dlg 2&quot;;</string>
                 <attribute name="horizontalHeaderCascadingSectionResizes">
                  <bool>false</bool>
                 </attribute>
-                <attribute name="horizontalHeaderDefaultSectionSize">
-                 <number>348</number>
-                </attribute>
                 <attribute name="horizontalHeaderMinimumSectionSize">
                  <number>40</number>
                 </attribute>
+                <attribute name="horizontalHeaderDefaultSectionSize">
+                 <number>348</number>
+                </attribute>
+                <attribute name="horizontalHeaderShowSortIndicator" stdset="0">
+                 <bool>false</bool>
+                </attribute>
                 <attribute name="horizontalHeaderStretchLastSection">
                  <bool>true</bool>
+                </attribute>
+                <attribute name="verticalHeaderVisible">
+                 <bool>false</bool>
                 </attribute>
                 <column>
                  <property name="text">
@@ -1637,17 +1649,41 @@ font: 12pt &quot;MS Shell Dlg 2&quot;;</string>
                 <property name="sizeAdjustPolicy">
                  <enum>QAbstractScrollArea::AdjustToContents</enum>
                 </property>
+                <attribute name="horizontalHeaderCascadingSectionResizes">
+                 <bool>false</bool>
+                </attribute>
                 <attribute name="horizontalHeaderDefaultSectionSize">
-                 <number>246</number>
+                 <number>151</number>
+                </attribute>
+                <attribute name="horizontalHeaderHighlightSections">
+                 <bool>true</bool>
+                </attribute>
+                <attribute name="horizontalHeaderShowSortIndicator" stdset="0">
+                 <bool>false</bool>
                 </attribute>
                 <attribute name="horizontalHeaderStretchLastSection">
                  <bool>true</bool>
                 </attribute>
+                <attribute name="verticalHeaderVisible">
+                 <bool>false</bool>
+                </attribute>
+                <attribute name="verticalHeaderCascadingSectionResizes">
+                 <bool>false</bool>
+                </attribute>
+                <attribute name="verticalHeaderMinimumSectionSize">
+                 <number>22</number>
+                </attribute>
                 <attribute name="verticalHeaderDefaultSectionSize">
                  <number>25</number>
                 </attribute>
-                <attribute name="verticalHeaderMinimumSectionSize">
-                 <number>23</number>
+                <attribute name="verticalHeaderHighlightSections">
+                 <bool>true</bool>
+                </attribute>
+                <attribute name="verticalHeaderShowSortIndicator" stdset="0">
+                 <bool>false</bool>
+                </attribute>
+                <attribute name="verticalHeaderStretchLastSection">
+                 <bool>false</bool>
                 </attribute>
                 <column>
                  <property name="text">
@@ -1662,6 +1698,16 @@ font: 12pt &quot;MS Shell Dlg 2&quot;;</string>
                 <column>
                  <property name="text">
                   <string>Id_Rol</string>
+                 </property>
+                </column>
+                <column>
+                 <property name="text">
+                  <string>Usuario</string>
+                 </property>
+                </column>
+                <column>
+                 <property name="text">
+                  <string>Rol</string>
                  </property>
                 </column>
                </widget>
@@ -1990,16 +2036,19 @@ font: 12pt &quot;MS Shell Dlg 2&quot;;</string>
                  <enum>QAbstractScrollArea::AdjustToContents</enum>
                 </property>
                 <attribute name="horizontalHeaderDefaultSectionSize">
-                 <number>246</number>
+                 <number>135</number>
+                </attribute>
+                <attribute name="horizontalHeaderHighlightSections">
+                 <bool>false</bool>
                 </attribute>
                 <attribute name="horizontalHeaderStretchLastSection">
                  <bool>true</bool>
                 </attribute>
-                <attribute name="verticalHeaderDefaultSectionSize">
-                 <number>25</number>
-                </attribute>
                 <attribute name="verticalHeaderMinimumSectionSize">
                  <number>23</number>
+                </attribute>
+                <attribute name="verticalHeaderDefaultSectionSize">
+                 <number>25</number>
                 </attribute>
                 <column>
                  <property name="text">
@@ -2014,6 +2063,16 @@ font: 12pt &quot;MS Shell Dlg 2&quot;;</string>
                 <column>
                  <property name="text">
                   <string>Id_Opcion</string>
+                 </property>
+                </column>
+                <column>
+                 <property name="text">
+                  <string>Rol</string>
+                 </property>
+                </column>
+                <column>
+                 <property name="text">
+                  <string>Opcion</string>
                  </property>
                 </column>
                </widget>
