@@ -1,7 +1,7 @@
 # MAPA Python
  Proyecto hecho en python en base al caso de estudio MAPA
 
-# Creadores del proyecto MAPA Python:
+## Creadores del proyecto MAPA Python:
 - [Isabel Denisse Aguilar Vílchez](https://github.com/denisseaguilar "Isabel Denisse Aguilar Vilchez")
 - [Carlos Eduardo Chavarría Centeno](https://github.com/EdCenten0 "Carlos Eduardo Chavarria Centeno")
 - [Francisco de Jesús Meléndez Simplina](https://github.com/FranciscoMelen10 "Francisco de Jesús Meléndez Simplina")
