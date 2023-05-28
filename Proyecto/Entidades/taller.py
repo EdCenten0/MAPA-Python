@@ -2,8 +2,8 @@ import copy
 
 
 class Taller:
-    def __init__(self, id=None, nombre=None, direccion=None, telefono=None, email=None, id_tienda = None):
-        self._id = id
+    def __init__(self, id_taller=None, nombre=None, direccion=None, telefono=None, email=None, id_tienda = None):
+        self._id_taller = id_taller
         self._nombre = nombre
         self._direccion = direccion
         self._telefono = telefono
@@ -12,7 +12,7 @@ class Taller:
 
     def __str__(self):
         return f'''
-        id: {self._id}
+        id: {self._id_taller}
         nombre: {self._nombre},
         direccion: {self._direccion},
         telefono: {self._telefono},
@@ -22,7 +22,7 @@ class Taller:
 
     def __getitem__(self, item):
         u = copy.copy(self) #realiza una copia exacta del objeto
-        u.id = u._id
+        u._id_taller = u._id_taller
         u.nombre = u._nombre
         u.direccion = u._direccion
         u.telefono = u._telefono
@@ -32,13 +32,13 @@ class Taller:
 
     #GET
     @property
-    def id(self):
-        return self._id
+    def id_taller(self):
+        return self._id_taller
 
     #SET
-    @id.setter
-    def id(self, id):
-        self._id = id
+    @id_taller.setter
+    def id_taller(self, id_taller):
+        self._id_taller = id_taller
 
     @property
     def nombre(self):

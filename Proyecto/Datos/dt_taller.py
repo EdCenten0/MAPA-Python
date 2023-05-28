@@ -40,7 +40,7 @@ class Dt_taller:
 
         try:
             cursor = Conexion.obtenerConexion().cursor()
-            sentencia = (f'''UPDATE taller SET nombre = '{Taller.nombre}', direccion = '{Taller.direccion}', telefono = '{Taller.telefono}', email = '{Taller.email}', id_tienda = '{1}' WHERE id_taller = {Taller.id}''')
+            sentencia = (f'''UPDATE taller SET nombre = '{Taller.nombre}', direccion = '{Taller.direccion}', telefono = '{Taller.telefono}', email = '{Taller.email}', id_tienda = '{1}' WHERE id_taller = {Taller.id_taller}''')
             cursor.execute(sentencia)
             cursor.connection.commit()
             cursor.close()
@@ -53,12 +53,12 @@ class Dt_taller:
 
 
     @classmethod
-    def eliminarTaller(cls):
+    def eliminarTaller(cls, Taller):
         indicador = False
 
         try:
             cursor = Conexion.obtenerConexion().cursor()
-            sentecia = f'''DELETE FROM taller WHERE id_taller = 3'''
+            sentecia = f'''DELETE FROM taller WHERE id_taller = {Taller.id_taller}'''
             cursor.execute(sentecia)
             cursor.connection.commit()
             cursor.close()
