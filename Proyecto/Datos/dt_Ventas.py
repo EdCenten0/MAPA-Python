@@ -20,9 +20,8 @@ class Dt_Ventas:
             cursor.close()
             indicador = True
 
-        except Exception as e:
-            print(e)
-
+        except Exception as ex:
+            print(ex)
         return indicador
 
     @classmethod
@@ -31,7 +30,7 @@ class Dt_Ventas:
 
         try:
             cursor = Conexion.Conexion.obtenerConexion().cursor()
-            sql = (f'''UPDATE venta SET id_tienda = {Venta.id_tienda},  id_factura = {Venta.id_factura}, cantidad = {Venta.cantidad}, descripcion = "{Venta.descripcion}"''')
+            sql = (f'''UPDATE ventas SET id_tienda = {Venta.id_tienda},  id_factura = {Venta.id_factura}, cantidad = {Venta.cantidad}, descripcion = "{Venta.descripcion}"''')
             cursor.execute(sql)
             cursor.connection.commit()
             cursor.close()
@@ -47,11 +46,11 @@ class Dt_Ventas:
         indicador = False
         try:
             cursor = Conexion.Conexion.obtenerConexion().cursor()
-            sql = (f'''DELETE FROM venta WHERE id_venta = {Venta.id_Venta}''')
+            sql = (f'''DELETE FROM ventas WHERE id_venta = {Venta.id_Venta}''')
             cursor.execute(sql)
             cursor.connection.commit()
             cursor.close()
-            print("Registro de venta eliminado")
+            print("Registro de ventas eliminado")
             indicador = True
 
         except Exception as ex:
