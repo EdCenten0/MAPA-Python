@@ -3,9 +3,9 @@
 
 class Pedido:
 
-    def __init__(self, idPedido, nombre ,descripcion ,fecha_Pedido ,estado):
+    def __init__(self, idPedido, id_cliente ,descripcion ,fecha_Pedido ,estado):
         self.idPedido = idPedido
-        self.nombre = nombre
+        self.id_cliente= id_cliente
         self.descripcion = descripcion
         self.fecha_Pedido = fecha_Pedido
         self.estado = estado
@@ -13,7 +13,7 @@ class Pedido:
     def __str__(self):
         return f'''
         idPedido = {self.idPedido}
-        nombre = {self.nombre}
+        id_cliente = {self.id_cliente}
         descripcion = {self.descripcion}
         fecha_Pedido = {self.fecha_Pedido}
         estado = {self.estado}
@@ -28,12 +28,12 @@ class Pedido:
         self.idPedido = idPedido
 
     @property
-    def nombre(self):
-        return self.nombre
+    def id_cliente(self):
+        return self.id_cliente
 
-    @nombre.setter
-    def nombre(self, nombre):
-        self.nombre = nombre
+    @id_cliente.setter
+    def nombre(self, id_cliente):
+        self.id_cliente = id_cliente
 
     @property
     def descripcion(self):
