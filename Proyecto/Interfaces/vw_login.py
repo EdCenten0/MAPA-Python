@@ -12,19 +12,23 @@ from PyQt5 import QtCore, QtGui, QtWidgets
 
 
 class Ui_Login(object):
+    def __init__(self):
+        self.widgetcentral = None
+
     def setupUi(self, Login):
         Login.setObjectName("Login")
         Login.resize(1000, 800)
         Login.setMinimumSize(QtCore.QSize(1000, 800))
         Login.setMaximumSize(QtCore.QSize(1000, 800))
-        self.centralwidget = QtWidgets.QWidget(Login)
-        self.centralwidget.setStyleSheet("font-family:\"Inter\", sans-serif;")
-        self.centralwidget.setObjectName("centralwidget")
-        self.horizontalLayout = QtWidgets.QHBoxLayout(self.centralwidget)
+        Login.setContextMenuPolicy(QtCore.Qt.DefaultContextMenu)
+        self.widgetcentral = QtWidgets.QWidget(Login)
+        self.widgetcentral.setStyleSheet("font-family:\"Inter\", sans-serif;")
+        self.widgetcentral.setObjectName("widgetcentral")
+        self.horizontalLayout = QtWidgets.QHBoxLayout(self.widgetcentral)
         self.horizontalLayout.setContentsMargins(0, 0, 0, 0)
         self.horizontalLayout.setSpacing(0)
         self.horizontalLayout.setObjectName("horizontalLayout")
-        self.Background_Login = QtWidgets.QFrame(self.centralwidget)
+        self.Background_Login = QtWidgets.QFrame(self.widgetcentral)
         self.Background_Login.setFrameShape(QtWidgets.QFrame.StyledPanel)
         self.Background_Login.setFrameShadow(QtWidgets.QFrame.Raised)
         self.Background_Login.setObjectName("Background_Login")
@@ -42,7 +46,7 @@ class Ui_Login(object):
         self.horizontalLayout_2.setSpacing(0)
         self.horizontalLayout_2.setObjectName("horizontalLayout_2")
         self.label_6 = QtWidgets.QLabel(self.frame_fondo)
-        self.label_6.setStyleSheet("border-image: url(../Recursos/Fondo MAPA.jpeg);")
+        self.label_6.setStyleSheet("border-image: url(:/Imagenes/Fondo MAPA.jpeg);")
         self.label_6.setText("")
         self.label_6.setObjectName("label_6")
         self.horizontalLayout_2.addWidget(self.label_6)
@@ -139,7 +143,7 @@ class Ui_Login(object):
         self.horizontalLayout_3.addWidget(self.frame_4)
         self.verticalLayout.addWidget(self.frame_registrar)
         self.horizontalLayout.addWidget(self.Background_Login)
-        Login.setCentralWidget(self.centralwidget)
+        Login.setCentralWidget(self.widgetcentral)
 
         self.retranslateUi(Login)
         QtCore.QMetaObject.connectSlotsByName(Login)
@@ -156,7 +160,7 @@ class Ui_Login(object):
         self.lb_crear_Usuario.setText(_translate("Login", "Crear un cuenta"))
         self.bt_ingresar.setText(_translate("Login", "Ingresar"))
         self.label_5.setText(_translate("Login", "MAPA Interface"))
-import Recursos
+
 
 
 if __name__ == "__main__":

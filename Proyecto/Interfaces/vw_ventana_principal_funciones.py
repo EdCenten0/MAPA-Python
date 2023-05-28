@@ -25,15 +25,15 @@ class VentanaPrincipal(QtWidgets.QMainWindow, vw_ventana_principal.Ui_MainWindow
     # lo que se tiene que hacer referencia hasta llegar a la clase
     # por ejemplo archivo.clase o import la clase desde antes
     def mostrar_formularios(self, form):
-        # Cerrar todas las ventanas abiertas
+        # Cierra todas las ventanas abiertas
         for openedForm in self.openedForms:
             openedForm.close()
             self.ly_contenedor.removeWidget(openedForm)
 
-        # Limpiar la lista de ventanas abiertas
+        # Limpia la lista de ventanas abiertas
         self.openedForms = []
 
-        # Agregar la nueva ventana al layout
+        # Agrega la nueva ventana al ly_contenedor
         self.ly_contenedor.addWidget(form)
         self.openedForms.append(form)
 
