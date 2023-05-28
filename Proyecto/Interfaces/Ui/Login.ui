@@ -28,7 +28,7 @@
   <property name="windowTitle">
    <string>Login</string>
   </property>
-  <widget class="QWidget" name="centralwidget">
+  <widget class="QWidget" name="widgetcentral">
    <property name="styleSheet">
     <string notr="true">font-family:&quot;Inter&quot;, sans-serif;</string>
    </property>
