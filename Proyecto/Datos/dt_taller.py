@@ -21,7 +21,7 @@ class Dt_taller:
 
         try:
             cursor = Conexion.obtenerConexion().cursor()
-            sentencia = (f'''INSERT INTO taller (nombre, direccion, telefono, email, id_tienda) VALUES ('Taller D','Managua','76817986','denisse@mail.com','{1}')''')
+            sentencia = (f'''INSERT INTO taller (nombre, direccion, telefono, email, id_tienda) VALUES ('{Taller.nombre}', '{Taller.direccion}', '{Taller.telefono}', '{Taller.email}', '{1}')''')
             cursor.execute(sentencia)
             cursor.connection.commit()
             cursor.close()
@@ -35,12 +35,12 @@ class Dt_taller:
 
 
     @classmethod
-    def editarTaller(cls):
+    def editarTaller(cls, Taller):
         indicador = False
 
         try:
             cursor = Conexion.obtenerConexion().cursor()
-            sentencia = (f'''UPDATE taller set nombre = 'Denisse T', direccion = 'Masaya', telefono = '85555646', email = 'isabel@gmail.com', id_tienda = '{1}' WHERE id_taller = 2''')
+            sentencia = (f'''UPDATE taller SET nombre = '{Taller.nombre}', direccion = '{Taller.direccion}', telefono = '{Taller.telefono}', email = '{Taller.email}', id_tienda = '{1}' WHERE id_taller = {Taller.id}''')
             cursor.execute(sentencia)
             cursor.connection.commit()
             cursor.close()
@@ -48,7 +48,7 @@ class Dt_taller:
             indicador = True
 
         except Exception as e:
-            print("Ocurrio un error en {}".format(e))
+            print(f"Ocurrio un error en {e}")
         return indicador
 
 
