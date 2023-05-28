@@ -4,10 +4,10 @@ import sys
 
 from PyQt5.QtWidgets import QMainWindow, QApplication, QMessageBox
 
-from Datos import dt_rol, dt_usuario, dt_usuario_rol
-from Entidades.usuario_rol import Usuario_rol
-from Entidades.usuarios import Usuarios
-from Interfaces import  vw_registrar
+from Proyecto.Datos import dt_rol, dt_usuario, dt_usuario_rol
+from Proyecto.Entidades.usuario_rol import Usuario_rol
+from Proyecto.Entidades.usuarios import Usuarios
+from Proyecto.Interfaces import  vw_registrar
 
 
 class registrar_Window(QMainWindow, vw_registrar.Ui_Registrar):

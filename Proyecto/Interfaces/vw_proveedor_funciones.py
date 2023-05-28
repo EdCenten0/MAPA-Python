@@ -5,9 +5,9 @@ import sys
 
 from PyQt5.QtWidgets import QMainWindow, QApplication, QTableWidgetItem, QMessageBox
 
-from Datos import dt_proveedor
-from Entidades.proveedores import Proveedor
-from Interfaces import vw_proveedor
+from Proyecto.Datos import dt_proveedor
+from Proyecto.Entidades.proveedores import Proveedor
+from Proyecto.Interfaces import vw_proveedor
 
 
 class proveedor_Window(QMainWindow, vw_proveedor.Ui_Proveedores):

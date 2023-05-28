@@ -6,16 +6,16 @@ from datetime import datetime
 from PyQt5.QtCore import QDate
 from PyQt5.QtWidgets import QTableWidgetItem, QMessageBox
 
-from Datos import dt_usuario, dt_rol, dt_opcion, dt_rol_opcion, dt_usuario_rol
-from Entidades.rol_opcion import Rol_opcion
-from Entidades.usuario_rol import Usuario_rol
-from Entidades.usuarios import Usuarios
-from Entidades.roles import Rol
-from Entidades.opciones import Opcion
+from Proyecto.Datos import dt_usuario, dt_rol, dt_opcion, dt_rol_opcion, dt_usuario_rol
+from Proyecto.Entidades.rol_opcion import Rol_opcion
+from Proyecto.Entidades.usuario_rol import Usuario_rol
+from Proyecto.Entidades.usuarios import Usuarios
+from Proyecto.Entidades.roles import Rol
+from Proyecto.Entidades.opciones import Opcion
 
 from PyQt5.QtWidgets import QApplication, QMainWindow
 
-from Interfaces import vw_seguridad
+from Proyecto.Interfaces import vw_seguridad
 
 
 class seguridad_Window(QMainWindow, vw_seguridad.Ui_Seguridad):
@@ -126,10 +126,7 @@ class seguridad_Window(QMainWindow, vw_seguridad.Ui_Seguridad):
     def guardarUsuario(self):
 
         try:
-            # Transformar fecha en formato "yyyy-MM-dd" para hacer la consulta al sql
-            fecha = self.line_Usuario_Fecha.text()
-            fecha_objeto = datetime.strptime(fecha, "%d/%m/%Y")
-            fechaTransformada = fecha_objeto.strftime("%Y-%m-%d")
+
 
             # Programación orientada a objetos
 
@@ -137,7 +134,7 @@ class seguridad_Window(QMainWindow, vw_seguridad.Ui_Seguridad):
             Usuarios.apellido = self.line_Usuario_Apellido.text()
             Usuarios.user = self.line_Usuario_User.text()
             Usuarios.password = self.line_Usuario_Password.text()
-            Usuarios.fechaCreacion = fechaTransformada
+            Usuarios.fechaCreacion = self.line_Usuario_Fecha.text()
 
             if self.line_Usuario_Id.text() == "" and not self.line_Usuario_Nombre.text() == "" and not self.line_Usuario_Apellido.text() == "" and not self.line_Usuario_User.text() == "" and not self.line_Usuario_Password.text() == "" and not self.line_Usuario_Fecha.text() == "":
 
@@ -171,14 +168,14 @@ class seguridad_Window(QMainWindow, vw_seguridad.Ui_Seguridad):
             # Transformar fecha en formato "yyyy-MM-dd" para hacer la consulta al sql
             fecha = self.line_Usuario_Fecha.text()
             fecha_objeto = datetime.strptime(fecha, "%d/%m/%Y")
-            fechaTransformada = fecha_objeto.strftime("%Y-%m-%d")
+            #fechaTransformada = fecha_objeto.strftime("%Y-%m-%d")
 
             Usuarios.id_usuario = self.line_Usuario_Id.text()
             Usuarios.nombre = self.line_Usuario_Nombre.text()
             Usuarios.apellido = self.line_Usuario_Apellido.text()
             Usuarios.user = self.line_Usuario_User.text()
             Usuarios.password = self.line_Usuario_Password.text()
-            Usuarios.fechaCreacion = fechaTransformada
+            Usuarios.fechaCreacion = fecha_objeto
 
             if not self.line_Usuario_Id.text() == "" and not self.line_Usuario_Nombre.text() == "" and not self.line_Usuario_Apellido.text() == "" and not self.line_Usuario_User.text() == "" and not self.line_Usuario_Password.text() == "" and not self.line_Usuario_Fecha.text() == "":
 
@@ -566,7 +563,13 @@ class seguridad_Window(QMainWindow, vw_seguridad.Ui_Seguridad):
             self.tb_Asignar_Rol.setItem(tablerow, 1, QTableWidgetItem(str(row["id_usuario"])))
 
             self.tb_Asignar_Rol.setItem(tablerow, 2, QTableWidgetItem(str(row["id_rol"])))
+
+            self.tb_Asignar_Rol.setItem(tablerow, 3, QTableWidgetItem(str(row["Usuario"])))
+
+            self.tb_Asignar_Rol.setItem(tablerow, 4, QTableWidgetItem(str(row["Rol"])))
+
             tablerow = tablerow + 1
+
 
     def obtenerDatosTablaUsuarioRol(self): #No se como agregarlo al elemento click de la tabla
         # Selecciona la fila de la tabla
@@ -603,7 +606,12 @@ class seguridad_Window(QMainWindow, vw_seguridad.Ui_Seguridad):
 
             self.tb_Asignar_Opcion.setItem(tablerow, 1, QTableWidgetItem(str(row["id_rol"])))
 
-            self.tb_Asignar_Opcion.setItem(tablerow, 2, QTableWidgetItem(str(row["id_opcion"])))
+            self.tb_Asignar_Opcion.setItem(tablerow, 2, QTableWidgetItem(str(row["idopcion"])))
+
+            self.tb_Asignar_Opcion.setItem(tablerow, 3, QTableWidgetItem(row["Rol"]))
+
+            self.tb_Asignar_Opcion.setItem(tablerow, 4, QTableWidgetItem(row["Opcion"]))
+
             tablerow = tablerow + 1
 
     def obtenerDatosTablaRolOpcion(self): #No se como agregarlo al elemento click de la tabla

@@ -1,6 +1,4 @@
-from Datos import Conexion
-from Datos.dt_usuario import Dt_Usuarios
-from Entidades.usuario_rol import Usuario_rol
+from Proyecto.Datos import Conexion
 
 
 class Dt_Usuario_rol:
@@ -8,7 +6,7 @@ class Dt_Usuario_rol:
     @classmethod
     def listarUsuario_rol(cls):
         cursor = Conexion.Conexion.obtenerConexion().cursor()
-        cursor.execute("SELECT * FROM usuario_rol")
+        cursor.execute("SELECT * FROM vista_usuario_rol")
         querys = cursor.fetchall()
         cursor.close()
         return querys

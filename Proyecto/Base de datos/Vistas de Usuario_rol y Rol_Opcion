@@ -1,0 +1,10 @@
+create view MAPA.vista_usuario_rol as
+select usuario_rol. ,u.id_usuario, rol.id_rol ,u.user as "Usuario", rol.descripcion "rol" from MAPA.usuario_rol as usuario_rol
+INNER JOIN  MAPA.usuario u on u.id_usuario = usuario_rol.id_usuario
+INNER JOIN  MAPA.rol rol on rol.id_rol = usuario_rol.id_rol 
+
+
+create view MAPA.vista_rol_opcion as
+select rol_opcion. ,rol.id_rol ,op.idopcion ,rol.descripcion as "rol", op.descripcion "opcion" from MAPA.rol_opcion as rol_opcion
+INNER JOIN  MAPA.opcion op on op.idopcion = rol_opcion.id_opcion
+INNER JOIN  MAPA.rol rol on rol.id_rol = rol_opcion.id_rol
