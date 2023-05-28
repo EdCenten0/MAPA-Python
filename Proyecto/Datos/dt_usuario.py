@@ -1,6 +1,7 @@
 # Francisco de Jesús Melendez Simplina
 
 from Proyecto.Datos import Conexion
+from Proyecto.Entidades.usuarios import Usuarios
 
 
 class Dt_Usuarios:
@@ -75,12 +76,12 @@ class Dt_Usuarios:
         return indicador
 
     @classmethod
-    def ExisteUsuario(cls,Usuarios):
+    def ExisteUsuario(cls, Usuarios):
         try:
 
             existe = False
             cursor = Conexion.Conexion.obtenerConexion().cursor()
-            cursor.execute(f"Select * FROM usuario WHERE user = '{Usuarios.user}' ")
+            cursor.execute(f"Select * FROM usuario WHERE user = '{Usuarios.user}' AND clave = '{Usuarios.password}' ")
             consulta = cursor.fetchall()
 
             if consulta:
@@ -112,5 +113,5 @@ class Dt_Usuarios:
 
 
 if __name__ == '__main__':
-    print(Dt_Usuarios.buscarIndexUsuario(3))
+    print(Dt_Usuarios.ExisteUsuario())
 
