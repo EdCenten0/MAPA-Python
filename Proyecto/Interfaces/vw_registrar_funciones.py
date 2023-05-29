@@ -45,7 +45,6 @@ class registrar_Window(QMainWindow, vw_registrar.Ui_Registrar):
 
             else:
 
-
                 QMessageBox.about(self,"Error", "Faltan campos por llenar")
 
 

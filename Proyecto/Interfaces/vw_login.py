@@ -14,13 +14,10 @@ from Proyecto.Recursos import Recursos
 
 
 class Ui_Login(object):
-    def __init__(self):
-        self.widgetcentral = None
-
     def setupUi(self, Login):
         Login.setObjectName("Login")
-        Login.resize(1000, 800)
-        Login.setMinimumSize(QtCore.QSize(1000, 800))
+        Login.resize(1000, 700)
+        Login.setMinimumSize(QtCore.QSize(1000, 700))
         Login.setMaximumSize(QtCore.QSize(1000, 800))
         Login.setContextMenuPolicy(QtCore.Qt.DefaultContextMenu)
         self.widgetcentral = QtWidgets.QWidget(Login)
@@ -64,28 +61,29 @@ class Ui_Login(object):
         self.horizontalLayout_3.setObjectName("horizontalLayout_3")
         self.frame_4 = QtWidgets.QFrame(self.frame_registrar)
         self.frame_4.setMinimumSize(QtCore.QSize(300, 0))
+        self.frame_4.setCursor(QtGui.QCursor(QtCore.Qt.ArrowCursor))
         self.frame_4.setStyleSheet("background-color: rgb(255, 255, 255);")
         self.frame_4.setFrameShape(QtWidgets.QFrame.NoFrame)
         self.frame_4.setFrameShadow(QtWidgets.QFrame.Raised)
         self.frame_4.setLineWidth(1)
         self.frame_4.setObjectName("frame_4")
         self.label_3 = QtWidgets.QLabel(self.frame_4)
-        self.label_3.setGeometry(QtCore.QRect(50, 50, 221, 16))
+        self.label_3.setGeometry(QtCore.QRect(10, 60, 231, 16))
         self.label_3.setStyleSheet("")
         self.label_3.setObjectName("label_3")
         self.label = QtWidgets.QLabel(self.frame_4)
-        self.label.setGeometry(QtCore.QRect(50, 10, 231, 41))
+        self.label.setGeometry(QtCore.QRect(10, 10, 281, 41))
         self.label.setStyleSheet("font-weight:500;\n"
 "font-size:35px;\n"
 "")
         self.label.setObjectName("label")
         self.label_4 = QtWidgets.QLabel(self.frame_4)
-        self.label_4.setGeometry(QtCore.QRect(90, 90, 87, 25))
+        self.label_4.setGeometry(QtCore.QRect(10, 110, 111, 25))
         self.label_4.setStyleSheet("font-weight:500;\n"
 "font-size:22px;")
         self.label_4.setObjectName("label_4")
         self.line_Clave = QtWidgets.QLineEdit(self.frame_4)
-        self.line_Clave.setGeometry(QtCore.QRect(190, 80, 411, 40))
+        self.line_Clave.setGeometry(QtCore.QRect(170, 110, 391, 40))
         sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Fixed)
         sizePolicy.setHorizontalStretch(0)
         sizePolicy.setVerticalStretch(0)
@@ -102,12 +100,12 @@ class Ui_Login(object):
         self.line_Clave.setCursorMoveStyle(QtCore.Qt.LogicalMoveStyle)
         self.line_Clave.setObjectName("line_Clave")
         self.label_2 = QtWidgets.QLabel(self.frame_4)
-        self.label_2.setGeometry(QtCore.QRect(50, 130, 141, 61))
+        self.label_2.setGeometry(QtCore.QRect(10, 160, 151, 61))
         self.label_2.setStyleSheet("font-weight:500;\n"
 "font-size:22px;")
         self.label_2.setObjectName("label_2")
         self.line_Usuario = QtWidgets.QLineEdit(self.frame_4)
-        self.line_Usuario.setGeometry(QtCore.QRect(190, 140, 411, 40))
+        self.line_Usuario.setGeometry(QtCore.QRect(170, 170, 391, 40))
         self.line_Usuario.setStyleSheet("QLineEdit {\n"
 "    border: 3px solid rgba(246, 143, 137, 255);\n"
 "    border-radius:10%;\n"
@@ -116,15 +114,8 @@ class Ui_Login(object):
         self.line_Usuario.setEchoMode(QtWidgets.QLineEdit.Password)
         self.line_Usuario.setAlignment(QtCore.Qt.AlignLeading|QtCore.Qt.AlignLeft|QtCore.Qt.AlignVCenter)
         self.line_Usuario.setObjectName("line_Usuario")
-        self.lb_crear_Usuario = QtWidgets.QLabel(self.frame_4)
-        self.lb_crear_Usuario.setGeometry(QtCore.QRect(190, 250, 114, 21))
-        self.lb_crear_Usuario.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
-        self.lb_crear_Usuario.setStyleSheet("QLabel:hover {\n"
-"    color: blue;\n"
-"}")
-        self.lb_crear_Usuario.setObjectName("lb_crear_Usuario")
         self.bt_ingresar = QtWidgets.QPushButton(self.frame_4)
-        self.bt_ingresar.setGeometry(QtCore.QRect(190, 200, 411, 40))
+        self.bt_ingresar.setGeometry(QtCore.QRect(170, 230, 391, 40))
         self.bt_ingresar.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
         self.bt_ingresar.setStyleSheet("QPushButton{\n"
 "        background-color: qlineargradient(spread:reflect, x1:0, y1:0, x2:1, y2:0.0170455, stop:0.261364 rgba(246, 143, 137,             255), stop:1 rgba(128, 74, 70, 255));\n"
@@ -139,9 +130,19 @@ class Ui_Login(object):
 "")
         self.bt_ingresar.setObjectName("bt_ingresar")
         self.label_5 = QtWidgets.QLabel(self.frame_4)
-        self.label_5.setGeometry(QtCore.QRect(270, 50, 131, 16))
+        self.label_5.setGeometry(QtCore.QRect(250, 60, 131, 16))
         self.label_5.setStyleSheet("font-weight:500;")
         self.label_5.setObjectName("label_5")
+        self.bt_crear_usuario = QtWidgets.QPushButton(self.frame_4)
+        self.bt_crear_usuario.setGeometry(QtCore.QRect(170, 280, 111, 25))
+        self.bt_crear_usuario.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
+        self.bt_crear_usuario.setStyleSheet("\n"
+"border: 0px;\n"
+"\n"
+"QPushButton#pushButton:hover {\n"
+"    color: rgb(53, 132, 228);\n"
+"}")
+        self.bt_crear_usuario.setObjectName("bt_crear_usuario")
         self.horizontalLayout_3.addWidget(self.frame_4)
         self.verticalLayout.addWidget(self.frame_registrar)
         self.horizontalLayout.addWidget(self.Background_Login)
@@ -159,10 +160,10 @@ class Ui_Login(object):
         self.line_Clave.setPlaceholderText(_translate("Login", "Ingrese su nombre de usuario"))
         self.label_2.setText(_translate("Login", "Contraseña:"))
         self.line_Usuario.setPlaceholderText(_translate("Login", "Ingrese su contraseña"))
-        self.lb_crear_Usuario.setText(_translate("Login", "Crear un cuenta"))
         self.bt_ingresar.setText(_translate("Login", "Ingresar"))
         self.label_5.setText(_translate("Login", "MAPA Interface"))
-
+        self.bt_crear_usuario.setText(_translate("Login", "Crear usuario"))
+        Recursos
 
 
 if __name__ == "__main__":
