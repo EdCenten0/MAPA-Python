@@ -1,15 +1,16 @@
 import copy
 
 
-class bodega:
-    def __init__(self, id=None, nombre=None, apellido=None, direccion=None, correo=None, telefono=None, cedula=None):
+class Cliente:
+    def __init__(self, id=None, nombre=None, apellido=None, cedula=None, correo=None, telefono=None, id_tienda=None, estado=None):
         self._id = id
         self._nombre = nombre
         self._apellido = apellido
-        self._direccion = direccion
         self._correo = correo
         self._telefono = telefono
         self._cedula = cedula
+        self._id_tienda = id_tienda
+        self._estado = estado
 
 
     def __str__(self):
@@ -17,10 +18,11 @@ class bodega:
         id: {self._id}
         nombre: {self._nombre},
         apellido: {self._apellido},
-        direccion: {self._direccion}
+        cedula: {self._cedula},  
         correo: {self._correo},
         telefono: {self._telefono},
-        cedula: {self._cedula}        
+        id_tienda: {self._id_tienda}
+        estado: {self._estado}
 
         '''
 
@@ -28,11 +30,11 @@ class bodega:
         u = copy.copy(self) #realiza una copia exacta del objeto
         u.id = u._id
         u.nombre = u._nombre
+        u.cedula = u._cedula
         u.apellido = u._apellido
-        u.direccion = u._direccion
         u.correo = u._correo
         u.telefono = u._telefono
-        u.cedula = u._cedula
+        u.id_tienda = u._id_tienda
         return u
 
     #GET
@@ -63,20 +65,19 @@ class bodega:
         self._apellido = apellido
 
     @property
-    def direccion(self):
-        return self._direccion
-
-    @direccion.setter
-    def direccion(self, direccion):
-        self._direccion = direccion
+    def cedula(self):
+        return self._cedula
+    @cedula.setter
+    def cedula(self, cedula):
+        self._cedula = cedula
 
     @property
-    def correo(self):
-        return self._correo
+    def email(self):
+        return self._email
 
-    @correo.setter
-    def correo(self, correo):
-        self._correo = correo
+    @email.setter
+    def email(self, email):
+        self._email = email
 
     @property
     def telefono(self):
@@ -85,9 +86,20 @@ class bodega:
     def telefono(self, telefono):
         self._telefono = telefono
 
+
     @property
-    def cedula(self):
-        return self._cedula
-    @cedula.setter
-    def cedula(self, cedula):
-        self._cedula = cedula
+    def id_tienda(self):
+        return self._id_tienda
+
+    @id_tienda.setter
+    def id_tienda(self, id_tienda):
+        self._id_tienda = id_tienda
+
+    @property
+    def estado(self):
+        return self.estado
+
+    @estado.setter
+    def estado(self, estado):
+        self.estado = estado
+

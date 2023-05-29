@@ -2,12 +2,13 @@ import copy
 
 
 class Taller:
-    def __init__(self, id=None, nombre=None, direccion=None, telefono=None, email=None):
+    def __init__(self, id=None, nombre=None, direccion=None, telefono=None, email=None, id_tienda = None):
         self._id = id
         self._nombre = nombre
         self._direccion = direccion
         self._telefono = telefono
         self._email = email
+        self._id_tienda = id_tienda
 
     def __str__(self):
         return f'''
@@ -16,6 +17,7 @@ class Taller:
         direccion: {self._direccion},
         telefono: {self._telefono},
         email: {self._email}
+        id_tienda: {self._id_tienda}
         '''
 
     def __getitem__(self, item):
@@ -25,6 +27,7 @@ class Taller:
         u.direccion = u._direccion
         u.telefono = u._telefono
         u.email = u._email
+
         return u
 
     #GET
@@ -64,11 +67,20 @@ class Taller:
 
     @property
     def email(self):
-        return self.email
+        return self._email
 
     @email.setter
     def email(self, email):
         self._email = email
 
+    @property
+    def id_tienda(self):
+        return self._id_tienda
+
+    @id_tienda.setter
+    def id_tienda(self, id_tienda):
+        self._id_tienda = id_tienda
+
 if __name__ == '__main__':
-    t = Taller(2, 'MAPA', 'managua', 45786532, 'hpalacios@gmail.com')
+    '''Taller('MAPA', 'managua', '45786535', 'hpalacios@gmail.com', 1)'''
+    #print(t)
