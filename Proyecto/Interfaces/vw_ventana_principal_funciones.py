@@ -5,8 +5,8 @@ from PyQt5.QtWidgets import QMainWindow
 
 from vw_ventana_principal import Ui_MainWindow
 from PyQt5 import QtCore, QtGui, QtWidgets
-from Interfaces import vw_ventana_principal, vw_cliente_funciones
-from Interfaces import vw_vista_previa_pedido_funciones
+from Proyecto.Interfaces import vw_ventana_principal, vw_cliente_funciones
+from Proyecto.Interfaces import vw_vista_previa_pedido_funciones
 
 # Carlos Eduardo Chavarria Centeno (EdCenten0)
 # Universidad Centroamericana
