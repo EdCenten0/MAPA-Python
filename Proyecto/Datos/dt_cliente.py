@@ -1,6 +1,7 @@
 # Francisco de Jesús Melendez Simplina
+# Rene Nicolas Sandoval Lagos
 
-from Proyecto.Datos import Conexion
+from Datos import Conexion
 
 class Dt_Clientes:
 
@@ -11,6 +12,16 @@ class Dt_Clientes:
         querys = cursor.fetchall()
         cursor.close()
         return querys
+
+    def listarSoloUnCliente(id_cliente):
+        from Datos import Conexion
+        cursor = Conexion.Conexion.obtenerConexion().cursor()
+        sql_query = (f"SELECT * FROM clientes WHERE id_cliente = {id_cliente}")
+        cursor.execute(sql_query)
+        registro = cursor.fetchall()
+        cursor.close()
+        return registro
+
 
     @classmethod
     def guardarClientes(cls, cliente):
