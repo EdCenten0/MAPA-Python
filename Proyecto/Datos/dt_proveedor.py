@@ -1,6 +1,6 @@
 #Francisco de Jesús Meléndez Simplina
 
-import Conexion
+from Proyecto.Datos import Conexion
 
 class Dt_Proveedor:
 
@@ -17,7 +17,7 @@ class Dt_Proveedor:
 
         try:
             cursor = Conexion.Conexion.obtenerConexion().cursor()
-            sql = (f"INSERT INTO proveedores ( id_tienda, nombre, email, telefono, catalogo, ruc, direccion, estado) VALUES ( '{1}', '{Proveedor.nombre}', '{Proveedor.correo}', '{Proveedor.telefono}', '{Proveedor.catalogo}', '{Proveedor.ruc}', '{Proveedor.direccion}'  , '{1}')")
+            sql = (f"INSERT INTO proveedores ( id_tienda, nombre, email, telefono, catalogo, ruc, direccion, estado) VALUES ( {1}, '{Proveedor.nombre}', '{Proveedor.correo}', '{Proveedor.telefono}', '{Proveedor.catalogo}', '{Proveedor.ruc}', '{Proveedor.direccion}'  , '{1}')")
             cursor.execute(sql)
             cursor.connection.commit()
             cursor.close()

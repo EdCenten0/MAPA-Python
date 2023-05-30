@@ -86,72 +86,148 @@ class proveedor_Window(QMainWindow, vw_proveedor.Ui_Proveedores):
 
     def guardarProveedor(self):
 
-        try:
-            Proveedor.nombre = self.line_Nombre.text()
-            Proveedor.correo = self.line_Correo.text()
-            Proveedor.direccion = self.line_Direccion.toPlainText()
-            Proveedor.catalogo = self.line_Catalogo.toPlainText()
-            Proveedor.ruc = self.line_Ruc.text()
-            Proveedor.telefono = self.line_Telefono.text()
+        #Validaciones de entrada de datos
 
+        if (not self.line_Nombre.text() == "" and not self.line_Correo.text() == "" and not self.line_Direccion.toPlainText() == "" and not self.line_Catalogo.toPlainText() == "" and not self.line_Ruc.text() == "" and not self.line_Telefono.text() == ""):
 
-            if self.line_Id.text() == "" and not self.line_Nombre.text() == "" and not self.line_Correo.text() == "" and not self.line_Ruc.text() == "" and not self.line_Telefono.text() == "" and not self.line_Direccion.toPlainText() == "" and not self.line_Catalogo.toPlainText() == "":
-                indicador = dt_proveedor.Dt_Proveedor.guardarProveedor(Proveedor)  # Recoge los datos en los "Lines" de Qt Desinger para guardarlos en la base de datos
+            if self.line_Id.text() == "":
 
-                self.notifMensaje(indicador, "Guardados")
+                if len(self.line_Nombre.text()) <= 50:
 
-                self.limpiarCampos()
+                    if len(self.line_Correo.text()) <= 50:
 
-                self.llenarTablaProveedor(dt_proveedor.Dt_Proveedor.listarProveedor())  # Se reinicia la tabla para poder recargar los datos guardados
+                        if len(self.line_Ruc.text()) <= 15:
+
+                            if len(self.line_Telefono.text()) <= 12:
+
+                                if len(self.line_Catalogo.toPlainText()) <= 100:
+
+                                    if len(self.line_Direccion.toPlainText()) <= 300:
+                                        try:
+                                            Proveedor.nombre = self.line_Nombre.text()
+                                            Proveedor.correo = self.line_Correo.text()
+                                            Proveedor.direccion = self.line_Direccion.toPlainText()
+                                            Proveedor.catalogo = self.line_Catalogo.toPlainText()
+                                            Proveedor.ruc = self.line_Ruc.text()
+                                            Proveedor.telefono = self.line_Telefono.text()
+
+                                            dt_proveedor.Dt_Proveedor.guardarProveedor(Proveedor)  # Recoge los datos en los "Lines" de Qt Desinger para guardarlos en la base de datos
+
+                                            QMessageBox.about(self, "Registro Exitoso","Se guardo correctamente el proveedor")
+
+                                            self.limpiarCampos()
+
+                                            self.llenarTablaProveedor(
+                                                dt_proveedor.Dt_Proveedor.listarProveedor())  # Se reinicia la tabla para poder recargar los datos guardados
+
+                                        except Exception as e:
+                                            print(f"Error en GuardarProveedor: {e}")
+
+                                    else:
+                                        QMessageBox.about(self,"Error" ,"La direccion debe tener menos de 300 caracteres")
+
+                                else:
+                                    QMessageBox.about(self,"Error" ,"El catalogo debe tener menos de 100 caracteres")
+
+                            else:
+                                QMessageBox.about(self,"Error" ,"El telefono debe tener menos de 12 caracteres")
+
+                        else:
+                            QMessageBox.about(self,"Error" ,"El ruc debe tener menos de 15 caracteres")
+
+                    else:
+                        QMessageBox.about(self,"Error" ,"El correo electronico debe tener menos de 50 caracteres")
+
+                else:
+                    QMessageBox.about(self,"Error" ,"El nombre del proveedor debe tener menos de 50 caracteres")
 
             else:
+                QMessageBox.about(self,"Error" ,"No se puede guardar el proveedor con ese id existente")
 
-                self.notifMensaje(False, "")
-                self.limpiarCampos()
+        else:
+            QMessageBox.about(self,"Error" ,"Llene los campos vacios")
 
-        except Exception as e:
-            print(f"Error en GuardarProveedor: {e}")
+
+
 
 
     def editarProveedor(self):
 
-        try:
-            Proveedor.id_proveedor = self.line_Id.text()
-            Proveedor.nombre = self.line_Nombre.text()
-            Proveedor.correo = self.line_Correo.text()
-            Proveedor.direccion = self.line_Direccion.toPlainText()
-            Proveedor.catalogo = self.line_Catalogo.toPlainText()
-            Proveedor.ruc = self.line_Ruc.text()
-            Proveedor.telefono = self.line_Telefono.text()
+        if (not self.line_Nombre.text() == "" and not self.line_Correo.text() == "" and not self.line_Direccion.toPlainText() == "" and not self.line_Catalogo.toPlainText() == "" and not self.line_Ruc.text() == "" and not self.line_Telefono.text() == ""):
+
+            if not self.line_Id.text() == "":
+
+                if len(self.line_Nombre.text()) <= 50:
+
+                    if len(self.line_Correo.text()) <= 50:
+
+                        if len(self.line_Ruc.text()) <= 15:
+
+                            if len(self.line_Telefono.text()) <= 12:
+
+                                if len(self.line_Catalogo.toPlainText()) <= 100:
+
+                                    if len(self.line_Direccion.toPlainText()) <= 300:
+                                        try:
+                                            Proveedor.id_proveedor = self.line_Id.text()
+                                            Proveedor.nombre = self.line_Nombre.text()
+                                            Proveedor.correo = self.line_Correo.text()
+                                            Proveedor.direccion = self.line_Direccion.toPlainText()
+                                            Proveedor.catalogo = self.line_Catalogo.toPlainText()
+                                            Proveedor.ruc = self.line_Ruc.text()
+                                            Proveedor.telefono = self.line_Telefono.text()
+
+                                            dt_proveedor.Dt_Proveedor.editarProveedor(Proveedor)  # Recoge los datos en los "Lines" de Qt Desinger para guardarlos en la base de datos
+
+                                            QMessageBox.about(self, "Registro Exitoso","Se edito correctamente el proveedor")
+
+                                            self.limpiarCampos()
+
+                                            self.llenarTablaProveedor(dt_proveedor.Dt_Proveedor.listarProveedor())  # Se reinicia la tabla para poder recargar los datos guardados
+
+                                        except Exception as e:
+                                            print(f"Error en EditarProveedor: {e}")
 
 
-            if not self.line_Id.text() == "" and not self.line_Nombre.text() == "" and not self.line_Correo.text() == "" and not self.line_Ruc.text() == "" and not self.line_Telefono.text() == "" and not self.line_Direccion.toPlainText() == "" and not self.line_Catalogo.toPlainText() == "":
-                indicador = dt_proveedor.Dt_Proveedor.editarProveedor(Proveedor)  # Recoge los datos en los "Lines" de Qt Desinger para guardarlos en la base de datos
+                                    else:
+                                        QMessageBox.about(self,"Error" ,"La direccion debe tener menos de 300 caracteres")
 
-                self.notifMensaje(indicador, "Editados")
+                                else:
+                                    QMessageBox.about(self,"Error" ,"El catalogo debe tener menos de 100 caracteres")
 
-                self.limpiarCampos()
+                            else:
+                                QMessageBox.about(self,"Error" ,"El telefono debe tener menos de 12 caracteres")
 
-                self.llenarTablaProveedor(dt_proveedor.Dt_Proveedor.listarProveedor())  # Se reinicia la tabla para poder recargar los datos guardados
+                        else:
+                            QMessageBox.about(self,"Error" ,"El ruc debe tener menos de 15 caracteres")
+
+                    else:
+                        QMessageBox.about(self,"Error" ,"El correo electronico debe tener menos de 50 caracteres")
+
+                else:
+                    QMessageBox.about(self,"Error" ,"El nombre del proveedor debe tener menos de 50 caracteres")
 
             else:
+                QMessageBox.about(self,"Error" ,"Seleccione al proveedor a editar")
 
-                self.notifMensaje(False, "")
-                self.limpiarCampos()
+        else:
+            QMessageBox.about(self,"Error" ,"Llene los campos vacios")
 
-        except Exception as e:
-            print(f"Error en EditarProveedor: {e}")
+
+
 
 
     def eliminarProveedor(self):
 
         try:
-            Proveedor.id_proveedor = self.line_Id.text()
 
             if not self.line_Id.text() == "" :
-                indicador = dt_proveedor.Dt_Proveedor.eliminarProveedor(Proveedor)  # Recoge los datos en los "Lines" de Qt Desinger para guardarlos en la base de datos
 
-                self.notifMensaje(indicador, "Eliminados")
+                Proveedor.id_proveedor = self.line_Id.text()
+
+                dt_proveedor.Dt_Proveedor.eliminarProveedor(Proveedor)  # Recoge los datos en los "Lines" de Qt Desinger para guardarlos en la base de datos
+
+                QMessageBox.about(self, "Registro Exitoso", "Se elimino correctamente el proveedor")
 
                 self.limpiarCampos()
 
@@ -159,8 +235,8 @@ class proveedor_Window(QMainWindow, vw_proveedor.Ui_Proveedores):
 
             else:
 
-                self.notifMensaje(False, "")
-                self.limpiarCampos()
+                QMessageBox.about(self, "Error", "Seleccione al proveedor a eliminar")
+
 
         except Exception as e:
             print(f"Error en EliminarProveedor: {e}")
