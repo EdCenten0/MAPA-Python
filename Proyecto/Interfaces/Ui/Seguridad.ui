@@ -71,7 +71,7 @@ background-color: rgb(63, 73, 100);</string>
         <widget class="QTabWidget" name="tabWidget">
          <property name="minimumSize">
           <size>
-           <width>22</width>
+           <width>0</width>
            <height>0</height>
           </size>
          </property>
@@ -161,11 +161,8 @@ background-color: rgb(63, 73, 100);</string>
                  <property name="verticalSpacing">
                   <number>15</number>
                  </property>
-                 <item row="0" column="1">
-                  <widget class="QLineEdit" name="line_Usuario_Id">
-                   <property name="enabled">
-                    <bool>false</bool>
-                   </property>
+                 <item row="5" column="1">
+                  <widget class="QDateEdit" name="line_Usuario_Fecha">
                    <property name="styleSheet">
                     <string notr="true">background-color: rgb(255, 255, 255);
 font: 10pt &quot;MS Shell Dlg 2&quot;;</string>
@@ -183,30 +180,11 @@ color: rgb(255, 255, 255);</string>
                    </property>
                   </widget>
                  </item>
-                 <item row="1" column="0">
-                  <widget class="QLabel" name="label_40">
-                   <property name="styleSheet">
-                    <string notr="true">font: 14pt &quot;Ubuntu&quot;;
-color: rgb(255, 255, 255);</string>
+                 <item row="0" column="1">
+                  <widget class="QLineEdit" name="line_Usuario_Id">
+                   <property name="enabled">
+                    <bool>false</bool>
                    </property>
-                   <property name="text">
-                    <string>Nombre:</string>
-                   </property>
-                  </widget>
-                 </item>
-                 <item row="0" column="0">
-                  <widget class="QLabel" name="label_39">
-                   <property name="styleSheet">
-                    <string notr="true">font: 14pt &quot;Ubuntu&quot;;
-color: rgb(255, 255, 255);</string>
-                   </property>
-                   <property name="text">
-                    <string>ID:</string>
-                   </property>
-                  </widget>
-                 </item>
-                 <item row="3" column="1">
-                  <widget class="QLineEdit" name="line_Usuario_User">
                    <property name="styleSheet">
                     <string notr="true">background-color: rgb(255, 255, 255);
 font: 10pt &quot;MS Shell Dlg 2&quot;;</string>
@@ -224,14 +202,6 @@ font: 10pt &quot;MS Shell Dlg 2&quot;;</string>
                    </property>
                   </widget>
                  </item>
-                 <item row="5" column="1">
-                  <widget class="QDateEdit" name="line_Usuario_Fecha">
-                   <property name="styleSheet">
-                    <string notr="true">background-color: rgb(255, 255, 255);
-font: 10pt &quot;MS Shell Dlg 2&quot;;</string>
-                   </property>
-                  </widget>
-                 </item>
                  <item row="2" column="1">
                   <widget class="QLineEdit" name="line_Usuario_Apellido">
                    <property name="styleSheet">
@@ -240,22 +210,26 @@ font: 10pt &quot;MS Shell Dlg 2&quot;;</string>
                    </property>
                   </widget>
                  </item>
-                 <item row="4" column="0">
-                  <widget class="QLabel" name="label_48">
+                 <item row="6" column="0">
+                  <widget class="QLabel" name="label">
+                   <property name="styleSheet">
+                    <string notr="true">font: 14pt &quot;Ubuntu&quot;;
+color: rgb(255, 255, 255);
+</string>
+                   </property>
+                   <property name="text">
+                    <string>Buscar</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item row="0" column="0">
+                  <widget class="QLabel" name="label_39">
                    <property name="styleSheet">
                     <string notr="true">font: 14pt &quot;Ubuntu&quot;;
 color: rgb(255, 255, 255);</string>
                    </property>
                    <property name="text">
-                    <string>Password:</string>
-                   </property>
-                  </widget>
-                 </item>
-                 <item row="1" column="1">
-                  <widget class="QLineEdit" name="line_Usuario_Nombre">
-                   <property name="styleSheet">
-                    <string notr="true">background-color: rgb(255, 255, 255);
-font: 10pt &quot;MS Shell Dlg 2&quot;;</string>
+                    <string>ID:</string>
                    </property>
                   </widget>
                  </item>
@@ -278,6 +252,52 @@ color: rgb(255, 255, 255);</string>
                    </property>
                    <property name="text">
                     <string>Username:</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item row="4" column="0">
+                  <widget class="QLabel" name="label_48">
+                   <property name="styleSheet">
+                    <string notr="true">font: 14pt &quot;Ubuntu&quot;;
+color: rgb(255, 255, 255);</string>
+                   </property>
+                   <property name="text">
+                    <string>Password:</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item row="1" column="1">
+                  <widget class="QLineEdit" name="line_Usuario_Nombre">
+                   <property name="styleSheet">
+                    <string notr="true">background-color: rgb(255, 255, 255);
+font: 10pt &quot;MS Shell Dlg 2&quot;;</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item row="1" column="0">
+                  <widget class="QLabel" name="label_40">
+                   <property name="styleSheet">
+                    <string notr="true">font: 14pt &quot;Ubuntu&quot;;
+color: rgb(255, 255, 255);</string>
+                   </property>
+                   <property name="text">
+                    <string>Nombre:</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item row="3" column="1">
+                  <widget class="QLineEdit" name="line_Usuario_User">
+                   <property name="styleSheet">
+                    <string notr="true">background-color: rgb(255, 255, 255);
+font: 10pt &quot;MS Shell Dlg 2&quot;;</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item row="6" column="1">
+                  <widget class="QLineEdit" name="line_buscar_usuario">
+                   <property name="styleSheet">
+                    <string notr="true">background-color: rgb(255, 255, 255);
+font: 10pt &quot;MS Shell Dlg 2&quot;;</string>
                    </property>
                   </widget>
                  </item>
@@ -421,6 +441,41 @@ font: 12pt &quot;MS Shell Dlg 2&quot;;</string>
                      </property>
                      <property name="text">
                       <string>Vaciar Campos</string>
+                     </property>
+                    </widget>
+                   </item>
+                   <item>
+                    <spacer name="verticalSpacer_30">
+                     <property name="orientation">
+                      <enum>Qt::Vertical</enum>
+                     </property>
+                     <property name="sizeHint" stdset="0">
+                      <size>
+                       <width>20</width>
+                       <height>40</height>
+                      </size>
+                     </property>
+                    </spacer>
+                   </item>
+                   <item>
+                    <widget class="QPushButton" name="bt_rellenar_usuario">
+                     <property name="styleSheet">
+                      <string notr="true">background-color: rgb(255, 255, 255);
+font: 12pt &quot;MS Shell Dlg 2&quot;;</string>
+                     </property>
+                     <property name="text">
+                      <string>Rellenar tabla</string>
+                     </property>
+                    </widget>
+                   </item>
+                   <item>
+                    <widget class="QPushButton" name="bt_busca_usuario">
+                     <property name="styleSheet">
+                      <string notr="true">color: rgb(0, 0, 0);
+background-color: rgb(255, 255, 255);</string>
+                     </property>
+                     <property name="text">
+                      <string>Buscar</string>
                      </property>
                     </widget>
                    </item>
@@ -707,7 +762,10 @@ QTableView::item {
                 </property>
                 <layout class="QFormLayout" name="formLayout_7">
                  <property name="horizontalSpacing">
-                  <number>21</number>
+                  <number>20</number>
+                 </property>
+                 <property name="verticalSpacing">
+                  <number>10</number>
                  </property>
                  <property name="leftMargin">
                   <number>20</number>
@@ -721,6 +779,66 @@ QTableView::item {
                  <property name="bottomMargin">
                   <number>0</number>
                  </property>
+                 <item row="1" column="0">
+                  <widget class="QLabel" name="label_108">
+                   <property name="styleSheet">
+                    <string notr="true">font: 14pt &quot;Ubuntu&quot;;
+color: rgb(255, 255, 255);</string>
+                   </property>
+                   <property name="text">
+                    <string>ID:</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item row="1" column="1">
+                  <widget class="QLineEdit" name="line_Rol_Id">
+                   <property name="enabled">
+                    <bool>false</bool>
+                   </property>
+                   <property name="styleSheet">
+                    <string notr="true">background-color: rgb(255, 255, 255);
+font: 10pt &quot;MS Shell Dlg 2&quot;;</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item row="4" column="0">
+                  <widget class="QLabel" name="label_107">
+                   <property name="styleSheet">
+                    <string notr="true">font: 14pt &quot;Ubuntu&quot;;
+color: rgb(255, 255, 255);</string>
+                   </property>
+                   <property name="text">
+                    <string>Rol:</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item row="4" column="1">
+                  <widget class="QLineEdit" name="line_Rol">
+                   <property name="styleSheet">
+                    <string notr="true">background-color: rgb(255, 255, 255);
+font: 10pt &quot;MS Shell Dlg 2&quot;;</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item row="7" column="0">
+                  <widget class="QLabel" name="label_2">
+                   <property name="styleSheet">
+                    <string notr="true">font: 14pt &quot;Ubuntu&quot;;
+color: rgb(255, 255, 255);</string>
+                   </property>
+                   <property name="text">
+                    <string>Buscar:</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item row="7" column="1">
+                  <widget class="QLineEdit" name="line_buscar_rol">
+                   <property name="styleSheet">
+                    <string notr="true">background-color: rgb(255, 255, 255);
+font: 10pt &quot;MS Shell Dlg 2&quot;;</string>
+                   </property>
+                  </widget>
+                 </item>
                  <item row="0" column="1">
                   <spacer name="verticalSpacer_2">
                    <property name="orientation">
@@ -734,42 +852,7 @@ QTableView::item {
                    </property>
                   </spacer>
                  </item>
-                 <item row="1" column="1">
-                  <spacer name="verticalSpacer_4">
-                   <property name="orientation">
-                    <enum>Qt::Vertical</enum>
-                   </property>
-                   <property name="sizeHint" stdset="0">
-                    <size>
-                     <width>20</width>
-                     <height>40</height>
-                    </size>
-                   </property>
-                  </spacer>
-                 </item>
-                 <item row="2" column="0">
-                  <widget class="QLabel" name="label_108">
-                   <property name="styleSheet">
-                    <string notr="true">font: 14pt &quot;Ubuntu&quot;;
-color: rgb(255, 255, 255);</string>
-                   </property>
-                   <property name="text">
-                    <string>ID:</string>
-                   </property>
-                  </widget>
-                 </item>
-                 <item row="2" column="1">
-                  <widget class="QLineEdit" name="line_Rol_Id">
-                   <property name="enabled">
-                    <bool>false</bool>
-                   </property>
-                   <property name="styleSheet">
-                    <string notr="true">background-color: rgb(255, 255, 255);
-font: 10pt &quot;MS Shell Dlg 2&quot;;</string>
-                   </property>
-                  </widget>
-                 </item>
-                 <item row="5" column="1">
+                 <item row="3" column="1">
                   <spacer name="verticalSpacer_3">
                    <property name="orientation">
                     <enum>Qt::Vertical</enum>
@@ -782,26 +865,33 @@ font: 10pt &quot;MS Shell Dlg 2&quot;;</string>
                    </property>
                   </spacer>
                  </item>
-                 <item row="6" column="0">
-                  <widget class="QLabel" name="label_107">
-                   <property name="styleSheet">
-                    <string notr="true">font: 14pt &quot;Ubuntu&quot;;
-color: rgb(255, 255, 255);</string>
+                 <item row="2" column="1">
+                  <spacer name="verticalSpacer_4">
+                   <property name="orientation">
+                    <enum>Qt::Vertical</enum>
                    </property>
-                   <property name="text">
-                    <string>Rol:</string>
+                   <property name="sizeHint" stdset="0">
+                    <size>
+                     <width>20</width>
+                     <height>40</height>
+                    </size>
                    </property>
-                  </widget>
+                  </spacer>
                  </item>
                  <item row="6" column="1">
-                  <widget class="QLineEdit" name="line_Rol">
-                   <property name="styleSheet">
-                    <string notr="true">background-color: rgb(255, 255, 255);
-font: 10pt &quot;MS Shell Dlg 2&quot;;</string>
+                  <spacer name="verticalSpacer_5">
+                   <property name="orientation">
+                    <enum>Qt::Vertical</enum>
                    </property>
-                  </widget>
+                   <property name="sizeHint" stdset="0">
+                    <size>
+                     <width>20</width>
+                     <height>40</height>
+                    </size>
+                   </property>
+                  </spacer>
                  </item>
-                 <item row="7" column="1">
+                 <item row="5" column="1">
                   <spacer name="verticalSpacer_6">
                    <property name="orientation">
                     <enum>Qt::Vertical</enum>
@@ -815,19 +905,6 @@ font: 10pt &quot;MS Shell Dlg 2&quot;;</string>
                   </spacer>
                  </item>
                  <item row="8" column="1">
-                  <spacer name="verticalSpacer_5">
-                   <property name="orientation">
-                    <enum>Qt::Vertical</enum>
-                   </property>
-                   <property name="sizeHint" stdset="0">
-                    <size>
-                     <width>20</width>
-                     <height>40</height>
-                    </size>
-                   </property>
-                  </spacer>
-                 </item>
-                 <item row="4" column="1">
                   <spacer name="verticalSpacer_29">
                    <property name="orientation">
                     <enum>Qt::Vertical</enum>
@@ -853,7 +930,7 @@ font: 10pt &quot;MS Shell Dlg 2&quot;;</string>
                 </property>
                 <layout class="QVBoxLayout" name="verticalLayout_23">
                  <property name="spacing">
-                  <number>24</number>
+                  <number>0</number>
                  </property>
                  <property name="leftMargin">
                   <number>10</number>
@@ -908,6 +985,28 @@ font: 12pt &quot;MS Shell Dlg 2&quot;;</string>
                    </property>
                    <property name="text">
                     <string>Vaciar Campos</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item>
+                  <widget class="QPushButton" name="bt_rellenar_rol">
+                   <property name="styleSheet">
+                    <string notr="true">background-color: rgb(255, 255, 255);
+font: 12pt &quot;MS Shell Dlg 2&quot;;</string>
+                   </property>
+                   <property name="text">
+                    <string>Rellenar tabla</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item>
+                  <widget class="QPushButton" name="bt_busca_rol">
+                   <property name="styleSheet">
+                    <string notr="true">background-color: rgb(255, 255, 255);
+font: 12pt &quot;MS Shell Dlg 2&quot;;</string>
+                   </property>
+                   <property name="text">
+                    <string>Buscar</string>
                    </property>
                   </widget>
                  </item>
@@ -1056,6 +1155,19 @@ font: 12pt &quot;MS Shell Dlg 2&quot;;</string>
                  <property name="rightMargin">
                   <number>20</number>
                  </property>
+                 <item row="1" column="1">
+                  <spacer name="verticalSpacer_15">
+                   <property name="orientation">
+                    <enum>Qt::Vertical</enum>
+                   </property>
+                   <property name="sizeHint" stdset="0">
+                    <size>
+                     <width>20</width>
+                     <height>40</height>
+                    </size>
+                   </property>
+                  </spacer>
+                 </item>
                  <item row="2" column="0">
                   <widget class="QLabel" name="label_72">
                    <property name="styleSheet">
@@ -1078,6 +1190,32 @@ font: 10pt &quot;MS Shell Dlg 2&quot;;</string>
                    </property>
                   </widget>
                  </item>
+                 <item row="3" column="1">
+                  <spacer name="verticalSpacer_8">
+                   <property name="orientation">
+                    <enum>Qt::Vertical</enum>
+                   </property>
+                   <property name="sizeHint" stdset="0">
+                    <size>
+                     <width>20</width>
+                     <height>40</height>
+                    </size>
+                   </property>
+                  </spacer>
+                 </item>
+                 <item row="4" column="1">
+                  <spacer name="verticalSpacer_28">
+                   <property name="orientation">
+                    <enum>Qt::Vertical</enum>
+                   </property>
+                   <property name="sizeHint" stdset="0">
+                    <size>
+                     <width>20</width>
+                     <height>40</height>
+                    </size>
+                   </property>
+                  </spacer>
+                 </item>
                  <item row="5" column="0">
                   <widget class="QLabel" name="label_71">
                    <property name="styleSheet">
@@ -1097,21 +1235,8 @@ font: 10pt &quot;MS Shell Dlg 2&quot;;</string>
                    </property>
                   </widget>
                  </item>
-                 <item row="0" column="1">
-                  <spacer name="verticalSpacer_7">
-                   <property name="orientation">
-                    <enum>Qt::Vertical</enum>
-                   </property>
-                   <property name="sizeHint" stdset="0">
-                    <size>
-                     <width>20</width>
-                     <height>40</height>
-                    </size>
-                   </property>
-                  </spacer>
-                 </item>
-                 <item row="3" column="1">
-                  <spacer name="verticalSpacer_8">
+                 <item row="6" column="1">
+                  <spacer name="verticalSpacer_16">
                    <property name="orientation">
                     <enum>Qt::Vertical</enum>
                    </property>
@@ -1136,34 +1261,27 @@ font: 10pt &quot;MS Shell Dlg 2&quot;;</string>
                    </property>
                   </spacer>
                  </item>
-                 <item row="1" column="1">
-                  <spacer name="verticalSpacer_15">
-                   <property name="orientation">
-                    <enum>Qt::Vertical</enum>
+                 <item row="8" column="0">
+                  <widget class="QLabel" name="label_3">
+                   <property name="styleSheet">
+                    <string notr="true">font: 14pt &quot;Ubuntu&quot;;
+color: rgb(255, 255, 255);</string>
                    </property>
-                   <property name="sizeHint" stdset="0">
-                    <size>
-                     <width>20</width>
-                     <height>40</height>
-                    </size>
+                   <property name="text">
+                    <string>Buscar:</string>
                    </property>
-                  </spacer>
+                  </widget>
                  </item>
-                 <item row="6" column="1">
-                  <spacer name="verticalSpacer_16">
-                   <property name="orientation">
-                    <enum>Qt::Vertical</enum>
+                 <item row="8" column="1">
+                  <widget class="QLineEdit" name="line_buscar_opcion">
+                   <property name="styleSheet">
+                    <string notr="true">background-color: rgb(255, 255, 255);
+font: 10pt &quot;MS Shell Dlg 2&quot;;</string>
                    </property>
-                   <property name="sizeHint" stdset="0">
-                    <size>
-                     <width>20</width>
-                     <height>40</height>
-                    </size>
-                   </property>
-                  </spacer>
+                  </widget>
                  </item>
-                 <item row="4" column="1">
-                  <spacer name="verticalSpacer_28">
+                 <item row="9" column="1">
+                  <spacer name="verticalSpacer_7">
                    <property name="orientation">
                     <enum>Qt::Vertical</enum>
                    </property>
@@ -1243,6 +1361,28 @@ font: 12pt &quot;MS Shell Dlg 2&quot;;</string>
                    </property>
                    <property name="text">
                     <string>Vaciar Campos</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item>
+                  <widget class="QPushButton" name="bt_rellenar_opcion">
+                   <property name="styleSheet">
+                    <string notr="true">background-color: rgb(255, 255, 255);
+font: 12pt &quot;MS Shell Dlg 2&quot;;</string>
+                   </property>
+                   <property name="text">
+                    <string>Rellenar tabla</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item>
+                  <widget class="QPushButton" name="bt_busca_opcion">
+                   <property name="styleSheet">
+                    <string notr="true">background-color: rgb(255, 255, 255);
+font: 12pt &quot;MS Shell Dlg 2&quot;;</string>
+                   </property>
+                   <property name="text">
+                    <string>Buscar</string>
                    </property>
                   </widget>
                  </item>
