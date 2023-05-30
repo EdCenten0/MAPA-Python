@@ -5,16 +5,7 @@ from datetime import datetime
 from PyQt5.QtCore import QDate
 from PyQt5.QtWidgets import QTableWidgetItem, QMessageBox
 
-from Datos import dt_usuario, dt_rol, dt_opcion, dt_rol_opcion, dt_usuario_rol
-from Entidades.rol_opcion import Rol_opcion
-from Entidades.usuario_rol import Usuario_rol
-from Entidades.usuarios import Usuarios
-from Entidades.roles import Rol
-from Entidades.opciones import Opcion
-from Proyecto.Datos import dt_usuario, dt_rol, dt_opcion, dt_rol_opcion, dt_usuario_rol
-from Proyecto.Entidades import usuario_rol
-from Proyecto.Entidades.rol_opcion import Rol_opcion
-from Proyecto.Datos import dt_usuario, dt_rol, dt_opcion, dt_rol_opcion, dt_usuario_rol
+from Proyecto.Datos import dt_opcion, dt_rol, dt_usuario_rol, dt_usuario, dt_rol_opcion
 from Proyecto.Entidades.rol_opcion import Rol_opcion
 from Proyecto.Entidades.usuario_rol import Usuario_rol
 from Proyecto.Entidades.usuarios import Usuarios
@@ -39,18 +30,24 @@ class seguridad_Window(QMainWindow, vw_seguridad.Ui_Seguridad):
         self.bt_Editar_Usuario.clicked.connect(self.editarUsuario)
         self.bt_Eliminar_Usuario.clicked.connect(self.eliminarUsuario)
         self.bt_Vaciar_Usuario.clicked.connect(self.limpiarCampos)
+        self.bt_busca_usuario.clicked.connect(self.buscarUsuario)
+
 
         # Botones de Rol
         self.bt_Guardar_Rol.clicked.connect(self.guardarRol)
         self.bt_Editar_Rol.clicked.connect(self.editarRol)
         self.bt_Eliminar_Rol.clicked.connect(self.eliminarRol)
         self.bt_Vaciar_Rol.clicked.connect(self.limpiarCampos)
+        self.bt_busca_rol.clicked.connect(self.buscarRol)
+
 
         # Botones de Opcion
         self.bt_Guardar_Opcion.clicked.connect(self.guardarOpcion)
         self.bt_Editar_Opcion.clicked.connect(self.editarOpcion)
         self.bt_Eliminar_Opcion.clicked.connect(self.eliminarOpcion)
         self.bt_Vaciar_Opcion.clicked.connect(self.limpiarCampos)
+        self.bt_busca_opcion.clicked.connect(self.buscarOpcion)
+
 
         # Botones de UsuarioRol
         self.bt_Guardar_Usuario_rol.clicked.connect(self.guardarUsuarioRol)
@@ -99,25 +96,30 @@ class seguridad_Window(QMainWindow, vw_seguridad.Ui_Seguridad):
 
     def limpiarCampos(self):
 
-        if not self.line_Usuario_Nombre.text() == "" or not self.line_Usuario_Apellido.text() == "" or not self.line_Usuario_User.text() == "" or not self.line_Usuario_Password.text() == "":
+        if not self.line_Usuario_Nombre.text() == "" or not self.line_Usuario_Apellido.text() == "" or not self.line_Usuario_User.text() == "" or not self.line_Usuario_Password.text() == "" or not self.line_buscar_usuario.text() == "":
             print("\n Datos limpiados de la ventana Usuario")
             self.line_Usuario_Id.clear()
             self.line_Usuario_Nombre.clear()
             self.line_Usuario_Apellido.clear()
             self.line_Usuario_User.clear()
             self.line_Usuario_Password.clear()
+            self.line_buscar_usuario.clear()
 
         # Rol
-        if not self.line_Rol_Id.text() == "" or not self.line_Rol.text() == "":
+        if not self.line_Rol_Id.text() == "" or not self.line_Rol.text() == "" or not self.line_buscar_rol.text() == "":
             print("\nDatos limpiados de la ventana Rol")
             self.line_Rol_Id.clear()
             self.line_Rol.clear()
+            self.line_buscar_rol.clear()
+
 
         # Opcion
-        if not self.line_Opcion_Id.text() == "" or not self.line_Opcion.text() == "":
+        if not self.line_Opcion_Id.text() == "" or not self.line_Opcion.text() == "" or not self.line_buscar_opcion.text() == "":
             print("\nDatos limpiados de la ventana Opcion")
             self.line_Opcion_Id.clear()
             self.line_Opcion.clear()
+            self.line_buscar_opcion.clear()
+
 
 
     def notifMensaje(self, indicador, resultado):
@@ -268,7 +270,6 @@ class seguridad_Window(QMainWindow, vw_seguridad.Ui_Seguridad):
 
     def llenarTablaUsuario(self, datos):
 
-        vacio = ""
         print("\nDatos de la Tablas Usuarios")
         i = len(datos)
         self.tb_Usuario.setRowCount(i)
@@ -284,6 +285,21 @@ class seguridad_Window(QMainWindow, vw_seguridad.Ui_Seguridad):
             self.tb_Usuario.setItem(tablerow, 6, QTableWidgetItem(str(row["estado"])))
             tablerow = tablerow + 1
 
+    def buscarUsuario(self):
+        datos = dt_usuario.Dt_Usuarios.buscarUsers(self.line_buscar_usuario.text())
+        i = len(datos)
+        self.tb_Usuario.setRowCount(i)
+        tablerow = 0
+
+        for row in datos:
+            self.tb_Usuario.setItem(tablerow, 0, QTableWidgetItem(str(row["id_usuario"])))
+            self.tb_Usuario.setItem(tablerow, 1, QTableWidgetItem((row["nombre"])))
+            self.tb_Usuario.setItem(tablerow, 2, QTableWidgetItem((row["apellido"])))
+            self.tb_Usuario.setItem(tablerow, 3, QTableWidgetItem((row["user"])))
+            self.tb_Usuario.setItem(tablerow, 4, QTableWidgetItem((row["clave"])))
+            self.tb_Usuario.setItem(tablerow, 5, QTableWidgetItem(str(row["fecha_creacion"])))
+            self.tb_Usuario.setItem(tablerow, 6, QTableWidgetItem(str(row["estado"])))
+            tablerow = tablerow + 1
 
         '''******************************************  Rol   ******************************************'''
 
@@ -409,6 +425,18 @@ class seguridad_Window(QMainWindow, vw_seguridad.Ui_Seguridad):
             self.tb_Rol.setItem(tablerow, 1, QTableWidgetItem((row["descripcion"])))
             tablerow = tablerow + 1
 
+    def buscarRol(self):
+        datos = dt_rol.Dt_Rol.buscarRoles(self.line_buscar_rol.text())
+        print("\nBuscar datos de la Tabla rol")
+        i = len(datos)
+        self.tb_Rol.setRowCount(i)
+        tablerow = 0
+
+        for row in datos:
+            self.tb_Rol.setItem(tablerow, 0, QTableWidgetItem(str(row["id_rol"])))
+            self.tb_Rol.setItem(tablerow, 1, QTableWidgetItem((row["descripcion"])))
+            tablerow = tablerow + 1
+
 
         '''******************************************  Opcion   ******************************************'''
 
@@ -512,6 +540,20 @@ class seguridad_Window(QMainWindow, vw_seguridad.Ui_Seguridad):
     def llenarTablaOpcion(self, datos):
 
         print("\nDatos de la Tabla opcion")
+        i = len(datos)
+        self.tb_Opcion.setRowCount(i)
+        tablerow = 0
+
+        for row in datos:
+            print(row)
+            self.tb_Opcion.setItem(tablerow, 0, QTableWidgetItem(str(row["idopcion"])))
+            self.tb_Opcion.setItem(tablerow, 1, QTableWidgetItem((row["descripcion"])))
+            tablerow = tablerow + 1
+
+
+    def buscarOpcion(self):
+        datos = dt_opcion.Dt_Opcion.buscarOpcion(self.line_buscar_opcion.text())
+        print("\nBuscar datos de la Tabla opcion")
         i = len(datos)
         self.tb_Opcion.setRowCount(i)
         tablerow = 0

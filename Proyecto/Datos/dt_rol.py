@@ -14,6 +14,13 @@ class Dt_Rol:
         cursor.close()
         return querys
 
+    @classmethod
+    def buscarRoles(cls, rol):
+        cursor = Conexion.Conexion.obtenerConexion().cursor()
+        cursor.execute(f"SELECT * FROM rol WHERE descripcion like '%' '{rol}' '%' ")
+        querys = cursor.fetchall()
+        cursor.close()
+        return querys
 
 
     @classmethod

@@ -458,21 +458,12 @@ font: 12pt &quot;MS Shell Dlg 2&quot;;</string>
                     </spacer>
                    </item>
                    <item>
-                    <widget class="QPushButton" name="bt_rellenar_usuario">
-                     <property name="styleSheet">
-                      <string notr="true">background-color: rgb(255, 255, 255);
-font: 12pt &quot;MS Shell Dlg 2&quot;;</string>
-                     </property>
-                     <property name="text">
-                      <string>Rellenar tabla</string>
-                     </property>
-                    </widget>
-                   </item>
-                   <item>
                     <widget class="QPushButton" name="bt_busca_usuario">
                      <property name="styleSheet">
-                      <string notr="true">color: rgb(0, 0, 0);
-background-color: rgb(255, 255, 255);</string>
+                      <string notr="true">
+
+background-color: rgb(255, 255, 255);
+font: 12pt &quot;MS Shell Dlg 2&quot;;</string>
                      </property>
                      <property name="text">
                       <string>Buscar</string>
@@ -600,14 +591,14 @@ QTableView::item {
                    <attribute name="horizontalHeaderCascadingSectionResizes">
                     <bool>false</bool>
                    </attribute>
-                   <attribute name="horizontalHeaderMinimumSectionSize">
-                    <number>55</number>
-                   </attribute>
                    <attribute name="horizontalHeaderDefaultSectionSize">
                     <number>130</number>
                    </attribute>
                    <attribute name="horizontalHeaderHighlightSections">
                     <bool>true</bool>
+                   </attribute>
+                   <attribute name="horizontalHeaderMinimumSectionSize">
+                    <number>55</number>
                    </attribute>
                    <attribute name="horizontalHeaderShowSortIndicator" stdset="0">
                     <bool>false</bool>
@@ -616,25 +607,25 @@ QTableView::item {
                     <bool>true</bool>
                    </attribute>
                    <attribute name="verticalHeaderVisible">
-                    <bool>true</bool>
+                    <bool>false</bool>
                    </attribute>
                    <attribute name="verticalHeaderCascadingSectionResizes">
                     <bool>false</bool>
-                   </attribute>
-                   <attribute name="verticalHeaderMinimumSectionSize">
-                    <number>28</number>
                    </attribute>
                    <attribute name="verticalHeaderDefaultSectionSize">
                     <number>29</number>
                    </attribute>
                    <attribute name="verticalHeaderHighlightSections">
-                    <bool>false</bool>
+                    <bool>true</bool>
+                   </attribute>
+                   <attribute name="verticalHeaderMinimumSectionSize">
+                    <number>28</number>
                    </attribute>
                    <attribute name="verticalHeaderShowSortIndicator" stdset="0">
                     <bool>false</bool>
                    </attribute>
                    <attribute name="verticalHeaderStretchLastSection">
-                    <bool>true</bool>
+                    <bool>false</bool>
                    </attribute>
                    <column>
                     <property name="text">
@@ -989,17 +980,6 @@ font: 12pt &quot;MS Shell Dlg 2&quot;;</string>
                   </widget>
                  </item>
                  <item>
-                  <widget class="QPushButton" name="bt_rellenar_rol">
-                   <property name="styleSheet">
-                    <string notr="true">background-color: rgb(255, 255, 255);
-font: 12pt &quot;MS Shell Dlg 2&quot;;</string>
-                   </property>
-                   <property name="text">
-                    <string>Rellenar tabla</string>
-                   </property>
-                  </widget>
-                 </item>
-                 <item>
                   <widget class="QPushButton" name="bt_busca_rol">
                    <property name="styleSheet">
                     <string notr="true">background-color: rgb(255, 255, 255);
@@ -1058,11 +1038,11 @@ font: 12pt &quot;MS Shell Dlg 2&quot;;</string>
                 <attribute name="horizontalHeaderCascadingSectionResizes">
                  <bool>false</bool>
                 </attribute>
-                <attribute name="horizontalHeaderMinimumSectionSize">
-                 <number>40</number>
-                </attribute>
                 <attribute name="horizontalHeaderDefaultSectionSize">
                  <number>347</number>
+                </attribute>
+                <attribute name="horizontalHeaderMinimumSectionSize">
+                 <number>40</number>
                 </attribute>
                 <attribute name="horizontalHeaderStretchLastSection">
                  <bool>true</bool>
@@ -1365,17 +1345,6 @@ font: 12pt &quot;MS Shell Dlg 2&quot;;</string>
                   </widget>
                  </item>
                  <item>
-                  <widget class="QPushButton" name="bt_rellenar_opcion">
-                   <property name="styleSheet">
-                    <string notr="true">background-color: rgb(255, 255, 255);
-font: 12pt &quot;MS Shell Dlg 2&quot;;</string>
-                   </property>
-                   <property name="text">
-                    <string>Rellenar tabla</string>
-                   </property>
-                  </widget>
-                 </item>
-                 <item>
                   <widget class="QPushButton" name="bt_busca_opcion">
                    <property name="styleSheet">
                     <string notr="true">background-color: rgb(255, 255, 255);
@@ -1433,11 +1402,11 @@ font: 12pt &quot;MS Shell Dlg 2&quot;;</string>
                 <attribute name="horizontalHeaderCascadingSectionResizes">
                  <bool>false</bool>
                 </attribute>
-                <attribute name="horizontalHeaderMinimumSectionSize">
-                 <number>40</number>
-                </attribute>
                 <attribute name="horizontalHeaderDefaultSectionSize">
                  <number>348</number>
+                </attribute>
+                <attribute name="horizontalHeaderMinimumSectionSize">
+                 <number>40</number>
                 </attribute>
                 <attribute name="horizontalHeaderShowSortIndicator" stdset="0">
                  <bool>false</bool>
@@ -1810,14 +1779,14 @@ font: 12pt &quot;MS Shell Dlg 2&quot;;</string>
                 <attribute name="verticalHeaderCascadingSectionResizes">
                  <bool>false</bool>
                 </attribute>
-                <attribute name="verticalHeaderMinimumSectionSize">
-                 <number>22</number>
-                </attribute>
                 <attribute name="verticalHeaderDefaultSectionSize">
                  <number>25</number>
                 </attribute>
                 <attribute name="verticalHeaderHighlightSections">
                  <bool>true</bool>
+                </attribute>
+                <attribute name="verticalHeaderMinimumSectionSize">
+                 <number>22</number>
                 </attribute>
                 <attribute name="verticalHeaderShowSortIndicator" stdset="0">
                  <bool>false</bool>
@@ -2184,11 +2153,11 @@ font: 12pt &quot;MS Shell Dlg 2&quot;;</string>
                 <attribute name="horizontalHeaderStretchLastSection">
                  <bool>true</bool>
                 </attribute>
-                <attribute name="verticalHeaderMinimumSectionSize">
-                 <number>23</number>
-                </attribute>
                 <attribute name="verticalHeaderDefaultSectionSize">
                  <number>25</number>
+                </attribute>
+                <attribute name="verticalHeaderMinimumSectionSize">
+                 <number>23</number>
                 </attribute>
                 <column>
                  <property name="text">

@@ -180,14 +180,11 @@ class Ui_Seguridad(object):
         self.verticalLayout_10.addWidget(self.bt_Vaciar_Usuario)
         spacerItem4 = QtWidgets.QSpacerItem(20, 40, QtWidgets.QSizePolicy.Minimum, QtWidgets.QSizePolicy.Expanding)
         self.verticalLayout_10.addItem(spacerItem4)
-        self.bt_rellenar_usuario = QtWidgets.QPushButton(self.frame_6)
-        self.bt_rellenar_usuario.setStyleSheet("background-color: rgb(255, 255, 255);\n"
-"font: 12pt \"MS Shell Dlg 2\";")
-        self.bt_rellenar_usuario.setObjectName("bt_rellenar_usuario")
-        self.verticalLayout_10.addWidget(self.bt_rellenar_usuario)
         self.bt_busca_usuario = QtWidgets.QPushButton(self.frame_6)
-        self.bt_busca_usuario.setStyleSheet("color: rgb(0, 0, 0);\n"
-"background-color: rgb(255, 255, 255);")
+        self.bt_busca_usuario.setStyleSheet("\n"
+"\n"
+"background-color: rgb(255, 255, 255);\n"
+"font: 12pt \"MS Shell Dlg 2\";")
         self.bt_busca_usuario.setObjectName("bt_busca_usuario")
         self.verticalLayout_10.addWidget(self.bt_busca_usuario)
         spacerItem5 = QtWidgets.QSpacerItem(20, 40, QtWidgets.QSizePolicy.Minimum, QtWidgets.QSizePolicy.Expanding)
@@ -268,13 +265,13 @@ class Ui_Seguridad(object):
         self.tb_Usuario.horizontalHeader().setMinimumSectionSize(55)
         self.tb_Usuario.horizontalHeader().setSortIndicatorShown(False)
         self.tb_Usuario.horizontalHeader().setStretchLastSection(True)
-        self.tb_Usuario.verticalHeader().setVisible(True)
+        self.tb_Usuario.verticalHeader().setVisible(False)
         self.tb_Usuario.verticalHeader().setCascadingSectionResizes(False)
         self.tb_Usuario.verticalHeader().setDefaultSectionSize(29)
-        self.tb_Usuario.verticalHeader().setHighlightSections(False)
+        self.tb_Usuario.verticalHeader().setHighlightSections(True)
         self.tb_Usuario.verticalHeader().setMinimumSectionSize(28)
         self.tb_Usuario.verticalHeader().setSortIndicatorShown(False)
-        self.tb_Usuario.verticalHeader().setStretchLastSection(True)
+        self.tb_Usuario.verticalHeader().setStretchLastSection(False)
         self.horizontalLayout_2.addWidget(self.tb_Usuario)
         self.verticalLayout_3.addWidget(self.frame_4)
         self.verticalLayout_2.addWidget(self.frame_3)
@@ -377,11 +374,6 @@ class Ui_Seguridad(object):
 "font: 12pt \"MS Shell Dlg 2\";")
         self.bt_Vaciar_Rol.setObjectName("bt_Vaciar_Rol")
         self.verticalLayout_23.addWidget(self.bt_Vaciar_Rol)
-        self.bt_rellenar_rol = QtWidgets.QPushButton(self.frame_24)
-        self.bt_rellenar_rol.setStyleSheet("background-color: rgb(255, 255, 255);\n"
-"font: 12pt \"MS Shell Dlg 2\";")
-        self.bt_rellenar_rol.setObjectName("bt_rellenar_rol")
-        self.verticalLayout_23.addWidget(self.bt_rellenar_rol)
         self.bt_busca_rol = QtWidgets.QPushButton(self.frame_24)
         self.bt_busca_rol.setStyleSheet("background-color: rgb(255, 255, 255);\n"
 "font: 12pt \"MS Shell Dlg 2\";")
@@ -518,11 +510,6 @@ class Ui_Seguridad(object):
 "font: 12pt \"MS Shell Dlg 2\";")
         self.bt_Vaciar_Opcion.setObjectName("bt_Vaciar_Opcion")
         self.verticalLayout_27.addWidget(self.bt_Vaciar_Opcion)
-        self.bt_rellenar_opcion = QtWidgets.QPushButton(self.frame_32)
-        self.bt_rellenar_opcion.setStyleSheet("background-color: rgb(255, 255, 255);\n"
-"font: 12pt \"MS Shell Dlg 2\";")
-        self.bt_rellenar_opcion.setObjectName("bt_rellenar_opcion")
-        self.verticalLayout_27.addWidget(self.bt_rellenar_opcion)
         self.bt_busca_opcion = QtWidgets.QPushButton(self.frame_32)
         self.bt_busca_opcion.setStyleSheet("background-color: rgb(255, 255, 255);\n"
 "font: 12pt \"MS Shell Dlg 2\";")
@@ -861,7 +848,6 @@ class Ui_Seguridad(object):
         self.bt_Editar_Usuario.setText(_translate("Seguridad", "Editar"))
         self.bt_Eliminar_Usuario.setText(_translate("Seguridad", "Eliminar"))
         self.bt_Vaciar_Usuario.setText(_translate("Seguridad", "Vaciar Campos"))
-        self.bt_rellenar_usuario.setText(_translate("Seguridad", "Rellenar tabla"))
         self.bt_busca_usuario.setText(_translate("Seguridad", "Buscar"))
         item = self.tb_Usuario.horizontalHeaderItem(0)
         item.setText(_translate("Seguridad", "ID"))
@@ -883,7 +869,6 @@ class Ui_Seguridad(object):
         self.bt_Editar_Rol.setText(_translate("Seguridad", "Editar"))
         self.bt_Eliminar_Rol.setText(_translate("Seguridad", "Eliminar"))
         self.bt_Vaciar_Rol.setText(_translate("Seguridad", "Vaciar Campos"))
-        self.bt_rellenar_rol.setText(_translate("Seguridad", "Rellenar tabla"))
         self.bt_busca_rol.setText(_translate("Seguridad", "Buscar"))
         item = self.tb_Rol.horizontalHeaderItem(0)
         item.setText(_translate("Seguridad", "ID"))
@@ -897,7 +882,6 @@ class Ui_Seguridad(object):
         self.bt_Editar_Opcion.setText(_translate("Seguridad", "Editar"))
         self.bt_Eliminar_Opcion.setText(_translate("Seguridad", "Eliminar"))
         self.bt_Vaciar_Opcion.setText(_translate("Seguridad", "Vaciar Campos"))
-        self.bt_rellenar_opcion.setText(_translate("Seguridad", "Rellenar tabla"))
         self.bt_busca_opcion.setText(_translate("Seguridad", "Buscar"))
         item = self.tb_Opcion.horizontalHeaderItem(0)
         item.setText(_translate("Seguridad", "ID"))

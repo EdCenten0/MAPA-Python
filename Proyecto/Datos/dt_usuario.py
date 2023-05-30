@@ -15,6 +15,14 @@ class Dt_Usuarios:
         return querys
 
     @classmethod
+    def buscarUsers(cls, user):
+        cursor = Conexion.Conexion.obtenerConexion().cursor()
+        cursor.execute(f"SELECT * FROM usuario WHERE nombre like '%' '{user}' '%' ")
+        querys = cursor.fetchall()
+        cursor.close()
+        return querys
+
+    @classmethod
     def guardarUsuario(cls, Usuarios):
 
         indicador = False
