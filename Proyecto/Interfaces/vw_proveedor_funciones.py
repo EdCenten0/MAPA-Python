@@ -29,13 +29,13 @@ class proveedor_Window(QMainWindow, vw_proveedor.Ui_Proveedores):
 
 
     def limpiarCampos(self):
-        self.line_Id.setText("")
-        self.line_Nombre.setText("")
-        self.line_Ruc.setText("")
-        self.line_Correo.setText("")
-        self.line_Catalogo.setText("")
-        self.line_Direccion.setText("")
-        self.line_Telefono.setText("")
+        self.line_id.setText("")
+        self.line_nombre.setText("")
+        self.line_ruc.setText("")
+        self.line_correo.setText("")
+        self.line_catalogo.setText("")
+        self.line_direccion.setText("")
+        self.line_telefono.setText("")
 
     def obtenerDatosTablaProveedor(self):
         # Selecciona la fila de la tabla
@@ -49,13 +49,13 @@ class proveedor_Window(QMainWindow, vw_proveedor.Ui_Proveedores):
         telefono = self.tb_Proveedor.item(filaSeleccionada, 5).text()
         direccion = self.tb_Proveedor.item(filaSeleccionada, 6).text()
 
-        self.line_Id.setText(id)
-        self.line_Nombre.setText(nombre)
-        self.line_Correo.setText(email)
-        self.line_Telefono.setText(telefono)
-        self.line_Catalogo.setText(catalogo)
-        self.line_Ruc.setText(ruc)
-        self.line_Direccion.setText(direccion)
+        self.line_id.setText(id)
+        self.line_nombre.setText(nombre)
+        self.line_correo.setText(email)
+        self.line_telefono.setText(telefono)
+        self.line_catalogo.setText(catalogo)
+        self.line_ruc.setText(ruc)
+        self.line_direccion.setText(direccion)
 
     def notifMensaje(self, indicador, resultado):
 
@@ -88,28 +88,28 @@ class proveedor_Window(QMainWindow, vw_proveedor.Ui_Proveedores):
 
         #Validaciones de entrada de datos
 
-        if (not self.line_Nombre.text() == "" and not self.line_Correo.text() == "" and not self.line_Direccion.toPlainText() == "" and not self.line_Catalogo.toPlainText() == "" and not self.line_Ruc.text() == "" and not self.line_Telefono.text() == ""):
+        if (not self.line_nombre.text() == "" and not self.line_correo.text() == "" and not self.line_direccion.toPlainText() == "" and not self.line_catalogo.toPlainText() == "" and not self.line_ruc.text() == "" and not self.line_telefono.text() == ""):
 
-            if self.line_Id.text() == "":
+            if self.line_id.text() == "":
 
-                if len(self.line_Nombre.text()) <= 50:
+                if len(self.line_nombre.text()) <= 50:
 
-                    if len(self.line_Correo.text()) <= 50:
+                    if len(self.line_correo.text()) <= 50:
 
-                        if len(self.line_Ruc.text()) <= 15:
+                        if len(self.line_ruc.text()) <= 15:
 
-                            if len(self.line_Telefono.text()) <= 12:
+                            if len(self.line_telefono.text()) <= 12:
 
-                                if len(self.line_Catalogo.toPlainText()) <= 100:
+                                if len(self.line_catalogo.toPlainText()) <= 100:
 
-                                    if len(self.line_Direccion.toPlainText()) <= 300:
+                                    if len(self.line_direccion.toPlainText()) <= 300:
                                         try:
-                                            Proveedor.nombre = self.line_Nombre.text()
-                                            Proveedor.correo = self.line_Correo.text()
-                                            Proveedor.direccion = self.line_Direccion.toPlainText()
-                                            Proveedor.catalogo = self.line_Catalogo.toPlainText()
-                                            Proveedor.ruc = self.line_Ruc.text()
-                                            Proveedor.telefono = self.line_Telefono.text()
+                                            Proveedor.nombre = self.line_nombre.text()
+                                            Proveedor.correo = self.line_correo.text()
+                                            Proveedor.direccion = self.line_direccion.toPlainText()
+                                            Proveedor.catalogo = self.line_catalogo.toPlainText()
+                                            Proveedor.ruc = self.line_ruc.text()
+                                            Proveedor.telefono = self.line_telefono.text()
 
                                             dt_proveedor.Dt_Proveedor.guardarProveedor(Proveedor)  # Recoge los datos en los "Lines" de Qt Desinger para guardarlos en la base de datos
 
@@ -153,29 +153,29 @@ class proveedor_Window(QMainWindow, vw_proveedor.Ui_Proveedores):
 
     def editarProveedor(self):
 
-        if (not self.line_Nombre.text() == "" and not self.line_Correo.text() == "" and not self.line_Direccion.toPlainText() == "" and not self.line_Catalogo.toPlainText() == "" and not self.line_Ruc.text() == "" and not self.line_Telefono.text() == ""):
+        if (not self.line_nombre.text() == "" and not self.line_correo.text() == "" and not self.line_direccion.toPlainText() == "" and not self.line_catalogo.toPlainText() == "" and not self.line_ruc.text() == "" and not self.line_telefono.text() == ""):
 
-            if not self.line_Id.text() == "":
+            if not self.line_id.text() == "":
 
-                if len(self.line_Nombre.text()) <= 50:
+                if len(self.line_nombre.text()) <= 50:
 
-                    if len(self.line_Correo.text()) <= 50:
+                    if len(self.line_correo.text()) <= 50:
 
-                        if len(self.line_Ruc.text()) <= 15:
+                        if len(self.line_ruc.text()) <= 15:
 
-                            if len(self.line_Telefono.text()) <= 12:
+                            if len(self.line_telefono.text()) <= 12:
 
-                                if len(self.line_Catalogo.toPlainText()) <= 100:
+                                if len(self.line_catalogo.toPlainText()) <= 100:
 
-                                    if len(self.line_Direccion.toPlainText()) <= 300:
+                                    if len(self.line_direccion.toPlainText()) <= 300:
                                         try:
-                                            Proveedor.id_proveedor = self.line_Id.text()
-                                            Proveedor.nombre = self.line_Nombre.text()
-                                            Proveedor.correo = self.line_Correo.text()
-                                            Proveedor.direccion = self.line_Direccion.toPlainText()
-                                            Proveedor.catalogo = self.line_Catalogo.toPlainText()
-                                            Proveedor.ruc = self.line_Ruc.text()
-                                            Proveedor.telefono = self.line_Telefono.text()
+                                            Proveedor.id_proveedor = self.line_id.text()
+                                            Proveedor.nombre = self.line_nombre.text()
+                                            Proveedor.correo = self.line_correo.text()
+                                            Proveedor.direccion = self.line_direccion.toPlainText()
+                                            Proveedor.catalogo = self.line_catalogo.toPlainText()
+                                            Proveedor.ruc = self.line_ruc.text()
+                                            Proveedor.telefono = self.line_telefono.text()
 
                                             dt_proveedor.Dt_Proveedor.editarProveedor(Proveedor)  # Recoge los datos en los "Lines" de Qt Desinger para guardarlos en la base de datos
 
@@ -221,9 +221,9 @@ class proveedor_Window(QMainWindow, vw_proveedor.Ui_Proveedores):
 
         try:
 
-            if not self.line_Id.text() == "" :
+            if not self.line_id.text() == "" :
 
-                Proveedor.id_proveedor = self.line_Id.text()
+                Proveedor.id_proveedor = self.line_id.text()
 
                 dt_proveedor.Dt_Proveedor.eliminarProveedor(Proveedor)  # Recoge los datos en los "Lines" de Qt Desinger para guardarlos en la base de datos
 
