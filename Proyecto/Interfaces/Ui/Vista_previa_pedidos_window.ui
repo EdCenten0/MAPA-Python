@@ -45,11 +45,24 @@ font-family:&quot;Inter&quot;, sans-serif;</string>
          <item>
           <widget class="QFrame" name="frame">
            <property name="styleSheet">
-            <string notr="true">border:none;
+            <string notr="true">QFrame{
+		border:none;
+		border-radius:10%;
+		background-color: rgb(105, 120, 160);
+		color: rgb(45, 44, 44);
+}
 
-border-radius:10%;
-background-color: rgb(105, 120, 160);
-color: rgb(45, 44, 44);</string>
+QComboBox{
+		border:1px solid #c7c7c7;
+		border-radius:10%;
+		background-color:rgb(246, 245, 244);
+}
+
+QPushButton{
+			border:1px solid #c7c7c7;
+			border-radius:10%;
+			background-color:rgb(246, 245, 244);
+}</string>
            </property>
            <property name="frameShape">
             <enum>QFrame::StyledPanel</enum>

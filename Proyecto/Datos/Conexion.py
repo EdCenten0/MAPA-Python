@@ -7,7 +7,7 @@ class Conexion:
     #recolecta los datos de la BD
     _DATABASE = 'MAPA'
     _USERNAME = 'root'
-    _PASSWORD = '1234'
+    _PASSWORD = '15001500'
     _HOST = 'localhost'
     _conexion = None
     _cursor = None
