@@ -1,6 +1,6 @@
 # Francisco de Jesús Melendez Simplina
 
-import Conexion
+from Proyecto.Datos import Conexion
 
 
 class Dt_Opcion:
@@ -9,6 +9,14 @@ class Dt_Opcion:
     def listarOpcion(cls):
         cursor = Conexion.Conexion.obtenerConexion().cursor()
         cursor.execute("SELECT * FROM opcion")
+        querys = cursor.fetchall()
+        cursor.close()
+        return querys
+
+    @classmethod
+    def buscarOpcion(cls, opcion):
+        cursor = Conexion.Conexion.obtenerConexion().cursor()
+        cursor.execute(f"SELECT * FROM opcion WHERE descripcion like '%' '{opcion}' '%' ")
         querys = cursor.fetchall()
         cursor.close()
         return querys
