@@ -15,7 +15,7 @@ class Dt_Pedidos:
         indicador = False
         try:
             cursor = Conexion.Conexion.obtenerConexion().cursor()
-            sql = (f"INSERT INTO pedidos (descripcion, fecha_pedido, id_cliente) VALUES ({Pedido.descripcion}, {Pedido.idPedido}, {Pedido.fecha_Pedido}, {Pedido.id_cliente})")
+            sql = (f"INSERT INTO pedidos (descripcion, fecha_pedido, id_cliente) VALUES ({Pedido.descripcion}, {Pedido.idPedido}, {Pedido.fecha_Pedido}, {Pedido.id_cliente}, 1)")
             cursor.execute(sql)
             cursor.close()
             print("Pedido guardado")
@@ -31,7 +31,7 @@ class Dt_Pedidos:
 
         try:
             cursor = Conexion.Conexion.obtenerConexion().cursor()
-            sql = (f'''UPDATE pedidos SET descripcion = {Pedido.descripcion}, fecha_pedido = {Pedido.fecha_Pedido}, id_cliente = {Pedido.id_cliente}''')
+            sql = (f'''UPDATE pedidos SET descripcion = {Pedido.descripcion}, fecha_pedido = {Pedido.fecha_Pedido}, id_cliente = {Pedido.id_cliente}, estado = 2''')
             cursor.execute(sql)
             cursor.connection.commit()
             cursor.close()

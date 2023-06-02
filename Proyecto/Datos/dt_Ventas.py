@@ -14,7 +14,7 @@ class Dt_Ventas:
         indicador = False
         try:
             cursor = Conexion.Conexion.obtenerConexion().cursor()
-            sql = (f"INSERT INTO ventas (id_tienda, id_factura, cantidad, descripcion) VALUES ({Venta.id_tienda}, {Venta.id_factura}, {Venta.cantidad}, {Venta.descripcion})")
+            sql = (f"INSERT INTO ventas (id_tienda, id_factura, cantidad, descripcion) VALUES ({Venta.id_tienda}, {Venta.id_factura}, {Venta.cantidad}, {Venta.descripcion}, estado = 1)")
             cursor.execute(sql)
             cursor.connection.commit()
             cursor.close()
@@ -30,7 +30,7 @@ class Dt_Ventas:
 
         try:
             cursor = Conexion.Conexion.obtenerConexion().cursor()
-            sql = (f'''UPDATE ventas SET id_tienda = {Venta.id_tienda},  id_factura = {Venta.id_factura}, cantidad = {Venta.cantidad}, descripcion = "{Venta.descripcion}"''')
+            sql = (f'''UPDATE ventas SET id_tienda = {Venta.id_tienda},  id_factura = {Venta.id_factura}, cantidad = {Venta.cantidad}, descripcion = "{Venta.descripcion}, estado = 2"''')
             cursor.execute(sql)
             cursor.connection.commit()
             cursor.close()
