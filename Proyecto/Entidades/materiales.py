@@ -4,13 +4,13 @@ from pyparsing import unicode_set
 
 
 class Materiales:
-    def __init__(self, id_material=None, nombre_material=None, descripcion=None, cantidad=None, unidad_de_medida = None, precio_unidad=None, precio_total=None, id_pedido = None):
+    def __init__(self, id_material=None, nombre_material=None, descripcion=None, cantidad=None, unidad_de_medida = None, precio_por_unidad=None, precio_total=None, id_pedido = None):
         self._id_material = id_material
         self._nombre_material = nombre_material
         self._descripcion = descripcion
         self._cantidad = cantidad
         self._unidad_de_medida = unidad_de_medida
-        self._precio_unidad = precio_unidad
+        self._precio_por_unidad = precio_por_unidad
         self._precio_total = precio_total
         self._id_pedido = id_pedido
 
@@ -21,7 +21,7 @@ class Materiales:
         descripcion: {self._descripcion},
         cantidad: {self._cantidad},
         unidad_de_medida: {self._unidad_de_medida}
-        precio_unidad: {self._precio_unidad},
+        precio_por_unidad: {self._precio_por_unidad},
         precio_total: {self._precio_total},
         id_pedido: {self._id_pedido}
         '''
@@ -33,7 +33,7 @@ class Materiales:
         u.descripcion = u._descripcion
         u.cantidad = u._cantidad
         u.unidad_de_medida = u._unidad_de_medida
-        u.precio_unidad = u._precio_unidad
+        u.precio_por_unidad = u._precio_por_unidad
         u.precio_total  = u._precio_total
 
     @property
@@ -64,6 +64,9 @@ class Materiales:
     @property
     def cantidad(self):
         return self._cantidad
+    @cantidad.setter
+    def cantidad(self, cantidad):
+        self._cantidad = cantidad
 
     @property
     def unidad_de_medida(self):
@@ -73,17 +76,14 @@ class Materiales:
     def unidad_de_medidad(self, unidad_de_medida):
         self._unidad_de_medida = unidad_de_medida
 
-    @cantidad.setter
-    def cantidad(self, cantidad):
-        self._cantidad = cantidad
 
     @property
-    def precio_unidad(self):
-        return self._precio_unidad
+    def precio_por_unidad(self):
+        return self._precio_por_unidad
 
-    @precio_unidad.setter
-    def precio_unidad(self, precio_unidad):
-        self._precio_unidad = precio_unidad
+    @precio_por_unidad.setter
+    def precio_por_unidad(self, precio_por_unidad):
+        self._precio_por_unidad = precio_por_unidad
 
     @property
     def precio_total(self):

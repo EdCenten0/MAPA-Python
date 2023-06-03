@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>800</width>
+    <width>802</width>
     <height>600</height>
    </rect>
   </property>
@@ -18,106 +18,26 @@
   </property>
   <widget class="QWidget" name="centralwidget">
    <layout class="QGridLayout" name="gridLayout_4">
-    <item row="0" column="0">
-     <layout class="QGridLayout" name="gridLayout" rowstretch="0,0,0" columnstretch="3,0" columnminimumwidth="0,0">
-      <property name="leftMargin">
-       <number>6</number>
-      </property>
-      <property name="topMargin">
-       <number>6</number>
-      </property>
-      <property name="rightMargin">
-       <number>6</number>
-      </property>
-      <property name="bottomMargin">
-       <number>6</number>
-      </property>
-      <property name="horizontalSpacing">
-       <number>6</number>
-      </property>
-      <property name="verticalSpacing">
-       <number>30</number>
-      </property>
-      <item row="1" column="0">
-       <widget class="QLabel" name="label_2">
-        <property name="styleSheet">
-         <string notr="true">background-color: rgb(222, 221, 218);</string>
-        </property>
-        <property name="text">
-         <string>Descripcion</string>
-        </property>
-       </widget>
-      </item>
-      <item row="2" column="0">
-       <widget class="QLabel" name="label_3">
-        <property name="styleSheet">
-         <string notr="true">background-color: rgb(222, 221, 218);</string>
-        </property>
-        <property name="text">
-         <string>Precio*UnidadMedida</string>
-        </property>
-       </widget>
-      </item>
-      <item row="0" column="0">
-       <widget class="QLabel" name="label">
-        <property name="styleSheet">
-         <string notr="true">background-color: rgb(222, 221, 218);</string>
-        </property>
-        <property name="text">
-         <string>Material</string>
-        </property>
-       </widget>
-      </item>
-      <item row="1" column="1">
-       <widget class="QTextEdit" name="textEdit">
-        <property name="styleSheet">
-         <string notr="true">background-color: rgb(255, 255, 255);</string>
-        </property>
-       </widget>
-      </item>
-      <item row="0" column="1">
-       <widget class="QLineEdit" name="lineEdit">
-        <property name="styleSheet">
-         <string notr="true">background-color: rgb(255, 255, 255);</string>
-        </property>
-       </widget>
-      </item>
-      <item row="2" column="1">
-       <widget class="QLineEdit" name="lineEdit_2">
-        <property name="styleSheet">
-         <string notr="true">background-color: rgb(255, 255, 255);</string>
-        </property>
-       </widget>
-      </item>
-     </layout>
-    </item>
     <item row="0" column="1">
      <layout class="QGridLayout" name="gridLayout_2" rowstretch="0,0,0" columnstretch="0,0,0">
       <property name="leftMargin">
        <number>0</number>
       </property>
       <property name="topMargin">
-       <number>1</number>
+       <number>0</number>
       </property>
       <property name="rightMargin">
        <number>0</number>
       </property>
+      <property name="bottomMargin">
+       <number>0</number>
+      </property>
       <property name="horizontalSpacing">
-       <number>7</number>
+       <number>3</number>
       </property>
       <property name="verticalSpacing">
-       <number>9</number>
+       <number>11</number>
       </property>
-      <item row="0" column="0">
-       <widget class="QLabel" name="label_4">
-        <property name="styleSheet">
-         <string notr="true">background-color: rgb(222, 221, 218);</string>
-        </property>
-        <property name="text">
-         <string>Cantidad</string>
-        </property>
-       </widget>
-      </item>
       <item row="1" column="0">
        <widget class="QLabel" name="label_5">
         <property name="styleSheet">
@@ -129,7 +49,7 @@
        </widget>
       </item>
       <item row="0" column="2">
-       <widget class="QComboBox" name="comboBox">
+       <widget class="QComboBox" name="cbUnidadesMedida">
         <property name="cursor">
          <cursorShape>PointingHandCursor</cursorShape>
         </property>
@@ -145,17 +65,15 @@
         <property name="currentIndex">
          <number>0</number>
         </property>
+        <property name="maxVisibleItems">
+         <number>10</number>
+        </property>
         <property name="maxCount">
          <number>2147483647</number>
         </property>
         <property name="sizeAdjustPolicy">
          <enum>QComboBox::AdjustToContentsOnFirstShow</enum>
         </property>
-        <item>
-         <property name="text">
-          <string>Seleccione una opcion</string>
-         </property>
-        </item>
         <item>
          <property name="text">
           <string>Lbs</string>
@@ -193,20 +111,6 @@
         </item>
        </widget>
       </item>
-      <item row="0" column="1">
-       <widget class="QLineEdit" name="lineEdit_3">
-        <property name="styleSheet">
-         <string notr="true">background-color: rgb(255, 255, 255);</string>
-        </property>
-       </widget>
-      </item>
-      <item row="1" column="1">
-       <widget class="QLineEdit" name="lineEdit_4">
-        <property name="styleSheet">
-         <string notr="true">background-color: rgb(255, 255, 255);</string>
-        </property>
-       </widget>
-      </item>
       <item row="2" column="0">
        <widget class="QLabel" name="lblProveedores">
         <property name="styleSheet">
@@ -217,10 +121,37 @@
         </property>
        </widget>
       </item>
+      <item row="0" column="1">
+       <widget class="QLineEdit" name="txtCantidad">
+        <property name="styleSheet">
+         <string notr="true">background-color: rgb(255, 255, 255);</string>
+        </property>
+       </widget>
+      </item>
+      <item row="1" column="1">
+       <widget class="QLineEdit" name="txtPrecioTotal">
+        <property name="styleSheet">
+         <string notr="true">background-color: rgb(255, 255, 255);</string>
+        </property>
+       </widget>
+      </item>
+      <item row="0" column="0">
+       <widget class="QLabel" name="label_4">
+        <property name="styleSheet">
+         <string notr="true">background-color: rgb(222, 221, 218);</string>
+        </property>
+        <property name="text">
+         <string>Cantidad</string>
+        </property>
+       </widget>
+      </item>
       <item row="2" column="1">
-       <widget class="QComboBox" name="comboBox_2">
+       <widget class="QComboBox" name="cbPedidos">
         <property name="styleSheet">
          <string notr="true">background-color: rgb(246, 245, 244);</string>
+        </property>
+        <property name="maxVisibleItems">
+         <number>25</number>
         </property>
        </widget>
       </item>
@@ -228,8 +159,11 @@
     </item>
     <item row="0" column="2">
      <layout class="QGridLayout" name="gridLayout_3">
+      <property name="topMargin">
+       <number>25</number>
+      </property>
       <item row="3" column="0">
-       <widget class="QPushButton" name="pushButton_3">
+       <widget class="QPushButton" name="btnEliminar">
         <property name="styleSheet">
          <string notr="true">background-color: rgb(222, 221, 218);</string>
         </property>
@@ -239,7 +173,7 @@
        </widget>
       </item>
       <item row="2" column="0">
-       <widget class="QPushButton" name="pushButton_2">
+       <widget class="QPushButton" name="btnEditar">
         <property name="styleSheet">
          <string notr="true">background-color: rgb(222, 221, 218);</string>
         </property>
@@ -249,7 +183,7 @@
        </widget>
       </item>
       <item row="4" column="0">
-       <widget class="QPushButton" name="pushButton_4">
+       <widget class="QPushButton" name="btnVaciarCampos">
         <property name="styleSheet">
          <string notr="true">background-color: rgb(222, 221, 218);</string>
         </property>
@@ -259,7 +193,7 @@
        </widget>
       </item>
       <item row="1" column="0">
-       <widget class="QPushButton" name="pushButton">
+       <widget class="QPushButton" name="btnGuardar">
         <property name="styleSheet">
          <string notr="true">background-color: rgb(222, 221, 218);</string>
         </property>
@@ -270,10 +204,93 @@
       </item>
      </layout>
     </item>
+    <item row="0" column="0">
+     <layout class="QGridLayout" name="gridLayout" rowstretch="0,0,0,0" columnstretch="3,0">
+      <property name="leftMargin">
+       <number>6</number>
+      </property>
+      <property name="topMargin">
+       <number>19</number>
+      </property>
+      <property name="rightMargin">
+       <number>0</number>
+      </property>
+      <property name="bottomMargin">
+       <number>12</number>
+      </property>
+      <property name="horizontalSpacing">
+       <number>6</number>
+      </property>
+      <property name="verticalSpacing">
+       <number>18</number>
+      </property>
+      <item row="2" column="1">
+       <widget class="QLineEdit" name="txtPrecioUnidadMedida">
+        <property name="styleSheet">
+         <string notr="true">background-color: rgb(255, 255, 255);</string>
+        </property>
+       </widget>
+      </item>
+      <item row="3" column="0">
+       <widget class="QLabel" name="lblId">
+        <property name="styleSheet">
+         <string notr="true">color: rgb(63, 73, 100);</string>
+        </property>
+        <property name="text">
+         <string/>
+        </property>
+       </widget>
+      </item>
+      <item row="0" column="1">
+       <widget class="QLineEdit" name="txtNombreMaterial">
+        <property name="styleSheet">
+         <string notr="true">background-color: rgb(255, 255, 255);</string>
+        </property>
+       </widget>
+      </item>
+      <item row="2" column="0">
+       <widget class="QLabel" name="label_3">
+        <property name="styleSheet">
+         <string notr="true">background-color: rgb(222, 221, 218);</string>
+        </property>
+        <property name="text">
+         <string>Precio*UnidadMedida</string>
+        </property>
+       </widget>
+      </item>
+      <item row="1" column="0">
+       <widget class="QLabel" name="label_2">
+        <property name="styleSheet">
+         <string notr="true">background-color: rgb(222, 221, 218);</string>
+        </property>
+        <property name="text">
+         <string>Descripcion</string>
+        </property>
+       </widget>
+      </item>
+      <item row="0" column="0">
+       <widget class="QLabel" name="label">
+        <property name="styleSheet">
+         <string notr="true">background-color: rgb(222, 221, 218);</string>
+        </property>
+        <property name="text">
+         <string>Material</string>
+        </property>
+       </widget>
+      </item>
+      <item row="1" column="1">
+       <widget class="QLineEdit" name="txtDescripcion">
+        <property name="styleSheet">
+         <string notr="true">background-color: rgb(255, 255, 255);</string>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </item>
     <item row="1" column="0" colspan="3">
      <layout class="QVBoxLayout" name="verticalLayout">
       <item>
-       <widget class="QTableWidget" name="tableWidget">
+       <widget class="QTableWidget" name="tw_materiales">
         <property name="contextMenuPolicy">
          <enum>Qt::DefaultContextMenu</enum>
         </property>
@@ -321,7 +338,7 @@
         </attribute>
         <column>
          <property name="text">
-          <string>id</string>
+          <string>Id</string>
          </property>
          <property name="textAlignment">
           <set>AlignCenter</set>
@@ -345,6 +362,14 @@
         </column>
         <column>
          <property name="text">
+          <string>Precio*UnidadMedida</string>
+         </property>
+         <property name="textAlignment">
+          <set>AlignCenter</set>
+         </property>
+        </column>
+        <column>
+         <property name="text">
           <string>Cantidad</string>
          </property>
          <property name="textAlignment">
@@ -353,10 +378,7 @@
         </column>
         <column>
          <property name="text">
-          <string>Precio*UnidadMedida</string>
-         </property>
-         <property name="textAlignment">
-          <set>AlignCenter</set>
+          <string>unidad_de_medida</string>
          </property>
         </column>
         <column>
