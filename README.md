@@ -8,8 +8,6 @@
 - [René Nicolás Sandoval Lagos](https://github.com/Rene-Sandoval "René Nicolás Sandoval Lagos")
 - [Leonidas Gabriel Vanegas Saavedra](https://github.com/LeonVane98 "Leonidas Gabriel Vanegas Saavedra")
 
-
-
-
+### Todos y cada uno desarrolladores de lo que hace funcionar este proyecto ^_~
 
 
