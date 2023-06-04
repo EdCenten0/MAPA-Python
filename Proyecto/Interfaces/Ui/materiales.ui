@@ -76,37 +76,37 @@
         </property>
         <item>
          <property name="text">
-          <string>Lbs</string>
+          <string>lbs</string>
          </property>
         </item>
         <item>
          <property name="text">
-          <string>Lts</string>
+          <string>ltrs</string>
          </property>
         </item>
         <item>
          <property name="text">
-          <string>Mts</string>
+          <string>mts</string>
          </property>
         </item>
         <item>
          <property name="text">
-          <string>Inches</string>
+          <string>pulg</string>
          </property>
         </item>
         <item>
          <property name="text">
-          <string>Galon</string>
+          <string>galon</string>
          </property>
         </item>
         <item>
          <property name="text">
-          <string>Unidad</string>
+          <string>unidad</string>
          </property>
         </item>
         <item>
          <property name="text">
-          <string>Simple</string>
+          <string>simpl</string>
          </property>
         </item>
        </widget>
@@ -147,8 +147,17 @@
       </item>
       <item row="2" column="1">
        <widget class="QComboBox" name="cbPedidos">
+        <property name="maximumSize">
+         <size>
+          <width>150</width>
+          <height>16777215</height>
+         </size>
+        </property>
         <property name="styleSheet">
          <string notr="true">background-color: rgb(246, 245, 244);</string>
+        </property>
+        <property name="currentIndex">
+         <number>-1</number>
         </property>
         <property name="maxVisibleItems">
          <number>25</number>
@@ -250,16 +259,28 @@
       </item>
       <item row="2" column="0">
        <widget class="QLabel" name="label_3">
+        <property name="maximumSize">
+         <size>
+          <width>150</width>
+          <height>16777215</height>
+         </size>
+        </property>
         <property name="styleSheet">
          <string notr="true">background-color: rgb(222, 221, 218);</string>
         </property>
         <property name="text">
-         <string>Precio*UnidadMedida</string>
+         <string>Precio*UMedida</string>
         </property>
        </widget>
       </item>
       <item row="1" column="0">
        <widget class="QLabel" name="label_2">
+        <property name="maximumSize">
+         <size>
+          <width>100</width>
+          <height>16777215</height>
+         </size>
+        </property>
         <property name="styleSheet">
          <string notr="true">background-color: rgb(222, 221, 218);</string>
         </property>
@@ -270,6 +291,12 @@
       </item>
       <item row="0" column="0">
        <widget class="QLabel" name="label">
+        <property name="maximumSize">
+         <size>
+          <width>100</width>
+          <height>16777215</height>
+         </size>
+        </property>
         <property name="styleSheet">
          <string notr="true">background-color: rgb(222, 221, 218);</string>
         </property>

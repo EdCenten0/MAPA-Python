@@ -15,6 +15,7 @@ class vw_materiales_funciones(QtWidgets.QMainWindow, vw_materiales.Ui_mw_materia
 
         #Acciones de la tabla
         self.llenarTablaMateriales(dt_materiales.Dt_materiales.listarMateriales())
+        self.tw_materiales.itemSelectionChanged.connect(self.obtenerDatosTablaMateriales)
 
         #cb
         self.llenarComboBoxPedidos()
@@ -29,7 +30,7 @@ class vw_materiales_funciones(QtWidgets.QMainWindow, vw_materiales.Ui_mw_materia
         pedidos = Dt_Pedidos.listarPedidos()
         try:
             for p in pedidos:
-                self.cbPedidos.addItem(str(p['id_pedido']))
+                self.cbPedidos.addItem(p['descripcion'], p['id_pedido'])
                 #self.cbPedidos.addItem()
                 #self.cbPedidos.addItem()
         except Exception as e:
@@ -40,6 +41,7 @@ class vw_materiales_funciones(QtWidgets.QMainWindow, vw_materiales.Ui_mw_materia
 
         if not self.txtNombreMaterial.text() == "" or not self.txtDescripcion.text() == "" or not self.txtPrecioUnidadMedida.text() == "" or not self.txtCantidad.text() == "" or not self.txtPrecioTotal.text() == "":
 
+            self.lblId.clear()
             self.txtNombreMaterial.clear()
             self.txtDescripcion.clear()
             self.txtPrecioUnidadMedida.clear()
@@ -66,15 +68,15 @@ class vw_materiales_funciones(QtWidgets.QMainWindow, vw_materiales.Ui_mw_materia
             self.tw_materiales.setItem(tableRow, 0, QTableWidgetItem(str(row['id_material'])))
             self.tw_materiales.setItem(tableRow, 1, QTableWidgetItem(row['nombre_material']))
             self.tw_materiales.setItem(tableRow, 2, QTableWidgetItem(row['descripcion']))
-            self.tw_materiales.setItem(tableRow, 3, QTableWidgetItem(str(row['cantidad'])))
-            self.tw_materiales.setItem(tableRow, 4, QTableWidgetItem(str(row['unidad_de_medida'])))
-            self.tw_materiales.setItem(tableRow, 5, QTableWidgetItem(str(row['precio_por_unidad'])))
+            self.tw_materiales.setItem(tableRow, 3, QTableWidgetItem(str(row['precio_por_unidad'])))
+            self.tw_materiales.setItem(tableRow, 4, QTableWidgetItem(str(row['cantidad'])))
+            self.tw_materiales.setItem(tableRow, 5, QTableWidgetItem(str(row['unidad_de_medida'])))
             self.tw_materiales.setItem(tableRow, 6, QTableWidgetItem(str(row['precio_total'])))
             self.tw_materiales.setItem(tableRow, 7, QTableWidgetItem(str(row['id_pedido'])))
             tableRow += 1
 
 
-    def obtenerTablaMateriales(self):
+    def obtenerDatosTablaMateriales(self):
 
         filaSeleccionada = self.tw_materiales.currentRow()
         id_material = self.tw_materiales.item(filaSeleccionada, 0).text()
@@ -86,11 +88,20 @@ class vw_materiales_funciones(QtWidgets.QMainWindow, vw_materiales.Ui_mw_materia
         precio_total = self.tw_materiales.item(filaSeleccionada, 6).text()
         id_pedido = self.tw_materiales.item(filaSeleccionada, 7).text()
 
+        self.lblId.setText(id_material)
+        self.txtNombreMaterial.setText(material)
+        self.txtDescripcion.setText(descripcion)
+        self.txtPrecioUnidadMedida.setText(precio_por_unidad)
+        self.txtCantidad.setText(cantidad)
+        self.cbUnidadesMedida.setCurrentText(unidad_de_medida)
+        self.txtPrecioTotal.setText(precio_total)
+        self.cbPedidos.setCurrentIndex(int(id_pedido)-1)
+
 
     def guardarMateriales(self):
         try:
             #self.cbPedidos.addItem("Prueba")
-            Materiales.material = self.txtNombreMaterial.text()
+            Materiales.nombre_material = self.txtNombreMaterial.text()
             Materiales.descripcion = self.txtDescripcion.text()
             Materiales.precio_por_unidad = self.txtPrecioUnidadMedida.text()
             Materiales.cantidad = self.txtCantidad.text()
@@ -98,7 +109,7 @@ class vw_materiales_funciones(QtWidgets.QMainWindow, vw_materiales.Ui_mw_materia
             #print(self.cbUnidadesMedida.currentText())
             #mult = str(int(self.txtPrecioUnidadMedida.text()) * int(self.txtCantidad.text()))
             Materiales.precio_total = self.txtPrecioTotal.text()
-            Materiales.id_pedido = self.cbPedidos.currentText()
+            Materiales.id_pedido = self.cbPedidos.currentData()
 
             if self.lblId.text() == "" and not self.txtNombreMaterial.text() == "" and not self.txtDescripcion.text() == "" and not self.txtPrecioUnidadMedida.text() == "" and not self.txtCantidad.text() == "" and not self.txtPrecioTotal == "":
 

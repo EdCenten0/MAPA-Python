@@ -20,7 +20,7 @@ class Dt_materiales:
         try:
 
             cursor = Conexion.obtenerConexion().cursor()
-            sentencia = (f'''INSERT INTO materiales(nombre_material, descripcion, cantidad, unidad_de_medida, precio_por_unidad, precio_total, id_pedido) VALUES('{Materiales.material}', '{Materiales.descripcion}', '{Materiales.cantidad}', '{Materiales.unidad_de_medida}', '{Materiales.precio_por_unidad}', '{Materiales.precio_total}', '{Materiales.id_pedido}')''')
+            sentencia = (f'''INSERT INTO materiales(nombre_material, descripcion, cantidad, unidad_de_medida, precio_por_unidad, precio_total, id_pedido) VALUES('{Materiales.nombre_material}', '{Materiales.descripcion}', '{Materiales.cantidad}', '{Materiales.unidad_de_medida}', '{Materiales.precio_por_unidad}', '{Materiales.precio_total}', '{Materiales.id_pedido}')''')
             cursor.execute(sentencia)
             cursor.connection.commit()
             cursor.close()
@@ -28,7 +28,7 @@ class Dt_materiales:
             indicador = True
 
         except Exception as e:
-            print(f"Error al guardar el taller: {e}")
+            print(f"Error al guardar el material: {e}")
 
         return indicador
 
