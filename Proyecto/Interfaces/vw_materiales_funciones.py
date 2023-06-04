@@ -49,12 +49,14 @@ class vw_materiales_funciones(QtWidgets.QMainWindow, vw_materiales.Ui_mw_materia
             self.txtPrecioUnidadMedida.clear()
             self.txtCantidad.clear()
             self.txtPrecioTotal.clear()
+            #self.cbPedidos.clearEditText("A")
+            #self.cbUnidadesMedida.setItemText(self, 3, "pulg")
             #self.cbUnidadesMedida.setCurrentText(self, 0, "")
 
     def notMensaje(self, indicador, resultado):
 
         if indicador == True:
-            QMessageBox.about(self, "Exito!", "los datos fueron " + resultado)
+            QMessageBox.about(self, "Exito!", "existosamente " + resultado)
         else:
             QMessageBox.about(self, "Error", "Ha ocurrido un error")
 
@@ -102,6 +104,7 @@ class vw_materiales_funciones(QtWidgets.QMainWindow, vw_materiales.Ui_mw_materia
 
     def guardarMateriales(self):
         try:
+
             #self.cbPedidos.addItem("Prueba")
             Materiales.nombre_material = self.txtNombreMaterial.text()
             Materiales.descripcion = self.txtDescripcion.text()
@@ -109,19 +112,25 @@ class vw_materiales_funciones(QtWidgets.QMainWindow, vw_materiales.Ui_mw_materia
             Materiales.cantidad = self.txtCantidad.text()
             Materiales.unidad_de_medida = self.cbUnidadesMedida.currentText()
             #print(self.cbUnidadesMedida.currentText())
-            #mult = str(int(self.txtPrecioUnidadMedida.text()) * int(self.txtCantidad.text()))
-            Materiales.precio_total = self.txtPrecioTotal.text()
+            mult = str(float(self.txtPrecioUnidadMedida.text()) * float(self.txtCantidad.text()))
+            Materiales.precio_total = mult
+            self.txtPrecioTotal.setText(mult)
             Materiales.id_pedido = self.cbPedidos.currentData()
 
             if self.lblId.text() == "" and not self.txtNombreMaterial.text() == "" and not self.txtDescripcion.text() == "" and not self.txtPrecioUnidadMedida.text() == "" and not self.txtCantidad.text() == "" and not self.txtPrecioTotal == "":
 
-                indicador = dt_materiales.Dt_materiales.guardarMaterial(Materiales)
-                self.notMensaje(indicador, "Material Guardado")
-                self.limpiarCampos()
+                if float(self.txtPrecioUnidadMedida.text()) > 0 and float(self.txtCantidad.text()) > 0 and float(self.txtPrecioTotal.text()) > 0:
+                    indicador = dt_materiales.Dt_materiales.guardarMaterial(Materiales)
+                    self.notMensaje(indicador, "material guardado")
+                    self.limpiarCampos()
 
-                self.llenarTablaMateriales(dt_materiales.Dt_materiales.listarMateriales())
+                    self.llenarTablaMateriales(dt_materiales.Dt_materiales.listarMateriales())
+                else:
+                    QMessageBox.about(self, "Error", "No se puede introducir numeros negativos")
             else:
                 self.notMensaje(False, "")
+
+
         except Exception as e:
             print(f"Ha ocurrido una excepcion en {e}")
 
@@ -135,18 +144,21 @@ class vw_materiales_funciones(QtWidgets.QMainWindow, vw_materiales.Ui_mw_materia
             Materiales.precio_por_unidad = self.txtPrecioUnidadMedida.text()
             Materiales.cantidad = self.txtCantidad.text()
             Materiales.unidad_de_medida = self.cbUnidadesMedida.currentText()
-            Materiales.precio_total = self.txtPrecioTotal.text()
+            mult = str(float(self.txtPrecioUnidadMedida.text()) * float(self.txtCantidad.text()))
+            Materiales.precio_total = mult
+            self.txtPrecioTotal.setText(mult)
             Materiales.id_pedido = self.cbPedidos.currentData()
 
             if not self.lblId.text() == "" and not self.txtNombreMaterial.text() == "" and not self.txtDescripcion.text() == "" and not self.txtPrecioUnidadMedida.text() == "" and not self.txtCantidad.text() == "" and not self.txtPrecioTotal == "":
+                if float(self.txtPrecioUnidadMedida.text()) > 0 and float(self.txtCantidad.text()) > 0 and float(self.txtPrecioTotal.text()) > 0:
+                    indicador = dt_materiales.Dt_materiales.editarMaterial(Materiales)
+                    self.notMensaje(indicador, "material editado")
 
-                indicador = dt_materiales.Dt_materiales.editarMaterial(Materiales)
-                self.notMensaje(indicador, "Material editado")
+                    self.limpiarCampos()
 
-                self.limpiarCampos()
-
-                self.llenarTablaMateriales(dt_materiales.Dt_materiales.listarMateriales())
-
+                    self.llenarTablaMateriales(dt_materiales.Dt_materiales.listarMateriales())
+                else:
+                    QMessageBox.about(self, "Error", "No se puede introducir numeros negativos")
             else:
 
                 self.notMensaje(False, "")
@@ -163,7 +175,7 @@ class vw_materiales_funciones(QtWidgets.QMainWindow, vw_materiales.Ui_mw_materia
             if not self.lblId.text() == "" and not self.txtNombreMaterial.text() == "" and not self.txtDescripcion.text() == "" and not self.txtPrecioUnidadMedida.text() == "" and not self.txtCantidad.text() == "" and not self.txtPrecioTotal == "":
 
                 indicador = dt_materiales.Dt_materiales.eliminarMaterial(Materiales)
-                self.notMensaje(indicador, "Taller eliminado")
+                self.notMensaje(indicador, "material eliminado")
                 self.limpiarCampos()
                 self.llenarTablaMateriales(dt_materiales.Dt_materiales.listarMateriales())
 
