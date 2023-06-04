@@ -1,9 +1,6 @@
-
-
-
 import sys
 from PyQt5.QtWidgets import QMainWindow, QApplication, QTableWidgetItem, QMessageBox
-from Interfaces import vw_Cliente
+import vw_Cliente
 from Datos import dt_cliente
 from Entidades import clientes
 from Datos import Conexion
@@ -25,8 +22,7 @@ class Cliente_Window(QMainWindow, vw_Cliente.Ui_MainWindow):
         self.bt_Vaciar_Cliente.clicked.connect(self.limpiarCampos)
         self.bt_Editar_Cliente.clicked.connect(self.editarCliente)
         self.bt_Eliminar_Cliente.clicked.connect(self.eliminarCliente)
-
-
+        self.bt_Buscar.clicked.connect(self.buscarCliente)
 
     def limpiarCampos(self):
         self.line_Cliente_Apellido.setText("")
@@ -49,6 +45,7 @@ class Cliente_Window(QMainWindow, vw_Cliente.Ui_MainWindow):
         email = self.tb_Cliente.item(filaSeleccionada, 5).text()
         id_tienda = self.tb_Cliente.item(filaSeleccionada, 6).text()
 
+
         self.line_Cliente_Nombre.setText(id)
         self.line_Cliente_Apellido_5.setText(nombre)
         self.line_Cliente_Apellido.setText(apellido)
@@ -56,6 +53,7 @@ class Cliente_Window(QMainWindow, vw_Cliente.Ui_MainWindow):
         self.line_Cliente_Apellido_3.setText(telefono)
         self.line_Cliente_Apellido_4.setText(email)
         self.line_Cliente_Direccion.setText(id_tienda)
+
 
     def notifMensaje(self, indicador, resultado):
 
@@ -85,62 +83,82 @@ class Cliente_Window(QMainWindow, vw_Cliente.Ui_MainWindow):
             tablerow = tablerow + 1
 
     def guardarCliente(self):
-
         try:
-            clientes.nombre = self.line_Cliente_Apellido_5.text()
-            clientes.apellido = self.line_Cliente_Apellido.text()
-            clientes.cedula = self.line_Cliente_Apellido_2.text()
-            clientes.email = self.line_Cliente_Apellido_3.text()
-            clientes.telefono = self.line_Cliente_Apellido_4.text()
+            clientes.nombre = self.line_Cliente_Apellido_5.toPlainText()
+            clientes.apellido = self.line_Cliente_Apellido.toPlainText()
+            clientes.cedula = self.line_Cliente_Apellido_2.toPlainText()
+            clientes.email = self.line_Cliente_Apellido_3.toPlainText()
+            clientes.telefono = self.line_Cliente_Apellido_4.toPlainText()
 
-
-            if self.line_Cliente_Nombre.text() == "" and not self.line_Cliente_Apellido_5.text() == "" and not self.line_Cliente_Apellido.text() == "" and not self.line_Cliente_Apellido_2.text() == "" and not self.line_Cliente_Apellido_3.text() == "" and not self.line_Cliente_Apellido_4.text() == "" :
-                indicador = dt_cliente.Dt_Clientes.guardarClientes(clientes)  # Recoge los datos en los "Lines" de Qt Desinger para guardarlos en la base de datos
-
-                self.notifMensaje(indicador, "Guardados")
-
-                self.limpiarCampos()
-
-                self.llenarTablaCliente(dt_cliente.Dt_Clientes.listarClientes())  # Se reinicia la tabla para poder recargar los datos guardados
-
+            if self.line_Cliente_Nombre.toPlainText() == "" and not self.line_Cliente_Apellido_5.toPlainText() == "" and not self.line_Cliente_Apellido.toPlainText() == "" and not self.line_Cliente_Apellido_2.toPlainText() == "" and not self.line_Cliente_Apellido_3.toPlainText() == "" and not self.line_Cliente_Apellido_4.toPlainText() == "":
+                if len(self.line_Cliente_Apellido_5.toPlainText()) <= 50:
+                    if len(self.line_Cliente_Apellido.toPlainText()) <= 50:
+                        if len(self.line_Cliente_Apellido_2.toPlainText()) <= 15:
+                            if len(self.line_Cliente_Apellido_4.toPlainText()) <= 12:
+                                if len(self.line_Cliente_Apellido_3.toPlainText()) <= 50:
+                                    indicador = dt_cliente.Dt_Clientes.guardarClientes(clientes)
+                                    self.notifMensaje(indicador, "Guardados")
+                                    self.limpiarCampos()
+                                    self.llenarTablaCliente(dt_cliente.Dt_Clientes.listarClientes())
+                                else:
+                                    QMessageBox.about(self, "Error",
+                                                      "El correo electrónico debe tener menos de 50 caracteres")
+                            else:
+                                QMessageBox.about(self, "Error", "El teléfono debe tener exactamente 12 caracteres")
+                        else:
+                            QMessageBox.about(self, "Error", "La cédula debe tener exactamente de 15 caracteres")
+                    else:
+                        QMessageBox.about(self, "Error", "El apellido debe tener menos de 50 caracteres")
+                else:
+                    QMessageBox.about(self, "Error", "El nombre debe tener menos de 50 caracteres")
             else:
-
                 self.notifMensaje(False, "")
                 self.limpiarCampos()
 
         except Exception as e:
             print(f"Error en GuardarCliente: {e}")
 
-
     def editarCliente(self):
-
         try:
-            clientes.id_tienda = self.line_Cliente_Nombre.text()
-            clientes.nombre = self.line_Cliente_Apellido_5.text()
-            clientes.apellido = self.line_Cliente_Apellido.text()
+            clientes.id_tienda = self.line_Cliente_Nombre.toPlainText()
+            clientes.nombre = self.line_Cliente_Apellido_5.toPlainText()
+            clientes.apellido = self.line_Cliente_Apellido.toPlainText()
             clientes.cedula = self.line_Cliente_Apellido_2.toPlainText()
             clientes.email = self.line_Cliente_Apellido_3.toPlainText()
-            clientes.telefono = self.line_Cliente_Apellido_4.text()
-            clientes.id_tienda = self.line_Cliente_Direccion.text()
+            clientes.telefono = self.line_Cliente_Apellido_4.toPlainText()
+            clientes.id_tienda = self.line_Cliente_Direccion.toPlainText()
 
-
-            if not self.line_Cliente_Nombre.text() == "" and not self.line_Cliente_Apellido_5.text() == "" and not self.line_Cliente_Apellido.text() == "" and not self.line_Cliente_Apellido_2.text() == "" and not self.line_Cliente_Apellido_3.text() == "" and not self.line_Cliente_Apellido_4.toPlainText() == "" and not self.line_Cliente_Direccion.toPlainText() == "":
-                indicador = dt_cliente.Dt_Clientes.editarClientes(clientes)  # Recoge los datos en los "Lines" de Qt Desinger para guardarlos en la base de datos
-
-                self.notifMensaje(indicador, "Editados")
-
-                self.limpiarCampos()
-
-                self.llenarTablaCliente(dt_cliente.Dt_Clientes.listarClientes())  # Se reinicia la tabla para poder recargar los datos guardados
-
+            if not self.line_Cliente_Nombre.toPlainText() == "" and not self.line_Cliente_Apellido_5.toPlainText() == "" and not self.line_Cliente_Apellido.toPlainText() == "" and not self.line_Cliente_Apellido_2.toPlainText() == "" and not self.line_Cliente_Apellido_3.toPlainText() == "" and not self.line_Cliente_Apellido_4.toPlainText() == "" and not self.line_Cliente_Direccion.toPlainText() == "":
+                if len(self.line_Cliente_Apellido_5.toPlainText()) <= 50:
+                    if len(self.line_Cliente_Apellido.toPlainText()) <= 50:
+                        if len(self.line_Cliente_Apellido_2.toPlainText()) <= 15:
+                            if len(self.line_Cliente_Apellido_4.toPlainText()) <= 12:
+                                if len(self.line_Cliente_Apellido_3.toPlainText()) <= 50:
+                                    if len(self.line_Cliente_Direccion.toPlainText()) <= 300:
+                                        indicador = dt_cliente.Dt_Clientes.editarClientes(clientes)
+                                        self.notifMensaje(indicador, "Editados")
+                                        self.limpiarCampos()
+                                        self.llenarTablaCliente(dt_cliente.Dt_Clientes.listarClientes())
+                                    else:
+                                        QMessageBox.about(self, "Error",
+                                                          "La dirección debe tener menos de 300 caracteres")
+                                else:
+                                    QMessageBox.about(self, "Error",
+                                                      "El correo electrónico debe tener menos de 50 caracteres")
+                            else:
+                                QMessageBox.about(self, "Error", "El teléfono debe tener menos de 12 caracteres")
+                        else:
+                            QMessageBox.about(self, "Error", "La cédula debe tener menos de 15 caracteres")
+                    else:
+                        QMessageBox.about(self, "Error", "El apellido debe tener menos de 50 caracteres")
+                else:
+                    QMessageBox.about(self, "Error", "El nombre debe tener menos de 50 caracteres")
             else:
-
                 self.notifMensaje(False, "")
                 self.limpiarCampos()
 
         except Exception as e:
             print(f"Error en EditarCliente: {e}")
-
 
     def eliminarCliente(self):
 
@@ -165,7 +183,21 @@ class Cliente_Window(QMainWindow, vw_Cliente.Ui_MainWindow):
             print(f"Error en EliminarCliente: {e}")
 
 
+    def buscarCliente(self):
+        datos = dt_cliente.Dt_Clientes.busqueda(self.line_Cliente_Buscar.text())
+        i = len(datos)
+        self.tb_Cliente.setRowCount(i)
+        tablerow = 0
 
+        for row in datos:
+            self.tb_Cliente.setItem(tablerow, 0, QTableWidgetItem(str(row["id_cliente"])))
+            self.tb_Cliente.setItem(tablerow, 1, QTableWidgetItem((row["nombre"])))
+            self.tb_Cliente.setItem(tablerow, 2, QTableWidgetItem((row["apellido"])))
+            self.tb_Cliente.setItem(tablerow, 3, QTableWidgetItem((row["cedula"])))
+            self.tb_Cliente.setItem(tablerow, 4, QTableWidgetItem((row["email"])))
+            self.tb_Cliente.setItem(tablerow, 5, QTableWidgetItem(str(row["telefono"])))
+            self.tb_Cliente.setItem(tablerow, 6, QTableWidgetItem(str(row["id_tienda"])))
+            tablerow = tablerow + 1
 
 if __name__ == '__main__':
     app = QApplication(sys.argv)
