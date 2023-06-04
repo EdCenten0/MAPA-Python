@@ -23,6 +23,8 @@ class vw_materiales_funciones(QtWidgets.QMainWindow, vw_materiales.Ui_mw_materia
 
         # Botones
         self.btnGuardar.clicked.connect(self.guardarMateriales)
+        self.btnEditar.clicked.connect(self.editarMaterial)
+        self.btnEliminar.clicked.connect(self.eliminarMaterial)
         self.btnVaciarCampos.clicked.connect(self.limpiarCampos)
 
 
@@ -122,6 +124,55 @@ class vw_materiales_funciones(QtWidgets.QMainWindow, vw_materiales.Ui_mw_materia
                 self.notMensaje(False, "")
         except Exception as e:
             print(f"Ha ocurrido una excepcion en {e}")
+
+    def editarMaterial(self):
+
+        try:
+
+            Materiales.id_material = self.lblId.text()
+            Materiales.nombre_material = self.txtNombreMaterial.text()
+            Materiales.descripcion = self.txtDescripcion.text()
+            Materiales.precio_por_unidad = self.txtPrecioUnidadMedida.text()
+            Materiales.cantidad = self.txtCantidad.text()
+            Materiales.unidad_de_medida = self.cbUnidadesMedida.currentText()
+            Materiales.precio_total = self.txtPrecioTotal.text()
+            Materiales.id_pedido = self.cbPedidos.currentData()
+
+            if not self.lblId.text() == "" and not self.txtNombreMaterial.text() == "" and not self.txtDescripcion.text() == "" and not self.txtPrecioUnidadMedida.text() == "" and not self.txtCantidad.text() == "" and not self.txtPrecioTotal == "":
+
+                indicador = dt_materiales.Dt_materiales.editarMaterial(Materiales)
+                self.notMensaje(indicador, "Material editado")
+
+                self.limpiarCampos()
+
+                self.llenarTablaMateriales(dt_materiales.Dt_materiales.listarMateriales())
+
+            else:
+
+                self.notMensaje(False, "")
+                self.limpiarCampos()
+
+        except Exception as e:
+            print(f"Ha ocurrido un error al editar el taller {e}")
+
+    def eliminarMaterial(self):
+        try:
+
+            Materiales.id_material = self.lblId.text()
+
+            if not self.lblId.text() == "" and not self.txtNombreMaterial.text() == "" and not self.txtDescripcion.text() == "" and not self.txtPrecioUnidadMedida.text() == "" and not self.txtCantidad.text() == "" and not self.txtPrecioTotal == "":
+
+                indicador = dt_materiales.Dt_materiales.eliminarMaterial(Materiales)
+                self.notMensaje(indicador, "Taller eliminado")
+                self.limpiarCampos()
+                self.llenarTablaMateriales(dt_materiales.Dt_materiales.listarMateriales())
+
+            else:
+                self.notMensaje(False, "")
+
+        except Exception as e:
+            print(f"Ocurrio un error al eliminar el material {e}")
+
 
 if __name__ == '__main__':
     app = QtWidgets.QApplication(sys.argv)
