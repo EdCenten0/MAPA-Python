@@ -12,7 +12,21 @@ class DtMaterialesPorProveedor:
     _INSERT = "INSERT INTO materiales_por_proveedor(id_proveedor, id_material) VALUES (%s, %s)"
     _UPDATE = "UPDATE materiales_por_proveedor set id_proveedor= %s, id_material= %s, estado = 2 WHERE id= %s" #Tambien hay que cambiar el estado a 2
     _DELETE = "UPDATE materiales_por_proveedor set estado = 3 WHERE id = %s"
+    _SELECT_VISTA = "SELECT * FROM MAPA.materiales_por_proveedor_vistas"
     _cursor = None
+
+    @classmethod
+    def listar_vista(cls):
+        cursor = Conexion.Conexion.obtenerConexion().cursor()
+        cursor.execute(cls._SELECT_VISTA)
+        resultado = cursor.fetchall()
+        mpp_vistas = []
+        for m in resultado:
+            mpp_vista = MaterialesPorProveedor(m["id_materiales_por_proveedor"],m["id_proveedor"], m["id_material"], m["nombre_material"], m["descripcion"], m["cantidad"], m["unidad_de_medida"], m["nombre"], m["catalogo"])
+            mpp_vistas.append(mpp_vista)
+        return mpp_vistas
+
+
     @classmethod
     def listar_materiales_por_proveedor(cls):
         cursor = Conexion.Conexion.obtenerConexion().cursor()
@@ -22,7 +36,6 @@ class DtMaterialesPorProveedor:
         for x in resultado:
             m = MaterialesPorProveedor(x['id_materiales_por_proveedor'], x['id_proveedor'], x['id_material'])
             materiales_por_proveedores.append(m)
-            print('si', materiales_por_proveedores)
         return materiales_por_proveedores
 
     @classmethod
