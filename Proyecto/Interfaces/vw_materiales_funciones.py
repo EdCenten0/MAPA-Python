@@ -1,4 +1,6 @@
 import sys
+from encodings.punycode import selective_find
+
 from PyQt5 import QtWidgets
 from PyQt5.QtWidgets import QApplication, QAbstractItemView, QTableWidget, QMessageBox, QTableWidgetItem
 
@@ -115,6 +117,7 @@ class vw_materiales_funciones(QtWidgets.QMainWindow, vw_materiales.Ui_mw_materia
             mult = str(float(self.txtPrecioUnidadMedida.text()) * float(self.txtCantidad.text()))
             Materiales.precio_total = mult
             self.txtPrecioTotal.setText(mult)
+
             Materiales.id_pedido = self.cbPedidos.currentData()
 
             if self.lblId.text() == "" and not self.txtNombreMaterial.text() == "" and not self.txtDescripcion.text() == "" and not self.txtPrecioUnidadMedida.text() == "" and not self.txtCantidad.text() == "" and not self.txtPrecioTotal == "":
@@ -127,6 +130,7 @@ class vw_materiales_funciones(QtWidgets.QMainWindow, vw_materiales.Ui_mw_materia
                     self.llenarTablaMateriales(dt_materiales.Dt_materiales.listarMateriales())
                 else:
                     QMessageBox.about(self, "Error", "No se puede introducir numeros negativos")
+
             else:
                 self.notMensaje(False, "")
 
