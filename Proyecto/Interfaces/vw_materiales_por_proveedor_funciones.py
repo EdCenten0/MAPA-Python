@@ -35,7 +35,7 @@ class VwMaterialesPorProveedorFunciones(QtWidgets.QMainWindow, vw_materiales_por
 
         try:
             for m in materiales:
-                self.cb_material.addItem(m.nombre_material, m.id_material)
+                self.cb_material.addItem(m['nombre_material'], m['id_material'])
         except Exception as e:
             print(e)
 
@@ -56,7 +56,7 @@ class VwMaterialesPorProveedorFunciones(QtWidgets.QMainWindow, vw_materiales_por
             f"el archivo de funciones de materiales_por_proveedor : {e}")
 
     def listarMaterialesPorProveedor(self):
-        datos = dt_materiales_por_proveedor.DtMaterialesPorProveedor.listar_materiales_por_proveedor()
+        datos = dt_materiales_por_proveedor.DtMaterialesPorProveedor.listar_vista()
         i = len(datos)
         self.table_materiales_por_proveedor.setRowCount(i)
         tablerow = 0
@@ -64,8 +64,14 @@ class VwMaterialesPorProveedorFunciones(QtWidgets.QMainWindow, vw_materiales_por
         for row in datos:
 
             self.table_materiales_por_proveedor.setItem(tablerow, 0, QtWidgets.QTableWidgetItem(str(row.id_materiales_por_proveedor)))
-            self.table_materiales_por_proveedor.setItem(tablerow, 1, QtWidgets.QTableWidgetItem(str(row.id_material)))
-            self.table_materiales_por_proveedor.setItem(tablerow, 2, QtWidgets.QTableWidgetItem(str(row.id_proveedor)))
+            self.table_materiales_por_proveedor.setItem(tablerow, 1, QtWidgets.QTableWidgetItem(str(row.id_proveedor)))
+            self.table_materiales_por_proveedor.setItem(tablerow, 2, QtWidgets.QTableWidgetItem(str(row.id_material)))
+            self.table_materiales_por_proveedor.setItem(tablerow, 3, QtWidgets.QTableWidgetItem(str(row.nombre_material)))
+            self.table_materiales_por_proveedor.setItem(tablerow, 4, QtWidgets.QTableWidgetItem(str(row.descripcion)))
+            self.table_materiales_por_proveedor.setItem(tablerow, 5, QtWidgets.QTableWidgetItem(str(row.cantidad)))
+            self.table_materiales_por_proveedor.setItem(tablerow, 6, QtWidgets.QTableWidgetItem(str(row.unidad_de_medida)))
+            self.table_materiales_por_proveedor.setItem(tablerow, 7, QtWidgets.QTableWidgetItem(str(row.nombre)))
+            self.table_materiales_por_proveedor.setItem(tablerow, 8, QtWidgets.QTableWidgetItem(str(row.catalogo)))
             tablerow += 1
 
 
