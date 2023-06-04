@@ -12,6 +12,15 @@ class Dt_materiales:
         cursor.close()
         return res
 
+    @classmethod
+    def listarSoloUnUsuario(cls, id):
+        cursor = Conexion.obtenerConexion().cursor()
+        query = f"SELECT * FROM materiales WHERE id_material = {id}"
+        cursor.execute(query)
+        res = cursor.fetchall()
+        cursor.close()
+        return res
+
 
     @classmethod
     def guardarMaterial(cls, Materiales):
@@ -70,6 +79,23 @@ class Dt_materiales:
             print(f"Error al elimianr el material {e}")
         return indicador
 
+    @classmethod
+    def buscarIndexMateriall(cls, id):
+
+        try:
+
+            listarMateriales = cls.listarMateriales()
+            indice = 0
+
+            for row in listarMateriales:
+                indice += 1
+                if row["id_material"] == id:
+                    break
+
+            return indice
+
+        except Exception as e:
+            print(f"Error en buscar_index_material: {e}")
 
 
 if __name__ == '__main__':

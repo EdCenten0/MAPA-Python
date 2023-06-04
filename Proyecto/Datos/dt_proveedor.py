@@ -61,6 +61,26 @@ class Dt_Proveedor:
         except Exception as e:
             print(f"Error en dt_Proveedor Eliminar: {e}")
 
+    @classmethod
+    def buscarIndexProveedor(cls, id):
+
+        try:
+
+            listarProveedor = cls.listarProveedor()
+            indice = 0
+
+            for row in listarProveedor:
+                indice += 1
+                if row["id_proveedor"] == id:
+                    break
+
+            return indice
+
+        except Exception as e:
+            print(f"Error en bucar_index_rol: {e}")
+
+
+
 
 
 if __name__ == '__main__':

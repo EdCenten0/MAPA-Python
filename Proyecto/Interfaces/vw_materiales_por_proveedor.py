@@ -54,15 +54,31 @@ class Ui_background(object):
         self.verticalLayout_8 = QtWidgets.QVBoxLayout()
         self.verticalLayout_8.setObjectName("verticalLayout_8")
         self.bt_guardar = QtWidgets.QPushButton(self.centralwidget)
+        self.bt_guardar.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
+        self.bt_guardar.setStyleSheet("background-color:rgb(255, 255, 255);\n"
+"border:1px solid rgb(100,100,100);\n"
+"color:rgb(50,50,50);")
         self.bt_guardar.setObjectName("bt_guardar")
         self.verticalLayout_8.addWidget(self.bt_guardar)
         self.bt_editar = QtWidgets.QPushButton(self.centralwidget)
+        self.bt_editar.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
+        self.bt_editar.setStyleSheet("background-color:rgb(255, 255, 255);\n"
+"border:1px solid rgb(100,100,100);\n"
+"color:rgb(50,50,50);")
         self.bt_editar.setObjectName("bt_editar")
         self.verticalLayout_8.addWidget(self.bt_editar)
         self.bt_borrar = QtWidgets.QPushButton(self.centralwidget)
+        self.bt_borrar.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
+        self.bt_borrar.setStyleSheet("background-color:rgb(255, 255, 255);\n"
+"border:1px solid rgb(100,100,100);\n"
+"color:rgb(50,50,50);")
         self.bt_borrar.setObjectName("bt_borrar")
         self.verticalLayout_8.addWidget(self.bt_borrar)
         self.bt_vaciar_campos = QtWidgets.QPushButton(self.centralwidget)
+        self.bt_vaciar_campos.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
+        self.bt_vaciar_campos.setStyleSheet("background-color:rgb(255, 255, 255);\n"
+"border:1px solid rgb(100,100,100);\n"
+"color:rgb(50,50,50);")
         self.bt_vaciar_campos.setObjectName("bt_vaciar_campos")
         self.verticalLayout_8.addWidget(self.bt_vaciar_campos)
         self.gridLayout_2.addLayout(self.verticalLayout_8, 0, 1, 1, 1)
@@ -137,9 +153,9 @@ class Ui_background(object):
         item = self.table_materiales_por_proveedor.horizontalHeaderItem(0)
         item.setText(_translate("background", "ID"))
         item = self.table_materiales_por_proveedor.horizontalHeaderItem(1)
-        item.setText(_translate("background", "Material"))
+        item.setText(_translate("background", "Proveedor ID"))
         item = self.table_materiales_por_proveedor.horizontalHeaderItem(2)
-        item.setText(_translate("background", "Proveedor"))
+        item.setText(_translate("background", "Material ID"))
         item = self.table_materiales_por_proveedor.horizontalHeaderItem(3)
         item.setText(_translate("background", "Material"))
         item = self.table_materiales_por_proveedor.horizontalHeaderItem(4)

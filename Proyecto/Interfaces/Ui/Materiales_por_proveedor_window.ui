@@ -74,6 +74,14 @@ color:rgb(50,50,50);</string>
          <layout class="QVBoxLayout" name="verticalLayout_8">
           <item>
            <widget class="QPushButton" name="bt_guardar">
+            <property name="cursor">
+             <cursorShape>PointingHandCursor</cursorShape>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">background-color:rgb(255, 255, 255);
+border:1px solid rgb(100,100,100);
+color:rgb(50,50,50);</string>
+            </property>
             <property name="text">
              <string>Guardar</string>
             </property>
@@ -81,6 +89,14 @@ color:rgb(50,50,50);</string>
           </item>
           <item>
            <widget class="QPushButton" name="bt_editar">
+            <property name="cursor">
+             <cursorShape>PointingHandCursor</cursorShape>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">background-color:rgb(255, 255, 255);
+border:1px solid rgb(100,100,100);
+color:rgb(50,50,50);</string>
+            </property>
             <property name="text">
              <string>Editar</string>
             </property>
@@ -88,6 +104,14 @@ color:rgb(50,50,50);</string>
           </item>
           <item>
            <widget class="QPushButton" name="bt_borrar">
+            <property name="cursor">
+             <cursorShape>PointingHandCursor</cursorShape>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">background-color:rgb(255, 255, 255);
+border:1px solid rgb(100,100,100);
+color:rgb(50,50,50);</string>
+            </property>
             <property name="text">
              <string>Borrar</string>
             </property>
@@ -95,6 +119,14 @@ color:rgb(50,50,50);</string>
           </item>
           <item>
            <widget class="QPushButton" name="bt_vaciar_campos">
+            <property name="cursor">
+             <cursorShape>PointingHandCursor</cursorShape>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">background-color:rgb(255, 255, 255);
+border:1px solid rgb(100,100,100);
+color:rgb(50,50,50);</string>
+            </property>
             <property name="text">
              <string>Vaciar Campos</string>
             </property>
@@ -184,12 +216,12 @@ color:rgb(50,50,50);</string>
           </column>
           <column>
            <property name="text">
-            <string>Material</string>
+            <string>Proveedor ID</string>
            </property>
           </column>
           <column>
            <property name="text">
-            <string>Proveedor</string>
+            <string>Material ID</string>
            </property>
           </column>
           <column>

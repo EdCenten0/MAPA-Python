@@ -631,10 +631,9 @@ class seguridad_Window(QMainWindow, vw_seguridad.Ui_Seguridad):
         #Buscar el la posicion exacta en el combobox
         usuario = dt_usuario.Dt_Usuarios.buscarIndexUsuario(int(id_usuario))
         rol = dt_rol.Dt_Rol.buscarIndexRol(int(id_rol))
-
         #Se asignan los valores de los text line y combobox
         self.line_Asignar_Rol_Id.setText(id)
-        self.cb_Asignar_Rol_idUsuario.setCurrentIndex(usuario-1)
+        self.cb_Asignar_Rol_idUsuario.setCurrentIndex(usuario - 1)
         self.cb_Asignar_Rol_idRol.setCurrentIndex(rol - 1)
 
 
