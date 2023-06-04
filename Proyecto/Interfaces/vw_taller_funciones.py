@@ -21,11 +21,6 @@ class vw_taller_funciones(QtWidgets.QMainWindow, vw_taller.Ui_mw_taller):
         self.btnEditar.clicked.connect(self.editarTaller)
         self.btnEliminar.clicked.connect(self.eliminarTaller)
         self.btnVaciarCampos.clicked.connect(self.limpiarCampos)
-
-
-
-
-
     def limpiarCampos(self):
 
         if not self.txtNombre.text() == "" or not self.txtDireccion.text() == "" or not self.txtTelefono.text() == "" or not self.txtEmail.text() == "":

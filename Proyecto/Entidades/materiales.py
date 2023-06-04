@@ -15,7 +15,7 @@ class Materiales:
         self._precio_total = precio_total
         self._id_pedido = id_pedido
 
-    def __str__(self):
+    def _str_(self):
         return f'''
          id_material: {self._id_material},
          material: {self._nombre_material},
@@ -27,7 +27,7 @@ class Materiales:
          id_pedido: {self._id_pedido}
          '''
 
-    def __getitem__(self, item):
+    def _getitem_(self, item):
         u = copy.copy(self)
         u.id_material = u._id_material
         u.nombre_material = u._nombre_material
@@ -102,6 +102,6 @@ class Materiales:
     def id_pedido(self, id_pedido):
         self._id_pedido = id_pedido
 
-if __name__ == '__main__':
+if __name__ == '_main_':
     m1 = Materiales(2, 'Tornillo', 'Para paredes', 30, 10, (30*10))
     print(m1)
