@@ -475,27 +475,10 @@ class Ui_MainWindow(object):
         item.setText(_translate("MainWindow", "Telefono"))
         item = self.tb_Cliente.horizontalHeaderItem(6)
         item.setText(_translate("MainWindow", "ID_Tienda"))
-# Clase principal de la ventana
-class VentanaPrincipal(Ui_MainWindow):
-    def __init__(self):
-        super().__init__()
-
-        # Código para inicializar la interfaz de usuario en Qt Designer
-
-        # Configurar el modo de redimensionamiento de las columnas de tb_cliente
-        self.tb_cliente.horizontalHeader().setSectionResizeMode(Ui_MainWindow.Stretch)
-
-        # Establecer el ancho mínimo y máximo de las columnas de tb_cliente
-        self.tb_cliente.horizontalHeader().setMinimumSectionSize(100)
-        self.tb_cliente.horizontalHeader().setMaximumSectionSize(300)
-
-        # Otro código necesario para la ventana principal
 
 # Crear la aplicación y mostrar la ventana principal
 if __name__ == "__main__":
     import sys
-    ventana = VentanaPrincipal()
-    ventana.show()
     app = QtWidgets.QApplication(sys.argv)
     MainWindow = QtWidgets.QMainWindow()
     ui = Ui_MainWindow()
