@@ -14,13 +14,13 @@
    <bool>false</bool>
   </property>
   <property name="windowTitle">
-   <string>Materiales por pedido</string>
+   <string>Materiales por proveedor</string>
   </property>
   <property name="autoFillBackground">
    <bool>false</bool>
   </property>
   <property name="styleSheet">
-   <string notr="true">background-color: rgb(63, 73, 100);</string>
+   <string notr="true">background-color: rgb(222, 221, 218);</string>
   </property>
   <property name="toolButtonStyle">
    <enum>Qt::ToolButtonIconOnly</enum>
@@ -37,22 +37,34 @@
            <number>0</number>
           </property>
           <item row="0" column="1">
-           <widget class="QComboBox" name="cb_material"/>
+           <widget class="QComboBox" name="cb_material">
+            <property name="styleSheet">
+             <string notr="true">background-color:rgb(255, 255, 255);
+border:1px solid rgb(100,100,100);
+color:rgb(50,50,50);</string>
+            </property>
+           </widget>
           </item>
           <item row="1" column="0">
            <widget class="QLabel" name="label_5">
             <property name="text">
-             <string>Proveedor</string>
+             <string>Proveedor:</string>
             </property>
            </widget>
           </item>
           <item row="1" column="1">
-           <widget class="QComboBox" name="cb_proveedor"/>
+           <widget class="QComboBox" name="cb_proveedor">
+            <property name="styleSheet">
+             <string notr="true">background-color:rgb(255, 255, 255);
+border:1px solid rgb(100,100,100);
+color:rgb(50,50,50);</string>
+            </property>
+           </widget>
           </item>
           <item row="0" column="0">
            <widget class="QLabel" name="label_4">
             <property name="text">
-             <string>Material</string>
+             <string>Material:</string>
             </property>
            </widget>
           </item>
@@ -101,7 +113,7 @@
          <enum>QLayout::SetMaximumSize</enum>
         </property>
         <item>
-         <widget class="QTableWidget" name="table_materiales_requeridos_por_pedido">
+         <widget class="QTableWidget" name="table_materiales_por_proveedor">
           <property name="focusPolicy">
            <enum>Qt::TabFocus</enum>
           </property>
@@ -119,6 +131,9 @@
           </property>
           <property name="sizeAdjustPolicy">
            <enum>QAbstractScrollArea::AdjustToContents</enum>
+          </property>
+          <property name="autoScrollMargin">
+           <number>27</number>
           </property>
           <property name="textElideMode">
            <enum>Qt::ElideNone</enum>
@@ -148,9 +163,12 @@
            <number>39</number>
           </attribute>
           <attribute name="horizontalHeaderDefaultSectionSize">
-           <number>258</number>
+           <number>86</number>
           </attribute>
           <attribute name="horizontalHeaderHighlightSections">
+           <bool>true</bool>
+          </attribute>
+          <attribute name="horizontalHeaderStretchLastSection">
            <bool>true</bool>
           </attribute>
           <attribute name="verticalHeaderMinimumSectionSize">
@@ -172,6 +190,36 @@
           <column>
            <property name="text">
             <string>Proveedor</string>
+           </property>
+          </column>
+          <column>
+           <property name="text">
+            <string>Material</string>
+           </property>
+          </column>
+          <column>
+           <property name="text">
+            <string>Descripción</string>
+           </property>
+          </column>
+          <column>
+           <property name="text">
+            <string>Cantidad</string>
+           </property>
+          </column>
+          <column>
+           <property name="text">
+            <string>Unidad de Medida</string>
+           </property>
+          </column>
+          <column>
+           <property name="text">
+            <string>Proveedor</string>
+           </property>
+          </column>
+          <column>
+           <property name="text">
+            <string>Catalago</string>
            </property>
           </column>
          </widget>
