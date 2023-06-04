@@ -189,13 +189,13 @@ class Cliente_Window(QMainWindow, vw_Cliente.Ui_MainWindow):
         tablerow = 0
 
         for row in datos:
-            self.tb_Cliente.setItem(tablerow, 0, QTableWidgetItem(str(row["id_cliente"])))
+            self.tb_Cliente.setItem(tablerow, 0, QTableWidgetItem(str(row["IDw"])))
             self.tb_Cliente.setItem(tablerow, 1, QTableWidgetItem((row["nombre"])))
             self.tb_Cliente.setItem(tablerow, 2, QTableWidgetItem((row["apellido"])))
             self.tb_Cliente.setItem(tablerow, 3, QTableWidgetItem((row["cedula"])))
             self.tb_Cliente.setItem(tablerow, 4, QTableWidgetItem((row["email"])))
             self.tb_Cliente.setItem(tablerow, 5, QTableWidgetItem(str(row["telefono"])))
-            self.tb_Cliente.setItem(tablerow, 6, QTableWidgetItem(str(row["estado"])))
+            self.tb_Cliente.setItem(tablerow, 6, QTableWidgetItem(str(row["ID_Tienda"])))
             tablerow = tablerow + 1
 
 if __name__ == '__main__':
