@@ -1,4 +1,4 @@
-from Proyecto.Datos import Conexion
+from Datos import Conexion
 
 class Dt_Clientes:
 
@@ -51,6 +51,7 @@ class Dt_Clientes:
         return indicador
 
 
+    @classmethod
     def busqueda(cls, cliente):
         cursor = Conexion.Conexion.obtenerConexion().cursor()
         cursor.execute(f"SELECT * FROM clientes WHERE nombre like '%' '{cliente}' '%' ")

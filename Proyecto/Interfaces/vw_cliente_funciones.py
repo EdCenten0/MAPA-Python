@@ -1,9 +1,9 @@
 import sys
 from PyQt5.QtWidgets import QMainWindow, QApplication, QTableWidgetItem, QMessageBox
 import vw_Cliente
-from Proyecto.Datos import dt_cliente
-from Proyecto.Entidades import clientes
-from Proyecto.Datos import Conexion
+from Datos import dt_cliente
+from Entidades import clientes
+from Datos import Conexion
 
 
 
@@ -22,8 +22,7 @@ class Cliente_Window(QMainWindow, vw_Cliente.Ui_MainWindow):
         self.bt_Vaciar_Cliente.clicked.connect(self.limpiarCampos)
         self.bt_Editar_Cliente.clicked.connect(self.editarCliente)
         self.bt_Eliminar_Cliente.clicked.connect(self.eliminarCliente)
-
-
+        self.bt_Buscar.clicked.connect(self.buscarCliente)
 
     def limpiarCampos(self):
         self.line_Cliente_Apellido.setText("")
@@ -46,6 +45,7 @@ class Cliente_Window(QMainWindow, vw_Cliente.Ui_MainWindow):
         email = self.tb_Cliente.item(filaSeleccionada, 5).text()
         id_tienda = self.tb_Cliente.item(filaSeleccionada, 6).text()
 
+
         self.line_Cliente_Nombre.setText(id)
         self.line_Cliente_Apellido_5.setText(nombre)
         self.line_Cliente_Apellido.setText(apellido)
@@ -53,6 +53,7 @@ class Cliente_Window(QMainWindow, vw_Cliente.Ui_MainWindow):
         self.line_Cliente_Apellido_3.setText(telefono)
         self.line_Cliente_Apellido_4.setText(email)
         self.line_Cliente_Direccion.setText(id_tienda)
+
 
     def notifMensaje(self, indicador, resultado):
 
@@ -189,13 +190,13 @@ class Cliente_Window(QMainWindow, vw_Cliente.Ui_MainWindow):
         tablerow = 0
 
         for row in datos:
-            self.tb_Cliente.setItem(tablerow, 0, QTableWidgetItem(str(row["IDw"])))
+            self.tb_Cliente.setItem(tablerow, 0, QTableWidgetItem(str(row["id_cliente"])))
             self.tb_Cliente.setItem(tablerow, 1, QTableWidgetItem((row["nombre"])))
             self.tb_Cliente.setItem(tablerow, 2, QTableWidgetItem((row["apellido"])))
             self.tb_Cliente.setItem(tablerow, 3, QTableWidgetItem((row["cedula"])))
             self.tb_Cliente.setItem(tablerow, 4, QTableWidgetItem((row["email"])))
             self.tb_Cliente.setItem(tablerow, 5, QTableWidgetItem(str(row["telefono"])))
-            self.tb_Cliente.setItem(tablerow, 6, QTableWidgetItem(str(row["ID_Tienda"])))
+            self.tb_Cliente.setItem(tablerow, 6, QTableWidgetItem(str(row["id_tienda"])))
             tablerow = tablerow + 1
 
 if __name__ == '__main__':
