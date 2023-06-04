@@ -123,6 +123,19 @@ class Ui_MainWindow(object):
         self.label_7.setStyleSheet("font: 14pt \"Ubuntu\";\n"
 "color: rgb(255, 255, 255);")
         self.label_7.setObjectName("label_7")
+        self.line_Cliente_Buscar = QtWidgets.QLineEdit(self.centralwidget)
+        self.line_Cliente_Buscar.setGeometry(QtCore.QRect(110, 220, 541, 21))
+        self.line_Cliente_Buscar.setStyleSheet("background-color: rgb(246, 245, 244);")
+        self.line_Cliente_Buscar.setObjectName("line_Cliente_Buscar")
+        self.label_8 = QtWidgets.QLabel(self.centralwidget)
+        self.label_8.setGeometry(QtCore.QRect(20, 220, 91, 17))
+        self.label_8.setStyleSheet("font: 14pt \"Ubuntu\";\n"
+"color: rgb(255, 255, 255);")
+        self.label_8.setObjectName("label_8")
+        self.bt_Buscar = QtWidgets.QPushButton(self.centralwidget)
+        self.bt_Buscar.setGeometry(QtCore.QRect(670, 220, 101, 31))
+        self.bt_Buscar.setStyleSheet("background-color: rgb(165, 215, 232);")
+        self.bt_Buscar.setObjectName("bt_Buscar")
         MainWindow.setCentralWidget(self.centralwidget)
 
         self.retranslateUi(MainWindow)
@@ -156,12 +169,5 @@ class Ui_MainWindow(object):
         self.bt_Vaciar_Cliente.setText(_translate("MainWindow", "Vaciar Campos"))
         self.label_4.setText(_translate("MainWindow", "Cedula:"))
         self.label_7.setText(_translate("MainWindow", "Nombre:"))
-if __name__ == "__main__":
-    import sys
-    app = QtWidgets.QApplication(sys.argv)
-    MainWindow = QtWidgets.QMainWindow()
-    ui = Ui_MainWindow()
-    ui.setupUi(MainWindow)
-    MainWindow.show()
-    sys.exit(app.exec_())
-
+        self.label_8.setText(_translate("MainWindow", "Buscar:"))
+        self.bt_Buscar.setText(_translate("MainWindow", "Buscar"))

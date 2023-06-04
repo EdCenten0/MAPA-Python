@@ -196,11 +196,11 @@ color: rgb(255, 255, 255);</string>
     <attribute name="horizontalHeaderDefaultSectionSize">
      <number>111</number>
     </attribute>
-    <attribute name="verticalHeaderMinimumSectionSize">
-     <number>23</number>
-    </attribute>
     <attribute name="verticalHeaderDefaultSectionSize">
      <number>25</number>
+    </attribute>
+    <attribute name="verticalHeaderMinimumSectionSize">
+     <number>23</number>
     </attribute>
     <column>
      <property name="text">
@@ -355,6 +355,52 @@ color: rgb(255, 255, 255);</string>
     </property>
     <property name="text">
      <string>Nombre:</string>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="line_Cliente_Buscar">
+    <property name="geometry">
+     <rect>
+      <x>110</x>
+      <y>220</y>
+      <width>541</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: rgb(246, 245, 244);</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_8">
+    <property name="geometry">
+     <rect>
+      <x>20</x>
+      <y>220</y>
+      <width>91</width>
+      <height>17</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">font: 14pt &quot;Ubuntu&quot;;
+color: rgb(255, 255, 255);</string>
+    </property>
+    <property name="text">
+     <string>Buscar:</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="bt_Buscar">
+    <property name="geometry">
+     <rect>
+      <x>670</x>
+      <y>220</y>
+      <width>101</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: rgb(165, 215, 232);</string>
+    </property>
+    <property name="text">
+     <string>Buscar</string>
     </property>
    </widget>
   </widget>
