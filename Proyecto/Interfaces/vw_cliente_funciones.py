@@ -3,7 +3,7 @@
 
 import sys
 from PyQt5.QtWidgets import QMainWindow, QApplication, QTableWidgetItem, QMessageBox
-from Interfaces import vw_Cliente
+import vw_Cliente
 from Proyecto.Datos import dt_cliente
 from Proyecto.Entidades import clientes
 from Proyecto.Datos import Conexion
@@ -87,14 +87,14 @@ class Cliente_Window(QMainWindow, vw_Cliente.Ui_MainWindow):
     def guardarCliente(self):
 
         try:
-            clientes.nombre = self.line_Cliente_Apellido_5.text()
-            clientes.apellido = self.line_Cliente_Apellido.text()
-            clientes.cedula = self.line_Cliente_Apellido_2.text()
-            clientes.email = self.line_Cliente_Apellido_3.text()
-            clientes.telefono = self.line_Cliente_Apellido_4.text()
+            clientes.nombre = self.line_Cliente_Apellido_5.toPlainText()
+            clientes.apellido = self.line_Cliente_Apellido.toPlainText()
+            clientes.cedula = self.line_Cliente_Apellido_2.toPlainText()
+            clientes.email = self.line_Cliente_Apellido_3.toPlainText()
+            clientes.telefono = self.line_Cliente_Apellido_4.toPlainText()
 
 
-            if self.line_Cliente_Nombre.text() == "" and not self.line_Cliente_Apellido_5.text() == "" and not self.line_Cliente_Apellido.text() == "" and not self.line_Cliente_Apellido_2.text() == "" and not self.line_Cliente_Apellido_3.text() == "" and not self.line_Cliente_Apellido_4.text() == "" :
+            if self.line_Cliente_Nombre.toPlainText() == "" and not self.line_Cliente_Apellido_5.toPlainText() == "" and not self.line_Cliente_Apellido.toPlainText() == "" and not self.line_Cliente_Apellido_2.toPlainText() == "" and not self.line_Cliente_Apellido_3.toPlainText() == "" and not self.line_Cliente_Apellido_4.toPlainText() == "" :
                 indicador = dt_cliente.Dt_Clientes.guardarClientes(clientes)  # Recoge los datos en los "Lines" de Qt Desinger para guardarlos en la base de datos
 
                 self.notifMensaje(indicador, "Guardados")
@@ -115,16 +115,16 @@ class Cliente_Window(QMainWindow, vw_Cliente.Ui_MainWindow):
     def editarCliente(self):
 
         try:
-            clientes.id_tienda = self.line_Cliente_Nombre.text()
-            clientes.nombre = self.line_Cliente_Apellido_5.text()
-            clientes.apellido = self.line_Cliente_Apellido.text()
+            clientes.id_tienda = self.line_Cliente_Nombre.toPlainText()
+            clientes.nombre = self.line_Cliente_Apellido_5.toPlainText()
+            clientes.apellido = self.line_Cliente_Apellido.toPlainText()
             clientes.cedula = self.line_Cliente_Apellido_2.toPlainText()
             clientes.email = self.line_Cliente_Apellido_3.toPlainText()
-            clientes.telefono = self.line_Cliente_Apellido_4.text()
-            clientes.id_tienda = self.line_Cliente_Direccion.text()
+            clientes.telefono = self.line_Cliente_Apellido_4.toPlainText()
+            clientes.id_tienda = self.line_Cliente_Direccion.toPlainText()
 
 
-            if not self.line_Cliente_Nombre.text() == "" and not self.line_Cliente_Apellido_5.text() == "" and not self.line_Cliente_Apellido.text() == "" and not self.line_Cliente_Apellido_2.text() == "" and not self.line_Cliente_Apellido_3.text() == "" and not self.line_Cliente_Apellido_4.toPlainText() == "" and not self.line_Cliente_Direccion.toPlainText() == "":
+            if not self.line_Cliente_Nombre.toPlainText() == "" and not self.line_Cliente_Apellido_5.toPlainText() == "" and not self.line_Cliente_Apellido.toPlainText() == "" and not self.line_Cliente_Apellido_2.toPlainText() == "" and not self.line_Cliente_Apellido_3.toPlainText() == "" and not self.line_Cliente_Apellido_4.toPlainText() == "" and not self.line_Cliente_Direccion.toPlainText() == "":
                 indicador = dt_cliente.Dt_Clientes.editarClientes(clientes)  # Recoge los datos en los "Lines" de Qt Desinger para guardarlos en la base de datos
 
                 self.notifMensaje(indicador, "Editados")
@@ -140,6 +140,8 @@ class Cliente_Window(QMainWindow, vw_Cliente.Ui_MainWindow):
 
         except Exception as e:
             print(f"Error en EditarCliente: {e}")
+
+
 
 
     def eliminarCliente(self):
@@ -165,7 +167,21 @@ class Cliente_Window(QMainWindow, vw_Cliente.Ui_MainWindow):
             print(f"Error en EliminarCliente: {e}")
 
 
+    def buscarCliente(self):
+        datos = dt_cliente.Dt_Clientes.busqueda(self.line_Cliente_Buscar.text())
+        i = len(datos)
+        self.tb_Cliente.setRowCount(i)
+        tablerow = 0
 
+        for row in datos:
+            self.tb_Cliente.setItem(tablerow, 0, QTableWidgetItem(str(row["id_cliente"])))
+            self.tb_Cliente.setItem(tablerow, 1, QTableWidgetItem((row["nombre"])))
+            self.tb_Cliente.setItem(tablerow, 2, QTableWidgetItem((row["apellido"])))
+            self.tb_Cliente.setItem(tablerow, 3, QTableWidgetItem((row["cedula"])))
+            self.tb_Cliente.setItem(tablerow, 4, QTableWidgetItem((row["email"])))
+            self.tb_Cliente.setItem(tablerow, 5, QTableWidgetItem(str(row["telefono"])))
+            self.tb_Cliente.setItem(tablerow, 6, QTableWidgetItem(str(row["estado"])))
+            tablerow = tablerow + 1
 
 if __name__ == '__main__':
     app = QApplication(sys.argv)
