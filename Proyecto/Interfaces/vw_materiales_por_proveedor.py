@@ -14,16 +14,29 @@ from PyQt5 import QtCore, QtGui, QtWidgets
 class Ui_background(object):
     def setupUi(self, background):
         background.setObjectName("background")
-        background.resize(800, 599)
+        background.resize(866, 599)
         background.setMouseTracking(False)
         background.setAutoFillBackground(False)
-        background.setStyleSheet("background-color: rgb(222, 221, 218);\n"
-"border-radius:10%;\n"
-"")
+        background.setStyleSheet("")
         background.setToolButtonStyle(QtCore.Qt.ToolButtonIconOnly)
         self.centralwidget = QtWidgets.QWidget(background)
         self.centralwidget.setObjectName("centralwidget")
-        self.gridLayout = QtWidgets.QGridLayout(self.centralwidget)
+        self.gridLayout_4 = QtWidgets.QGridLayout(self.centralwidget)
+        self.gridLayout_4.setObjectName("gridLayout_4")
+        self.label = QtWidgets.QLabel(self.centralwidget)
+        self.label.setStyleSheet("font-family:\"Inter\", sans-serif;\n"
+"font-size:30px;\n"
+"font-weight:500;")
+        self.label.setObjectName("label")
+        self.gridLayout_4.addWidget(self.label, 0, 0, 1, 1)
+        self.frame = QtWidgets.QFrame(self.centralwidget)
+        self.frame.setStyleSheet("background-color: rgb(222, 221, 218);\n"
+"border-radius:10%;\n"
+"")
+        self.frame.setFrameShape(QtWidgets.QFrame.StyledPanel)
+        self.frame.setFrameShadow(QtWidgets.QFrame.Raised)
+        self.frame.setObjectName("frame")
+        self.gridLayout = QtWidgets.QGridLayout(self.frame)
         self.gridLayout.setObjectName("gridLayout")
         self.verticalLayout = QtWidgets.QVBoxLayout()
         self.verticalLayout.setObjectName("verticalLayout")
@@ -32,7 +45,14 @@ class Ui_background(object):
         self.gridLayout_3 = QtWidgets.QGridLayout()
         self.gridLayout_3.setContentsMargins(-1, 0, -1, -1)
         self.gridLayout_3.setObjectName("gridLayout_3")
-        self.cb_material = QtWidgets.QComboBox(self.centralwidget)
+        self.cb_proveedor = QtWidgets.QComboBox(self.frame)
+        self.cb_proveedor.setStyleSheet("background-color:rgb(255, 255, 255);\n"
+"border:1px solid rgb(100,100,100);\n"
+"color:rgb(50,50,50);\n"
+"border-radius:4px;")
+        self.cb_proveedor.setObjectName("cb_proveedor")
+        self.gridLayout_3.addWidget(self.cb_proveedor, 1, 1, 1, 1)
+        self.cb_material = QtWidgets.QComboBox(self.frame)
         self.cb_material.setStyleSheet("QComboBox{\n"
 "        background-color:rgb(255, 255, 255);\n"
 "        border:1px solid rgb(100,100,100);\n"
@@ -43,31 +63,24 @@ class Ui_background(object):
 "")
         self.cb_material.setObjectName("cb_material")
         self.gridLayout_3.addWidget(self.cb_material, 0, 1, 1, 1)
-        self.label_5 = QtWidgets.QLabel(self.centralwidget)
+        self.label_5 = QtWidgets.QLabel(self.frame)
         self.label_5.setStyleSheet("QLabel{\n"
 "        font-weight:500;\n"
 "}")
         self.label_5.setObjectName("label_5")
         self.gridLayout_3.addWidget(self.label_5, 1, 0, 1, 1)
-        self.cb_proveedor = QtWidgets.QComboBox(self.centralwidget)
-        self.cb_proveedor.setStyleSheet("background-color:rgb(255, 255, 255);\n"
-"border:1px solid rgb(100,100,100);\n"
-"color:rgb(50,50,50);\n"
-"border-radius:4px;")
-        self.cb_proveedor.setObjectName("cb_proveedor")
-        self.gridLayout_3.addWidget(self.cb_proveedor, 1, 1, 1, 1)
-        self.label_4 = QtWidgets.QLabel(self.centralwidget)
+        self.label_4 = QtWidgets.QLabel(self.frame)
         self.label_4.setStyleSheet("QLabel{\n"
 "        font-weight:500;\n"
 "}")
         self.label_4.setObjectName("label_4")
         self.gridLayout_3.addWidget(self.label_4, 0, 0, 1, 1)
         self.gridLayout_3.setColumnStretch(0, 1)
-        self.gridLayout_3.setColumnStretch(1, 3)
+        self.gridLayout_3.setColumnStretch(1, 4)
         self.gridLayout_2.addLayout(self.gridLayout_3, 0, 0, 1, 1)
         self.verticalLayout_8 = QtWidgets.QVBoxLayout()
         self.verticalLayout_8.setObjectName("verticalLayout_8")
-        self.bt_guardar = QtWidgets.QPushButton(self.centralwidget)
+        self.bt_guardar = QtWidgets.QPushButton(self.frame)
         self.bt_guardar.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
         self.bt_guardar.setStyleSheet("QPushButton {\n"
 "    background-color:rgb(255, 255, 255);\n"
@@ -88,7 +101,7 @@ class Ui_background(object):
 "")
         self.bt_guardar.setObjectName("bt_guardar")
         self.verticalLayout_8.addWidget(self.bt_guardar)
-        self.bt_editar = QtWidgets.QPushButton(self.centralwidget)
+        self.bt_editar = QtWidgets.QPushButton(self.frame)
         self.bt_editar.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
         self.bt_editar.setStyleSheet("QPushButton {\n"
 "    background-color:rgb(255, 255, 255);\n"
@@ -109,7 +122,7 @@ class Ui_background(object):
 "")
         self.bt_editar.setObjectName("bt_editar")
         self.verticalLayout_8.addWidget(self.bt_editar)
-        self.bt_borrar = QtWidgets.QPushButton(self.centralwidget)
+        self.bt_borrar = QtWidgets.QPushButton(self.frame)
         self.bt_borrar.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
         self.bt_borrar.setStyleSheet("QPushButton {\n"
 "    background-color:rgb(255, 255, 255);\n"
@@ -130,7 +143,7 @@ class Ui_background(object):
 "")
         self.bt_borrar.setObjectName("bt_borrar")
         self.verticalLayout_8.addWidget(self.bt_borrar)
-        self.bt_vaciar_campos = QtWidgets.QPushButton(self.centralwidget)
+        self.bt_vaciar_campos = QtWidgets.QPushButton(self.frame)
         self.bt_vaciar_campos.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
         self.bt_vaciar_campos.setStyleSheet("QPushButton {\n"
 "    background-color:rgb(255, 255, 255);\n"
@@ -159,10 +172,63 @@ class Ui_background(object):
         self.verticalLayout_2.setSizeConstraint(QtWidgets.QLayout.SetMaximumSize)
         self.verticalLayout_2.setSpacing(6)
         self.verticalLayout_2.setObjectName("verticalLayout_2")
-        self.table_materiales_por_proveedor = QtWidgets.QTableWidget(self.centralwidget)
+        self.table_materiales_por_proveedor = QtWidgets.QTableWidget(self.frame)
         self.table_materiales_por_proveedor.setFocusPolicy(QtCore.Qt.TabFocus)
         self.table_materiales_por_proveedor.setLayoutDirection(QtCore.Qt.LeftToRight)
-        self.table_materiales_por_proveedor.setStyleSheet("background-color: rgb(255, 255, 255);")
+        self.table_materiales_por_proveedor.setStyleSheet("QTableView QHeaderView::section {\n"
+"    font-size: 12px;\n"
+"    font-weight: bold;\n"
+"    background-color: lightgray;\n"
+"    padding: 4px;\n"
+"    border: none;\n"
+"    border-bottom: 1px solid gray;\n"
+"}\n"
+"\n"
+"QTableView {\n"
+"    background-color: white;\n"
+"    border: 1px solid gray;\n"
+"}\n"
+"\n"
+"QTableView QScrollBar:vertical {\n"
+"    width: 14px;\n"
+"    background-color: lightgray;\n"
+"}\n"
+"\n"
+"QTableView QScrollBar::handle:vertical {\n"
+"    background-color: gray;\n"
+"    border-radius: 7px;\n"
+"}\n"
+"\n"
+"QTableView QScrollBar::add-line:vertical,\n"
+"QTableView QScrollBar::sub-line:vertical {\n"
+"    background-color: transparent;\n"
+"}\n"
+"\n"
+"QTableView QScrollBar::add-page:vertical,\n"
+"QTableView QScrollBar::sub-page:vertical {\n"
+"    background-color: transparent;\n"
+"}\n"
+"\n"
+"QTableView QScrollBar:horizontal {\n"
+"    height: 14px;\n"
+"    background-color: lightgray;\n"
+"}\n"
+"\n"
+"QTableView QScrollBar::handle:horizontal {\n"
+"    background-color: gray;\n"
+"    border-radius: 7px;\n"
+"}\n"
+"\n"
+"QTableView QScrollBar::add-line:horizontal,\n"
+"QTableView QScrollBar::sub-line:horizontal {\n"
+"    background-color: transparent;\n"
+"}\n"
+"\n"
+"QTableView QScrollBar::add-page:horizontal,\n"
+"QTableView QScrollBar::sub-page:horizontal {\n"
+"    background-color: transparent;\n"
+"}\n"
+"")
         self.table_materiales_por_proveedor.setFrameShape(QtWidgets.QFrame.StyledPanel)
         self.table_materiales_por_proveedor.setVerticalScrollBarPolicy(QtCore.Qt.ScrollBarAsNeeded)
         self.table_materiales_por_proveedor.setSizeAdjustPolicy(QtWidgets.QAbstractScrollArea.AdjustToContents)
@@ -202,9 +268,9 @@ class Ui_background(object):
         self.table_materiales_por_proveedor.verticalHeader().setMinimumSectionSize(16)
         self.verticalLayout_2.addWidget(self.table_materiales_por_proveedor)
         self.verticalLayout.addLayout(self.verticalLayout_2)
-        self.verticalLayout.setStretch(0, 1)
         self.verticalLayout.setStretch(1, 1)
         self.gridLayout.addLayout(self.verticalLayout, 0, 0, 1, 1)
+        self.gridLayout_4.addWidget(self.frame, 1, 0, 1, 1)
         background.setCentralWidget(self.centralwidget)
 
         self.retranslateUi(background)
@@ -213,6 +279,7 @@ class Ui_background(object):
     def retranslateUi(self, background):
         _translate = QtCore.QCoreApplication.translate
         background.setWindowTitle(_translate("background", "Materiales por proveedor"))
+        self.label.setText(_translate("background", "Materiales Por Proveedor"))
         self.label_5.setText(_translate("background", "Proveedor:"))
         self.label_4.setText(_translate("background", "Material:"))
         self.bt_guardar.setText(_translate("background", "Guardar"))
