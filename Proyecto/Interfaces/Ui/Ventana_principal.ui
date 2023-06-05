@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>1301</width>
-    <height>936</height>
+    <height>950</height>
    </rect>
   </property>
   <property name="minimumSize">
@@ -90,7 +90,6 @@ QPushButton:hover{
            <property name="styleSheet">
             <string notr="true">QFrame{
 	background-color: rgb(240, 213, 209);
-    border-radius:7px;
 
 }
 
