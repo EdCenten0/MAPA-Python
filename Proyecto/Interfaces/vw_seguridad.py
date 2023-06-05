@@ -151,47 +151,147 @@ class Ui_Seguridad(object):
         self.verticalLayout_11.setSpacing(6)
         self.verticalLayout_11.setObjectName("verticalLayout_11")
         self.verticalLayout_10 = QtWidgets.QVBoxLayout()
-        self.verticalLayout_10.setContentsMargins(10, 0, 10, 0)
-        self.verticalLayout_10.setSpacing(15)
+        self.verticalLayout_10.setContentsMargins(0, 0, 0, 0)
+        self.verticalLayout_10.setSpacing(0)
         self.verticalLayout_10.setObjectName("verticalLayout_10")
         spacerItem = QtWidgets.QSpacerItem(20, 40, QtWidgets.QSizePolicy.Minimum, QtWidgets.QSizePolicy.Expanding)
         self.verticalLayout_10.addItem(spacerItem)
         self.bt_Guardar_Usuario = QtWidgets.QPushButton(self.frame_6)
-        self.bt_Guardar_Usuario.setStyleSheet("background-color:rgb(255, 255, 255);\n"
-"border:1px solid rgb(100,100,100);\n"
-"color:rgb(50,50,50);")
+        self.bt_Guardar_Usuario.setStyleSheet("QPushButton:hover {\n"
+"    background-color: #D6D2D1;\n"
+"}\n"
+"\n"
+"QPushButton:pressed {\n"
+"    background-color: #52c7ff;\n"
+"}\n"
+"QPushButton {\n"
+"    background-color:rgb(255, 255, 255);\n"
+"    border:1px solid rgb(100,100,100);\n"
+"    color:rgb(50,50,50);\n"
+"    padding: 8px 16px;\n"
+"    border-radius: 6px;\n"
+"    font-size: 14px;\n"
+"}\n"
+"\n"
+"QPushButton:hover {\n"
+"    background-color: #D6D2D1;\n"
+"}\n"
+"\n"
+"QPushButton:pressed {\n"
+"    background-color: #52c7ff;\n"
+"}")
         self.bt_Guardar_Usuario.setObjectName("bt_Guardar_Usuario")
         self.verticalLayout_10.addWidget(self.bt_Guardar_Usuario)
         spacerItem1 = QtWidgets.QSpacerItem(20, 40, QtWidgets.QSizePolicy.Minimum, QtWidgets.QSizePolicy.Expanding)
         self.verticalLayout_10.addItem(spacerItem1)
         self.bt_Editar_Usuario = QtWidgets.QPushButton(self.frame_6)
-        self.bt_Editar_Usuario.setStyleSheet("background-color:rgb(255, 255, 255);\n"
-"border:1px solid rgb(100,100,100);\n"
-"color:rgb(50,50,50);")
+        self.bt_Editar_Usuario.setStyleSheet("QPushButton:hover {\n"
+"    background-color: #D6D2D1;\n"
+"}\n"
+"\n"
+"QPushButton:pressed {\n"
+"    background-color: #52c7ff;\n"
+"}\n"
+"QPushButton {\n"
+"    background-color:rgb(255, 255, 255);\n"
+"    border:1px solid rgb(100,100,100);\n"
+"    color:rgb(50,50,50);\n"
+"    padding: 8px 16px;\n"
+"    border-radius: 6px;\n"
+"    font-size: 14px;\n"
+"}\n"
+"\n"
+"QPushButton:hover {\n"
+"    background-color: #D6D2D1;\n"
+"}\n"
+"\n"
+"QPushButton:pressed {\n"
+"    background-color: #52c7ff;\n"
+"}")
         self.bt_Editar_Usuario.setObjectName("bt_Editar_Usuario")
         self.verticalLayout_10.addWidget(self.bt_Editar_Usuario)
         spacerItem2 = QtWidgets.QSpacerItem(20, 40, QtWidgets.QSizePolicy.Minimum, QtWidgets.QSizePolicy.Expanding)
         self.verticalLayout_10.addItem(spacerItem2)
         self.bt_Eliminar_Usuario = QtWidgets.QPushButton(self.frame_6)
-        self.bt_Eliminar_Usuario.setStyleSheet("background-color:rgb(255, 255, 255);\n"
-"border:1px solid rgb(100,100,100);\n"
-"color:rgb(50,50,50);")
+        self.bt_Eliminar_Usuario.setStyleSheet("QPushButton:hover {\n"
+"    background-color: #D6D2D1;\n"
+"}\n"
+"\n"
+"QPushButton:pressed {\n"
+"    background-color: #52c7ff;\n"
+"}\n"
+"QPushButton {\n"
+"    background-color:rgb(255, 255, 255);\n"
+"    border:1px solid rgb(100,100,100);\n"
+"    color:rgb(50,50,50);\n"
+"    padding: 8px 16px;\n"
+"    border-radius: 6px;\n"
+"    font-size: 14px;\n"
+"}\n"
+"\n"
+"QPushButton:hover {\n"
+"    background-color: #D6D2D1;\n"
+"}\n"
+"\n"
+"QPushButton:pressed {\n"
+"    background-color: #52c7ff;\n"
+"}")
         self.bt_Eliminar_Usuario.setObjectName("bt_Eliminar_Usuario")
         self.verticalLayout_10.addWidget(self.bt_Eliminar_Usuario)
         spacerItem3 = QtWidgets.QSpacerItem(20, 40, QtWidgets.QSizePolicy.Minimum, QtWidgets.QSizePolicy.Expanding)
         self.verticalLayout_10.addItem(spacerItem3)
         self.bt_Vaciar_Usuario = QtWidgets.QPushButton(self.frame_6)
-        self.bt_Vaciar_Usuario.setStyleSheet("background-color:rgb(255, 255, 255);\n"
-"border:1px solid rgb(100,100,100);\n"
-"color:rgb(50,50,50);")
+        self.bt_Vaciar_Usuario.setStyleSheet("QPushButton:hover {\n"
+"    background-color: #D6D2D1;\n"
+"}\n"
+"\n"
+"QPushButton:pressed {\n"
+"    background-color: #52c7ff;\n"
+"}\n"
+"QPushButton {\n"
+"    background-color:rgb(255, 255, 255);\n"
+"    border:1px solid rgb(100,100,100);\n"
+"    color:rgb(50,50,50);\n"
+"    padding: 8px 16px;\n"
+"    border-radius: 6px;\n"
+"    font-size: 14px;\n"
+"}\n"
+"\n"
+"QPushButton:hover {\n"
+"    background-color: #D6D2D1;\n"
+"}\n"
+"\n"
+"QPushButton:pressed {\n"
+"    background-color: #52c7ff;\n"
+"}")
         self.bt_Vaciar_Usuario.setObjectName("bt_Vaciar_Usuario")
         self.verticalLayout_10.addWidget(self.bt_Vaciar_Usuario)
         spacerItem4 = QtWidgets.QSpacerItem(20, 40, QtWidgets.QSizePolicy.Minimum, QtWidgets.QSizePolicy.Expanding)
         self.verticalLayout_10.addItem(spacerItem4)
         self.bt_busca_usuario = QtWidgets.QPushButton(self.frame_6)
-        self.bt_busca_usuario.setStyleSheet("background-color:rgb(255, 255, 255);\n"
-"border:1px solid rgb(100,100,100);\n"
-"color:rgb(50,50,50);")
+        self.bt_busca_usuario.setStyleSheet("QPushButton:hover {\n"
+"    background-color: #D6D2D1;\n"
+"}\n"
+"\n"
+"QPushButton:pressed {\n"
+"    background-color: #52c7ff;\n"
+"}\n"
+"QPushButton {\n"
+"    background-color:rgb(255, 255, 255);\n"
+"    border:1px solid rgb(100,100,100);\n"
+"    color:rgb(50,50,50);\n"
+"    padding: 8px 16px;\n"
+"    border-radius: 6px;\n"
+"    font-size: 14px;\n"
+"}\n"
+"\n"
+"QPushButton:hover {\n"
+"    background-color: #D6D2D1;\n"
+"}\n"
+"\n"
+"QPushButton:pressed {\n"
+"    background-color: #52c7ff;\n"
+"}")
         self.bt_busca_usuario.setObjectName("bt_busca_usuario")
         self.verticalLayout_10.addWidget(self.bt_busca_usuario)
         spacerItem5 = QtWidgets.QSpacerItem(20, 40, QtWidgets.QSizePolicy.Minimum, QtWidgets.QSizePolicy.Expanding)
@@ -267,7 +367,7 @@ class Ui_Seguridad(object):
         self.tb_Usuario.setHorizontalHeaderItem(5, item)
         self.tb_Usuario.horizontalHeader().setVisible(True)
         self.tb_Usuario.horizontalHeader().setCascadingSectionResizes(False)
-        self.tb_Usuario.horizontalHeader().setDefaultSectionSize(112)
+        self.tb_Usuario.horizontalHeader().setDefaultSectionSize(110)
         self.tb_Usuario.horizontalHeader().setHighlightSections(True)
         self.tb_Usuario.horizontalHeader().setMinimumSectionSize(55)
         self.tb_Usuario.horizontalHeader().setSortIndicatorShown(False)
@@ -354,42 +454,143 @@ class Ui_Seguridad(object):
         self.formLayout_7.setItem(8, QtWidgets.QFormLayout.FieldRole, spacerItem11)
         self.horizontalLayout_8.addWidget(self.frame_23)
         self.frame_24 = QtWidgets.QFrame(self.frame_21)
+        self.frame_24.setStyleSheet("\n"
+"")
         self.frame_24.setFrameShape(QtWidgets.QFrame.StyledPanel)
         self.frame_24.setFrameShadow(QtWidgets.QFrame.Raised)
         self.frame_24.setObjectName("frame_24")
         self.verticalLayout_23 = QtWidgets.QVBoxLayout(self.frame_24)
-        self.verticalLayout_23.setContentsMargins(10, 0, 10, 0)
+        self.verticalLayout_23.setContentsMargins(0, 0, 0, 0)
         self.verticalLayout_23.setSpacing(0)
         self.verticalLayout_23.setObjectName("verticalLayout_23")
         self.bt_Guardar_Rol = QtWidgets.QPushButton(self.frame_24)
-        self.bt_Guardar_Rol.setStyleSheet("background-color:rgb(255, 255, 255);\n"
-"border:1px solid rgb(100,100,100);\n"
-"color:rgb(50,50,50);\n"
-"")
+        self.bt_Guardar_Rol.setStyleSheet("QPushButton:hover {\n"
+"    background-color: #D6D2D1;\n"
+"}\n"
+"\n"
+"QPushButton:pressed {\n"
+"    background-color: #52c7ff;\n"
+"}\n"
+"QPushButton {\n"
+"    background-color:rgb(255, 255, 255);\n"
+"    border:1px solid rgb(100,100,100);\n"
+"    color:rgb(50,50,50);\n"
+"    padding: 8px 16px;\n"
+"    border-radius: 6px;\n"
+"    font-size: 14px;\n"
+"}\n"
+"\n"
+"QPushButton:hover {\n"
+"    background-color: #D6D2D1;\n"
+"}\n"
+"\n"
+"QPushButton:pressed {\n"
+"    background-color: #52c7ff;\n"
+"}")
         self.bt_Guardar_Rol.setObjectName("bt_Guardar_Rol")
         self.verticalLayout_23.addWidget(self.bt_Guardar_Rol)
         self.bt_Editar_Rol = QtWidgets.QPushButton(self.frame_24)
-        self.bt_Editar_Rol.setStyleSheet("background-color:rgb(255, 255, 255);\n"
-"border:1px solid rgb(100,100,100);\n"
-"color:rgb(50,50,50);")
+        self.bt_Editar_Rol.setStyleSheet("QPushButton:hover {\n"
+"    background-color: #D6D2D1;\n"
+"}\n"
+"\n"
+"QPushButton:pressed {\n"
+"    background-color: #52c7ff;\n"
+"}\n"
+"QPushButton {\n"
+"    background-color:rgb(255, 255, 255);\n"
+"    border:1px solid rgb(100,100,100);\n"
+"    color:rgb(50,50,50);\n"
+"    padding: 8px 16px;\n"
+"    border-radius: 6px;\n"
+"    font-size: 14px;\n"
+"}\n"
+"\n"
+"QPushButton:hover {\n"
+"    background-color: #D6D2D1;\n"
+"}\n"
+"\n"
+"QPushButton:pressed {\n"
+"    background-color: #52c7ff;\n"
+"}")
         self.bt_Editar_Rol.setObjectName("bt_Editar_Rol")
         self.verticalLayout_23.addWidget(self.bt_Editar_Rol)
         self.bt_Eliminar_Rol = QtWidgets.QPushButton(self.frame_24)
-        self.bt_Eliminar_Rol.setStyleSheet("background-color:rgb(255, 255, 255);\n"
-"border:1px solid rgb(100,100,100);\n"
-"color:rgb(50,50,50);")
+        self.bt_Eliminar_Rol.setStyleSheet("QPushButton:hover {\n"
+"    background-color: #D6D2D1;\n"
+"}\n"
+"\n"
+"QPushButton:pressed {\n"
+"    background-color: #52c7ff;\n"
+"}\n"
+"QPushButton {\n"
+"    background-color:rgb(255, 255, 255);\n"
+"    border:1px solid rgb(100,100,100);\n"
+"    color:rgb(50,50,50);\n"
+"    padding: 8px 16px;\n"
+"    border-radius: 6px;\n"
+"    font-size: 14px;\n"
+"}\n"
+"\n"
+"QPushButton:hover {\n"
+"    background-color: #D6D2D1;\n"
+"}\n"
+"\n"
+"QPushButton:pressed {\n"
+"    background-color: #52c7ff;\n"
+"}")
         self.bt_Eliminar_Rol.setObjectName("bt_Eliminar_Rol")
         self.verticalLayout_23.addWidget(self.bt_Eliminar_Rol)
         self.bt_Vaciar_Rol = QtWidgets.QPushButton(self.frame_24)
-        self.bt_Vaciar_Rol.setStyleSheet("background-color:rgb(255, 255, 255);\n"
-"border:1px solid rgb(100,100,100);\n"
-"color:rgb(50,50,50);")
+        self.bt_Vaciar_Rol.setStyleSheet("QPushButton:hover {\n"
+"    background-color: #D6D2D1;\n"
+"}\n"
+"\n"
+"QPushButton:pressed {\n"
+"    background-color: #52c7ff;\n"
+"}\n"
+"QPushButton {\n"
+"    background-color:rgb(255, 255, 255);\n"
+"    border:1px solid rgb(100,100,100);\n"
+"    color:rgb(50,50,50);\n"
+"    padding: 8px 16px;\n"
+"    border-radius: 6px;\n"
+"    font-size: 14px;\n"
+"}\n"
+"\n"
+"QPushButton:hover {\n"
+"    background-color: #D6D2D1;\n"
+"}\n"
+"\n"
+"QPushButton:pressed {\n"
+"    background-color: #52c7ff;\n"
+"}")
         self.bt_Vaciar_Rol.setObjectName("bt_Vaciar_Rol")
         self.verticalLayout_23.addWidget(self.bt_Vaciar_Rol)
         self.bt_busca_rol = QtWidgets.QPushButton(self.frame_24)
-        self.bt_busca_rol.setStyleSheet("background-color:rgb(255, 255, 255);\n"
-"border:1px solid rgb(100,100,100);\n"
-"color:rgb(50,50,50);")
+        self.bt_busca_rol.setStyleSheet("QPushButton:hover {\n"
+"    background-color: #D6D2D1;\n"
+"}\n"
+"\n"
+"QPushButton:pressed {\n"
+"    background-color: #52c7ff;\n"
+"}\n"
+"QPushButton {\n"
+"    background-color:rgb(255, 255, 255);\n"
+"    border:1px solid rgb(100,100,100);\n"
+"    color:rgb(50,50,50);\n"
+"    padding: 8px 16px;\n"
+"    border-radius: 6px;\n"
+"    font-size: 14px;\n"
+"}\n"
+"\n"
+"QPushButton:hover {\n"
+"    background-color: #D6D2D1;\n"
+"}\n"
+"\n"
+"QPushButton:pressed {\n"
+"    background-color: #52c7ff;\n"
+"}")
         self.bt_busca_rol.setObjectName("bt_busca_rol")
         self.verticalLayout_23.addWidget(self.bt_busca_rol)
         self.horizontalLayout_8.addWidget(self.frame_24)
@@ -496,42 +697,142 @@ class Ui_Seguridad(object):
         self.formLayout.setItem(9, QtWidgets.QFormLayout.FieldRole, spacerItem17)
         self.horizontalLayout_11.addWidget(self.frame_31)
         self.frame_32 = QtWidgets.QFrame(self.frame_28)
+        self.frame_32.setStyleSheet("")
         self.frame_32.setFrameShape(QtWidgets.QFrame.StyledPanel)
         self.frame_32.setFrameShadow(QtWidgets.QFrame.Raised)
         self.frame_32.setObjectName("frame_32")
         self.verticalLayout_27 = QtWidgets.QVBoxLayout(self.frame_32)
-        self.verticalLayout_27.setContentsMargins(10, 0, 10, 0)
+        self.verticalLayout_27.setContentsMargins(0, 0, 0, 0)
         self.verticalLayout_27.setSpacing(0)
         self.verticalLayout_27.setObjectName("verticalLayout_27")
         self.bt_Guardar_Opcion = QtWidgets.QPushButton(self.frame_32)
-        self.bt_Guardar_Opcion.setStyleSheet("background-color:rgb(255, 255, 255);\n"
-"border:1px solid rgb(100,100,100);\n"
-"color:rgb(50,50,50);")
+        self.bt_Guardar_Opcion.setStyleSheet("QPushButton:hover {\n"
+"    background-color: #D6D2D1;\n"
+"}\n"
+"\n"
+"QPushButton:pressed {\n"
+"    background-color: #52c7ff;\n"
+"}\n"
+"QPushButton {\n"
+"    background-color:rgb(255, 255, 255);\n"
+"    border:1px solid rgb(100,100,100);\n"
+"    color:rgb(50,50,50);\n"
+"    padding: 8px 16px;\n"
+"    border-radius: 6px;\n"
+"    font-size: 14px;\n"
+"}\n"
+"\n"
+"QPushButton:hover {\n"
+"    background-color: #D6D2D1;\n"
+"}\n"
+"\n"
+"QPushButton:pressed {\n"
+"    background-color: #52c7ff;\n"
+"}")
         self.bt_Guardar_Opcion.setObjectName("bt_Guardar_Opcion")
         self.verticalLayout_27.addWidget(self.bt_Guardar_Opcion)
         self.bt_Editar_Opcion = QtWidgets.QPushButton(self.frame_32)
-        self.bt_Editar_Opcion.setStyleSheet("background-color:rgb(255, 255, 255);\n"
-"border:1px solid rgb(100,100,100);\n"
-"color:rgb(50,50,50);")
+        self.bt_Editar_Opcion.setStyleSheet("QPushButton:hover {\n"
+"    background-color: #D6D2D1;\n"
+"}\n"
+"\n"
+"QPushButton:pressed {\n"
+"    background-color: #52c7ff;\n"
+"}\n"
+"QPushButton {\n"
+"    background-color:rgb(255, 255, 255);\n"
+"    border:1px solid rgb(100,100,100);\n"
+"    color:rgb(50,50,50);\n"
+"    padding: 8px 16px;\n"
+"    border-radius: 6px;\n"
+"    font-size: 14px;\n"
+"}\n"
+"\n"
+"QPushButton:hover {\n"
+"    background-color: #D6D2D1;\n"
+"}\n"
+"\n"
+"QPushButton:pressed {\n"
+"    background-color: #52c7ff;\n"
+"}")
         self.bt_Editar_Opcion.setObjectName("bt_Editar_Opcion")
         self.verticalLayout_27.addWidget(self.bt_Editar_Opcion)
         self.bt_Eliminar_Opcion = QtWidgets.QPushButton(self.frame_32)
-        self.bt_Eliminar_Opcion.setStyleSheet("background-color:rgb(255, 255, 255);\n"
-"border:1px solid rgb(100,100,100);\n"
-"color:rgb(50,50,50);")
+        self.bt_Eliminar_Opcion.setStyleSheet("QPushButton:hover {\n"
+"    background-color: #D6D2D1;\n"
+"}\n"
+"\n"
+"QPushButton:pressed {\n"
+"    background-color: #52c7ff;\n"
+"}\n"
+"QPushButton {\n"
+"    background-color:rgb(255, 255, 255);\n"
+"    border:1px solid rgb(100,100,100);\n"
+"    color:rgb(50,50,50);\n"
+"    padding: 8px 16px;\n"
+"    border-radius: 6px;\n"
+"    font-size: 14px;\n"
+"}\n"
+"\n"
+"QPushButton:hover {\n"
+"    background-color: #D6D2D1;\n"
+"}\n"
+"\n"
+"QPushButton:pressed {\n"
+"    background-color: #52c7ff;\n"
+"}")
         self.bt_Eliminar_Opcion.setObjectName("bt_Eliminar_Opcion")
         self.verticalLayout_27.addWidget(self.bt_Eliminar_Opcion)
         self.bt_Vaciar_Opcion = QtWidgets.QPushButton(self.frame_32)
-        self.bt_Vaciar_Opcion.setStyleSheet("background-color:rgb(255, 255, 255);\n"
-"border:1px solid rgb(100,100,100);\n"
-"color:rgb(50,50,50);")
+        self.bt_Vaciar_Opcion.setStyleSheet("QPushButton:hover {\n"
+"    background-color: #D6D2D1;\n"
+"}\n"
+"\n"
+"QPushButton:pressed {\n"
+"    background-color: #52c7ff;\n"
+"}\n"
+"QPushButton {\n"
+"    background-color:rgb(255, 255, 255);\n"
+"    border:1px solid rgb(100,100,100);\n"
+"    color:rgb(50,50,50);\n"
+"    padding: 8px 16px;\n"
+"    border-radius: 6px;\n"
+"    font-size: 14px;\n"
+"}\n"
+"\n"
+"QPushButton:hover {\n"
+"    background-color: #D6D2D1;\n"
+"}\n"
+"\n"
+"QPushButton:pressed {\n"
+"    background-color: #52c7ff;\n"
+"}")
         self.bt_Vaciar_Opcion.setObjectName("bt_Vaciar_Opcion")
         self.verticalLayout_27.addWidget(self.bt_Vaciar_Opcion)
         self.bt_busca_opcion = QtWidgets.QPushButton(self.frame_32)
-        self.bt_busca_opcion.setStyleSheet("background-color:rgb(255, 255, 255);\n"
-"border:1px solid rgb(100,100,100);\n"
-"color:rgb(50,50,50);\n"
-"")
+        self.bt_busca_opcion.setStyleSheet("QPushButton:hover {\n"
+"    background-color: #D6D2D1;\n"
+"}\n"
+"\n"
+"QPushButton:pressed {\n"
+"    background-color: #52c7ff;\n"
+"}\n"
+"QPushButton {\n"
+"    background-color:rgb(255, 255, 255);\n"
+"    border:1px solid rgb(100,100,100);\n"
+"    color:rgb(50,50,50);\n"
+"    padding: 8px 16px;\n"
+"    border-radius: 6px;\n"
+"    font-size: 14px;\n"
+"}\n"
+"\n"
+"QPushButton:hover {\n"
+"    background-color: #D6D2D1;\n"
+"}\n"
+"\n"
+"QPushButton:pressed {\n"
+"    background-color: #52c7ff;\n"
+"}")
         self.bt_busca_opcion.setObjectName("bt_busca_opcion")
         self.verticalLayout_27.addWidget(self.bt_busca_opcion)
         self.horizontalLayout_11.addWidget(self.frame_32)
@@ -637,35 +938,116 @@ class Ui_Seguridad(object):
         self.formLayout_6.setItem(7, QtWidgets.QFormLayout.FieldRole, spacerItem23)
         self.horizontalLayout_12.addWidget(self.frame_35)
         self.frame_36 = QtWidgets.QFrame(self.frame_34)
+        self.frame_36.setStyleSheet("")
         self.frame_36.setFrameShape(QtWidgets.QFrame.StyledPanel)
         self.frame_36.setFrameShadow(QtWidgets.QFrame.Raised)
         self.frame_36.setObjectName("frame_36")
         self.verticalLayout_29 = QtWidgets.QVBoxLayout(self.frame_36)
-        self.verticalLayout_29.setContentsMargins(10, 0, 10, 0)
+        self.verticalLayout_29.setContentsMargins(0, 0, 0, 0)
         self.verticalLayout_29.setSpacing(0)
         self.verticalLayout_29.setObjectName("verticalLayout_29")
         self.bt_Guardar_Usuario_rol = QtWidgets.QPushButton(self.frame_36)
-        self.bt_Guardar_Usuario_rol.setStyleSheet("background-color:rgb(255, 255, 255);\n"
-"border:1px solid rgb(100,100,100);\n"
-"color:rgb(50,50,50);")
+        self.bt_Guardar_Usuario_rol.setStyleSheet("QPushButton:hover {\n"
+"    background-color: #D6D2D1;\n"
+"}\n"
+"\n"
+"QPushButton:pressed {\n"
+"    background-color: #52c7ff;\n"
+"}\n"
+"QPushButton {\n"
+"    background-color:rgb(255, 255, 255);\n"
+"    border:1px solid rgb(100,100,100);\n"
+"    color:rgb(50,50,50);\n"
+"    padding: 8px 16px;\n"
+"    border-radius: 6px;\n"
+"    font-size: 14px;\n"
+"}\n"
+"\n"
+"QPushButton:hover {\n"
+"    background-color: #D6D2D1;\n"
+"}\n"
+"\n"
+"QPushButton:pressed {\n"
+"    background-color: #52c7ff;\n"
+"}")
         self.bt_Guardar_Usuario_rol.setObjectName("bt_Guardar_Usuario_rol")
         self.verticalLayout_29.addWidget(self.bt_Guardar_Usuario_rol)
         self.bt_Editar_Usuario_rol = QtWidgets.QPushButton(self.frame_36)
-        self.bt_Editar_Usuario_rol.setStyleSheet("background-color:rgb(255, 255, 255);\n"
-"border:1px solid rgb(100,100,100);\n"
-"color:rgb(50,50,50);")
+        self.bt_Editar_Usuario_rol.setStyleSheet("QPushButton:hover {\n"
+"    background-color: #D6D2D1;\n"
+"}\n"
+"\n"
+"QPushButton:pressed {\n"
+"    background-color: #52c7ff;\n"
+"}\n"
+"QPushButton {\n"
+"    background-color:rgb(255, 255, 255);\n"
+"    border:1px solid rgb(100,100,100);\n"
+"    color:rgb(50,50,50);\n"
+"    padding: 8px 16px;\n"
+"    border-radius: 6px;\n"
+"    font-size: 14px;\n"
+"}\n"
+"\n"
+"QPushButton:hover {\n"
+"    background-color: #D6D2D1;\n"
+"}\n"
+"\n"
+"QPushButton:pressed {\n"
+"    background-color: #52c7ff;\n"
+"}")
         self.bt_Editar_Usuario_rol.setObjectName("bt_Editar_Usuario_rol")
         self.verticalLayout_29.addWidget(self.bt_Editar_Usuario_rol)
         self.bt_Eliminar_Usuario_rol = QtWidgets.QPushButton(self.frame_36)
-        self.bt_Eliminar_Usuario_rol.setStyleSheet("background-color:rgb(255, 255, 255);\n"
-"border:1px solid rgb(100,100,100);\n"
-"color:rgb(50,50,50);")
+        self.bt_Eliminar_Usuario_rol.setStyleSheet("QPushButton:hover {\n"
+"    background-color: #D6D2D1;\n"
+"}\n"
+"\n"
+"QPushButton:pressed {\n"
+"    background-color: #52c7ff;\n"
+"}\n"
+"QPushButton {\n"
+"    background-color:rgb(255, 255, 255);\n"
+"    border:1px solid rgb(100,100,100);\n"
+"    color:rgb(50,50,50);\n"
+"    padding: 8px 16px;\n"
+"    border-radius: 6px;\n"
+"    font-size: 14px;\n"
+"}\n"
+"\n"
+"QPushButton:hover {\n"
+"    background-color: #D6D2D1;\n"
+"}\n"
+"\n"
+"QPushButton:pressed {\n"
+"    background-color: #52c7ff;\n"
+"}")
         self.bt_Eliminar_Usuario_rol.setObjectName("bt_Eliminar_Usuario_rol")
         self.verticalLayout_29.addWidget(self.bt_Eliminar_Usuario_rol)
         self.bt_Vaciar_Usuario_rol = QtWidgets.QPushButton(self.frame_36)
-        self.bt_Vaciar_Usuario_rol.setStyleSheet("background-color:rgb(255, 255, 255);\n"
-"border:1px solid rgb(100,100,100);\n"
-"color:rgb(50,50,50);")
+        self.bt_Vaciar_Usuario_rol.setStyleSheet("QPushButton:hover {\n"
+"    background-color: #D6D2D1;\n"
+"}\n"
+"\n"
+"QPushButton:pressed {\n"
+"    background-color: #52c7ff;\n"
+"}\n"
+"QPushButton {\n"
+"    background-color:rgb(255, 255, 255);\n"
+"    border:1px solid rgb(100,100,100);\n"
+"    color:rgb(50,50,50);\n"
+"    padding: 8px 16px;\n"
+"    border-radius: 6px;\n"
+"    font-size: 14px;\n"
+"}\n"
+"\n"
+"QPushButton:hover {\n"
+"    background-color: #D6D2D1;\n"
+"}\n"
+"\n"
+"QPushButton:pressed {\n"
+"    background-color: #52c7ff;\n"
+"}")
         self.bt_Vaciar_Usuario_rol.setObjectName("bt_Vaciar_Usuario_rol")
         self.verticalLayout_29.addWidget(self.bt_Vaciar_Usuario_rol)
         self.horizontalLayout_12.addWidget(self.frame_36)
@@ -782,35 +1164,116 @@ class Ui_Seguridad(object):
         self.formLayout_10.setItem(1, QtWidgets.QFormLayout.FieldRole, spacerItem29)
         self.horizontalLayout_13.addWidget(self.frame_39)
         self.frame_40 = QtWidgets.QFrame(self.frame_38)
+        self.frame_40.setStyleSheet("")
         self.frame_40.setFrameShape(QtWidgets.QFrame.StyledPanel)
         self.frame_40.setFrameShadow(QtWidgets.QFrame.Raised)
         self.frame_40.setObjectName("frame_40")
         self.verticalLayout_31 = QtWidgets.QVBoxLayout(self.frame_40)
-        self.verticalLayout_31.setContentsMargins(10, 0, 10, 0)
+        self.verticalLayout_31.setContentsMargins(0, 0, 0, 0)
         self.verticalLayout_31.setSpacing(0)
         self.verticalLayout_31.setObjectName("verticalLayout_31")
         self.bt_Guardar_Rol_opcion = QtWidgets.QPushButton(self.frame_40)
-        self.bt_Guardar_Rol_opcion.setStyleSheet("background-color:rgb(255, 255, 255);\n"
-"border:1px solid rgb(100,100,100);\n"
-"color:rgb(50,50,50);")
+        self.bt_Guardar_Rol_opcion.setStyleSheet("QPushButton:hover {\n"
+"    background-color: #D6D2D1;\n"
+"}\n"
+"\n"
+"QPushButton:pressed {\n"
+"    background-color: #52c7ff;\n"
+"}\n"
+"QPushButton {\n"
+"    background-color:rgb(255, 255, 255);\n"
+"    border:1px solid rgb(100,100,100);\n"
+"    color:rgb(50,50,50);\n"
+"    padding: 8px 16px;\n"
+"    border-radius: 6px;\n"
+"    font-size: 14px;\n"
+"}\n"
+"\n"
+"QPushButton:hover {\n"
+"    background-color: #D6D2D1;\n"
+"}\n"
+"\n"
+"QPushButton:pressed {\n"
+"    background-color: #52c7ff;\n"
+"}")
         self.bt_Guardar_Rol_opcion.setObjectName("bt_Guardar_Rol_opcion")
         self.verticalLayout_31.addWidget(self.bt_Guardar_Rol_opcion)
         self.bt_Editar_Rol_opcion = QtWidgets.QPushButton(self.frame_40)
-        self.bt_Editar_Rol_opcion.setStyleSheet("background-color:rgb(255, 255, 255);\n"
-"border:1px solid rgb(100,100,100);\n"
-"color:rgb(50,50,50);")
+        self.bt_Editar_Rol_opcion.setStyleSheet("QPushButton:hover {\n"
+"    background-color: #D6D2D1;\n"
+"}\n"
+"\n"
+"QPushButton:pressed {\n"
+"    background-color: #52c7ff;\n"
+"}\n"
+"QPushButton {\n"
+"    background-color:rgb(255, 255, 255);\n"
+"    border:1px solid rgb(100,100,100);\n"
+"    color:rgb(50,50,50);\n"
+"    padding: 8px 16px;\n"
+"    border-radius: 6px;\n"
+"    font-size: 14px;\n"
+"}\n"
+"\n"
+"QPushButton:hover {\n"
+"    background-color: #D6D2D1;\n"
+"}\n"
+"\n"
+"QPushButton:pressed {\n"
+"    background-color: #52c7ff;\n"
+"}")
         self.bt_Editar_Rol_opcion.setObjectName("bt_Editar_Rol_opcion")
         self.verticalLayout_31.addWidget(self.bt_Editar_Rol_opcion)
         self.bt_Eliminar_Rol_opcion = QtWidgets.QPushButton(self.frame_40)
-        self.bt_Eliminar_Rol_opcion.setStyleSheet("background-color:rgb(255, 255, 255);\n"
-"border:1px solid rgb(100,100,100);\n"
-"color:rgb(50,50,50);")
+        self.bt_Eliminar_Rol_opcion.setStyleSheet("QPushButton:hover {\n"
+"    background-color: #D6D2D1;\n"
+"}\n"
+"\n"
+"QPushButton:pressed {\n"
+"    background-color: #52c7ff;\n"
+"}\n"
+"QPushButton {\n"
+"    background-color:rgb(255, 255, 255);\n"
+"    border:1px solid rgb(100,100,100);\n"
+"    color:rgb(50,50,50);\n"
+"    padding: 8px 16px;\n"
+"    border-radius: 6px;\n"
+"    font-size: 14px;\n"
+"}\n"
+"\n"
+"QPushButton:hover {\n"
+"    background-color: #D6D2D1;\n"
+"}\n"
+"\n"
+"QPushButton:pressed {\n"
+"    background-color: #52c7ff;\n"
+"}")
         self.bt_Eliminar_Rol_opcion.setObjectName("bt_Eliminar_Rol_opcion")
         self.verticalLayout_31.addWidget(self.bt_Eliminar_Rol_opcion)
         self.bt_Vaciar_Rol_opcion = QtWidgets.QPushButton(self.frame_40)
-        self.bt_Vaciar_Rol_opcion.setStyleSheet("background-color:rgb(255, 255, 255);\n"
-"border:1px solid rgb(100,100,100);\n"
-"color:rgb(50,50,50);")
+        self.bt_Vaciar_Rol_opcion.setStyleSheet("QPushButton:hover {\n"
+"    background-color: #D6D2D1;\n"
+"}\n"
+"\n"
+"QPushButton:pressed {\n"
+"    background-color: #52c7ff;\n"
+"}\n"
+"QPushButton {\n"
+"    background-color:rgb(255, 255, 255);\n"
+"    border:1px solid rgb(100,100,100);\n"
+"    color:rgb(50,50,50);\n"
+"    padding: 8px 16px;\n"
+"    border-radius: 6px;\n"
+"    font-size: 14px;\n"
+"}\n"
+"\n"
+"QPushButton:hover {\n"
+"    background-color: #D6D2D1;\n"
+"}\n"
+"\n"
+"QPushButton:pressed {\n"
+"    background-color: #52c7ff;\n"
+"}")
         self.bt_Vaciar_Rol_opcion.setObjectName("bt_Vaciar_Rol_opcion")
         self.verticalLayout_31.addWidget(self.bt_Vaciar_Rol_opcion)
         self.horizontalLayout_13.addWidget(self.frame_40)

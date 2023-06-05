@@ -173,7 +173,7 @@ background-color: rgb(255, 255, 255);
                 <string notr="true">border: 3px solid black;
 color: rgb(0, 0, 0);</string>
                </property>
-               <property name="placeholderText">
+               <property name="placeholderText" stdset="0">
                 <string>Elige un rol</string>
                </property>
               </widget>
@@ -327,6 +327,9 @@ border-radius: 5px;</string>
                 <string notr="true">border: 3px solid black;
 border-radius: 5px;</string>
                </property>
+               <property name="echoMode">
+                <enum>QLineEdit::Password</enum>
+               </property>
                <property name="placeholderText">
                 <string>Ingrese una Clave:</string>
                </property>
@@ -404,7 +407,7 @@ color: rgb(255, 255, 255);</string>
      <x>0</x>
      <y>0</y>
      <width>908</width>
-     <height>22</height>
+     <height>21</height>
     </rect>
    </property>
   </widget>
