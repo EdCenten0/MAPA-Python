@@ -89,6 +89,31 @@ class seguridad_Window(QMainWindow, vw_seguridad.Ui_Seguridad):
         self.llenarComboxUsuarios(dt_usuario.Dt_Usuarios.listarUsuarios())
         self.llenarComboxOpcion(dt_opcion.Dt_Opcion.listarOpcion())
 
+        '''***********************************************  Validaciones   ******************************************'''
+
+    def validarUsuario(self):
+        valido = False
+        if not self.line_Usuario_Nombre.text() == "" and not self.line_Usuario_Apellido.text() == "" and not self.line_Usuario_User.text() == "" and not self.line_Usuario_Password.text() == "" and not self.line_Usuario_Fecha.text() == "":
+            if len(self.line_Usuario_Password.text()) >= 8:
+                if len(self.line_Usuario_Nombre.text()) <= 50:
+                    if len(self.line_Usuario_Password.text()) <= 50:
+                        if len(self.line_Usuario_User.text()) <= 50:
+                            if len(self.line_Usuario_Apellido.text()) <= 50:
+                                valido = True
+                            else:
+                                QMessageBox.about(self,"Error","Error en el campo de apellido: debe tener menos de 50 caracteres")
+                        else:
+                            QMessageBox.about(self,"Error","Error en el campo de nombre: debe tener menos de 50 caracteres")
+                    else:
+                        QMessageBox.about(self,"Error","Error en el campo de contraseña: debe tener menos de 50 caracteres")
+                else:
+                    QMessageBox.about(self,"Error", "Error en el campo de usuario: debe tener menos de 50 caracteres")
+            else:
+                QMessageBox.about(self,"Error", "La contraseña debe tener al menos 8 caracteres")
+        else:
+            QMessageBox.about(self,"Error", "Llene todos los campos vacíos")
+
+        return valido
 
 
     '''***********************************************  Funciones reutilizables   ******************************************'''
@@ -96,7 +121,7 @@ class seguridad_Window(QMainWindow, vw_seguridad.Ui_Seguridad):
 
     def limpiarCampos(self):
 
-        if not self.line_Usuario_Nombre.text() == "" or not self.line_Usuario_Apellido.text() == "" or not self.line_Usuario_User.text() == "" or not self.line_Usuario_Password.text() == "" or not self.line_buscar_usuario.text() == "":
+        if not self.line_Rol_Id.text() == "" and not self.line_Usuario_Nombre.text() == "" or not self.line_Usuario_Apellido.text() == "" or not self.line_Usuario_User.text() == "" or not self.line_Usuario_Password.text() == "" or not self.line_buscar_usuario.text() == "":
             print("\n Datos limpiados de la ventana Usuario")
             self.line_Usuario_Id.clear()
             self.line_Usuario_Nombre.clear()
@@ -135,114 +160,101 @@ class seguridad_Window(QMainWindow, vw_seguridad.Ui_Seguridad):
 
     def guardarUsuario(self):
 
-        try:
+            if self.line_Usuario_Id.text() == "":
 
+                if self.validarUsuario():
+                    try:
+                        # Programación orientada a objetos
 
-            # Programación orientada a objetos
+                        Usuarios.nombre = self.line_Usuario_Nombre.text()
+                        Usuarios.apellido = self.line_Usuario_Apellido.text()
+                        Usuarios.user = self.line_Usuario_User.text()
+                        Usuarios.password = self.line_Usuario_Password.text()
+                        Usuarios.fechaCreacion = self.line_Usuario_Fecha.text()
 
-            Usuarios.nombre = self.line_Usuario_Nombre.text()
-            Usuarios.apellido = self.line_Usuario_Apellido.text()
-            Usuarios.user = self.line_Usuario_User.text()
-            Usuarios.password = self.line_Usuario_Password.text()
-            Usuarios.fechaCreacion = self.line_Usuario_Fecha.text()
+                        indicador = dt_usuario.Dt_Usuarios.guardarUsuario(Usuarios)  # Recoge los datos en los "Lines" de Qt Desinger para guardarlos en la base de datos
 
-            if self.line_Usuario_Id.text() == "" and not self.line_Usuario_Nombre.text() == "" and not self.line_Usuario_Apellido.text() == "" and not self.line_Usuario_User.text() == "" and not self.line_Usuario_Password.text() == "" and not self.line_Usuario_Fecha.text() == "":
+                        self.notifMensaje(indicador, "Guardados")
 
-                indicador = dt_usuario.Dt_Usuarios.guardarUsuario(Usuarios)  # Recoge los datos en los "Lines" de Qt Desinger para guardarlos en la base de datos
+                        self.llenarComboxUsuarios(dt_usuario.Dt_Usuarios.listarUsuarios())  # Combobox
 
-                self.notifMensaje(indicador, "Guardados")
+                        self.llenarTablaUsuarioRol(dt_usuario_rol.Dt_Usuario_rol.listarUsuario_rol())  # Tabla de Asignar el rol
 
-                self.limpiarCampos()
+                        self.llenarTablaUsuario(dt_usuario.Dt_Usuarios.listarUsuarios())  # Se reinicia la tabla para poder recargar los datos guardados
 
-                self.llenarComboxUsuarios(dt_usuario.Dt_Usuarios.listarUsuarios()) #Combobox
+                        self.limpiarCampos()
 
-                self.llenarTablaUsuarioRol(dt_usuario_rol.Dt_Usuario_rol.listarUsuario_rol()) #Tabla de Asignar el rol
-
-                self.llenarTablaUsuario(
-                    dt_usuario.Dt_Usuarios.listarUsuarios())  # Se reinicia la tabla para poder recargar los datos guardados
-
-
+                    except Exception as e:
+                        print(f"Error: {e}")
             else:
 
-                self.notifMensaje(False, "")
+                QMessageBox.about(self, "Error", "No se puede guardar un registro con ese id existente")
 
-
-        except Exception as e:
-            print(f"Error: {e}")
 
 
     def editarUsuario(self):
 
-        try:
+        if not self.line_Usuario_Id.text() == "":
+            if self.validarUsuario():
+                try:
+                    # Transformar fecha en formato "yyyy-MM-dd" para hacer la consulta al sql
+                    fecha = self.line_Usuario_Fecha.text()
+                    fecha_objeto = datetime.strptime(fecha, "%d/%m/%Y")
+                    # fechaTransformada = fecha_objeto.strftime("%Y-%m-%d")
 
-            # Transformar fecha en formato "yyyy-MM-dd" para hacer la consulta al sql
-            fecha = self.line_Usuario_Fecha.text()
-            fecha_objeto = datetime.strptime(fecha, "%d/%m/%Y")
-            #fechaTransformada = fecha_objeto.strftime("%Y-%m-%d")
+                    Usuarios.id_usuario = self.line_Usuario_Id.text()
+                    Usuarios.nombre = self.line_Usuario_Nombre.text()
+                    Usuarios.apellido = self.line_Usuario_Apellido.text()
+                    Usuarios.user = self.line_Usuario_User.text()
+                    Usuarios.password = self.line_Usuario_Password.text()
+                    Usuarios.fechaCreacion = fecha_objeto
 
-            Usuarios.id_usuario = self.line_Usuario_Id.text()
-            Usuarios.nombre = self.line_Usuario_Nombre.text()
-            Usuarios.apellido = self.line_Usuario_Apellido.text()
-            Usuarios.user = self.line_Usuario_User.text()
-            Usuarios.password = self.line_Usuario_Password.text()
-            Usuarios.fechaCreacion = fecha_objeto
+                    indicador = dt_usuario.Dt_Usuarios.editarUsuario(Usuarios)  # Recoge los datos en los "Lines" de Qt Desinger para editarlos en la base de datos
 
-            if not self.line_Usuario_Id.text() == "" and not self.line_Usuario_Nombre.text() == "" and not self.line_Usuario_Apellido.text() == "" and not self.line_Usuario_User.text() == "" and not self.line_Usuario_Password.text() == "" and not self.line_Usuario_Fecha.text() == "":
+                    self.notifMensaje(indicador, "Editados")
 
-                indicador = dt_usuario.Dt_Usuarios.editarUsuario(
-                    Usuarios)  # Recoge los datos en los "Lines" de Qt Desinger para editarlos en la base de datos
+                    self.llenarComboxUsuarios(dt_usuario.Dt_Usuarios.listarUsuarios())  # Combobox
 
-                self.notifMensaje(indicador, "Editados")
+                    self.llenarTablaUsuarioRol(
+                            dt_usuario_rol.Dt_Usuario_rol.listarUsuario_rol())  # Tabla de Asignar el rol
 
-                self.limpiarCampos()
+                    self.llenarTablaUsuario(
+                            dt_usuario.Dt_Usuarios.listarUsuarios())  # Se reinicia la tabla para poder recargar los datos guardados
 
-                self.llenarComboxUsuarios(dt_usuario.Dt_Usuarios.listarUsuarios()) #Combobox
+                    self.limpiarCampos()
 
-                self.llenarTablaUsuarioRol(dt_usuario_rol.Dt_Usuario_rol.listarUsuario_rol())  # Tabla de Asignar el rol
+                except Exception as e:
+                    print(f"Error: {e}")
 
-                self.llenarTablaUsuario(
-                    dt_usuario.Dt_Usuarios.listarUsuarios())  # Se reinicia la tabla para poder recargar los datos guardados
-
-            else:
-
-                self.notifMensaje(False, "")
-                self.limpiarCampos()
-
-
-        except Exception as e:
-            print(f"Error: {e}")
+        else:
+            QMessageBox.about(self, "Error", "Seleccione el registro a editar")
 
 
     def eliminarUsuario(self):
 
-        try:
+        if not self.line_Usuario_Id.text() == "":
+            if self.validarUsuario():
+                try:
+                    QMessageBox.about(self, "Exito!", "Los Datos Fueron Eliminados Correctamente")
 
-            Usuarios.id_usuario = self.line_Usuario_Id.text()
+                    Usuarios.id_usuario = self.line_Usuario_Id.text()
 
-            if not self.line_Usuario_Id.text() == "" and not self.line_Usuario_Nombre.text() == "" and not self.line_Usuario_Apellido.text() == "" and not self.line_Usuario_User.text() == "" and not self.line_Usuario_Password.text() == "" and not self.line_Usuario_Fecha.text() == "":
+                    dt_usuario.Dt_Usuarios.eliminarUsuario(Usuarios)
 
-                indicador = dt_usuario.Dt_Usuarios.eliminarUsuario(Usuarios)
+                    self.llenarComboxUsuarios(dt_usuario.Dt_Usuarios.listarUsuarios()) #Combobox
 
-                self.notifMensaje(indicador, "Eliminados")
+                    self.llenarTablaUsuarioRol(dt_usuario_rol.Dt_Usuario_rol.listarUsuario_rol()) #Tabla de Asignar el rol
 
-                self.limpiarCampos()
+                    self.llenarTablaUsuario(dt_usuario.Dt_Usuarios.listarUsuarios())  # Se reinicia la tabla para poder recargar los datos guardados
 
-                self.llenarComboxUsuarios(dt_usuario.Dt_Usuarios.listarUsuarios()) #Combobox
+                    self.limpiarCampos()
 
-                self.llenarTablaUsuarioRol(dt_usuario_rol.Dt_Usuario_rol.listarUsuario_rol()) #Tabla de Asignar el rol
+                except Exception as e:
+                    print(f"Error: {e}")
 
-                self.llenarTablaUsuario(
-                    dt_usuario.Dt_Usuarios.listarUsuarios())  # Se reinicia la tabla para poder recargar los datos guardados
+        else:
 
-
-            else:
-
-                self.notifMensaje(False, "")
-                self.limpiarCampos()
-
-
-        except Exception as e:
-            print(f"Error: {e}")
+            QMessageBox.about(self, "Error", "Seleccione al usuario a eliminar")
 
 
     def obtenerDatosTablaUsuario(self):
@@ -316,8 +328,6 @@ class seguridad_Window(QMainWindow, vw_seguridad.Ui_Seguridad):
 
                 self.notifMensaje(indicador, "Guardados")
 
-                self.limpiarCampos()
-
                 self.llenarComboxRoles(dt_rol.Dt_Rol.listarRol()) #Combobox
 
                 self.llenarTablaUsuarioRol(dt_usuario_rol.Dt_Usuario_rol.listarUsuario_rol())  # Tabla de Asignar el rol
@@ -326,6 +336,7 @@ class seguridad_Window(QMainWindow, vw_seguridad.Ui_Seguridad):
 
                 self.llenarTablaRol(dt_rol.Dt_Rol.listarRol())  # Se reinicia la tabla para poder recargar los datos guardados
 
+                self.limpiarCampos()
 
             else:
 
@@ -348,8 +359,6 @@ class seguridad_Window(QMainWindow, vw_seguridad.Ui_Seguridad):
 
                 self.notifMensaje(indicador, "Editados")
 
-                self.limpiarCampos()
-
                 self.llenarComboxRoles(dt_rol.Dt_Rol.listarRol()) #Combobox
 
                 self.llenarTablaUsuarioRol(dt_usuario_rol.Dt_Usuario_rol.listarUsuario_rol())  # Tabla de Asignar el rol
@@ -357,6 +366,8 @@ class seguridad_Window(QMainWindow, vw_seguridad.Ui_Seguridad):
                 self.llenarTablaRolOpcion(dt_rol_opcion.Dt_rol_opcion.listarRolOpcion())  # Tabla de Asignar el Opcion
 
                 self.llenarTablaRol(dt_rol.Dt_Rol.listarRol())  # Se reinicia la tabla para poder recargar los datos guardados
+
+                self.limpiarCampos()
 
             else:
 
@@ -379,8 +390,6 @@ class seguridad_Window(QMainWindow, vw_seguridad.Ui_Seguridad):
 
                 self.notifMensaje(indicador, "Eliminados")
 
-                self.limpiarCampos()
-
                 self.llenarComboxRoles(dt_rol.Dt_Rol.listarRol()) #Combobox
 
                 self.llenarTablaUsuarioRol(dt_usuario_rol.Dt_Usuario_rol.listarUsuario_rol())  # Tabla de Asignar el rol
@@ -389,6 +398,7 @@ class seguridad_Window(QMainWindow, vw_seguridad.Ui_Seguridad):
 
                 self.llenarTablaRol(dt_rol.Dt_Rol.listarRol())  # Se reinicia la tabla para poder recargar los datos guardados
 
+                self.limpiarCampos()
 
             else:
 
@@ -453,13 +463,14 @@ class seguridad_Window(QMainWindow, vw_seguridad.Ui_Seguridad):
 
                 self.notifMensaje(indicador, "Guardados")
 
-                self.limpiarCampos()
-
                 self.llenarComboxOpcion(dt_opcion.Dt_Opcion.listarOpcion()) #Combobox
 
                 self.llenarTablaRolOpcion(dt_rol_opcion.Dt_rol_opcion.listarRolOpcion())  # Tabla de Asignar el Opcion
 
                 self.llenarTablaOpcion(dt_opcion.Dt_Opcion.listarOpcion())  # Se reinicia la tabla para poder recargar los datos guardados
+
+                self.limpiarCampos()
+
 
             else:
 
@@ -482,13 +493,13 @@ class seguridad_Window(QMainWindow, vw_seguridad.Ui_Seguridad):
 
                 self.notifMensaje(indicador, "Editados")
 
-                self.limpiarCampos()
-
                 self.llenarTablaRolOpcion(dt_rol_opcion.Dt_rol_opcion.listarRolOpcion())  # Tabla de Asignar el Opcion
 
                 self.llenarComboxOpcion(dt_opcion.Dt_Opcion.listarOpcion()) #Combobox
 
                 self.llenarTablaOpcion(dt_opcion.Dt_Opcion.listarOpcion())  # Se reinicia la tabla para poder recargar los datos guardados
+
+                self.limpiarCampos()
 
             else:
 
@@ -510,11 +521,11 @@ class seguridad_Window(QMainWindow, vw_seguridad.Ui_Seguridad):
 
                 self.notifMensaje(indicador, "Eliminados")
 
-                self.limpiarCampos()
-
                 self.llenarComboxOpcion(dt_opcion.Dt_Opcion.listarOpcion()) #Combobox
 
                 self.llenarTablaOpcion(dt_opcion.Dt_Opcion.listarOpcion())  # Se reinicia la tabla para poder recargar los datos guardados
+
+                self.limpiarCampos()
 
             else:
 
