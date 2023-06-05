@@ -287,8 +287,11 @@ color: rgb(255, 255, 255);</string>
       <property name="styleSheet">
        <string notr="true">background-color: rgb(246, 245, 244);</string>
       </property>
+      <property name="inputMethodHints">
+       <set>Qt::ImhNone</set>
+      </property>
       <property name="echoMode">
-       <enum>QLineEdit::Password</enum>
+       <enum>QLineEdit::Normal</enum>
       </property>
      </widget>
      <widget class="QLabel" name="label_5">
@@ -312,7 +315,7 @@ color: rgb(255, 255, 255);</string>
        <string>ID Tienda:</string>
       </property>
      </widget>
-     <widget class="QLineEdit" name="lineEdit">
+     <widget class="QLineEdit" name="Ventas_idTienda_line">
       <property name="geometry">
        <rect>
         <x>470</x>
