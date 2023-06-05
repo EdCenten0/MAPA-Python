@@ -20,10 +20,12 @@ class Ui_Seguridad(object):
         Seguridad.setStyleSheet("\n"
 "background-color: rgb(63, 73, 100);")
         self.centralwidget = QtWidgets.QWidget(Seguridad)
+        self.centralwidget.setStyleSheet("background-color: rgb(222, 221, 218);\n"
+"")
         self.centralwidget.setObjectName("centralwidget")
         self.verticalLayout = QtWidgets.QVBoxLayout(self.centralwidget)
-        self.verticalLayout.setContentsMargins(0, 0, 0, 0)
-        self.verticalLayout.setSpacing(0)
+        self.verticalLayout.setContentsMargins(9, 9, 9, 9)
+        self.verticalLayout.setSpacing(9)
         self.verticalLayout.setObjectName("verticalLayout")
         self.frame = QtWidgets.QFrame(self.centralwidget)
         self.frame.setFrameShape(QtWidgets.QFrame.StyledPanel)
@@ -37,24 +39,26 @@ class Ui_Seguridad(object):
         self.tabWidget.setMinimumSize(QtCore.QSize(0, 0))
         self.tabWidget.setLayoutDirection(QtCore.Qt.LeftToRight)
         self.tabWidget.setAutoFillBackground(False)
-        self.tabWidget.setStyleSheet("background-color: rgb(63, 73, 100);")
+        self.tabWidget.setStyleSheet("font-family:\"Inter\", sans-serif;\n"
+"")
         self.tabWidget.setTabShape(QtWidgets.QTabWidget.Rounded)
         self.tabWidget.setObjectName("tabWidget")
         self.Usuario = QtWidgets.QWidget()
         self.Usuario.setObjectName("Usuario")
         self.verticalLayout_2 = QtWidgets.QVBoxLayout(self.Usuario)
-        self.verticalLayout_2.setContentsMargins(0, 0, 0, 0)
-        self.verticalLayout_2.setSpacing(0)
+        self.verticalLayout_2.setContentsMargins(9, 9, 9, 9)
+        self.verticalLayout_2.setSpacing(6)
         self.verticalLayout_2.setObjectName("verticalLayout_2")
         self.frame_2 = QtWidgets.QFrame(self.Usuario)
         self.frame_2.setFrameShape(QtWidgets.QFrame.StyledPanel)
         self.frame_2.setFrameShadow(QtWidgets.QFrame.Raised)
         self.frame_2.setObjectName("frame_2")
         self.horizontalLayout_3 = QtWidgets.QHBoxLayout(self.frame_2)
-        self.horizontalLayout_3.setContentsMargins(0, 10, 0, 0)
-        self.horizontalLayout_3.setSpacing(0)
+        self.horizontalLayout_3.setContentsMargins(9, 10, 9, 9)
+        self.horizontalLayout_3.setSpacing(6)
         self.horizontalLayout_3.setObjectName("horizontalLayout_3")
         self.frame_5 = QtWidgets.QFrame(self.frame_2)
+        self.frame_5.setStyleSheet("")
         self.frame_5.setFrameShape(QtWidgets.QFrame.StyledPanel)
         self.frame_5.setFrameShadow(QtWidgets.QFrame.Raised)
         self.frame_5.setObjectName("frame_5")
@@ -143,8 +147,8 @@ class Ui_Seguridad(object):
         self.frame_6.setFrameShadow(QtWidgets.QFrame.Raised)
         self.frame_6.setObjectName("frame_6")
         self.verticalLayout_11 = QtWidgets.QVBoxLayout(self.frame_6)
-        self.verticalLayout_11.setContentsMargins(0, 0, 0, 0)
-        self.verticalLayout_11.setSpacing(0)
+        self.verticalLayout_11.setContentsMargins(9, 9, 9, 9)
+        self.verticalLayout_11.setSpacing(6)
         self.verticalLayout_11.setObjectName("verticalLayout_11")
         self.verticalLayout_10 = QtWidgets.QVBoxLayout()
         self.verticalLayout_10.setContentsMargins(10, 0, 10, 0)
@@ -153,38 +157,41 @@ class Ui_Seguridad(object):
         spacerItem = QtWidgets.QSpacerItem(20, 40, QtWidgets.QSizePolicy.Minimum, QtWidgets.QSizePolicy.Expanding)
         self.verticalLayout_10.addItem(spacerItem)
         self.bt_Guardar_Usuario = QtWidgets.QPushButton(self.frame_6)
-        self.bt_Guardar_Usuario.setStyleSheet("background-color: rgb(255, 255, 255);\n"
-"font: 12pt \"MS Shell Dlg 2\";")
+        self.bt_Guardar_Usuario.setStyleSheet("background-color:rgb(255, 255, 255);\n"
+"border:1px solid rgb(100,100,100);\n"
+"color:rgb(50,50,50);")
         self.bt_Guardar_Usuario.setObjectName("bt_Guardar_Usuario")
         self.verticalLayout_10.addWidget(self.bt_Guardar_Usuario)
         spacerItem1 = QtWidgets.QSpacerItem(20, 40, QtWidgets.QSizePolicy.Minimum, QtWidgets.QSizePolicy.Expanding)
         self.verticalLayout_10.addItem(spacerItem1)
         self.bt_Editar_Usuario = QtWidgets.QPushButton(self.frame_6)
-        self.bt_Editar_Usuario.setStyleSheet("background-color: rgb(255, 255, 255);\n"
-"font: 12pt \"MS Shell Dlg 2\";")
+        self.bt_Editar_Usuario.setStyleSheet("background-color:rgb(255, 255, 255);\n"
+"border:1px solid rgb(100,100,100);\n"
+"color:rgb(50,50,50);")
         self.bt_Editar_Usuario.setObjectName("bt_Editar_Usuario")
         self.verticalLayout_10.addWidget(self.bt_Editar_Usuario)
         spacerItem2 = QtWidgets.QSpacerItem(20, 40, QtWidgets.QSizePolicy.Minimum, QtWidgets.QSizePolicy.Expanding)
         self.verticalLayout_10.addItem(spacerItem2)
         self.bt_Eliminar_Usuario = QtWidgets.QPushButton(self.frame_6)
-        self.bt_Eliminar_Usuario.setStyleSheet("background-color: rgb(255, 255, 255);\n"
-"font: 12pt \"MS Shell Dlg 2\";")
+        self.bt_Eliminar_Usuario.setStyleSheet("background-color:rgb(255, 255, 255);\n"
+"border:1px solid rgb(100,100,100);\n"
+"color:rgb(50,50,50);")
         self.bt_Eliminar_Usuario.setObjectName("bt_Eliminar_Usuario")
         self.verticalLayout_10.addWidget(self.bt_Eliminar_Usuario)
         spacerItem3 = QtWidgets.QSpacerItem(20, 40, QtWidgets.QSizePolicy.Minimum, QtWidgets.QSizePolicy.Expanding)
         self.verticalLayout_10.addItem(spacerItem3)
         self.bt_Vaciar_Usuario = QtWidgets.QPushButton(self.frame_6)
-        self.bt_Vaciar_Usuario.setStyleSheet("background-color: rgb(255, 255, 255);\n"
-"font: 12pt \"MS Shell Dlg 2\";")
+        self.bt_Vaciar_Usuario.setStyleSheet("background-color:rgb(255, 255, 255);\n"
+"border:1px solid rgb(100,100,100);\n"
+"color:rgb(50,50,50);")
         self.bt_Vaciar_Usuario.setObjectName("bt_Vaciar_Usuario")
         self.verticalLayout_10.addWidget(self.bt_Vaciar_Usuario)
         spacerItem4 = QtWidgets.QSpacerItem(20, 40, QtWidgets.QSizePolicy.Minimum, QtWidgets.QSizePolicy.Expanding)
         self.verticalLayout_10.addItem(spacerItem4)
         self.bt_busca_usuario = QtWidgets.QPushButton(self.frame_6)
-        self.bt_busca_usuario.setStyleSheet("\n"
-"\n"
-"background-color: rgb(255, 255, 255);\n"
-"font: 12pt \"MS Shell Dlg 2\";")
+        self.bt_busca_usuario.setStyleSheet("background-color:rgb(255, 255, 255);\n"
+"border:1px solid rgb(100,100,100);\n"
+"color:rgb(50,50,50);")
         self.bt_busca_usuario.setObjectName("bt_busca_usuario")
         self.verticalLayout_10.addWidget(self.bt_busca_usuario)
         spacerItem5 = QtWidgets.QSpacerItem(20, 40, QtWidgets.QSizePolicy.Minimum, QtWidgets.QSizePolicy.Expanding)
@@ -260,7 +267,7 @@ class Ui_Seguridad(object):
         self.tb_Usuario.setHorizontalHeaderItem(5, item)
         self.tb_Usuario.horizontalHeader().setVisible(True)
         self.tb_Usuario.horizontalHeader().setCascadingSectionResizes(False)
-        self.tb_Usuario.horizontalHeader().setDefaultSectionSize(130)
+        self.tb_Usuario.horizontalHeader().setDefaultSectionSize(112)
         self.tb_Usuario.horizontalHeader().setHighlightSections(True)
         self.tb_Usuario.horizontalHeader().setMinimumSectionSize(55)
         self.tb_Usuario.horizontalHeader().setSortIndicatorShown(False)
@@ -281,8 +288,8 @@ class Ui_Seguridad(object):
         self.tab_2 = QtWidgets.QWidget()
         self.tab_2.setObjectName("tab_2")
         self.verticalLayout_18 = QtWidgets.QVBoxLayout(self.tab_2)
-        self.verticalLayout_18.setContentsMargins(0, 0, 0, 0)
-        self.verticalLayout_18.setSpacing(0)
+        self.verticalLayout_18.setContentsMargins(9, 9, 9, 9)
+        self.verticalLayout_18.setSpacing(6)
         self.verticalLayout_18.setObjectName("verticalLayout_18")
         self.frame_21 = QtWidgets.QFrame(self.tab_2)
         self.frame_21.setStyleSheet("")
@@ -290,8 +297,8 @@ class Ui_Seguridad(object):
         self.frame_21.setFrameShadow(QtWidgets.QFrame.Raised)
         self.frame_21.setObjectName("frame_21")
         self.horizontalLayout_8 = QtWidgets.QHBoxLayout(self.frame_21)
-        self.horizontalLayout_8.setContentsMargins(0, 0, 0, 0)
-        self.horizontalLayout_8.setSpacing(0)
+        self.horizontalLayout_8.setContentsMargins(9, 9, 9, 9)
+        self.horizontalLayout_8.setSpacing(6)
         self.horizontalLayout_8.setObjectName("horizontalLayout_8")
         self.frame_23 = QtWidgets.QFrame(self.frame_21)
         self.frame_23.setFrameShape(QtWidgets.QFrame.StyledPanel)
@@ -355,28 +362,34 @@ class Ui_Seguridad(object):
         self.verticalLayout_23.setSpacing(0)
         self.verticalLayout_23.setObjectName("verticalLayout_23")
         self.bt_Guardar_Rol = QtWidgets.QPushButton(self.frame_24)
-        self.bt_Guardar_Rol.setStyleSheet("background-color: rgb(255, 255, 255);\n"
-"font: 12pt \"MS Shell Dlg 2\";")
+        self.bt_Guardar_Rol.setStyleSheet("background-color:rgb(255, 255, 255);\n"
+"border:1px solid rgb(100,100,100);\n"
+"color:rgb(50,50,50);\n"
+"")
         self.bt_Guardar_Rol.setObjectName("bt_Guardar_Rol")
         self.verticalLayout_23.addWidget(self.bt_Guardar_Rol)
         self.bt_Editar_Rol = QtWidgets.QPushButton(self.frame_24)
-        self.bt_Editar_Rol.setStyleSheet("background-color: rgb(255, 255, 255);\n"
-"font: 12pt \"MS Shell Dlg 2\";")
+        self.bt_Editar_Rol.setStyleSheet("background-color:rgb(255, 255, 255);\n"
+"border:1px solid rgb(100,100,100);\n"
+"color:rgb(50,50,50);")
         self.bt_Editar_Rol.setObjectName("bt_Editar_Rol")
         self.verticalLayout_23.addWidget(self.bt_Editar_Rol)
         self.bt_Eliminar_Rol = QtWidgets.QPushButton(self.frame_24)
-        self.bt_Eliminar_Rol.setStyleSheet("background-color: rgb(255, 255, 255);\n"
-"font: 12pt \"MS Shell Dlg 2\";")
+        self.bt_Eliminar_Rol.setStyleSheet("background-color:rgb(255, 255, 255);\n"
+"border:1px solid rgb(100,100,100);\n"
+"color:rgb(50,50,50);")
         self.bt_Eliminar_Rol.setObjectName("bt_Eliminar_Rol")
         self.verticalLayout_23.addWidget(self.bt_Eliminar_Rol)
         self.bt_Vaciar_Rol = QtWidgets.QPushButton(self.frame_24)
-        self.bt_Vaciar_Rol.setStyleSheet("background-color: rgb(255, 255, 255);\n"
-"font: 12pt \"MS Shell Dlg 2\";")
+        self.bt_Vaciar_Rol.setStyleSheet("background-color:rgb(255, 255, 255);\n"
+"border:1px solid rgb(100,100,100);\n"
+"color:rgb(50,50,50);")
         self.bt_Vaciar_Rol.setObjectName("bt_Vaciar_Rol")
         self.verticalLayout_23.addWidget(self.bt_Vaciar_Rol)
         self.bt_busca_rol = QtWidgets.QPushButton(self.frame_24)
-        self.bt_busca_rol.setStyleSheet("background-color: rgb(255, 255, 255);\n"
-"font: 12pt \"MS Shell Dlg 2\";")
+        self.bt_busca_rol.setStyleSheet("background-color:rgb(255, 255, 255);\n"
+"border:1px solid rgb(100,100,100);\n"
+"color:rgb(50,50,50);")
         self.bt_busca_rol.setObjectName("bt_busca_rol")
         self.verticalLayout_23.addWidget(self.bt_busca_rol)
         self.horizontalLayout_8.addWidget(self.frame_24)
@@ -417,8 +430,8 @@ class Ui_Seguridad(object):
         self.tab = QtWidgets.QWidget()
         self.tab.setObjectName("tab")
         self.verticalLayout_20 = QtWidgets.QVBoxLayout(self.tab)
-        self.verticalLayout_20.setContentsMargins(0, 0, 0, 0)
-        self.verticalLayout_20.setSpacing(0)
+        self.verticalLayout_20.setContentsMargins(9, 9, 9, 9)
+        self.verticalLayout_20.setSpacing(6)
         self.verticalLayout_20.setObjectName("verticalLayout_20")
         self.frame_28 = QtWidgets.QFrame(self.tab)
         self.frame_28.setStyleSheet("")
@@ -426,8 +439,8 @@ class Ui_Seguridad(object):
         self.frame_28.setFrameShadow(QtWidgets.QFrame.Raised)
         self.frame_28.setObjectName("frame_28")
         self.horizontalLayout_11 = QtWidgets.QHBoxLayout(self.frame_28)
-        self.horizontalLayout_11.setContentsMargins(0, 0, 0, 0)
-        self.horizontalLayout_11.setSpacing(0)
+        self.horizontalLayout_11.setContentsMargins(9, 9, 9, 9)
+        self.horizontalLayout_11.setSpacing(6)
         self.horizontalLayout_11.setObjectName("horizontalLayout_11")
         self.frame_31 = QtWidgets.QFrame(self.frame_28)
         self.frame_31.setFrameShape(QtWidgets.QFrame.StyledPanel)
@@ -491,28 +504,34 @@ class Ui_Seguridad(object):
         self.verticalLayout_27.setSpacing(0)
         self.verticalLayout_27.setObjectName("verticalLayout_27")
         self.bt_Guardar_Opcion = QtWidgets.QPushButton(self.frame_32)
-        self.bt_Guardar_Opcion.setStyleSheet("background-color: rgb(255, 255, 255);\n"
-"font: 12pt \"MS Shell Dlg 2\";")
+        self.bt_Guardar_Opcion.setStyleSheet("background-color:rgb(255, 255, 255);\n"
+"border:1px solid rgb(100,100,100);\n"
+"color:rgb(50,50,50);")
         self.bt_Guardar_Opcion.setObjectName("bt_Guardar_Opcion")
         self.verticalLayout_27.addWidget(self.bt_Guardar_Opcion)
         self.bt_Editar_Opcion = QtWidgets.QPushButton(self.frame_32)
-        self.bt_Editar_Opcion.setStyleSheet("background-color: rgb(255, 255, 255);\n"
-"font: 12pt \"MS Shell Dlg 2\";")
+        self.bt_Editar_Opcion.setStyleSheet("background-color:rgb(255, 255, 255);\n"
+"border:1px solid rgb(100,100,100);\n"
+"color:rgb(50,50,50);")
         self.bt_Editar_Opcion.setObjectName("bt_Editar_Opcion")
         self.verticalLayout_27.addWidget(self.bt_Editar_Opcion)
         self.bt_Eliminar_Opcion = QtWidgets.QPushButton(self.frame_32)
-        self.bt_Eliminar_Opcion.setStyleSheet("background-color: rgb(255, 255, 255);\n"
-"font: 12pt \"MS Shell Dlg 2\";")
+        self.bt_Eliminar_Opcion.setStyleSheet("background-color:rgb(255, 255, 255);\n"
+"border:1px solid rgb(100,100,100);\n"
+"color:rgb(50,50,50);")
         self.bt_Eliminar_Opcion.setObjectName("bt_Eliminar_Opcion")
         self.verticalLayout_27.addWidget(self.bt_Eliminar_Opcion)
         self.bt_Vaciar_Opcion = QtWidgets.QPushButton(self.frame_32)
-        self.bt_Vaciar_Opcion.setStyleSheet("background-color: rgb(255, 255, 255);\n"
-"font: 12pt \"MS Shell Dlg 2\";")
+        self.bt_Vaciar_Opcion.setStyleSheet("background-color:rgb(255, 255, 255);\n"
+"border:1px solid rgb(100,100,100);\n"
+"color:rgb(50,50,50);")
         self.bt_Vaciar_Opcion.setObjectName("bt_Vaciar_Opcion")
         self.verticalLayout_27.addWidget(self.bt_Vaciar_Opcion)
         self.bt_busca_opcion = QtWidgets.QPushButton(self.frame_32)
-        self.bt_busca_opcion.setStyleSheet("background-color: rgb(255, 255, 255);\n"
-"font: 12pt \"MS Shell Dlg 2\";")
+        self.bt_busca_opcion.setStyleSheet("background-color:rgb(255, 255, 255);\n"
+"border:1px solid rgb(100,100,100);\n"
+"color:rgb(50,50,50);\n"
+"")
         self.bt_busca_opcion.setObjectName("bt_busca_opcion")
         self.verticalLayout_27.addWidget(self.bt_busca_opcion)
         self.horizontalLayout_11.addWidget(self.frame_32)
@@ -553,8 +572,8 @@ class Ui_Seguridad(object):
         self.tab_3 = QtWidgets.QWidget()
         self.tab_3.setObjectName("tab_3")
         self.verticalLayout_21 = QtWidgets.QVBoxLayout(self.tab_3)
-        self.verticalLayout_21.setContentsMargins(0, 0, 0, 0)
-        self.verticalLayout_21.setSpacing(0)
+        self.verticalLayout_21.setContentsMargins(9, 9, 9, 9)
+        self.verticalLayout_21.setSpacing(6)
         self.verticalLayout_21.setObjectName("verticalLayout_21")
         self.frame_34 = QtWidgets.QFrame(self.tab_3)
         self.frame_34.setStyleSheet("")
@@ -562,8 +581,8 @@ class Ui_Seguridad(object):
         self.frame_34.setFrameShadow(QtWidgets.QFrame.Raised)
         self.frame_34.setObjectName("frame_34")
         self.horizontalLayout_12 = QtWidgets.QHBoxLayout(self.frame_34)
-        self.horizontalLayout_12.setContentsMargins(0, 0, 0, 0)
-        self.horizontalLayout_12.setSpacing(0)
+        self.horizontalLayout_12.setContentsMargins(9, 9, 9, 9)
+        self.horizontalLayout_12.setSpacing(6)
         self.horizontalLayout_12.setObjectName("horizontalLayout_12")
         self.frame_35 = QtWidgets.QFrame(self.frame_34)
         self.frame_35.setFrameShape(QtWidgets.QFrame.StyledPanel)
@@ -626,23 +645,27 @@ class Ui_Seguridad(object):
         self.verticalLayout_29.setSpacing(0)
         self.verticalLayout_29.setObjectName("verticalLayout_29")
         self.bt_Guardar_Usuario_rol = QtWidgets.QPushButton(self.frame_36)
-        self.bt_Guardar_Usuario_rol.setStyleSheet("background-color: rgb(255, 255, 255);\n"
-"font: 12pt \"MS Shell Dlg 2\";")
+        self.bt_Guardar_Usuario_rol.setStyleSheet("background-color:rgb(255, 255, 255);\n"
+"border:1px solid rgb(100,100,100);\n"
+"color:rgb(50,50,50);")
         self.bt_Guardar_Usuario_rol.setObjectName("bt_Guardar_Usuario_rol")
         self.verticalLayout_29.addWidget(self.bt_Guardar_Usuario_rol)
         self.bt_Editar_Usuario_rol = QtWidgets.QPushButton(self.frame_36)
-        self.bt_Editar_Usuario_rol.setStyleSheet("background-color: rgb(255, 255, 255);\n"
-"font: 12pt \"MS Shell Dlg 2\";")
+        self.bt_Editar_Usuario_rol.setStyleSheet("background-color:rgb(255, 255, 255);\n"
+"border:1px solid rgb(100,100,100);\n"
+"color:rgb(50,50,50);")
         self.bt_Editar_Usuario_rol.setObjectName("bt_Editar_Usuario_rol")
         self.verticalLayout_29.addWidget(self.bt_Editar_Usuario_rol)
         self.bt_Eliminar_Usuario_rol = QtWidgets.QPushButton(self.frame_36)
-        self.bt_Eliminar_Usuario_rol.setStyleSheet("background-color: rgb(255, 255, 255);\n"
-"font: 12pt \"MS Shell Dlg 2\";")
+        self.bt_Eliminar_Usuario_rol.setStyleSheet("background-color:rgb(255, 255, 255);\n"
+"border:1px solid rgb(100,100,100);\n"
+"color:rgb(50,50,50);")
         self.bt_Eliminar_Usuario_rol.setObjectName("bt_Eliminar_Usuario_rol")
         self.verticalLayout_29.addWidget(self.bt_Eliminar_Usuario_rol)
         self.bt_Vaciar_Usuario_rol = QtWidgets.QPushButton(self.frame_36)
-        self.bt_Vaciar_Usuario_rol.setStyleSheet("background-color: rgb(255, 255, 255);\n"
-"font: 12pt \"MS Shell Dlg 2\";")
+        self.bt_Vaciar_Usuario_rol.setStyleSheet("background-color:rgb(255, 255, 255);\n"
+"border:1px solid rgb(100,100,100);\n"
+"color:rgb(50,50,50);")
         self.bt_Vaciar_Usuario_rol.setObjectName("bt_Vaciar_Usuario_rol")
         self.verticalLayout_29.addWidget(self.bt_Vaciar_Usuario_rol)
         self.horizontalLayout_12.addWidget(self.frame_36)
@@ -676,7 +699,7 @@ class Ui_Seguridad(object):
         item = QtWidgets.QTableWidgetItem()
         self.tb_Asignar_Rol.setHorizontalHeaderItem(4, item)
         self.tb_Asignar_Rol.horizontalHeader().setCascadingSectionResizes(False)
-        self.tb_Asignar_Rol.horizontalHeader().setDefaultSectionSize(151)
+        self.tb_Asignar_Rol.horizontalHeader().setDefaultSectionSize(145)
         self.tb_Asignar_Rol.horizontalHeader().setHighlightSections(True)
         self.tb_Asignar_Rol.horizontalHeader().setSortIndicatorShown(False)
         self.tb_Asignar_Rol.horizontalHeader().setStretchLastSection(True)
@@ -695,8 +718,8 @@ class Ui_Seguridad(object):
         self.tab_4 = QtWidgets.QWidget()
         self.tab_4.setObjectName("tab_4")
         self.verticalLayout_22 = QtWidgets.QVBoxLayout(self.tab_4)
-        self.verticalLayout_22.setContentsMargins(0, 0, 0, 0)
-        self.verticalLayout_22.setSpacing(0)
+        self.verticalLayout_22.setContentsMargins(9, 9, 9, 9)
+        self.verticalLayout_22.setSpacing(6)
         self.verticalLayout_22.setObjectName("verticalLayout_22")
         self.frame_38 = QtWidgets.QFrame(self.tab_4)
         self.frame_38.setStyleSheet("")
@@ -704,8 +727,8 @@ class Ui_Seguridad(object):
         self.frame_38.setFrameShadow(QtWidgets.QFrame.Raised)
         self.frame_38.setObjectName("frame_38")
         self.horizontalLayout_13 = QtWidgets.QHBoxLayout(self.frame_38)
-        self.horizontalLayout_13.setContentsMargins(0, 0, 0, 0)
-        self.horizontalLayout_13.setSpacing(0)
+        self.horizontalLayout_13.setContentsMargins(9, 9, 9, 9)
+        self.horizontalLayout_13.setSpacing(6)
         self.horizontalLayout_13.setObjectName("horizontalLayout_13")
         self.frame_39 = QtWidgets.QFrame(self.frame_38)
         self.frame_39.setFrameShape(QtWidgets.QFrame.StyledPanel)
@@ -767,23 +790,27 @@ class Ui_Seguridad(object):
         self.verticalLayout_31.setSpacing(0)
         self.verticalLayout_31.setObjectName("verticalLayout_31")
         self.bt_Guardar_Rol_opcion = QtWidgets.QPushButton(self.frame_40)
-        self.bt_Guardar_Rol_opcion.setStyleSheet("background-color: rgb(255, 255, 255);\n"
-"font: 12pt \"MS Shell Dlg 2\";")
+        self.bt_Guardar_Rol_opcion.setStyleSheet("background-color:rgb(255, 255, 255);\n"
+"border:1px solid rgb(100,100,100);\n"
+"color:rgb(50,50,50);")
         self.bt_Guardar_Rol_opcion.setObjectName("bt_Guardar_Rol_opcion")
         self.verticalLayout_31.addWidget(self.bt_Guardar_Rol_opcion)
         self.bt_Editar_Rol_opcion = QtWidgets.QPushButton(self.frame_40)
-        self.bt_Editar_Rol_opcion.setStyleSheet("background-color: rgb(255, 255, 255);\n"
-"font: 12pt \"MS Shell Dlg 2\";")
+        self.bt_Editar_Rol_opcion.setStyleSheet("background-color:rgb(255, 255, 255);\n"
+"border:1px solid rgb(100,100,100);\n"
+"color:rgb(50,50,50);")
         self.bt_Editar_Rol_opcion.setObjectName("bt_Editar_Rol_opcion")
         self.verticalLayout_31.addWidget(self.bt_Editar_Rol_opcion)
         self.bt_Eliminar_Rol_opcion = QtWidgets.QPushButton(self.frame_40)
-        self.bt_Eliminar_Rol_opcion.setStyleSheet("background-color: rgb(255, 255, 255);\n"
-"font: 12pt \"MS Shell Dlg 2\";")
+        self.bt_Eliminar_Rol_opcion.setStyleSheet("background-color:rgb(255, 255, 255);\n"
+"border:1px solid rgb(100,100,100);\n"
+"color:rgb(50,50,50);")
         self.bt_Eliminar_Rol_opcion.setObjectName("bt_Eliminar_Rol_opcion")
         self.verticalLayout_31.addWidget(self.bt_Eliminar_Rol_opcion)
         self.bt_Vaciar_Rol_opcion = QtWidgets.QPushButton(self.frame_40)
-        self.bt_Vaciar_Rol_opcion.setStyleSheet("background-color: rgb(255, 255, 255);\n"
-"font: 12pt \"MS Shell Dlg 2\";")
+        self.bt_Vaciar_Rol_opcion.setStyleSheet("background-color:rgb(255, 255, 255);\n"
+"border:1px solid rgb(100,100,100);\n"
+"color:rgb(50,50,50);")
         self.bt_Vaciar_Rol_opcion.setObjectName("bt_Vaciar_Rol_opcion")
         self.verticalLayout_31.addWidget(self.bt_Vaciar_Rol_opcion)
         self.horizontalLayout_13.addWidget(self.frame_40)
@@ -856,7 +883,7 @@ class Ui_Seguridad(object):
         item = self.tb_Usuario.horizontalHeaderItem(2)
         item.setText(_translate("Seguridad", "Apellido"))
         item = self.tb_Usuario.horizontalHeaderItem(3)
-        item.setText(_translate("Seguridad", "User"))
+        item.setText(_translate("Seguridad", "Usuario"))
         item = self.tb_Usuario.horizontalHeaderItem(4)
         item.setText(_translate("Seguridad", "Contraseña"))
         item = self.tb_Usuario.horizontalHeaderItem(5)

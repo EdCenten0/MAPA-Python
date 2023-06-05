@@ -616,7 +616,7 @@ class seguridad_Window(QMainWindow, vw_seguridad.Ui_Seguridad):
 
             self.tb_Asignar_Rol.setItem(tablerow, 3, QTableWidgetItem(str(row["Usuario"])))
 
-            self.tb_Asignar_Rol.setItem(tablerow, 4, QTableWidgetItem(str(row["Rol"])))
+            self.tb_Asignar_Rol.setItem(tablerow, 4, QTableWidgetItem(str(row["rol"])))
 
             tablerow = tablerow + 1
 
@@ -658,9 +658,9 @@ class seguridad_Window(QMainWindow, vw_seguridad.Ui_Seguridad):
 
             self.tb_Asignar_Opcion.setItem(tablerow, 2, QTableWidgetItem(str(row["idopcion"])))
 
-            self.tb_Asignar_Opcion.setItem(tablerow, 3, QTableWidgetItem(row["Rol"]))
+            self.tb_Asignar_Opcion.setItem(tablerow, 3, QTableWidgetItem(row["rol"]))
 
-            self.tb_Asignar_Opcion.setItem(tablerow, 4, QTableWidgetItem(row["Opcion"]))
+            self.tb_Asignar_Opcion.setItem(tablerow, 4, QTableWidgetItem(row["opcion"]))
 
             tablerow = tablerow + 1
 

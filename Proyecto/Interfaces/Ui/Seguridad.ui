@@ -27,21 +27,25 @@
 background-color: rgb(63, 73, 100);</string>
   </property>
   <widget class="QWidget" name="centralwidget">
-   <layout class="QVBoxLayout" name="verticalLayout">
+   <property name="styleSheet">
+    <string notr="true">background-color: rgb(222, 221, 218);
+</string>
+   </property>
+   <layout class="QVBoxLayout" name="verticalLayout" stretch="0">
     <property name="spacing">
-     <number>0</number>
+     <number>9</number>
     </property>
     <property name="leftMargin">
-     <number>0</number>
+     <number>9</number>
     </property>
     <property name="topMargin">
-     <number>0</number>
+     <number>9</number>
     </property>
     <property name="rightMargin">
-     <number>0</number>
+     <number>9</number>
     </property>
     <property name="bottomMargin">
-     <number>0</number>
+     <number>9</number>
     </property>
     <item>
      <widget class="QFrame" name="frame">
@@ -82,7 +86,8 @@ background-color: rgb(63, 73, 100);</string>
           <bool>false</bool>
          </property>
          <property name="styleSheet">
-          <string notr="true">background-color: rgb(63, 73, 100);</string>
+          <string notr="true">font-family:&quot;Inter&quot;, sans-serif;
+</string>
          </property>
          <property name="tabShape">
           <enum>QTabWidget::Rounded</enum>
@@ -96,19 +101,19 @@ background-color: rgb(63, 73, 100);</string>
           </attribute>
           <layout class="QVBoxLayout" name="verticalLayout_2" stretch="1,1">
            <property name="spacing">
-            <number>0</number>
+            <number>6</number>
            </property>
            <property name="leftMargin">
-            <number>0</number>
+            <number>9</number>
            </property>
            <property name="topMargin">
-            <number>0</number>
+            <number>9</number>
            </property>
            <property name="rightMargin">
-            <number>0</number>
+            <number>9</number>
            </property>
            <property name="bottomMargin">
-            <number>0</number>
+            <number>9</number>
            </property>
            <item>
             <widget class="QFrame" name="frame_2">
@@ -120,22 +125,25 @@ background-color: rgb(63, 73, 100);</string>
              </property>
              <layout class="QHBoxLayout" name="horizontalLayout_3" stretch="3,1">
               <property name="spacing">
-               <number>0</number>
+               <number>6</number>
               </property>
               <property name="leftMargin">
-               <number>0</number>
+               <number>9</number>
               </property>
               <property name="topMargin">
                <number>10</number>
               </property>
               <property name="rightMargin">
-               <number>0</number>
+               <number>9</number>
               </property>
               <property name="bottomMargin">
-               <number>0</number>
+               <number>9</number>
               </property>
               <item>
                <widget class="QFrame" name="frame_5">
+                <property name="styleSheet">
+                 <string notr="true"/>
+                </property>
                 <property name="frameShape">
                  <enum>QFrame::StyledPanel</enum>
                 </property>
@@ -317,19 +325,19 @@ font: 10pt &quot;MS Shell Dlg 2&quot;;</string>
                 </property>
                 <layout class="QVBoxLayout" name="verticalLayout_11">
                  <property name="spacing">
-                  <number>0</number>
+                  <number>6</number>
                  </property>
                  <property name="leftMargin">
-                  <number>0</number>
+                  <number>9</number>
                  </property>
                  <property name="topMargin">
-                  <number>0</number>
+                  <number>9</number>
                  </property>
                  <property name="rightMargin">
-                  <number>0</number>
+                  <number>9</number>
                  </property>
                  <property name="bottomMargin">
-                  <number>0</number>
+                  <number>9</number>
                  </property>
                  <item>
                   <layout class="QVBoxLayout" name="verticalLayout_10">
@@ -364,8 +372,9 @@ font: 10pt &quot;MS Shell Dlg 2&quot;;</string>
                    <item>
                     <widget class="QPushButton" name="bt_Guardar_Usuario">
                      <property name="styleSheet">
-                      <string notr="true">background-color: rgb(255, 255, 255);
-font: 12pt &quot;MS Shell Dlg 2&quot;;</string>
+                      <string notr="true">background-color:rgb(255, 255, 255);
+border:1px solid rgb(100,100,100);
+color:rgb(50,50,50);</string>
                      </property>
                      <property name="text">
                       <string>Guardar</string>
@@ -388,8 +397,9 @@ font: 12pt &quot;MS Shell Dlg 2&quot;;</string>
                    <item>
                     <widget class="QPushButton" name="bt_Editar_Usuario">
                      <property name="styleSheet">
-                      <string notr="true">background-color: rgb(255, 255, 255);
-font: 12pt &quot;MS Shell Dlg 2&quot;;</string>
+                      <string notr="true">background-color:rgb(255, 255, 255);
+border:1px solid rgb(100,100,100);
+color:rgb(50,50,50);</string>
                      </property>
                      <property name="text">
                       <string>Editar</string>
@@ -412,8 +422,9 @@ font: 12pt &quot;MS Shell Dlg 2&quot;;</string>
                    <item>
                     <widget class="QPushButton" name="bt_Eliminar_Usuario">
                      <property name="styleSheet">
-                      <string notr="true">background-color: rgb(255, 255, 255);
-font: 12pt &quot;MS Shell Dlg 2&quot;;</string>
+                      <string notr="true">background-color:rgb(255, 255, 255);
+border:1px solid rgb(100,100,100);
+color:rgb(50,50,50);</string>
                      </property>
                      <property name="text">
                       <string>Eliminar</string>
@@ -436,8 +447,9 @@ font: 12pt &quot;MS Shell Dlg 2&quot;;</string>
                    <item>
                     <widget class="QPushButton" name="bt_Vaciar_Usuario">
                      <property name="styleSheet">
-                      <string notr="true">background-color: rgb(255, 255, 255);
-font: 12pt &quot;MS Shell Dlg 2&quot;;</string>
+                      <string notr="true">background-color:rgb(255, 255, 255);
+border:1px solid rgb(100,100,100);
+color:rgb(50,50,50);</string>
                      </property>
                      <property name="text">
                       <string>Vaciar Campos</string>
@@ -460,10 +472,9 @@ font: 12pt &quot;MS Shell Dlg 2&quot;;</string>
                    <item>
                     <widget class="QPushButton" name="bt_busca_usuario">
                      <property name="styleSheet">
-                      <string notr="true">
-
-background-color: rgb(255, 255, 255);
-font: 12pt &quot;MS Shell Dlg 2&quot;;</string>
+                      <string notr="true">background-color:rgb(255, 255, 255);
+border:1px solid rgb(100,100,100);
+color:rgb(50,50,50);</string>
                      </property>
                      <property name="text">
                       <string>Buscar</string>
@@ -591,14 +602,14 @@ QTableView::item {
                    <attribute name="horizontalHeaderCascadingSectionResizes">
                     <bool>false</bool>
                    </attribute>
+                   <attribute name="horizontalHeaderMinimumSectionSize">
+                    <number>55</number>
+                   </attribute>
                    <attribute name="horizontalHeaderDefaultSectionSize">
-                    <number>130</number>
+                    <number>112</number>
                    </attribute>
                    <attribute name="horizontalHeaderHighlightSections">
                     <bool>true</bool>
-                   </attribute>
-                   <attribute name="horizontalHeaderMinimumSectionSize">
-                    <number>55</number>
                    </attribute>
                    <attribute name="horizontalHeaderShowSortIndicator" stdset="0">
                     <bool>false</bool>
@@ -612,14 +623,14 @@ QTableView::item {
                    <attribute name="verticalHeaderCascadingSectionResizes">
                     <bool>false</bool>
                    </attribute>
+                   <attribute name="verticalHeaderMinimumSectionSize">
+                    <number>28</number>
+                   </attribute>
                    <attribute name="verticalHeaderDefaultSectionSize">
                     <number>29</number>
                    </attribute>
                    <attribute name="verticalHeaderHighlightSections">
                     <bool>true</bool>
-                   </attribute>
-                   <attribute name="verticalHeaderMinimumSectionSize">
-                    <number>28</number>
                    </attribute>
                    <attribute name="verticalHeaderShowSortIndicator" stdset="0">
                     <bool>false</bool>
@@ -653,7 +664,7 @@ QTableView::item {
                    </column>
                    <column>
                     <property name="text">
-                     <string>User</string>
+                     <string>Usuario</string>
                     </property>
                     <property name="textAlignment">
                      <set>AlignCenter</set>
@@ -702,19 +713,19 @@ QTableView::item {
           </attribute>
           <layout class="QVBoxLayout" name="verticalLayout_18" stretch="1,1">
            <property name="spacing">
-            <number>0</number>
+            <number>6</number>
            </property>
            <property name="leftMargin">
-            <number>0</number>
+            <number>9</number>
            </property>
            <property name="topMargin">
-            <number>0</number>
+            <number>9</number>
            </property>
            <property name="rightMargin">
-            <number>0</number>
+            <number>9</number>
            </property>
            <property name="bottomMargin">
-            <number>0</number>
+            <number>9</number>
            </property>
            <item>
             <widget class="QFrame" name="frame_21">
@@ -729,19 +740,19 @@ QTableView::item {
              </property>
              <layout class="QHBoxLayout" name="horizontalLayout_8" stretch="3,1">
               <property name="spacing">
-               <number>0</number>
+               <number>6</number>
               </property>
               <property name="leftMargin">
-               <number>0</number>
+               <number>9</number>
               </property>
               <property name="topMargin">
-               <number>0</number>
+               <number>9</number>
               </property>
               <property name="rightMargin">
-               <number>0</number>
+               <number>9</number>
               </property>
               <property name="bottomMargin">
-               <number>0</number>
+               <number>9</number>
               </property>
               <item>
                <widget class="QFrame" name="frame_23">
@@ -938,8 +949,10 @@ font: 10pt &quot;MS Shell Dlg 2&quot;;</string>
                  <item>
                   <widget class="QPushButton" name="bt_Guardar_Rol">
                    <property name="styleSheet">
-                    <string notr="true">background-color: rgb(255, 255, 255);
-font: 12pt &quot;MS Shell Dlg 2&quot;;</string>
+                    <string notr="true">background-color:rgb(255, 255, 255);
+border:1px solid rgb(100,100,100);
+color:rgb(50,50,50);
+</string>
                    </property>
                    <property name="text">
                     <string>Guardar</string>
@@ -949,8 +962,9 @@ font: 12pt &quot;MS Shell Dlg 2&quot;;</string>
                  <item>
                   <widget class="QPushButton" name="bt_Editar_Rol">
                    <property name="styleSheet">
-                    <string notr="true">background-color: rgb(255, 255, 255);
-font: 12pt &quot;MS Shell Dlg 2&quot;;</string>
+                    <string notr="true">background-color:rgb(255, 255, 255);
+border:1px solid rgb(100,100,100);
+color:rgb(50,50,50);</string>
                    </property>
                    <property name="text">
                     <string>Editar</string>
@@ -960,8 +974,9 @@ font: 12pt &quot;MS Shell Dlg 2&quot;;</string>
                  <item>
                   <widget class="QPushButton" name="bt_Eliminar_Rol">
                    <property name="styleSheet">
-                    <string notr="true">background-color: rgb(255, 255, 255);
-font: 12pt &quot;MS Shell Dlg 2&quot;;</string>
+                    <string notr="true">background-color:rgb(255, 255, 255);
+border:1px solid rgb(100,100,100);
+color:rgb(50,50,50);</string>
                    </property>
                    <property name="text">
                     <string>Eliminar</string>
@@ -971,8 +986,9 @@ font: 12pt &quot;MS Shell Dlg 2&quot;;</string>
                  <item>
                   <widget class="QPushButton" name="bt_Vaciar_Rol">
                    <property name="styleSheet">
-                    <string notr="true">background-color: rgb(255, 255, 255);
-font: 12pt &quot;MS Shell Dlg 2&quot;;</string>
+                    <string notr="true">background-color:rgb(255, 255, 255);
+border:1px solid rgb(100,100,100);
+color:rgb(50,50,50);</string>
                    </property>
                    <property name="text">
                     <string>Vaciar Campos</string>
@@ -982,8 +998,9 @@ font: 12pt &quot;MS Shell Dlg 2&quot;;</string>
                  <item>
                   <widget class="QPushButton" name="bt_busca_rol">
                    <property name="styleSheet">
-                    <string notr="true">background-color: rgb(255, 255, 255);
-font: 12pt &quot;MS Shell Dlg 2&quot;;</string>
+                    <string notr="true">background-color:rgb(255, 255, 255);
+border:1px solid rgb(100,100,100);
+color:rgb(50,50,50);</string>
                    </property>
                    <property name="text">
                     <string>Buscar</string>
@@ -1038,11 +1055,11 @@ font: 12pt &quot;MS Shell Dlg 2&quot;;</string>
                 <attribute name="horizontalHeaderCascadingSectionResizes">
                  <bool>false</bool>
                 </attribute>
-                <attribute name="horizontalHeaderDefaultSectionSize">
-                 <number>347</number>
-                </attribute>
                 <attribute name="horizontalHeaderMinimumSectionSize">
                  <number>40</number>
+                </attribute>
+                <attribute name="horizontalHeaderDefaultSectionSize">
+                 <number>347</number>
                 </attribute>
                 <attribute name="horizontalHeaderStretchLastSection">
                  <bool>true</bool>
@@ -1073,19 +1090,19 @@ font: 12pt &quot;MS Shell Dlg 2&quot;;</string>
           </attribute>
           <layout class="QVBoxLayout" name="verticalLayout_20" stretch="1,1">
            <property name="spacing">
-            <number>0</number>
+            <number>6</number>
            </property>
            <property name="leftMargin">
-            <number>0</number>
+            <number>9</number>
            </property>
            <property name="topMargin">
-            <number>0</number>
+            <number>9</number>
            </property>
            <property name="rightMargin">
-            <number>0</number>
+            <number>9</number>
            </property>
            <property name="bottomMargin">
-            <number>0</number>
+            <number>9</number>
            </property>
            <item>
             <widget class="QFrame" name="frame_28">
@@ -1100,19 +1117,19 @@ font: 12pt &quot;MS Shell Dlg 2&quot;;</string>
              </property>
              <layout class="QHBoxLayout" name="horizontalLayout_11" stretch="3,1">
               <property name="spacing">
-               <number>0</number>
+               <number>6</number>
               </property>
               <property name="leftMargin">
-               <number>0</number>
+               <number>9</number>
               </property>
               <property name="topMargin">
-               <number>0</number>
+               <number>9</number>
               </property>
               <property name="rightMargin">
-               <number>0</number>
+               <number>9</number>
               </property>
               <property name="bottomMargin">
-               <number>0</number>
+               <number>9</number>
               </property>
               <item>
                <widget class="QFrame" name="frame_31">
@@ -1303,8 +1320,9 @@ font: 10pt &quot;MS Shell Dlg 2&quot;;</string>
                  <item>
                   <widget class="QPushButton" name="bt_Guardar_Opcion">
                    <property name="styleSheet">
-                    <string notr="true">background-color: rgb(255, 255, 255);
-font: 12pt &quot;MS Shell Dlg 2&quot;;</string>
+                    <string notr="true">background-color:rgb(255, 255, 255);
+border:1px solid rgb(100,100,100);
+color:rgb(50,50,50);</string>
                    </property>
                    <property name="text">
                     <string>Guardar</string>
@@ -1314,8 +1332,9 @@ font: 12pt &quot;MS Shell Dlg 2&quot;;</string>
                  <item>
                   <widget class="QPushButton" name="bt_Editar_Opcion">
                    <property name="styleSheet">
-                    <string notr="true">background-color: rgb(255, 255, 255);
-font: 12pt &quot;MS Shell Dlg 2&quot;;</string>
+                    <string notr="true">background-color:rgb(255, 255, 255);
+border:1px solid rgb(100,100,100);
+color:rgb(50,50,50);</string>
                    </property>
                    <property name="text">
                     <string>Editar</string>
@@ -1325,8 +1344,9 @@ font: 12pt &quot;MS Shell Dlg 2&quot;;</string>
                  <item>
                   <widget class="QPushButton" name="bt_Eliminar_Opcion">
                    <property name="styleSheet">
-                    <string notr="true">background-color: rgb(255, 255, 255);
-font: 12pt &quot;MS Shell Dlg 2&quot;;</string>
+                    <string notr="true">background-color:rgb(255, 255, 255);
+border:1px solid rgb(100,100,100);
+color:rgb(50,50,50);</string>
                    </property>
                    <property name="text">
                     <string>Eliminar</string>
@@ -1336,8 +1356,9 @@ font: 12pt &quot;MS Shell Dlg 2&quot;;</string>
                  <item>
                   <widget class="QPushButton" name="bt_Vaciar_Opcion">
                    <property name="styleSheet">
-                    <string notr="true">background-color: rgb(255, 255, 255);
-font: 12pt &quot;MS Shell Dlg 2&quot;;</string>
+                    <string notr="true">background-color:rgb(255, 255, 255);
+border:1px solid rgb(100,100,100);
+color:rgb(50,50,50);</string>
                    </property>
                    <property name="text">
                     <string>Vaciar Campos</string>
@@ -1347,8 +1368,10 @@ font: 12pt &quot;MS Shell Dlg 2&quot;;</string>
                  <item>
                   <widget class="QPushButton" name="bt_busca_opcion">
                    <property name="styleSheet">
-                    <string notr="true">background-color: rgb(255, 255, 255);
-font: 12pt &quot;MS Shell Dlg 2&quot;;</string>
+                    <string notr="true">background-color:rgb(255, 255, 255);
+border:1px solid rgb(100,100,100);
+color:rgb(50,50,50);
+</string>
                    </property>
                    <property name="text">
                     <string>Buscar</string>
@@ -1402,11 +1425,11 @@ font: 12pt &quot;MS Shell Dlg 2&quot;;</string>
                 <attribute name="horizontalHeaderCascadingSectionResizes">
                  <bool>false</bool>
                 </attribute>
-                <attribute name="horizontalHeaderDefaultSectionSize">
-                 <number>348</number>
-                </attribute>
                 <attribute name="horizontalHeaderMinimumSectionSize">
                  <number>40</number>
+                </attribute>
+                <attribute name="horizontalHeaderDefaultSectionSize">
+                 <number>348</number>
                 </attribute>
                 <attribute name="horizontalHeaderShowSortIndicator" stdset="0">
                  <bool>false</bool>
@@ -1440,19 +1463,19 @@ font: 12pt &quot;MS Shell Dlg 2&quot;;</string>
           </attribute>
           <layout class="QVBoxLayout" name="verticalLayout_21" stretch="1,1">
            <property name="spacing">
-            <number>0</number>
+            <number>6</number>
            </property>
            <property name="leftMargin">
-            <number>0</number>
+            <number>9</number>
            </property>
            <property name="topMargin">
-            <number>0</number>
+            <number>9</number>
            </property>
            <property name="rightMargin">
-            <number>0</number>
+            <number>9</number>
            </property>
            <property name="bottomMargin">
-            <number>0</number>
+            <number>9</number>
            </property>
            <item>
             <widget class="QFrame" name="frame_34">
@@ -1467,19 +1490,19 @@ font: 12pt &quot;MS Shell Dlg 2&quot;;</string>
              </property>
              <layout class="QHBoxLayout" name="horizontalLayout_12" stretch="3,1">
               <property name="spacing">
-               <number>0</number>
+               <number>6</number>
               </property>
               <property name="leftMargin">
-               <number>0</number>
+               <number>9</number>
               </property>
               <property name="topMargin">
-               <number>0</number>
+               <number>9</number>
               </property>
               <property name="rightMargin">
-               <number>0</number>
+               <number>9</number>
               </property>
               <property name="bottomMargin">
-               <number>0</number>
+               <number>9</number>
               </property>
               <item>
                <widget class="QFrame" name="frame_35">
@@ -1673,8 +1696,9 @@ font: 14pt &quot;MS Shell Dlg 2&quot;;</string>
                  <item>
                   <widget class="QPushButton" name="bt_Guardar_Usuario_rol">
                    <property name="styleSheet">
-                    <string notr="true">background-color: rgb(255, 255, 255);
-font: 12pt &quot;MS Shell Dlg 2&quot;;</string>
+                    <string notr="true">background-color:rgb(255, 255, 255);
+border:1px solid rgb(100,100,100);
+color:rgb(50,50,50);</string>
                    </property>
                    <property name="text">
                     <string>Guardar</string>
@@ -1684,8 +1708,9 @@ font: 12pt &quot;MS Shell Dlg 2&quot;;</string>
                  <item>
                   <widget class="QPushButton" name="bt_Editar_Usuario_rol">
                    <property name="styleSheet">
-                    <string notr="true">background-color: rgb(255, 255, 255);
-font: 12pt &quot;MS Shell Dlg 2&quot;;</string>
+                    <string notr="true">background-color:rgb(255, 255, 255);
+border:1px solid rgb(100,100,100);
+color:rgb(50,50,50);</string>
                    </property>
                    <property name="text">
                     <string>Editar</string>
@@ -1695,8 +1720,9 @@ font: 12pt &quot;MS Shell Dlg 2&quot;;</string>
                  <item>
                   <widget class="QPushButton" name="bt_Eliminar_Usuario_rol">
                    <property name="styleSheet">
-                    <string notr="true">background-color: rgb(255, 255, 255);
-font: 12pt &quot;MS Shell Dlg 2&quot;;</string>
+                    <string notr="true">background-color:rgb(255, 255, 255);
+border:1px solid rgb(100,100,100);
+color:rgb(50,50,50);</string>
                    </property>
                    <property name="text">
                     <string>Eliminar</string>
@@ -1706,8 +1732,9 @@ font: 12pt &quot;MS Shell Dlg 2&quot;;</string>
                  <item>
                   <widget class="QPushButton" name="bt_Vaciar_Usuario_rol">
                    <property name="styleSheet">
-                    <string notr="true">background-color: rgb(255, 255, 255);
-font: 12pt &quot;MS Shell Dlg 2&quot;;</string>
+                    <string notr="true">background-color:rgb(255, 255, 255);
+border:1px solid rgb(100,100,100);
+color:rgb(50,50,50);</string>
                    </property>
                    <property name="text">
                     <string>Vaciar Campos</string>
@@ -1728,7 +1755,7 @@ font: 12pt &quot;MS Shell Dlg 2&quot;;</string>
              <property name="frameShadow">
               <enum>QFrame::Raised</enum>
              </property>
-             <layout class="QVBoxLayout" name="verticalLayout_30">
+             <layout class="QVBoxLayout" name="verticalLayout_30" stretch="0">
               <property name="spacing">
                <number>0</number>
               </property>
@@ -1762,7 +1789,7 @@ font: 12pt &quot;MS Shell Dlg 2&quot;;</string>
                  <bool>false</bool>
                 </attribute>
                 <attribute name="horizontalHeaderDefaultSectionSize">
-                 <number>151</number>
+                 <number>145</number>
                 </attribute>
                 <attribute name="horizontalHeaderHighlightSections">
                  <bool>true</bool>
@@ -1779,14 +1806,14 @@ font: 12pt &quot;MS Shell Dlg 2&quot;;</string>
                 <attribute name="verticalHeaderCascadingSectionResizes">
                  <bool>false</bool>
                 </attribute>
+                <attribute name="verticalHeaderMinimumSectionSize">
+                 <number>22</number>
+                </attribute>
                 <attribute name="verticalHeaderDefaultSectionSize">
                  <number>25</number>
                 </attribute>
                 <attribute name="verticalHeaderHighlightSections">
                  <bool>true</bool>
-                </attribute>
-                <attribute name="verticalHeaderMinimumSectionSize">
-                 <number>22</number>
                 </attribute>
                 <attribute name="verticalHeaderShowSortIndicator" stdset="0">
                  <bool>false</bool>
@@ -1832,19 +1859,19 @@ font: 12pt &quot;MS Shell Dlg 2&quot;;</string>
           </attribute>
           <layout class="QVBoxLayout" name="verticalLayout_22" stretch="1,1">
            <property name="spacing">
-            <number>0</number>
+            <number>6</number>
            </property>
            <property name="leftMargin">
-            <number>0</number>
+            <number>9</number>
            </property>
            <property name="topMargin">
-            <number>0</number>
+            <number>9</number>
            </property>
            <property name="rightMargin">
-            <number>0</number>
+            <number>9</number>
            </property>
            <property name="bottomMargin">
-            <number>0</number>
+            <number>9</number>
            </property>
            <item>
             <widget class="QFrame" name="frame_38">
@@ -1859,19 +1886,19 @@ font: 12pt &quot;MS Shell Dlg 2&quot;;</string>
              </property>
              <layout class="QHBoxLayout" name="horizontalLayout_13" stretch="3,1">
               <property name="spacing">
-               <number>0</number>
+               <number>6</number>
               </property>
               <property name="leftMargin">
-               <number>0</number>
+               <number>9</number>
               </property>
               <property name="topMargin">
-               <number>0</number>
+               <number>9</number>
               </property>
               <property name="rightMargin">
-               <number>0</number>
+               <number>9</number>
               </property>
               <property name="bottomMargin">
-               <number>0</number>
+               <number>9</number>
               </property>
               <item>
                <widget class="QFrame" name="frame_39">
@@ -2059,8 +2086,9 @@ font: 14pt &quot;MS Shell Dlg 2&quot;;</string>
                  <item>
                   <widget class="QPushButton" name="bt_Guardar_Rol_opcion">
                    <property name="styleSheet">
-                    <string notr="true">background-color: rgb(255, 255, 255);
-font: 12pt &quot;MS Shell Dlg 2&quot;;</string>
+                    <string notr="true">background-color:rgb(255, 255, 255);
+border:1px solid rgb(100,100,100);
+color:rgb(50,50,50);</string>
                    </property>
                    <property name="text">
                     <string>Guardar</string>
@@ -2070,8 +2098,9 @@ font: 12pt &quot;MS Shell Dlg 2&quot;;</string>
                  <item>
                   <widget class="QPushButton" name="bt_Editar_Rol_opcion">
                    <property name="styleSheet">
-                    <string notr="true">background-color: rgb(255, 255, 255);
-font: 12pt &quot;MS Shell Dlg 2&quot;;</string>
+                    <string notr="true">background-color:rgb(255, 255, 255);
+border:1px solid rgb(100,100,100);
+color:rgb(50,50,50);</string>
                    </property>
                    <property name="text">
                     <string>Editar</string>
@@ -2081,8 +2110,9 @@ font: 12pt &quot;MS Shell Dlg 2&quot;;</string>
                  <item>
                   <widget class="QPushButton" name="bt_Eliminar_Rol_opcion">
                    <property name="styleSheet">
-                    <string notr="true">background-color: rgb(255, 255, 255);
-font: 12pt &quot;MS Shell Dlg 2&quot;;</string>
+                    <string notr="true">background-color:rgb(255, 255, 255);
+border:1px solid rgb(100,100,100);
+color:rgb(50,50,50);</string>
                    </property>
                    <property name="text">
                     <string>Eliminar</string>
@@ -2092,8 +2122,9 @@ font: 12pt &quot;MS Shell Dlg 2&quot;;</string>
                  <item>
                   <widget class="QPushButton" name="bt_Vaciar_Rol_opcion">
                    <property name="styleSheet">
-                    <string notr="true">background-color: rgb(255, 255, 255);
-font: 12pt &quot;MS Shell Dlg 2&quot;;</string>
+                    <string notr="true">background-color:rgb(255, 255, 255);
+border:1px solid rgb(100,100,100);
+color:rgb(50,50,50);</string>
                    </property>
                    <property name="text">
                     <string>Vaciar Campos</string>
@@ -2114,7 +2145,7 @@ font: 12pt &quot;MS Shell Dlg 2&quot;;</string>
              <property name="frameShadow">
               <enum>QFrame::Raised</enum>
              </property>
-             <layout class="QVBoxLayout" name="verticalLayout_32">
+             <layout class="QVBoxLayout" name="verticalLayout_32" stretch="0">
               <property name="spacing">
                <number>0</number>
               </property>
@@ -2153,11 +2184,11 @@ font: 12pt &quot;MS Shell Dlg 2&quot;;</string>
                 <attribute name="horizontalHeaderStretchLastSection">
                  <bool>true</bool>
                 </attribute>
-                <attribute name="verticalHeaderDefaultSectionSize">
-                 <number>25</number>
-                </attribute>
                 <attribute name="verticalHeaderMinimumSectionSize">
                  <number>23</number>
+                </attribute>
+                <attribute name="verticalHeaderDefaultSectionSize">
+                 <number>25</number>
                 </attribute>
                 <column>
                  <property name="text">

@@ -13,6 +13,14 @@ class Dt_Proveedor:
         return querys
 
     @classmethod
+    def buscarProveedor(cls, proveedor):
+        cursor = Conexion.Conexion.obtenerConexion().cursor()
+        cursor.execute(f"SELECT * FROM proveedores WHERE nombre like '%' '{proveedor}' '%'")
+        querys = cursor.fetchall()
+        cursor.close()
+        return querys
+
+    @classmethod
     def guardarProveedor(cls, Proveedor):
 
         try:
@@ -64,4 +72,4 @@ class Dt_Proveedor:
 
 
 if __name__ == '__main__':
-    print(Dt_Proveedor.listarProveedor())
+    print(Dt_Proveedor.buscarProveedor("a"))
