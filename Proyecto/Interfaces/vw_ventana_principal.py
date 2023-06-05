@@ -14,16 +14,21 @@ from PyQt5 import QtCore, QtGui, QtWidgets
 class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
         MainWindow.setObjectName("MainWindow")
-        MainWindow.resize(1138, 755)
+        MainWindow.resize(1301, 855)
         MainWindow.setMinimumSize(QtCore.QSize(0, 0))
+        MainWindow.setStyleSheet("")
         self.centralwidget = QtWidgets.QWidget(MainWindow)
         self.centralwidget.setStyleSheet("background-color: rgb(242, 242, 241);")
         self.centralwidget.setObjectName("centralwidget")
         self.gridLayout_2 = QtWidgets.QGridLayout(self.centralwidget)
         self.gridLayout_2.setObjectName("gridLayout_2")
         self.frame = QtWidgets.QFrame(self.centralwidget)
-        self.frame.setStyleSheet("border:none;\n"
-"font-family:\"Inter\", sans-serif;")
+        self.frame.setStyleSheet("* {\n"
+"        border:none;\n"
+"font-family:\"Inter\", sans-serif;\n"
+"}\n"
+"\n"
+"")
         self.frame.setFrameShape(QtWidgets.QFrame.StyledPanel)
         self.frame.setFrameShadow(QtWidgets.QFrame.Raised)
         self.frame.setObjectName("frame")
@@ -62,9 +67,27 @@ class Ui_MainWindow(object):
         self.gridLayout_4.addLayout(self.ly_contenedor, 0, 0, 1, 1)
         self.gridLayout.addWidget(self.frame_3, 0, 1, 1, 1)
         self.frame_2 = QtWidgets.QFrame(self.frame)
-        self.frame_2.setStyleSheet("background-color: rgb(240, 213, 209);\n"
-"border-radius:10%;\n"
-"color: rgb(45, 44, 44);")
+        self.frame_2.setStyleSheet("QFrame{\n"
+"    background-color: rgb(240, 213, 209);\n"
+"\n"
+"}\n"
+"\n"
+"QPushButton {\n"
+"    background-color:rgb(255, 255, 255);\n"
+"    border:1px solid rgb(100,100,100);\n"
+"    color:rgb(50,50,50);\n"
+"    padding: 8px 16px;\n"
+"    border-radius: 6px;\n"
+"    font-size: 14px;\n"
+"}\n"
+"\n"
+"QPushButton:hover {\n"
+"    background-color: #D6D2D1;\n"
+"}\n"
+"\n"
+"QPushButton:pressed {\n"
+"    background-color: #52c7ff;\n"
+"}")
         self.frame_2.setFrameShape(QtWidgets.QFrame.StyledPanel)
         self.frame_2.setFrameShadow(QtWidgets.QFrame.Raised)
         self.frame_2.setObjectName("frame_2")
@@ -98,15 +121,12 @@ class Ui_MainWindow(object):
         self.bt_vista_previa_pedidos = QtWidgets.QPushButton(self.frame_2)
         self.bt_vista_previa_pedidos.setMinimumSize(QtCore.QSize(0, 44))
         self.bt_vista_previa_pedidos.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
-        self.bt_vista_previa_pedidos.setStyleSheet("QPushButton{\n"
-"        background-color: rgb(255, 255, 255);    \n"
-"        border:1px solid #c7c7c7;\n"
-"\n"
+        self.bt_vista_previa_pedidos.setStyleSheet("QPushButton:hover {\n"
+"    background-color: #D6D2D1;\n"
 "}\n"
 "\n"
-"QPushButton:hover{\n"
-"        background-color:#c7c7c7;\n"
-"        border:1px solid rgb(255,255,255);\n"
+"QPushButton:pressed {\n"
+"    background-color: #52c7ff;\n"
 "}\n"
 "")
         self.bt_vista_previa_pedidos.setObjectName("bt_vista_previa_pedidos")
@@ -114,31 +134,24 @@ class Ui_MainWindow(object):
         self.bt_clientes = QtWidgets.QPushButton(self.frame_2)
         self.bt_clientes.setMinimumSize(QtCore.QSize(0, 44))
         self.bt_clientes.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
-        self.bt_clientes.setStyleSheet("QPushButton{\n"
-"        background-color: rgb(255, 255, 255);    \n"
-"        border:1px solid #c7c7c7;\n"
-"\n"
+        self.bt_clientes.setStyleSheet("QPushButton:hover {\n"
+"    background-color: #D6D2D1;\n"
 "}\n"
 "\n"
-"QPushButton:hover{\n"
-"        background-color:#c7c7c7;\n"
-"        border:1px solid rgb(255,255,255);\n"
-"}\n"
-"")
+"QPushButton:pressed {\n"
+"    background-color: #52c7ff;\n"
+"}")
         self.bt_clientes.setObjectName("bt_clientes")
         self.verticalLayout.addWidget(self.bt_clientes)
         self.bt_proveedores = QtWidgets.QPushButton(self.frame_2)
         self.bt_proveedores.setMinimumSize(QtCore.QSize(0, 44))
         self.bt_proveedores.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
-        self.bt_proveedores.setStyleSheet("QPushButton{\n"
-"        background-color: rgb(255, 255, 255);    \n"
-"        border:1px solid #c7c7c7;\n"
-"\n"
+        self.bt_proveedores.setStyleSheet("QPushButton:hover {\n"
+"    background-color: #D6D2D1;\n"
 "}\n"
 "\n"
-"QPushButton:hover{\n"
-"        background-color:#c7c7c7;\n"
-"        border:1px solid rgb(255,255,255);\n"
+"QPushButton:pressed {\n"
+"    background-color: #52c7ff;\n"
 "}\n"
 "")
         self.bt_proveedores.setObjectName("bt_proveedores")
@@ -148,15 +161,12 @@ class Ui_MainWindow(object):
         self.bt_materiales.setMinimumSize(QtCore.QSize(44, 44))
         self.bt_materiales.setSizeIncrement(QtCore.QSize(0, 0))
         self.bt_materiales.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
-        self.bt_materiales.setStyleSheet("QPushButton{\n"
-"        background-color: rgb(255, 255, 255);    \n"
-"        border:1px solid #c7c7c7;\n"
-"\n"
+        self.bt_materiales.setStyleSheet("QPushButton:hover {\n"
+"    background-color: #D6D2D1;\n"
 "}\n"
 "\n"
-"QPushButton:hover{\n"
-"        background-color:#c7c7c7;\n"
-"        border:1px solid rgb(255,255,255);\n"
+"QPushButton:pressed {\n"
+"    background-color: #52c7ff;\n"
 "}\n"
 "\n"
 "")
@@ -169,15 +179,12 @@ class Ui_MainWindow(object):
         self.bt_materiales_por_proveedor.setMinimumSize(QtCore.QSize(44, 44))
         self.bt_materiales_por_proveedor.setSizeIncrement(QtCore.QSize(0, 0))
         self.bt_materiales_por_proveedor.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
-        self.bt_materiales_por_proveedor.setStyleSheet("QPushButton{\n"
-"        background-color: rgb(255, 255, 255);    \n"
-"        border:1px solid #c7c7c7;\n"
-"\n"
+        self.bt_materiales_por_proveedor.setStyleSheet("QPushButton:hover {\n"
+"    background-color: #D6D2D1;\n"
 "}\n"
 "\n"
-"QPushButton:hover{\n"
-"        background-color:#c7c7c7;\n"
-"        border:1px solid rgb(255,255,255);\n"
+"QPushButton:pressed {\n"
+"    background-color: #52c7ff;\n"
 "}\n"
 "\n"
 "")
@@ -190,17 +197,13 @@ class Ui_MainWindow(object):
         self.bt_facturas.setMinimumSize(QtCore.QSize(44, 44))
         self.bt_facturas.setSizeIncrement(QtCore.QSize(0, 0))
         self.bt_facturas.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
-        self.bt_facturas.setStyleSheet("QPushButton{\n"
-"        background-color: rgb(255, 255, 255);    \n"
-"        border:1px solid #c7c7c7;\n"
-"\n"
+        self.bt_facturas.setStyleSheet("QPushButton:hover {\n"
+"    background-color: #D6D2D1;\n"
 "}\n"
 "\n"
-"QPushButton:hover{\n"
-"        background-color:#c7c7c7;\n"
-"        border:1px solid rgb(255,255,255);\n"
+"QPushButton:pressed {\n"
+"    background-color: #52c7ff;\n"
 "}\n"
-"\n"
 "")
         self.bt_facturas.setIconSize(QtCore.QSize(19, 19))
         self.bt_facturas.setFlat(False)
@@ -211,15 +214,12 @@ class Ui_MainWindow(object):
         self.bt_ventas.setMinimumSize(QtCore.QSize(44, 44))
         self.bt_ventas.setSizeIncrement(QtCore.QSize(0, 0))
         self.bt_ventas.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
-        self.bt_ventas.setStyleSheet("QPushButton{\n"
-"        background-color: rgb(255, 255, 255);    \n"
-"        border:1px solid #c7c7c7;\n"
-"\n"
+        self.bt_ventas.setStyleSheet("QPushButton:hover {\n"
+"    background-color: #D6D2D1;\n"
 "}\n"
 "\n"
-"QPushButton:hover{\n"
-"        background-color:#c7c7c7;\n"
-"        border:1px solid rgb(255,255,255);\n"
+"QPushButton:pressed {\n"
+"    background-color: #52c7ff;\n"
 "}\n"
 "\n"
 "")
@@ -232,15 +232,12 @@ class Ui_MainWindow(object):
         self.bt_taller.setMinimumSize(QtCore.QSize(44, 44))
         self.bt_taller.setSizeIncrement(QtCore.QSize(0, 0))
         self.bt_taller.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
-        self.bt_taller.setStyleSheet("QPushButton{\n"
-"        background-color: rgb(255, 255, 255);    \n"
-"        border:1px solid #c7c7c7;\n"
-"\n"
+        self.bt_taller.setStyleSheet("QPushButton:hover {\n"
+"    background-color: #D6D2D1;\n"
 "}\n"
 "\n"
-"QPushButton:hover{\n"
-"        background-color:#c7c7c7;\n"
-"        border:1px solid rgb(255,255,255);\n"
+"QPushButton:pressed {\n"
+"    background-color: #52c7ff;\n"
 "}\n"
 "\n"
 "")
@@ -251,15 +248,12 @@ class Ui_MainWindow(object):
         self.bt_ajustes = QtWidgets.QPushButton(self.frame_2)
         self.bt_ajustes.setMinimumSize(QtCore.QSize(0, 44))
         self.bt_ajustes.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
-        self.bt_ajustes.setStyleSheet("QPushButton{\n"
-"        background-color: rgb(255, 255, 255);    \n"
-"        border:1px solid #c7c7c7;\n"
-"\n"
+        self.bt_ajustes.setStyleSheet("QPushButton:hover {\n"
+"    background-color: #D6D2D1;\n"
 "}\n"
 "\n"
-"QPushButton:hover{\n"
-"        background-color:#c7c7c7;\n"
-"        border:1px solid rgb(255,255,255);\n"
+"QPushButton:pressed {\n"
+"    background-color: #52c7ff;\n"
 "}\n"
 "")
         self.bt_ajustes.setObjectName("bt_ajustes")

@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1138</width>
-    <height>755</height>
+    <width>1301</width>
+    <height>855</height>
    </rect>
   </property>
   <property name="minimumSize">
@@ -19,6 +19,9 @@
   <property name="windowTitle">
    <string>MainWindow</string>
   </property>
+  <property name="styleSheet">
+   <string notr="true"/>
+  </property>
   <widget class="QWidget" name="centralwidget">
    <property name="styleSheet">
     <string notr="true">background-color: rgb(242, 242, 241);</string>
@@ -27,8 +30,12 @@
     <item row="0" column="1">
      <widget class="QFrame" name="frame">
       <property name="styleSheet">
-       <string notr="true">border:none;
-font-family:&quot;Inter&quot;, sans-serif;</string>
+       <string notr="true">* {
+		border:none;
+font-family:&quot;Inter&quot;, sans-serif;
+}
+
+</string>
       </property>
       <property name="frameShape">
        <enum>QFrame::StyledPanel</enum>
@@ -81,9 +88,27 @@ QPushButton:hover{
          <item row="0" column="0">
           <widget class="QFrame" name="frame_2">
            <property name="styleSheet">
-            <string notr="true">background-color: rgb(240, 213, 209);
-border-radius:10%;
-color: rgb(45, 44, 44);</string>
+            <string notr="true">QFrame{
+	background-color: rgb(240, 213, 209);
+
+}
+
+QPushButton {
+	background-color:rgb(255, 255, 255);
+	border:1px solid rgb(100,100,100);
+	color:rgb(50,50,50);
+    padding: 8px 16px;
+    border-radius: 6px;
+    font-size: 14px;
+}
+
+QPushButton:hover {
+    background-color: #D6D2D1;
+}
+
+QPushButton:pressed {
+    background-color: #52c7ff;
+}</string>
            </property>
            <property name="frameShape">
             <enum>QFrame::StyledPanel</enum>
@@ -174,15 +199,12 @@ font-size:22px;</string>
                <cursorShape>PointingHandCursor</cursorShape>
               </property>
               <property name="styleSheet">
-               <string notr="true">QPushButton{
-		background-color: rgb(255, 255, 255);	
-		border:1px solid #c7c7c7;
-
+               <string notr="true">QPushButton:hover {
+    background-color: #D6D2D1;
 }
 
-QPushButton:hover{
-		background-color:#c7c7c7;
-		border:1px solid rgb(255,255,255);
+QPushButton:pressed {
+    background-color: #52c7ff;
 }
 </string>
               </property>
@@ -203,17 +225,13 @@ QPushButton:hover{
                <cursorShape>PointingHandCursor</cursorShape>
               </property>
               <property name="styleSheet">
-               <string notr="true">QPushButton{
-		background-color: rgb(255, 255, 255);	
-		border:1px solid #c7c7c7;
-
+               <string notr="true">QPushButton:hover {
+    background-color: #D6D2D1;
 }
 
-QPushButton:hover{
-		background-color:#c7c7c7;
-		border:1px solid rgb(255,255,255);
-}
-</string>
+QPushButton:pressed {
+    background-color: #52c7ff;
+}</string>
               </property>
               <property name="text">
                <string>Clientes</string>
@@ -232,15 +250,12 @@ QPushButton:hover{
                <cursorShape>PointingHandCursor</cursorShape>
               </property>
               <property name="styleSheet">
-               <string notr="true">QPushButton{
-		background-color: rgb(255, 255, 255);	
-		border:1px solid #c7c7c7;
-
+               <string notr="true">QPushButton:hover {
+    background-color: #D6D2D1;
 }
 
-QPushButton:hover{
-		background-color:#c7c7c7;
-		border:1px solid rgb(255,255,255);
+QPushButton:pressed {
+    background-color: #52c7ff;
 }
 </string>
               </property>
@@ -270,15 +285,12 @@ QPushButton:hover{
                <cursorShape>PointingHandCursor</cursorShape>
               </property>
               <property name="styleSheet">
-               <string notr="true">QPushButton{
-		background-color: rgb(255, 255, 255);	
-		border:1px solid #c7c7c7;
-
+               <string notr="true">QPushButton:hover {
+    background-color: #D6D2D1;
 }
 
-QPushButton:hover{
-		background-color:#c7c7c7;
-		border:1px solid rgb(255,255,255);
+QPushButton:pressed {
+    background-color: #52c7ff;
 }
 
 </string>
@@ -318,15 +330,12 @@ QPushButton:hover{
                <cursorShape>PointingHandCursor</cursorShape>
               </property>
               <property name="styleSheet">
-               <string notr="true">QPushButton{
-		background-color: rgb(255, 255, 255);	
-		border:1px solid #c7c7c7;
-
+               <string notr="true">QPushButton:hover {
+    background-color: #D6D2D1;
 }
 
-QPushButton:hover{
-		background-color:#c7c7c7;
-		border:1px solid rgb(255,255,255);
+QPushButton:pressed {
+    background-color: #52c7ff;
 }
 
 </string>
@@ -366,17 +375,13 @@ QPushButton:hover{
                <cursorShape>PointingHandCursor</cursorShape>
               </property>
               <property name="styleSheet">
-               <string notr="true">QPushButton{
-		background-color: rgb(255, 255, 255);	
-		border:1px solid #c7c7c7;
-
+               <string notr="true">QPushButton:hover {
+    background-color: #D6D2D1;
 }
 
-QPushButton:hover{
-		background-color:#c7c7c7;
-		border:1px solid rgb(255,255,255);
+QPushButton:pressed {
+    background-color: #52c7ff;
 }
-
 </string>
               </property>
               <property name="text">
@@ -414,15 +419,12 @@ QPushButton:hover{
                <cursorShape>PointingHandCursor</cursorShape>
               </property>
               <property name="styleSheet">
-               <string notr="true">QPushButton{
-		background-color: rgb(255, 255, 255);	
-		border:1px solid #c7c7c7;
-
+               <string notr="true">QPushButton:hover {
+    background-color: #D6D2D1;
 }
 
-QPushButton:hover{
-		background-color:#c7c7c7;
-		border:1px solid rgb(255,255,255);
+QPushButton:pressed {
+    background-color: #52c7ff;
 }
 
 </string>
@@ -462,15 +464,12 @@ QPushButton:hover{
                <cursorShape>PointingHandCursor</cursorShape>
               </property>
               <property name="styleSheet">
-               <string notr="true">QPushButton{
-		background-color: rgb(255, 255, 255);	
-		border:1px solid #c7c7c7;
-
+               <string notr="true">QPushButton:hover {
+    background-color: #D6D2D1;
 }
 
-QPushButton:hover{
-		background-color:#c7c7c7;
-		border:1px solid rgb(255,255,255);
+QPushButton:pressed {
+    background-color: #52c7ff;
 }
 
 </string>
@@ -501,15 +500,12 @@ QPushButton:hover{
                <cursorShape>PointingHandCursor</cursorShape>
               </property>
               <property name="styleSheet">
-               <string notr="true">QPushButton{
-		background-color: rgb(255, 255, 255);	
-		border:1px solid #c7c7c7;
-
+               <string notr="true">QPushButton:hover {
+    background-color: #D6D2D1;
 }
 
-QPushButton:hover{
-		background-color:#c7c7c7;
-		border:1px solid rgb(255,255,255);
+QPushButton:pressed {
+    background-color: #52c7ff;
 }
 </string>
               </property>

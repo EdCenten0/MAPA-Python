@@ -16,28 +16,78 @@ class Ui_MainWindow(object):
         MainWindow.setObjectName("MainWindow")
         MainWindow.resize(1114, 600)
         MainWindow.setMinimumSize(QtCore.QSize(800, 600))
-        MainWindow.setStyleSheet("background-color: rgb(63, 73, 100);")
+        MainWindow.setStyleSheet("background-color: rgb(222, 221, 218);")
         self.centralwidget = QtWidgets.QWidget(MainWindow)
         self.centralwidget.setStyleSheet("background-color: rgb(242, 242, 241);")
         self.centralwidget.setObjectName("centralwidget")
         self.gridLayout_4 = QtWidgets.QGridLayout(self.centralwidget)
         self.gridLayout_4.setObjectName("gridLayout_4")
         self.frame_2 = QtWidgets.QFrame(self.centralwidget)
-        self.frame_2.setStyleSheet("QPushButton{\n"
-"        background-color: rgb(255, 255, 255);    \n"
-"        border:1px solid #c7c7c7;\n"
-"        border-radius:7px;\n"
-"        background-color:rgb(246, 245, 244);\n"
+        self.frame_2.setStyleSheet("QPushButton {\n"
+"    background-color:rgb(255, 255, 255);\n"
+"    border:1px solid rgb(100,100,100);\n"
+"    color:rgb(50,50,50);\n"
+"    padding: 8px 16px;\n"
+"    border-radius: 6px;\n"
+"    font-size: 14px;\n"
 "}\n"
 "\n"
-"QPushButton:hover{\n"
-"        background-color:#c7c7c7;\n"
-"        border:1px solid rgb(255,255,255);\n"
+"QPushButton:hover {\n"
+"    background-color: #D6D2D1;\n"
+"}\n"
+"\n"
+"QPushButton:pressed {\n"
+"    background-color: #52c7ff;\n"
+"}\n"
+"\n"
+"QLabel{\n"
+"        font-weight:500;\n"
 "}\n"
 "\n"
 "*{\n"
 "        font-family:\"Inter\", sans-serif;\n"
+"        \n"
 "}\n"
+"\n"
+"QFrame{\n"
+"        background-color: rgb(222, 221, 218);\n"
+"        border-radius:10%;\n"
+"}\n"
+"\n"
+"QLineEdit {\n"
+"    background-color: white;\n"
+"    border: 1px solid gray;\n"
+"    padding: 4px;\n"
+"    border-radius: 6px;\n"
+"    font-size: 12px;\n"
+"}\n"
+"\n"
+"QLineEdit:focus {\n"
+"    border-color: #3daee9;\n"
+"    outline: none;\n"
+"}\n"
+"\n"
+"QLineEdit::hover {\n"
+"    background-color: #f0f0f0;\n"
+"}\n"
+"\n"
+"QTextEdit {\n"
+"    background-color: white;\n"
+"    border: 1px solid gray;\n"
+"    padding: 4px;\n"
+"    border-radius: 6px;\n"
+"    font-size: 12px;\n"
+"}\n"
+"\n"
+"QTextEdit:focus {\n"
+"    border-color: #3daee9;\n"
+"    outline: none;\n"
+"}\n"
+"\n"
+"QTextEdit::hover {\n"
+"    background-color: #f0f0f0;\n"
+"}\n"
+"\n"
 "")
         self.frame_2.setFrameShape(QtWidgets.QFrame.StyledPanel)
         self.frame_2.setFrameShadow(QtWidgets.QFrame.Raised)
@@ -88,10 +138,14 @@ class Ui_MainWindow(object):
         spacerItem = QtWidgets.QSpacerItem(11, 205, QtWidgets.QSizePolicy.Minimum, QtWidgets.QSizePolicy.Expanding)
         self.verticalLayout_2.addItem(spacerItem)
         self.pushButton_5 = QtWidgets.QPushButton(self.frame)
+        self.pushButton_5.setEnabled(True)
+        self.pushButton_5.setMinimumSize(QtCore.QSize(0, 0))
+        self.pushButton_5.setBaseSize(QtCore.QSize(0, 0))
         self.pushButton_5.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
         self.pushButton_5.setStyleSheet("QPushButton{\n"
 "        background-color: rgb(255, 255, 255);    \n"
 "        border:1px solid #c7c7c7;\n"
+"        height:30px;\n"
 "\n"
 "}\n"
 "\n"
@@ -106,13 +160,6 @@ class Ui_MainWindow(object):
         self.horizontalLayout.addWidget(self.frame)
         self.gridLayout = QtWidgets.QGridLayout()
         self.gridLayout.setObjectName("gridLayout")
-        self.label_4 = QtWidgets.QLabel(self.frame_2)
-        self.label_4.setTextFormat(QtCore.Qt.AutoText)
-        self.label_4.setScaledContents(False)
-        self.label_4.setAlignment(QtCore.Qt.AlignRight|QtCore.Qt.AlignTop|QtCore.Qt.AlignTrailing)
-        self.label_4.setWordWrap(False)
-        self.label_4.setObjectName("label_4")
-        self.gridLayout.addWidget(self.label_4, 2, 0, 1, 1)
         self.horizontalLayout_2 = QtWidgets.QHBoxLayout()
         self.horizontalLayout_2.setObjectName("horizontalLayout_2")
         self.pushButton_2 = QtWidgets.QPushButton(self.frame_2)
@@ -128,6 +175,20 @@ class Ui_MainWindow(object):
         self.pushButton.setObjectName("pushButton")
         self.horizontalLayout_2.addWidget(self.pushButton)
         self.gridLayout.addLayout(self.horizontalLayout_2, 5, 1, 1, 1)
+        spacerItem1 = QtWidgets.QSpacerItem(20, 40, QtWidgets.QSizePolicy.Minimum, QtWidgets.QSizePolicy.Expanding)
+        self.gridLayout.addItem(spacerItem1, 0, 1, 1, 1)
+        self.pushButton_4 = QtWidgets.QPushButton(self.frame_2)
+        self.pushButton_4.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
+        self.pushButton_4.setStyleSheet("font-size:15px;")
+        self.pushButton_4.setObjectName("pushButton_4")
+        self.gridLayout.addWidget(self.pushButton_4, 5, 0, 1, 1)
+        self.label_4 = QtWidgets.QLabel(self.frame_2)
+        self.label_4.setTextFormat(QtCore.Qt.AutoText)
+        self.label_4.setScaledContents(False)
+        self.label_4.setAlignment(QtCore.Qt.AlignRight|QtCore.Qt.AlignTop|QtCore.Qt.AlignTrailing)
+        self.label_4.setWordWrap(False)
+        self.label_4.setObjectName("label_4")
+        self.gridLayout.addWidget(self.label_4, 2, 0, 1, 1)
         self.label_2 = QtWidgets.QLabel(self.frame_2)
         self.label_2.setAlignment(QtCore.Qt.AlignRight|QtCore.Qt.AlignTop|QtCore.Qt.AlignTrailing)
         self.label_2.setObjectName("label_2")
@@ -136,44 +197,25 @@ class Ui_MainWindow(object):
         self.textEdit.setStyleSheet("background-color: rgb(255, 255, 255);")
         self.textEdit.setObjectName("textEdit")
         self.gridLayout.addWidget(self.textEdit, 2, 1, 1, 1)
-        spacerItem1 = QtWidgets.QSpacerItem(20, 40, QtWidgets.QSizePolicy.Minimum, QtWidgets.QSizePolicy.Expanding)
-        self.gridLayout.addItem(spacerItem1, 0, 1, 1, 1)
         self.lineEdit = QtWidgets.QLineEdit(self.frame_2)
         self.lineEdit.setStyleSheet("background-color: rgb(255, 255, 255);")
         self.lineEdit.setObjectName("lineEdit")
         self.gridLayout.addWidget(self.lineEdit, 1, 1, 1, 1)
         spacerItem2 = QtWidgets.QSpacerItem(20, 200, QtWidgets.QSizePolicy.Minimum, QtWidgets.QSizePolicy.Expanding)
         self.gridLayout.addItem(spacerItem2, 4, 1, 1, 1)
-        self.label_6 = QtWidgets.QLabel(self.frame_2)
-        self.label_6.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
-        self.label_6.setStyleSheet("QLabel{\n"
-"    font-weight:200;\n"
-"    color: rgb(119, 118, 123);\n"
-"}\n"
-"\n"
-"QLabel:hover{\n"
-"    color: rgb(26, 95, 180);\n"
-"}")
-        self.label_6.setObjectName("label_6")
-        self.gridLayout.addWidget(self.label_6, 6, 1, 1, 1)
-        spacerItem3 = QtWidgets.QSpacerItem(20, 40, QtWidgets.QSizePolicy.Minimum, QtWidgets.QSizePolicy.Expanding)
-        self.gridLayout.addItem(spacerItem3, 7, 1, 1, 1)
         self.label_5 = QtWidgets.QLabel(self.frame_2)
         self.label_5.setAlignment(QtCore.Qt.AlignRight|QtCore.Qt.AlignTop|QtCore.Qt.AlignTrailing)
         self.label_5.setObjectName("label_5")
         self.gridLayout.addWidget(self.label_5, 3, 0, 1, 1)
-        self.pushButton_4 = QtWidgets.QPushButton(self.frame_2)
-        self.pushButton_4.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
-        self.pushButton_4.setStyleSheet("font-size:15px;")
-        self.pushButton_4.setObjectName("pushButton_4")
-        self.gridLayout.addWidget(self.pushButton_4, 5, 0, 1, 1)
         self.calendarWidget = QtWidgets.QCalendarWidget(self.frame_2)
         self.calendarWidget.setStyleSheet("color: rgb(45, 44, 44);")
         self.calendarWidget.setObjectName("calendarWidget")
         self.gridLayout.addWidget(self.calendarWidget, 3, 1, 1, 1)
+        spacerItem3 = QtWidgets.QSpacerItem(20, 40, QtWidgets.QSizePolicy.Minimum, QtWidgets.QSizePolicy.Expanding)
+        self.gridLayout.addItem(spacerItem3, 6, 1, 1, 1)
         self.horizontalLayout.addLayout(self.gridLayout)
         self.horizontalLayout.setStretch(0, 1)
-        self.horizontalLayout.setStretch(1, 3)
+        self.horizontalLayout.setStretch(1, 4)
         self.gridLayout_3.addLayout(self.horizontalLayout, 0, 0, 1, 1)
         self.gridLayout_4.addWidget(self.frame_2, 0, 0, 1, 1)
         MainWindow.setCentralWidget(self.centralwidget)
@@ -186,14 +228,13 @@ class Ui_MainWindow(object):
         MainWindow.setWindowTitle(_translate("MainWindow", "Vista previa de pedidos"))
         self.label_7.setText(_translate("MainWindow", "Pedidos"))
         self.pushButton_5.setText(_translate("MainWindow", "Ver Todo"))
-        self.label_4.setText(_translate("MainWindow", "Descripcion del pedido:"))
         self.pushButton_2.setText(_translate("MainWindow", "Agregar Material"))
         self.pushButton_3.setText(_translate("MainWindow", "Finalizar Pedido"))
         self.pushButton.setText(_translate("MainWindow", "Informe"))
-        self.label_2.setText(_translate("MainWindow", "Cliente: "))
-        self.label_6.setText(_translate("MainWindow", "Materiales agregados..."))
-        self.label_5.setText(_translate("MainWindow", "Fecha de inicio:"))
         self.pushButton_4.setText(_translate("MainWindow", "Ver Más..."))
+        self.label_4.setText(_translate("MainWindow", "Descripcion del pedido:"))
+        self.label_2.setText(_translate("MainWindow", "Cliente: "))
+        self.label_5.setText(_translate("MainWindow", "Fecha de inicio:"))
 
 
 if __name__ == "__main__":
