@@ -18,7 +18,7 @@
   </property>
   <widget class="QWidget" name="centralwidget">
    <layout class="QGridLayout" name="gridLayout_2">
-    <item row="0" column="0">
+    <item row="1" column="0">
      <widget class="QFrame" name="frame">
       <property name="styleSheet">
        <string notr="true">QFrame{
@@ -102,8 +102,7 @@ QTextEdit::hover {
        <item>
         <widget class="QFrame" name="frame_2">
          <property name="styleSheet">
-          <string notr="true">
-</string>
+          <string notr="true"/>
          </property>
          <property name="frameShape">
           <enum>QFrame::StyledPanel</enum>
@@ -507,7 +506,62 @@ QPushButton:pressed {
              <cursorShape>PointingHandCursor</cursorShape>
             </property>
             <property name="styleSheet">
-             <string notr="true">background-color: rgb(255, 255, 255);</string>
+             <string notr="true">QTableView QHeaderView::section {
+    font-size: 12px;
+    font-weight: bold;
+    background-color: lightgray;
+    padding: 4px;
+    border: none;
+    border-bottom: 1px solid gray;
+}
+
+QTableView {
+    background-color: white;
+    border: 1px solid gray;
+}
+
+QTableView QScrollBar:vertical {
+    width: 14px;
+    background-color: lightgray;
+}
+
+QTableView QScrollBar::handle:vertical {
+    background-color: gray;
+    border-radius: 7px;
+}
+
+QTableView QScrollBar::add-line:vertical,
+QTableView QScrollBar::sub-line:vertical {
+    background-color: transparent;
+}
+
+QTableView QScrollBar::add-page:vertical,
+QTableView QScrollBar::sub-page:vertical {
+    background-color: transparent;
+}
+
+QTableView QScrollBar:horizontal {
+    height: 14px;
+    background-color: lightgray;
+}
+
+QTableView QScrollBar::handle:horizontal {
+    background-color: gray;
+    border-radius: 7px;
+}
+
+QTableView QScrollBar::add-line:horizontal,
+QTableView QScrollBar::sub-line:horizontal {
+    background-color: transparent;
+}
+
+QTableView QScrollBar::add-page:horizontal,
+QTableView QScrollBar::sub-page:horizontal {
+    background-color: transparent;
+}
+
+
+</string>
             </property>
             <attribute name="horizontalHeaderDefaultSectionSize">
              <number>108</number>
@@ -559,6 +613,18 @@ QPushButton:pressed {
         </widget>
        </item>
       </layout>
+     </widget>
+    </item>
+    <item row="0" column="0">
+     <widget class="QLabel" name="label">
+      <property name="styleSheet">
+       <string notr="true">font-family:&quot;Inter&quot;, sans-serif;
+font-size:30px;
+font-weight:500;</string>
+      </property>
+      <property name="text">
+       <string>Proveedores</string>
+      </property>
      </widget>
     </item>
    </layout>

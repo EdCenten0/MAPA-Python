@@ -97,8 +97,7 @@ class Ui_Proveedores(object):
         self.verticalLayout_2 = QtWidgets.QVBoxLayout(self.frame)
         self.verticalLayout_2.setObjectName("verticalLayout_2")
         self.frame_2 = QtWidgets.QFrame(self.frame)
-        self.frame_2.setStyleSheet("\n"
-"")
+        self.frame_2.setStyleSheet("")
         self.frame_2.setFrameShape(QtWidgets.QFrame.StyledPanel)
         self.frame_2.setFrameShadow(QtWidgets.QFrame.Raised)
         self.frame_2.setObjectName("frame_2")
@@ -271,7 +270,62 @@ class Ui_Proveedores(object):
         self.verticalLayout_5.setObjectName("verticalLayout_5")
         self.tb_Proveedor = QtWidgets.QTableWidget(self.frame_3)
         self.tb_Proveedor.viewport().setProperty("cursor", QtGui.QCursor(QtCore.Qt.PointingHandCursor))
-        self.tb_Proveedor.setStyleSheet("background-color: rgb(255, 255, 255);")
+        self.tb_Proveedor.setStyleSheet("QTableView QHeaderView::section {\n"
+"    font-size: 12px;\n"
+"    font-weight: bold;\n"
+"    background-color: lightgray;\n"
+"    padding: 4px;\n"
+"    border: none;\n"
+"    border-bottom: 1px solid gray;\n"
+"}\n"
+"\n"
+"QTableView {\n"
+"    background-color: white;\n"
+"    border: 1px solid gray;\n"
+"}\n"
+"\n"
+"QTableView QScrollBar:vertical {\n"
+"    width: 14px;\n"
+"    background-color: lightgray;\n"
+"}\n"
+"\n"
+"QTableView QScrollBar::handle:vertical {\n"
+"    background-color: gray;\n"
+"    border-radius: 7px;\n"
+"}\n"
+"\n"
+"QTableView QScrollBar::add-line:vertical,\n"
+"QTableView QScrollBar::sub-line:vertical {\n"
+"    background-color: transparent;\n"
+"}\n"
+"\n"
+"QTableView QScrollBar::add-page:vertical,\n"
+"QTableView QScrollBar::sub-page:vertical {\n"
+"    background-color: transparent;\n"
+"}\n"
+"\n"
+"QTableView QScrollBar:horizontal {\n"
+"    height: 14px;\n"
+"    background-color: lightgray;\n"
+"}\n"
+"\n"
+"QTableView QScrollBar::handle:horizontal {\n"
+"    background-color: gray;\n"
+"    border-radius: 7px;\n"
+"}\n"
+"\n"
+"QTableView QScrollBar::add-line:horizontal,\n"
+"QTableView QScrollBar::sub-line:horizontal {\n"
+"    background-color: transparent;\n"
+"}\n"
+"\n"
+"QTableView QScrollBar::add-page:horizontal,\n"
+"QTableView QScrollBar::sub-page:horizontal {\n"
+"    background-color: transparent;\n"
+"}\n"
+"\n"
+"\n"
+"")
         self.tb_Proveedor.setObjectName("tb_Proveedor")
         self.tb_Proveedor.setColumnCount(7)
         self.tb_Proveedor.setRowCount(0)
@@ -296,7 +350,13 @@ class Ui_Proveedores(object):
         self.verticalLayout_2.addWidget(self.frame_3)
         self.verticalLayout_2.setStretch(0, 1)
         self.verticalLayout_2.setStretch(1, 1)
-        self.gridLayout_2.addWidget(self.frame, 0, 0, 1, 1)
+        self.gridLayout_2.addWidget(self.frame, 1, 0, 1, 1)
+        self.label = QtWidgets.QLabel(self.centralwidget)
+        self.label.setStyleSheet("font-family:\"Inter\", sans-serif;\n"
+"font-size:30px;\n"
+"font-weight:500;")
+        self.label.setObjectName("label")
+        self.gridLayout_2.addWidget(self.label, 0, 0, 1, 1)
         Proveedores.setCentralWidget(self.centralwidget)
         self.statusbar = QtWidgets.QStatusBar(Proveedores)
         self.statusbar.setObjectName("statusbar")
@@ -335,6 +395,7 @@ class Ui_Proveedores(object):
         item.setText(_translate("Proveedores", "Teléfono"))
         item = self.tb_Proveedor.horizontalHeaderItem(6)
         item.setText(_translate("Proveedores", "Dirección"))
+        self.label.setText(_translate("Proveedores", "Proveedores"))
 
 
 if __name__ == "__main__":
