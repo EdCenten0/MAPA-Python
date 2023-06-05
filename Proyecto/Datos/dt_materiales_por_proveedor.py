@@ -11,7 +11,7 @@ class DtMaterialesPorProveedor:
     _SELECT = "SELECT mpp.id_materiales_por_proveedor, mpp.id_proveedor, mpp.id_material, m.nombre_material, m.descripcion, m.cantidad, m.unidad_de_medida, p.nombre, p.catalogo FROM MAPA.materiales_por_proveedor AS mpp INNER JOIN MAPA.materiales AS m ON mpp.id_material = m.id_material INNER JOIN MAPA.proveedores AS p ON mpp.id_proveedor = p.id_proveedor ORDER BY mpp.id_materiales_por_proveedor;"  # Para mi yo del futuro: recuerda agregar el estado
     _INSERT = "INSERT INTO materiales_por_proveedor(id_proveedor, id_material) VALUES (%s, %s)"
     _UPDATE = "UPDATE materiales_por_proveedor set id_proveedor= %s, id_material= %s, estado = 2 WHERE id_materiales_por_proveedor= %s"  # Tambien hay que cambiar el estado a 2
-    _DELETE = "UPDATE materiales_por_proveedor set estado = 3 WHERE id = %s"
+    _DELETE = "DELETE FROM materiales_por_proveedor WHERE id_materiales_por_proveedor = %s"
     _SELECT_VISTA = f"SELECT mpp.id_materiales_por_proveedor, mpp.id_proveedor, mpp.id_material, m.nombre_material, m.descripcion, m.cantidad, m.unidad_de_medida, p.nombre, p.catalogo FROM MAPA.materiales_por_proveedor AS mpp INNER JOIN MAPA.materiales AS m ON mpp.id_material = m.id_material INNER JOIN MAPA.proveedores AS p ON mpp.id_proveedor = p.id_proveedor"
     _cursor = None
 
@@ -62,20 +62,20 @@ class DtMaterialesPorProveedor:
 
         return flag
 
-    def eliminar_materiales_por_proveedor(cls, mpp):
-        flag = False
+
+    @classmethod
+    def eliminar_materiales_por_proveedor(cls, mpp: MaterialesPorProveedor):
         try:
-            mppSetQuery = (mpp.id_proveedor)
+            mppSetQuery = mpp.id_materiales_por_proveedor
             cursor = Conexion.Conexion.obtenerConexion().cursor()
             cursor.execute(cls._DELETE, mppSetQuery)
             cursor.connection.commit()
             cursor.close()
-            Conexion.Conexion.obtenerConexion().close()
-            flag = True
+
         except pymysql.Error as e:
             print(f"Error al eliminar materiales_por_proveedor: {e}")
 
-        return flag
+
 
 
 if __name__ == '__main__':

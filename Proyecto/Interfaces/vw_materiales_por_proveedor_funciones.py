@@ -30,6 +30,8 @@ class VwMaterialesPorProveedorFunciones(QtWidgets.QMainWindow, vw_materiales_por
         # Botones
         self.bt_guardar.clicked.connect(self.guardarMaterialesPorProveedor)
         self.bt_editar.clicked.connect(self.editarMaterialesPorProveedor)
+        self.bt_borrar.clicked.connect(self.eliminarMaterialesPorProveedor)
+        self.bt_vaciar_campos.clicked.connect(self.vaciarCombo)
 
     def llenarComboMaterial(self):
         self.cb_material.clear()
@@ -125,7 +127,15 @@ class VwMaterialesPorProveedorFunciones(QtWidgets.QMainWindow, vw_materiales_por
             print(f"Error en el boton de editar: {e}")
 
 
-
+    def eliminarMaterialesPorProveedor(self):
+        filaSeleccionada = self.table_materiales_por_proveedor.currentRow()
+        id_materiales_por_proveedor = self.table_materiales_por_proveedor.item(filaSeleccionada, 0).text()
+        try:
+            mpp = MaterialesPorProveedor(id_materiales_por_proveedor, None, None)
+            dt_materiales_por_proveedor.DtMaterialesPorProveedor.eliminar_materiales_por_proveedor(mpp)
+            self.listarMaterialesPorProveedor()
+        except pymysql.Error as e:
+            print(f"Error en el boton de eliminar: {e}")
 
 
 
