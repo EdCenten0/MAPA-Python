@@ -28,8 +28,8 @@ class VwMaterialesPorProveedorFunciones(QtWidgets.QMainWindow, vw_materiales_por
         self.table_materiales_por_proveedor.itemSelectionChanged.connect(self.obtenerDatosTablas)
 
         # Botones
-
         self.bt_guardar.clicked.connect(self.guardarMaterialesPorProveedor)
+        self.bt_editar.clicked.connect(self.editarMaterialesPorProveedor)
 
     def llenarComboMaterial(self):
         self.cb_material.clear()
@@ -59,7 +59,7 @@ class VwMaterialesPorProveedorFunciones(QtWidgets.QMainWindow, vw_materiales_por
                   f"el archivo de funciones de materiales_por_proveedor : {e}")
 
     def listarMaterialesPorProveedor(self):
-        datos = dt_materiales_por_proveedor.DtMaterialesPorProveedor.listar_vista()
+        datos = dt_materiales_por_proveedor.DtMaterialesPorProveedor.listar_materiales_por_proveedor()
         i = len(datos)
         print(f"Tamano de los datos de la tabla: {i}")
         self.table_materiales_por_proveedor.setRowCount(i)
@@ -107,9 +107,26 @@ class VwMaterialesPorProveedorFunciones(QtWidgets.QMainWindow, vw_materiales_por
             dt_materiales_por_proveedor.DtMaterialesPorProveedor.guardar_materiales_por_proveedor(id_proveedor, id_material)
             self.listarMaterialesPorProveedor()
 
-
         except pymysql.Error as e:
             print(f"ERROR EN BOTON DE GUARDAR MATERIALES POR PROVEEDOR: {e}")
+
+
+    def editarMaterialesPorProveedor(self):
+        filaSeleccionada = self.table_materiales_por_proveedor.currentRow()
+        id_materiales_por_proveedor = self.table_materiales_por_proveedor.item(filaSeleccionada, 0).text()
+        print(f"AQUIiiiiiiiiiiiiiiiiIIIIi {id_materiales_por_proveedor}")
+        id_proveedor = self.cb_proveedor.currentData()
+        id_material = self.cb_material.currentData()
+        try:
+            mpp = MaterialesPorProveedor(id_materiales_por_proveedor, id_proveedor, id_material)
+            dt_materiales_por_proveedor.DtMaterialesPorProveedor.editar_materiales_por_proveedor(mpp)
+            self.listarMaterialesPorProveedor()
+        except pymysql.Error as e:
+            print(f"Error en el boton de editar: {e}")
+
+
+
+
 
 
     def vaciarCombo(self):
