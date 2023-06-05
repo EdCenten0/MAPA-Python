@@ -2,7 +2,7 @@ import sys
 import PyQt5
 from PyQt5 import QtWidgets
 from PyQt5.QtWidgets import QApplication, QAbstractItemView
-from Datos import dt_Pedidos
+from Datos import dt_Pedidos, dt_materiales
 from Datos.dt_Pedidos import Dt_Pedidos
 from Datos.dt_cliente import Dt_Clientes
 from Interfaces import vw_vista_previa_pedido
@@ -18,6 +18,9 @@ class VwVistaPreviaPedidosFunciones(QtWidgets.QMainWindow, vw_vista_previa_pedid
         # Llenado de combobox
         self.llenarComboSeleccion(Dt_Pedidos.listarPedidos())
         self.comboBox_2.currentIndexChanged.connect(lambda : self.obtenerRegistroSeleccionadoComboBox())
+
+        #Materiales por pedido
+        self.comboBox_2.currentIndexChanged.connect(self.setMaterialesAgregados)
 
     def llenarComboSeleccion(self, datos):
         self.comboBox_2.clear()
@@ -60,6 +63,12 @@ class VwVistaPreviaPedidosFunciones(QtWidgets.QMainWindow, vw_vista_previa_pedid
         cls.lineEdit.setText(nombre_apellido_cliente)
         cls.textEdit.setText(descripcion)
         cls.calendarWidget.setSelectedDate(date)
+
+    def setMaterialesAgregados(self):
+        id_pedido = self.comboBox_2.currentData()
+        nMateriales = dt_materiales.Dt_materiales.contarMaterialesPorPedido(id_pedido)
+        self.label.setText(f"{str(nMateriales)} materiales agregados...")
+
 
 if __name__ == '__main__':
     app = QApplication(sys.argv)
