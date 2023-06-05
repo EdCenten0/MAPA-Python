@@ -1,4 +1,4 @@
-from Datos import Conexion
+from Proyecto.Datos import Conexion
 
 class Dt_facturas:
 
