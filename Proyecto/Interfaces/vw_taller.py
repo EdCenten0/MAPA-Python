@@ -14,66 +14,283 @@ from PyQt5 import QtCore, QtGui, QtWidgets
 class Ui_mw_taller(object):
     def setupUi(self, mw_taller):
         mw_taller.setObjectName("mw_taller")
-        mw_taller.resize(800, 600)
-        mw_taller.setStyleSheet("background-color: rgb(63, 73, 100);")
+        mw_taller.resize(904, 642)
+        mw_taller.setStyleSheet("")
         self.centralwidget = QtWidgets.QWidget(mw_taller)
         self.centralwidget.setObjectName("centralwidget")
-        self.gridLayout_4 = QtWidgets.QGridLayout(self.centralwidget)
-        self.gridLayout_4.setObjectName("gridLayout_4")
-        self.horizontalLayout_3 = QtWidgets.QHBoxLayout()
-        self.horizontalLayout_3.setContentsMargins(0, 0, 284, 0)
-        self.horizontalLayout_3.setSpacing(35)
-        self.horizontalLayout_3.setObjectName("horizontalLayout_3")
+        self.gridLayout_10 = QtWidgets.QGridLayout(self.centralwidget)
+        self.gridLayout_10.setObjectName("gridLayout_10")
         self.label = QtWidgets.QLabel(self.centralwidget)
-        self.label.setStyleSheet("background-color: rgb(246, 245, 244);\n"
-"")
+        self.label.setStyleSheet("font-family:\"Inter\", sans-serif;\n"
+"font-size:30px;\n"
+"font-weight:500;")
         self.label.setObjectName("label")
-        self.horizontalLayout_3.addWidget(self.label)
-        self.lblID = QtWidgets.QLabel(self.centralwidget)
-        self.lblID.setStyleSheet("background-color: rgb(63, 73, 100);\n"
-"color: rgb(63, 73, 100);")
-        self.lblID.setText("")
-        self.lblID.setObjectName("lblID")
-        self.horizontalLayout_3.addWidget(self.lblID)
-        self.gridLayout_4.addLayout(self.horizontalLayout_3, 0, 0, 1, 1)
+        self.gridLayout_10.addWidget(self.label, 0, 0, 1, 1)
+        self.frame = QtWidgets.QFrame(self.centralwidget)
+        self.frame.setStyleSheet("QFrame{\n"
+"    background-color: rgb(222, 221, 218);\n"
+"    border:none;\n"
+"}\n"
+"QPushButton {\n"
+"    background-color:rgb(255, 255, 255);\n"
+"    border:1px solid rgb(100,100,100);\n"
+"    color:rgb(50,50,50);\n"
+"    padding: 8px 16px;\n"
+"    border-radius: 6px;\n"
+"    font-size: 14px;\n"
+"}\n"
+"\n"
+"QPushButton:hover {\n"
+"    background-color: #D6D2D1;\n"
+"}\n"
+"\n"
+"QPushButton:pressed {\n"
+"    background-color: #52c7ff;\n"
+"}\n"
+"\n"
+"QLabel{\n"
+"        font-weight:500;\n"
+"}\n"
+"\n"
+"*{\n"
+"        font-family:\"Inter\", sans-serif;\n"
+"        \n"
+"}\n"
+"\n"
+"QFrame{\n"
+"        background-color: rgb(222, 221, 218);\n"
+"        border-radius:10%;\n"
+"}\n"
+"\n"
+"QLineEdit {\n"
+"    background-color: white;\n"
+"    border: 1px solid gray;\n"
+"    padding: 4px;\n"
+"    border-radius: 6px;\n"
+"    font-size: 12px;\n"
+"}\n"
+"\n"
+"QLineEdit:focus {\n"
+"    border-color: #3daee9;\n"
+"    outline: none;\n"
+"}\n"
+"\n"
+"QLineEdit::hover {\n"
+"    background-color: #f0f0f0;\n"
+"}\n"
+"\n"
+"QTextEdit {\n"
+"    background-color: white;\n"
+"    border: 1px solid gray;\n"
+"    padding: 4px;\n"
+"    border-radius: 6px;\n"
+"    font-size: 12px;\n"
+"}\n"
+"\n"
+"QTextEdit:focus {\n"
+"    border-color: #3daee9;\n"
+"    outline: none;\n"
+"}\n"
+"\n"
+"QTextEdit::hover {\n"
+"    background-color: #f0f0f0;\n"
+"}\n"
+"")
+        self.frame.setFrameShape(QtWidgets.QFrame.StyledPanel)
+        self.frame.setFrameShadow(QtWidgets.QFrame.Raised)
+        self.frame.setObjectName("frame")
+        self.gridLayout_4 = QtWidgets.QGridLayout(self.frame)
+        self.gridLayout_4.setObjectName("gridLayout_4")
+        self.verticalLayout = QtWidgets.QVBoxLayout()
+        self.verticalLayout.setObjectName("verticalLayout")
+        self.horizontalLayout = QtWidgets.QHBoxLayout()
+        self.horizontalLayout.setObjectName("horizontalLayout")
+        self.gridLayout_6 = QtWidgets.QGridLayout()
+        self.gridLayout_6.setObjectName("gridLayout_6")
         self.gridLayout = QtWidgets.QGridLayout()
         self.gridLayout.setSizeConstraint(QtWidgets.QLayout.SetDefaultConstraint)
         self.gridLayout.setContentsMargins(0, -1, 0, 0)
         self.gridLayout.setHorizontalSpacing(8)
         self.gridLayout.setVerticalSpacing(6)
         self.gridLayout.setObjectName("gridLayout")
-        self.txtNombre = QtWidgets.QLineEdit(self.centralwidget)
-        self.txtNombre.setStyleSheet("background-color: rgb(246, 245, 244);")
-        self.txtNombre.setObjectName("txtNombre")
-        self.gridLayout.addWidget(self.txtNombre, 0, 1, 1, 1)
-        self.lblNombre = QtWidgets.QLabel(self.centralwidget)
+        self.lblNombre = QtWidgets.QLabel(self.frame)
         self.lblNombre.setStyleSheet("background-color: rgb(222, 221, 218);")
         self.lblNombre.setObjectName("lblNombre")
         self.gridLayout.addWidget(self.lblNombre, 0, 0, 1, 1)
-        self.txtDireccion = QtWidgets.QLineEdit(self.centralwidget)
-        self.txtDireccion.setStyleSheet("background-color: rgb(246, 245, 244);")
-        self.txtDireccion.setObjectName("txtDireccion")
-        self.gridLayout.addWidget(self.txtDireccion, 1, 1, 1, 1)
-        self.lblTelefono = QtWidgets.QLabel(self.centralwidget)
-        self.lblTelefono.setStyleSheet("background-color: rgb(222, 221, 218);")
-        self.lblTelefono.setObjectName("lblTelefono")
-        self.gridLayout.addWidget(self.lblTelefono, 2, 0, 1, 1)
-        self.txtTelefono = QtWidgets.QLineEdit(self.centralwidget)
+        self.txtTelefono = QtWidgets.QLineEdit(self.frame)
         self.txtTelefono.setStyleSheet("background-color: rgb(246, 245, 244);")
         self.txtTelefono.setObjectName("txtTelefono")
         self.gridLayout.addWidget(self.txtTelefono, 2, 1, 1, 1)
-        self.lblDIreccion = QtWidgets.QLabel(self.centralwidget)
+        self.lblTelefono = QtWidgets.QLabel(self.frame)
+        self.lblTelefono.setStyleSheet("background-color: rgb(222, 221, 218);")
+        self.lblTelefono.setObjectName("lblTelefono")
+        self.gridLayout.addWidget(self.lblTelefono, 2, 0, 1, 1)
+        self.txtDireccion = QtWidgets.QLineEdit(self.frame)
+        self.txtDireccion.setStyleSheet("background-color: rgb(246, 245, 244);")
+        self.txtDireccion.setObjectName("txtDireccion")
+        self.gridLayout.addWidget(self.txtDireccion, 1, 1, 1, 1)
+        self.txtNombre = QtWidgets.QLineEdit(self.frame)
+        self.txtNombre.setStyleSheet("background-color: rgb(246, 245, 244);")
+        self.txtNombre.setObjectName("txtNombre")
+        self.gridLayout.addWidget(self.txtNombre, 0, 1, 1, 1)
+        self.lblDIreccion = QtWidgets.QLabel(self.frame)
         self.lblDIreccion.setStyleSheet("background-color: rgb(222, 221, 218);")
         self.lblDIreccion.setObjectName("lblDIreccion")
         self.gridLayout.addWidget(self.lblDIreccion, 1, 0, 1, 1)
-        self.gridLayout.setColumnStretch(0, 3)
-        self.gridLayout.setColumnStretch(1, 6)
-        self.gridLayout_4.addLayout(self.gridLayout, 1, 0, 1, 1)
-        self.verticalLayout_2 = QtWidgets.QVBoxLayout()
-        self.verticalLayout_2.setObjectName("verticalLayout_2")
-        self.tw_taller = QtWidgets.QTableWidget(self.centralwidget)
-        self.tw_taller.setStyleSheet("background-color: rgb(222, 221, 218);\n"
-"border-color: rgb(61, 56, 70);")
+        self.lblEmail = QtWidgets.QLabel(self.frame)
+        self.lblEmail.setStyleSheet("background-color: rgb(222, 221, 218);")
+        self.lblEmail.setObjectName("lblEmail")
+        self.gridLayout.addWidget(self.lblEmail, 3, 0, 1, 1)
+        self.txtEmail = QtWidgets.QLineEdit(self.frame)
+        self.txtEmail.setStyleSheet("background-color: rgb(255, 255, 255);")
+        self.txtEmail.setObjectName("txtEmail")
+        self.gridLayout.addWidget(self.txtEmail, 3, 1, 1, 1)
+        self.gridLayout.setColumnStretch(0, 1)
+        self.gridLayout.setColumnStretch(1, 4)
+        self.gridLayout_6.addLayout(self.gridLayout, 1, 0, 1, 1)
+        self.horizontalLayout.addLayout(self.gridLayout_6)
+        self.gridLayout_7 = QtWidgets.QGridLayout()
+        self.gridLayout_7.setObjectName("gridLayout_7")
+        self.btnEliminar = QtWidgets.QPushButton(self.frame)
+        self.btnEliminar.setStyleSheet("QPushButton {\n"
+"    background-color:rgb(255, 255, 255);\n"
+"    border:1px solid rgb(100,100,100);\n"
+"    color:rgb(50,50,50);\n"
+"    padding: 8px 16px;\n"
+"    border-radius: 6px;\n"
+"    font-size: 14px;\n"
+"}\n"
+"\n"
+"QPushButton:hover {\n"
+"    background-color: #D6D2D1;\n"
+"}\n"
+"\n"
+"QPushButton:pressed {\n"
+"    background-color: #52c7ff;\n"
+"}\n"
+"")
+        self.btnEliminar.setObjectName("btnEliminar")
+        self.gridLayout_7.addWidget(self.btnEliminar, 2, 0, 1, 1)
+        self.btnGuardar = QtWidgets.QPushButton(self.frame)
+        self.btnGuardar.setStyleSheet("QPushButton {\n"
+"    background-color:rgb(255, 255, 255);\n"
+"    border:1px solid rgb(100,100,100);\n"
+"    color:rgb(50,50,50);\n"
+"    padding: 8px 16px;\n"
+"    border-radius: 6px;\n"
+"    font-size: 14px;\n"
+"}\n"
+"\n"
+"QPushButton:hover {\n"
+"    background-color: #D6D2D1;\n"
+"}\n"
+"\n"
+"QPushButton:pressed {\n"
+"    background-color: #52c7ff;\n"
+"}\n"
+"")
+        self.btnGuardar.setObjectName("btnGuardar")
+        self.gridLayout_7.addWidget(self.btnGuardar, 0, 0, 1, 1)
+        self.btnEditar = QtWidgets.QPushButton(self.frame)
+        self.btnEditar.setStyleSheet("QPushButton {\n"
+"    background-color:rgb(255, 255, 255);\n"
+"    border:1px solid rgb(100,100,100);\n"
+"    color:rgb(50,50,50);\n"
+"    padding: 8px 16px;\n"
+"    border-radius: 6px;\n"
+"    font-size: 14px;\n"
+"}\n"
+"\n"
+"QPushButton:hover {\n"
+"    background-color: #D6D2D1;\n"
+"}\n"
+"\n"
+"QPushButton:pressed {\n"
+"    background-color: #52c7ff;\n"
+"}\n"
+"")
+        self.btnEditar.setObjectName("btnEditar")
+        self.gridLayout_7.addWidget(self.btnEditar, 1, 0, 1, 1)
+        self.btnVaciarCampos = QtWidgets.QPushButton(self.frame)
+        self.btnVaciarCampos.setStyleSheet("QPushButton {\n"
+"    background-color:rgb(255, 255, 255);\n"
+"    border:1px solid rgb(100,100,100);\n"
+"    color:rgb(50,50,50);\n"
+"    padding: 8px 16px;\n"
+"    border-radius: 6px;\n"
+"    font-size: 14px;\n"
+"}\n"
+"\n"
+"QPushButton:hover {\n"
+"    background-color: #D6D2D1;\n"
+"}\n"
+"\n"
+"QPushButton:pressed {\n"
+"    background-color: #52c7ff;\n"
+"}\n"
+"")
+        self.btnVaciarCampos.setObjectName("btnVaciarCampos")
+        self.gridLayout_7.addWidget(self.btnVaciarCampos, 3, 0, 1, 1)
+        self.horizontalLayout.addLayout(self.gridLayout_7)
+        self.verticalLayout.addLayout(self.horizontalLayout)
+        self.gridLayout_5 = QtWidgets.QGridLayout()
+        self.gridLayout_5.setObjectName("gridLayout_5")
+        self.tw_taller = QtWidgets.QTableWidget(self.frame)
+        self.tw_taller.setStyleSheet("QTableView QHeaderView::section {\n"
+"    font-size: 12px;\n"
+"    font-weight: bold;\n"
+"    background-color: lightgray;\n"
+"    padding: 4px;\n"
+"    border: none;\n"
+"    border-bottom: 1px solid gray;\n"
+"}\n"
+"\n"
+"QTableView {\n"
+"    background-color: white;\n"
+"    border: 1px solid gray;\n"
+"}\n"
+"\n"
+"QTableView QScrollBar:vertical {\n"
+"    width: 14px;\n"
+"    background-color: lightgray;\n"
+"}\n"
+"\n"
+"QTableView QScrollBar::handle:vertical {\n"
+"    background-color: gray;\n"
+"    border-radius: 7px;\n"
+"}\n"
+"\n"
+"QTableView QScrollBar::add-line:vertical,\n"
+"QTableView QScrollBar::sub-line:vertical {\n"
+"    background-color: transparent;\n"
+"}\n"
+"\n"
+"QTableView QScrollBar::add-page:vertical,\n"
+"QTableView QScrollBar::sub-page:vertical {\n"
+"    background-color: transparent;\n"
+"}\n"
+"\n"
+"QTableView QScrollBar:horizontal {\n"
+"    height: 14px;\n"
+"    background-color: lightgray;\n"
+"}\n"
+"\n"
+"QTableView QScrollBar::handle:horizontal {\n"
+"    background-color: gray;\n"
+"    border-radius: 7px;\n"
+"}\n"
+"\n"
+"QTableView QScrollBar::add-line:horizontal,\n"
+"QTableView QScrollBar::sub-line:horizontal {\n"
+"    background-color: transparent;\n"
+"}\n"
+"\n"
+"QTableView QScrollBar::add-page:horizontal,\n"
+"QTableView QScrollBar::sub-page:horizontal {\n"
+"    background-color: transparent;\n"
+"}\n"
+"\n"
+"")
         self.tw_taller.setObjectName("tw_taller")
         self.tw_taller.setColumnCount(5)
         self.tw_taller.setRowCount(0)
@@ -88,41 +305,13 @@ class Ui_mw_taller(object):
         self.tw_taller.setHorizontalHeaderItem(3, item)
         item = QtWidgets.QTableWidgetItem()
         self.tw_taller.setHorizontalHeaderItem(4, item)
-        self.verticalLayout_2.addWidget(self.tw_taller)
-        self.verticalLayout_3 = QtWidgets.QVBoxLayout()
-        self.verticalLayout_3.setObjectName("verticalLayout_3")
-        self.verticalLayout_2.addLayout(self.verticalLayout_3)
-        self.gridLayout_4.addLayout(self.verticalLayout_2, 2, 0, 1, 3)
-        self.gridLayout_3 = QtWidgets.QGridLayout()
-        self.gridLayout_3.setObjectName("gridLayout_3")
-        self.btnEditar = QtWidgets.QPushButton(self.centralwidget)
-        self.btnEditar.setStyleSheet("background-color: rgb(222, 221, 218);")
-        self.btnEditar.setObjectName("btnEditar")
-        self.gridLayout_3.addWidget(self.btnEditar, 1, 0, 1, 1)
-        self.btnGuardar = QtWidgets.QPushButton(self.centralwidget)
-        self.btnGuardar.setStyleSheet("background-color: rgb(222, 221, 218);")
-        self.btnGuardar.setObjectName("btnGuardar")
-        self.gridLayout_3.addWidget(self.btnGuardar, 0, 0, 1, 1)
-        self.btnEliminar = QtWidgets.QPushButton(self.centralwidget)
-        self.btnEliminar.setStyleSheet("background-color: rgb(222, 221, 218);")
-        self.btnEliminar.setObjectName("btnEliminar")
-        self.gridLayout_3.addWidget(self.btnEliminar, 2, 0, 1, 1)
-        self.btnVaciarCampos = QtWidgets.QPushButton(self.centralwidget)
-        self.btnVaciarCampos.setStyleSheet("background-color: rgb(222, 221, 218);")
-        self.btnVaciarCampos.setObjectName("btnVaciarCampos")
-        self.gridLayout_3.addWidget(self.btnVaciarCampos, 3, 0, 1, 1)
-        self.gridLayout_4.addLayout(self.gridLayout_3, 0, 2, 2, 1)
-        self.gridLayout_2 = QtWidgets.QGridLayout()
-        self.gridLayout_2.setObjectName("gridLayout_2")
-        self.txtEmail = QtWidgets.QLineEdit(self.centralwidget)
-        self.txtEmail.setStyleSheet("background-color: rgb(255, 255, 255);")
-        self.txtEmail.setObjectName("txtEmail")
-        self.gridLayout_2.addWidget(self.txtEmail, 0, 1, 1, 1)
-        self.lblEmail = QtWidgets.QLabel(self.centralwidget)
-        self.lblEmail.setStyleSheet("background-color: rgb(222, 221, 218);")
-        self.lblEmail.setObjectName("lblEmail")
-        self.gridLayout_2.addWidget(self.lblEmail, 0, 0, 1, 1)
-        self.gridLayout_4.addLayout(self.gridLayout_2, 1, 1, 1, 1)
+        self.tw_taller.horizontalHeader().setDefaultSectionSize(156)
+        self.tw_taller.horizontalHeader().setStretchLastSection(True)
+        self.tw_taller.verticalHeader().setDefaultSectionSize(30)
+        self.gridLayout_5.addWidget(self.tw_taller, 0, 0, 1, 1)
+        self.verticalLayout.addLayout(self.gridLayout_5)
+        self.gridLayout_4.addLayout(self.verticalLayout, 0, 0, 1, 1)
+        self.gridLayout_10.addWidget(self.frame, 1, 0, 1, 1)
         mw_taller.setCentralWidget(self.centralwidget)
         self.statusbar = QtWidgets.QStatusBar(mw_taller)
         self.statusbar.setObjectName("statusbar")
@@ -138,6 +327,11 @@ class Ui_mw_taller(object):
         self.lblNombre.setText(_translate("mw_taller", "Nombre:"))
         self.lblTelefono.setText(_translate("mw_taller", "Telefono:"))
         self.lblDIreccion.setText(_translate("mw_taller", "Direccion:"))
+        self.lblEmail.setText(_translate("mw_taller", "Email:"))
+        self.btnEliminar.setText(_translate("mw_taller", "Eliminar"))
+        self.btnGuardar.setText(_translate("mw_taller", "Guardar"))
+        self.btnEditar.setText(_translate("mw_taller", "Editar"))
+        self.btnVaciarCampos.setText(_translate("mw_taller", "Vaciar Campos"))
         item = self.tw_taller.horizontalHeaderItem(0)
         item.setText(_translate("mw_taller", "Id"))
         item = self.tw_taller.horizontalHeaderItem(1)
@@ -148,11 +342,6 @@ class Ui_mw_taller(object):
         item.setText(_translate("mw_taller", "Telefono"))
         item = self.tw_taller.horizontalHeaderItem(4)
         item.setText(_translate("mw_taller", "Email"))
-        self.btnEditar.setText(_translate("mw_taller", "Editar"))
-        self.btnGuardar.setText(_translate("mw_taller", "Guardar"))
-        self.btnEliminar.setText(_translate("mw_taller", "Eliminar"))
-        self.btnVaciarCampos.setText(_translate("mw_taller", "Vaciar Campos"))
-        self.lblEmail.setText(_translate("mw_taller", "Email:"))
 
 
 if __name__ == "__main__":
