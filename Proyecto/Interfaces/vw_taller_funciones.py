@@ -2,8 +2,9 @@ import sys
 from PyQt5 import QtWidgets
 from PyQt5.QtWidgets import QTableWidgetItem, QMessageBox
 
+from Proyecto.Datos import dt_taller
 from Proyecto.Entidades.taller import Taller
-from Proyecto.Interfaces import vw_taller, dt_taller
+from Proyecto.Interfaces import vw_taller
 
 
 class vw_taller_funciones(QtWidgets.QMainWindow, vw_taller.Ui_mw_taller):

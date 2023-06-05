@@ -1,10 +1,10 @@
 import sys
 from PyQt5 import QtWidgets
 from PyQt5.QtWidgets import QApplication, QAbstractItemView
-from Datos import dt_Pedidos, dt_materiales
-from Datos.dt_Pedidos import Dt_Pedidos
-from Datos.dt_cliente import Dt_Clientes
-from Interfaces import vw_vista_previa_pedido
+from Proyecto.Datos import dt_Pedidos, dt_materiales
+from Proyecto.Datos.dt_Pedidos import Dt_Pedidos
+from Proyecto.Datos.dt_cliente import Dt_Clientes
+from Proyecto.Interfaces import vw_vista_previa_pedido
 
 # Carlos Eduardo Chavarria Centeno (EdCenten0)
 # Universidad Centroamericana

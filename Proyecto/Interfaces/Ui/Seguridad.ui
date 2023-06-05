@@ -117,6 +117,76 @@ background-color: rgb(63, 73, 100);</string>
            </property>
            <item>
             <widget class="QFrame" name="frame_2">
+             <property name="styleSheet">
+              <string notr="true">QFrame{
+	background-color: rgb(222, 221, 218);
+	border:none;
+}
+QPushButton {
+	background-color:rgb(255, 255, 255);
+	border:1px solid rgb(100,100,100);
+	color:rgb(50,50,50);
+    padding: 8px 16px;
+    border-radius: 6px;
+    font-size: 14px;
+}
+
+QPushButton:hover {
+    background-color: #D6D2D1;
+}
+
+QPushButton:pressed {
+    background-color: #52c7ff;
+}
+
+QLabel{
+		font-weight:500;
+}
+
+*{
+		font-family:&quot;Inter&quot;, sans-serif;
+		
+}
+
+QFrame{
+		background-color: rgb(222, 221, 218);
+		border-radius:10%;
+}
+
+QLineEdit {
+    background-color: white;
+    border: 1px solid gray;
+    padding: 4px;
+    border-radius: 6px;
+    font-size: 12px;
+}
+
+QLineEdit:focus {
+    border-color: #3daee9;
+    outline: none;
+}
+
+QLineEdit::hover {
+    background-color: #f0f0f0;
+}
+
+QTextEdit {
+    background-color: white;
+    border: 1px solid gray;
+    padding: 4px;
+    border-radius: 6px;
+    font-size: 12px;
+}
+
+QTextEdit:focus {
+    border-color: #3daee9;
+    outline: none;
+}
+
+QTextEdit::hover {
+    background-color: #f0f0f0;
+}</string>
+             </property>
              <property name="frameShape">
               <enum>QFrame::StyledPanel</enum>
              </property>
@@ -180,8 +250,7 @@ font: 10pt &quot;MS Shell Dlg 2&quot;;</string>
                  <item row="5" column="0">
                   <widget class="QLabel" name="label_49">
                    <property name="styleSheet">
-                    <string notr="true">font: 14pt &quot;Ubuntu&quot;;
-color: rgb(255, 255, 255);</string>
+                    <string notr="true"/>
                    </property>
                    <property name="text">
                     <string>Fecha:</string>
@@ -221,9 +290,7 @@ font: 10pt &quot;MS Shell Dlg 2&quot;;</string>
                  <item row="6" column="0">
                   <widget class="QLabel" name="label">
                    <property name="styleSheet">
-                    <string notr="true">font: 14pt &quot;Ubuntu&quot;;
-color: rgb(255, 255, 255);
-</string>
+                    <string notr="true"/>
                    </property>
                    <property name="text">
                     <string>Buscar</string>
@@ -233,8 +300,7 @@ color: rgb(255, 255, 255);
                  <item row="0" column="0">
                   <widget class="QLabel" name="label_39">
                    <property name="styleSheet">
-                    <string notr="true">font: 14pt &quot;Ubuntu&quot;;
-color: rgb(255, 255, 255);</string>
+                    <string notr="true"/>
                    </property>
                    <property name="text">
                     <string>ID:</string>
@@ -244,8 +310,7 @@ color: rgb(255, 255, 255);</string>
                  <item row="2" column="0">
                   <widget class="QLabel" name="label_50">
                    <property name="styleSheet">
-                    <string notr="true">font: 14pt &quot;Ubuntu&quot;;
-color: rgb(255, 255, 255);</string>
+                    <string notr="true"/>
                    </property>
                    <property name="text">
                     <string>Apellido:</string>
@@ -255,8 +320,7 @@ color: rgb(255, 255, 255);</string>
                  <item row="3" column="0">
                   <widget class="QLabel" name="label_47">
                    <property name="styleSheet">
-                    <string notr="true">font: 14pt &quot;Ubuntu&quot;;
-color: rgb(255, 255, 255);</string>
+                    <string notr="true"/>
                    </property>
                    <property name="text">
                     <string>Username:</string>
@@ -266,8 +330,7 @@ color: rgb(255, 255, 255);</string>
                  <item row="4" column="0">
                   <widget class="QLabel" name="label_48">
                    <property name="styleSheet">
-                    <string notr="true">font: 14pt &quot;Ubuntu&quot;;
-color: rgb(255, 255, 255);</string>
+                    <string notr="true"/>
                    </property>
                    <property name="text">
                     <string>Password:</string>
@@ -285,8 +348,7 @@ font: 10pt &quot;MS Shell Dlg 2&quot;;</string>
                  <item row="1" column="0">
                   <widget class="QLabel" name="label_40">
                    <property name="styleSheet">
-                    <string notr="true">font: 14pt &quot;Ubuntu&quot;;
-color: rgb(255, 255, 255);</string>
+                    <string notr="true"/>
                    </property>
                    <property name="text">
                     <string>Nombre:</string>
@@ -683,12 +745,60 @@ QPushButton:pressed {
                     <enum>Qt::LeftToRight</enum>
                    </property>
                    <property name="styleSheet">
-                    <string notr="true">background-color: rgb(255, 255, 255);
+                    <string notr="true">QTableView QHeaderView::section {
+    font-size: 12px;
+    font-weight: bold;
+    background-color: lightgray;
+    padding: 4px;
+    border: none;
+    border-bottom: 1px solid gray;
+}
 
-QTableView::item {
-    min-width: 100px;
-    max-width: 300px;
-}</string>
+QTableView {
+    background-color: white;
+    border: 1px solid gray;
+}
+
+QTableView QScrollBar:vertical {
+    width: 14px;
+    background-color: lightgray;
+}
+
+QTableView QScrollBar::handle:vertical {
+    background-color: gray;
+    border-radius: 7px;
+}
+
+QTableView QScrollBar::add-line:vertical,
+QTableView QScrollBar::sub-line:vertical {
+    background-color: transparent;
+}
+
+QTableView QScrollBar::add-page:vertical,
+QTableView QScrollBar::sub-page:vertical {
+    background-color: transparent;
+}
+
+QTableView QScrollBar:horizontal {
+    height: 14px;
+    background-color: lightgray;
+}
+
+QTableView QScrollBar::handle:horizontal {
+    background-color: gray;
+    border-radius: 7px;
+}
+
+QTableView QScrollBar::add-line:horizontal,
+QTableView QScrollBar::sub-line:horizontal {
+    background-color: transparent;
+}
+
+QTableView QScrollBar::add-page:horizontal,
+QTableView QScrollBar::sub-page:horizontal {
+    background-color: transparent;
+}
+</string>
                    </property>
                    <property name="frameShape">
                     <enum>QFrame::NoFrame</enum>
@@ -830,7 +940,74 @@ QTableView::item {
            <item>
             <widget class="QFrame" name="frame_21">
              <property name="styleSheet">
-              <string notr="true"/>
+              <string notr="true">QFrame{
+	background-color: rgb(222, 221, 218);
+	border:none;
+}
+QPushButton {
+	background-color:rgb(255, 255, 255);
+	border:1px solid rgb(100,100,100);
+	color:rgb(50,50,50);
+    padding: 8px 16px;
+    border-radius: 6px;
+    font-size: 14px;
+}
+
+QPushButton:hover {
+    background-color: #D6D2D1;
+}
+
+QPushButton:pressed {
+    background-color: #52c7ff;
+}
+
+QLabel{
+		font-weight:500;
+}
+
+*{
+		font-family:&quot;Inter&quot;, sans-serif;
+		
+}
+
+QFrame{
+		background-color: rgb(222, 221, 218);
+		border-radius:10%;
+}
+
+QLineEdit {
+    background-color: white;
+    border: 1px solid gray;
+    padding: 4px;
+    border-radius: 6px;
+    font-size: 12px;
+}
+
+QLineEdit:focus {
+    border-color: #3daee9;
+    outline: none;
+}
+
+QLineEdit::hover {
+    background-color: #f0f0f0;
+}
+
+QTextEdit {
+    background-color: white;
+    border: 1px solid gray;
+    padding: 4px;
+    border-radius: 6px;
+    font-size: 12px;
+}
+
+QTextEdit:focus {
+    border-color: #3daee9;
+    outline: none;
+}
+
+QTextEdit::hover {
+    background-color: #f0f0f0;
+}</string>
              </property>
              <property name="frameShape">
               <enum>QFrame::StyledPanel</enum>
@@ -856,6 +1033,9 @@ QTableView::item {
               </property>
               <item>
                <widget class="QFrame" name="frame_23">
+                <property name="styleSheet">
+                 <string notr="true"/>
+                </property>
                 <property name="frameShape">
                  <enum>QFrame::StyledPanel</enum>
                 </property>
@@ -884,8 +1064,7 @@ QTableView::item {
                  <item row="1" column="0">
                   <widget class="QLabel" name="label_108">
                    <property name="styleSheet">
-                    <string notr="true">font: 14pt &quot;Ubuntu&quot;;
-color: rgb(255, 255, 255);</string>
+                    <string notr="true"/>
                    </property>
                    <property name="text">
                     <string>ID:</string>
@@ -906,8 +1085,7 @@ font: 10pt &quot;MS Shell Dlg 2&quot;;</string>
                  <item row="4" column="0">
                   <widget class="QLabel" name="label_107">
                    <property name="styleSheet">
-                    <string notr="true">font: 14pt &quot;Ubuntu&quot;;
-color: rgb(255, 255, 255);</string>
+                    <string notr="true"/>
                    </property>
                    <property name="text">
                     <string>Rol:</string>
@@ -925,8 +1103,7 @@ font: 10pt &quot;MS Shell Dlg 2&quot;;</string>
                  <item row="7" column="0">
                   <widget class="QLabel" name="label_2">
                    <property name="styleSheet">
-                    <string notr="true">font: 14pt &quot;Ubuntu&quot;;
-color: rgb(255, 255, 255);</string>
+                    <string notr="true"/>
                    </property>
                    <property name="text">
                     <string>Buscar:</string>
@@ -1025,8 +1202,7 @@ font: 10pt &quot;MS Shell Dlg 2&quot;;</string>
               <item>
                <widget class="QFrame" name="frame_24">
                 <property name="styleSheet">
-                 <string notr="true">
-</string>
+                 <string notr="true"/>
                 </property>
                 <property name="frameShape">
                  <enum>QFrame::StyledPanel</enum>
@@ -1246,7 +1422,59 @@ QPushButton:pressed {
                  <cursorShape>PointingHandCursor</cursorShape>
                 </property>
                 <property name="styleSheet">
-                 <string notr="true">background-color: rgb(255, 255, 255);
+                 <string notr="true">QTableView QHeaderView::section {
+    font-size: 12px;
+    font-weight: bold;
+    background-color: lightgray;
+    padding: 4px;
+    border: none;
+    border-bottom: 1px solid gray;
+}
+
+QTableView {
+    background-color: white;
+    border: 1px solid gray;
+}
+
+QTableView QScrollBar:vertical {
+    width: 14px;
+    background-color: lightgray;
+}
+
+QTableView QScrollBar::handle:vertical {
+    background-color: gray;
+    border-radius: 7px;
+}
+
+QTableView QScrollBar::add-line:vertical,
+QTableView QScrollBar::sub-line:vertical {
+    background-color: transparent;
+}
+
+QTableView QScrollBar::add-page:vertical,
+QTableView QScrollBar::sub-page:vertical {
+    background-color: transparent;
+}
+
+QTableView QScrollBar:horizontal {
+    height: 14px;
+    background-color: lightgray;
+}
+
+QTableView QScrollBar::handle:horizontal {
+    background-color: gray;
+    border-radius: 7px;
+}
+
+QTableView QScrollBar::add-line:horizontal,
+QTableView QScrollBar::sub-line:horizontal {
+    background-color: transparent;
+}
+
+QTableView QScrollBar::add-page:horizontal,
+QTableView QScrollBar::sub-page:horizontal {
+    background-color: transparent;
+}
 </string>
                 </property>
                 <property name="autoScroll">
@@ -1310,7 +1538,74 @@ QPushButton:pressed {
            <item>
             <widget class="QFrame" name="frame_28">
              <property name="styleSheet">
-              <string notr="true"/>
+              <string notr="true">QFrame{
+	background-color: rgb(222, 221, 218);
+	border:none;
+}
+QPushButton {
+	background-color:rgb(255, 255, 255);
+	border:1px solid rgb(100,100,100);
+	color:rgb(50,50,50);
+    padding: 8px 16px;
+    border-radius: 6px;
+    font-size: 14px;
+}
+
+QPushButton:hover {
+    background-color: #D6D2D1;
+}
+
+QPushButton:pressed {
+    background-color: #52c7ff;
+}
+
+QLabel{
+		font-weight:500;
+}
+
+*{
+		font-family:&quot;Inter&quot;, sans-serif;
+		
+}
+
+QFrame{
+		background-color: rgb(222, 221, 218);
+		border-radius:10%;
+}
+
+QLineEdit {
+    background-color: white;
+    border: 1px solid gray;
+    padding: 4px;
+    border-radius: 6px;
+    font-size: 12px;
+}
+
+QLineEdit:focus {
+    border-color: #3daee9;
+    outline: none;
+}
+
+QLineEdit::hover {
+    background-color: #f0f0f0;
+}
+
+QTextEdit {
+    background-color: white;
+    border: 1px solid gray;
+    padding: 4px;
+    border-radius: 6px;
+    font-size: 12px;
+}
+
+QTextEdit:focus {
+    border-color: #3daee9;
+    outline: none;
+}
+
+QTextEdit::hover {
+    background-color: #f0f0f0;
+}</string>
              </property>
              <property name="frameShape">
               <enum>QFrame::StyledPanel</enum>
@@ -1336,6 +1631,9 @@ QPushButton:pressed {
               </property>
               <item>
                <widget class="QFrame" name="frame_31">
+                <property name="styleSheet">
+                 <string notr="true"/>
+                </property>
                 <property name="frameShape">
                  <enum>QFrame::StyledPanel</enum>
                 </property>
@@ -1371,8 +1669,7 @@ QPushButton:pressed {
                  <item row="2" column="0">
                   <widget class="QLabel" name="label_72">
                    <property name="styleSheet">
-                    <string notr="true">font: 14pt &quot;Ubuntu&quot;;
-color: rgb(255, 255, 255);</string>
+                    <string notr="true"/>
                    </property>
                    <property name="text">
                     <string>ID:</string>
@@ -1419,8 +1716,7 @@ font: 10pt &quot;MS Shell Dlg 2&quot;;</string>
                  <item row="5" column="0">
                   <widget class="QLabel" name="label_71">
                    <property name="styleSheet">
-                    <string notr="true">font: 14pt &quot;Ubuntu&quot;;
-color: rgb(255, 255, 255);</string>
+                    <string notr="true"/>
                    </property>
                    <property name="text">
                     <string>Opcion:</string>
@@ -1464,8 +1760,7 @@ font: 10pt &quot;MS Shell Dlg 2&quot;;</string>
                  <item row="8" column="0">
                   <widget class="QLabel" name="label_3">
                    <property name="styleSheet">
-                    <string notr="true">font: 14pt &quot;Ubuntu&quot;;
-color: rgb(255, 255, 255);</string>
+                    <string notr="true"/>
                    </property>
                    <property name="text">
                     <string>Buscar:</string>
@@ -1722,7 +2017,60 @@ QPushButton:pressed {
                  <enum>Qt::LeftToRight</enum>
                 </property>
                 <property name="styleSheet">
-                 <string notr="true">background-color: rgb(255, 255, 255);</string>
+                 <string notr="true">QTableView QHeaderView::section {
+    font-size: 12px;
+    font-weight: bold;
+    background-color: lightgray;
+    padding: 4px;
+    border: none;
+    border-bottom: 1px solid gray;
+}
+
+QTableView {
+    background-color: white;
+    border: 1px solid gray;
+}
+
+QTableView QScrollBar:vertical {
+    width: 14px;
+    background-color: lightgray;
+}
+
+QTableView QScrollBar::handle:vertical {
+    background-color: gray;
+    border-radius: 7px;
+}
+
+QTableView QScrollBar::add-line:vertical,
+QTableView QScrollBar::sub-line:vertical {
+    background-color: transparent;
+}
+
+QTableView QScrollBar::add-page:vertical,
+QTableView QScrollBar::sub-page:vertical {
+    background-color: transparent;
+}
+
+QTableView QScrollBar:horizontal {
+    height: 14px;
+    background-color: lightgray;
+}
+
+QTableView QScrollBar::handle:horizontal {
+    background-color: gray;
+    border-radius: 7px;
+}
+
+QTableView QScrollBar::add-line:horizontal,
+QTableView QScrollBar::sub-line:horizontal {
+    background-color: transparent;
+}
+
+QTableView QScrollBar::add-page:horizontal,
+QTableView QScrollBar::sub-page:horizontal {
+    background-color: transparent;
+}
+</string>
                 </property>
                 <property name="autoScrollMargin">
                  <number>18</number>
@@ -1785,7 +2133,74 @@ QPushButton:pressed {
            <item>
             <widget class="QFrame" name="frame_34">
              <property name="styleSheet">
-              <string notr="true"/>
+              <string notr="true">QFrame{
+	background-color: rgb(222, 221, 218);
+	border:none;
+}
+QPushButton {
+	background-color:rgb(255, 255, 255);
+	border:1px solid rgb(100,100,100);
+	color:rgb(50,50,50);
+    padding: 8px 16px;
+    border-radius: 6px;
+    font-size: 14px;
+}
+
+QPushButton:hover {
+    background-color: #D6D2D1;
+}
+
+QPushButton:pressed {
+    background-color: #52c7ff;
+}
+
+QLabel{
+		font-weight:500;
+}
+
+*{
+		font-family:&quot;Inter&quot;, sans-serif;
+		
+}
+
+QFrame{
+		background-color: rgb(222, 221, 218);
+		border-radius:10%;
+}
+
+QLineEdit {
+    background-color: white;
+    border: 1px solid gray;
+    padding: 4px;
+    border-radius: 6px;
+    font-size: 12px;
+}
+
+QLineEdit:focus {
+    border-color: #3daee9;
+    outline: none;
+}
+
+QLineEdit::hover {
+    background-color: #f0f0f0;
+}
+
+QTextEdit {
+    background-color: white;
+    border: 1px solid gray;
+    padding: 4px;
+    border-radius: 6px;
+    font-size: 12px;
+}
+
+QTextEdit:focus {
+    border-color: #3daee9;
+    outline: none;
+}
+
+QTextEdit::hover {
+    background-color: #f0f0f0;
+}</string>
              </property>
              <property name="frameShape">
               <enum>QFrame::StyledPanel</enum>
@@ -1811,6 +2226,9 @@ QPushButton:pressed {
               </property>
               <item>
                <widget class="QFrame" name="frame_35">
+                <property name="styleSheet">
+                 <string notr="true"/>
+                </property>
                 <property name="frameShape">
                  <enum>QFrame::StyledPanel</enum>
                 </property>
@@ -1849,8 +2267,7 @@ QPushButton:pressed {
                  <item row="2" column="0">
                   <widget class="QLabel" name="label_75">
                    <property name="styleSheet">
-                    <string notr="true">font: 14pt &quot;Ubuntu&quot;;
-color: rgb(255, 255, 255);</string>
+                    <string notr="true"/>
                    </property>
                    <property name="text">
                     <string>ID:</string>
@@ -1884,8 +2301,7 @@ font: 10pt &quot;MS Shell Dlg 2&quot;;</string>
                  <item row="4" column="0">
                   <widget class="QLabel" name="label_76">
                    <property name="styleSheet">
-                    <string notr="true">font: 14pt &quot;Ubuntu&quot;;
-color: rgb(255, 255, 255);</string>
+                    <string notr="true"/>
                    </property>
                    <property name="text">
                     <string>Usuario:</string>
@@ -1903,8 +2319,7 @@ font: 14pt &quot;MS Shell Dlg 2&quot;;</string>
                  <item row="6" column="0">
                   <widget class="QLabel" name="label_77">
                    <property name="styleSheet">
-                    <string notr="true">font: 14pt &quot;Ubuntu&quot;;
-color: rgb(255, 255, 255);</string>
+                    <string notr="true"/>
                    </property>
                    <property name="text">
                     <string>Rol:</string>
@@ -2165,7 +2580,60 @@ QPushButton:pressed {
                  <cursorShape>PointingHandCursor</cursorShape>
                 </property>
                 <property name="styleSheet">
-                 <string notr="true">background-color: rgb(255, 255, 255);</string>
+                 <string notr="true">QTableView QHeaderView::section {
+    font-size: 12px;
+    font-weight: bold;
+    background-color: lightgray;
+    padding: 4px;
+    border: none;
+    border-bottom: 1px solid gray;
+}
+
+QTableView {
+    background-color: white;
+    border: 1px solid gray;
+}
+
+QTableView QScrollBar:vertical {
+    width: 14px;
+    background-color: lightgray;
+}
+
+QTableView QScrollBar::handle:vertical {
+    background-color: gray;
+    border-radius: 7px;
+}
+
+QTableView QScrollBar::add-line:vertical,
+QTableView QScrollBar::sub-line:vertical {
+    background-color: transparent;
+}
+
+QTableView QScrollBar::add-page:vertical,
+QTableView QScrollBar::sub-page:vertical {
+    background-color: transparent;
+}
+
+QTableView QScrollBar:horizontal {
+    height: 14px;
+    background-color: lightgray;
+}
+
+QTableView QScrollBar::handle:horizontal {
+    background-color: gray;
+    border-radius: 7px;
+}
+
+QTableView QScrollBar::add-line:horizontal,
+QTableView QScrollBar::sub-line:horizontal {
+    background-color: transparent;
+}
+
+QTableView QScrollBar::add-page:horizontal,
+QTableView QScrollBar::sub-page:horizontal {
+    background-color: transparent;
+}
+</string>
                 </property>
                 <property name="frameShape">
                  <enum>QFrame::NoFrame</enum>
@@ -2264,7 +2732,74 @@ QPushButton:pressed {
            <item>
             <widget class="QFrame" name="frame_38">
              <property name="styleSheet">
-              <string notr="true"/>
+              <string notr="true">QFrame{
+	background-color: rgb(222, 221, 218);
+	border:none;
+}
+QPushButton {
+	background-color:rgb(255, 255, 255);
+	border:1px solid rgb(100,100,100);
+	color:rgb(50,50,50);
+    padding: 8px 16px;
+    border-radius: 6px;
+    font-size: 14px;
+}
+
+QPushButton:hover {
+    background-color: #D6D2D1;
+}
+
+QPushButton:pressed {
+    background-color: #52c7ff;
+}
+
+QLabel{
+		font-weight:500;
+}
+
+*{
+		font-family:&quot;Inter&quot;, sans-serif;
+		
+}
+
+QFrame{
+		background-color: rgb(222, 221, 218);
+		border-radius:10%;
+}
+
+QLineEdit {
+    background-color: white;
+    border: 1px solid gray;
+    padding: 4px;
+    border-radius: 6px;
+    font-size: 12px;
+}
+
+QLineEdit:focus {
+    border-color: #3daee9;
+    outline: none;
+}
+
+QLineEdit::hover {
+    background-color: #f0f0f0;
+}
+
+QTextEdit {
+    background-color: white;
+    border: 1px solid gray;
+    padding: 4px;
+    border-radius: 6px;
+    font-size: 12px;
+}
+
+QTextEdit:focus {
+    border-color: #3daee9;
+    outline: none;
+}
+
+QTextEdit::hover {
+    background-color: #f0f0f0;
+}</string>
              </property>
              <property name="frameShape">
               <enum>QFrame::StyledPanel</enum>
@@ -2290,6 +2825,9 @@ QPushButton:pressed {
               </property>
               <item>
                <widget class="QFrame" name="frame_39">
+                <property name="styleSheet">
+                 <string notr="true"/>
+                </property>
                 <property name="frameShape">
                  <enum>QFrame::StyledPanel</enum>
                 </property>
@@ -2322,8 +2860,7 @@ QPushButton:pressed {
                  <item row="2" column="0">
                   <widget class="QLabel" name="label_78">
                    <property name="styleSheet">
-                    <string notr="true">font: 14pt &quot;Ubuntu&quot;;
-color: rgb(255, 255, 255);</string>
+                    <string notr="true"/>
                    </property>
                    <property name="text">
                     <string>ID:</string>
@@ -2357,8 +2894,7 @@ font: 10pt &quot;MS Shell Dlg 2&quot;;</string>
                  <item row="4" column="0">
                   <widget class="QLabel" name="label_79">
                    <property name="styleSheet">
-                    <string notr="true">font: 14pt &quot;Ubuntu&quot;;
-color: rgb(255, 255, 255);</string>
+                    <string notr="true"/>
                    </property>
                    <property name="text">
                     <string>Rol:</string>
@@ -2389,8 +2925,7 @@ font: 14pt &quot;MS Shell Dlg 2&quot;;</string>
                  <item row="6" column="0">
                   <widget class="QLabel" name="label_80">
                    <property name="styleSheet">
-                    <string notr="true">font: 14pt &quot;Ubuntu&quot;;
-color: rgb(255, 255, 255);</string>
+                    <string notr="true"/>
                    </property>
                    <property name="text">
                     <string>Opcion:</string>
@@ -2638,7 +3173,60 @@ QPushButton:pressed {
                  <cursorShape>PointingHandCursor</cursorShape>
                 </property>
                 <property name="styleSheet">
-                 <string notr="true">background-color: rgb(255, 255, 255);</string>
+                 <string notr="true">QTableView QHeaderView::section {
+    font-size: 12px;
+    font-weight: bold;
+    background-color: lightgray;
+    padding: 4px;
+    border: none;
+    border-bottom: 1px solid gray;
+}
+
+QTableView {
+    background-color: white;
+    border: 1px solid gray;
+}
+
+QTableView QScrollBar:vertical {
+    width: 14px;
+    background-color: lightgray;
+}
+
+QTableView QScrollBar::handle:vertical {
+    background-color: gray;
+    border-radius: 7px;
+}
+
+QTableView QScrollBar::add-line:vertical,
+QTableView QScrollBar::sub-line:vertical {
+    background-color: transparent;
+}
+
+QTableView QScrollBar::add-page:vertical,
+QTableView QScrollBar::sub-page:vertical {
+    background-color: transparent;
+}
+
+QTableView QScrollBar:horizontal {
+    height: 14px;
+    background-color: lightgray;
+}
+
+QTableView QScrollBar::handle:horizontal {
+    background-color: gray;
+    border-radius: 7px;
+}
+
+QTableView QScrollBar::add-line:horizontal,
+QTableView QScrollBar::sub-line:horizontal {
+    background-color: transparent;
+}
+
+QTableView QScrollBar::add-page:horizontal,
+QTableView QScrollBar::sub-page:horizontal {
+    background-color: transparent;
+}
+</string>
                 </property>
                 <property name="frameShape">
                  <enum>QFrame::NoFrame</enum>
