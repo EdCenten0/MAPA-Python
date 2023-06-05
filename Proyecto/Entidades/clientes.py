@@ -21,7 +21,7 @@ class Cliente:
         cedula: {self._cedula},  
         correo: {self._correo},
         telefono: {self._telefono},
-        id_tienda: {self._id_tienda}
+        id_tienda: {self._id_tienda},
         estado: {self._estado}
 
         '''
