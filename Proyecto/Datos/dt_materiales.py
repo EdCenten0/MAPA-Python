@@ -14,6 +14,18 @@ class Dt_materiales:
 
 
     @classmethod
+    def buscarMaterial(cls, nombre_material):
+
+        cursor = Conexion.obtenerConexion().cursor()
+        sentencia = (f"SELECT * FROM MAPA.materiales WHERE nombre_material like '{nombre_material}'")
+        cursor.execute(sentencia)
+        resultado_materiales = cursor.fetchall()
+        cursor.connection.commit()
+        cursor.close()
+        return resultado_materiales
+
+
+    @classmethod
     def guardarMaterial(cls, Materiales):
 
         indicador = False

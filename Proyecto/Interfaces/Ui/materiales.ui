@@ -19,7 +19,7 @@
   <widget class="QWidget" name="centralwidget">
    <layout class="QGridLayout" name="gridLayout_4">
     <item row="0" column="1">
-     <layout class="QGridLayout" name="gridLayout_2" rowstretch="0,0,0" columnstretch="0,0,0">
+     <layout class="QGridLayout" name="gridLayout_2" rowstretch="0,0,0,0,0" columnstretch="0,0,0">
       <property name="leftMargin">
        <number>0</number>
       </property>
@@ -36,54 +36,38 @@
        <number>8</number>
       </property>
       <property name="verticalSpacing">
-       <number>51</number>
+       <number>40</number>
       </property>
-      <item row="2" column="0">
-       <widget class="QLabel" name="lblProveedores">
+      <item row="3" column="2">
+       <widget class="QPushButton" name="btnBuscar">
         <property name="styleSheet">
          <string notr="true">background-color: rgb(222, 221, 218);</string>
         </property>
         <property name="text">
-         <string>Pedidos</string>
+         <string>Buscar</string>
         </property>
        </widget>
       </item>
-      <item row="2" column="1">
-       <widget class="QComboBox" name="cbPedidos">
+      <item row="3" column="1">
+       <widget class="QLineEdit" name="txtBuscar">
+        <property name="styleSheet">
+         <string notr="true">background-color: rgb(246, 245, 244);</string>
+        </property>
+       </widget>
+      </item>
+      <item row="2" column="0">
+       <widget class="QLabel" name="lblProveedores">
         <property name="maximumSize">
          <size>
-          <width>150</width>
+          <width>65</width>
           <height>16777215</height>
          </size>
         </property>
         <property name="styleSheet">
-         <string notr="true">background-color: rgb(246, 245, 244);</string>
-        </property>
-        <property name="currentIndex">
-         <number>-1</number>
-        </property>
-        <property name="maxVisibleItems">
-         <number>25</number>
-        </property>
-       </widget>
-      </item>
-      <item row="1" column="0">
-       <widget class="QLabel" name="label_5">
-        <property name="styleSheet">
          <string notr="true">background-color: rgb(222, 221, 218);</string>
         </property>
         <property name="text">
-         <string>Precio total</string>
-        </property>
-       </widget>
-      </item>
-      <item row="0" column="0">
-       <widget class="QLabel" name="label_4">
-        <property name="styleSheet">
-         <string notr="true">background-color: rgb(222, 221, 218);</string>
-        </property>
-        <property name="text">
-         <string>Cantidad</string>
+         <string>Pedidos:</string>
         </property>
        </widget>
       </item>
@@ -150,10 +134,48 @@
         </item>
        </widget>
       </item>
-      <item row="0" column="1">
-       <widget class="QLineEdit" name="txtCantidad">
+      <item row="1" column="0">
+       <widget class="QLabel" name="label_5">
         <property name="styleSheet">
-         <string notr="true">background-color: rgb(255, 255, 255);</string>
+         <string notr="true">background-color: rgb(222, 221, 218);</string>
+        </property>
+        <property name="text">
+         <string>Precio total:</string>
+        </property>
+       </widget>
+      </item>
+      <item row="2" column="1">
+       <widget class="QComboBox" name="cbPedidos">
+        <property name="maximumSize">
+         <size>
+          <width>150</width>
+          <height>16777215</height>
+         </size>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">background-color: rgb(246, 245, 244);</string>
+        </property>
+        <property name="currentIndex">
+         <number>-1</number>
+        </property>
+        <property name="maxVisibleItems">
+         <number>25</number>
+        </property>
+       </widget>
+      </item>
+      <item row="3" column="0">
+       <widget class="QLabel" name="lblBuscar">
+        <property name="maximumSize">
+         <size>
+          <width>55</width>
+          <height>16777215</height>
+         </size>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">background-color: rgb(222, 221, 218);</string>
+        </property>
+        <property name="text">
+         <string>Buscar:</string>
         </property>
        </widget>
       </item>
@@ -164,6 +186,29 @@
         </property>
         <property name="text">
          <string/>
+        </property>
+       </widget>
+      </item>
+      <item row="0" column="1">
+       <widget class="QLineEdit" name="txtCantidad">
+        <property name="styleSheet">
+         <string notr="true">background-color: rgb(255, 255, 255);</string>
+        </property>
+       </widget>
+      </item>
+      <item row="0" column="0">
+       <widget class="QLabel" name="label_4">
+        <property name="maximumSize">
+         <size>
+          <width>70</width>
+          <height>16777215</height>
+         </size>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">background-color: rgb(222, 221, 218);</string>
+        </property>
+        <property name="text">
+         <string>Cantidad:</string>
         </property>
        </widget>
       </item>
@@ -194,6 +239,16 @@
         </property>
        </widget>
       </item>
+      <item row="1" column="0">
+       <widget class="QPushButton" name="btnGuardar">
+        <property name="styleSheet">
+         <string notr="true">background-color: rgb(222, 221, 218);</string>
+        </property>
+        <property name="text">
+         <string>Guardar</string>
+        </property>
+       </widget>
+      </item>
       <item row="4" column="0">
        <widget class="QPushButton" name="btnVaciarCampos">
         <property name="styleSheet">
@@ -204,13 +259,19 @@
         </property>
        </widget>
       </item>
-      <item row="1" column="0">
-       <widget class="QPushButton" name="btnGuardar">
+      <item row="5" column="0">
+       <widget class="QPushButton" name="btnRefrescar">
+        <property name="maximumSize">
+         <size>
+          <width>16777215</width>
+          <height>30</height>
+         </size>
+        </property>
         <property name="styleSheet">
          <string notr="true">background-color: rgb(222, 221, 218);</string>
         </property>
         <property name="text">
-         <string>Guardar</string>
+         <string>Refrescar</string>
         </property>
        </widget>
       </item>
@@ -234,7 +295,7 @@
        <number>6</number>
       </property>
       <property name="verticalSpacing">
-       <number>18</number>
+       <number>29</number>
       </property>
       <item row="2" column="1">
        <widget class="QLineEdit" name="txtPrecioUnidadMedida">
@@ -272,7 +333,7 @@
          <string notr="true">background-color: rgb(222, 221, 218);</string>
         </property>
         <property name="text">
-         <string>Precio*UMedida</string>
+         <string>Precio*UMedida:</string>
         </property>
        </widget>
       </item>
@@ -280,7 +341,7 @@
        <widget class="QLabel" name="label_2">
         <property name="maximumSize">
          <size>
-          <width>100</width>
+          <width>85</width>
           <height>16777215</height>
          </size>
         </property>
@@ -288,7 +349,7 @@
          <string notr="true">background-color: rgb(222, 221, 218);</string>
         </property>
         <property name="text">
-         <string>Descripcion</string>
+         <string>Descripcion:</string>
         </property>
        </widget>
       </item>
@@ -296,7 +357,7 @@
        <widget class="QLabel" name="label">
         <property name="maximumSize">
          <size>
-          <width>100</width>
+          <width>70</width>
           <height>16777215</height>
          </size>
         </property>
@@ -304,7 +365,7 @@
          <string notr="true">background-color: rgb(222, 221, 218);</string>
         </property>
         <property name="text">
-         <string>Material</string>
+         <string>Material:</string>
         </property>
        </widget>
       </item>

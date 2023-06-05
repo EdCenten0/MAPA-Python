@@ -1,5 +1,5 @@
 import sys
-from encodings.punycode import selective_find
+#from encodings.punycode import selective_find
 
 from PyQt5 import QtWidgets
 from PyQt5.QtWidgets import QApplication, QAbstractItemView, QTableWidget, QMessageBox, QTableWidgetItem
@@ -28,6 +28,8 @@ class vw_materiales_funciones(QtWidgets.QMainWindow, vw_materiales.Ui_mw_materia
         self.btnEditar.clicked.connect(self.editarMaterial)
         self.btnEliminar.clicked.connect(self.eliminarMaterial)
         self.btnVaciarCampos.clicked.connect(self.limpiarCampos)
+        self.btnBuscar.clicked.connect(self.buscarMaterial)
+        self.btnRefrescar.clicked.connect(self.refrescarTabla)
 
 
     def llenarComboBoxPedidos(self):
@@ -62,11 +64,56 @@ class vw_materiales_funciones(QtWidgets.QMainWindow, vw_materiales.Ui_mw_materia
         else:
             QMessageBox.about(self, "Error", "Ha ocurrido un error")
 
+    def buscarMaterial(self):
+        try:
+            #self.tw_materiales.setCurrentItem(None)
+
+            nombre_material = str(self.txtBuscar.text())
+            materiales = dt_materiales.Dt_materiales.buscarMaterial(nombre_material)
+            indexes = len(materiales)
+            self.tw_materiales.setRowCount(indexes)
+            tableRow = 0
+
+            for m in materiales:
+                self.tw_materiales.setItem(tableRow, 0, QtWidgets.QTableWidgetItem(str(m['id_material'])))
+                self.tw_materiales.setItem(tableRow, 1, QtWidgets.QTableWidgetItem(m['nombre_material']))
+                self.tw_materiales.setItem(tableRow, 2, QtWidgets.QTableWidgetItem(m['descripcion']))
+                self.tw_materiales.setItem(tableRow, 3, QtWidgets.QTableWidgetItem(str(m['precio_por_unidad'])))
+                self.tw_materiales.setItem(tableRow, 4, QtWidgets.QTableWidgetItem(str(m['cantidad'])))
+                self.tw_materiales.setItem(tableRow, 5, QtWidgets.QTableWidgetItem(str(m['unidad_de_medida'])))
+                self.tw_materiales.setItem(tableRow, 6, QtWidgets.QTableWidgetItem(str(m['precio_total'])))
+                self.tw_materiales.setItem(tableRow, 7, QtWidgets.QTableWidgetItem(str(m['id_pedido'])))
+                tableRow += 1
+
+        except Exception as e:
+            print(f"Excepcion en {e}")
+
+
     def llenarTablaMateriales(self, datos):
         vacio = ""
         print("Datos de la tabla Materiales")
 
         i = len(datos)
+        self.tw_materiales.setRowCount(i)
+        tableRow = 0
+
+        for row in datos:
+            self.tw_materiales.setItem(tableRow, 0, QtWidgets.QTableWidgetItem(str(row['id_material'])))
+            self.tw_materiales.setItem(tableRow, 1, QtWidgets.QTableWidgetItem(row['nombre_material']))
+            self.tw_materiales.setItem(tableRow, 2, QtWidgets.QTableWidgetItem(row['descripcion']))
+            self.tw_materiales.setItem(tableRow, 3, QtWidgets.QTableWidgetItem(str(row['precio_por_unidad'])))
+            self.tw_materiales.setItem(tableRow, 4, QtWidgets.QTableWidgetItem(str(row['cantidad'])))
+            self.tw_materiales.setItem(tableRow, 5, QtWidgets.QTableWidgetItem(str(row['unidad_de_medida'])))
+            self.tw_materiales.setItem(tableRow, 6, QtWidgets.QTableWidgetItem(str(row['precio_total'])))
+            self.tw_materiales.setItem(tableRow, 7, QtWidgets.QTableWidgetItem(str(row['id_pedido'])))
+            tableRow += 1
+
+
+    def refrescarTabla(self):
+
+        datos = dt_materiales.Dt_materiales.listarMateriales()
+        i = len(datos)
+
         self.tw_materiales.setRowCount(i)
         tableRow = 0
 
@@ -80,6 +127,7 @@ class vw_materiales_funciones(QtWidgets.QMainWindow, vw_materiales.Ui_mw_materia
             self.tw_materiales.setItem(tableRow, 6, QTableWidgetItem(str(row['precio_total'])))
             self.tw_materiales.setItem(tableRow, 7, QTableWidgetItem(str(row['id_pedido'])))
             tableRow += 1
+
 
 
     def obtenerDatosTablaMateriales(self):
