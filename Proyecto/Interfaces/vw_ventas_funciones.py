@@ -2,7 +2,7 @@ import sys
 
 import vw_ventas
 import Proyecto.Datos.dt_Ventas
-import Proyecto.Datos.dt_taller
+import Proyecto.Interfaces.dt_taller
 import PyQt5.QtWidgets
 
 from Proyecto.Entidades import Ventas
