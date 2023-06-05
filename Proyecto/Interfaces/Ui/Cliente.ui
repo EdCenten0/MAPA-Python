@@ -6,413 +6,125 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>801</width>
-    <height>600</height>
+    <width>1089</width>
+    <height>817</height>
    </rect>
   </property>
   <property name="windowTitle">
    <string>Principal</string>
   </property>
   <property name="styleSheet">
-   <string notr="true">background-color: rgb(222, 221, 218);
-font-family:&quot;Inter&quot;, sans-serif;</string>
+   <string notr="true"/>
   </property>
   <widget class="QWidget" name="centralwidget">
    <property name="styleSheet">
     <string notr="true"/>
    </property>
-   <layout class="QGridLayout" name="gridLayout">
-    <item row="1" column="7">
-     <widget class="QPushButton" name="bt_Editar_Cliente">
-      <property name="minimumSize">
-       <size>
-        <width>0</width>
-        <height>28</height>
-       </size>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">QPushButton {
-	background-color:rgb(255, 255, 255);
-	border:1px solid rgb(100,100,100);
-	color:rgb(50,50,50);
-    padding: 8px 16px;
-    border-radius: 6px;
-    font-size: 14px;
-}
-
-QPushButton:hover {
-    background-color: #D6D2D1;
-}
-
-QPushButton:pressed {
-    background-color: #52c7ff;
-}</string>
-      </property>
-      <property name="text">
-       <string>Editar</string>
-      </property>
-     </widget>
-    </item>
-    <item row="4" column="7">
-     <widget class="QPushButton" name="bt_Buscar">
-      <property name="minimumSize">
-       <size>
-        <width>0</width>
-        <height>28</height>
-       </size>
-      </property>
-      <property name="maximumSize">
-       <size>
-        <width>500</width>
-        <height>100</height>
-       </size>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">QPushButton {
-	background-color:rgb(255, 255, 255);
-	border:1px solid rgb(100,100,100);
-	color:rgb(50,50,50);
-    padding: 8px 16px;
-    border-radius: 6px;
-    font-size: 14px;
-}
-
-QPushButton:hover {
-    background-color: #D6D2D1;
-}
-
-QPushButton:pressed {
-    background-color: #52c7ff;
-}</string>
-      </property>
-      <property name="text">
-       <string>Buscar</string>
-      </property>
-     </widget>
-    </item>
-    <item row="0" column="0">
-     <widget class="QLabel" name="label">
-      <property name="maximumSize">
-       <size>
-        <width>50</width>
-        <height>16777215</height>
-       </size>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">font: 14pt &quot;Ubuntu&quot;;
-color: rgb(0, 0, 0);</string>
-      </property>
-      <property name="text">
-       <string>ID:</string>
-      </property>
-     </widget>
-    </item>
-    <item row="0" column="7">
-     <widget class="QPushButton" name="bt_Guardar_Cliente">
-      <property name="minimumSize">
-       <size>
-        <width>75</width>
-        <height>28</height>
-       </size>
-      </property>
-      <property name="maximumSize">
-       <size>
-        <width>250</width>
-        <height>16777215</height>
-       </size>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">QPushButton {
-	background-color:rgb(255, 255, 255);
-	border:1px solid rgb(100,100,100);
-	color:rgb(50,50,50);
-    padding: 8px 16px;
-    border-radius: 6px;
-    font-size: 14px;
-}
-
-QPushButton:hover {
-    background-color: #D6D2D1;
-}
-
-QPushButton:pressed {
-    background-color: #52c7ff;
-}</string>
-      </property>
-      <property name="text">
-       <string>Guardar</string>
-      </property>
-     </widget>
-    </item>
-    <item row="1" column="6">
-     <widget class="QLineEdit" name="line_Cliente_Apellido_2">
-      <property name="maximumSize">
-       <size>
-        <width>300</width>
-        <height>16777215</height>
-       </size>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">QLineEdit {
-    background-color: white;
-    border: 1px solid gray;
-    padding: 4px;
-    border-radius: 6px;
-    font-size: 12px;
-}
-
-QLineEdit:focus {
-    border-color: #3daee9;
-    outline: none;
-}
-
-QLineEdit::hover {
-    background-color: #f0f0f0;
-}
-</string>
-      </property>
-     </widget>
-    </item>
-    <item row="2" column="6">
-     <widget class="QLineEdit" name="line_Cliente_Apellido_3">
-      <property name="maximumSize">
-       <size>
-        <width>300</width>
-        <height>16777215</height>
-       </size>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">QLineEdit {
-    background-color: white;
-    border: 1px solid gray;
-    padding: 4px;
-    border-radius: 6px;
-    font-size: 12px;
-}
-
-QLineEdit:focus {
-    border-color: #3daee9;
-    outline: none;
-}
-
-QLineEdit::hover {
-    background-color: #f0f0f0;
-}
-</string>
-      </property>
-     </widget>
-    </item>
-    <item row="3" column="7">
-     <widget class="QPushButton" name="bt_Vaciar_Cliente">
-      <property name="minimumSize">
-       <size>
-        <width>0</width>
-        <height>28</height>
-       </size>
-      </property>
-      <property name="layoutDirection">
-       <enum>Qt::LeftToRight</enum>
-      </property>
-      <property name="autoFillBackground">
-       <bool>false</bool>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">QPushButton {
-	background-color:rgb(255, 255, 255);
-	border:1px solid rgb(100,100,100);
-	color:rgb(50,50,50);
-    padding: 8px 16px;
-    border-radius: 6px;
-    font-size: 14px;
-}
-
-QPushButton:hover {
-    background-color: #D6D2D1;
-}
-
-QPushButton:pressed {
-    background-color: #52c7ff;
-}
-</string>
-      </property>
-      <property name="text">
-       <string>Vaciar Campos</string>
-      </property>
-     </widget>
-    </item>
-    <item row="2" column="7">
-     <widget class="QPushButton" name="bt_Eliminar_Cliente">
-      <property name="minimumSize">
-       <size>
-        <width>0</width>
-        <height>28</height>
-       </size>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">QPushButton {
-	background-color:rgb(255, 255, 255);
-	border:1px solid rgb(100,100,100);
-	color:rgb(50,50,50);
-    padding: 8px 16px;
-    border-radius: 6px;
-    font-size: 14px;
-}
-
-QPushButton:hover {
-    background-color: #D6D2D1;
-}
-
-QPushButton:pressed {
-    background-color: #52c7ff;
-}</string>
-      </property>
-      <property name="text">
-       <string>Eliminar</string>
-      </property>
-     </widget>
-    </item>
-    <item row="1" column="5">
-     <widget class="QLabel" name="label_4">
-      <property name="styleSheet">
-       <string notr="true">font: 14pt &quot;Ubuntu&quot;;
-color: rgb(0, 0, 0);</string>
-      </property>
-      <property name="text">
-       <string>Cedula:</string>
-      </property>
-     </widget>
-    </item>
-    <item row="0" column="5">
-     <widget class="QLabel" name="label_2">
-      <property name="styleSheet">
-       <string notr="true">font: 14pt &quot;Ubuntu&quot;;
-color: rgb(0, 0, 0);</string>
-      </property>
-      <property name="text">
-       <string>Apellido:</string>
-      </property>
-     </widget>
-    </item>
-    <item row="2" column="5">
-     <widget class="QLabel" name="label_5">
-      <property name="styleSheet">
-       <string notr="true">font: 14pt &quot;Ubuntu&quot;;
-color: rgb(0, 0, 0);</string>
-      </property>
-      <property name="text">
-       <string>Telefono:</string>
-      </property>
-     </widget>
-    </item>
-    <item row="0" column="1" colspan="4">
-     <widget class="QLineEdit" name="line_Cliente_Nombre">
-      <property name="styleSheet">
-       <string notr="true">QLineEdit {
-    background-color: white;
-    border: 1px solid gray;
-    padding: 4px;
-    border-radius: 6px;
-    font-size: 12px;
-}
-
-QLineEdit:focus {
-    border-color: #3daee9;
-    outline: none;
-}
-
-QLineEdit::hover {
-    background-color: #f0f0f0;
-}
-</string>
-      </property>
-     </widget>
-    </item>
-    <item row="0" column="6">
-     <widget class="QLineEdit" name="line_Cliente_Apellido">
-      <property name="enabled">
-       <bool>true</bool>
-      </property>
-      <property name="maximumSize">
-       <size>
-        <width>300</width>
-        <height>16777215</height>
-       </size>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">QLineEdit {
-    background-color: white;
-    border: 1px solid gray;
-    padding: 4px;
-    border-radius: 6px;
-    font-size: 12px;
-}
-
-QLineEdit:focus {
-    border-color: #3daee9;
-    outline: none;
-}
-
-QLineEdit::hover {
-    background-color: #f0f0f0;
-}
-</string>
-      </property>
-     </widget>
-    </item>
-    <item row="3" column="0">
-     <widget class="QLabel" name="label_6">
-      <property name="styleSheet">
-       <string notr="true">font: 14pt &quot;Ubuntu&quot;;
-color: rgb(0, 0, 0);</string>
-      </property>
-      <property name="text">
-       <string>Correo:</string>
-      </property>
-     </widget>
-    </item>
-    <item row="2" column="0">
-     <widget class="QLabel" name="label_3">
-      <property name="styleSheet">
-       <string notr="true">font: 14pt &quot;Ubuntu&quot;;
-color: rgb(0, 0, 0);</string>
-      </property>
-      <property name="text">
-       <string>Id tienda:</string>
-      </property>
-     </widget>
-    </item>
+   <layout class="QGridLayout" name="gridLayout_2">
     <item row="1" column="0">
-     <widget class="QLabel" name="label_7">
+     <widget class="QFrame" name="frame">
       <property name="styleSheet">
-       <string notr="true">font: 14pt &quot;Ubuntu&quot;;
-color: rgb(0, 0, 0);</string>
+       <string notr="true">QFrame{
+	background-color: rgb(222, 221, 218);
+	border:none;
+}
+QPushButton {
+	background-color:rgb(255, 255, 255);
+	border:1px solid rgb(100,100,100);
+	color:rgb(50,50,50);
+    padding: 8px 16px;
+    border-radius: 6px;
+    font-size: 14px;
+}
+
+QPushButton:hover {
+    background-color: #D6D2D1;
+}
+
+QPushButton:pressed {
+    background-color: #52c7ff;
+}
+
+QLabel{
+		font-weight:500;
+}
+
+*{
+		font-family:&quot;Inter&quot;, sans-serif;
+		
+}
+
+QFrame{
+		background-color: rgb(222, 221, 218);
+		border-radius:10%;
+}
+
+QLineEdit {
+    background-color: white;
+    border: 1px solid gray;
+    padding: 4px;
+    border-radius: 6px;
+    font-size: 12px;
+}
+
+QLineEdit:focus {
+    border-color: #3daee9;
+    outline: none;
+}
+
+QLineEdit::hover {
+    background-color: #f0f0f0;
+}
+
+QTextEdit {
+    background-color: white;
+    border: 1px solid gray;
+    padding: 4px;
+    border-radius: 6px;
+    font-size: 12px;
+}
+
+QTextEdit:focus {
+    border-color: #3daee9;
+    outline: none;
+}
+
+QTextEdit::hover {
+    background-color: #f0f0f0;
+}
+
+QLabel{
+		font-weight:500;
+}
+</string>
       </property>
-      <property name="text">
-       <string>Nombre:</string>
+      <property name="frameShape">
+       <enum>QFrame::StyledPanel</enum>
       </property>
-     </widget>
-    </item>
-    <item row="4" column="0">
-     <widget class="QLabel" name="label_8">
-      <property name="styleSheet">
-       <string notr="true">font: 14pt &quot;Ubuntu&quot;;
-color: rgb(0, 0, 0);</string>
+      <property name="frameShadow">
+       <enum>QFrame::Raised</enum>
       </property>
-      <property name="text">
-       <string>Buscar:</string>
-      </property>
-     </widget>
-    </item>
-    <item row="4" column="1" colspan="6">
-     <widget class="QLineEdit" name="line_Cliente_Buscar">
-      <property name="minimumSize">
-       <size>
-        <width>531</width>
-        <height>20</height>
-       </size>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">QLineEdit {
+      <layout class="QGridLayout" name="gridLayout">
+       <item row="0" column="0">
+        <widget class="QLabel" name="label">
+         <property name="maximumSize">
+          <size>
+           <width>50</width>
+           <height>16777215</height>
+          </size>
+         </property>
+         <property name="styleSheet">
+          <string notr="true"/>
+         </property>
+         <property name="text">
+          <string>ID:</string>
+         </property>
+        </widget>
+       </item>
+       <item row="0" column="1">
+        <widget class="QLineEdit" name="line_Cliente_Nombre">
+         <property name="styleSheet">
+          <string notr="true">QLineEdit {
     background-color: white;
     border: 1px solid gray;
     padding: 4px;
@@ -429,13 +141,32 @@ QLineEdit::hover {
     background-color: #f0f0f0;
 }
 </string>
-      </property>
-     </widget>
-    </item>
-    <item row="2" column="1" colspan="4">
-     <widget class="QLineEdit" name="line_Cliente_Direccion">
-      <property name="styleSheet">
-       <string notr="true">QLineEdit {
+         </property>
+        </widget>
+       </item>
+       <item row="0" column="2">
+        <widget class="QLabel" name="label_2">
+         <property name="styleSheet">
+          <string notr="true"/>
+         </property>
+         <property name="text">
+          <string>Apellido:</string>
+         </property>
+        </widget>
+       </item>
+       <item row="0" column="3">
+        <widget class="QLineEdit" name="line_Cliente_Apellido">
+         <property name="enabled">
+          <bool>true</bool>
+         </property>
+         <property name="maximumSize">
+          <size>
+           <width>300</width>
+           <height>16777215</height>
+          </size>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">QLineEdit {
     background-color: white;
     border: 1px solid gray;
     padding: 4px;
@@ -452,13 +183,60 @@ QLineEdit::hover {
     background-color: #f0f0f0;
 }
 </string>
-      </property>
-     </widget>
-    </item>
-    <item row="1" column="1" colspan="4">
-     <widget class="QLineEdit" name="line_Cliente_Apellido_5">
-      <property name="styleSheet">
-       <string notr="true">QLineEdit {
+         </property>
+        </widget>
+       </item>
+       <item row="0" column="4">
+        <widget class="QPushButton" name="bt_Guardar_Cliente">
+         <property name="minimumSize">
+          <size>
+           <width>75</width>
+           <height>28</height>
+          </size>
+         </property>
+         <property name="maximumSize">
+          <size>
+           <width>250</width>
+           <height>16777215</height>
+          </size>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">QPushButton {
+	background-color:rgb(255, 255, 255);
+	border:1px solid rgb(100,100,100);
+	color:rgb(50,50,50);
+    padding: 8px 16px;
+    border-radius: 6px;
+    font-size: 14px;
+}
+
+QPushButton:hover {
+    background-color: #D6D2D1;
+}
+
+QPushButton:pressed {
+    background-color: #52c7ff;
+}</string>
+         </property>
+         <property name="text">
+          <string>Guardar</string>
+         </property>
+        </widget>
+       </item>
+       <item row="1" column="0">
+        <widget class="QLabel" name="label_7">
+         <property name="styleSheet">
+          <string notr="true"/>
+         </property>
+         <property name="text">
+          <string>Nombre:</string>
+         </property>
+        </widget>
+       </item>
+       <item row="1" column="1">
+        <widget class="QLineEdit" name="line_Cliente_Apellido_5">
+         <property name="styleSheet">
+          <string notr="true">QLineEdit {
     background-color: white;
     border: 1px solid gray;
     padding: 4px;
@@ -475,13 +253,29 @@ QLineEdit::hover {
     background-color: #f0f0f0;
 }
 </string>
-      </property>
-     </widget>
-    </item>
-    <item row="3" column="1">
-     <widget class="QLineEdit" name="line_Cliente_Apellido_4">
-      <property name="styleSheet">
-       <string notr="true">QLineEdit {
+         </property>
+        </widget>
+       </item>
+       <item row="1" column="2">
+        <widget class="QLabel" name="label_4">
+         <property name="styleSheet">
+          <string notr="true"/>
+         </property>
+         <property name="text">
+          <string>Cedula:</string>
+         </property>
+        </widget>
+       </item>
+       <item row="1" column="3">
+        <widget class="QLineEdit" name="line_Cliente_Apellido_2">
+         <property name="maximumSize">
+          <size>
+           <width>300</width>
+           <height>16777215</height>
+          </size>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">QLineEdit {
     background-color: white;
     border: 1px solid gray;
     padding: 4px;
@@ -498,28 +292,309 @@ QLineEdit::hover {
     background-color: #f0f0f0;
 }
 </string>
-      </property>
-     </widget>
-    </item>
-    <item row="5" column="0" colspan="8">
-     <widget class="QTableWidget" name="tb_Cliente">
-      <property name="minimumSize">
-       <size>
-        <width>0</width>
-        <height>50</height>
-       </size>
-      </property>
-      <property name="maximumSize">
-       <size>
-        <width>16777215</width>
-        <height>1000</height>
-       </size>
-      </property>
-      <property name="cursor" stdset="0">
-       <cursorShape>ArrowCursor</cursorShape>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">QTableView QHeaderView::section {
+         </property>
+        </widget>
+       </item>
+       <item row="1" column="4">
+        <widget class="QPushButton" name="bt_Editar_Cliente">
+         <property name="minimumSize">
+          <size>
+           <width>0</width>
+           <height>28</height>
+          </size>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">QPushButton {
+	background-color:rgb(255, 255, 255);
+	border:1px solid rgb(100,100,100);
+	color:rgb(50,50,50);
+    padding: 8px 16px;
+    border-radius: 6px;
+    font-size: 14px;
+}
+
+QPushButton:hover {
+    background-color: #D6D2D1;
+}
+
+QPushButton:pressed {
+    background-color: #52c7ff;
+}</string>
+         </property>
+         <property name="text">
+          <string>Editar</string>
+         </property>
+        </widget>
+       </item>
+       <item row="2" column="0">
+        <widget class="QLabel" name="label_3">
+         <property name="styleSheet">
+          <string notr="true"/>
+         </property>
+         <property name="text">
+          <string>Id tienda:</string>
+         </property>
+        </widget>
+       </item>
+       <item row="2" column="1">
+        <widget class="QLineEdit" name="line_Cliente_Direccion">
+         <property name="styleSheet">
+          <string notr="true">QLineEdit {
+    background-color: white;
+    border: 1px solid gray;
+    padding: 4px;
+    border-radius: 6px;
+    font-size: 12px;
+}
+
+QLineEdit:focus {
+    border-color: #3daee9;
+    outline: none;
+}
+
+QLineEdit::hover {
+    background-color: #f0f0f0;
+}
+</string>
+         </property>
+        </widget>
+       </item>
+       <item row="2" column="2">
+        <widget class="QLabel" name="label_5">
+         <property name="styleSheet">
+          <string notr="true"/>
+         </property>
+         <property name="text">
+          <string>Telefono:</string>
+         </property>
+        </widget>
+       </item>
+       <item row="2" column="3">
+        <widget class="QLineEdit" name="line_Cliente_Apellido_3">
+         <property name="maximumSize">
+          <size>
+           <width>300</width>
+           <height>16777215</height>
+          </size>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">QLineEdit {
+    background-color: white;
+    border: 1px solid gray;
+    padding: 4px;
+    border-radius: 6px;
+    font-size: 12px;
+}
+
+QLineEdit:focus {
+    border-color: #3daee9;
+    outline: none;
+}
+
+QLineEdit::hover {
+    background-color: #f0f0f0;
+}
+</string>
+         </property>
+        </widget>
+       </item>
+       <item row="2" column="4">
+        <widget class="QPushButton" name="bt_Eliminar_Cliente">
+         <property name="minimumSize">
+          <size>
+           <width>0</width>
+           <height>28</height>
+          </size>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">QPushButton {
+	background-color:rgb(255, 255, 255);
+	border:1px solid rgb(100,100,100);
+	color:rgb(50,50,50);
+    padding: 8px 16px;
+    border-radius: 6px;
+    font-size: 14px;
+}
+
+QPushButton:hover {
+    background-color: #D6D2D1;
+}
+
+QPushButton:pressed {
+    background-color: #52c7ff;
+}</string>
+         </property>
+         <property name="text">
+          <string>Eliminar</string>
+         </property>
+        </widget>
+       </item>
+       <item row="3" column="0">
+        <widget class="QLabel" name="label_6">
+         <property name="styleSheet">
+          <string notr="true"/>
+         </property>
+         <property name="text">
+          <string>Correo:</string>
+         </property>
+        </widget>
+       </item>
+       <item row="3" column="1">
+        <widget class="QLineEdit" name="line_Cliente_Apellido_4">
+         <property name="styleSheet">
+          <string notr="true">QLineEdit {
+    background-color: white;
+    border: 1px solid gray;
+    padding: 4px;
+    border-radius: 6px;
+    font-size: 12px;
+}
+
+QLineEdit:focus {
+    border-color: #3daee9;
+    outline: none;
+}
+
+QLineEdit::hover {
+    background-color: #f0f0f0;
+}
+</string>
+         </property>
+        </widget>
+       </item>
+       <item row="3" column="4">
+        <widget class="QPushButton" name="bt_Vaciar_Cliente">
+         <property name="minimumSize">
+          <size>
+           <width>0</width>
+           <height>28</height>
+          </size>
+         </property>
+         <property name="layoutDirection">
+          <enum>Qt::LeftToRight</enum>
+         </property>
+         <property name="autoFillBackground">
+          <bool>false</bool>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">QPushButton {
+	background-color:rgb(255, 255, 255);
+	border:1px solid rgb(100,100,100);
+	color:rgb(50,50,50);
+    padding: 8px 16px;
+    border-radius: 6px;
+    font-size: 14px;
+}
+
+QPushButton:hover {
+    background-color: #D6D2D1;
+}
+
+QPushButton:pressed {
+    background-color: #52c7ff;
+}
+</string>
+         </property>
+         <property name="text">
+          <string>Vaciar Campos</string>
+         </property>
+        </widget>
+       </item>
+       <item row="4" column="0">
+        <widget class="QLabel" name="label_8">
+         <property name="styleSheet">
+          <string notr="true"/>
+         </property>
+         <property name="text">
+          <string>Buscar:</string>
+         </property>
+        </widget>
+       </item>
+       <item row="4" column="1" colspan="3">
+        <widget class="QLineEdit" name="line_Cliente_Buscar">
+         <property name="minimumSize">
+          <size>
+           <width>531</width>
+           <height>20</height>
+          </size>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">QLineEdit {
+    background-color: white;
+    border: 1px solid gray;
+    padding: 4px;
+    border-radius: 6px;
+    font-size: 12px;
+}
+
+QLineEdit:focus {
+    border-color: #3daee9;
+    outline: none;
+}
+
+QLineEdit::hover {
+    background-color: #f0f0f0;
+}
+</string>
+         </property>
+        </widget>
+       </item>
+       <item row="4" column="4">
+        <widget class="QPushButton" name="bt_Buscar">
+         <property name="minimumSize">
+          <size>
+           <width>0</width>
+           <height>28</height>
+          </size>
+         </property>
+         <property name="maximumSize">
+          <size>
+           <width>500</width>
+           <height>100</height>
+          </size>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">QPushButton {
+	background-color:rgb(255, 255, 255);
+	border:1px solid rgb(100,100,100);
+	color:rgb(50,50,50);
+    padding: 8px 16px;
+    border-radius: 6px;
+    font-size: 14px;
+}
+
+QPushButton:hover {
+    background-color: #D6D2D1;
+}
+
+QPushButton:pressed {
+    background-color: #52c7ff;
+}</string>
+         </property>
+         <property name="text">
+          <string>Buscar</string>
+         </property>
+        </widget>
+       </item>
+       <item row="5" column="0" colspan="5">
+        <widget class="QTableWidget" name="tb_Cliente">
+         <property name="minimumSize">
+          <size>
+           <width>0</width>
+           <height>50</height>
+          </size>
+         </property>
+         <property name="maximumSize">
+          <size>
+           <width>16777215</width>
+           <height>1000</height>
+          </size>
+         </property>
+         <property name="cursor" stdset="0">
+          <cursorShape>ArrowCursor</cursorShape>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">QTableView QHeaderView::section {
     font-size: 12px;
     font-weight: bold;
     background-color: lightgray;
@@ -574,94 +649,87 @@ QTableView QScrollBar::sub-page:horizontal {
 }
 
 </string>
+         </property>
+         <property name="frameShape">
+          <enum>QFrame::NoFrame</enum>
+         </property>
+         <property name="sizeAdjustPolicy">
+          <enum>QAbstractScrollArea::AdjustToContents</enum>
+         </property>
+         <attribute name="horizontalHeaderVisible">
+          <bool>true</bool>
+         </attribute>
+         <attribute name="horizontalHeaderCascadingSectionResizes">
+          <bool>true</bool>
+         </attribute>
+         <attribute name="horizontalHeaderDefaultSectionSize">
+          <number>111</number>
+         </attribute>
+         <attribute name="horizontalHeaderShowSortIndicator" stdset="0">
+          <bool>true</bool>
+         </attribute>
+         <attribute name="horizontalHeaderStretchLastSection">
+          <bool>true</bool>
+         </attribute>
+         <attribute name="verticalHeaderMinimumSectionSize">
+          <number>23</number>
+         </attribute>
+         <attribute name="verticalHeaderDefaultSectionSize">
+          <number>25</number>
+         </attribute>
+         <column>
+          <property name="text">
+           <string>ID</string>
+          </property>
+         </column>
+         <column>
+          <property name="text">
+           <string>Nombre</string>
+          </property>
+         </column>
+         <column>
+          <property name="text">
+           <string>Apellido</string>
+          </property>
+         </column>
+         <column>
+          <property name="text">
+           <string>Cedula</string>
+          </property>
+         </column>
+         <column>
+          <property name="text">
+           <string>Email</string>
+          </property>
+         </column>
+         <column>
+          <property name="text">
+           <string>Telefono</string>
+          </property>
+         </column>
+         <column>
+          <property name="text">
+           <string>ID_Tienda</string>
+          </property>
+         </column>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+    </item>
+    <item row="0" column="0">
+     <widget class="QLabel" name="label_9">
+      <property name="styleSheet">
+       <string notr="true">font-family:&quot;Inter&quot;, sans-serif;
+font-size:30px;
+font-weight:500;</string>
       </property>
-      <property name="frameShape">
-       <enum>QFrame::NoFrame</enum>
+      <property name="text">
+       <string>Clientes</string>
       </property>
-      <property name="sizeAdjustPolicy">
-       <enum>QAbstractScrollArea::AdjustToContents</enum>
-      </property>
-      <attribute name="horizontalHeaderVisible">
-       <bool>true</bool>
-      </attribute>
-      <attribute name="horizontalHeaderCascadingSectionResizes">
-       <bool>true</bool>
-      </attribute>
-      <attribute name="horizontalHeaderDefaultSectionSize">
-       <number>111</number>
-      </attribute>
-      <attribute name="horizontalHeaderShowSortIndicator" stdset="0">
-       <bool>true</bool>
-      </attribute>
-      <attribute name="horizontalHeaderStretchLastSection">
-       <bool>true</bool>
-      </attribute>
-      <attribute name="verticalHeaderDefaultSectionSize">
-       <number>25</number>
-      </attribute>
-      <attribute name="verticalHeaderMinimumSectionSize">
-       <number>23</number>
-      </attribute>
-      <column>
-       <property name="text">
-        <string>ID</string>
-       </property>
-      </column>
-      <column>
-       <property name="text">
-        <string>Nombre</string>
-       </property>
-      </column>
-      <column>
-       <property name="text">
-        <string>Apellido</string>
-       </property>
-      </column>
-      <column>
-       <property name="text">
-        <string>Cedula</string>
-       </property>
-      </column>
-      <column>
-       <property name="text">
-        <string>Email</string>
-       </property>
-      </column>
-      <column>
-       <property name="text">
-        <string>Telefono</string>
-       </property>
-      </column>
-      <column>
-       <property name="text">
-        <string>ID_Tienda</string>
-       </property>
-      </column>
      </widget>
     </item>
    </layout>
-   <zorder>line_Cliente_Nombre</zorder>
-   <zorder>label_3</zorder>
-   <zorder>bt_Eliminar_Cliente</zorder>
-   <zorder>bt_Guardar_Cliente</zorder>
-   <zorder>label</zorder>
-   <zorder>bt_Editar_Cliente</zorder>
-   <zorder>line_Cliente_Direccion</zorder>
-   <zorder>tb_Cliente</zorder>
-   <zorder>bt_Vaciar_Cliente</zorder>
-   <zorder>line_Cliente_Apellido_2</zorder>
-   <zorder>line_Cliente_Apellido_3</zorder>
-   <zorder>line_Cliente_Apellido_5</zorder>
-   <zorder>label_7</zorder>
-   <zorder>line_Cliente_Buscar</zorder>
-   <zorder>label_8</zorder>
-   <zorder>bt_Buscar</zorder>
-   <zorder>label_4</zorder>
-   <zorder>label_2</zorder>
-   <zorder>label_5</zorder>
-   <zorder>label_6</zorder>
-   <zorder>line_Cliente_Apellido_4</zorder>
-   <zorder>line_Cliente_Apellido</zorder>
   </widget>
  </widget>
  <resources/>
