@@ -12,7 +12,7 @@ class DtMaterialesPorProveedor:
     _INSERT = "INSERT INTO materiales_por_proveedor(id_proveedor, id_material) VALUES (%s, %s)"
     _UPDATE = "UPDATE materiales_por_proveedor set id_proveedor= %s, id_material= %s, estado = 2 WHERE id= %s"  # Tambien hay que cambiar el estado a 2
     _DELETE = "UPDATE materiales_por_proveedor set estado = 3 WHERE id = %s"
-    _SELECT_VISTA = "SELECT * FROM MAPA.materiales_por_proveedor_vistas"
+    _SELECT_VISTA = "SELECT * FROM materiales_por_proveedor_vistas"
     _cursor = None
 
     @classmethod
@@ -40,16 +40,16 @@ class DtMaterialesPorProveedor:
         return materiales_por_proveedores
 
     @classmethod
-    def guardar_materiales_por_proveedor(cls, mpp: MaterialesPorProveedor):
+    def guardar_materiales_por_proveedor(cls, id_proveedor, id_material):
         flag = False
         try:
-            mppSetQuery = (mpp.id_proveedor, mpp.id_material)
+            mppSetQuery = f"INSERT INTO materiales_por_proveedor(id_proveedor, id_material) VALUES ({id_proveedor}, {id_material})"
             print(mppSetQuery)
             cursor = Conexion.Conexion.obtenerConexion().cursor()
-            cursor.execute(cls._INSERT, mppSetQuery)
+            cursor.execute(mppSetQuery)
             cursor.connection.commit()
             cursor.close()
-            Conexion.Conexion.obtenerConexion().close()
+
             flag = True
         except pymysql.Error as e:
             print(f"Error al guardar materiales_por_proveedor: {e}")

@@ -1,8 +1,5 @@
 import copy
 
-
-
-
 class Materiales:
     def __init__(self, id_material=None, nombre_material=None, descripcion=None, cantidad=None, unidad_de_medida=None,
         precio_unidad=None, precio_total=None, id_pedido=None):

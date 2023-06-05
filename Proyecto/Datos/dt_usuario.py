@@ -1,7 +1,7 @@
 # Francisco de Jesús Melendez Simplina
 
-from Proyecto.Datos import Conexion
-from Proyecto.Entidades.usuarios import Usuarios
+from Datos import Conexion
+from Entidades.usuarios import Usuarios
 
 
 class Dt_Usuarios:

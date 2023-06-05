@@ -61,6 +61,7 @@ class VwMaterialesPorProveedorFunciones(QtWidgets.QMainWindow, vw_materiales_por
     def listarMaterialesPorProveedor(self):
         datos = dt_materiales_por_proveedor.DtMaterialesPorProveedor.listar_vista()
         i = len(datos)
+        print(f"Tamano de los datos de la tabla: {i}")
         self.table_materiales_por_proveedor.setRowCount(i)
         tablerow = 0
 
@@ -90,9 +91,8 @@ class VwMaterialesPorProveedorFunciones(QtWidgets.QMainWindow, vw_materiales_por
         proveedor = dt_proveedor.Dt_Proveedor.buscarIndexProveedor(int(id_proveedor))
         material = dt_materiales.Dt_materiales.buscarIndexMateriall(int(id_material))
 
-
-        if (proveedor == None):
-            prin
+        if proveedor is None:
+            print(proveedor)
             print(f"Efectivamente, es None")
             self.listarMaterialesPorProveedor()
         else:
@@ -104,11 +104,17 @@ class VwMaterialesPorProveedorFunciones(QtWidgets.QMainWindow, vw_materiales_por
             id_material = self.cb_material.currentData()
             id_proveedor = self.cb_proveedor.currentData()
             mpp = MaterialesPorProveedor(None, id_proveedor, id_material)
-            dt_materiales_por_proveedor.DtMaterialesPorProveedor.guardar_materiales_por_proveedor(mpp)
+            dt_materiales_por_proveedor.DtMaterialesPorProveedor.guardar_materiales_por_proveedor(id_proveedor, id_material)
             self.listarMaterialesPorProveedor()
 
-        except Exception as e:
-            print("sda")
+
+        except pymysql.Error as e:
+            print(f"ERROR EN BOTON DE GUARDAR MATERIALES POR PROVEEDOR: {e}")
+
+
+    def vaciarCombo(self):
+        self.cb_proveedor.setCurrentIndex(0)
+        self.cb_material.setCurrentIndex(0)
 
 
 if __name__ == '__main__':
