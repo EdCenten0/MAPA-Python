@@ -14,7 +14,7 @@ from PyQt5 import QtCore, QtGui, QtWidgets
 class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
         MainWindow.setObjectName("MainWindow")
-        MainWindow.resize(1301, 855)
+        MainWindow.resize(1301, 936)
         MainWindow.setMinimumSize(QtCore.QSize(0, 0))
         MainWindow.setStyleSheet("")
         self.centralwidget = QtWidgets.QWidget(MainWindow)
@@ -69,6 +69,7 @@ class Ui_MainWindow(object):
         self.frame_2 = QtWidgets.QFrame(self.frame)
         self.frame_2.setStyleSheet("QFrame{\n"
 "    background-color: rgb(240, 213, 209);\n"
+"    border-radius:7px;\n"
 "\n"
 "}\n"
 "\n"
@@ -248,12 +249,15 @@ class Ui_MainWindow(object):
         self.bt_ajustes = QtWidgets.QPushButton(self.frame_2)
         self.bt_ajustes.setMinimumSize(QtCore.QSize(0, 44))
         self.bt_ajustes.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
-        self.bt_ajustes.setStyleSheet("QPushButton:hover {\n"
-"    background-color: #D6D2D1;\n"
+        self.bt_ajustes.setStyleSheet("QPushButton{\n"
+"        background-color: rgb(255, 255, 255);    \n"
+"        border:1px solid #c7c7c7;\n"
+"\n"
 "}\n"
 "\n"
-"QPushButton:pressed {\n"
-"    background-color: #52c7ff;\n"
+"QPushButton:hover{\n"
+"        background-color:#c7c7c7;\n"
+"        border:1px solid rgb(255,255,255);\n"
 "}\n"
 "")
         self.bt_ajustes.setObjectName("bt_ajustes")
