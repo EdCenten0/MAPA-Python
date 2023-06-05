@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>792</width>
+    <width>801</width>
     <height>600</height>
    </rect>
   </property>
@@ -14,9 +14,13 @@
    <string>Principal</string>
   </property>
   <property name="styleSheet">
-   <string notr="true">background-color: rgb(11, 36, 71);</string>
+   <string notr="true">background-color: rgb(222, 221, 218);
+font-family:&quot;Inter&quot;, sans-serif;</string>
   </property>
   <widget class="QWidget" name="centralwidget">
+   <property name="styleSheet">
+    <string notr="true"/>
+   </property>
    <layout class="QGridLayout" name="gridLayout">
     <item row="1" column="7">
      <widget class="QPushButton" name="bt_Editar_Cliente">
@@ -28,16 +32,16 @@
       </property>
       <property name="styleSheet">
        <string notr="true">QPushButton {
-	background-color: rgb(165, 215, 232);
-    color: Black;
+	background-color:rgb(255, 255, 255);
+	border:1px solid rgb(100,100,100);
+	color:rgb(50,50,50);
     padding: 8px 16px;
-    border: none;
     border-radius: 4px;
     font-size: 14px;
 }
 
 QPushButton:hover {
-    background-color: #52c5ff;
+    background-color: #D6D2D1;
 }
 
 QPushButton:pressed {
@@ -65,20 +69,21 @@ QPushButton:pressed {
       </property>
       <property name="styleSheet">
        <string notr="true">QPushButton {
-	background-color: rgb(165, 215, 232);
-    color: Black;
+	background-color:rgb(255, 255, 255);
+	border:1px solid rgb(100,100,100);
+	color:rgb(50,50,50);
     padding: 8px 16px;
-    border: none;
     border-radius: 4px;
     font-size: 14px;
 }
 
 QPushButton:hover {
-    background-color: #52c5ff;
+    background-color: #D6D2D1;
 }
 
 QPushButton:pressed {
-    background-color: #52c7ff;
+    background-color: #3134b9;
+    transform: scale(0.9);
 }</string>
       </property>
       <property name="text">
@@ -96,7 +101,7 @@ QPushButton:pressed {
       </property>
       <property name="styleSheet">
        <string notr="true">font: 14pt &quot;Ubuntu&quot;;
-color: rgb(255, 255, 255);</string>
+color: rgb(0, 0, 0);</string>
       </property>
       <property name="text">
        <string>ID:</string>
@@ -119,16 +124,16 @@ color: rgb(255, 255, 255);</string>
       </property>
       <property name="styleSheet">
        <string notr="true">QPushButton {
-	background-color: rgb(165, 215, 232);
-    color: black;
+	background-color:rgb(255, 255, 255);
+	border:1px solid rgb(100,100,100);
+	color:rgb(50,50,50);
     padding: 8px 16px;
-    border: none;
     border-radius: 4px;
     font-size: 14px;
 }
 
 QPushButton:hover {
-    background-color: #52c5ff;
+    background-color: #D6D2D1;
 }
 
 QPushButton:pressed {
@@ -214,16 +219,16 @@ QLineEdit::hover {
       </property>
       <property name="styleSheet">
        <string notr="true">QPushButton {
-	background-color: rgb(165, 215, 232);
-    color: Black;
+	background-color:rgb(255, 255, 255);
+	border:1px solid rgb(100,100,100);
+	color:rgb(50,50,50);
     padding: 8px 16px;
-    border: none;
     border-radius: 4px;
     font-size: 14px;
 }
 
 QPushButton:hover {
-    background-color: #52c5ff;
+    background-color: #D6D2D1;
 }
 
 QPushButton:pressed {
@@ -246,16 +251,16 @@ QPushButton:pressed {
       </property>
       <property name="styleSheet">
        <string notr="true">QPushButton {
-	background-color: rgb(165, 215, 232);
-    color: Black;
+	background-color:rgb(255, 255, 255);
+	border:1px solid rgb(100,100,100);
+	color:rgb(50,50,50);
     padding: 8px 16px;
-    border: none;
     border-radius: 4px;
     font-size: 14px;
 }
 
 QPushButton:hover {
-    background-color: #52c5ff;
+    background-color: #D6D2D1;
 }
 
 QPushButton:pressed {
@@ -271,7 +276,7 @@ QPushButton:pressed {
      <widget class="QLabel" name="label_4">
       <property name="styleSheet">
        <string notr="true">font: 14pt &quot;Ubuntu&quot;;
-color: rgb(255, 255, 255);</string>
+color: rgb(0, 0, 0);</string>
       </property>
       <property name="text">
        <string>Cedula:</string>
@@ -282,7 +287,7 @@ color: rgb(255, 255, 255);</string>
      <widget class="QLabel" name="label_2">
       <property name="styleSheet">
        <string notr="true">font: 14pt &quot;Ubuntu&quot;;
-color: rgb(255, 255, 255);</string>
+color: rgb(0, 0, 0);</string>
       </property>
       <property name="text">
        <string>Apellido:</string>
@@ -293,7 +298,7 @@ color: rgb(255, 255, 255);</string>
      <widget class="QLabel" name="label_5">
       <property name="styleSheet">
        <string notr="true">font: 14pt &quot;Ubuntu&quot;;
-color: rgb(255, 255, 255);</string>
+color: rgb(0, 0, 0);</string>
       </property>
       <property name="text">
        <string>Telefono:</string>
@@ -359,7 +364,7 @@ QLineEdit::hover {
      <widget class="QLabel" name="label_6">
       <property name="styleSheet">
        <string notr="true">font: 14pt &quot;Ubuntu&quot;;
-color: rgb(255, 255, 255);</string>
+color: rgb(0, 0, 0);</string>
       </property>
       <property name="text">
        <string>Correo:</string>
@@ -370,7 +375,7 @@ color: rgb(255, 255, 255);</string>
      <widget class="QLabel" name="label_3">
       <property name="styleSheet">
        <string notr="true">font: 14pt &quot;Ubuntu&quot;;
-color: rgb(255, 255, 255);</string>
+color: rgb(0, 0, 0);</string>
       </property>
       <property name="text">
        <string>Id tienda:</string>
@@ -381,7 +386,7 @@ color: rgb(255, 255, 255);</string>
      <widget class="QLabel" name="label_7">
       <property name="styleSheet">
        <string notr="true">font: 14pt &quot;Ubuntu&quot;;
-color: rgb(255, 255, 255);</string>
+color: rgb(0, 0, 0);</string>
       </property>
       <property name="text">
        <string>Nombre:</string>
@@ -392,7 +397,7 @@ color: rgb(255, 255, 255);</string>
      <widget class="QLabel" name="label_8">
       <property name="styleSheet">
        <string notr="true">font: 14pt &quot;Ubuntu&quot;;
-color: rgb(255, 255, 255);</string>
+color: rgb(0, 0, 0);</string>
       </property>
       <property name="text">
        <string>Buscar:</string>
