@@ -116,7 +116,7 @@ QPushButton:pressed {
            <property name="frameShadow">
             <enum>QFrame::Raised</enum>
            </property>
-           <layout class="QVBoxLayout" name="verticalLayout">
+           <layout class="QVBoxLayout" name="verticalLayout" stretch="0,0,0,0,0,0,0,0,0,0,0,0,0,0,0">
             <item>
              <widget class="QLabel" name="label">
               <property name="maximumSize">
@@ -157,6 +157,27 @@ font-size:22px;</string>
             </item>
             <item>
              <widget class="QLabel" name="label_2">
+              <property name="sizePolicy">
+               <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+                <horstretch>0</horstretch>
+                <verstretch>0</verstretch>
+               </sizepolicy>
+              </property>
+              <property name="minimumSize">
+               <size>
+                <width>0</width>
+                <height>170</height>
+               </size>
+              </property>
+              <property name="maximumSize">
+               <size>
+                <width>300</width>
+                <height>16777215</height>
+               </size>
+              </property>
+              <property name="styleSheet">
+               <string notr="true">border-image: url(:/Imagenes/mapalogo.ico);</string>
+              </property>
               <property name="frameShape">
                <enum>QFrame::NoFrame</enum>
               </property>
@@ -489,7 +510,7 @@ QPushButton:pressed {
              </widget>
             </item>
             <item>
-             <widget class="QPushButton" name="bt_ajustes">
+             <widget class="QPushButton" name="bt_seguridad">
               <property name="minimumSize">
                <size>
                 <width>0</width>
@@ -500,20 +521,25 @@ QPushButton:pressed {
                <cursorShape>PointingHandCursor</cursorShape>
               </property>
               <property name="styleSheet">
-               <string notr="true">QPushButton{
-		background-color: rgb(255, 255, 255);	
-		border:1px solid #c7c7c7;
-
+               <string notr="true">QPushButton {
+	background-color:rgb(255, 255, 255);
+	border:1px solid rgb(100,100,100);
+	color:rgb(50,50,50);
+    padding: 8px 16px;
+    border-radius: 6px;
+    font-size: 14px;
 }
 
-QPushButton:hover{
-		background-color:#c7c7c7;
-		border:1px solid rgb(255,255,255);
+QPushButton:hover {
+    background-color: #D6D2D1;
 }
-</string>
+
+QPushButton:pressed {
+    background-color: #52c7ff;
+}</string>
               </property>
               <property name="text">
-               <string>Ajustes</string>
+               <string>Seguridad</string>
               </property>
              </widget>
             </item>
@@ -567,6 +593,8 @@ font-size:13px;</string>
    </layout>
   </widget>
  </widget>
- <resources/>
+ <resources>
+  <include location="../../Recursos/Recursos.qrc"/>
+ </resources>
  <connections/>
 </ui>

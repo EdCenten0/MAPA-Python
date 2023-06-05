@@ -10,11 +10,13 @@
 
 from PyQt5 import QtCore, QtGui, QtWidgets
 
+from Recursos import Recursos
+
 
 class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
         MainWindow.setObjectName("MainWindow")
-        MainWindow.resize(1301, 936)
+        MainWindow.resize(1301, 950)
         MainWindow.setMinimumSize(QtCore.QSize(0, 0))
         MainWindow.setStyleSheet("")
         self.centralwidget = QtWidgets.QWidget(MainWindow)
@@ -69,7 +71,6 @@ class Ui_MainWindow(object):
         self.frame_2 = QtWidgets.QFrame(self.frame)
         self.frame_2.setStyleSheet("QFrame{\n"
 "    background-color: rgb(240, 213, 209);\n"
-"    border-radius:7px;\n"
 "\n"
 "}\n"
 "\n"
@@ -111,6 +112,14 @@ class Ui_MainWindow(object):
         self.label.setObjectName("label")
         self.verticalLayout.addWidget(self.label)
         self.label_2 = QtWidgets.QLabel(self.frame_2)
+        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Expanding)
+        sizePolicy.setHorizontalStretch(0)
+        sizePolicy.setVerticalStretch(0)
+        sizePolicy.setHeightForWidth(self.label_2.sizePolicy().hasHeightForWidth())
+        self.label_2.setSizePolicy(sizePolicy)
+        self.label_2.setMinimumSize(QtCore.QSize(0, 170))
+        self.label_2.setMaximumSize(QtCore.QSize(300, 16777215))
+        self.label_2.setStyleSheet("border-image: url(:/Imagenes/mapalogo.ico);")
         self.label_2.setFrameShape(QtWidgets.QFrame.NoFrame)
         self.label_2.setText("")
         self.label_2.setPixmap(QtGui.QPixmap("../../../../../../../../../../Recursos/Logo-MAPA.ico"))
@@ -246,22 +255,27 @@ class Ui_MainWindow(object):
         self.bt_taller.setFlat(False)
         self.bt_taller.setObjectName("bt_taller")
         self.verticalLayout.addWidget(self.bt_taller)
-        self.bt_ajustes = QtWidgets.QPushButton(self.frame_2)
-        self.bt_ajustes.setMinimumSize(QtCore.QSize(0, 44))
-        self.bt_ajustes.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
-        self.bt_ajustes.setStyleSheet("QPushButton{\n"
-"        background-color: rgb(255, 255, 255);    \n"
-"        border:1px solid #c7c7c7;\n"
-"\n"
+        self.bt_seguridad = QtWidgets.QPushButton(self.frame_2)
+        self.bt_seguridad.setMinimumSize(QtCore.QSize(0, 44))
+        self.bt_seguridad.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
+        self.bt_seguridad.setStyleSheet("QPushButton {\n"
+"    background-color:rgb(255, 255, 255);\n"
+"    border:1px solid rgb(100,100,100);\n"
+"    color:rgb(50,50,50);\n"
+"    padding: 8px 16px;\n"
+"    border-radius: 6px;\n"
+"    font-size: 14px;\n"
 "}\n"
 "\n"
-"QPushButton:hover{\n"
-"        background-color:#c7c7c7;\n"
-"        border:1px solid rgb(255,255,255);\n"
+"QPushButton:hover {\n"
+"    background-color: #D6D2D1;\n"
 "}\n"
-"")
-        self.bt_ajustes.setObjectName("bt_ajustes")
-        self.verticalLayout.addWidget(self.bt_ajustes)
+"\n"
+"QPushButton:pressed {\n"
+"    background-color: #52c7ff;\n"
+"}")
+        self.bt_seguridad.setObjectName("bt_seguridad")
+        self.verticalLayout.addWidget(self.bt_seguridad)
         spacerItem1 = QtWidgets.QSpacerItem(20, 48, QtWidgets.QSizePolicy.Minimum, QtWidgets.QSizePolicy.Expanding)
         self.verticalLayout.addItem(spacerItem1)
         self.label_3 = QtWidgets.QLabel(self.frame_2)
@@ -300,9 +314,10 @@ class Ui_MainWindow(object):
         self.bt_facturas.setText(_translate("MainWindow", "Facturas"))
         self.bt_ventas.setText(_translate("MainWindow", "Ventas"))
         self.bt_taller.setText(_translate("MainWindow", "Taller"))
-        self.bt_ajustes.setText(_translate("MainWindow", "Ajustes"))
+        self.bt_seguridad.setText(_translate("MainWindow", "Seguridad"))
         self.label_3.setText(_translate("MainWindow", "Usuario"))
         self.label_4.setText(_translate("MainWindow", "Rol"))
+        Recursos
 
 
 if __name__ == "__main__":

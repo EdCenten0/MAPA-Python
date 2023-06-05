@@ -1,8 +1,15 @@
 import sys
-from PyQt5 import  QtWidgets
-from Proyecto.Interfaces import vw_ventana_principal, vw_cliente_funciones, vw_proveedor_funciones, \
-    vw_materiales_por_proveedor_funciones, vw_taller_funciones, vw_factura_funciones
-from Proyecto.Interfaces import vw_vista_previa_pedido_funciones
+
+from PyQt5.QtCore import Qt
+from PyQt5.QtWidgets import QMainWindow
+
+from Interfaces.vw_materiales_funciones import vw_materiales_funciones
+from vw_ventana_principal import Ui_MainWindow
+from PyQt5 import QtCore, QtGui, QtWidgets
+from Interfaces import vw_ventana_principal, vw_cliente_funciones, vw_proveedor_funciones, \
+    vw_materiales_por_proveedor_funciones, vw_taller_funciones, vw_factura_funciones, vw_materiales, \
+    vw_seguridad_funciones
+from Interfaces import vw_vista_previa_pedido_funciones
 
 # Carlos Eduardo Chavarria Centeno (EdCenten0)
 # Universidad Centroamericana
@@ -16,10 +23,12 @@ class VentanaPrincipal(QtWidgets.QMainWindow, vw_ventana_principal.Ui_MainWindow
         # EVENTOS EN BOTONES
         self.bt_vista_previa_pedidos.clicked.connect(lambda: self.mostrar_formularios(vw_vista_previa_pedido_funciones.VwVistaPreviaPedidosFunciones()))
         self.bt_clientes.clicked.connect(lambda: self.mostrar_formularios(vw_cliente_funciones.Cliente_Window()))
+        self.bt_materiales.clicked.connect(lambda: self.mostrar_formularios(vw_materiales_funciones()))
         self.bt_proveedores.clicked.connect(lambda: self.mostrar_formularios(vw_proveedor_funciones.proveedor_Window()))
         self.bt_facturas.clicked.connect(lambda: self.mostrar_formularios(vw_factura_funciones.Ui_MainWindow()))
         self.bt_materiales_por_proveedor.clicked.connect(lambda: self.mostrar_formularios(vw_materiales_por_proveedor_funciones.VwMaterialesPorProveedorFunciones()))
         self.bt_taller.clicked.connect(lambda: self.mostrar_formularios((vw_taller_funciones.vw_taller_funciones())))
+        self.bt_seguridad.clicked.connect(lambda: self.mostrar_formularios(vw_seguridad_funciones.seguridad_Window()))
     # Para este metodo es obliga    torio pasar la clase del formulario, por
     # lo que se tiene que hacer referencia hasta llegar a la clase
     # por ejemplo archivo.clase o import la clase desde antes
