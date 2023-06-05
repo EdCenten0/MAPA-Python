@@ -1,10 +1,10 @@
 import sys
-from PyQt5.QtWidgets import QMainWindow, QApplication, QTableWidgetItem, QMessageBox
-import vw_Cliente
-from Datos import dt_facturas
-from Entidades import facturas
-from Datos import Conexion
 
+from PyQt5.QtCore import QDate
+from PyQt5.QtWidgets import QMainWindow, QApplication, QTableWidgetItem, QMessageBox
+from Proyecto.Datos import dt_facturas
+from Proyecto.Entidades import facturas
+from Proyecto.Interfaces import vw_Factura
 
 
 class Ui_MainWindow(QMainWindow, vw_Factura.Ui_MainWindow):
@@ -14,12 +14,12 @@ class Ui_MainWindow(QMainWindow, vw_Factura.Ui_MainWindow):
         self.setupUi(self)
 
         #Tabla
-        self.llenarTablaCliente(dt_facturas.Dt_facturas.listarFacturas())
-        self.tableWidget.itemSelectionChanged.connect(self.obtenerDatosTablaFactura())
+        self.llenarTablaFactura(dt_facturas.Dt_facturas.listarFacturas())
+        self.tableWidget.itemSelectionChanged.connect(self.obtenerDatosTablaFactura)
 
         #Botones
         self.pushButton.clicked.connect(self.guardarFactura)
-        self.pushButton_3.clicked.connect(self.editarFactura)
+        self.pushButton_3.clicked.connect(self.limpiarCampos)
         self.pushButton_2.clicked.connect(self.eliminarFactura)
 
     def limpiarCampos(self):
@@ -28,22 +28,25 @@ class Ui_MainWindow(QMainWindow, vw_Factura.Ui_MainWindow):
         self.lineEdit_2.setText("")
         self.lineEdit_3.setText("")
         self.lineEdit_4.setText("")
-        self.dateEdit.setText("")
+
 
     def obtenerDatosTablaFactura(self):
         # Selecciona la fila de la tabla
         filaSeleccionada = self.tableWidget.currentRow()
 
         id_factura = self.tableWidget.item(filaSeleccionada, 0).text()
-        id_pedido = self.tableWidget.item(filaSeleccionada, 5).text()
-        fecha = self.tableWidget.item(filaSeleccionada, 4).text()
         precio_materiales = self.tableWidget.item(filaSeleccionada, 1).text()
         mano_de_obra = self.tableWidget.item(filaSeleccionada, 2).text()
         precio_total = self.tableWidget.item(filaSeleccionada, 3).text()
+        fecha = self.tableWidget.item(filaSeleccionada, 4).text()
+        id_pedido = self.tableWidget.item(filaSeleccionada, 5).text()
+
+        # Tramsformar la fecha en formato "yyyy-MM-dd"
+        fechaTransformada = QDate.fromString(fecha, "yyyy-MM-dd")
 
         self.lineEdit.setText(id_factura)
         self.textEdit.setText(id_pedido)
-        self.dateEdit.setText(fecha)
+        self.dateEdit.setDate(fechaTransformada)
         self.lineEdit_3.setText(precio_materiales)
         self.lineEdit_2.setText(mano_de_obra)
         self.lineEdit_4.setText(precio_total)
@@ -68,11 +71,11 @@ class Ui_MainWindow(QMainWindow, vw_Factura.Ui_MainWindow):
         for row in datos:
             print(row)
             self.tableWidget.setItem(tablerow, 0, QTableWidgetItem(str(row["id_factura"])))
-            self.tableWidget.setItem(tablerow, 5, QTableWidgetItem((row["id_pedido"])))
+            self.tableWidget.setItem(tablerow, 5, QTableWidgetItem(str(row["id_pedido"])))
             self.tableWidget.setItem(tablerow, 4, QTableWidgetItem(str(row["fecha"])))
-            self.tableWidget.setItem(tablerow, 1, QTableWidgetItem((row["precio_materiales"])))
+            self.tableWidget.setItem(tablerow, 1, QTableWidgetItem(str(row["precio_materiales"])))
             self.tableWidget.setItem(tablerow, 2, QTableWidgetItem(str(row["mano_de_obra"])))
-            self.tableWidget.setItem(tablerow, 3, QTableWidgetItem((row["precio_total"])))
+            self.tableWidget.setItem(tablerow, 3, QTableWidgetItem(str(row["precio_total"])))
 
             tablerow = tablerow + 1
 
@@ -87,34 +90,15 @@ class Ui_MainWindow(QMainWindow, vw_Factura.Ui_MainWindow):
 
             if self.lineEdit.toPlainText() == "" and not self.textEdit.toPlainText() == "" and not self.dateEdit.toPlainText() == "" and not self.lineEdit_3.toPlainText() == "" and not self.lineEdit_2.toPlainText() == "" and not self.lineEdit_4.toPlainText() == "":
 
-            indicador = dt_facturas.Dt_facturas.guardarFactura(facturas)
-            self.notifMensaje(indicador, "Guardados")
-            self.limpiarCampos()
-            self.llenarTablaFactura(dt_facturas.Dt_facturas.listarClientes())
-
-
-        except Exception as e:
-            print(f"Error en GuardarCliente: {e}")
-
-    def editarFactura(self):
-        try:
-            facturas.id_factura = self.lineEdit.toPlainText()
-            facturas.id_pedido = self.textEdit.toPlainText()
-            facturas.fecha = self.dateEdit.toPlainText()
-            facturas.precio_materiales = self.lineEdit_3.toPlainText()
-            facturas.mano_de_obra = self.lineEdit_2.toPlainText()
-            facturas.precio_total = self.lineEdit_4.toPlainText()
-
-            if not self.lineEdit.toPlainText() == "" and not self.textEdit.toPlainText() == "" and not self.dateEdit.toPlainText() == "" and not self.lineEdit_3.toPlainText() == "" and not self.lineEdit_2.toPlainText() == "" and not self.lineEdit_4.toPlainText() == "":
-
-                indicador = dt_facturas.Dt_facturas.editarFactura(facturas)
-                self.notifMensaje(indicador, "Editados")
+                indicador = dt_facturas.Dt_facturas.guardarFactura(facturas)
+                self.notifMensaje(indicador, "Guardados")
                 self.limpiarCampos()
-                self.llenarTablaCliente(dt_facturas.Dt_facturas.listarFacturas())
+                self.llenarTablaFactura(dt_facturas.Dt_facturas.listarFacturas())
 
 
         except Exception as e:
-            print(f"Error en EditarCliente: {e}")
+            print(f"Error en guardarFactura: {e}")
+
 
     def eliminarFactura(self):
 
@@ -128,7 +112,7 @@ class Ui_MainWindow(QMainWindow, vw_Factura.Ui_MainWindow):
 
                 self.limpiarCampos()
 
-                self.llenarTablaCliente(dt_facturas.Dt_facturas.listarFacturas())  # Se reinicia la tabla para poder recargar los datos guardados
+                self.llenarTablaFactura(dt_facturas.Dt_facturas.listarFacturas())  # Se reinicia la tabla para poder recargar los datos guardados
 
             else:
 
@@ -136,7 +120,7 @@ class Ui_MainWindow(QMainWindow, vw_Factura.Ui_MainWindow):
                 self.limpiarCampos()
 
         except Exception as e:
-            print(f"Error en EliminarFactura: {e}")
+            print(f"Error en eliminarFactura: {e}")
 
 
 
