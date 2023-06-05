@@ -22,7 +22,9 @@ font-family:&quot;Inter&quot;, sans-serif;</string>
     <item>
      <widget class="QLabel" name="label">
       <property name="styleSheet">
-       <string notr="true">font: 75 18pt &quot;MS Shell Dlg 2&quot;;</string>
+       <string notr="true">font-family:&quot;Inter&quot;, sans-serif;
+font-size:30px;
+font-weight:500;</string>
       </property>
       <property name="text">
        <string>Facturas</string>
@@ -32,7 +34,75 @@ font-family:&quot;Inter&quot;, sans-serif;</string>
     <item>
      <widget class="QFrame" name="frame">
       <property name="styleSheet">
-       <string notr="true">background-color: rgb(222, 221, 218);</string>
+       <string notr="true">QFrame{
+	background-color: rgb(222, 221, 218);
+	border:none;
+}
+QPushButton {
+	background-color:rgb(255, 255, 255);
+	border:1px solid rgb(100,100,100);
+	color:rgb(50,50,50);
+    padding: 8px 16px;
+    border-radius: 6px;
+    font-size: 14px;
+}
+
+QPushButton:hover {
+    background-color: #D6D2D1;
+}
+
+QPushButton:pressed {
+    background-color: #52c7ff;
+}
+
+QLabel{
+		font-weight:500;
+}
+
+*{
+		font-family:&quot;Inter&quot;, sans-serif;
+		
+}
+
+QFrame{
+		background-color: rgb(222, 221, 218);
+		border-radius:10%;
+}
+
+QLineEdit {
+    background-color: white;
+    border: 1px solid gray;
+    padding: 4px;
+    border-radius: 6px;
+    font-size: 12px;
+}
+
+QLineEdit:focus {
+    border-color: #3daee9;
+    outline: none;
+}
+
+QLineEdit::hover {
+    background-color: #f0f0f0;
+}
+
+QTextEdit {
+    background-color: white;
+    border: 1px solid gray;
+    padding: 4px;
+    border-radius: 6px;
+    font-size: 12px;
+}
+
+QTextEdit:focus {
+    border-color: #3daee9;
+    outline: none;
+}
+
+QTextEdit::hover {
+    background-color: #f0f0f0;
+}
+</string>
       </property>
       <property name="frameShape">
        <enum>QFrame::StyledPanel</enum>
@@ -71,7 +141,10 @@ font-family:&quot;Inter&quot;, sans-serif;</string>
           <item>
            <widget class="QFrame" name="frame_4">
             <property name="styleSheet">
-             <string notr="true"/>
+             <string notr="true">QLabel{
+		font-weight:500;
+}
+</string>
             </property>
             <property name="frameShape">
              <enum>QFrame::StyledPanel</enum>
@@ -90,7 +163,7 @@ font-family:&quot;Inter&quot;, sans-serif;</string>
              <item row="0" column="0">
               <widget class="QLabel" name="label_2">
                <property name="styleSheet">
-                <string notr="true">font: 12pt &quot;MS Shell Dlg 2&quot;;</string>
+                <string notr="true">font-weight:500;</string>
                </property>
                <property name="text">
                 <string>ID:</string>
@@ -110,7 +183,7 @@ font-family:&quot;Inter&quot;, sans-serif;</string>
              <item row="1" column="0">
               <widget class="QLabel" name="label_3">
                <property name="styleSheet">
-                <string notr="true">font: 12pt &quot;MS Shell Dlg 2&quot;;</string>
+                <string notr="true">font-weight:500;</string>
                </property>
                <property name="text">
                 <string>Pedido:</string>
@@ -120,7 +193,7 @@ font-family:&quot;Inter&quot;, sans-serif;</string>
              <item row="2" column="0">
               <widget class="QLabel" name="label_4">
                <property name="styleSheet">
-                <string notr="true">font: 12pt &quot;MS Shell Dlg 2&quot;;</string>
+                <string notr="true">font-weight:500;</string>
                </property>
                <property name="text">
                 <string>Mano de obra:</string>
@@ -130,7 +203,7 @@ font-family:&quot;Inter&quot;, sans-serif;</string>
              <item row="3" column="0">
               <widget class="QLabel" name="label_5">
                <property name="styleSheet">
-                <string notr="true">font: 12pt &quot;MS Shell Dlg 2&quot;;</string>
+                <string notr="true">font-weight:500;</string>
                </property>
                <property name="text">
                 <string>Precio de materiales:</string>
@@ -161,7 +234,7 @@ font-family:&quot;Inter&quot;, sans-serif;</string>
              <item row="5" column="0">
               <widget class="QLabel" name="label_7">
                <property name="styleSheet">
-                <string notr="true">font: 12pt &quot;MS Shell Dlg 2&quot;;</string>
+                <string notr="true">font-weight:500;</string>
                </property>
                <property name="text">
                 <string>Fecha:</string>
@@ -171,7 +244,7 @@ font-family:&quot;Inter&quot;, sans-serif;</string>
              <item row="4" column="0">
               <widget class="QLabel" name="label_6">
                <property name="styleSheet">
-                <string notr="true">font: 12pt &quot;MS Shell Dlg 2&quot;;</string>
+                <string notr="true">font-weight:500;</string>
                </property>
                <property name="text">
                 <string>Precio Total:</string>
@@ -191,7 +264,23 @@ font-family:&quot;Inter&quot;, sans-serif;</string>
           <item>
            <widget class="QFrame" name="frame_5">
             <property name="styleSheet">
-             <string notr="true"/>
+             <string notr="true">QPushButton {
+	background-color:rgb(255, 255, 255);
+	border:1px solid rgb(100,100,100);
+	color:rgb(50,50,50);
+    padding: 8px 16px;
+    border-radius: 6px;
+    font-size: 14px;
+}
+
+QPushButton:hover {
+    background-color: #D6D2D1;
+}
+
+QPushButton:pressed {
+    background-color: #52c7ff;
+}
+</string>
             </property>
             <property name="frameShape">
              <enum>QFrame::StyledPanel</enum>
@@ -202,8 +291,27 @@ font-family:&quot;Inter&quot;, sans-serif;</string>
             <layout class="QVBoxLayout" name="verticalLayout_5">
              <item>
               <widget class="QPushButton" name="pushButton">
+               <property name="cursor">
+                <cursorShape>PointingHandCursor</cursorShape>
+               </property>
                <property name="styleSheet">
-                <string notr="true">background-color: rgb(255, 255, 255);</string>
+                <string notr="true">QPushButton {
+	background-color:rgb(255, 255, 255);
+	border:1px solid rgb(100,100,100);
+	color:rgb(50,50,50);
+    padding: 8px 16px;
+    border-radius: 6px;
+    font-size: 14px;
+}
+
+QPushButton:hover {
+    background-color: #D6D2D1;
+}
+
+QPushButton:pressed {
+    background-color: #52c7ff;
+}
+</string>
                </property>
                <property name="text">
                 <string>Guardar Ventas</string>
@@ -212,8 +320,27 @@ font-family:&quot;Inter&quot;, sans-serif;</string>
              </item>
              <item>
               <widget class="QPushButton" name="pushButton_2">
+               <property name="cursor">
+                <cursorShape>PointingHandCursor</cursorShape>
+               </property>
                <property name="styleSheet">
-                <string notr="true">background-color: rgb(255, 255, 255);</string>
+                <string notr="true">QPushButton {
+	background-color:rgb(255, 255, 255);
+	border:1px solid rgb(100,100,100);
+	color:rgb(50,50,50);
+    padding: 8px 16px;
+    border-radius: 6px;
+    font-size: 14px;
+}
+
+QPushButton:hover {
+    background-color: #D6D2D1;
+}
+
+QPushButton:pressed {
+    background-color: #52c7ff;
+}
+</string>
                </property>
                <property name="text">
                 <string>Eliminar</string>
@@ -222,8 +349,27 @@ font-family:&quot;Inter&quot;, sans-serif;</string>
              </item>
              <item>
               <widget class="QPushButton" name="pushButton_3">
+               <property name="cursor">
+                <cursorShape>PointingHandCursor</cursorShape>
+               </property>
                <property name="styleSheet">
-                <string notr="true">background-color: rgb(255, 255, 255);</string>
+                <string notr="true">QPushButton {
+	background-color:rgb(255, 255, 255);
+	border:1px solid rgb(100,100,100);
+	color:rgb(50,50,50);
+    padding: 8px 16px;
+    border-radius: 6px;
+    font-size: 14px;
+}
+
+QPushButton:hover {
+    background-color: #D6D2D1;
+}
+
+QPushButton:pressed {
+    background-color: #52c7ff;
+}
+</string>
                </property>
                <property name="text">
                 <string>Vaciar Campos</string>
@@ -267,6 +413,62 @@ font-family:&quot;Inter&quot;, sans-serif;</string>
            <layout class="QVBoxLayout" name="verticalLayout_2">
             <item>
              <widget class="QTableWidget" name="tableWidget">
+              <property name="styleSheet">
+               <string notr="true">QTableView QHeaderView::section {
+    font-size: 12px;
+    font-weight: bold;
+    background-color: lightgray;
+    padding: 4px;
+    border: none;
+    border-bottom: 1px solid gray;
+}
+
+QTableView {
+    background-color: white;
+    border: 1px solid gray;
+}
+
+QTableView QScrollBar:vertical {
+    width: 14px;
+    background-color: lightgray;
+}
+
+QTableView QScrollBar::handle:vertical {
+    background-color: gray;
+    border-radius: 7px;
+}
+
+QTableView QScrollBar::add-line:vertical,
+QTableView QScrollBar::sub-line:vertical {
+    background-color: transparent;
+}
+
+QTableView QScrollBar::add-page:vertical,
+QTableView QScrollBar::sub-page:vertical {
+    background-color: transparent;
+}
+
+QTableView QScrollBar:horizontal {
+    height: 14px;
+    background-color: lightgray;
+}
+
+QTableView QScrollBar::handle:horizontal {
+    background-color: gray;
+    border-radius: 7px;
+}
+
+QTableView QScrollBar::add-line:horizontal,
+QTableView QScrollBar::sub-line:horizontal {
+    background-color: transparent;
+}
+
+QTableView QScrollBar::add-page:horizontal,
+QTableView QScrollBar::sub-page:horizontal {
+    background-color: transparent;
+}
+</string>
+              </property>
               <property name="lineWidth">
                <number>0</number>
               </property>

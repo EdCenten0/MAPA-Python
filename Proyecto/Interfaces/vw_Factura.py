@@ -15,16 +15,88 @@ class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
         MainWindow.setObjectName("MainWindow")
         MainWindow.resize(800, 600)
+        MainWindow.setStyleSheet("border-radius: 6px;\n"
+"font-family:\"Inter\", sans-serif;")
         self.centralwidget = QtWidgets.QWidget(MainWindow)
         self.centralwidget.setObjectName("centralwidget")
         self.verticalLayout_4 = QtWidgets.QVBoxLayout(self.centralwidget)
         self.verticalLayout_4.setObjectName("verticalLayout_4")
         self.label = QtWidgets.QLabel(self.centralwidget)
-        self.label.setStyleSheet("font: 75 18pt \"MS Shell Dlg 2\";")
+        self.label.setStyleSheet("font-family:\"Inter\", sans-serif;\n"
+"font-size:30px;\n"
+"font-weight:500;")
         self.label.setObjectName("label")
         self.verticalLayout_4.addWidget(self.label)
         self.frame = QtWidgets.QFrame(self.centralwidget)
-        self.frame.setStyleSheet("background-color: rgb(222, 221, 218);")
+        self.frame.setStyleSheet("QFrame{\n"
+"    background-color: rgb(222, 221, 218);\n"
+"    border:none;\n"
+"}\n"
+"QPushButton {\n"
+"    background-color:rgb(255, 255, 255);\n"
+"    border:1px solid rgb(100,100,100);\n"
+"    color:rgb(50,50,50);\n"
+"    padding: 8px 16px;\n"
+"    border-radius: 6px;\n"
+"    font-size: 14px;\n"
+"}\n"
+"\n"
+"QPushButton:hover {\n"
+"    background-color: #D6D2D1;\n"
+"}\n"
+"\n"
+"QPushButton:pressed {\n"
+"    background-color: #52c7ff;\n"
+"}\n"
+"\n"
+"QLabel{\n"
+"        font-weight:500;\n"
+"}\n"
+"\n"
+"*{\n"
+"        font-family:\"Inter\", sans-serif;\n"
+"        \n"
+"}\n"
+"\n"
+"QFrame{\n"
+"        background-color: rgb(222, 221, 218);\n"
+"        border-radius:10%;\n"
+"}\n"
+"\n"
+"QLineEdit {\n"
+"    background-color: white;\n"
+"    border: 1px solid gray;\n"
+"    padding: 4px;\n"
+"    border-radius: 6px;\n"
+"    font-size: 12px;\n"
+"}\n"
+"\n"
+"QLineEdit:focus {\n"
+"    border-color: #3daee9;\n"
+"    outline: none;\n"
+"}\n"
+"\n"
+"QLineEdit::hover {\n"
+"    background-color: #f0f0f0;\n"
+"}\n"
+"\n"
+"QTextEdit {\n"
+"    background-color: white;\n"
+"    border: 1px solid gray;\n"
+"    padding: 4px;\n"
+"    border-radius: 6px;\n"
+"    font-size: 12px;\n"
+"}\n"
+"\n"
+"QTextEdit:focus {\n"
+"    border-color: #3daee9;\n"
+"    outline: none;\n"
+"}\n"
+"\n"
+"QTextEdit::hover {\n"
+"    background-color: #f0f0f0;\n"
+"}\n"
+"")
         self.frame.setFrameShape(QtWidgets.QFrame.StyledPanel)
         self.frame.setFrameShadow(QtWidgets.QFrame.Raised)
         self.frame.setObjectName("frame")
@@ -40,7 +112,10 @@ class Ui_MainWindow(object):
         self.horizontalLayout.setSpacing(0)
         self.horizontalLayout.setObjectName("horizontalLayout")
         self.frame_4 = QtWidgets.QFrame(self.frame_2)
-        self.frame_4.setStyleSheet("")
+        self.frame_4.setStyleSheet("QLabel{\n"
+"        font-weight:500;\n"
+"}\n"
+"")
         self.frame_4.setFrameShape(QtWidgets.QFrame.StyledPanel)
         self.frame_4.setFrameShadow(QtWidgets.QFrame.Raised)
         self.frame_4.setObjectName("frame_4")
@@ -51,7 +126,7 @@ class Ui_MainWindow(object):
         self.textEdit.setObjectName("textEdit")
         self.gridLayout.addWidget(self.textEdit, 1, 2, 1, 1)
         self.label_2 = QtWidgets.QLabel(self.frame_4)
-        self.label_2.setStyleSheet("font: 12pt \"MS Shell Dlg 2\";")
+        self.label_2.setStyleSheet("font-weight:500;")
         self.label_2.setObjectName("label_2")
         self.gridLayout.addWidget(self.label_2, 0, 0, 1, 1)
         self.lineEdit = QtWidgets.QLineEdit(self.frame_4)
@@ -60,15 +135,15 @@ class Ui_MainWindow(object):
         self.lineEdit.setObjectName("lineEdit")
         self.gridLayout.addWidget(self.lineEdit, 0, 2, 1, 1)
         self.label_3 = QtWidgets.QLabel(self.frame_4)
-        self.label_3.setStyleSheet("font: 12pt \"MS Shell Dlg 2\";")
+        self.label_3.setStyleSheet("font-weight:500;")
         self.label_3.setObjectName("label_3")
         self.gridLayout.addWidget(self.label_3, 1, 0, 1, 1)
         self.label_4 = QtWidgets.QLabel(self.frame_4)
-        self.label_4.setStyleSheet("font: 12pt \"MS Shell Dlg 2\";")
+        self.label_4.setStyleSheet("font-weight:500;")
         self.label_4.setObjectName("label_4")
         self.gridLayout.addWidget(self.label_4, 2, 0, 1, 1)
         self.label_5 = QtWidgets.QLabel(self.frame_4)
-        self.label_5.setStyleSheet("font: 12pt \"MS Shell Dlg 2\";")
+        self.label_5.setStyleSheet("font-weight:500;")
         self.label_5.setObjectName("label_5")
         self.gridLayout.addWidget(self.label_5, 3, 0, 1, 1)
         self.lineEdit_2 = QtWidgets.QLineEdit(self.frame_4)
@@ -84,11 +159,11 @@ class Ui_MainWindow(object):
         self.lineEdit_3.setObjectName("lineEdit_3")
         self.gridLayout.addWidget(self.lineEdit_3, 3, 2, 1, 1)
         self.label_7 = QtWidgets.QLabel(self.frame_4)
-        self.label_7.setStyleSheet("font: 12pt \"MS Shell Dlg 2\";")
+        self.label_7.setStyleSheet("font-weight:500;")
         self.label_7.setObjectName("label_7")
         self.gridLayout.addWidget(self.label_7, 5, 0, 1, 1)
         self.label_6 = QtWidgets.QLabel(self.frame_4)
-        self.label_6.setStyleSheet("font: 12pt \"MS Shell Dlg 2\";")
+        self.label_6.setStyleSheet("font-weight:500;")
         self.label_6.setObjectName("label_6")
         self.gridLayout.addWidget(self.label_6, 4, 0, 1, 1)
         self.dateEdit = QtWidgets.QDateEdit(self.frame_4)
@@ -97,22 +172,89 @@ class Ui_MainWindow(object):
         self.gridLayout.addWidget(self.dateEdit, 5, 2, 1, 1)
         self.horizontalLayout.addWidget(self.frame_4)
         self.frame_5 = QtWidgets.QFrame(self.frame_2)
-        self.frame_5.setStyleSheet("")
+        self.frame_5.setStyleSheet("QPushButton {\n"
+"    background-color:rgb(255, 255, 255);\n"
+"    border:1px solid rgb(100,100,100);\n"
+"    color:rgb(50,50,50);\n"
+"    padding: 8px 16px;\n"
+"    border-radius: 6px;\n"
+"    font-size: 14px;\n"
+"}\n"
+"\n"
+"QPushButton:hover {\n"
+"    background-color: #D6D2D1;\n"
+"}\n"
+"\n"
+"QPushButton:pressed {\n"
+"    background-color: #52c7ff;\n"
+"}\n"
+"")
         self.frame_5.setFrameShape(QtWidgets.QFrame.StyledPanel)
         self.frame_5.setFrameShadow(QtWidgets.QFrame.Raised)
         self.frame_5.setObjectName("frame_5")
         self.verticalLayout_5 = QtWidgets.QVBoxLayout(self.frame_5)
         self.verticalLayout_5.setObjectName("verticalLayout_5")
         self.pushButton = QtWidgets.QPushButton(self.frame_5)
-        self.pushButton.setStyleSheet("background-color: rgb(255, 255, 255);")
+        self.pushButton.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
+        self.pushButton.setStyleSheet("QPushButton {\n"
+"    background-color:rgb(255, 255, 255);\n"
+"    border:1px solid rgb(100,100,100);\n"
+"    color:rgb(50,50,50);\n"
+"    padding: 8px 16px;\n"
+"    border-radius: 6px;\n"
+"    font-size: 14px;\n"
+"}\n"
+"\n"
+"QPushButton:hover {\n"
+"    background-color: #D6D2D1;\n"
+"}\n"
+"\n"
+"QPushButton:pressed {\n"
+"    background-color: #52c7ff;\n"
+"}\n"
+"")
         self.pushButton.setObjectName("pushButton")
         self.verticalLayout_5.addWidget(self.pushButton)
         self.pushButton_2 = QtWidgets.QPushButton(self.frame_5)
-        self.pushButton_2.setStyleSheet("background-color: rgb(255, 255, 255);")
+        self.pushButton_2.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
+        self.pushButton_2.setStyleSheet("QPushButton {\n"
+"    background-color:rgb(255, 255, 255);\n"
+"    border:1px solid rgb(100,100,100);\n"
+"    color:rgb(50,50,50);\n"
+"    padding: 8px 16px;\n"
+"    border-radius: 6px;\n"
+"    font-size: 14px;\n"
+"}\n"
+"\n"
+"QPushButton:hover {\n"
+"    background-color: #D6D2D1;\n"
+"}\n"
+"\n"
+"QPushButton:pressed {\n"
+"    background-color: #52c7ff;\n"
+"}\n"
+"")
         self.pushButton_2.setObjectName("pushButton_2")
         self.verticalLayout_5.addWidget(self.pushButton_2)
         self.pushButton_3 = QtWidgets.QPushButton(self.frame_5)
-        self.pushButton_3.setStyleSheet("background-color: rgb(255, 255, 255);")
+        self.pushButton_3.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
+        self.pushButton_3.setStyleSheet("QPushButton {\n"
+"    background-color:rgb(255, 255, 255);\n"
+"    border:1px solid rgb(100,100,100);\n"
+"    color:rgb(50,50,50);\n"
+"    padding: 8px 16px;\n"
+"    border-radius: 6px;\n"
+"    font-size: 14px;\n"
+"}\n"
+"\n"
+"QPushButton:hover {\n"
+"    background-color: #D6D2D1;\n"
+"}\n"
+"\n"
+"QPushButton:pressed {\n"
+"    background-color: #52c7ff;\n"
+"}\n"
+"")
         self.pushButton_3.setObjectName("pushButton_3")
         self.verticalLayout_5.addWidget(self.pushButton_3)
         self.horizontalLayout.addWidget(self.frame_5)
@@ -131,6 +273,60 @@ class Ui_MainWindow(object):
         self.verticalLayout_2 = QtWidgets.QVBoxLayout()
         self.verticalLayout_2.setObjectName("verticalLayout_2")
         self.tableWidget = QtWidgets.QTableWidget(self.frame_3)
+        self.tableWidget.setStyleSheet("QTableView QHeaderView::section {\n"
+"    font-size: 12px;\n"
+"    font-weight: bold;\n"
+"    background-color: lightgray;\n"
+"    padding: 4px;\n"
+"    border: none;\n"
+"    border-bottom: 1px solid gray;\n"
+"}\n"
+"\n"
+"QTableView {\n"
+"    background-color: white;\n"
+"    border: 1px solid gray;\n"
+"}\n"
+"\n"
+"QTableView QScrollBar:vertical {\n"
+"    width: 14px;\n"
+"    background-color: lightgray;\n"
+"}\n"
+"\n"
+"QTableView QScrollBar::handle:vertical {\n"
+"    background-color: gray;\n"
+"    border-radius: 7px;\n"
+"}\n"
+"\n"
+"QTableView QScrollBar::add-line:vertical,\n"
+"QTableView QScrollBar::sub-line:vertical {\n"
+"    background-color: transparent;\n"
+"}\n"
+"\n"
+"QTableView QScrollBar::add-page:vertical,\n"
+"QTableView QScrollBar::sub-page:vertical {\n"
+"    background-color: transparent;\n"
+"}\n"
+"\n"
+"QTableView QScrollBar:horizontal {\n"
+"    height: 14px;\n"
+"    background-color: lightgray;\n"
+"}\n"
+"\n"
+"QTableView QScrollBar::handle:horizontal {\n"
+"    background-color: gray;\n"
+"    border-radius: 7px;\n"
+"}\n"
+"\n"
+"QTableView QScrollBar::add-line:horizontal,\n"
+"QTableView QScrollBar::sub-line:horizontal {\n"
+"    background-color: transparent;\n"
+"}\n"
+"\n"
+"QTableView QScrollBar::add-page:horizontal,\n"
+"QTableView QScrollBar::sub-page:horizontal {\n"
+"    background-color: transparent;\n"
+"}\n"
+"")
         self.tableWidget.setLineWidth(0)
         self.tableWidget.setAutoScroll(True)
         self.tableWidget.setTabKeyNavigation(True)
@@ -199,6 +395,7 @@ class Ui_MainWindow(object):
         item.setText(_translate("MainWindow", "Fecha"))
         item = self.tableWidget.horizontalHeaderItem(5)
         item.setText(_translate("MainWindow", "Pedido ID"))
+
 
 if __name__ == "__main__":
     import sys
