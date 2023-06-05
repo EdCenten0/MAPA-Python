@@ -1,6 +1,7 @@
 from Datos.Conexion import Conexion
 from Entidades.materiales import Materiales
 
+
 class Dt_materiales:
 
     @classmethod
@@ -21,7 +22,6 @@ class Dt_materiales:
         cursor.close()
         return res
 
-
     @classmethod
     def buscarMaterial(cls, nombre_material):
 
@@ -33,7 +33,6 @@ class Dt_materiales:
         cursor.close()
         return resultado_materiales
 
-
     @classmethod
     def guardarMaterial(cls, Materiales):
 
@@ -41,7 +40,8 @@ class Dt_materiales:
         try:
 
             cursor = Conexion.obtenerConexion().cursor()
-            sentencia = (f'''INSERT INTO materiales(nombre_material, descripcion, cantidad, unidad_de_medida, precio_por_unidad, precio_total, id_pedido) VALUES('{Materiales.nombre_material}', '{Materiales.descripcion}', '{Materiales.cantidad}', '{Materiales.unidad_de_medida}', '{Materiales.precio_por_unidad}', '{Materiales.precio_total}', '{Materiales.id_pedido}')''')
+            sentencia = (
+                f'''INSERT INTO materiales(nombre_material, descripcion, cantidad, unidad_de_medida, precio_por_unidad, precio_total, id_pedido) VALUES('{Materiales.nombre_material}', '{Materiales.descripcion}', '{Materiales.cantidad}', '{Materiales.unidad_de_medida}', '{Materiales.precio_por_unidad}', '{Materiales.precio_total}', '{Materiales.id_pedido}')''')
             cursor.execute(sentencia)
             cursor.connection.commit()
             cursor.close()
@@ -61,7 +61,8 @@ class Dt_materiales:
         try:
 
             cursor = Conexion.obtenerConexion().cursor()
-            sentecia = (f'''UPDATE materiales SET nombre_material = '{Materiales.nombre_material}', descripcion = '{Materiales.descripcion}', cantidad = '{Materiales.cantidad}', unidad_de_medida = '{Materiales.unidad_de_medida}', precio_por_unidad = '{Materiales.precio_por_unidad}', precio_total = {Materiales.precio_total}, id_pedido = "{Materiales.id_pedido}" WHERE id_material = {Materiales.id_material} ''')
+            sentecia = (
+                f'''UPDATE materiales SET nombre_material = '{Materiales.nombre_material}', descripcion = '{Materiales.descripcion}', cantidad = '{Materiales.cantidad}', unidad_de_medida = '{Materiales.unidad_de_medida}', precio_por_unidad = '{Materiales.precio_por_unidad}', precio_total = {Materiales.precio_total}, id_pedido = "{Materiales.id_pedido}" WHERE id_material = {Materiales.id_material} ''')
             cursor.execute(sentecia)
             cursor.connection.commit()
             cursor.close()
@@ -109,8 +110,21 @@ class Dt_materiales:
         except Exception as e:
             print(f"Error en buscar_index_material: {e}")
 
+    @classmethod
+    def contarMaterialesPorPedido(cls, id_pedido):
+        cursor = Conexion.obtenerConexion().cursor()
+        cursor.execute(f"SELECT COUNT(id_material) AS 'cuenta' FROM materiales WHERE id_pedido = {id_pedido}")
+        nRegistros = cursor.fetchall()
+        cuenta = []
+        for n in nRegistros:
+            cuenta = n["cuenta"]
+        cursor.close()
+
+        return cuenta
+
 
 if __name__ == '__main__':
     materiales1 = Dt_materiales.listarMateriales()
     for m in materiales1:
         print(m)
+    Dt_materiales.contarMaterialesPorPedido(2)
