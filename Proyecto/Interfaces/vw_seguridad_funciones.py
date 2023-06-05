@@ -5,16 +5,16 @@ from datetime import datetime
 from PyQt5.QtCore import QDate
 from PyQt5.QtWidgets import QTableWidgetItem, QMessageBox
 
-from Proyecto.Datos import dt_opcion, dt_rol, dt_usuario_rol, dt_usuario, dt_rol_opcion
-from Proyecto.Entidades.rol_opcion import Rol_opcion
-from Proyecto.Entidades.usuario_rol import Usuario_rol
-from Proyecto.Entidades.usuarios import Usuarios
-from Proyecto.Entidades.roles import Rol
-from Proyecto.Entidades.opciones import Opcion
+from Datos import dt_opcion, dt_rol, dt_usuario_rol, dt_usuario, dt_rol_opcion
+from Entidades.rol_opcion import Rol_opcion
+from Entidades.usuario_rol import Usuario_rol
+from Entidades.usuarios import Usuarios
+from Entidades.roles import Rol
+from Entidades.opciones import Opcion
 
 from PyQt5.QtWidgets import QApplication, QMainWindow
 
-from Proyecto.Interfaces import vw_seguridad
+from Interfaces import vw_seguridad
 
 
 class seguridad_Window(QMainWindow, vw_seguridad.Ui_Seguridad):
@@ -654,10 +654,9 @@ class seguridad_Window(QMainWindow, vw_seguridad.Ui_Seguridad):
         #Buscar el la posicion exacta en el combobox
         usuario = dt_usuario.Dt_Usuarios.buscarIndexUsuario(int(id_usuario))
         rol = dt_rol.Dt_Rol.buscarIndexRol(int(id_rol))
-
         #Se asignan los valores de los text line y combobox
         self.line_Asignar_Rol_Id.setText(id)
-        self.cb_Asignar_Rol_idUsuario.setCurrentIndex(usuario-1)
+        self.cb_Asignar_Rol_idUsuario.setCurrentIndex(usuario - 1)
         self.cb_Asignar_Rol_idRol.setCurrentIndex(rol - 1)
 
 

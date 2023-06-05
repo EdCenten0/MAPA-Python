@@ -9,3 +9,10 @@ select rol_opcion.rol_opcion_id ,rol.id_rol ,op.idopcion ,rol.descripcion as "ro
 INNER JOIN  MAPA.opcion op on op.idopcion = rol_opcion.id_opcion
 INNER JOIN  MAPA.rol rol on rol.id_rol = rol_opcion.id_rol
 
+
+
+
+CREATE VIEW `materiales_por_proveedor_vistas` AS
+SELECT mpp.id_materiales_por_proveedor, p.id_proveedor, m.id_material, m.nombre_material, m.descripcion, m.cantidad, m.unidad_de_medida, p.nombre, p.catalogo FROM MAPA.materiales_por_proveedor AS mpp
+INNER JOIN proveedores AS p ON p.id_proveedor = mpp.id_proveedor
+INNER JOIN materiales AS m ON m.id_material = mpp.id_material

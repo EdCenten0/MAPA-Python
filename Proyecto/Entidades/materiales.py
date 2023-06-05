@@ -1,10 +1,8 @@
 import copy
 
-from pyparsing import unicode_set
-
-
 class Materiales:
-    def __init__(self, id_material=None, nombre_material=None, descripcion=None, cantidad=None, unidad_de_medida = None, precio_unidad=None, precio_total=None, id_pedido = None):
+    def __init__(self, id_material=None, nombre_material=None, descripcion=None, cantidad=None, unidad_de_medida=None,
+        precio_unidad=None, precio_total=None, id_pedido=None):
         self._id_material = id_material
         self._nombre_material = nombre_material
         self._descripcion = descripcion
@@ -14,22 +12,22 @@ class Materiales:
         self._precio_total = precio_total
         self._id_pedido = id_pedido
 
-    def __str__(self):
+    def _str_(self):
         return f'''
-        id_material: {self._id_material},
-        material: {self._nombre_material},
-        descripcion: {self._descripcion},
-        cantidad: {self._cantidad},
-        unidad_de_medida: {self._unidad_de_medida}
-        precio_unidad: {self._precio_unidad},
-        precio_total: {self._precio_total},
-        id_pedido: {self._id_pedido}
-        '''
+         id_material: {self._id_material},
+         material: {self._nombre_material},
+         descripcion: {self._descripcion},
+         cantidad: {self._cantidad},
+         unidad_de_medida: {self._unidad_de_medida},
+         precio_unidad: {self._precio_unidad},
+         precio_total: {self._precio_total},
+         id_pedido: {self._id_pedido}
+         '''
 
-    def __getitem__(self, item):
+    def _getitem_(self, item):
         u = copy.copy(self)
         u.id_material = u._id_material
-        u.material = u._material
+        u.nombre_material = u._nombre_material
         u.descripcion = u._descripcion
         u.cantidad = u._cantidad
         u.unidad_de_medida = u._unidad_de_medida
@@ -38,19 +36,19 @@ class Materiales:
 
     @property
     def id_material(self):
-        return self._id
+        return self._id_material
 
     @id_material.setter
-    def id(self, id):
-        self._id = id
+    def id_material(self, id_material):
+        self._id_material = id_material
 
     @property
-    def material(self):
-        return self._material
+    def nombre_material(self):
+        return self._nombre_material
 
-    @material.setter
-    def material(self, material):
-        self._material = material
+    @nombre_material.setter
+    def nombre_material(self, nombre_material):
+        self._nombre_material = nombre_material
 
     @property
     def descripcion(self):
@@ -70,7 +68,7 @@ class Materiales:
         return self._unidad_de_medida
 
     @unidad_de_medida.setter
-    def unidad_de_medidad(self, unidad_de_medida):
+    def unidad_de_medida(self, unidad_de_medida):
         self._unidad_de_medida = unidad_de_medida
 
     @cantidad.setter
@@ -101,6 +99,6 @@ class Materiales:
     def id_pedido(self, id_pedido):
         self._id_pedido = id_pedido
 
-if __name__ == '__main__':
+if __name__ == '_main_':
     m1 = Materiales(2, 'Tornillo', 'Para paredes', 30, 10, (30*10))
     print(m1)

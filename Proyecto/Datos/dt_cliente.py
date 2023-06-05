@@ -1,6 +1,4 @@
-# Francisco de Jesús Melendez Simplina
-
-from Proyecto.Datos import Conexion
+from Datos import Conexion
 
 class Dt_Clientes:
 
@@ -11,6 +9,16 @@ class Dt_Clientes:
         querys = cursor.fetchall()
         cursor.close()
         return querys
+
+    def listarSoloUnCliente(id_cliente):
+        from Datos import Conexion
+        cursor = Conexion.Conexion.obtenerConexion().cursor()
+        sql_query = (f"SELECT * FROM clientes WHERE id_cliente = {id_cliente}")
+        cursor.execute(sql_query)
+        registro = cursor.fetchall()
+        cursor.close()
+        return registro
+
 
     @classmethod
     def guardarClientes(cls, cliente):
@@ -27,7 +35,7 @@ class Dt_Clientes:
             indicador = True
 
         except Exception as e:
-            print(f"Error en guardarUsuario: {e}")
+            print(f"Error en guardarCliente: {e}")
 
         return indicador
 
@@ -40,7 +48,7 @@ class Dt_Clientes:
 
         try:
             cursor = Conexion.Conexion.obtenerConexion().cursor()
-            sql = (f'''UPDATE usuario SET nombre = "{cliente.nombre}" , apellido = "{cliente.apellido}", emauk = "{cliente.email}", telefono = "{cliente.telefono}", cedula = "{cliente.cedula}"''')
+            sql = (f'''UPDATE clientes SET nombre = "{cliente.nombre}" , apellido = "{cliente.apellido}", emauk = "{cliente.email}", telefono = "{cliente.telefono}", cedula = "{cliente.cedula}"''')
             cursor.execute(sql)
             cursor.connection.commit()
             cursor.close()
@@ -48,12 +56,18 @@ class Dt_Clientes:
             indicador = True
 
         except Exception as e:
-            print(f"Error en editarUsuario: {e}")
+            print(f"Error en editarCliente: {e}")
 
         return indicador
 
 
-
+    @classmethod
+    def busqueda(cls, cliente):
+        cursor = Conexion.Conexion.obtenerConexion().cursor()
+        cursor.execute(f"SELECT * FROM clientes WHERE nombre like '%' '{cliente}' '%' ")
+        querys = cursor.fetchall()
+        cursor.close()
+        return querys
     @classmethod
     def eliminarClientes(cls, cliente):
 
@@ -61,7 +75,7 @@ class Dt_Clientes:
 
         try:
             cursor = Conexion.Conexion.obtenerConexion().cursor()
-            sql = (f'''DELETE FROM usuario WHERE id_usuario = {cliente.id_usuario}''')
+            sql = (f'''DELETE FROM clientes WHERE id_cliente = {cliente.id_cliente}''')
             cursor.execute(sql)
             cursor.connection.commit()
             cursor.close()

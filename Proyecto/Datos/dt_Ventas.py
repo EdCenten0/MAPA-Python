@@ -1,9 +1,9 @@
-import Conexion
+import Datos.Conexion
 
 class Dt_Ventas:
     @classmethod
     def listarVentas(cls):
-        cursor = Conexion.Conexion.obtenerConexion().cursor()
+        cursor = Proyecto.Conexion.Conexion.obtenerConexion().cursor()
         cursor.execute("SELECT * FROM ventas")
         querys = cursor.fetchall()
         cursor.close()
@@ -13,8 +13,8 @@ class Dt_Ventas:
     def guardarVenta(cls, Venta):
         indicador = False
         try:
-            cursor = Conexion.Conexion.obtenerConexion().cursor()
-            sql = (f"INSERT INTO ventas (id_tienda, id_factura, cantidad, descripcion) VALUES ({Venta.id_tienda}, {Venta.id_factura}, {Venta.cantidad}, {Venta.descripcion})")
+            cursor = Proyecto.Conexion.Conexion.obtenerConexion().cursor()
+            sql = (f"INSERT INTO ventas (id_tienda, id_factura, cantidad, descripcion, estado) VALUES ({Venta.id_tienda}, {Venta.id_factura}, {Venta.cantidad}, {Venta.descripcion}, '{2}')")
             cursor.execute(sql)
             cursor.connection.commit()
             cursor.close()
@@ -29,8 +29,8 @@ class Dt_Ventas:
         indicador = False
 
         try:
-            cursor = Conexion.Conexion.obtenerConexion().cursor()
-            sql = (f'''UPDATE ventas SET id_tienda = {Venta.id_tienda},  id_factura = {Venta.id_factura}, cantidad = {Venta.cantidad}, descripcion = "{Venta.descripcion}"''')
+            cursor = Proyecto.Conexion.Conexion.obtenerConexion().cursor()
+            sql = (f'''UPDATE ventas SET id_tienda = {Venta.id_tienda},  id_factura = {Venta.id_factura}, cantidad = {Venta.cantidad}, descripcion = "{Venta.descripcion}, estado = {2}"''')
             cursor.execute(sql)
             cursor.connection.commit()
             cursor.close()
@@ -45,7 +45,7 @@ class Dt_Ventas:
     def eliminarVenta(cls, Venta):
         indicador = False
         try:
-            cursor = Conexion.Conexion.obtenerConexion().cursor()
+            cursor = Proyecto.Conexion.Conexion.obtenerConexion().cursor()
             sql = (f'''DELETE FROM ventas WHERE id_venta = {Venta.id_Venta}''')
             cursor.execute(sql)
             cursor.connection.commit()
