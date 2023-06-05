@@ -17,6 +17,8 @@ class registrar_Window(QMainWindow, vw_registrar.Ui_Registrar):
 
         self.bt_registrar.clicked.connect(self.registrarUsuario)
         self.cb_rol.addItem(self.llenarComboxRol(dt_rol.Dt_Rol.listarRol()))
+        self.bt_volver.clicked.connect(self.close)
+
 
     def registrarUsuario(self):
 
