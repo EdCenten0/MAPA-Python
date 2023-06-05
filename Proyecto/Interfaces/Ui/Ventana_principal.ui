@@ -41,6 +41,27 @@ font-family:&quot;Inter&quot;, sans-serif;</string>
         <layout class="QGridLayout" name="gridLayout" columnstretch="1,5">
          <item row="0" column="1">
           <widget class="QFrame" name="frame_3">
+           <property name="styleSheet">
+            <string notr="true">QComboBox{
+		background-color:rgb(255, 255, 255);
+		border:1px solid rgb(100,100,100);
+		color:rgb(50,50,50);
+
+}
+
+QPushButton{
+		background-color: rgb(255, 255, 255);	
+		border:1px solid #c7c7c7;
+		border-radius:7px;
+		background-color:rgb(246, 245, 244);
+}
+
+QPushButton:hover{
+		background-color:#c7c7c7;
+		border:1px solid rgb(255,255,255);
+}
+</string>
+           </property>
            <property name="frameShape">
             <enum>QFrame::StyledPanel</enum>
            </property>
@@ -311,7 +332,7 @@ QPushButton:hover{
 </string>
               </property>
               <property name="text">
-               <string>Materiales Por Provved.</string>
+               <string>Materiales Por Proved.</string>
               </property>
               <property name="iconSize">
                <size>

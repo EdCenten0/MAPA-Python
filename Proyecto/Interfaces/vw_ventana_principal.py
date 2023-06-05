@@ -32,6 +32,25 @@ class Ui_MainWindow(object):
         self.gridLayout = QtWidgets.QGridLayout()
         self.gridLayout.setObjectName("gridLayout")
         self.frame_3 = QtWidgets.QFrame(self.frame)
+        self.frame_3.setStyleSheet("QComboBox{\n"
+"        background-color:rgb(255, 255, 255);\n"
+"        border:1px solid rgb(100,100,100);\n"
+"        color:rgb(50,50,50);\n"
+"\n"
+"}\n"
+"\n"
+"QPushButton{\n"
+"        background-color: rgb(255, 255, 255);    \n"
+"        border:1px solid #c7c7c7;\n"
+"        border-radius:7px;\n"
+"        background-color:rgb(246, 245, 244);\n"
+"}\n"
+"\n"
+"QPushButton:hover{\n"
+"        background-color:#c7c7c7;\n"
+"        border:1px solid rgb(255,255,255);\n"
+"}\n"
+"")
         self.frame_3.setFrameShape(QtWidgets.QFrame.StyledPanel)
         self.frame_3.setFrameShadow(QtWidgets.QFrame.Raised)
         self.frame_3.setLineWidth(1)
@@ -279,7 +298,7 @@ class Ui_MainWindow(object):
         self.bt_clientes.setText(_translate("MainWindow", "Clientes"))
         self.bt_proveedores.setText(_translate("MainWindow", "Proveedores"))
         self.bt_materiales.setText(_translate("MainWindow", "Materiales"))
-        self.bt_materiales_por_proveedor.setText(_translate("MainWindow", "Materiales Por Provved."))
+        self.bt_materiales_por_proveedor.setText(_translate("MainWindow", "Materiales Por Proved."))
         self.bt_facturas.setText(_translate("MainWindow", "Facturas"))
         self.bt_ventas.setText(_translate("MainWindow", "Ventas"))
         self.bt_taller.setText(_translate("MainWindow", "Taller"))

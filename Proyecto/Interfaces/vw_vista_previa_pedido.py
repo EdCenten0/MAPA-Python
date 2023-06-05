@@ -14,7 +14,7 @@ from PyQt5 import QtCore, QtGui, QtWidgets
 class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
         MainWindow.setObjectName("MainWindow")
-        MainWindow.resize(1128, 636)
+        MainWindow.resize(1114, 600)
         MainWindow.setMinimumSize(QtCore.QSize(800, 600))
         MainWindow.setStyleSheet("background-color: rgb(63, 73, 100);")
         self.centralwidget = QtWidgets.QWidget(MainWindow)
@@ -23,8 +23,22 @@ class Ui_MainWindow(object):
         self.gridLayout_4 = QtWidgets.QGridLayout(self.centralwidget)
         self.gridLayout_4.setObjectName("gridLayout_4")
         self.frame_2 = QtWidgets.QFrame(self.centralwidget)
-        self.frame_2.setStyleSheet("\n"
-"font-family:\"Inter\", sans-serif;")
+        self.frame_2.setStyleSheet("QPushButton{\n"
+"        background-color: rgb(255, 255, 255);    \n"
+"        border:1px solid #c7c7c7;\n"
+"        border-radius:7px;\n"
+"        background-color:rgb(246, 245, 244);\n"
+"}\n"
+"\n"
+"QPushButton:hover{\n"
+"        background-color:#c7c7c7;\n"
+"        border:1px solid rgb(255,255,255);\n"
+"}\n"
+"\n"
+"*{\n"
+"        font-family:\"Inter\", sans-serif;\n"
+"}\n"
+"")
         self.frame_2.setFrameShape(QtWidgets.QFrame.StyledPanel)
         self.frame_2.setFrameShadow(QtWidgets.QFrame.Raised)
         self.frame_2.setObjectName("frame_2")
@@ -33,11 +47,24 @@ class Ui_MainWindow(object):
         self.horizontalLayout = QtWidgets.QHBoxLayout()
         self.horizontalLayout.setObjectName("horizontalLayout")
         self.frame = QtWidgets.QFrame(self.frame_2)
-        self.frame.setStyleSheet("border:none;\n"
+        self.frame.setStyleSheet("QFrame{\n"
+"        border:none;\n"
+"        border-radius:10%;\n"
+"        background-color: rgb(105, 120, 160);\n"
+"        color: rgb(45, 44, 44);\n"
+"}\n"
 "\n"
-"border-radius:10%;\n"
-"background-color: rgb(105, 120, 160);\n"
-"color: rgb(45, 44, 44);")
+"QComboBox{\n"
+"        border:1px solid #c7c7c7;\n"
+"        border-radius:10%;\n"
+"        background-color:rgb(246, 245, 244);\n"
+"}\n"
+"\n"
+"QPushButton{\n"
+"            border:1px solid #c7c7c7;\n"
+"            border-radius:10%;\n"
+"            background-color:rgb(246, 245, 244);\n"
+"}")
         self.frame.setFrameShape(QtWidgets.QFrame.StyledPanel)
         self.frame.setFrameShadow(QtWidgets.QFrame.Raised)
         self.frame.setObjectName("frame")
@@ -58,9 +85,10 @@ class Ui_MainWindow(object):
 "border-radius:5%;")
         self.comboBox_2.setObjectName("comboBox_2")
         self.verticalLayout_2.addWidget(self.comboBox_2)
-        spacerItem = QtWidgets.QSpacerItem(11, 30, QtWidgets.QSizePolicy.Minimum, QtWidgets.QSizePolicy.Expanding)
+        spacerItem = QtWidgets.QSpacerItem(11, 205, QtWidgets.QSizePolicy.Minimum, QtWidgets.QSizePolicy.Expanding)
         self.verticalLayout_2.addItem(spacerItem)
         self.pushButton_5 = QtWidgets.QPushButton(self.frame)
+        self.pushButton_5.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
         self.pushButton_5.setStyleSheet("QPushButton{\n"
 "        background-color: rgb(255, 255, 255);    \n"
 "        border:1px solid #c7c7c7;\n"
@@ -71,6 +99,7 @@ class Ui_MainWindow(object):
 "        background-color:#c7c7c7;\n"
 "        border:1px solid rgb(255,255,255);\n"
 "}")
+        self.pushButton_5.setFlat(False)
         self.pushButton_5.setObjectName("pushButton_5")
         self.verticalLayout_2.addWidget(self.pushButton_5)
         self.gridLayout_2.addLayout(self.verticalLayout_2, 0, 0, 1, 1)
@@ -87,12 +116,15 @@ class Ui_MainWindow(object):
         self.horizontalLayout_2 = QtWidgets.QHBoxLayout()
         self.horizontalLayout_2.setObjectName("horizontalLayout_2")
         self.pushButton_2 = QtWidgets.QPushButton(self.frame_2)
+        self.pushButton_2.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
         self.pushButton_2.setObjectName("pushButton_2")
         self.horizontalLayout_2.addWidget(self.pushButton_2)
         self.pushButton_3 = QtWidgets.QPushButton(self.frame_2)
+        self.pushButton_3.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
         self.pushButton_3.setObjectName("pushButton_3")
         self.horizontalLayout_2.addWidget(self.pushButton_3)
         self.pushButton = QtWidgets.QPushButton(self.frame_2)
+        self.pushButton.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
         self.pushButton.setObjectName("pushButton")
         self.horizontalLayout_2.addWidget(self.pushButton)
         self.gridLayout.addLayout(self.horizontalLayout_2, 5, 1, 1, 1)
@@ -131,6 +163,7 @@ class Ui_MainWindow(object):
         self.label_5.setObjectName("label_5")
         self.gridLayout.addWidget(self.label_5, 3, 0, 1, 1)
         self.pushButton_4 = QtWidgets.QPushButton(self.frame_2)
+        self.pushButton_4.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
         self.pushButton_4.setStyleSheet("font-size:15px;")
         self.pushButton_4.setObjectName("pushButton_4")
         self.gridLayout.addWidget(self.pushButton_4, 5, 0, 1, 1)

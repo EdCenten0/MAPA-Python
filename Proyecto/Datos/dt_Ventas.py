@@ -1,4 +1,4 @@
-import Proyecto.Datos.Conexion
+import Datos.Conexion
 
 class Dt_Ventas:
     @classmethod
