@@ -20,12 +20,76 @@ class Ui_Proveedores(object):
         self.centralwidget.setObjectName("centralwidget")
         self.gridLayout_2 = QtWidgets.QGridLayout(self.centralwidget)
         self.gridLayout_2.setObjectName("gridLayout_2")
-        self.label = QtWidgets.QLabel(self.centralwidget)
-        self.label.setStyleSheet("font: 75 18pt \"MS Shell Dlg 2\";")
-        self.label.setObjectName("label")
-        self.gridLayout_2.addWidget(self.label, 0, 0, 1, 1)
         self.frame = QtWidgets.QFrame(self.centralwidget)
-        self.frame.setStyleSheet("background-color: rgb(222, 221, 218);\n"
+        self.frame.setStyleSheet("QFrame{\n"
+"    background-color: rgb(222, 221, 218);\n"
+"    border:none;\n"
+"}\n"
+"QPushButton {\n"
+"    background-color:rgb(255, 255, 255);\n"
+"    border:1px solid rgb(100,100,100);\n"
+"    color:rgb(50,50,50);\n"
+"    padding: 8px 16px;\n"
+"    border-radius: 6px;\n"
+"    font-size: 14px;\n"
+"}\n"
+"\n"
+"QPushButton:hover {\n"
+"    background-color: #D6D2D1;\n"
+"}\n"
+"\n"
+"QPushButton:pressed {\n"
+"    background-color: #52c7ff;\n"
+"}\n"
+"\n"
+"QLabel{\n"
+"        font-weight:500;\n"
+"}\n"
+"\n"
+"*{\n"
+"        font-family:\"Inter\", sans-serif;\n"
+"        \n"
+"}\n"
+"\n"
+"QFrame{\n"
+"        background-color: rgb(222, 221, 218);\n"
+"        border-radius:10%;\n"
+"}\n"
+"\n"
+"QLineEdit {\n"
+"    background-color: white;\n"
+"    border: 1px solid gray;\n"
+"    padding: 4px;\n"
+"    border-radius: 6px;\n"
+"    font-size: 12px;\n"
+"}\n"
+"\n"
+"QLineEdit:focus {\n"
+"    border-color: #3daee9;\n"
+"    outline: none;\n"
+"}\n"
+"\n"
+"QLineEdit::hover {\n"
+"    background-color: #f0f0f0;\n"
+"}\n"
+"\n"
+"QTextEdit {\n"
+"    background-color: white;\n"
+"    border: 1px solid gray;\n"
+"    padding: 4px;\n"
+"    border-radius: 6px;\n"
+"    font-size: 12px;\n"
+"}\n"
+"\n"
+"QTextEdit:focus {\n"
+"    border-color: #3daee9;\n"
+"    outline: none;\n"
+"}\n"
+"\n"
+"QTextEdit::hover {\n"
+"    background-color: #f0f0f0;\n"
+"}\n"
+"\n"
 "")
         self.frame.setFrameShape(QtWidgets.QFrame.StyledPanel)
         self.frame.setFrameShadow(QtWidgets.QFrame.Raised)
@@ -33,7 +97,8 @@ class Ui_Proveedores(object):
         self.verticalLayout_2 = QtWidgets.QVBoxLayout(self.frame)
         self.verticalLayout_2.setObjectName("verticalLayout_2")
         self.frame_2 = QtWidgets.QFrame(self.frame)
-        self.frame_2.setStyleSheet("")
+        self.frame_2.setStyleSheet("\n"
+"")
         self.frame_2.setFrameShape(QtWidgets.QFrame.StyledPanel)
         self.frame_2.setFrameShadow(QtWidgets.QFrame.Raised)
         self.frame_2.setObjectName("frame_2")
@@ -49,14 +114,17 @@ class Ui_Proveedores(object):
         self.gridLayout.setSpacing(0)
         self.gridLayout.setObjectName("gridLayout")
         self.frame_6 = QtWidgets.QFrame(self.frame_4)
-        self.frame_6.setStyleSheet("")
+        self.frame_6.setStyleSheet("QLabel{\n"
+"        font-weight:500;\n"
+"}\n"
+"")
         self.frame_6.setFrameShape(QtWidgets.QFrame.StyledPanel)
         self.frame_6.setFrameShadow(QtWidgets.QFrame.Raised)
         self.frame_6.setObjectName("frame_6")
         self.formLayout = QtWidgets.QFormLayout(self.frame_6)
         self.formLayout.setObjectName("formLayout")
         self.label_21 = QtWidgets.QLabel(self.frame_6)
-        self.label_21.setStyleSheet("font: 12pt \"MS Shell Dlg 2\";")
+        self.label_21.setStyleSheet("")
         self.label_21.setObjectName("label_21")
         self.formLayout.setWidget(0, QtWidgets.QFormLayout.LabelRole, self.label_21)
         self.line_id = QtWidgets.QLineEdit(self.frame_6)
@@ -65,7 +133,7 @@ class Ui_Proveedores(object):
         self.line_id.setObjectName("line_id")
         self.formLayout.setWidget(0, QtWidgets.QFormLayout.FieldRole, self.line_id)
         self.label_20 = QtWidgets.QLabel(self.frame_6)
-        self.label_20.setStyleSheet("font: 12pt \"MS Shell Dlg 2\";")
+        self.label_20.setStyleSheet("")
         self.label_20.setObjectName("label_20")
         self.formLayout.setWidget(2, QtWidgets.QFormLayout.LabelRole, self.label_20)
         self.line_nombre = QtWidgets.QLineEdit(self.frame_6)
@@ -74,7 +142,7 @@ class Ui_Proveedores(object):
         self.line_nombre.setObjectName("line_nombre")
         self.formLayout.setWidget(2, QtWidgets.QFormLayout.FieldRole, self.line_nombre)
         self.label_24 = QtWidgets.QLabel(self.frame_6)
-        self.label_24.setStyleSheet("font: 12pt \"MS Shell Dlg 2\";")
+        self.label_24.setStyleSheet("")
         self.label_24.setObjectName("label_24")
         self.formLayout.setWidget(4, QtWidgets.QFormLayout.LabelRole, self.label_24)
         self.line_ruc = QtWidgets.QLineEdit(self.frame_6)
@@ -83,7 +151,7 @@ class Ui_Proveedores(object):
         self.line_ruc.setObjectName("line_ruc")
         self.formLayout.setWidget(4, QtWidgets.QFormLayout.FieldRole, self.line_ruc)
         self.label_25 = QtWidgets.QLabel(self.frame_6)
-        self.label_25.setStyleSheet("font: 12pt \"MS Shell Dlg 2\";")
+        self.label_25.setStyleSheet("")
         self.label_25.setObjectName("label_25")
         self.formLayout.setWidget(6, QtWidgets.QFormLayout.LabelRole, self.label_25)
         self.line_correo = QtWidgets.QLineEdit(self.frame_6)
@@ -92,7 +160,7 @@ class Ui_Proveedores(object):
         self.line_correo.setObjectName("line_correo")
         self.formLayout.setWidget(6, QtWidgets.QFormLayout.FieldRole, self.line_correo)
         self.label_22 = QtWidgets.QLabel(self.frame_6)
-        self.label_22.setStyleSheet("font: 12pt \"MS Shell Dlg 2\";")
+        self.label_22.setStyleSheet("")
         self.label_22.setObjectName("label_22")
         self.formLayout.setWidget(8, QtWidgets.QFormLayout.LabelRole, self.label_22)
         self.line_telefono = QtWidgets.QLineEdit(self.frame_6)
@@ -101,7 +169,7 @@ class Ui_Proveedores(object):
         self.line_telefono.setObjectName("line_telefono")
         self.formLayout.setWidget(8, QtWidgets.QFormLayout.FieldRole, self.line_telefono)
         self.label_27 = QtWidgets.QLabel(self.frame_6)
-        self.label_27.setStyleSheet("font: 12pt \"MS Shell Dlg 2\";")
+        self.label_27.setStyleSheet("")
         self.label_27.setObjectName("label_27")
         self.formLayout.setWidget(10, QtWidgets.QFormLayout.LabelRole, self.label_27)
         self.line_buscar_proveedores = QtWidgets.QLineEdit(self.frame_6)
@@ -127,7 +195,7 @@ class Ui_Proveedores(object):
         self.verticalLayout_3 = QtWidgets.QVBoxLayout(self.frame_7)
         self.verticalLayout_3.setObjectName("verticalLayout_3")
         self.label_23 = QtWidgets.QLabel(self.frame_7)
-        self.label_23.setStyleSheet("font: 12pt \"MS Shell Dlg 2\";")
+        self.label_23.setStyleSheet("")
         self.label_23.setObjectName("label_23")
         self.verticalLayout_3.addWidget(self.label_23)
         self.line_direccion = QtWidgets.QTextEdit(self.frame_7)
@@ -135,7 +203,7 @@ class Ui_Proveedores(object):
         self.line_direccion.setObjectName("line_direccion")
         self.verticalLayout_3.addWidget(self.line_direccion)
         self.label_26 = QtWidgets.QLabel(self.frame_7)
-        self.label_26.setStyleSheet("font: 12pt \"MS Shell Dlg 2\";")
+        self.label_26.setStyleSheet("")
         self.label_26.setObjectName("label_26")
         self.verticalLayout_3.addWidget(self.label_26)
         self.line_catalogo = QtWidgets.QTextEdit(self.frame_7)
@@ -147,30 +215,45 @@ class Ui_Proveedores(object):
         self.gridLayout.setColumnStretch(1, 1)
         self.horizontalLayout.addWidget(self.frame_4)
         self.frame_5 = QtWidgets.QFrame(self.frame_2)
-        self.frame_5.setStyleSheet("")
+        self.frame_5.setStyleSheet("QPushButton {\n"
+"    background-color:rgb(255, 255, 255);\n"
+"    border:1px solid rgb(100,100,100);\n"
+"    color:rgb(50,50,50);\n"
+"    padding: 8px 16px;\n"
+"    border-radius: 6px;\n"
+"    font-size: 14px;\n"
+"}\n"
+"\n"
+"QPushButton:hover {\n"
+"    background-color: #D6D2D1;\n"
+"}\n"
+"\n"
+"QPushButton:pressed {\n"
+"    background-color: #52c7ff;\n"
+"}")
         self.frame_5.setFrameShape(QtWidgets.QFrame.StyledPanel)
         self.frame_5.setFrameShadow(QtWidgets.QFrame.Raised)
         self.frame_5.setObjectName("frame_5")
         self.verticalLayout_4 = QtWidgets.QVBoxLayout(self.frame_5)
         self.verticalLayout_4.setObjectName("verticalLayout_4")
         self.bt_Guardar = QtWidgets.QPushButton(self.frame_5)
-        self.bt_Guardar.setStyleSheet("background-color: rgb(255, 255, 255);")
+        self.bt_Guardar.setStyleSheet("")
         self.bt_Guardar.setObjectName("bt_Guardar")
         self.verticalLayout_4.addWidget(self.bt_Guardar)
         self.bt_Editar = QtWidgets.QPushButton(self.frame_5)
-        self.bt_Editar.setStyleSheet("background-color: rgb(255, 255, 255);")
+        self.bt_Editar.setStyleSheet("")
         self.bt_Editar.setObjectName("bt_Editar")
         self.verticalLayout_4.addWidget(self.bt_Editar)
         self.bt_Eliminar = QtWidgets.QPushButton(self.frame_5)
-        self.bt_Eliminar.setStyleSheet("background-color: rgb(255, 255, 255);")
+        self.bt_Eliminar.setStyleSheet("")
         self.bt_Eliminar.setObjectName("bt_Eliminar")
         self.verticalLayout_4.addWidget(self.bt_Eliminar)
         self.bt_Vaciar = QtWidgets.QPushButton(self.frame_5)
-        self.bt_Vaciar.setStyleSheet("background-color: rgb(255, 255, 255);")
+        self.bt_Vaciar.setStyleSheet("")
         self.bt_Vaciar.setObjectName("bt_Vaciar")
         self.verticalLayout_4.addWidget(self.bt_Vaciar)
         self.bt_Buscar_Proveedor = QtWidgets.QPushButton(self.frame_5)
-        self.bt_Buscar_Proveedor.setStyleSheet("background-color: rgb(255, 255, 255);")
+        self.bt_Buscar_Proveedor.setStyleSheet("")
         self.bt_Buscar_Proveedor.setObjectName("bt_Buscar_Proveedor")
         self.verticalLayout_4.addWidget(self.bt_Buscar_Proveedor)
         self.horizontalLayout.addWidget(self.frame_5)
@@ -213,7 +296,7 @@ class Ui_Proveedores(object):
         self.verticalLayout_2.addWidget(self.frame_3)
         self.verticalLayout_2.setStretch(0, 1)
         self.verticalLayout_2.setStretch(1, 1)
-        self.gridLayout_2.addWidget(self.frame, 1, 0, 1, 1)
+        self.gridLayout_2.addWidget(self.frame, 0, 0, 1, 1)
         Proveedores.setCentralWidget(self.centralwidget)
         self.statusbar = QtWidgets.QStatusBar(Proveedores)
         self.statusbar.setObjectName("statusbar")
@@ -225,7 +308,6 @@ class Ui_Proveedores(object):
     def retranslateUi(self, Proveedores):
         _translate = QtCore.QCoreApplication.translate
         Proveedores.setWindowTitle(_translate("Proveedores", "Proveedores"))
-        self.label.setText(_translate("Proveedores", "Proveedores"))
         self.label_21.setText(_translate("Proveedores", "ID:"))
         self.label_20.setText(_translate("Proveedores", "Nombre:"))
         self.label_24.setText(_translate("Proveedores", "RUC:"))
