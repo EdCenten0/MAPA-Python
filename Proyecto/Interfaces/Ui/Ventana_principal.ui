@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>1301</width>
-    <height>855</height>
+    <height>936</height>
    </rect>
   </property>
   <property name="minimumSize">
@@ -90,6 +90,7 @@ QPushButton:hover{
            <property name="styleSheet">
             <string notr="true">QFrame{
 	background-color: rgb(240, 213, 209);
+    border-radius:7px;
 
 }
 
@@ -500,12 +501,15 @@ QPushButton:pressed {
                <cursorShape>PointingHandCursor</cursorShape>
               </property>
               <property name="styleSheet">
-               <string notr="true">QPushButton:hover {
-    background-color: #D6D2D1;
+               <string notr="true">QPushButton{
+		background-color: rgb(255, 255, 255);	
+		border:1px solid #c7c7c7;
+
 }
 
-QPushButton:pressed {
-    background-color: #52c7ff;
+QPushButton:hover{
+		background-color:#c7c7c7;
+		border:1px solid rgb(255,255,255);
 }
 </string>
               </property>
