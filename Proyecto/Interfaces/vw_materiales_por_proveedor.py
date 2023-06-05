@@ -17,7 +17,9 @@ class Ui_background(object):
         background.resize(800, 599)
         background.setMouseTracking(False)
         background.setAutoFillBackground(False)
-        background.setStyleSheet("background-color: rgb(222, 221, 218);")
+        background.setStyleSheet("background-color: rgb(222, 221, 218);\n"
+"border-radius:10%;\n"
+"")
         background.setToolButtonStyle(QtCore.Qt.ToolButtonIconOnly)
         self.centralwidget = QtWidgets.QWidget(background)
         self.centralwidget.setObjectName("centralwidget")
@@ -31,21 +33,33 @@ class Ui_background(object):
         self.gridLayout_3.setContentsMargins(-1, 0, -1, -1)
         self.gridLayout_3.setObjectName("gridLayout_3")
         self.cb_material = QtWidgets.QComboBox(self.centralwidget)
-        self.cb_material.setStyleSheet("background-color:rgb(255, 255, 255);\n"
-"border:1px solid rgb(100,100,100);\n"
-"color:rgb(50,50,50);")
+        self.cb_material.setStyleSheet("QComboBox{\n"
+"        background-color:rgb(255, 255, 255);\n"
+"        border:1px solid rgb(100,100,100);\n"
+"        color:rgb(50,50,50);\n"
+"        border-radius:4px;\n"
+"}\n"
+"\n"
+"")
         self.cb_material.setObjectName("cb_material")
         self.gridLayout_3.addWidget(self.cb_material, 0, 1, 1, 1)
         self.label_5 = QtWidgets.QLabel(self.centralwidget)
+        self.label_5.setStyleSheet("QLabel{\n"
+"        font-weight:500;\n"
+"}")
         self.label_5.setObjectName("label_5")
         self.gridLayout_3.addWidget(self.label_5, 1, 0, 1, 1)
         self.cb_proveedor = QtWidgets.QComboBox(self.centralwidget)
         self.cb_proveedor.setStyleSheet("background-color:rgb(255, 255, 255);\n"
 "border:1px solid rgb(100,100,100);\n"
-"color:rgb(50,50,50);")
+"color:rgb(50,50,50);\n"
+"border-radius:4px;")
         self.cb_proveedor.setObjectName("cb_proveedor")
         self.gridLayout_3.addWidget(self.cb_proveedor, 1, 1, 1, 1)
         self.label_4 = QtWidgets.QLabel(self.centralwidget)
+        self.label_4.setStyleSheet("QLabel{\n"
+"        font-weight:500;\n"
+"}")
         self.label_4.setObjectName("label_4")
         self.gridLayout_3.addWidget(self.label_4, 0, 0, 1, 1)
         self.gridLayout_3.setColumnStretch(0, 1)
@@ -55,30 +69,86 @@ class Ui_background(object):
         self.verticalLayout_8.setObjectName("verticalLayout_8")
         self.bt_guardar = QtWidgets.QPushButton(self.centralwidget)
         self.bt_guardar.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
-        self.bt_guardar.setStyleSheet("background-color:rgb(255, 255, 255);\n"
-"border:1px solid rgb(100,100,100);\n"
-"color:rgb(50,50,50);")
+        self.bt_guardar.setStyleSheet("QPushButton {\n"
+"    background-color:rgb(255, 255, 255);\n"
+"    border:1px solid rgb(100,100,100);\n"
+"    color:rgb(50,50,50);\n"
+"    padding: 8px 16px;\n"
+"    border-radius: 6px;\n"
+"    font-size: 14px;\n"
+"}\n"
+"\n"
+"QPushButton:hover {\n"
+"    background-color: #D6D2D1;\n"
+"}\n"
+"\n"
+"QPushButton:pressed {\n"
+"    background-color: #52c7ff;\n"
+"}\n"
+"")
         self.bt_guardar.setObjectName("bt_guardar")
         self.verticalLayout_8.addWidget(self.bt_guardar)
         self.bt_editar = QtWidgets.QPushButton(self.centralwidget)
         self.bt_editar.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
-        self.bt_editar.setStyleSheet("background-color:rgb(255, 255, 255);\n"
-"border:1px solid rgb(100,100,100);\n"
-"color:rgb(50,50,50);")
+        self.bt_editar.setStyleSheet("QPushButton {\n"
+"    background-color:rgb(255, 255, 255);\n"
+"    border:1px solid rgb(100,100,100);\n"
+"    color:rgb(50,50,50);\n"
+"    padding: 8px 16px;\n"
+"    border-radius: 6px;\n"
+"    font-size: 14px;\n"
+"}\n"
+"\n"
+"QPushButton:hover {\n"
+"    background-color: #D6D2D1;\n"
+"}\n"
+"\n"
+"QPushButton:pressed {\n"
+"    background-color: #52c7ff;\n"
+"}\n"
+"")
         self.bt_editar.setObjectName("bt_editar")
         self.verticalLayout_8.addWidget(self.bt_editar)
         self.bt_borrar = QtWidgets.QPushButton(self.centralwidget)
         self.bt_borrar.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
-        self.bt_borrar.setStyleSheet("background-color:rgb(255, 255, 255);\n"
-"border:1px solid rgb(100,100,100);\n"
-"color:rgb(50,50,50);")
+        self.bt_borrar.setStyleSheet("QPushButton {\n"
+"    background-color:rgb(255, 255, 255);\n"
+"    border:1px solid rgb(100,100,100);\n"
+"    color:rgb(50,50,50);\n"
+"    padding: 8px 16px;\n"
+"    border-radius: 6px;\n"
+"    font-size: 14px;\n"
+"}\n"
+"\n"
+"QPushButton:hover {\n"
+"    background-color: #D6D2D1;\n"
+"}\n"
+"\n"
+"QPushButton:pressed {\n"
+"    background-color: #52c7ff;\n"
+"}\n"
+"")
         self.bt_borrar.setObjectName("bt_borrar")
         self.verticalLayout_8.addWidget(self.bt_borrar)
         self.bt_vaciar_campos = QtWidgets.QPushButton(self.centralwidget)
         self.bt_vaciar_campos.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
-        self.bt_vaciar_campos.setStyleSheet("background-color:rgb(255, 255, 255);\n"
-"border:1px solid rgb(100,100,100);\n"
-"color:rgb(50,50,50);")
+        self.bt_vaciar_campos.setStyleSheet("QPushButton {\n"
+"    background-color:rgb(255, 255, 255);\n"
+"    border:1px solid rgb(100,100,100);\n"
+"    color:rgb(50,50,50);\n"
+"    padding: 8px 16px;\n"
+"    border-radius: 6px;\n"
+"    font-size: 14px;\n"
+"}\n"
+"\n"
+"QPushButton:hover {\n"
+"    background-color: #D6D2D1;\n"
+"}\n"
+"\n"
+"QPushButton:pressed {\n"
+"    background-color: #52c7ff;\n"
+"}\n"
+"")
         self.bt_vaciar_campos.setObjectName("bt_vaciar_campos")
         self.verticalLayout_8.addWidget(self.bt_vaciar_campos)
         self.gridLayout_2.addLayout(self.verticalLayout_8, 0, 1, 1, 1)
