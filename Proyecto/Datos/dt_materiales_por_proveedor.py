@@ -2,8 +2,8 @@ import sys
 
 import pymysql
 
-from Datos import Conexion
-from Entidades.materiales_por_proveedor import MaterialesPorProveedor
+from Proyecto.Datos import Conexion
+from Proyecto.Entidades.materiales_por_proveedor import MaterialesPorProveedor
 
 
 class DtMaterialesPorProveedor:

@@ -1,5 +1,4 @@
-from Datos.Conexion import Conexion
-from Entidades.materiales import Materiales
+from Proyecto.Datos.Conexion import Conexion
 
 class Dt_materiales:
 

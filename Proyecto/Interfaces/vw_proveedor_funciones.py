@@ -5,9 +5,9 @@ import sys
 
 from PyQt5.QtWidgets import QMainWindow, QApplication, QTableWidgetItem, QMessageBox
 
-from Datos import dt_proveedor
-from Entidades.proveedores import Proveedor
-from Interfaces import vw_proveedor
+from Proyecto.Datos import dt_proveedor
+from Proyecto.Entidades.proveedores import Proveedor
+from Proyecto.Interfaces import vw_proveedor
 
 
 class proveedor_Window(QMainWindow, vw_proveedor.Ui_Proveedores):
@@ -66,7 +66,6 @@ class proveedor_Window(QMainWindow, vw_proveedor.Ui_Proveedores):
             QMessageBox.about(self, "Error", "Ha Ocurrido un Error")
 
 
-
     def llenarTablaProveedor(self, datos):
         print("\nDatos de la Tabla Proveedor")
         i = len(datos)
@@ -83,6 +82,7 @@ class proveedor_Window(QMainWindow, vw_proveedor.Ui_Proveedores):
             self.tb_Proveedor.setItem(tablerow, 5, QTableWidgetItem((row["telefono"])))
             self.tb_Proveedor.setItem(tablerow, 6, QTableWidgetItem(str(row["direccion"])))
             tablerow = tablerow + 1
+
 
     def guardarProveedor(self):
 
@@ -115,10 +115,6 @@ class proveedor_Window(QMainWindow, vw_proveedor.Ui_Proveedores):
 
         else:
             QMessageBox.about(self,"Error" ,"No se pudo guardar a este proveedor con un id existente")
-
-
-
-
 
 
     def editarProveedor(self):

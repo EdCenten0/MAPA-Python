@@ -1,6 +1,6 @@
 # Francisco de Jesús Melendez Simplina
 
-from Datos import Conexion
+from Proyecto.Datos import Conexion
 
 
 class Dt_Opcion:

@@ -3,10 +3,9 @@ import PyQt5
 from PyQt5 import QtWidgets
 from PyQt5.QtWidgets import QApplication, QAbstractItemView, QTableWidgetItem, QMessageBox
 
-from Datos import dt_taller
-from Datos.dt_taller import Dt_taller
-from Entidades.taller import Taller
-from Interfaces import vw_taller
+from Proyecto.Datos import dt_taller
+from Proyecto.Entidades.taller import Taller
+from Proyecto.Interfaces import vw_taller
 
 class vw_taller_funciones(QtWidgets.QMainWindow, vw_taller.Ui_mw_taller):
     def __init__(self, parent=None):

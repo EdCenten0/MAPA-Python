@@ -1,10 +1,9 @@
-
+from Proyecto.Datos import Conexion
 
 
 class Dt_Pedidos:
     @classmethod
     def listarPedidos(cls):
-        from Datos import Conexion
         cursor = Conexion.Conexion.obtenerConexion().cursor()
         sql = ("SELECT * FROM pedidos")
         cursor.execute(sql)
@@ -25,7 +24,6 @@ class Dt_Pedidos:
     def guardarPedido(cls, Pedido):
         indicador = False
         try:
-            from Datos import Conexion
             cursor = Conexion.Conexion.obtenerConexion().cursor()
             sql = (f"INSERT INTO pedidos (descripcion, fecha_pedido, id_cliente) VALUES ({Pedido.descripcion}, {Pedido.idPedido}, {Pedido.fecha_Pedido}, {Pedido.id_cliente}, 1)")
             cursor.execute(sql)
@@ -42,7 +40,6 @@ class Dt_Pedidos:
         indicador = False
 
         try:
-            from Datos import Conexion
             cursor = Conexion.Conexion.obtenerConexion().cursor()
             sql = (f'''UPDATE pedidos SET descripcion = {Pedido.descripcion}, fecha_pedido = {Pedido.fecha_Pedido}, id_cliente = {Pedido.id_cliente}, estado = 2''')
             cursor.execute(sql)
@@ -59,7 +56,6 @@ class Dt_Pedidos:
     def eliminarPedido(cls, Pedido):
         indicador = False
         try:
-            from Datos import Conexion
             cursor = Conexion.Conexion.obtenerConexion().cursor()
             sql = (f'''DELETE FROM pedidos WHERE id_pedidos = {Pedido.idPedido}''')
             cursor.execute(sql)

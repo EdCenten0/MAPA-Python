@@ -1,19 +1,10 @@
-import sys
 
 import pymysql
-from PyQt5.QtWidgets import QMainWindow, QMessageBox
 
-from Datos.dt_materiales import Dt_materiales
-from Entidades.materiales_por_proveedor import MaterialesPorProveedor
-from Interfaces import vw_materiales_por_proveedor
-from Entidades import materiales_por_proveedor
-from Datos import dt_materiales_por_proveedor, dt_proveedor, dt_materiales
-import PyQt5
+from Proyecto.Entidades.materiales_por_proveedor import MaterialesPorProveedor
+from Proyecto.Interfaces import vw_materiales_por_proveedor
+from Proyecto.Datos import dt_materiales_por_proveedor, dt_proveedor, dt_materiales
 from PyQt5 import QtWidgets
-from PyQt5.QtWidgets import QApplication, QAbstractItemView
-
-from Interfaces.vw_materiales_por_proveedor import Ui_background
-
 
 # Carlos Eduardo Chavarria Centeno (EdCenten0)
 # Universidad Centroamericana
