@@ -20,7 +20,9 @@
    <bool>false</bool>
   </property>
   <property name="styleSheet">
-   <string notr="true">background-color: rgb(222, 221, 218);</string>
+   <string notr="true">background-color: rgb(222, 221, 218);
+border-radius:10%;
+</string>
   </property>
   <property name="toolButtonStyle">
    <enum>Qt::ToolButtonIconOnly</enum>
@@ -43,6 +45,7 @@
 		background-color:rgb(255, 255, 255);
 		border:1px solid rgb(100,100,100);
 		color:rgb(50,50,50);
+		border-radius:4px;
 }
 
 </string>
@@ -51,6 +54,11 @@
           </item>
           <item row="1" column="0">
            <widget class="QLabel" name="label_5">
+            <property name="styleSheet">
+             <string notr="true">QLabel{
+		font-weight:500;
+}</string>
+            </property>
             <property name="text">
              <string>Proveedor:</string>
             </property>
@@ -61,12 +69,18 @@
             <property name="styleSheet">
              <string notr="true">background-color:rgb(255, 255, 255);
 border:1px solid rgb(100,100,100);
-color:rgb(50,50,50);</string>
+color:rgb(50,50,50);
+border-radius:4px;</string>
             </property>
            </widget>
           </item>
           <item row="0" column="0">
            <widget class="QLabel" name="label_4">
+            <property name="styleSheet">
+             <string notr="true">QLabel{
+		font-weight:500;
+}</string>
+            </property>
             <property name="text">
              <string>Material:</string>
             </property>
@@ -82,9 +96,23 @@ color:rgb(50,50,50);</string>
              <cursorShape>PointingHandCursor</cursorShape>
             </property>
             <property name="styleSheet">
-             <string notr="true">background-color:rgb(255, 255, 255);
-border:1px solid rgb(100,100,100);
-color:rgb(50,50,50);</string>
+             <string notr="true">QPushButton {
+	background-color:rgb(255, 255, 255);
+	border:1px solid rgb(100,100,100);
+	color:rgb(50,50,50);
+    padding: 8px 16px;
+    border-radius: 6px;
+    font-size: 14px;
+}
+
+QPushButton:hover {
+    background-color: #D6D2D1;
+}
+
+QPushButton:pressed {
+    background-color: #52c7ff;
+}
+</string>
             </property>
             <property name="text">
              <string>Guardar</string>
@@ -97,9 +125,23 @@ color:rgb(50,50,50);</string>
              <cursorShape>PointingHandCursor</cursorShape>
             </property>
             <property name="styleSheet">
-             <string notr="true">background-color:rgb(255, 255, 255);
-border:1px solid rgb(100,100,100);
-color:rgb(50,50,50);</string>
+             <string notr="true">QPushButton {
+	background-color:rgb(255, 255, 255);
+	border:1px solid rgb(100,100,100);
+	color:rgb(50,50,50);
+    padding: 8px 16px;
+    border-radius: 6px;
+    font-size: 14px;
+}
+
+QPushButton:hover {
+    background-color: #D6D2D1;
+}
+
+QPushButton:pressed {
+    background-color: #52c7ff;
+}
+</string>
             </property>
             <property name="text">
              <string>Editar</string>
@@ -112,9 +154,23 @@ color:rgb(50,50,50);</string>
              <cursorShape>PointingHandCursor</cursorShape>
             </property>
             <property name="styleSheet">
-             <string notr="true">background-color:rgb(255, 255, 255);
-border:1px solid rgb(100,100,100);
-color:rgb(50,50,50);</string>
+             <string notr="true">QPushButton {
+	background-color:rgb(255, 255, 255);
+	border:1px solid rgb(100,100,100);
+	color:rgb(50,50,50);
+    padding: 8px 16px;
+    border-radius: 6px;
+    font-size: 14px;
+}
+
+QPushButton:hover {
+    background-color: #D6D2D1;
+}
+
+QPushButton:pressed {
+    background-color: #52c7ff;
+}
+</string>
             </property>
             <property name="text">
              <string>Borrar</string>
@@ -127,9 +183,23 @@ color:rgb(50,50,50);</string>
              <cursorShape>PointingHandCursor</cursorShape>
             </property>
             <property name="styleSheet">
-             <string notr="true">background-color:rgb(255, 255, 255);
-border:1px solid rgb(100,100,100);
-color:rgb(50,50,50);</string>
+             <string notr="true">QPushButton {
+	background-color:rgb(255, 255, 255);
+	border:1px solid rgb(100,100,100);
+	color:rgb(50,50,50);
+    padding: 8px 16px;
+    border-radius: 6px;
+    font-size: 14px;
+}
+
+QPushButton:hover {
+    background-color: #D6D2D1;
+}
+
+QPushButton:pressed {
+    background-color: #52c7ff;
+}
+</string>
             </property>
             <property name="text">
              <string>Vaciar Campos</string>
