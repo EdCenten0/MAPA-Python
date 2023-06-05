@@ -117,7 +117,7 @@ QTextEdit::hover {
            <item>
             <layout class="QGridLayout" name="gridLayout_6">
              <item row="1" column="0">
-              <layout class="QGridLayout" name="gridLayout" rowstretch="0,0,0,0" columnstretch="1,4">
+              <layout class="QGridLayout" name="gridLayout" rowstretch="0,0,0,0,0" columnstretch="1,4">
                <property name="sizeConstraint">
                 <enum>QLayout::SetDefaultConstraint</enum>
                </property>
@@ -146,13 +146,6 @@ QTextEdit::hover {
                  </property>
                 </widget>
                </item>
-               <item row="2" column="1">
-                <widget class="QLineEdit" name="txtTelefono">
-                 <property name="styleSheet">
-                  <string notr="true">background-color: rgb(246, 245, 244);</string>
-                 </property>
-                </widget>
-               </item>
                <item row="2" column="0">
                 <widget class="QLabel" name="lblTelefono">
                  <property name="styleSheet">
@@ -160,6 +153,13 @@ QTextEdit::hover {
                  </property>
                  <property name="text">
                   <string>Telefono:</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="3" column="1">
+                <widget class="QLineEdit" name="txtEmail">
+                 <property name="styleSheet">
+                  <string notr="true">background-color: rgb(255, 255, 255);</string>
                  </property>
                 </widget>
                </item>
@@ -177,13 +177,10 @@ QTextEdit::hover {
                  </property>
                 </widget>
                </item>
-               <item row="1" column="0">
-                <widget class="QLabel" name="lblDIreccion">
+               <item row="2" column="1">
+                <widget class="QLineEdit" name="txtTelefono">
                  <property name="styleSheet">
-                  <string notr="true">background-color: rgb(222, 221, 218);</string>
-                 </property>
-                 <property name="text">
-                  <string>Direccion:</string>
+                  <string notr="true">background-color: rgb(246, 245, 244);</string>
                  </property>
                 </widget>
                </item>
@@ -197,10 +194,23 @@ QTextEdit::hover {
                  </property>
                 </widget>
                </item>
-               <item row="3" column="1">
-                <widget class="QLineEdit" name="txtEmail">
+               <item row="1" column="0">
+                <widget class="QLabel" name="lblDIreccion">
                  <property name="styleSheet">
-                  <string notr="true">background-color: rgb(255, 255, 255);</string>
+                  <string notr="true">background-color: rgb(222, 221, 218);</string>
+                 </property>
+                 <property name="text">
+                  <string>Direccion:</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="4" column="0">
+                <widget class="QLabel" name="lblID">
+                 <property name="styleSheet">
+                  <string notr="true">color: rgb(222, 221, 218);</string>
+                 </property>
+                 <property name="text">
+                  <string>TextLabel</string>
                  </property>
                 </widget>
                </item>
