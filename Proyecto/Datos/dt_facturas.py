@@ -1,4 +1,6 @@
 from Datos import Conexion
+from Entidades.facturas import Facturas
+
 
 class Dt_facturas:
 
@@ -11,22 +13,21 @@ class Dt_facturas:
         return querys
 
     @classmethod
-    def guardarFacturas(cls, factura):
+    def guardarFacturas(cls, factura: Facturas):
 
         try:
             cursor = Conexion.Conexion.obtenerConexion().cursor()
-            sql = f'''INSERT INTO facturas (id_factura, id_pedido, fecha, precio_materiales, mano_de_obra, precio_total, estado) 
-                      VALUES ('{factura.id_factura}', '{factura.id_pedido}', '{factura.fecha}', '{factura.precio_materiales}', '{factura.mano_de_obra}', '{factura.precio_total}' , 1)'''
+            sql = f'''INSERT INTO facturas (id_pedido, fecha, precio_materiales, mano_de_obra, precio_total) 
+                      VALUES ('{factura.id_pedido}', '{factura.fecha}', '{factura.precio_materiales}', '{factura.mano_de_obra}', '{factura.precio_total}')'''
             cursor.execute(sql)
             cursor.connection.commit()
             cursor.close()
             print("Guardado")
-            indicador = True
 
         except Exception as e:
             print(f"Error en guardarFacturas: {e}")
 
-        return indicador
+
     @classmethod
     def eliminarFactura(cls, factura):
 
@@ -63,6 +64,6 @@ class Dt_facturas:
         except Exception as ex:
             print(f"Error en factura Existente:{ex}")
 
+
 if __name__ == '__main__':
     print(Dt_facturas.listarFacturas())
-

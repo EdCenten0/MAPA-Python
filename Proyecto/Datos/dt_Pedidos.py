@@ -1,4 +1,5 @@
 from Datos import Conexion
+from Entidades.pedidos import Pedido
 
 
 class Dt_Pedidos:
@@ -15,10 +16,18 @@ class Dt_Pedidos:
         from Datos import Conexion
         cursor = Conexion.Conexion.obtenerConexion().cursor()
         sql_query = (f"SELECT * FROM pedidos WHERE id_pedido = {id_pedido}")
+
         cursor.execute(sql_query)
         registro = cursor.fetchall()
+        pedido : Pedido
+        for n in registro:
+            id_pedido = n["id_pedido"]
+            id_cliente = n["id_cliente"]
+            descripcion = n["descripcion"]
+            fecha = n["fecha_pedido"]
+            pedido = Pedido(id_pedido, id_cliente, descripcion, fecha)
         cursor.close()
-        return registro
+        return pedido
 
     @classmethod
     def guardarPedido(cls, Pedido):

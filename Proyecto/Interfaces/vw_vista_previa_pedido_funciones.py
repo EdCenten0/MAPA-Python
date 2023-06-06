@@ -5,7 +5,8 @@ from Datos import dt_Pedidos, dt_materiales
 from Datos.dt_Pedidos import Dt_Pedidos
 from Datos.dt_cliente import Dt_Clientes
 from Entidades import materiales
-from Interfaces import vw_vista_previa_pedido, vw_materiales_funciones, vw_materiales_por_pedido_funciones
+from Interfaces import vw_vista_previa_pedido, vw_materiales_funciones, vw_materiales_por_pedido_funciones, \
+    vw_vista_previa_factura, vw_vista_previa_factura_funciones
 
 
 class VwVistaPreviaPedidosFunciones(QtWidgets.QMainWindow, vw_vista_previa_pedido.Ui_MainWindow):
@@ -15,6 +16,7 @@ class VwVistaPreviaPedidosFunciones(QtWidgets.QMainWindow, vw_vista_previa_pedid
         self.setupUi(self)
 
         self.openedForms = []
+        self.cuadroFactura : vw_vista_previa_factura_funciones.VistaPreviaFacturaFunciones
         self.id_pedido = self.comboBox_2.currentData()
         self.comboBox_2.currentIndexChanged.connect(self.setPedidoSeleccionado)
 
@@ -27,6 +29,9 @@ class VwVistaPreviaPedidosFunciones(QtWidgets.QMainWindow, vw_vista_previa_pedid
         self.pushButton_2.clicked.connect(lambda: self.setMaterialesPorPedido(vw_materiales_por_pedido_funciones.vw_materiales_por_pedido_funciones()))
         print(f"materialesPorPedidido: id_pedido: {vw_materiales_por_pedido_funciones.vw_materiales_por_pedido_funciones.id}")
 
+
+        self.pushButton.clicked.connect(lambda: self.mostrarCuadroFactura())
+        self.comboBox_2.currentIndexChanged.connect(lambda: self.setValoresFactura())
 
 
 
@@ -45,11 +50,10 @@ class VwVistaPreviaPedidosFunciones(QtWidgets.QMainWindow, vw_vista_previa_pedid
 
     def obtenerRegistroSeleccionadoComboBox(cls):
         index = cls.comboBox_2.currentData()
-        datos_lista_pedido = Dt_Pedidos.listarSoloUnPedido(index)
-        datos_pedido = datos_lista_pedido[0]
-        descripcion = datos_pedido['descripcion']
-        fecha_pedido = datos_pedido['fecha_pedido']
-        id_cliente = datos_pedido['id_cliente']
+        datos_pedido = Dt_Pedidos.listarSoloUnPedido(index)
+        descripcion = datos_pedido.descripcion
+        fecha_pedido = datos_pedido.fecha_Pedido
+        id_cliente = datos_pedido.id_cliente
         datos_lista_cliente = Dt_Clientes.listarSoloUnCliente(id_cliente)
         datos_cliente = datos_lista_cliente[0]
         nombre_apellido_cliente = datos_cliente['nombre'] + " " + datos_cliente['apellido']
@@ -80,7 +84,14 @@ class VwVistaPreviaPedidosFunciones(QtWidgets.QMainWindow, vw_vista_previa_pedid
         self.ly_contenedor.addWidget(form)
         self.openedForms.append(form)
 
+    def mostrarCuadroFactura(self):
+        self.cuadroFactura = vw_vista_previa_factura_funciones.VistaPreviaFacturaFunciones()
+        self.cuadroFactura.show()
 
+
+    def setValoresFactura(self):
+        id_pedido = self.comboBox_2.currentData()
+        vw_vista_previa_factura_funciones.VistaPreviaFacturaFunciones.id_pedido = id_pedido
 
 if __name__ == '__main__':
     app = QApplication(sys.argv)
