@@ -30,6 +30,7 @@ class VwVistaPreviaPedidosFunciones(QtWidgets.QMainWindow, vw_vista_previa_pedid
 
 
 
+
     def setPedidoSeleccionado(self):
         self.id_pedido = self.comboBox_2.currentData()
         vw_materiales_por_pedido_funciones.vw_materiales_por_pedido_funciones.id = self.id_pedido
@@ -63,6 +64,8 @@ class VwVistaPreviaPedidosFunciones(QtWidgets.QMainWindow, vw_vista_previa_pedid
         nMateriales = dt_materiales.Dt_materiales.contarMaterialesPorPedido(id_pedido)
         self.label.setText(f"{str(nMateriales)} materiales agregados...")
 
+
+
     def setMaterialesPorPedido(self, form):
         while self.ly_contenedor.count() > 0:
             item = self.ly_contenedor.takeAt(0)
@@ -76,6 +79,7 @@ class VwVistaPreviaPedidosFunciones(QtWidgets.QMainWindow, vw_vista_previa_pedid
         self.openedForms = []
         self.ly_contenedor.addWidget(form)
         self.openedForms.append(form)
+
 
 
 if __name__ == '__main__':

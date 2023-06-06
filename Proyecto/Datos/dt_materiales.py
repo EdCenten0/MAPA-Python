@@ -1,5 +1,5 @@
 from Datos.Conexion import Conexion
-from Entidades import pedidos
+from Entidades import pedidos, materiales
 
 
 class Dt_materiales:
@@ -136,8 +136,19 @@ class Dt_materiales:
         cursor.close()
         return res
 
-
-
+    # def guardarMaterialPorPedido(self, Materiales : materiales.Materiales):
+    #     try:
+    #         cursor = Conexion.obtenerConexion().cursor()
+    #         sentencia = (
+    #             f'''INSERT INTO materiales(nombre_material, descripcion, cantidad, unidad_de_medida, precio_por_unidad, precio_total, id_pedido) VALUES('{Materiales.nombre_material}', '{Materiales.descripcion}', '{Materiales.cantidad}', '{Materiales.unidad_de_medida}', '{Materiales.precio_por_unidad}', '{Materiales.precio_total}', '{Materiales.id_pedido}')''')
+    #         cursor.execute(sentencia)
+    #         cursor.connection.commit()
+    #         cursor.close()
+    #         print("Material Guardado")
+    #         indicador = True
+    #
+    #     except Exception as e:
+    #         print(f"Error al guardar el material: {e}")
 
 if __name__ == '__main__':
     materiales1 = Dt_materiales.listarMateriales()
