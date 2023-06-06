@@ -1,9 +1,9 @@
 import sys
 from PyQt5.QtWidgets import QMainWindow, QApplication, QTableWidgetItem, QMessageBox
 import vw_Cliente
-from Datos import dt_cliente
-from Entidades import clientes
-from Datos import Conexion
+from Proyecto.Datos import dt_cliente
+from Proyecto.Entidades import clientes
+from Proyecto.Datos import Conexion
 
 
 

@@ -188,7 +188,6 @@ class Ui_Registrar(object):
         self.label_11.setText(_translate("Registrar", "Apellido:"))
         Recursos
 
-
 if __name__ == "__main__":
     import sys
     app = QtWidgets.QApplication(sys.argv)

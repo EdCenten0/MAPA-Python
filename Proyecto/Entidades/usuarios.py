@@ -17,7 +17,7 @@ class Usuarios:
         nombre: {self.nombre}
         apellido: {self.apellido}
         user: {self.user}
-        password: {self.password}
+        clave: {self.password}
         fechaCreacion: {self.fechaCreacion}
         estado: {self.estado}
         '''

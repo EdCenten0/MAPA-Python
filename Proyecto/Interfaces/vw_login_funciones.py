@@ -3,12 +3,12 @@
 import sys
 from PyQt5.QtWidgets import QMainWindow, QApplication, QMessageBox, QWidget
 
-from Datos.dt_usuario import Dt_Usuarios
-from Interfaces.vw_registrar_funciones import registrar_Window
-from Entidades.usuarios import Usuarios
+from Proyecto.Datos.dt_usuario import Dt_Usuarios
+from Proyecto.Interfaces.vw_registrar_funciones import registrar_Window
+from Proyecto.Entidades.usuarios import Usuarios
 
-from Interfaces import vw_login
-from Interfaces.vw_ventana_principal_funciones import VentanaPrincipal
+from Proyecto.Interfaces import vw_login
+from Proyecto.Interfaces.vw_ventana_principal_funciones import VentanaPrincipal
 
 
 class login_Window(QMainWindow, vw_login.Ui_Login):
@@ -41,7 +41,6 @@ class login_Window(QMainWindow, vw_login.Ui_Login):
     def iniciarSesion(self):
         Usuarios.user = self.line_Usuario.text()
         Usuarios.password = self.line_Clave.text()
-
 
         if Dt_Usuarios.ExisteUsuario(Usuarios):
             QMessageBox.about(self, "Inicio de sesión exitoso!", f"Ingreso de sesión completado, Bienvenido {Usuarios.user}")

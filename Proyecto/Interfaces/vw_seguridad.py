@@ -50,6 +50,74 @@ class Ui_Seguridad(object):
         self.verticalLayout_2.setSpacing(6)
         self.verticalLayout_2.setObjectName("verticalLayout_2")
         self.frame_2 = QtWidgets.QFrame(self.Usuario)
+        self.frame_2.setStyleSheet("QFrame{\n"
+"    background-color: rgb(222, 221, 218);\n"
+"    border:none;\n"
+"}\n"
+"QPushButton {\n"
+"    background-color:rgb(255, 255, 255);\n"
+"    border:1px solid rgb(100,100,100);\n"
+"    color:rgb(50,50,50);\n"
+"    padding: 8px 16px;\n"
+"    border-radius: 6px;\n"
+"    font-size: 14px;\n"
+"}\n"
+"\n"
+"QPushButton:hover {\n"
+"    background-color: #D6D2D1;\n"
+"}\n"
+"\n"
+"QPushButton:pressed {\n"
+"    background-color: #52c7ff;\n"
+"}\n"
+"\n"
+"QLabel{\n"
+"        font-weight:500;\n"
+"}\n"
+"\n"
+"*{\n"
+"        font-family:\"Inter\", sans-serif;\n"
+"        \n"
+"}\n"
+"\n"
+"QFrame{\n"
+"        background-color: rgb(222, 221, 218);\n"
+"        border-radius:10%;\n"
+"}\n"
+"\n"
+"QLineEdit {\n"
+"    background-color: white;\n"
+"    border: 1px solid gray;\n"
+"    padding: 4px;\n"
+"    border-radius: 6px;\n"
+"    font-size: 12px;\n"
+"}\n"
+"\n"
+"QLineEdit:focus {\n"
+"    border-color: #3daee9;\n"
+"    outline: none;\n"
+"}\n"
+"\n"
+"QLineEdit::hover {\n"
+"    background-color: #f0f0f0;\n"
+"}\n"
+"\n"
+"QTextEdit {\n"
+"    background-color: white;\n"
+"    border: 1px solid gray;\n"
+"    padding: 4px;\n"
+"    border-radius: 6px;\n"
+"    font-size: 12px;\n"
+"}\n"
+"\n"
+"QTextEdit:focus {\n"
+"    border-color: #3daee9;\n"
+"    outline: none;\n"
+"}\n"
+"\n"
+"QTextEdit::hover {\n"
+"    background-color: #f0f0f0;\n"
+"}")
         self.frame_2.setFrameShape(QtWidgets.QFrame.StyledPanel)
         self.frame_2.setFrameShadow(QtWidgets.QFrame.Raised)
         self.frame_2.setObjectName("frame_2")
@@ -73,8 +141,7 @@ class Ui_Seguridad(object):
         self.line_Usuario_Fecha.setObjectName("line_Usuario_Fecha")
         self.gridLayout.addWidget(self.line_Usuario_Fecha, 5, 1, 1, 1)
         self.label_49 = QtWidgets.QLabel(self.frame_5)
-        self.label_49.setStyleSheet("font: 14pt \"Ubuntu\";\n"
-"color: rgb(255, 255, 255);")
+        self.label_49.setStyleSheet("")
         self.label_49.setObjectName("label_49")
         self.gridLayout.addWidget(self.label_49, 5, 0, 1, 1)
         self.line_Usuario_Id = QtWidgets.QLineEdit(self.frame_5)
@@ -95,29 +162,23 @@ class Ui_Seguridad(object):
         self.line_Usuario_Apellido.setObjectName("line_Usuario_Apellido")
         self.gridLayout.addWidget(self.line_Usuario_Apellido, 2, 1, 1, 1)
         self.label = QtWidgets.QLabel(self.frame_5)
-        self.label.setStyleSheet("font: 14pt \"Ubuntu\";\n"
-"color: rgb(255, 255, 255);\n"
-"")
+        self.label.setStyleSheet("")
         self.label.setObjectName("label")
         self.gridLayout.addWidget(self.label, 6, 0, 1, 1)
         self.label_39 = QtWidgets.QLabel(self.frame_5)
-        self.label_39.setStyleSheet("font: 14pt \"Ubuntu\";\n"
-"color: rgb(255, 255, 255);")
+        self.label_39.setStyleSheet("")
         self.label_39.setObjectName("label_39")
         self.gridLayout.addWidget(self.label_39, 0, 0, 1, 1)
         self.label_50 = QtWidgets.QLabel(self.frame_5)
-        self.label_50.setStyleSheet("font: 14pt \"Ubuntu\";\n"
-"color: rgb(255, 255, 255);")
+        self.label_50.setStyleSheet("")
         self.label_50.setObjectName("label_50")
         self.gridLayout.addWidget(self.label_50, 2, 0, 1, 1)
         self.label_47 = QtWidgets.QLabel(self.frame_5)
-        self.label_47.setStyleSheet("font: 14pt \"Ubuntu\";\n"
-"color: rgb(255, 255, 255);")
+        self.label_47.setStyleSheet("")
         self.label_47.setObjectName("label_47")
         self.gridLayout.addWidget(self.label_47, 3, 0, 1, 1)
         self.label_48 = QtWidgets.QLabel(self.frame_5)
-        self.label_48.setStyleSheet("font: 14pt \"Ubuntu\";\n"
-"color: rgb(255, 255, 255);")
+        self.label_48.setStyleSheet("")
         self.label_48.setObjectName("label_48")
         self.gridLayout.addWidget(self.label_48, 4, 0, 1, 1)
         self.line_Usuario_Nombre = QtWidgets.QLineEdit(self.frame_5)
@@ -126,8 +187,7 @@ class Ui_Seguridad(object):
         self.line_Usuario_Nombre.setObjectName("line_Usuario_Nombre")
         self.gridLayout.addWidget(self.line_Usuario_Nombre, 1, 1, 1, 1)
         self.label_40 = QtWidgets.QLabel(self.frame_5)
-        self.label_40.setStyleSheet("font: 14pt \"Ubuntu\";\n"
-"color: rgb(255, 255, 255);")
+        self.label_40.setStyleSheet("")
         self.label_40.setObjectName("label_40")
         self.gridLayout.addWidget(self.label_40, 1, 0, 1, 1)
         self.line_Usuario_User = QtWidgets.QLineEdit(self.frame_5)
@@ -333,12 +393,60 @@ class Ui_Seguridad(object):
         self.tb_Usuario.setMinimumSize(QtCore.QSize(800, 0))
         self.tb_Usuario.viewport().setProperty("cursor", QtGui.QCursor(QtCore.Qt.PointingHandCursor))
         self.tb_Usuario.setLayoutDirection(QtCore.Qt.LeftToRight)
-        self.tb_Usuario.setStyleSheet("background-color: rgb(255, 255, 255);\n"
+        self.tb_Usuario.setStyleSheet("QTableView QHeaderView::section {\n"
+"    font-size: 12px;\n"
+"    font-weight: bold;\n"
+"    background-color: lightgray;\n"
+"    padding: 4px;\n"
+"    border: none;\n"
+"    border-bottom: 1px solid gray;\n"
+"}\n"
 "\n"
-"QTableView::item {\n"
-"    min-width: 100px;\n"
-"    max-width: 300px;\n"
-"}")
+"QTableView {\n"
+"    background-color: white;\n"
+"    border: 1px solid gray;\n"
+"}\n"
+"\n"
+"QTableView QScrollBar:vertical {\n"
+"    width: 14px;\n"
+"    background-color: lightgray;\n"
+"}\n"
+"\n"
+"QTableView QScrollBar::handle:vertical {\n"
+"    background-color: gray;\n"
+"    border-radius: 7px;\n"
+"}\n"
+"\n"
+"QTableView QScrollBar::add-line:vertical,\n"
+"QTableView QScrollBar::sub-line:vertical {\n"
+"    background-color: transparent;\n"
+"}\n"
+"\n"
+"QTableView QScrollBar::add-page:vertical,\n"
+"QTableView QScrollBar::sub-page:vertical {\n"
+"    background-color: transparent;\n"
+"}\n"
+"\n"
+"QTableView QScrollBar:horizontal {\n"
+"    height: 14px;\n"
+"    background-color: lightgray;\n"
+"}\n"
+"\n"
+"QTableView QScrollBar::handle:horizontal {\n"
+"    background-color: gray;\n"
+"    border-radius: 7px;\n"
+"}\n"
+"\n"
+"QTableView QScrollBar::add-line:horizontal,\n"
+"QTableView QScrollBar::sub-line:horizontal {\n"
+"    background-color: transparent;\n"
+"}\n"
+"\n"
+"QTableView QScrollBar::add-page:horizontal,\n"
+"QTableView QScrollBar::sub-page:horizontal {\n"
+"    background-color: transparent;\n"
+"}\n"
+"")
         self.tb_Usuario.setFrameShape(QtWidgets.QFrame.NoFrame)
         self.tb_Usuario.setSizeAdjustPolicy(QtWidgets.QAbstractScrollArea.AdjustToContents)
         self.tb_Usuario.setObjectName("tb_Usuario")
@@ -392,7 +500,74 @@ class Ui_Seguridad(object):
         self.verticalLayout_18.setSpacing(6)
         self.verticalLayout_18.setObjectName("verticalLayout_18")
         self.frame_21 = QtWidgets.QFrame(self.tab_2)
-        self.frame_21.setStyleSheet("")
+        self.frame_21.setStyleSheet("QFrame{\n"
+"    background-color: rgb(222, 221, 218);\n"
+"    border:none;\n"
+"}\n"
+"QPushButton {\n"
+"    background-color:rgb(255, 255, 255);\n"
+"    border:1px solid rgb(100,100,100);\n"
+"    color:rgb(50,50,50);\n"
+"    padding: 8px 16px;\n"
+"    border-radius: 6px;\n"
+"    font-size: 14px;\n"
+"}\n"
+"\n"
+"QPushButton:hover {\n"
+"    background-color: #D6D2D1;\n"
+"}\n"
+"\n"
+"QPushButton:pressed {\n"
+"    background-color: #52c7ff;\n"
+"}\n"
+"\n"
+"QLabel{\n"
+"        font-weight:500;\n"
+"}\n"
+"\n"
+"*{\n"
+"        font-family:\"Inter\", sans-serif;\n"
+"        \n"
+"}\n"
+"\n"
+"QFrame{\n"
+"        background-color: rgb(222, 221, 218);\n"
+"        border-radius:10%;\n"
+"}\n"
+"\n"
+"QLineEdit {\n"
+"    background-color: white;\n"
+"    border: 1px solid gray;\n"
+"    padding: 4px;\n"
+"    border-radius: 6px;\n"
+"    font-size: 12px;\n"
+"}\n"
+"\n"
+"QLineEdit:focus {\n"
+"    border-color: #3daee9;\n"
+"    outline: none;\n"
+"}\n"
+"\n"
+"QLineEdit::hover {\n"
+"    background-color: #f0f0f0;\n"
+"}\n"
+"\n"
+"QTextEdit {\n"
+"    background-color: white;\n"
+"    border: 1px solid gray;\n"
+"    padding: 4px;\n"
+"    border-radius: 6px;\n"
+"    font-size: 12px;\n"
+"}\n"
+"\n"
+"QTextEdit:focus {\n"
+"    border-color: #3daee9;\n"
+"    outline: none;\n"
+"}\n"
+"\n"
+"QTextEdit::hover {\n"
+"    background-color: #f0f0f0;\n"
+"}")
         self.frame_21.setFrameShape(QtWidgets.QFrame.StyledPanel)
         self.frame_21.setFrameShadow(QtWidgets.QFrame.Raised)
         self.frame_21.setObjectName("frame_21")
@@ -401,6 +576,7 @@ class Ui_Seguridad(object):
         self.horizontalLayout_8.setSpacing(6)
         self.horizontalLayout_8.setObjectName("horizontalLayout_8")
         self.frame_23 = QtWidgets.QFrame(self.frame_21)
+        self.frame_23.setStyleSheet("")
         self.frame_23.setFrameShape(QtWidgets.QFrame.StyledPanel)
         self.frame_23.setFrameShadow(QtWidgets.QFrame.Raised)
         self.frame_23.setObjectName("frame_23")
@@ -410,8 +586,7 @@ class Ui_Seguridad(object):
         self.formLayout_7.setVerticalSpacing(10)
         self.formLayout_7.setObjectName("formLayout_7")
         self.label_108 = QtWidgets.QLabel(self.frame_23)
-        self.label_108.setStyleSheet("font: 14pt \"Ubuntu\";\n"
-"color: rgb(255, 255, 255);")
+        self.label_108.setStyleSheet("")
         self.label_108.setObjectName("label_108")
         self.formLayout_7.setWidget(1, QtWidgets.QFormLayout.LabelRole, self.label_108)
         self.line_Rol_Id = QtWidgets.QLineEdit(self.frame_23)
@@ -421,8 +596,7 @@ class Ui_Seguridad(object):
         self.line_Rol_Id.setObjectName("line_Rol_Id")
         self.formLayout_7.setWidget(1, QtWidgets.QFormLayout.FieldRole, self.line_Rol_Id)
         self.label_107 = QtWidgets.QLabel(self.frame_23)
-        self.label_107.setStyleSheet("font: 14pt \"Ubuntu\";\n"
-"color: rgb(255, 255, 255);")
+        self.label_107.setStyleSheet("")
         self.label_107.setObjectName("label_107")
         self.formLayout_7.setWidget(4, QtWidgets.QFormLayout.LabelRole, self.label_107)
         self.line_Rol = QtWidgets.QLineEdit(self.frame_23)
@@ -431,8 +605,7 @@ class Ui_Seguridad(object):
         self.line_Rol.setObjectName("line_Rol")
         self.formLayout_7.setWidget(4, QtWidgets.QFormLayout.FieldRole, self.line_Rol)
         self.label_2 = QtWidgets.QLabel(self.frame_23)
-        self.label_2.setStyleSheet("font: 14pt \"Ubuntu\";\n"
-"color: rgb(255, 255, 255);")
+        self.label_2.setStyleSheet("")
         self.label_2.setObjectName("label_2")
         self.formLayout_7.setWidget(7, QtWidgets.QFormLayout.LabelRole, self.label_2)
         self.line_buscar_rol = QtWidgets.QLineEdit(self.frame_23)
@@ -454,8 +627,7 @@ class Ui_Seguridad(object):
         self.formLayout_7.setItem(8, QtWidgets.QFormLayout.FieldRole, spacerItem11)
         self.horizontalLayout_8.addWidget(self.frame_23)
         self.frame_24 = QtWidgets.QFrame(self.frame_21)
-        self.frame_24.setStyleSheet("\n"
-"")
+        self.frame_24.setStyleSheet("")
         self.frame_24.setFrameShape(QtWidgets.QFrame.StyledPanel)
         self.frame_24.setFrameShadow(QtWidgets.QFrame.Raised)
         self.frame_24.setObjectName("frame_24")
@@ -607,7 +779,59 @@ class Ui_Seguridad(object):
         self.verticalLayout_24.setObjectName("verticalLayout_24")
         self.tb_Rol = QtWidgets.QTableWidget(self.frame_22)
         self.tb_Rol.viewport().setProperty("cursor", QtGui.QCursor(QtCore.Qt.PointingHandCursor))
-        self.tb_Rol.setStyleSheet("background-color: rgb(255, 255, 255);\n"
+        self.tb_Rol.setStyleSheet("QTableView QHeaderView::section {\n"
+"    font-size: 12px;\n"
+"    font-weight: bold;\n"
+"    background-color: lightgray;\n"
+"    padding: 4px;\n"
+"    border: none;\n"
+"    border-bottom: 1px solid gray;\n"
+"}\n"
+"\n"
+"QTableView {\n"
+"    background-color: white;\n"
+"    border: 1px solid gray;\n"
+"}\n"
+"\n"
+"QTableView QScrollBar:vertical {\n"
+"    width: 14px;\n"
+"    background-color: lightgray;\n"
+"}\n"
+"\n"
+"QTableView QScrollBar::handle:vertical {\n"
+"    background-color: gray;\n"
+"    border-radius: 7px;\n"
+"}\n"
+"\n"
+"QTableView QScrollBar::add-line:vertical,\n"
+"QTableView QScrollBar::sub-line:vertical {\n"
+"    background-color: transparent;\n"
+"}\n"
+"\n"
+"QTableView QScrollBar::add-page:vertical,\n"
+"QTableView QScrollBar::sub-page:vertical {\n"
+"    background-color: transparent;\n"
+"}\n"
+"\n"
+"QTableView QScrollBar:horizontal {\n"
+"    height: 14px;\n"
+"    background-color: lightgray;\n"
+"}\n"
+"\n"
+"QTableView QScrollBar::handle:horizontal {\n"
+"    background-color: gray;\n"
+"    border-radius: 7px;\n"
+"}\n"
+"\n"
+"QTableView QScrollBar::add-line:horizontal,\n"
+"QTableView QScrollBar::sub-line:horizontal {\n"
+"    background-color: transparent;\n"
+"}\n"
+"\n"
+"QTableView QScrollBar::add-page:horizontal,\n"
+"QTableView QScrollBar::sub-page:horizontal {\n"
+"    background-color: transparent;\n"
+"}\n"
 "")
         self.tb_Rol.setAutoScroll(True)
         self.tb_Rol.setAutoScrollMargin(18)
@@ -635,7 +859,74 @@ class Ui_Seguridad(object):
         self.verticalLayout_20.setSpacing(6)
         self.verticalLayout_20.setObjectName("verticalLayout_20")
         self.frame_28 = QtWidgets.QFrame(self.tab)
-        self.frame_28.setStyleSheet("")
+        self.frame_28.setStyleSheet("QFrame{\n"
+"    background-color: rgb(222, 221, 218);\n"
+"    border:none;\n"
+"}\n"
+"QPushButton {\n"
+"    background-color:rgb(255, 255, 255);\n"
+"    border:1px solid rgb(100,100,100);\n"
+"    color:rgb(50,50,50);\n"
+"    padding: 8px 16px;\n"
+"    border-radius: 6px;\n"
+"    font-size: 14px;\n"
+"}\n"
+"\n"
+"QPushButton:hover {\n"
+"    background-color: #D6D2D1;\n"
+"}\n"
+"\n"
+"QPushButton:pressed {\n"
+"    background-color: #52c7ff;\n"
+"}\n"
+"\n"
+"QLabel{\n"
+"        font-weight:500;\n"
+"}\n"
+"\n"
+"*{\n"
+"        font-family:\"Inter\", sans-serif;\n"
+"        \n"
+"}\n"
+"\n"
+"QFrame{\n"
+"        background-color: rgb(222, 221, 218);\n"
+"        border-radius:10%;\n"
+"}\n"
+"\n"
+"QLineEdit {\n"
+"    background-color: white;\n"
+"    border: 1px solid gray;\n"
+"    padding: 4px;\n"
+"    border-radius: 6px;\n"
+"    font-size: 12px;\n"
+"}\n"
+"\n"
+"QLineEdit:focus {\n"
+"    border-color: #3daee9;\n"
+"    outline: none;\n"
+"}\n"
+"\n"
+"QLineEdit::hover {\n"
+"    background-color: #f0f0f0;\n"
+"}\n"
+"\n"
+"QTextEdit {\n"
+"    background-color: white;\n"
+"    border: 1px solid gray;\n"
+"    padding: 4px;\n"
+"    border-radius: 6px;\n"
+"    font-size: 12px;\n"
+"}\n"
+"\n"
+"QTextEdit:focus {\n"
+"    border-color: #3daee9;\n"
+"    outline: none;\n"
+"}\n"
+"\n"
+"QTextEdit::hover {\n"
+"    background-color: #f0f0f0;\n"
+"}")
         self.frame_28.setFrameShape(QtWidgets.QFrame.StyledPanel)
         self.frame_28.setFrameShadow(QtWidgets.QFrame.Raised)
         self.frame_28.setObjectName("frame_28")
@@ -644,6 +935,7 @@ class Ui_Seguridad(object):
         self.horizontalLayout_11.setSpacing(6)
         self.horizontalLayout_11.setObjectName("horizontalLayout_11")
         self.frame_31 = QtWidgets.QFrame(self.frame_28)
+        self.frame_31.setStyleSheet("")
         self.frame_31.setFrameShape(QtWidgets.QFrame.StyledPanel)
         self.frame_31.setFrameShadow(QtWidgets.QFrame.Raised)
         self.frame_31.setObjectName("frame_31")
@@ -655,8 +947,7 @@ class Ui_Seguridad(object):
         spacerItem12 = QtWidgets.QSpacerItem(20, 40, QtWidgets.QSizePolicy.Minimum, QtWidgets.QSizePolicy.Expanding)
         self.formLayout.setItem(1, QtWidgets.QFormLayout.FieldRole, spacerItem12)
         self.label_72 = QtWidgets.QLabel(self.frame_31)
-        self.label_72.setStyleSheet("font: 14pt \"Ubuntu\";\n"
-"color: rgb(255, 255, 255);")
+        self.label_72.setStyleSheet("")
         self.label_72.setObjectName("label_72")
         self.formLayout.setWidget(2, QtWidgets.QFormLayout.LabelRole, self.label_72)
         self.line_Opcion_Id = QtWidgets.QLineEdit(self.frame_31)
@@ -670,8 +961,7 @@ class Ui_Seguridad(object):
         spacerItem14 = QtWidgets.QSpacerItem(20, 40, QtWidgets.QSizePolicy.Minimum, QtWidgets.QSizePolicy.Expanding)
         self.formLayout.setItem(4, QtWidgets.QFormLayout.FieldRole, spacerItem14)
         self.label_71 = QtWidgets.QLabel(self.frame_31)
-        self.label_71.setStyleSheet("font: 14pt \"Ubuntu\";\n"
-"color: rgb(255, 255, 255);")
+        self.label_71.setStyleSheet("")
         self.label_71.setObjectName("label_71")
         self.formLayout.setWidget(5, QtWidgets.QFormLayout.LabelRole, self.label_71)
         self.line_Opcion = QtWidgets.QLineEdit(self.frame_31)
@@ -684,8 +974,7 @@ class Ui_Seguridad(object):
         spacerItem16 = QtWidgets.QSpacerItem(20, 40, QtWidgets.QSizePolicy.Minimum, QtWidgets.QSizePolicy.Expanding)
         self.formLayout.setItem(7, QtWidgets.QFormLayout.FieldRole, spacerItem16)
         self.label_3 = QtWidgets.QLabel(self.frame_31)
-        self.label_3.setStyleSheet("font: 14pt \"Ubuntu\";\n"
-"color: rgb(255, 255, 255);")
+        self.label_3.setStyleSheet("")
         self.label_3.setObjectName("label_3")
         self.formLayout.setWidget(8, QtWidgets.QFormLayout.LabelRole, self.label_3)
         self.line_buscar_opcion = QtWidgets.QLineEdit(self.frame_31)
@@ -850,7 +1139,60 @@ class Ui_Seguridad(object):
         self.tb_Opcion = QtWidgets.QTableWidget(self.frame_25)
         self.tb_Opcion.viewport().setProperty("cursor", QtGui.QCursor(QtCore.Qt.PointingHandCursor))
         self.tb_Opcion.setLayoutDirection(QtCore.Qt.LeftToRight)
-        self.tb_Opcion.setStyleSheet("background-color: rgb(255, 255, 255);")
+        self.tb_Opcion.setStyleSheet("QTableView QHeaderView::section {\n"
+"    font-size: 12px;\n"
+"    font-weight: bold;\n"
+"    background-color: lightgray;\n"
+"    padding: 4px;\n"
+"    border: none;\n"
+"    border-bottom: 1px solid gray;\n"
+"}\n"
+"\n"
+"QTableView {\n"
+"    background-color: white;\n"
+"    border: 1px solid gray;\n"
+"}\n"
+"\n"
+"QTableView QScrollBar:vertical {\n"
+"    width: 14px;\n"
+"    background-color: lightgray;\n"
+"}\n"
+"\n"
+"QTableView QScrollBar::handle:vertical {\n"
+"    background-color: gray;\n"
+"    border-radius: 7px;\n"
+"}\n"
+"\n"
+"QTableView QScrollBar::add-line:vertical,\n"
+"QTableView QScrollBar::sub-line:vertical {\n"
+"    background-color: transparent;\n"
+"}\n"
+"\n"
+"QTableView QScrollBar::add-page:vertical,\n"
+"QTableView QScrollBar::sub-page:vertical {\n"
+"    background-color: transparent;\n"
+"}\n"
+"\n"
+"QTableView QScrollBar:horizontal {\n"
+"    height: 14px;\n"
+"    background-color: lightgray;\n"
+"}\n"
+"\n"
+"QTableView QScrollBar::handle:horizontal {\n"
+"    background-color: gray;\n"
+"    border-radius: 7px;\n"
+"}\n"
+"\n"
+"QTableView QScrollBar::add-line:horizontal,\n"
+"QTableView QScrollBar::sub-line:horizontal {\n"
+"    background-color: transparent;\n"
+"}\n"
+"\n"
+"QTableView QScrollBar::add-page:horizontal,\n"
+"QTableView QScrollBar::sub-page:horizontal {\n"
+"    background-color: transparent;\n"
+"}\n"
+"")
         self.tb_Opcion.setAutoScrollMargin(18)
         self.tb_Opcion.setObjectName("tb_Opcion")
         self.tb_Opcion.setColumnCount(2)
@@ -877,7 +1219,74 @@ class Ui_Seguridad(object):
         self.verticalLayout_21.setSpacing(6)
         self.verticalLayout_21.setObjectName("verticalLayout_21")
         self.frame_34 = QtWidgets.QFrame(self.tab_3)
-        self.frame_34.setStyleSheet("")
+        self.frame_34.setStyleSheet("QFrame{\n"
+"    background-color: rgb(222, 221, 218);\n"
+"    border:none;\n"
+"}\n"
+"QPushButton {\n"
+"    background-color:rgb(255, 255, 255);\n"
+"    border:1px solid rgb(100,100,100);\n"
+"    color:rgb(50,50,50);\n"
+"    padding: 8px 16px;\n"
+"    border-radius: 6px;\n"
+"    font-size: 14px;\n"
+"}\n"
+"\n"
+"QPushButton:hover {\n"
+"    background-color: #D6D2D1;\n"
+"}\n"
+"\n"
+"QPushButton:pressed {\n"
+"    background-color: #52c7ff;\n"
+"}\n"
+"\n"
+"QLabel{\n"
+"        font-weight:500;\n"
+"}\n"
+"\n"
+"*{\n"
+"        font-family:\"Inter\", sans-serif;\n"
+"        \n"
+"}\n"
+"\n"
+"QFrame{\n"
+"        background-color: rgb(222, 221, 218);\n"
+"        border-radius:10%;\n"
+"}\n"
+"\n"
+"QLineEdit {\n"
+"    background-color: white;\n"
+"    border: 1px solid gray;\n"
+"    padding: 4px;\n"
+"    border-radius: 6px;\n"
+"    font-size: 12px;\n"
+"}\n"
+"\n"
+"QLineEdit:focus {\n"
+"    border-color: #3daee9;\n"
+"    outline: none;\n"
+"}\n"
+"\n"
+"QLineEdit::hover {\n"
+"    background-color: #f0f0f0;\n"
+"}\n"
+"\n"
+"QTextEdit {\n"
+"    background-color: white;\n"
+"    border: 1px solid gray;\n"
+"    padding: 4px;\n"
+"    border-radius: 6px;\n"
+"    font-size: 12px;\n"
+"}\n"
+"\n"
+"QTextEdit:focus {\n"
+"    border-color: #3daee9;\n"
+"    outline: none;\n"
+"}\n"
+"\n"
+"QTextEdit::hover {\n"
+"    background-color: #f0f0f0;\n"
+"}")
         self.frame_34.setFrameShape(QtWidgets.QFrame.StyledPanel)
         self.frame_34.setFrameShadow(QtWidgets.QFrame.Raised)
         self.frame_34.setObjectName("frame_34")
@@ -886,6 +1295,7 @@ class Ui_Seguridad(object):
         self.horizontalLayout_12.setSpacing(6)
         self.horizontalLayout_12.setObjectName("horizontalLayout_12")
         self.frame_35 = QtWidgets.QFrame(self.frame_34)
+        self.frame_35.setStyleSheet("")
         self.frame_35.setFrameShape(QtWidgets.QFrame.StyledPanel)
         self.frame_35.setFrameShadow(QtWidgets.QFrame.Raised)
         self.frame_35.setObjectName("frame_35")
@@ -896,8 +1306,7 @@ class Ui_Seguridad(object):
         spacerItem18 = QtWidgets.QSpacerItem(20, 40, QtWidgets.QSizePolicy.Minimum, QtWidgets.QSizePolicy.Expanding)
         self.formLayout_6.setItem(0, QtWidgets.QFormLayout.FieldRole, spacerItem18)
         self.label_75 = QtWidgets.QLabel(self.frame_35)
-        self.label_75.setStyleSheet("font: 14pt \"Ubuntu\";\n"
-"color: rgb(255, 255, 255);")
+        self.label_75.setStyleSheet("")
         self.label_75.setObjectName("label_75")
         self.formLayout_6.setWidget(2, QtWidgets.QFormLayout.LabelRole, self.label_75)
         self.line_Asignar_Rol_Id = QtWidgets.QLineEdit(self.frame_35)
@@ -909,8 +1318,7 @@ class Ui_Seguridad(object):
         spacerItem19 = QtWidgets.QSpacerItem(20, 40, QtWidgets.QSizePolicy.Minimum, QtWidgets.QSizePolicy.Expanding)
         self.formLayout_6.setItem(3, QtWidgets.QFormLayout.FieldRole, spacerItem19)
         self.label_76 = QtWidgets.QLabel(self.frame_35)
-        self.label_76.setStyleSheet("font: 14pt \"Ubuntu\";\n"
-"color: rgb(255, 255, 255);")
+        self.label_76.setStyleSheet("")
         self.label_76.setObjectName("label_76")
         self.formLayout_6.setWidget(4, QtWidgets.QFormLayout.LabelRole, self.label_76)
         self.cb_Asignar_Rol_idUsuario = QtWidgets.QComboBox(self.frame_35)
@@ -919,8 +1327,7 @@ class Ui_Seguridad(object):
         self.cb_Asignar_Rol_idUsuario.setObjectName("cb_Asignar_Rol_idUsuario")
         self.formLayout_6.setWidget(4, QtWidgets.QFormLayout.FieldRole, self.cb_Asignar_Rol_idUsuario)
         self.label_77 = QtWidgets.QLabel(self.frame_35)
-        self.label_77.setStyleSheet("font: 14pt \"Ubuntu\";\n"
-"color: rgb(255, 255, 255);")
+        self.label_77.setStyleSheet("")
         self.label_77.setObjectName("label_77")
         self.formLayout_6.setWidget(6, QtWidgets.QFormLayout.LabelRole, self.label_77)
         self.cb_Asignar_Rol_idRol = QtWidgets.QComboBox(self.frame_35)
@@ -1064,7 +1471,60 @@ class Ui_Seguridad(object):
         self.verticalLayout_30.setObjectName("verticalLayout_30")
         self.tb_Asignar_Rol = QtWidgets.QTableWidget(self.frame_33)
         self.tb_Asignar_Rol.viewport().setProperty("cursor", QtGui.QCursor(QtCore.Qt.PointingHandCursor))
-        self.tb_Asignar_Rol.setStyleSheet("background-color: rgb(255, 255, 255);")
+        self.tb_Asignar_Rol.setStyleSheet("QTableView QHeaderView::section {\n"
+"    font-size: 12px;\n"
+"    font-weight: bold;\n"
+"    background-color: lightgray;\n"
+"    padding: 4px;\n"
+"    border: none;\n"
+"    border-bottom: 1px solid gray;\n"
+"}\n"
+"\n"
+"QTableView {\n"
+"    background-color: white;\n"
+"    border: 1px solid gray;\n"
+"}\n"
+"\n"
+"QTableView QScrollBar:vertical {\n"
+"    width: 14px;\n"
+"    background-color: lightgray;\n"
+"}\n"
+"\n"
+"QTableView QScrollBar::handle:vertical {\n"
+"    background-color: gray;\n"
+"    border-radius: 7px;\n"
+"}\n"
+"\n"
+"QTableView QScrollBar::add-line:vertical,\n"
+"QTableView QScrollBar::sub-line:vertical {\n"
+"    background-color: transparent;\n"
+"}\n"
+"\n"
+"QTableView QScrollBar::add-page:vertical,\n"
+"QTableView QScrollBar::sub-page:vertical {\n"
+"    background-color: transparent;\n"
+"}\n"
+"\n"
+"QTableView QScrollBar:horizontal {\n"
+"    height: 14px;\n"
+"    background-color: lightgray;\n"
+"}\n"
+"\n"
+"QTableView QScrollBar::handle:horizontal {\n"
+"    background-color: gray;\n"
+"    border-radius: 7px;\n"
+"}\n"
+"\n"
+"QTableView QScrollBar::add-line:horizontal,\n"
+"QTableView QScrollBar::sub-line:horizontal {\n"
+"    background-color: transparent;\n"
+"}\n"
+"\n"
+"QTableView QScrollBar::add-page:horizontal,\n"
+"QTableView QScrollBar::sub-page:horizontal {\n"
+"    background-color: transparent;\n"
+"}\n"
+"")
         self.tb_Asignar_Rol.setFrameShape(QtWidgets.QFrame.NoFrame)
         self.tb_Asignar_Rol.setSizeAdjustPolicy(QtWidgets.QAbstractScrollArea.AdjustToContents)
         self.tb_Asignar_Rol.setObjectName("tb_Asignar_Rol")
@@ -1104,7 +1564,74 @@ class Ui_Seguridad(object):
         self.verticalLayout_22.setSpacing(6)
         self.verticalLayout_22.setObjectName("verticalLayout_22")
         self.frame_38 = QtWidgets.QFrame(self.tab_4)
-        self.frame_38.setStyleSheet("")
+        self.frame_38.setStyleSheet("QFrame{\n"
+"    background-color: rgb(222, 221, 218);\n"
+"    border:none;\n"
+"}\n"
+"QPushButton {\n"
+"    background-color:rgb(255, 255, 255);\n"
+"    border:1px solid rgb(100,100,100);\n"
+"    color:rgb(50,50,50);\n"
+"    padding: 8px 16px;\n"
+"    border-radius: 6px;\n"
+"    font-size: 14px;\n"
+"}\n"
+"\n"
+"QPushButton:hover {\n"
+"    background-color: #D6D2D1;\n"
+"}\n"
+"\n"
+"QPushButton:pressed {\n"
+"    background-color: #52c7ff;\n"
+"}\n"
+"\n"
+"QLabel{\n"
+"        font-weight:500;\n"
+"}\n"
+"\n"
+"*{\n"
+"        font-family:\"Inter\", sans-serif;\n"
+"        \n"
+"}\n"
+"\n"
+"QFrame{\n"
+"        background-color: rgb(222, 221, 218);\n"
+"        border-radius:10%;\n"
+"}\n"
+"\n"
+"QLineEdit {\n"
+"    background-color: white;\n"
+"    border: 1px solid gray;\n"
+"    padding: 4px;\n"
+"    border-radius: 6px;\n"
+"    font-size: 12px;\n"
+"}\n"
+"\n"
+"QLineEdit:focus {\n"
+"    border-color: #3daee9;\n"
+"    outline: none;\n"
+"}\n"
+"\n"
+"QLineEdit::hover {\n"
+"    background-color: #f0f0f0;\n"
+"}\n"
+"\n"
+"QTextEdit {\n"
+"    background-color: white;\n"
+"    border: 1px solid gray;\n"
+"    padding: 4px;\n"
+"    border-radius: 6px;\n"
+"    font-size: 12px;\n"
+"}\n"
+"\n"
+"QTextEdit:focus {\n"
+"    border-color: #3daee9;\n"
+"    outline: none;\n"
+"}\n"
+"\n"
+"QTextEdit::hover {\n"
+"    background-color: #f0f0f0;\n"
+"}")
         self.frame_38.setFrameShape(QtWidgets.QFrame.StyledPanel)
         self.frame_38.setFrameShadow(QtWidgets.QFrame.Raised)
         self.frame_38.setObjectName("frame_38")
@@ -1113,6 +1640,7 @@ class Ui_Seguridad(object):
         self.horizontalLayout_13.setSpacing(6)
         self.horizontalLayout_13.setObjectName("horizontalLayout_13")
         self.frame_39 = QtWidgets.QFrame(self.frame_38)
+        self.frame_39.setStyleSheet("")
         self.frame_39.setFrameShape(QtWidgets.QFrame.StyledPanel)
         self.frame_39.setFrameShadow(QtWidgets.QFrame.Raised)
         self.frame_39.setObjectName("frame_39")
@@ -1122,8 +1650,7 @@ class Ui_Seguridad(object):
         spacerItem24 = QtWidgets.QSpacerItem(20, 40, QtWidgets.QSizePolicy.Minimum, QtWidgets.QSizePolicy.Expanding)
         self.formLayout_10.setItem(0, QtWidgets.QFormLayout.FieldRole, spacerItem24)
         self.label_78 = QtWidgets.QLabel(self.frame_39)
-        self.label_78.setStyleSheet("font: 14pt \"Ubuntu\";\n"
-"color: rgb(255, 255, 255);")
+        self.label_78.setStyleSheet("")
         self.label_78.setObjectName("label_78")
         self.formLayout_10.setWidget(2, QtWidgets.QFormLayout.LabelRole, self.label_78)
         self.line_Asignar_Opcion_Id = QtWidgets.QLineEdit(self.frame_39)
@@ -1135,8 +1662,7 @@ class Ui_Seguridad(object):
         spacerItem25 = QtWidgets.QSpacerItem(20, 40, QtWidgets.QSizePolicy.Minimum, QtWidgets.QSizePolicy.Expanding)
         self.formLayout_10.setItem(3, QtWidgets.QFormLayout.FieldRole, spacerItem25)
         self.label_79 = QtWidgets.QLabel(self.frame_39)
-        self.label_79.setStyleSheet("font: 14pt \"Ubuntu\";\n"
-"color: rgb(255, 255, 255);")
+        self.label_79.setStyleSheet("")
         self.label_79.setObjectName("label_79")
         self.formLayout_10.setWidget(4, QtWidgets.QFormLayout.LabelRole, self.label_79)
         self.cb_Asignar_Opcion_idRol = QtWidgets.QComboBox(self.frame_39)
@@ -1147,8 +1673,7 @@ class Ui_Seguridad(object):
         spacerItem26 = QtWidgets.QSpacerItem(20, 40, QtWidgets.QSizePolicy.Minimum, QtWidgets.QSizePolicy.Expanding)
         self.formLayout_10.setItem(5, QtWidgets.QFormLayout.FieldRole, spacerItem26)
         self.label_80 = QtWidgets.QLabel(self.frame_39)
-        self.label_80.setStyleSheet("font: 14pt \"Ubuntu\";\n"
-"color: rgb(255, 255, 255);")
+        self.label_80.setStyleSheet("")
         self.label_80.setObjectName("label_80")
         self.formLayout_10.setWidget(6, QtWidgets.QFormLayout.LabelRole, self.label_80)
         self.cb_Asignar_Opcion_idOpcion = QtWidgets.QComboBox(self.frame_39)
@@ -1290,7 +1815,60 @@ class Ui_Seguridad(object):
         self.verticalLayout_32.setObjectName("verticalLayout_32")
         self.tb_Asignar_Opcion = QtWidgets.QTableWidget(self.frame_37)
         self.tb_Asignar_Opcion.viewport().setProperty("cursor", QtGui.QCursor(QtCore.Qt.PointingHandCursor))
-        self.tb_Asignar_Opcion.setStyleSheet("background-color: rgb(255, 255, 255);")
+        self.tb_Asignar_Opcion.setStyleSheet("QTableView QHeaderView::section {\n"
+"    font-size: 12px;\n"
+"    font-weight: bold;\n"
+"    background-color: lightgray;\n"
+"    padding: 4px;\n"
+"    border: none;\n"
+"    border-bottom: 1px solid gray;\n"
+"}\n"
+"\n"
+"QTableView {\n"
+"    background-color: white;\n"
+"    border: 1px solid gray;\n"
+"}\n"
+"\n"
+"QTableView QScrollBar:vertical {\n"
+"    width: 14px;\n"
+"    background-color: lightgray;\n"
+"}\n"
+"\n"
+"QTableView QScrollBar::handle:vertical {\n"
+"    background-color: gray;\n"
+"    border-radius: 7px;\n"
+"}\n"
+"\n"
+"QTableView QScrollBar::add-line:vertical,\n"
+"QTableView QScrollBar::sub-line:vertical {\n"
+"    background-color: transparent;\n"
+"}\n"
+"\n"
+"QTableView QScrollBar::add-page:vertical,\n"
+"QTableView QScrollBar::sub-page:vertical {\n"
+"    background-color: transparent;\n"
+"}\n"
+"\n"
+"QTableView QScrollBar:horizontal {\n"
+"    height: 14px;\n"
+"    background-color: lightgray;\n"
+"}\n"
+"\n"
+"QTableView QScrollBar::handle:horizontal {\n"
+"    background-color: gray;\n"
+"    border-radius: 7px;\n"
+"}\n"
+"\n"
+"QTableView QScrollBar::add-line:horizontal,\n"
+"QTableView QScrollBar::sub-line:horizontal {\n"
+"    background-color: transparent;\n"
+"}\n"
+"\n"
+"QTableView QScrollBar::add-page:horizontal,\n"
+"QTableView QScrollBar::sub-page:horizontal {\n"
+"    background-color: transparent;\n"
+"}\n"
+"")
         self.tb_Asignar_Opcion.setFrameShape(QtWidgets.QFrame.NoFrame)
         self.tb_Asignar_Opcion.setSizeAdjustPolicy(QtWidgets.QAbstractScrollArea.AdjustToContents)
         self.tb_Asignar_Opcion.setObjectName("tb_Asignar_Opcion")

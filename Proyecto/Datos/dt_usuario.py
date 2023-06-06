@@ -1,7 +1,6 @@
 # Francisco de Jesús Melendez Simplina
 
-from Datos import Conexion
-from Entidades.usuarios import Usuarios
+from Proyecto.Datos import Conexion
 
 
 class Dt_Usuarios:
@@ -89,8 +88,9 @@ class Dt_Usuarios:
 
             existe = False
             cursor = Conexion.Conexion.obtenerConexion().cursor()
-            cursor.execute(f"Select * FROM usuario WHERE user = '{Usuarios.user}' AND clave = '{Usuarios.password}' ")
+            cursor.execute(f'''Select * FROM usuario WHERE user = {Usuarios.user} AND clave = {Usuarios.password}''')
             consulta = cursor.fetchall()
+            print(consulta)
 
             if consulta:
                 existe = True

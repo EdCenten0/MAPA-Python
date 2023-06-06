@@ -4,10 +4,10 @@ import sys
 from PyQt5 import QtWidgets
 from PyQt5.QtWidgets import QApplication, QAbstractItemView, QTableWidget, QMessageBox, QTableWidgetItem
 
-from Datos import dt_materiales
-from Datos.dt_Pedidos import Dt_Pedidos
-from Entidades.materiales import Materiales
-from Interfaces import vw_materiales
+from Proyecto.Datos import dt_materiales
+from Proyecto.Datos.dt_Pedidos import Dt_Pedidos
+from Proyecto.Entidades.materiales import Materiales
+from Proyecto.Interfaces import vw_materiales
 
 class vw_materiales_funciones(QtWidgets.QMainWindow, vw_materiales.Ui_mw_materiales):
     def __init__(self, parent = None):

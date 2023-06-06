@@ -1,5 +1,4 @@
 import sys
-import PyQt5
 from PyQt5 import QtWidgets
 from PyQt5.QtWidgets import QApplication, QAbstractItemView
 from Datos import dt_Pedidos, dt_materiales

@@ -10,7 +10,7 @@
 
 from PyQt5 import QtCore, QtGui, QtWidgets
 
-from Recursos import Recursos
+from Proyecto.Recursos import Recursos
 
 
 class Ui_MainWindow(object):

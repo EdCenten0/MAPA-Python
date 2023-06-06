@@ -1,7 +1,4 @@
-import pymysql.cursors
-import sys
-from Datos.Conexion import Conexion
-from Entidades.taller import Taller
+from Proyecto.Datos.Conexion import Conexion
 
 class Dt_taller:
 
