@@ -2,9 +2,9 @@ import sys
 
 from PyQt5.QtCore import QDate
 from PyQt5.QtWidgets import QMainWindow, QApplication, QTableWidgetItem, QMessageBox
-from Proyecto.Datos import dt_facturas
-from Proyecto.Entidades import facturas
-from Proyecto.Interfaces import vw_Factura
+from Datos import dt_facturas
+from Entidades import facturas
+from Interfaces import vw_Factura
 
 
 class Ui_MainWindow(QMainWindow, vw_Factura.Ui_MainWindow):
