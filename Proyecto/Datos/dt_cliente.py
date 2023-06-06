@@ -88,7 +88,7 @@ class Dt_Clientes:
         return indicador
 
     @classmethod
-    def ExisteClientes(cls,cliente):
+    def ExisteClientes(cls, cliente):
         try:
 
             existe = False
@@ -103,6 +103,22 @@ class Dt_Clientes:
 
         except Exception as ex:
             print(f"Error en Cliente Existente:{ex}")
+
+    @classmethod
+    def buscarIndexCliente(cls, id):
+        try:
+            listarVenta = cls.listarVentas()
+            indice = 0
+
+            for row in listarVenta:
+                indice += 1
+                if row["id_venta"] == id:
+                    break
+
+            return indice
+
+        except Exception as ex:
+            print(f"Error al buscar indice cliente: {ex}")
 
 if __name__ == '__main__':
     print(Dt_Clientes.listarClientes())
