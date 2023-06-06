@@ -1,11 +1,11 @@
 import sys
-import PyQt5
 from PyQt5 import QtWidgets
 from PyQt5.QtWidgets import QApplication, QAbstractItemView
-from Datos import dt_Pedidos
+from Datos import dt_Pedidos, dt_materiales
 from Datos.dt_Pedidos import Dt_Pedidos
 from Datos.dt_cliente import Dt_Clientes
-from Interfaces import vw_vista_previa_pedido
+from Interfaces import vw_vista_previa_pedido, vw_materiales_funciones
+
 
 # Carlos Eduardo Chavarria Centeno (EdCenten0)
 # Universidad Centroamericana
@@ -13,11 +13,14 @@ class VwVistaPreviaPedidosFunciones(QtWidgets.QMainWindow, vw_vista_previa_pedid
     def __init__(self, parent=None):
         super(VwVistaPreviaPedidosFunciones, self).__init__(parent)
         self.setupUi(self)
-
+        self.openedForms = []
 
         # Llenado de combobox
         self.llenarComboSeleccion(Dt_Pedidos.listarPedidos())
         self.comboBox_2.currentIndexChanged.connect(lambda : self.obtenerRegistroSeleccionadoComboBox())
+        self.pushButton_2.clicked.connect(lambda: self.setMaterialesPorPedido(vw_materiales_funciones.vw_materiales_funciones()))
+        #Materiales por pedido
+        self.comboBox_2.currentIndexChanged.connect(self.setMaterialesAgregados)
 
     def llenarComboSeleccion(self, datos):
         self.comboBox_2.clear()
@@ -26,6 +29,7 @@ class VwVistaPreviaPedidosFunciones(QtWidgets.QMainWindow, vw_vista_previa_pedid
 
         #Hice uso de esta funcion aqui para que cuando se cargue la ventana se muestre la info seleccionada por defecto
         self.obtenerRegistroSeleccionadoComboBox()
+        self.setMaterialesAgregados()
 
     def obtenerRegistroSeleccionadoComboBox(cls):
 
@@ -60,6 +64,34 @@ class VwVistaPreviaPedidosFunciones(QtWidgets.QMainWindow, vw_vista_previa_pedid
         cls.lineEdit.setText(nombre_apellido_cliente)
         cls.textEdit.setText(descripcion)
         cls.calendarWidget.setSelectedDate(date)
+
+    def setMaterialesAgregados(self):
+        id_pedido = self.comboBox_2.currentData()
+        nMateriales = dt_materiales.Dt_materiales.contarMaterialesPorPedido(id_pedido)
+        self.label.setText(f"{str(nMateriales)} materiales agregados...")
+
+    def setMaterialesPorPedido(self, form):
+
+        while self.horizontalLayout.count() > 0:
+            item = self.horizontalLayout.takeAt(0)
+            widget = item.widget()
+            if widget:
+                widget.deleteLater()
+
+        # Cierra todas las ventanas abiertas
+        for openedForm in self.openedForms:
+            openedForm.close()
+
+
+
+        # Limpia la lista de ventanas abiertas
+        self.openedForms = []
+
+        # Agrega la nueva ventana al ly_contenedor
+        self.horizontalLayout.addWidget(form)
+        self.openedForms.append(form)
+
+
 
 if __name__ == '__main__':
     app = QApplication(sys.argv)

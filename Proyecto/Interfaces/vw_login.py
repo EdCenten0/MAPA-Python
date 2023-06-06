@@ -82,38 +82,38 @@ class Ui_Login(object):
         self.label_4.setStyleSheet("font-weight:500;\n"
 "font-size:22px;")
         self.label_4.setObjectName("label_4")
-        self.line_Clave = QtWidgets.QLineEdit(self.frame_4)
-        self.line_Clave.setGeometry(QtCore.QRect(170, 110, 391, 40))
+        self.line_Usuario = QtWidgets.QLineEdit(self.frame_4)
+        self.line_Usuario.setGeometry(QtCore.QRect(170, 110, 391, 40))
         sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Fixed)
         sizePolicy.setHorizontalStretch(0)
         sizePolicy.setVerticalStretch(0)
-        sizePolicy.setHeightForWidth(self.line_Clave.sizePolicy().hasHeightForWidth())
-        self.line_Clave.setSizePolicy(sizePolicy)
-        self.line_Clave.setLayoutDirection(QtCore.Qt.LeftToRight)
-        self.line_Clave.setStyleSheet("QLineEdit {\n"
+        sizePolicy.setHeightForWidth(self.line_Usuario.sizePolicy().hasHeightForWidth())
+        self.line_Usuario.setSizePolicy(sizePolicy)
+        self.line_Usuario.setLayoutDirection(QtCore.Qt.LeftToRight)
+        self.line_Usuario.setStyleSheet("QLineEdit {\n"
 "    border: 3px solid rgba(246, 143, 137, 255);\n"
 "    border-radius:    10%;\n"
 "    text-align: left;\n"
 "    font-weight:100;\n"
 "}")
-        self.line_Clave.setAlignment(QtCore.Qt.AlignLeading|QtCore.Qt.AlignLeft|QtCore.Qt.AlignVCenter)
-        self.line_Clave.setCursorMoveStyle(QtCore.Qt.LogicalMoveStyle)
-        self.line_Clave.setObjectName("line_Clave")
+        self.line_Usuario.setAlignment(QtCore.Qt.AlignLeading|QtCore.Qt.AlignLeft|QtCore.Qt.AlignVCenter)
+        self.line_Usuario.setCursorMoveStyle(QtCore.Qt.LogicalMoveStyle)
+        self.line_Usuario.setObjectName("line_Usuario")
         self.label_2 = QtWidgets.QLabel(self.frame_4)
         self.label_2.setGeometry(QtCore.QRect(10, 160, 151, 61))
         self.label_2.setStyleSheet("font-weight:500;\n"
 "font-size:22px;")
         self.label_2.setObjectName("label_2")
-        self.line_Usuario = QtWidgets.QLineEdit(self.frame_4)
-        self.line_Usuario.setGeometry(QtCore.QRect(170, 170, 391, 40))
-        self.line_Usuario.setStyleSheet("QLineEdit {\n"
+        self.line_Clave = QtWidgets.QLineEdit(self.frame_4)
+        self.line_Clave.setGeometry(QtCore.QRect(170, 170, 391, 40))
+        self.line_Clave.setStyleSheet("QLineEdit {\n"
 "    border: 3px solid rgba(246, 143, 137, 255);\n"
 "    border-radius:10%;\n"
 "    font-weight:100;\n"
 "}")
-        self.line_Usuario.setEchoMode(QtWidgets.QLineEdit.Password)
-        self.line_Usuario.setAlignment(QtCore.Qt.AlignLeading|QtCore.Qt.AlignLeft|QtCore.Qt.AlignVCenter)
-        self.line_Usuario.setObjectName("line_Usuario")
+        self.line_Clave.setEchoMode(QtWidgets.QLineEdit.Password)
+        self.line_Clave.setAlignment(QtCore.Qt.AlignLeading|QtCore.Qt.AlignLeft|QtCore.Qt.AlignVCenter)
+        self.line_Clave.setObjectName("line_Clave")
         self.bt_ingresar = QtWidgets.QPushButton(self.frame_4)
         self.bt_ingresar.setGeometry(QtCore.QRect(170, 230, 391, 40))
         self.bt_ingresar.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
@@ -157,9 +157,9 @@ class Ui_Login(object):
         self.label_3.setText(_translate("Login", "Inicia sesión con tu usuario de "))
         self.label.setText(_translate("Login", "Iniciar Sesión"))
         self.label_4.setText(_translate("Login", "Usuario:"))
-        self.line_Clave.setPlaceholderText(_translate("Login", "Ingrese su nombre de usuario"))
+        self.line_Usuario.setPlaceholderText(_translate("Login", "Ingrese su nombre de usuario"))
         self.label_2.setText(_translate("Login", "Contraseña:"))
-        self.line_Usuario.setPlaceholderText(_translate("Login", "Ingrese su contraseña"))
+        self.line_Clave.setPlaceholderText(_translate("Login", "Ingrese su contraseña"))
         self.bt_ingresar.setText(_translate("Login", "Ingresar"))
         self.label_5.setText(_translate("Login", "MAPA Interface"))
         self.bt_crear_usuario.setText(_translate("Login", "Crear usuario"))

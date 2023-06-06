@@ -1,9 +1,9 @@
-import Proyecto.Datos.Conexion
+from Proyecto.Datos import Conexion
 
 class Dt_Ventas:
     @classmethod
     def listarVentas(cls):
-        cursor = Proyecto.Conexion.Conexion.obtenerConexion().cursor()
+        cursor = Conexion.Conexion.obtenerConexion().cursor()
         cursor.execute("SELECT * FROM ventas")
         querys = cursor.fetchall()
         cursor.close()

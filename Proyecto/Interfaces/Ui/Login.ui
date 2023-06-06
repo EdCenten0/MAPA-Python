@@ -213,7 +213,7 @@ font-size:22px;</string>
               <string>Usuario:</string>
              </property>
             </widget>
-            <widget class="QLineEdit" name="line_Clave">
+            <widget class="QLineEdit" name="line_Usuario">
              <property name="geometry">
               <rect>
                <x>170</x>
@@ -266,7 +266,7 @@ font-size:22px;</string>
               <string>Contraseña:</string>
              </property>
             </widget>
-            <widget class="QLineEdit" name="line_Usuario">
+            <widget class="QLineEdit" name="line_Clave">
              <property name="geometry">
               <rect>
                <x>170</x>

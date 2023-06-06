@@ -14,58 +14,454 @@ from PyQt5 import QtCore, QtGui, QtWidgets
 class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
         MainWindow.setObjectName("MainWindow")
-        MainWindow.resize(800, 600)
-        MainWindow.setStyleSheet("background-color: rgb(11, 36, 71);")
+        MainWindow.resize(1089, 817)
+        MainWindow.setStyleSheet("")
         self.centralwidget = QtWidgets.QWidget(MainWindow)
+        self.centralwidget.setStyleSheet("")
         self.centralwidget.setObjectName("centralwidget")
-        self.line_Cliente_Nombre = QtWidgets.QLineEdit(self.centralwidget)
-        self.line_Cliente_Nombre.setGeometry(QtCore.QRect(50, 20, 201, 25))
-        self.line_Cliente_Nombre.setStyleSheet("background-color: rgb(246, 245, 244);")
-        self.line_Cliente_Nombre.setObjectName("line_Cliente_Nombre")
-        self.label_3 = QtWidgets.QLabel(self.centralwidget)
-        self.label_3.setGeometry(QtCore.QRect(10, 130, 91, 17))
-        self.label_3.setStyleSheet("font: 14pt \"Ubuntu\";\n"
-"color: rgb(255, 255, 255);")
-        self.label_3.setObjectName("label_3")
-        self.bt_Eliminar_Cliente = QtWidgets.QPushButton(self.centralwidget)
-        self.bt_Eliminar_Cliente.setGeometry(QtCore.QRect(670, 120, 101, 31))
-        self.bt_Eliminar_Cliente.setStyleSheet("background-color: rgb(165, 215, 232);")
-        self.bt_Eliminar_Cliente.setObjectName("bt_Eliminar_Cliente")
-        self.label_6 = QtWidgets.QLabel(self.centralwidget)
-        self.label_6.setGeometry(QtCore.QRect(320, 180, 71, 17))
-        self.label_6.setStyleSheet("font: 14pt \"Ubuntu\";\n"
-"color: rgb(255, 255, 255);")
-        self.label_6.setObjectName("label_6")
-        self.line_Cliente_Apellido = QtWidgets.QLineEdit(self.centralwidget)
-        self.line_Cliente_Apellido.setGeometry(QtCore.QRect(400, 20, 241, 25))
-        self.line_Cliente_Apellido.setStyleSheet("background-color: rgb(246, 245, 244);")
-        self.line_Cliente_Apellido.setObjectName("line_Cliente_Apellido")
-        self.bt_Guardar_Cliente = QtWidgets.QPushButton(self.centralwidget)
-        self.bt_Guardar_Cliente.setGeometry(QtCore.QRect(670, 20, 101, 31))
-        self.bt_Guardar_Cliente.setStyleSheet("background-color: rgb(165, 215, 232);")
-        self.bt_Guardar_Cliente.setObjectName("bt_Guardar_Cliente")
-        self.label = QtWidgets.QLabel(self.centralwidget)
-        self.label.setGeometry(QtCore.QRect(10, 20, 31, 17))
-        self.label.setStyleSheet("font: 14pt \"Ubuntu\";\n"
-"color: rgb(255, 255, 255);")
+        self.gridLayout_2 = QtWidgets.QGridLayout(self.centralwidget)
+        self.gridLayout_2.setObjectName("gridLayout_2")
+        self.frame = QtWidgets.QFrame(self.centralwidget)
+        self.frame.setStyleSheet("QFrame{\n"
+"    background-color: rgb(222, 221, 218);\n"
+"    border:none;\n"
+"}\n"
+"QPushButton {\n"
+"    background-color:rgb(255, 255, 255);\n"
+"    border:1px solid rgb(100,100,100);\n"
+"    color:rgb(50,50,50);\n"
+"    padding: 8px 16px;\n"
+"    border-radius: 6px;\n"
+"    font-size: 14px;\n"
+"}\n"
+"\n"
+"QPushButton:hover {\n"
+"    background-color: #D6D2D1;\n"
+"}\n"
+"\n"
+"QPushButton:pressed {\n"
+"    background-color: #52c7ff;\n"
+"}\n"
+"\n"
+"QLabel{\n"
+"        font-weight:500;\n"
+"}\n"
+"\n"
+"*{\n"
+"        font-family:\"Inter\", sans-serif;\n"
+"        \n"
+"}\n"
+"\n"
+"QFrame{\n"
+"        background-color: rgb(222, 221, 218);\n"
+"        border-radius:10%;\n"
+"}\n"
+"\n"
+"QLineEdit {\n"
+"    background-color: white;\n"
+"    border: 1px solid gray;\n"
+"    padding: 4px;\n"
+"    border-radius: 6px;\n"
+"    font-size: 12px;\n"
+"}\n"
+"\n"
+"QLineEdit:focus {\n"
+"    border-color: #3daee9;\n"
+"    outline: none;\n"
+"}\n"
+"\n"
+"QLineEdit::hover {\n"
+"    background-color: #f0f0f0;\n"
+"}\n"
+"\n"
+"QTextEdit {\n"
+"    background-color: white;\n"
+"    border: 1px solid gray;\n"
+"    padding: 4px;\n"
+"    border-radius: 6px;\n"
+"    font-size: 12px;\n"
+"}\n"
+"\n"
+"QTextEdit:focus {\n"
+"    border-color: #3daee9;\n"
+"    outline: none;\n"
+"}\n"
+"\n"
+"QTextEdit::hover {\n"
+"    background-color: #f0f0f0;\n"
+"}\n"
+"\n"
+"QLabel{\n"
+"        font-weight:500;\n"
+"}\n"
+"")
+        self.frame.setFrameShape(QtWidgets.QFrame.StyledPanel)
+        self.frame.setFrameShadow(QtWidgets.QFrame.Raised)
+        self.frame.setObjectName("frame")
+        self.gridLayout = QtWidgets.QGridLayout(self.frame)
+        self.gridLayout.setObjectName("gridLayout")
+        self.label = QtWidgets.QLabel(self.frame)
+        self.label.setMaximumSize(QtCore.QSize(50, 16777215))
+        self.label.setStyleSheet("")
         self.label.setObjectName("label")
-        self.label_2 = QtWidgets.QLabel(self.centralwidget)
-        self.label_2.setGeometry(QtCore.QRect(320, 20, 81, 21))
-        self.label_2.setStyleSheet("font: 14pt \"Ubuntu\";\n"
-"color: rgb(255, 255, 255);")
+        self.gridLayout.addWidget(self.label, 0, 0, 1, 1)
+        self.line_Cliente_Nombre = QtWidgets.QLineEdit(self.frame)
+        self.line_Cliente_Nombre.setStyleSheet("QLineEdit {\n"
+"    background-color: white;\n"
+"    border: 1px solid gray;\n"
+"    padding: 4px;\n"
+"    border-radius: 6px;\n"
+"    font-size: 12px;\n"
+"}\n"
+"\n"
+"QLineEdit:focus {\n"
+"    border-color: #3daee9;\n"
+"    outline: none;\n"
+"}\n"
+"\n"
+"QLineEdit::hover {\n"
+"    background-color: #f0f0f0;\n"
+"}\n"
+"")
+        self.line_Cliente_Nombre.setObjectName("line_Cliente_Nombre")
+        self.gridLayout.addWidget(self.line_Cliente_Nombre, 0, 1, 1, 1)
+        self.label_2 = QtWidgets.QLabel(self.frame)
+        self.label_2.setStyleSheet("")
         self.label_2.setObjectName("label_2")
-        self.bt_Editar_Cliente = QtWidgets.QPushButton(self.centralwidget)
-        self.bt_Editar_Cliente.setGeometry(QtCore.QRect(670, 70, 101, 31))
-        self.bt_Editar_Cliente.setStyleSheet("background-color: rgb(165, 215, 232);")
+        self.gridLayout.addWidget(self.label_2, 0, 2, 1, 1)
+        self.line_Cliente_Apellido = QtWidgets.QLineEdit(self.frame)
+        self.line_Cliente_Apellido.setEnabled(True)
+        self.line_Cliente_Apellido.setMaximumSize(QtCore.QSize(300, 16777215))
+        self.line_Cliente_Apellido.setStyleSheet("QLineEdit {\n"
+"    background-color: white;\n"
+"    border: 1px solid gray;\n"
+"    padding: 4px;\n"
+"    border-radius: 6px;\n"
+"    font-size: 12px;\n"
+"}\n"
+"\n"
+"QLineEdit:focus {\n"
+"    border-color: #3daee9;\n"
+"    outline: none;\n"
+"}\n"
+"\n"
+"QLineEdit::hover {\n"
+"    background-color: #f0f0f0;\n"
+"}\n"
+"")
+        self.line_Cliente_Apellido.setObjectName("line_Cliente_Apellido")
+        self.gridLayout.addWidget(self.line_Cliente_Apellido, 0, 3, 1, 1)
+        self.bt_Guardar_Cliente = QtWidgets.QPushButton(self.frame)
+        self.bt_Guardar_Cliente.setMinimumSize(QtCore.QSize(75, 28))
+        self.bt_Guardar_Cliente.setMaximumSize(QtCore.QSize(250, 16777215))
+        self.bt_Guardar_Cliente.setStyleSheet("QPushButton {\n"
+"    background-color:rgb(255, 255, 255);\n"
+"    border:1px solid rgb(100,100,100);\n"
+"    color:rgb(50,50,50);\n"
+"    padding: 8px 16px;\n"
+"    border-radius: 6px;\n"
+"    font-size: 14px;\n"
+"}\n"
+"\n"
+"QPushButton:hover {\n"
+"    background-color: #D6D2D1;\n"
+"}\n"
+"\n"
+"QPushButton:pressed {\n"
+"    background-color: #52c7ff;\n"
+"}")
+        self.bt_Guardar_Cliente.setObjectName("bt_Guardar_Cliente")
+        self.gridLayout.addWidget(self.bt_Guardar_Cliente, 0, 4, 1, 1)
+        self.label_7 = QtWidgets.QLabel(self.frame)
+        self.label_7.setStyleSheet("")
+        self.label_7.setObjectName("label_7")
+        self.gridLayout.addWidget(self.label_7, 1, 0, 1, 1)
+        self.line_Cliente_Apellido_5 = QtWidgets.QLineEdit(self.frame)
+        self.line_Cliente_Apellido_5.setStyleSheet("QLineEdit {\n"
+"    background-color: white;\n"
+"    border: 1px solid gray;\n"
+"    padding: 4px;\n"
+"    border-radius: 6px;\n"
+"    font-size: 12px;\n"
+"}\n"
+"\n"
+"QLineEdit:focus {\n"
+"    border-color: #3daee9;\n"
+"    outline: none;\n"
+"}\n"
+"\n"
+"QLineEdit::hover {\n"
+"    background-color: #f0f0f0;\n"
+"}\n"
+"")
+        self.line_Cliente_Apellido_5.setObjectName("line_Cliente_Apellido_5")
+        self.gridLayout.addWidget(self.line_Cliente_Apellido_5, 1, 1, 1, 1)
+        self.label_4 = QtWidgets.QLabel(self.frame)
+        self.label_4.setStyleSheet("")
+        self.label_4.setObjectName("label_4")
+        self.gridLayout.addWidget(self.label_4, 1, 2, 1, 1)
+        self.line_Cliente_Apellido_2 = QtWidgets.QLineEdit(self.frame)
+        self.line_Cliente_Apellido_2.setMaximumSize(QtCore.QSize(300, 16777215))
+        self.line_Cliente_Apellido_2.setStyleSheet("QLineEdit {\n"
+"    background-color: white;\n"
+"    border: 1px solid gray;\n"
+"    padding: 4px;\n"
+"    border-radius: 6px;\n"
+"    font-size: 12px;\n"
+"}\n"
+"\n"
+"QLineEdit:focus {\n"
+"    border-color: #3daee9;\n"
+"    outline: none;\n"
+"}\n"
+"\n"
+"QLineEdit::hover {\n"
+"    background-color: #f0f0f0;\n"
+"}\n"
+"")
+        self.line_Cliente_Apellido_2.setObjectName("line_Cliente_Apellido_2")
+        self.gridLayout.addWidget(self.line_Cliente_Apellido_2, 1, 3, 1, 1)
+        self.bt_Editar_Cliente = QtWidgets.QPushButton(self.frame)
+        self.bt_Editar_Cliente.setMinimumSize(QtCore.QSize(0, 28))
+        self.bt_Editar_Cliente.setStyleSheet("QPushButton {\n"
+"    background-color:rgb(255, 255, 255);\n"
+"    border:1px solid rgb(100,100,100);\n"
+"    color:rgb(50,50,50);\n"
+"    padding: 8px 16px;\n"
+"    border-radius: 6px;\n"
+"    font-size: 14px;\n"
+"}\n"
+"\n"
+"QPushButton:hover {\n"
+"    background-color: #D6D2D1;\n"
+"}\n"
+"\n"
+"QPushButton:pressed {\n"
+"    background-color: #52c7ff;\n"
+"}")
         self.bt_Editar_Cliente.setObjectName("bt_Editar_Cliente")
-        self.line_Cliente_Direccion = QtWidgets.QLineEdit(self.centralwidget)
-        self.line_Cliente_Direccion.setGeometry(QtCore.QRect(100, 130, 201, 21))
-        self.line_Cliente_Direccion.setStyleSheet("background-color: rgb(246, 245, 244);")
+        self.gridLayout.addWidget(self.bt_Editar_Cliente, 1, 4, 1, 1)
+        self.label_3 = QtWidgets.QLabel(self.frame)
+        self.label_3.setStyleSheet("")
+        self.label_3.setObjectName("label_3")
+        self.gridLayout.addWidget(self.label_3, 2, 0, 1, 1)
+        self.line_Cliente_Direccion = QtWidgets.QLineEdit(self.frame)
+        self.line_Cliente_Direccion.setStyleSheet("QLineEdit {\n"
+"    background-color: white;\n"
+"    border: 1px solid gray;\n"
+"    padding: 4px;\n"
+"    border-radius: 6px;\n"
+"    font-size: 12px;\n"
+"}\n"
+"\n"
+"QLineEdit:focus {\n"
+"    border-color: #3daee9;\n"
+"    outline: none;\n"
+"}\n"
+"\n"
+"QLineEdit::hover {\n"
+"    background-color: #f0f0f0;\n"
+"}\n"
+"")
         self.line_Cliente_Direccion.setObjectName("line_Cliente_Direccion")
-        self.tb_Cliente = QtWidgets.QTableWidget(self.centralwidget)
-        self.tb_Cliente.setGeometry(QtCore.QRect(10, 260, 781, 301))
-        self.tb_Cliente.viewport().setProperty("cursor", QtGui.QCursor(QtCore.Qt.CrossCursor))
-        self.tb_Cliente.setStyleSheet("background-color: rgb(255, 255, 255);")
+        self.gridLayout.addWidget(self.line_Cliente_Direccion, 2, 1, 1, 1)
+        self.label_5 = QtWidgets.QLabel(self.frame)
+        self.label_5.setStyleSheet("")
+        self.label_5.setObjectName("label_5")
+        self.gridLayout.addWidget(self.label_5, 2, 2, 1, 1)
+        self.line_Cliente_Apellido_3 = QtWidgets.QLineEdit(self.frame)
+        self.line_Cliente_Apellido_3.setMaximumSize(QtCore.QSize(300, 16777215))
+        self.line_Cliente_Apellido_3.setStyleSheet("QLineEdit {\n"
+"    background-color: white;\n"
+"    border: 1px solid gray;\n"
+"    padding: 4px;\n"
+"    border-radius: 6px;\n"
+"    font-size: 12px;\n"
+"}\n"
+"\n"
+"QLineEdit:focus {\n"
+"    border-color: #3daee9;\n"
+"    outline: none;\n"
+"}\n"
+"\n"
+"QLineEdit::hover {\n"
+"    background-color: #f0f0f0;\n"
+"}\n"
+"")
+        self.line_Cliente_Apellido_3.setObjectName("line_Cliente_Apellido_3")
+        self.gridLayout.addWidget(self.line_Cliente_Apellido_3, 2, 3, 1, 1)
+        self.bt_Eliminar_Cliente = QtWidgets.QPushButton(self.frame)
+        self.bt_Eliminar_Cliente.setMinimumSize(QtCore.QSize(0, 28))
+        self.bt_Eliminar_Cliente.setStyleSheet("QPushButton {\n"
+"    background-color:rgb(255, 255, 255);\n"
+"    border:1px solid rgb(100,100,100);\n"
+"    color:rgb(50,50,50);\n"
+"    padding: 8px 16px;\n"
+"    border-radius: 6px;\n"
+"    font-size: 14px;\n"
+"}\n"
+"\n"
+"QPushButton:hover {\n"
+"    background-color: #D6D2D1;\n"
+"}\n"
+"\n"
+"QPushButton:pressed {\n"
+"    background-color: #52c7ff;\n"
+"}")
+        self.bt_Eliminar_Cliente.setObjectName("bt_Eliminar_Cliente")
+        self.gridLayout.addWidget(self.bt_Eliminar_Cliente, 2, 4, 1, 1)
+        self.label_6 = QtWidgets.QLabel(self.frame)
+        self.label_6.setStyleSheet("")
+        self.label_6.setObjectName("label_6")
+        self.gridLayout.addWidget(self.label_6, 3, 0, 1, 1)
+        self.line_Cliente_Apellido_4 = QtWidgets.QLineEdit(self.frame)
+        self.line_Cliente_Apellido_4.setStyleSheet("QLineEdit {\n"
+"    background-color: white;\n"
+"    border: 1px solid gray;\n"
+"    padding: 4px;\n"
+"    border-radius: 6px;\n"
+"    font-size: 12px;\n"
+"}\n"
+"\n"
+"QLineEdit:focus {\n"
+"    border-color: #3daee9;\n"
+"    outline: none;\n"
+"}\n"
+"\n"
+"QLineEdit::hover {\n"
+"    background-color: #f0f0f0;\n"
+"}\n"
+"")
+        self.line_Cliente_Apellido_4.setObjectName("line_Cliente_Apellido_4")
+        self.gridLayout.addWidget(self.line_Cliente_Apellido_4, 3, 1, 1, 1)
+        self.bt_Vaciar_Cliente = QtWidgets.QPushButton(self.frame)
+        self.bt_Vaciar_Cliente.setMinimumSize(QtCore.QSize(0, 28))
+        self.bt_Vaciar_Cliente.setLayoutDirection(QtCore.Qt.LeftToRight)
+        self.bt_Vaciar_Cliente.setAutoFillBackground(False)
+        self.bt_Vaciar_Cliente.setStyleSheet("QPushButton {\n"
+"    background-color:rgb(255, 255, 255);\n"
+"    border:1px solid rgb(100,100,100);\n"
+"    color:rgb(50,50,50);\n"
+"    padding: 8px 16px;\n"
+"    border-radius: 6px;\n"
+"    font-size: 14px;\n"
+"}\n"
+"\n"
+"QPushButton:hover {\n"
+"    background-color: #D6D2D1;\n"
+"}\n"
+"\n"
+"QPushButton:pressed {\n"
+"    background-color: #52c7ff;\n"
+"}\n"
+"")
+        self.bt_Vaciar_Cliente.setObjectName("bt_Vaciar_Cliente")
+        self.gridLayout.addWidget(self.bt_Vaciar_Cliente, 3, 4, 1, 1)
+        self.label_8 = QtWidgets.QLabel(self.frame)
+        self.label_8.setStyleSheet("")
+        self.label_8.setObjectName("label_8")
+        self.gridLayout.addWidget(self.label_8, 4, 0, 1, 1)
+        self.line_Cliente_Buscar = QtWidgets.QLineEdit(self.frame)
+        self.line_Cliente_Buscar.setMinimumSize(QtCore.QSize(531, 20))
+        self.line_Cliente_Buscar.setStyleSheet("QLineEdit {\n"
+"    background-color: white;\n"
+"    border: 1px solid gray;\n"
+"    padding: 4px;\n"
+"    border-radius: 6px;\n"
+"    font-size: 12px;\n"
+"}\n"
+"\n"
+"QLineEdit:focus {\n"
+"    border-color: #3daee9;\n"
+"    outline: none;\n"
+"}\n"
+"\n"
+"QLineEdit::hover {\n"
+"    background-color: #f0f0f0;\n"
+"}\n"
+"")
+        self.line_Cliente_Buscar.setObjectName("line_Cliente_Buscar")
+        self.gridLayout.addWidget(self.line_Cliente_Buscar, 4, 1, 1, 3)
+        self.bt_Buscar = QtWidgets.QPushButton(self.frame)
+        self.bt_Buscar.setMinimumSize(QtCore.QSize(0, 28))
+        self.bt_Buscar.setMaximumSize(QtCore.QSize(500, 100))
+        self.bt_Buscar.setStyleSheet("QPushButton {\n"
+"    background-color:rgb(255, 255, 255);\n"
+"    border:1px solid rgb(100,100,100);\n"
+"    color:rgb(50,50,50);\n"
+"    padding: 8px 16px;\n"
+"    border-radius: 6px;\n"
+"    font-size: 14px;\n"
+"}\n"
+"\n"
+"QPushButton:hover {\n"
+"    background-color: #D6D2D1;\n"
+"}\n"
+"\n"
+"QPushButton:pressed {\n"
+"    background-color: #52c7ff;\n"
+"}")
+        self.bt_Buscar.setObjectName("bt_Buscar")
+        self.gridLayout.addWidget(self.bt_Buscar, 4, 4, 1, 1)
+        self.tb_Cliente = QtWidgets.QTableWidget(self.frame)
+        self.tb_Cliente.setMinimumSize(QtCore.QSize(0, 50))
+        self.tb_Cliente.setMaximumSize(QtCore.QSize(16777215, 1000))
+        self.tb_Cliente.viewport().setProperty("cursor", QtGui.QCursor(QtCore.Qt.ArrowCursor))
+        self.tb_Cliente.setStyleSheet("QTableView QHeaderView::section {\n"
+"    font-size: 12px;\n"
+"    font-weight: bold;\n"
+"    background-color: lightgray;\n"
+"    padding: 4px;\n"
+"    border: none;\n"
+"    border-bottom: 1px solid gray;\n"
+"}\n"
+"\n"
+"QTableView {\n"
+"    background-color: white;\n"
+"    border: 1px solid gray;\n"
+"}\n"
+"\n"
+"QTableView QScrollBar:vertical {\n"
+"    width: 14px;\n"
+"    background-color: lightgray;\n"
+"}\n"
+"\n"
+"QTableView QScrollBar::handle:vertical {\n"
+"    background-color: gray;\n"
+"    border-radius: 7px;\n"
+"}\n"
+"\n"
+"QTableView QScrollBar::add-line:vertical,\n"
+"QTableView QScrollBar::sub-line:vertical {\n"
+"    background-color: transparent;\n"
+"}\n"
+"\n"
+"QTableView QScrollBar::add-page:vertical,\n"
+"QTableView QScrollBar::sub-page:vertical {\n"
+"    background-color: transparent;\n"
+"}\n"
+"\n"
+"QTableView QScrollBar:horizontal {\n"
+"    height: 14px;\n"
+"    background-color: lightgray;\n"
+"}\n"
+"\n"
+"QTableView QScrollBar::handle:horizontal {\n"
+"    background-color: gray;\n"
+"    border-radius: 7px;\n"
+"}\n"
+"\n"
+"QTableView QScrollBar::add-line:horizontal,\n"
+"QTableView QScrollBar::sub-line:horizontal {\n"
+"    background-color: transparent;\n"
+"}\n"
+"\n"
+"QTableView QScrollBar::add-page:horizontal,\n"
+"QTableView QScrollBar::sub-page:horizontal {\n"
+"    background-color: transparent;\n"
+"}\n"
+"\n"
+"")
         self.tb_Cliente.setFrameShape(QtWidgets.QFrame.NoFrame)
         self.tb_Cliente.setSizeAdjustPolicy(QtWidgets.QAbstractScrollArea.AdjustToContents)
         self.tb_Cliente.setObjectName("tb_Cliente")
@@ -85,44 +481,21 @@ class Ui_MainWindow(object):
         self.tb_Cliente.setHorizontalHeaderItem(5, item)
         item = QtWidgets.QTableWidgetItem()
         self.tb_Cliente.setHorizontalHeaderItem(6, item)
+        self.tb_Cliente.horizontalHeader().setVisible(True)
+        self.tb_Cliente.horizontalHeader().setCascadingSectionResizes(True)
         self.tb_Cliente.horizontalHeader().setDefaultSectionSize(111)
+        self.tb_Cliente.horizontalHeader().setSortIndicatorShown(True)
+        self.tb_Cliente.horizontalHeader().setStretchLastSection(True)
         self.tb_Cliente.verticalHeader().setDefaultSectionSize(25)
         self.tb_Cliente.verticalHeader().setMinimumSectionSize(23)
-        self.label_5 = QtWidgets.QLabel(self.centralwidget)
-        self.label_5.setGeometry(QtCore.QRect(320, 120, 81, 17))
-        self.label_5.setStyleSheet("font: 14pt \"Ubuntu\";\n"
-"color: rgb(255, 255, 255);")
-        self.label_5.setObjectName("label_5")
-        self.bt_Vaciar_Cliente = QtWidgets.QPushButton(self.centralwidget)
-        self.bt_Vaciar_Cliente.setGeometry(QtCore.QRect(670, 170, 101, 31))
-        self.bt_Vaciar_Cliente.setStyleSheet("background-color: rgb(165, 215, 232);")
-        self.bt_Vaciar_Cliente.setObjectName("bt_Vaciar_Cliente")
-        self.label_4 = QtWidgets.QLabel(self.centralwidget)
-        self.label_4.setGeometry(QtCore.QRect(320, 70, 81, 21))
-        self.label_4.setStyleSheet("font: 14pt \"Ubuntu\";\n"
-"color: rgb(255, 255, 255);")
-        self.label_4.setObjectName("label_4")
-        self.line_Cliente_Apellido_2 = QtWidgets.QLineEdit(self.centralwidget)
-        self.line_Cliente_Apellido_2.setGeometry(QtCore.QRect(400, 70, 241, 25))
-        self.line_Cliente_Apellido_2.setStyleSheet("background-color: rgb(246, 245, 244);")
-        self.line_Cliente_Apellido_2.setObjectName("line_Cliente_Apellido_2")
-        self.line_Cliente_Apellido_3 = QtWidgets.QLineEdit(self.centralwidget)
-        self.line_Cliente_Apellido_3.setGeometry(QtCore.QRect(400, 120, 241, 25))
-        self.line_Cliente_Apellido_3.setStyleSheet("background-color: rgb(246, 245, 244);")
-        self.line_Cliente_Apellido_3.setObjectName("line_Cliente_Apellido_3")
-        self.line_Cliente_Apellido_4 = QtWidgets.QLineEdit(self.centralwidget)
-        self.line_Cliente_Apellido_4.setGeometry(QtCore.QRect(390, 180, 241, 25))
-        self.line_Cliente_Apellido_4.setStyleSheet("background-color: rgb(246, 245, 244);")
-        self.line_Cliente_Apellido_4.setObjectName("line_Cliente_Apellido_4")
-        self.line_Cliente_Apellido_5 = QtWidgets.QLineEdit(self.centralwidget)
-        self.line_Cliente_Apellido_5.setGeometry(QtCore.QRect(100, 70, 201, 25))
-        self.line_Cliente_Apellido_5.setStyleSheet("background-color: rgb(246, 245, 244);")
-        self.line_Cliente_Apellido_5.setObjectName("line_Cliente_Apellido_5")
-        self.label_7 = QtWidgets.QLabel(self.centralwidget)
-        self.label_7.setGeometry(QtCore.QRect(10, 70, 91, 17))
-        self.label_7.setStyleSheet("font: 14pt \"Ubuntu\";\n"
-"color: rgb(255, 255, 255);")
-        self.label_7.setObjectName("label_7")
+        self.gridLayout.addWidget(self.tb_Cliente, 5, 0, 1, 5)
+        self.gridLayout_2.addWidget(self.frame, 1, 0, 1, 1)
+        self.label_9 = QtWidgets.QLabel(self.centralwidget)
+        self.label_9.setStyleSheet("font-family:\"Inter\", sans-serif;\n"
+"font-size:30px;\n"
+"font-weight:500;")
+        self.label_9.setObjectName("label_9")
+        self.gridLayout_2.addWidget(self.label_9, 0, 0, 1, 1)
         MainWindow.setCentralWidget(self.centralwidget)
 
         self.retranslateUi(MainWindow)
@@ -131,13 +504,19 @@ class Ui_MainWindow(object):
     def retranslateUi(self, MainWindow):
         _translate = QtCore.QCoreApplication.translate
         MainWindow.setWindowTitle(_translate("MainWindow", "Principal"))
-        self.label_3.setText(_translate("MainWindow", "Id tienda:"))
-        self.bt_Eliminar_Cliente.setText(_translate("MainWindow", "Eliminar"))
-        self.label_6.setText(_translate("MainWindow", "Correo:"))
-        self.bt_Guardar_Cliente.setText(_translate("MainWindow", "Guardar"))
         self.label.setText(_translate("MainWindow", "ID:"))
         self.label_2.setText(_translate("MainWindow", "Apellido:"))
+        self.bt_Guardar_Cliente.setText(_translate("MainWindow", "Guardar"))
+        self.label_7.setText(_translate("MainWindow", "Nombre:"))
+        self.label_4.setText(_translate("MainWindow", "Cedula:"))
         self.bt_Editar_Cliente.setText(_translate("MainWindow", "Editar"))
+        self.label_3.setText(_translate("MainWindow", "Id tienda:"))
+        self.label_5.setText(_translate("MainWindow", "Telefono:"))
+        self.bt_Eliminar_Cliente.setText(_translate("MainWindow", "Eliminar"))
+        self.label_6.setText(_translate("MainWindow", "Correo:"))
+        self.bt_Vaciar_Cliente.setText(_translate("MainWindow", "Vaciar Campos"))
+        self.label_8.setText(_translate("MainWindow", "Buscar:"))
+        self.bt_Buscar.setText(_translate("MainWindow", "Buscar"))
         item = self.tb_Cliente.horizontalHeaderItem(0)
         item.setText(_translate("MainWindow", "ID"))
         item = self.tb_Cliente.horizontalHeaderItem(1)
@@ -152,10 +531,9 @@ class Ui_MainWindow(object):
         item.setText(_translate("MainWindow", "Telefono"))
         item = self.tb_Cliente.horizontalHeaderItem(6)
         item.setText(_translate("MainWindow", "ID_Tienda"))
-        self.label_5.setText(_translate("MainWindow", "Telefono:"))
-        self.bt_Vaciar_Cliente.setText(_translate("MainWindow", "Vaciar Campos"))
-        self.label_4.setText(_translate("MainWindow", "Cedula:"))
-        self.label_7.setText(_translate("MainWindow", "Nombre:"))
+        self.label_9.setText(_translate("MainWindow", "Clientes"))
+
+
 if __name__ == "__main__":
     import sys
     app = QtWidgets.QApplication(sys.argv)
@@ -164,4 +542,3 @@ if __name__ == "__main__":
     ui.setupUi(MainWindow)
     MainWindow.show()
     sys.exit(app.exec_())
-

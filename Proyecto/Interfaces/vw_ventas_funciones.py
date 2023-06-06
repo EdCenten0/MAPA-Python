@@ -2,13 +2,11 @@ import sys
 
 import vw_ventas
 import Proyecto.Datos.dt_Ventas
-import Proyecto.Datos.dt_taller
-import pymysql
+import Proyecto.Interfaces.dt_taller
 import PyQt5.QtWidgets
 
 from Proyecto.Datos import dt_Ventas
 from Proyecto.Entidades import Ventas
-from Proyecto.Entidades.Ventas import ventas
 
 
 class Vw_ventas_funciones(PyQt5.QtWidgets.QMainWindow, vw_ventas.Ui_Ventas):

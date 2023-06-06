@@ -1,7 +1,6 @@
 # Francisco de Jesús Melendez Simplina
 
 from Proyecto.Datos import Conexion
-from Proyecto.Entidades.usuarios import Usuarios
 
 
 class Dt_Usuarios:
@@ -29,7 +28,7 @@ class Dt_Usuarios:
 
         try:
             cursor = Conexion.Conexion.obtenerConexion().cursor()
-            sql = (f'''INSERT INTO usuario ( nombre, apellido, user, clave, fecha_creacion, estado ) VALUES ('{Usuarios.nombre}','{Usuarios.apellido}','{Usuarios.user}','{Usuarios.apellido}', now(),'{1}')''')
+            sql = (f'''INSERT INTO usuario ( nombre, apellido, user, clave, fecha_creacion, estado ) VALUES ('{Usuarios.nombre}','{Usuarios.apellido}','{Usuarios.user}','{Usuarios.password}', now(),'{1}')''')
             cursor.execute(sql)
             cursor.connection.commit()
             cursor.close()
@@ -89,8 +88,9 @@ class Dt_Usuarios:
 
             existe = False
             cursor = Conexion.Conexion.obtenerConexion().cursor()
-            cursor.execute(f"Select * FROM usuario WHERE user = '{Usuarios.user}' AND clave = '{Usuarios.password}' ")
+            cursor.execute(f'''Select * FROM usuario WHERE user = {Usuarios.user} AND clave = {Usuarios.password}''')
             consulta = cursor.fetchall()
+            print(consulta)
 
             if consulta:
                 existe = True

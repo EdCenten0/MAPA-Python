@@ -1,7 +1,6 @@
 # Francisco de Jesús Melendez Simplina
 
 from Proyecto.Datos import Conexion
-from Proyecto.Entidades import roles
 
 
 class Dt_Rol:

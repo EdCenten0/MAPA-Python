@@ -1,6 +1,6 @@
 #Francisco de Jesús Meléndez Simplina
 
-from Datos import Conexion
+from Proyecto.Datos import Conexion
 
 class Dt_Proveedor:
 
@@ -8,6 +8,14 @@ class Dt_Proveedor:
     def listarProveedor(cls):
         cursor = Conexion.Conexion.obtenerConexion().cursor()
         cursor.execute("SELECT * FROM proveedores")
+        querys = cursor.fetchall()
+        cursor.close()
+        return querys
+
+    @classmethod
+    def buscarProveedor(cls, proveedor):
+        cursor = Conexion.Conexion.obtenerConexion().cursor()
+        cursor.execute(f"SELECT * FROM proveedores WHERE nombre like '%' '{proveedor}' '%'")
         querys = cursor.fetchall()
         cursor.close()
         return querys
@@ -61,7 +69,27 @@ class Dt_Proveedor:
         except Exception as e:
             print(f"Error en dt_Proveedor Eliminar: {e}")
 
+    @classmethod
+    def buscarIndexProveedor(cls, id):
+
+        try:
+
+            listarProveedor = cls.listarProveedor()
+            indice = 0
+
+            for row in listarProveedor:
+                indice += 1
+                if row["id_proveedor"] == id:
+                    break
+
+            return indice
+
+        except Exception as e:
+            print(f"Error en bucar_index_rol: {e}")
+
+
+
 
 
 if __name__ == '__main__':
-    print(Dt_Proveedor.listarProveedor())
+    print(Dt_Proveedor.buscarProveedor("a"))

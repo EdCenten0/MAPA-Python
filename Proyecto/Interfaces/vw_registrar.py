@@ -131,6 +131,7 @@ class Ui_Registrar(object):
         self.line_clave.setGeometry(QtCore.QRect(20, 310, 411, 31))
         self.line_clave.setStyleSheet("border: 3px solid black;\n"
 "border-radius: 5px;")
+        self.line_clave.setEchoMode(QtWidgets.QLineEdit.Password)
         self.line_clave.setObjectName("line_clave")
         self.line_nombre = QtWidgets.QLineEdit(self.frame_3)
         self.line_nombre.setGeometry(QtCore.QRect(20, 100, 411, 31))
@@ -159,7 +160,7 @@ class Ui_Registrar(object):
         self.verticalLayout.addWidget(self.frame)
         Registrar.setCentralWidget(self.centralwidget)
         self.menubar = QtWidgets.QMenuBar(Registrar)
-        self.menubar.setGeometry(QtCore.QRect(0, 0, 908, 22))
+        self.menubar.setGeometry(QtCore.QRect(0, 0, 908, 21))
         self.menubar.setObjectName("menubar")
         Registrar.setMenuBar(self.menubar)
         self.statusbar = QtWidgets.QStatusBar(Registrar)
@@ -173,7 +174,7 @@ class Ui_Registrar(object):
         _translate = QtCore.QCoreApplication.translate
         Registrar.setWindowTitle(_translate("Registrar", "Registrar"))
         self.label_9.setText(_translate("Registrar", "Usuario:"))
-        self.cb_rol.setPlaceholderText(_translate("Registrar", "Elige un rol"))
+        self.cb_rol.setProperty("placeholderText", _translate("Registrar", "Elige un rol"))
         self.bt_registrar.setText(_translate("Registrar", "Registrar"))
         self.line_usuario.setPlaceholderText(_translate("Registrar", "Ingrese un Usuario:"))
         self.label_10.setText(_translate("Registrar", "Rol:"))
@@ -186,7 +187,6 @@ class Ui_Registrar(object):
         self.bt_volver.setText(_translate("Registrar", "Volver"))
         self.label_11.setText(_translate("Registrar", "Apellido:"))
         Recursos
-
 
 if __name__ == "__main__":
     import sys

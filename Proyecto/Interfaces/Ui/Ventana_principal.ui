@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1138</width>
-    <height>755</height>
+    <width>1301</width>
+    <height>950</height>
    </rect>
   </property>
   <property name="minimumSize">
@@ -19,6 +19,9 @@
   <property name="windowTitle">
    <string>MainWindow</string>
   </property>
+  <property name="styleSheet">
+   <string notr="true"/>
+  </property>
   <widget class="QWidget" name="centralwidget">
    <property name="styleSheet">
     <string notr="true">background-color: rgb(242, 242, 241);</string>
@@ -27,8 +30,12 @@
     <item row="0" column="1">
      <widget class="QFrame" name="frame">
       <property name="styleSheet">
-       <string notr="true">border:none;
-font-family:&quot;Inter&quot;, sans-serif;</string>
+       <string notr="true">* {
+		border:none;
+font-family:&quot;Inter&quot;, sans-serif;
+}
+
+</string>
       </property>
       <property name="frameShape">
        <enum>QFrame::StyledPanel</enum>
@@ -41,6 +48,27 @@ font-family:&quot;Inter&quot;, sans-serif;</string>
         <layout class="QGridLayout" name="gridLayout" columnstretch="1,5">
          <item row="0" column="1">
           <widget class="QFrame" name="frame_3">
+           <property name="styleSheet">
+            <string notr="true">QComboBox{
+		background-color:rgb(255, 255, 255);
+		border:1px solid rgb(100,100,100);
+		color:rgb(50,50,50);
+
+}
+
+QPushButton{
+		background-color: rgb(255, 255, 255);	
+		border:1px solid #c7c7c7;
+		border-radius:7px;
+		background-color:rgb(246, 245, 244);
+}
+
+QPushButton:hover{
+		background-color:#c7c7c7;
+		border:1px solid rgb(255,255,255);
+}
+</string>
+           </property>
            <property name="frameShape">
             <enum>QFrame::StyledPanel</enum>
            </property>
@@ -60,9 +88,27 @@ font-family:&quot;Inter&quot;, sans-serif;</string>
          <item row="0" column="0">
           <widget class="QFrame" name="frame_2">
            <property name="styleSheet">
-            <string notr="true">background-color: rgb(240, 213, 209);
-border-radius:10%;
-color: rgb(45, 44, 44);</string>
+            <string notr="true">QFrame{
+	background-color: rgb(240, 213, 209);
+
+}
+
+QPushButton {
+	background-color:rgb(255, 255, 255);
+	border:1px solid rgb(100,100,100);
+	color:rgb(50,50,50);
+    padding: 8px 16px;
+    border-radius: 6px;
+    font-size: 14px;
+}
+
+QPushButton:hover {
+    background-color: #D6D2D1;
+}
+
+QPushButton:pressed {
+    background-color: #52c7ff;
+}</string>
            </property>
            <property name="frameShape">
             <enum>QFrame::StyledPanel</enum>
@@ -70,7 +116,7 @@ color: rgb(45, 44, 44);</string>
            <property name="frameShadow">
             <enum>QFrame::Raised</enum>
            </property>
-           <layout class="QVBoxLayout" name="verticalLayout">
+           <layout class="QVBoxLayout" name="verticalLayout" stretch="0,0,0,0,0,0,0,0,0,0,0,0,0,0,0">
             <item>
              <widget class="QLabel" name="label">
               <property name="maximumSize">
@@ -111,6 +157,27 @@ font-size:22px;</string>
             </item>
             <item>
              <widget class="QLabel" name="label_2">
+              <property name="sizePolicy">
+               <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+                <horstretch>0</horstretch>
+                <verstretch>0</verstretch>
+               </sizepolicy>
+              </property>
+              <property name="minimumSize">
+               <size>
+                <width>0</width>
+                <height>170</height>
+               </size>
+              </property>
+              <property name="maximumSize">
+               <size>
+                <width>300</width>
+                <height>16777215</height>
+               </size>
+              </property>
+              <property name="styleSheet">
+               <string notr="true">border-image: url(:/Imagenes/mapalogo.ico);</string>
+              </property>
               <property name="frameShape">
                <enum>QFrame::NoFrame</enum>
               </property>
@@ -153,15 +220,12 @@ font-size:22px;</string>
                <cursorShape>PointingHandCursor</cursorShape>
               </property>
               <property name="styleSheet">
-               <string notr="true">QPushButton{
-		background-color: rgb(255, 255, 255);	
-		border:1px solid #c7c7c7;
-
+               <string notr="true">QPushButton:hover {
+    background-color: #D6D2D1;
 }
 
-QPushButton:hover{
-		background-color:#c7c7c7;
-		border:1px solid rgb(255,255,255);
+QPushButton:pressed {
+    background-color: #52c7ff;
 }
 </string>
               </property>
@@ -182,17 +246,13 @@ QPushButton:hover{
                <cursorShape>PointingHandCursor</cursorShape>
               </property>
               <property name="styleSheet">
-               <string notr="true">QPushButton{
-		background-color: rgb(255, 255, 255);	
-		border:1px solid #c7c7c7;
-
+               <string notr="true">QPushButton:hover {
+    background-color: #D6D2D1;
 }
 
-QPushButton:hover{
-		background-color:#c7c7c7;
-		border:1px solid rgb(255,255,255);
-}
-</string>
+QPushButton:pressed {
+    background-color: #52c7ff;
+}</string>
               </property>
               <property name="text">
                <string>Clientes</string>
@@ -211,15 +271,12 @@ QPushButton:hover{
                <cursorShape>PointingHandCursor</cursorShape>
               </property>
               <property name="styleSheet">
-               <string notr="true">QPushButton{
-		background-color: rgb(255, 255, 255);	
-		border:1px solid #c7c7c7;
-
+               <string notr="true">QPushButton:hover {
+    background-color: #D6D2D1;
 }
 
-QPushButton:hover{
-		background-color:#c7c7c7;
-		border:1px solid rgb(255,255,255);
+QPushButton:pressed {
+    background-color: #52c7ff;
 }
 </string>
               </property>
@@ -249,15 +306,12 @@ QPushButton:hover{
                <cursorShape>PointingHandCursor</cursorShape>
               </property>
               <property name="styleSheet">
-               <string notr="true">QPushButton{
-		background-color: rgb(255, 255, 255);	
-		border:1px solid #c7c7c7;
-
+               <string notr="true">QPushButton:hover {
+    background-color: #D6D2D1;
 }
 
-QPushButton:hover{
-		background-color:#c7c7c7;
-		border:1px solid rgb(255,255,255);
+QPushButton:pressed {
+    background-color: #52c7ff;
 }
 
 </string>
@@ -297,21 +351,18 @@ QPushButton:hover{
                <cursorShape>PointingHandCursor</cursorShape>
               </property>
               <property name="styleSheet">
-               <string notr="true">QPushButton{
-		background-color: rgb(255, 255, 255);	
-		border:1px solid #c7c7c7;
-
+               <string notr="true">QPushButton:hover {
+    background-color: #D6D2D1;
 }
 
-QPushButton:hover{
-		background-color:#c7c7c7;
-		border:1px solid rgb(255,255,255);
+QPushButton:pressed {
+    background-color: #52c7ff;
 }
 
 </string>
               </property>
               <property name="text">
-               <string>Materiales Por Provved.</string>
+               <string>Materiales Por Proved.</string>
               </property>
               <property name="iconSize">
                <size>
@@ -345,17 +396,13 @@ QPushButton:hover{
                <cursorShape>PointingHandCursor</cursorShape>
               </property>
               <property name="styleSheet">
-               <string notr="true">QPushButton{
-		background-color: rgb(255, 255, 255);	
-		border:1px solid #c7c7c7;
-
+               <string notr="true">QPushButton:hover {
+    background-color: #D6D2D1;
 }
 
-QPushButton:hover{
-		background-color:#c7c7c7;
-		border:1px solid rgb(255,255,255);
+QPushButton:pressed {
+    background-color: #52c7ff;
 }
-
 </string>
               </property>
               <property name="text">
@@ -393,15 +440,12 @@ QPushButton:hover{
                <cursorShape>PointingHandCursor</cursorShape>
               </property>
               <property name="styleSheet">
-               <string notr="true">QPushButton{
-		background-color: rgb(255, 255, 255);	
-		border:1px solid #c7c7c7;
-
+               <string notr="true">QPushButton:hover {
+    background-color: #D6D2D1;
 }
 
-QPushButton:hover{
-		background-color:#c7c7c7;
-		border:1px solid rgb(255,255,255);
+QPushButton:pressed {
+    background-color: #52c7ff;
 }
 
 </string>
@@ -441,15 +485,12 @@ QPushButton:hover{
                <cursorShape>PointingHandCursor</cursorShape>
               </property>
               <property name="styleSheet">
-               <string notr="true">QPushButton{
-		background-color: rgb(255, 255, 255);	
-		border:1px solid #c7c7c7;
-
+               <string notr="true">QPushButton:hover {
+    background-color: #D6D2D1;
 }
 
-QPushButton:hover{
-		background-color:#c7c7c7;
-		border:1px solid rgb(255,255,255);
+QPushButton:pressed {
+    background-color: #52c7ff;
 }
 
 </string>
@@ -469,7 +510,7 @@ QPushButton:hover{
              </widget>
             </item>
             <item>
-             <widget class="QPushButton" name="bt_ajustes">
+             <widget class="QPushButton" name="bt_seguridad">
               <property name="minimumSize">
                <size>
                 <width>0</width>
@@ -480,20 +521,25 @@ QPushButton:hover{
                <cursorShape>PointingHandCursor</cursorShape>
               </property>
               <property name="styleSheet">
-               <string notr="true">QPushButton{
-		background-color: rgb(255, 255, 255);	
-		border:1px solid #c7c7c7;
-
+               <string notr="true">QPushButton {
+	background-color:rgb(255, 255, 255);
+	border:1px solid rgb(100,100,100);
+	color:rgb(50,50,50);
+    padding: 8px 16px;
+    border-radius: 6px;
+    font-size: 14px;
 }
 
-QPushButton:hover{
-		background-color:#c7c7c7;
-		border:1px solid rgb(255,255,255);
+QPushButton:hover {
+    background-color: #D6D2D1;
 }
-</string>
+
+QPushButton:pressed {
+    background-color: #52c7ff;
+}</string>
               </property>
               <property name="text">
-               <string>Ajustes</string>
+               <string>Seguridad</string>
               </property>
              </widget>
             </item>
@@ -547,6 +593,8 @@ font-size:13px;</string>
    </layout>
   </widget>
  </widget>
- <resources/>
+ <resources>
+  <include location="../../Recursos/Recursos.qrc"/>
+ </resources>
  <connections/>
 </ui>
