@@ -20,9 +20,8 @@ class vw_materiales_por_pedido_funciones(QtWidgets.QMainWindow, vw_materiales_po
         self.llenarTablaMateriales(dt_materiales.Dt_materiales.listarMaterialesPorPedido(vw_materiales_por_pedido_funciones.id))
         self.tw_materiales.itemSelectionChanged.connect(self.obtenerDatosTablaMateriales)
 
-        #cb
-        self.llenarComboBoxPedidos()
-        # self.cbPedidos.activated.connect()
+
+
 
         # Botones
         self.btnGuardar.clicked.connect(self.guardarMateriales)
@@ -36,17 +35,6 @@ class vw_materiales_por_pedido_funciones(QtWidgets.QMainWindow, vw_materiales_po
         self.txtPrecioUnidadMedida.textEdited.connect(lambda: self.setPrecioTotal())
         self.txtCantidad.textEdited.connect(lambda: self.setPrecioTotal())
 
-    def llenarComboBoxPedidos(self):
-        pedidos = Dt_Pedidos.listarPedidos()
-        try:
-            for p in pedidos:
-                self.cbPedidos.addItem(p['descripcion'], p['id_pedido'])
-                #self.cbPedidos.addItem()
-                #self.cbPedidos.addItem()
-        except Exception as e:
-            print(f"Ocurrio una excepcion al recuperar los pedidos {e}")
-
-
     def limpiarCampos(self):
 
         if not self.txtNombreMaterial.text() == "" or not self.txtDescripcion.text() == "" or not self.txtPrecioUnidadMedida.text() == "" or not self.txtCantidad.text() == "" or not self.txtPrecioTotal.text() == "":
@@ -57,15 +45,17 @@ class vw_materiales_por_pedido_funciones(QtWidgets.QMainWindow, vw_materiales_po
             self.txtPrecioUnidadMedida.clear()
             self.txtCantidad.clear()
             self.txtPrecioTotal.clear()
-            #self.cbPedidos.clearEditText("A")
-            #self.cbUnidadesMedida.setItemText(self, 3, "pulg")
-            #self.cbUnidadesMedida.setCurrentText(self, 0, "")
+
 
     def setPrecioTotal(self):
         if self.txtPrecioUnidadMedida.text() != "" and self.txtCantidad.text() != "":
-            precio_total = float(self.txtCantidad.text()) * float(self.txtPrecioUnidadMedida.text())
-            self.txtPrecioTotal.setText(str(precio_total))
-            print(precio_total)
+            try:
+                precio_total = float(self.txtCantidad.text()) * float(self.txtPrecioUnidadMedida.text())
+                self.txtPrecioTotal.setText(str(precio_total))
+                print(precio_total)
+            except Exception as e:
+                QMessageBox.about(self, f"Digítos inválidos", f"No puede ingresar letras a la cantidad ni al precio: {e}")
+
 
 
     def notMensaje(self, indicador, resultado):
@@ -80,7 +70,7 @@ class vw_materiales_por_pedido_funciones(QtWidgets.QMainWindow, vw_materiales_po
             #self.tw_materiales.setCurrentItem(None)
 
             nombre_material = str(self.txtBuscar.text())
-            materiales = dt_materiales.Dt_materiales.buscarMaterial(nombre_material)
+            materiales = dt_materiales.Dt_materiales.buscarMateriaPorPedido(nombre_material, vw_materiales_por_pedido_funciones.id)
             indexes = len(materiales)
             self.tw_materiales.setRowCount(indexes)
             tableRow = 0
@@ -160,7 +150,7 @@ class vw_materiales_por_pedido_funciones(QtWidgets.QMainWindow, vw_materiales_po
         self.txtCantidad.setText(cantidad)
         self.cbUnidadesMedida.setCurrentText(unidad_de_medida)
         self.txtPrecioTotal.setText(precio_total)
-        self.cbPedidos.setCurrentIndex(int(id_pedido)-1)
+
 
 
     def guardarMateriales(self):
@@ -207,7 +197,8 @@ class vw_materiales_por_pedido_funciones(QtWidgets.QMainWindow, vw_materiales_po
             mult = str(float(self.txtPrecioUnidadMedida.text()) * float(self.txtCantidad.text()))
             Materiales.precio_total = mult
             self.txtPrecioTotal.setText(mult)
-            Materiales.id_pedido = self.cbPedidos.currentData()
+            print(f"Editar Materiales: {vw_materiales_por_pedido_funciones.id}")
+            Materiales.id_pedido = vw_materiales_por_pedido_funciones.id
 
             if not self.lblId.text() == "" and not self.txtNombreMaterial.text() == "" and not self.txtDescripcion.text() == "" and not self.txtPrecioUnidadMedida.text() == "" and not self.txtCantidad.text() == "" and not self.txtPrecioTotal == "":
                 if float(self.txtPrecioUnidadMedida.text()) > 0 and float(self.txtCantidad.text()) > 0 and float(self.txtPrecioTotal.text()) > 0:
@@ -216,7 +207,7 @@ class vw_materiales_por_pedido_funciones(QtWidgets.QMainWindow, vw_materiales_po
 
                     self.limpiarCampos()
 
-                    self.llenarTablaMateriales(dt_materiales.Dt_materiales.listarMateriales())
+                    self.llenarTablaMateriales(dt_materiales.Dt_materiales.listarMaterialesPorPedido(vw_materiales_por_pedido_funciones.id))
                 else:
                     QMessageBox.about(self, "Error", "No se puede introducir numeros negativos")
             else:

@@ -119,8 +119,8 @@ QTextEdit::hover {
            <property name="verticalSpacing">
             <number>29</number>
            </property>
-           <item row="3" column="4">
-            <widget class="QPushButton" name="btnBuscar">
+           <item row="1" column="5">
+            <widget class="QPushButton" name="btnEditar">
              <property name="styleSheet">
               <string notr="true">QPushButton {
 	background-color:rgb(255, 255, 255);
@@ -140,7 +140,7 @@ QPushButton:pressed {
 }</string>
              </property>
              <property name="text">
-              <string>Buscar</string>
+              <string>Editar</string>
              </property>
             </widget>
            </item>
@@ -160,48 +160,17 @@ QPushButton:pressed {
              </property>
             </widget>
            </item>
-           <item row="3" column="0">
-            <widget class="QLabel" name="lblId">
-             <property name="styleSheet">
-              <string notr="true">color: rgb(222, 221, 218);</string>
-             </property>
-             <property name="text">
-              <string/>
-             </property>
-            </widget>
-           </item>
-           <item row="0" column="0">
-            <widget class="QLabel" name="label">
-             <property name="maximumSize">
-              <size>
-               <width>70</width>
-               <height>16777215</height>
-              </size>
-             </property>
+           <item row="1" column="3">
+            <widget class="QLabel" name="txtPrecioTotal">
              <property name="styleSheet">
               <string notr="true">QLabel{
 		font-weight:500;
+		background-color:#c7c7c7;
 }
 </string>
              </property>
              <property name="text">
-              <string>Material:</string>
-             </property>
-            </widget>
-           </item>
-           <item row="2" column="0">
-            <widget class="QLabel" name="label_3">
-             <property name="maximumSize">
-              <size>
-               <width>150</width>
-               <height>16777215</height>
-              </size>
-             </property>
-             <property name="styleSheet">
-              <string notr="true">background-color: rgb(222, 221, 218);</string>
-             </property>
-             <property name="text">
-              <string>Precio*UMedida:</string>
+              <string/>
              </property>
             </widget>
            </item>
@@ -230,26 +199,71 @@ QPushButton:pressed {
              </property>
             </widget>
            </item>
-           <item row="2" column="2">
-            <widget class="QLabel" name="lblProveedores">
+           <item row="3" column="0">
+            <widget class="QLabel" name="lblId">
+             <property name="styleSheet">
+              <string notr="true">color: rgb(222, 221, 218);</string>
+             </property>
+             <property name="text">
+              <string/>
+             </property>
+            </widget>
+           </item>
+           <item row="2" column="1">
+            <widget class="QLineEdit" name="txtPrecioUnidadMedida">
+             <property name="styleSheet">
+              <string notr="true">background-color: rgb(255, 255, 255);</string>
+             </property>
+            </widget>
+           </item>
+           <item row="0" column="5">
+            <widget class="QPushButton" name="btnGuardar">
+             <property name="styleSheet">
+              <string notr="true">QPushButton {
+	background-color:rgb(255, 255, 255);
+	border:1px solid rgb(100,100,100);
+	color:rgb(50,50,50);
+    padding: 8px 16px;
+    border-radius: 6px;
+    font-size: 14px;
+}
+
+QPushButton:hover {
+    background-color: #D6D2D1;
+}
+
+QPushButton:pressed {
+    background-color: #52c7ff;
+}</string>
+             </property>
+             <property name="text">
+              <string>Guardar</string>
+             </property>
+            </widget>
+           </item>
+           <item row="0" column="0">
+            <widget class="QLabel" name="label">
              <property name="maximumSize">
               <size>
-               <width>65</width>
+               <width>70</width>
                <height>16777215</height>
               </size>
              </property>
              <property name="styleSheet">
-              <string notr="true">background-color: rgb(222, 221, 218);</string>
+              <string notr="true">QLabel{
+		font-weight:500;
+}
+</string>
              </property>
              <property name="text">
-              <string>Pedidos:</string>
+              <string>Material:</string>
              </property>
             </widget>
            </item>
-           <item row="3" column="3">
-            <widget class="QLineEdit" name="txtBuscar">
+           <item row="1" column="1">
+            <widget class="QLineEdit" name="txtDescripcion">
              <property name="styleSheet">
-              <string notr="true">background-color: rgb(246, 245, 244);</string>
+              <string notr="true">background-color: rgb(255, 255, 255);</string>
              </property>
             </widget>
            </item>
@@ -323,102 +337,17 @@ QPushButton:pressed {
              </item>
             </widget>
            </item>
-           <item row="1" column="3">
-            <widget class="QLabel" name="txtPrecioTotal">
+           <item row="0" column="1">
+            <widget class="QLineEdit" name="txtNombreMaterial">
              <property name="styleSheet">
-              <string notr="true">QLabel{
-		font-weight:500;
-		background-color:#c7c7c7;
-}
-</string>
-             </property>
-             <property name="text">
-              <string/>
+              <string notr="true">background-color: rgb(255, 255, 255);</string>
              </property>
             </widget>
            </item>
-           <item row="0" column="5">
-            <widget class="QPushButton" name="btnGuardar">
+           <item row="0" column="3">
+            <widget class="QLineEdit" name="txtCantidad">
              <property name="styleSheet">
-              <string notr="true">QPushButton {
-	background-color:rgb(255, 255, 255);
-	border:1px solid rgb(100,100,100);
-	color:rgb(50,50,50);
-    padding: 8px 16px;
-    border-radius: 6px;
-    font-size: 14px;
-}
-
-QPushButton:hover {
-    background-color: #D6D2D1;
-}
-
-QPushButton:pressed {
-    background-color: #52c7ff;
-}</string>
-             </property>
-             <property name="text">
-              <string>Guardar</string>
-             </property>
-            </widget>
-           </item>
-           <item row="1" column="2">
-            <widget class="QLabel" name="label_5">
-             <property name="styleSheet">
-              <string notr="true">background-color: rgb(222, 221, 218);</string>
-             </property>
-             <property name="text">
-              <string>Precio total:</string>
-             </property>
-            </widget>
-           </item>
-           <item row="3" column="5">
-            <widget class="QPushButton" name="btnVaciarCampos">
-             <property name="styleSheet">
-              <string notr="true">QPushButton {
-	background-color:rgb(255, 255, 255);
-	border:1px solid rgb(100,100,100);
-	color:rgb(50,50,50);
-    padding: 8px 16px;
-    border-radius: 6px;
-    font-size: 14px;
-}
-
-QPushButton:hover {
-    background-color: #D6D2D1;
-}
-
-QPushButton:pressed {
-    background-color: #52c7ff;
-}</string>
-             </property>
-             <property name="text">
-              <string>Vaciar Campos</string>
-             </property>
-            </widget>
-           </item>
-           <item row="1" column="5">
-            <widget class="QPushButton" name="btnEditar">
-             <property name="styleSheet">
-              <string notr="true">QPushButton {
-	background-color:rgb(255, 255, 255);
-	border:1px solid rgb(100,100,100);
-	color:rgb(50,50,50);
-    padding: 8px 16px;
-    border-radius: 6px;
-    font-size: 14px;
-}
-
-QPushButton:hover {
-    background-color: #D6D2D1;
-}
-
-QPushButton:pressed {
-    background-color: #52c7ff;
-}</string>
-             </property>
-             <property name="text">
-              <string>Editar</string>
+              <string notr="true">background-color: rgb(255, 255, 255);</string>
              </property>
             </widget>
            </item>
@@ -435,67 +364,6 @@ QPushButton:pressed {
              </property>
              <property name="text">
               <string>Cantidad:</string>
-             </property>
-            </widget>
-           </item>
-           <item row="0" column="3">
-            <widget class="QLineEdit" name="txtCantidad">
-             <property name="styleSheet">
-              <string notr="true">background-color: rgb(255, 255, 255);</string>
-             </property>
-            </widget>
-           </item>
-           <item row="1" column="1">
-            <widget class="QLineEdit" name="txtDescripcion">
-             <property name="styleSheet">
-              <string notr="true">background-color: rgb(255, 255, 255);</string>
-             </property>
-            </widget>
-           </item>
-           <item row="2" column="3">
-            <widget class="QComboBox" name="cbPedidos">
-             <property name="minimumSize">
-              <size>
-               <width>350</width>
-               <height>0</height>
-              </size>
-             </property>
-             <property name="maximumSize">
-              <size>
-               <width>450</width>
-               <height>16777215</height>
-              </size>
-             </property>
-             <property name="styleSheet">
-              <string notr="true">QComboBox{
-		background-color:rgb(255, 255, 255);
-		border:1px solid rgb(100,100,100);
-		color:rgb(50,50,50);
-		border-radius:4px;
-		
-}
-
-</string>
-             </property>
-             <property name="currentIndex">
-              <number>-1</number>
-             </property>
-             <property name="maxVisibleItems">
-              <number>25</number>
-             </property>
-            </widget>
-           </item>
-           <item row="0" column="1">
-            <widget class="QLineEdit" name="txtNombreMaterial">
-             <property name="styleSheet">
-              <string notr="true">background-color: rgb(255, 255, 255);</string>
-             </property>
-            </widget>
-           </item>
-           <item row="2" column="1">
-            <widget class="QLineEdit" name="txtPrecioUnidadMedida">
-             <property name="styleSheet">
-              <string notr="true">background-color: rgb(255, 255, 255);</string>
              </property>
             </widget>
            </item>
@@ -530,7 +398,58 @@ QPushButton:pressed {
              </property>
             </widget>
            </item>
-           <item row="3" column="2">
+           <item row="3" column="5">
+            <widget class="QPushButton" name="btnVaciarCampos">
+             <property name="styleSheet">
+              <string notr="true">QPushButton {
+	background-color:rgb(255, 255, 255);
+	border:1px solid rgb(100,100,100);
+	color:rgb(50,50,50);
+    padding: 8px 16px;
+    border-radius: 6px;
+    font-size: 14px;
+}
+
+QPushButton:hover {
+    background-color: #D6D2D1;
+}
+
+QPushButton:pressed {
+    background-color: #52c7ff;
+}</string>
+             </property>
+             <property name="text">
+              <string>Vaciar Campos</string>
+             </property>
+            </widget>
+           </item>
+           <item row="1" column="2">
+            <widget class="QLabel" name="label_5">
+             <property name="styleSheet">
+              <string notr="true">background-color: rgb(222, 221, 218);</string>
+             </property>
+             <property name="text">
+              <string>Precio total:</string>
+             </property>
+            </widget>
+           </item>
+           <item row="2" column="0">
+            <widget class="QLabel" name="label_3">
+             <property name="maximumSize">
+              <size>
+               <width>150</width>
+               <height>16777215</height>
+              </size>
+             </property>
+             <property name="styleSheet">
+              <string notr="true">background-color: rgb(222, 221, 218);</string>
+             </property>
+             <property name="text">
+              <string>Precio*UMedida:</string>
+             </property>
+            </widget>
+           </item>
+           <item row="2" column="2">
             <widget class="QLabel" name="lblBuscar">
              <property name="maximumSize">
               <size>
@@ -543,6 +462,38 @@ QPushButton:pressed {
              </property>
              <property name="text">
               <string>Buscar:</string>
+             </property>
+            </widget>
+           </item>
+           <item row="2" column="3">
+            <widget class="QLineEdit" name="txtBuscar">
+             <property name="styleSheet">
+              <string notr="true">background-color: rgb(246, 245, 244);</string>
+             </property>
+            </widget>
+           </item>
+           <item row="2" column="4">
+            <widget class="QPushButton" name="btnBuscar">
+             <property name="styleSheet">
+              <string notr="true">QPushButton {
+	background-color:rgb(255, 255, 255);
+	border:1px solid rgb(100,100,100);
+	color:rgb(50,50,50);
+    padding: 8px 16px;
+    border-radius: 6px;
+    font-size: 14px;
+}
+
+QPushButton:hover {
+    background-color: #D6D2D1;
+}
+
+QPushButton:pressed {
+    background-color: #52c7ff;
+}</string>
+             </property>
+             <property name="text">
+              <string>Buscar</string>
              </property>
             </widget>
            </item>

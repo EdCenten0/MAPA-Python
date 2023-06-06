@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-# Form implementation generated from reading ui file 'materiales.ui'
+# Form implementation generated from reading ui file 'materiales_por_pedido.ui'
 #
 # Created by: PyQt5 UI code generator 5.15.9
 #
@@ -101,8 +101,8 @@ class Ui_mw_materiales(object):
         self.gridLayout.setHorizontalSpacing(6)
         self.gridLayout.setVerticalSpacing(29)
         self.gridLayout.setObjectName("gridLayout")
-        self.btnBuscar = QtWidgets.QPushButton(self.frame)
-        self.btnBuscar.setStyleSheet("QPushButton {\n"
+        self.btnEditar = QtWidgets.QPushButton(self.frame)
+        self.btnEditar.setStyleSheet("QPushButton {\n"
 "    background-color:rgb(255, 255, 255);\n"
 "    border:1px solid rgb(100,100,100);\n"
 "    color:rgb(50,50,50);\n"
@@ -118,31 +118,22 @@ class Ui_mw_materiales(object):
 "QPushButton:pressed {\n"
 "    background-color: #52c7ff;\n"
 "}")
-        self.btnBuscar.setObjectName("btnBuscar")
-        self.gridLayout.addWidget(self.btnBuscar, 3, 4, 1, 1)
+        self.btnEditar.setObjectName("btnEditar")
+        self.gridLayout.addWidget(self.btnEditar, 1, 5, 1, 1)
         self.label_2 = QtWidgets.QLabel(self.frame)
         self.label_2.setMaximumSize(QtCore.QSize(85, 16777215))
         self.label_2.setStyleSheet("background-color: rgb(222, 221, 218);")
         self.label_2.setObjectName("label_2")
         self.gridLayout.addWidget(self.label_2, 1, 0, 1, 1)
-        self.lblId = QtWidgets.QLabel(self.frame)
-        self.lblId.setStyleSheet("color: rgb(222, 221, 218);")
-        self.lblId.setText("")
-        self.lblId.setObjectName("lblId")
-        self.gridLayout.addWidget(self.lblId, 3, 0, 1, 1)
-        self.label = QtWidgets.QLabel(self.frame)
-        self.label.setMaximumSize(QtCore.QSize(70, 16777215))
-        self.label.setStyleSheet("QLabel{\n"
+        self.txtPrecioTotal = QtWidgets.QLabel(self.frame)
+        self.txtPrecioTotal.setStyleSheet("QLabel{\n"
 "        font-weight:500;\n"
+"        background-color:#c7c7c7;\n"
 "}\n"
 "")
-        self.label.setObjectName("label")
-        self.gridLayout.addWidget(self.label, 0, 0, 1, 1)
-        self.label_3 = QtWidgets.QLabel(self.frame)
-        self.label_3.setMaximumSize(QtCore.QSize(150, 16777215))
-        self.label_3.setStyleSheet("background-color: rgb(222, 221, 218);")
-        self.label_3.setObjectName("label_3")
-        self.gridLayout.addWidget(self.label_3, 2, 0, 1, 1)
+        self.txtPrecioTotal.setText("")
+        self.txtPrecioTotal.setObjectName("txtPrecioTotal")
+        self.gridLayout.addWidget(self.txtPrecioTotal, 1, 3, 1, 1)
         self.btnEliminar = QtWidgets.QPushButton(self.frame)
         self.btnEliminar.setStyleSheet("QPushButton {\n"
 "    background-color:rgb(255, 255, 255);\n"
@@ -162,15 +153,46 @@ class Ui_mw_materiales(object):
 "}")
         self.btnEliminar.setObjectName("btnEliminar")
         self.gridLayout.addWidget(self.btnEliminar, 2, 5, 1, 1)
-        self.lblProveedores = QtWidgets.QLabel(self.frame)
-        self.lblProveedores.setMaximumSize(QtCore.QSize(65, 16777215))
-        self.lblProveedores.setStyleSheet("background-color: rgb(222, 221, 218);")
-        self.lblProveedores.setObjectName("lblProveedores")
-        self.gridLayout.addWidget(self.lblProveedores, 2, 2, 1, 1)
-        self.txtBuscar = QtWidgets.QLineEdit(self.frame)
-        self.txtBuscar.setStyleSheet("background-color: rgb(246, 245, 244);")
-        self.txtBuscar.setObjectName("txtBuscar")
-        self.gridLayout.addWidget(self.txtBuscar, 3, 3, 1, 1)
+        self.lblId = QtWidgets.QLabel(self.frame)
+        self.lblId.setStyleSheet("color: rgb(222, 221, 218);")
+        self.lblId.setText("")
+        self.lblId.setObjectName("lblId")
+        self.gridLayout.addWidget(self.lblId, 3, 0, 1, 1)
+        self.txtPrecioUnidadMedida = QtWidgets.QLineEdit(self.frame)
+        self.txtPrecioUnidadMedida.setStyleSheet("background-color: rgb(255, 255, 255);")
+        self.txtPrecioUnidadMedida.setObjectName("txtPrecioUnidadMedida")
+        self.gridLayout.addWidget(self.txtPrecioUnidadMedida, 2, 1, 1, 1)
+        self.btnGuardar = QtWidgets.QPushButton(self.frame)
+        self.btnGuardar.setStyleSheet("QPushButton {\n"
+"    background-color:rgb(255, 255, 255);\n"
+"    border:1px solid rgb(100,100,100);\n"
+"    color:rgb(50,50,50);\n"
+"    padding: 8px 16px;\n"
+"    border-radius: 6px;\n"
+"    font-size: 14px;\n"
+"}\n"
+"\n"
+"QPushButton:hover {\n"
+"    background-color: #D6D2D1;\n"
+"}\n"
+"\n"
+"QPushButton:pressed {\n"
+"    background-color: #52c7ff;\n"
+"}")
+        self.btnGuardar.setObjectName("btnGuardar")
+        self.gridLayout.addWidget(self.btnGuardar, 0, 5, 1, 1)
+        self.label = QtWidgets.QLabel(self.frame)
+        self.label.setMaximumSize(QtCore.QSize(70, 16777215))
+        self.label.setStyleSheet("QLabel{\n"
+"        font-weight:500;\n"
+"}\n"
+"")
+        self.label.setObjectName("label")
+        self.gridLayout.addWidget(self.label, 0, 0, 1, 1)
+        self.txtDescripcion = QtWidgets.QLineEdit(self.frame)
+        self.txtDescripcion.setStyleSheet("background-color: rgb(255, 255, 255);")
+        self.txtDescripcion.setObjectName("txtDescripcion")
+        self.gridLayout.addWidget(self.txtDescripcion, 1, 1, 1, 1)
         self.cbUnidadesMedida = QtWidgets.QComboBox(self.frame)
         self.cbUnidadesMedida.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
         self.cbUnidadesMedida.setLayoutDirection(QtCore.Qt.LeftToRight)
@@ -195,112 +217,19 @@ class Ui_mw_materiales(object):
         self.cbUnidadesMedida.addItem("")
         self.cbUnidadesMedida.addItem("")
         self.gridLayout.addWidget(self.cbUnidadesMedida, 0, 4, 1, 1)
-        self.txtPrecioTotal = QtWidgets.QLabel(self.frame)
-        self.txtPrecioTotal.setStyleSheet("QLabel{\n"
-"        font-weight:500;\n"
-"        background-color:#c7c7c7;\n"
-"}\n"
-"")
-        self.txtPrecioTotal.setText("")
-        self.txtPrecioTotal.setObjectName("txtPrecioTotal")
-        self.gridLayout.addWidget(self.txtPrecioTotal, 1, 3, 1, 1)
-        self.btnGuardar = QtWidgets.QPushButton(self.frame)
-        self.btnGuardar.setStyleSheet("QPushButton {\n"
-"    background-color:rgb(255, 255, 255);\n"
-"    border:1px solid rgb(100,100,100);\n"
-"    color:rgb(50,50,50);\n"
-"    padding: 8px 16px;\n"
-"    border-radius: 6px;\n"
-"    font-size: 14px;\n"
-"}\n"
-"\n"
-"QPushButton:hover {\n"
-"    background-color: #D6D2D1;\n"
-"}\n"
-"\n"
-"QPushButton:pressed {\n"
-"    background-color: #52c7ff;\n"
-"}")
-        self.btnGuardar.setObjectName("btnGuardar")
-        self.gridLayout.addWidget(self.btnGuardar, 0, 5, 1, 1)
-        self.label_5 = QtWidgets.QLabel(self.frame)
-        self.label_5.setStyleSheet("background-color: rgb(222, 221, 218);")
-        self.label_5.setObjectName("label_5")
-        self.gridLayout.addWidget(self.label_5, 1, 2, 1, 1)
-        self.btnVaciarCampos = QtWidgets.QPushButton(self.frame)
-        self.btnVaciarCampos.setStyleSheet("QPushButton {\n"
-"    background-color:rgb(255, 255, 255);\n"
-"    border:1px solid rgb(100,100,100);\n"
-"    color:rgb(50,50,50);\n"
-"    padding: 8px 16px;\n"
-"    border-radius: 6px;\n"
-"    font-size: 14px;\n"
-"}\n"
-"\n"
-"QPushButton:hover {\n"
-"    background-color: #D6D2D1;\n"
-"}\n"
-"\n"
-"QPushButton:pressed {\n"
-"    background-color: #52c7ff;\n"
-"}")
-        self.btnVaciarCampos.setObjectName("btnVaciarCampos")
-        self.gridLayout.addWidget(self.btnVaciarCampos, 3, 5, 1, 1)
-        self.btnEditar = QtWidgets.QPushButton(self.frame)
-        self.btnEditar.setStyleSheet("QPushButton {\n"
-"    background-color:rgb(255, 255, 255);\n"
-"    border:1px solid rgb(100,100,100);\n"
-"    color:rgb(50,50,50);\n"
-"    padding: 8px 16px;\n"
-"    border-radius: 6px;\n"
-"    font-size: 14px;\n"
-"}\n"
-"\n"
-"QPushButton:hover {\n"
-"    background-color: #D6D2D1;\n"
-"}\n"
-"\n"
-"QPushButton:pressed {\n"
-"    background-color: #52c7ff;\n"
-"}")
-        self.btnEditar.setObjectName("btnEditar")
-        self.gridLayout.addWidget(self.btnEditar, 1, 5, 1, 1)
+        self.txtNombreMaterial = QtWidgets.QLineEdit(self.frame)
+        self.txtNombreMaterial.setStyleSheet("background-color: rgb(255, 255, 255);")
+        self.txtNombreMaterial.setObjectName("txtNombreMaterial")
+        self.gridLayout.addWidget(self.txtNombreMaterial, 0, 1, 1, 1)
+        self.txtCantidad = QtWidgets.QLineEdit(self.frame)
+        self.txtCantidad.setStyleSheet("background-color: rgb(255, 255, 255);")
+        self.txtCantidad.setObjectName("txtCantidad")
+        self.gridLayout.addWidget(self.txtCantidad, 0, 3, 1, 1)
         self.label_4 = QtWidgets.QLabel(self.frame)
         self.label_4.setMaximumSize(QtCore.QSize(70, 16777215))
         self.label_4.setStyleSheet("background-color: rgb(222, 221, 218);")
         self.label_4.setObjectName("label_4")
         self.gridLayout.addWidget(self.label_4, 0, 2, 1, 1)
-        self.txtCantidad = QtWidgets.QLineEdit(self.frame)
-        self.txtCantidad.setStyleSheet("background-color: rgb(255, 255, 255);")
-        self.txtCantidad.setObjectName("txtCantidad")
-        self.gridLayout.addWidget(self.txtCantidad, 0, 3, 1, 1)
-        self.txtDescripcion = QtWidgets.QLineEdit(self.frame)
-        self.txtDescripcion.setStyleSheet("background-color: rgb(255, 255, 255);")
-        self.txtDescripcion.setObjectName("txtDescripcion")
-        self.gridLayout.addWidget(self.txtDescripcion, 1, 1, 1, 1)
-        self.cbPedidos = QtWidgets.QComboBox(self.frame)
-        self.cbPedidos.setMinimumSize(QtCore.QSize(350, 0))
-        self.cbPedidos.setMaximumSize(QtCore.QSize(450, 16777215))
-        self.cbPedidos.setStyleSheet("QComboBox{\n"
-"        background-color:rgb(255, 255, 255);\n"
-"        border:1px solid rgb(100,100,100);\n"
-"        color:rgb(50,50,50);\n"
-"        border-radius:4px;\n"
-"        \n"
-"}\n"
-"\n"
-"")
-        self.cbPedidos.setMaxVisibleItems(25)
-        self.cbPedidos.setObjectName("cbPedidos")
-        self.gridLayout.addWidget(self.cbPedidos, 2, 3, 1, 1)
-        self.txtNombreMaterial = QtWidgets.QLineEdit(self.frame)
-        self.txtNombreMaterial.setStyleSheet("background-color: rgb(255, 255, 255);")
-        self.txtNombreMaterial.setObjectName("txtNombreMaterial")
-        self.gridLayout.addWidget(self.txtNombreMaterial, 0, 1, 1, 1)
-        self.txtPrecioUnidadMedida = QtWidgets.QLineEdit(self.frame)
-        self.txtPrecioUnidadMedida.setStyleSheet("background-color: rgb(255, 255, 255);")
-        self.txtPrecioUnidadMedida.setObjectName("txtPrecioUnidadMedida")
-        self.gridLayout.addWidget(self.txtPrecioUnidadMedida, 2, 1, 1, 1)
         self.btnRefrescar = QtWidgets.QPushButton(self.frame)
         self.btnRefrescar.setMaximumSize(QtCore.QSize(16777215, 30))
         self.btnRefrescar.setStyleSheet("QPushButton {\n"
@@ -321,11 +250,62 @@ class Ui_mw_materiales(object):
 "}")
         self.btnRefrescar.setObjectName("btnRefrescar")
         self.gridLayout.addWidget(self.btnRefrescar, 4, 5, 1, 1)
+        self.btnVaciarCampos = QtWidgets.QPushButton(self.frame)
+        self.btnVaciarCampos.setStyleSheet("QPushButton {\n"
+"    background-color:rgb(255, 255, 255);\n"
+"    border:1px solid rgb(100,100,100);\n"
+"    color:rgb(50,50,50);\n"
+"    padding: 8px 16px;\n"
+"    border-radius: 6px;\n"
+"    font-size: 14px;\n"
+"}\n"
+"\n"
+"QPushButton:hover {\n"
+"    background-color: #D6D2D1;\n"
+"}\n"
+"\n"
+"QPushButton:pressed {\n"
+"    background-color: #52c7ff;\n"
+"}")
+        self.btnVaciarCampos.setObjectName("btnVaciarCampos")
+        self.gridLayout.addWidget(self.btnVaciarCampos, 3, 5, 1, 1)
+        self.label_5 = QtWidgets.QLabel(self.frame)
+        self.label_5.setStyleSheet("background-color: rgb(222, 221, 218);")
+        self.label_5.setObjectName("label_5")
+        self.gridLayout.addWidget(self.label_5, 1, 2, 1, 1)
+        self.label_3 = QtWidgets.QLabel(self.frame)
+        self.label_3.setMaximumSize(QtCore.QSize(150, 16777215))
+        self.label_3.setStyleSheet("background-color: rgb(222, 221, 218);")
+        self.label_3.setObjectName("label_3")
+        self.gridLayout.addWidget(self.label_3, 2, 0, 1, 1)
         self.lblBuscar = QtWidgets.QLabel(self.frame)
         self.lblBuscar.setMaximumSize(QtCore.QSize(55, 16777215))
         self.lblBuscar.setStyleSheet("background-color: rgb(222, 221, 218);")
         self.lblBuscar.setObjectName("lblBuscar")
-        self.gridLayout.addWidget(self.lblBuscar, 3, 2, 1, 1)
+        self.gridLayout.addWidget(self.lblBuscar, 2, 2, 1, 1)
+        self.txtBuscar = QtWidgets.QLineEdit(self.frame)
+        self.txtBuscar.setStyleSheet("background-color: rgb(246, 245, 244);")
+        self.txtBuscar.setObjectName("txtBuscar")
+        self.gridLayout.addWidget(self.txtBuscar, 2, 3, 1, 1)
+        self.btnBuscar = QtWidgets.QPushButton(self.frame)
+        self.btnBuscar.setStyleSheet("QPushButton {\n"
+"    background-color:rgb(255, 255, 255);\n"
+"    border:1px solid rgb(100,100,100);\n"
+"    color:rgb(50,50,50);\n"
+"    padding: 8px 16px;\n"
+"    border-radius: 6px;\n"
+"    font-size: 14px;\n"
+"}\n"
+"\n"
+"QPushButton:hover {\n"
+"    background-color: #D6D2D1;\n"
+"}\n"
+"\n"
+"QPushButton:pressed {\n"
+"    background-color: #52c7ff;\n"
+"}")
+        self.btnBuscar.setObjectName("btnBuscar")
+        self.gridLayout.addWidget(self.btnBuscar, 2, 4, 1, 1)
         self.gridLayout.setColumnStretch(0, 3)
         self.horizontalLayout.addLayout(self.gridLayout)
         self.gridLayout_4.addLayout(self.horizontalLayout, 0, 0, 1, 1)
@@ -441,18 +421,16 @@ class Ui_mw_materiales(object):
 
         self.retranslateUi(mw_materiales)
         self.cbUnidadesMedida.setCurrentIndex(0)
-        self.cbPedidos.setCurrentIndex(-1)
         QtCore.QMetaObject.connectSlotsByName(mw_materiales)
 
     def retranslateUi(self, mw_materiales):
         _translate = QtCore.QCoreApplication.translate
         mw_materiales.setWindowTitle(_translate("mw_materiales", "Materiales"))
-        self.btnBuscar.setText(_translate("mw_materiales", "Buscar"))
+        self.btnEditar.setText(_translate("mw_materiales", "Editar"))
         self.label_2.setText(_translate("mw_materiales", "Descripcion:"))
-        self.label.setText(_translate("mw_materiales", "Material:"))
-        self.label_3.setText(_translate("mw_materiales", "Precio*UMedida:"))
         self.btnEliminar.setText(_translate("mw_materiales", "Eliminar"))
-        self.lblProveedores.setText(_translate("mw_materiales", "Pedidos:"))
+        self.btnGuardar.setText(_translate("mw_materiales", "Guardar"))
+        self.label.setText(_translate("mw_materiales", "Material:"))
         self.cbUnidadesMedida.setItemText(0, _translate("mw_materiales", "lbs"))
         self.cbUnidadesMedida.setItemText(1, _translate("mw_materiales", "ltrs"))
         self.cbUnidadesMedida.setItemText(2, _translate("mw_materiales", "mts"))
@@ -460,13 +438,13 @@ class Ui_mw_materiales(object):
         self.cbUnidadesMedida.setItemText(4, _translate("mw_materiales", "galon"))
         self.cbUnidadesMedida.setItemText(5, _translate("mw_materiales", "unidad"))
         self.cbUnidadesMedida.setItemText(6, _translate("mw_materiales", "simpl"))
-        self.btnGuardar.setText(_translate("mw_materiales", "Guardar"))
-        self.label_5.setText(_translate("mw_materiales", "Precio total:"))
-        self.btnVaciarCampos.setText(_translate("mw_materiales", "Vaciar Campos"))
-        self.btnEditar.setText(_translate("mw_materiales", "Editar"))
         self.label_4.setText(_translate("mw_materiales", "Cantidad:"))
         self.btnRefrescar.setText(_translate("mw_materiales", "Refrescar"))
+        self.btnVaciarCampos.setText(_translate("mw_materiales", "Vaciar Campos"))
+        self.label_5.setText(_translate("mw_materiales", "Precio total:"))
+        self.label_3.setText(_translate("mw_materiales", "Precio*UMedida:"))
         self.lblBuscar.setText(_translate("mw_materiales", "Buscar:"))
+        self.btnBuscar.setText(_translate("mw_materiales", "Buscar"))
         item = self.tw_materiales.horizontalHeaderItem(0)
         item.setText(_translate("mw_materiales", "Id"))
         item = self.tw_materiales.horizontalHeaderItem(1)

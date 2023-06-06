@@ -136,6 +136,17 @@ class Dt_materiales:
         cursor.close()
         return res
 
+    @classmethod
+    def buscarMateriaPorPedido(cls, nombre_material, id_pedido):
+
+        cursor = Conexion.obtenerConexion().cursor()
+        sentencia = (f"SELECT * FROM MAPA.materiales WHERE nombre_material like '%' '{nombre_material}' '%' AND id_pedido = {id_pedido}")
+        cursor.execute(sentencia)
+        resultado_materiales = cursor.fetchall()
+        cursor.connection.commit()
+        cursor.close()
+        return resultado_materiales
+
     # def guardarMaterialPorPedido(self, Materiales : materiales.Materiales):
     #     try:
     #         cursor = Conexion.obtenerConexion().cursor()
