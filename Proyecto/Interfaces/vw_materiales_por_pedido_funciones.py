@@ -7,16 +7,17 @@ from PyQt5.QtWidgets import QApplication, QAbstractItemView, QTableWidget, QMess
 from Datos import dt_materiales
 from Datos.dt_Pedidos import Dt_Pedidos
 from Entidades.materiales import Materiales
-from Interfaces import vw_materiales
+from Interfaces import vw_materiales_por_pedido
+from Interfaces import vw_materiales_por_pedido
 
-class vw_materiales_funciones(QtWidgets.QMainWindow, vw_materiales.Ui_mw_materiales):
+class vw_materiales_por_pedido_funciones(QtWidgets.QMainWindow, vw_materiales_por_pedido.Ui_mw_materiales):
+    id = None
+
     def __init__(self, parent = None):
-        super(vw_materiales_funciones, self).__init__(parent)
+        super(vw_materiales_por_pedido_funciones, self).__init__(parent)
         self.setupUi(self)
-
-
         #Acciones de la tabla
-        self.llenarTablaMateriales(dt_materiales.Dt_materiales.listarMateriales())
+        self.llenarTablaMateriales(dt_materiales.Dt_materiales.listarMaterialesPorPedido(vw_materiales_por_pedido_funciones.id))
         self.tw_materiales.itemSelectionChanged.connect(self.obtenerDatosTablaMateriales)
 
         #cb
@@ -30,7 +31,6 @@ class vw_materiales_funciones(QtWidgets.QMainWindow, vw_materiales.Ui_mw_materia
         self.btnVaciarCampos.clicked.connect(self.limpiarCampos)
         self.btnBuscar.clicked.connect(self.buscarMaterial)
         self.btnRefrescar.clicked.connect(self.refrescarTabla)
-
 
     def llenarComboBoxPedidos(self):
         pedidos = Dt_Pedidos.listarPedidos()
@@ -240,7 +240,7 @@ class vw_materiales_funciones(QtWidgets.QMainWindow, vw_materiales.Ui_mw_materia
 
 if __name__ == '__main__':
     app = QtWidgets.QApplication(sys.argv)
-    mw = vw_materiales_funciones()
+    mw = vw_materiales_por_pedido_funciones()
     mw.show()
     app.exec()
 

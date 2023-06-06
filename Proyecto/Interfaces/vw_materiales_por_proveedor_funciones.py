@@ -1,9 +1,9 @@
 
 import pymysql
 
-from Proyecto.Entidades.materiales_por_proveedor import MaterialesPorProveedor
-from Proyecto.Interfaces import vw_materiales_por_proveedor
-from Proyecto.Datos import dt_materiales_por_proveedor, dt_proveedor, dt_materiales
+from Entidades.materiales_por_proveedor import MaterialesPorProveedor
+from Interfaces import vw_materiales_por_proveedor
+from Datos import dt_materiales_por_proveedor, dt_proveedor, dt_materiales
 from PyQt5 import QtWidgets
 
 # Carlos Eduardo Chavarria Centeno (EdCenten0)

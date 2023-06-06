@@ -1,11 +1,11 @@
 import sys
 
 import vw_ventas
-import Proyecto.Datos.dt_Ventas
-import Proyecto.Interfaces.dt_taller
+import Datos.dt_Ventas
+
 import PyQt5.QtWidgets
 
-from Proyecto.Entidades import Ventas
+from Entidades import Ventas
 
 
 class Vw_ventas_funciones(PyQt5.QtWidgets.QMainWindow, vw_ventas.Ui_Ventas):
@@ -69,12 +69,12 @@ class Vw_ventas_funciones(PyQt5.QtWidgets.QMainWindow, vw_ventas.Ui_Ventas):
                     Ventas.descripcion = self.line_Ventas_Descripcion.text()
                     Ventas.id_factura = self.line_Ventas_Nfactura.text()
 
-                    Proyecto.Datos.dt_Ventas.Dt_Ventas.guardarVenta(Ventas)
+                    Datos.dt_Ventas.Dt_Ventas.guardarVenta(Ventas)
 
                     PyQt5.QtWidgets.QMessageBox.about(self, "Se ha guardado la venta")
 
                     self.limpiarCampos()
-                    self.llenarTablaVentas(Proyecto.Datos.dt_Ventas.Dt_Ventas.listarVentas())
+                    self.llenarTablaVentas( Datos.dt_Ventas.Dt_Ventas.listarVentas())
 
 
 

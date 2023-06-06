@@ -1,4 +1,5 @@
-from Proyecto.Datos.Conexion import Conexion
+from Datos.Conexion import Conexion
+from Entidades import pedidos
 
 
 class Dt_materiales:
@@ -122,8 +123,25 @@ class Dt_materiales:
         return cuenta
 
 
+    #MATERIALES POR PEDIDO
+
+    @classmethod
+    def listarMaterialesPorPedido(cls, id_pedido):
+        cursor = Conexion.obtenerConexion().cursor()
+        id_pedido = id_pedido
+        print(id_pedido)
+        sentencia = f"SELECT * FROM materiales WHERE id_pedido = {id_pedido}"
+        cursor.execute(sentencia)
+        res = cursor.fetchall()
+        cursor.close()
+        return res
+
+
+
+
 if __name__ == '__main__':
     materiales1 = Dt_materiales.listarMateriales()
     for m in materiales1:
         print(m)
     Dt_materiales.contarMaterialesPorPedido(2)
+    print(Dt_materiales.listarMaterialesPorPedido(pedidos.Pedido(2, None, None, None, None)))

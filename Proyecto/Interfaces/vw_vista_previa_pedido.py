@@ -14,7 +14,7 @@ from PyQt5 import QtCore, QtGui, QtWidgets
 class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
         MainWindow.setObjectName("MainWindow")
-        MainWindow.resize(1114, 600)
+        MainWindow.resize(1303, 755)
         MainWindow.setMinimumSize(QtCore.QSize(800, 600))
         MainWindow.setStyleSheet("background-color: rgb(222, 221, 218);")
         self.centralwidget = QtWidgets.QWidget(MainWindow)
@@ -22,6 +22,8 @@ class Ui_MainWindow(object):
         self.centralwidget.setObjectName("centralwidget")
         self.gridLayout_4 = QtWidgets.QGridLayout(self.centralwidget)
         self.gridLayout_4.setObjectName("gridLayout_4")
+        self.ly_contenedor = QtWidgets.QGridLayout()
+        self.ly_contenedor.setObjectName("ly_contenedor")
         self.frame_2 = QtWidgets.QFrame(self.centralwidget)
         self.frame_2.setStyleSheet("QPushButton {\n"
 "    background-color:rgb(255, 255, 255);\n"
@@ -218,7 +220,8 @@ class Ui_MainWindow(object):
         self.horizontalLayout.setStretch(0, 1)
         self.horizontalLayout.setStretch(1, 4)
         self.gridLayout_3.addLayout(self.horizontalLayout, 0, 0, 1, 1)
-        self.gridLayout_4.addWidget(self.frame_2, 0, 0, 1, 1)
+        self.ly_contenedor.addWidget(self.frame_2, 0, 0, 1, 1)
+        self.gridLayout_4.addLayout(self.ly_contenedor, 0, 0, 1, 1)
         MainWindow.setCentralWidget(self.centralwidget)
 
         self.retranslateUi(MainWindow)

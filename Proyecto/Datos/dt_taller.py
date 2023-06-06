@@ -1,4 +1,4 @@
-from Proyecto.Datos.Conexion import Conexion
+from Datos.Conexion import Conexion
 
 class Dt_taller:
 
