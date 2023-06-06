@@ -1,3 +1,4 @@
+import Proyecto
 from Proyecto.Datos import Conexion
 
 class Dt_Ventas:
@@ -57,6 +58,8 @@ class Dt_Ventas:
             print(f"Error al eliminar Venta: {ex}")
 
         return indicador
+
+
 
 
 
