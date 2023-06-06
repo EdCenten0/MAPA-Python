@@ -2,8 +2,8 @@ import copy
 
 
 class Cliente:
-    def __init__(self, id=None, nombre=None, apellido=None, cedula=None, correo=None, telefono=None, id_tienda=None, estado=None):
-        self._id = id
+    def __init__(self, id_cliente=None, nombre=None, apellido=None, cedula=None, correo=None, telefono=None, id_tienda=None, estado=None):
+        self._id_cliente = id_cliente
         self._nombre = nombre
         self._apellido = apellido
         self._correo = correo
@@ -15,7 +15,7 @@ class Cliente:
 
     def __str__(self):
         return f'''
-        id: {self._id}
+        id_cliente: {self._id_cliente}
         nombre: {self._nombre},
         apellido: {self._apellido},
         cedula: {self._cedula},  
@@ -28,7 +28,7 @@ class Cliente:
 
     def __getitem__(self, item):
         u = copy.copy(self) #realiza una copia exacta del objeto
-        u.id = u._id
+        u.id_cliente = u._id_cliente
         u.nombre = u._nombre
         u.cedula = u._cedula
         u.apellido = u._apellido
@@ -39,13 +39,13 @@ class Cliente:
 
     #GET
     @property
-    def id(self):
-        return self._id
+    def id_cliente(self):
+        return self._id_cliente
 
     #SET
-    @id.setter
-    def id(self, id):
-        self._id = id
+    @id_cliente.setter
+    def id_cliente(self, id_cliente):
+        self._id_cliente = id_cliente
 
     @property
     def nombre(self):
