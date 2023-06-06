@@ -6,6 +6,7 @@ import Proyecto.Datos.dt_taller
 import pymysql
 import PyQt5.QtWidgets
 
+from Proyecto.Datos import dt_Ventas
 from Proyecto.Entidades import Ventas
 from Proyecto.Entidades.Ventas import ventas
 
@@ -14,6 +15,14 @@ class Vw_ventas_funciones(PyQt5.QtWidgets.QMainWindow, vw_ventas.Ui_Ventas):
     def __init__(self, parent=None):
         super(Vw_ventas_funciones, self).__init__(parent)
         self.setupUi(self)
+        self.limpiarCampos()
+        self.llenarTablaVentas(dt_Ventas.Dt_Ventas.listarVentas())
+        self.obtenerDatosTablaVentas()
+
+        self.bt_Guardar_Ventas.clicked.connect(self.guardarVenta())
+        self.bt_Editar_Ventas.clicked.connect(self.editarVenta())
+        self.bt_Eliminar_Ventas.clicked.connect(self.eliminarVenta())
+        self.bt_Vaciar_Ventas.clicked.connect(self.limpiarCampos())
 
     def limpiarCampos(self):
         self.line_Ventas_Cantidad.setText("")
@@ -29,7 +38,7 @@ class Vw_ventas_funciones(PyQt5.QtWidgets.QMainWindow, vw_ventas.Ui_Ventas):
         idTienda = self.tb_Ventas.item(filaActual, 1).text()
         noFactura = self.tb_Ventas.item(filaActual, 2).text()
         descripcion = self.tb_Ventas.item(filaActual, 3).text()
-        cantidad = self.tb_Ventas.item(filaActual, 4).text()\
+        cantidad = self.tb_Ventas.item(filaActual, 4).text()
 
         self.line_Ventas_Id.setText(id)
         self.lineEdit(idTienda)
@@ -61,7 +70,7 @@ class Vw_ventas_funciones(PyQt5.QtWidgets.QMainWindow, vw_ventas.Ui_Ventas):
             self.tb_Ventas.setItem(tbRow, 4, PyQt5.QtWidgets.QTableWidgetItem(row["cantidad"]))
             tbRow += 1
 
-    def guardarVenta(self, ):
+    def guardarVenta(self):
         if(not self.line_Ventas_Id.text() == "" and not self.lineEdit == "" and not self.line_Ventas_Cantidad == "" and not self.line_Ventas_Nfactura =="" and not self.line_Ventas_Descripcion == ""):
             if self.line_Ventas_Id == "":
                 try:
