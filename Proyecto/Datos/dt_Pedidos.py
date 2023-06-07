@@ -1,3 +1,5 @@
+from PyQt5.QtWidgets import QMessageBox
+
 from Datos import Conexion
 from Entidades.pedidos import Pedido
 
@@ -29,18 +31,21 @@ class Dt_Pedidos:
         return pedido
 
     @classmethod
-    def guardarPedido(cls, Pedido):
+    def guardarPedido(cls, pedido: Pedido):
         indicador = False
         try:
             cursor = Conexion.Conexion.obtenerConexion().cursor()
-            sql = (f"INSERT INTO pedidos (descripcion, fecha_pedido, id_cliente) VALUES ({Pedido.descripcion}, {Pedido.idPedido}, {Pedido.fecha_Pedido}, {Pedido.id_cliente}, 1)")
-            cursor.execute(sql)
+            sql = "INSERT INTO pedidos (id_cliente, descripcion, fecha_pedido) VALUES (%s, %s, %s)"
+            values = (pedido.id_cliente, pedido.descripcion, pedido.fecha_Pedido)
+            cursor.execute(sql, values)
+            cursor.connection.commit()
             cursor.close()
             print("Pedido guardado")
             indicador = True
 
         except Exception as ex:
             print(f"Error al guardar pedido: {ex}")
+
         return indicador
 
     @classmethod
@@ -49,12 +54,12 @@ class Dt_Pedidos:
 
         try:
             cursor = Conexion.Conexion.obtenerConexion().cursor()
-            sql = (f'''UPDATE pedidos SET descripcion = {Pedido.descripcion}, fecha_pedido = {Pedido.fecha_Pedido}, id_cliente = {Pedido.id_cliente}, estado = 2''')
-            cursor.execute(sql)
+            sql = "UPDATE pedidos SET descripcion = %s, fecha_pedido = %s, id_cliente = %s WHERE id_pedido = %s"
+            values = (Pedido.descripcion, Pedido.fecha_Pedido, Pedido.id_cliente, Pedido.id_pedido)
+            cursor.execute(sql, values)
             cursor.connection.commit()
             cursor.close()
             print("Pedido editado")
-
         except Exception as ex:
             print(f"Error al editar pedido: {ex}")
 
@@ -65,7 +70,7 @@ class Dt_Pedidos:
         indicador = False
         try:
             cursor = Conexion.Conexion.obtenerConexion().cursor()
-            sql = (f'''DELETE FROM pedidos WHERE id_pedidos = {Pedido.idPedido}''')
+            sql = (f'''DELETE FROM pedidos WHERE id_pedido = {Pedido.id_pedido}''')
             cursor.execute(sql)
             cursor.connection.commit()
             cursor.close()
