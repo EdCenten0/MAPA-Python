@@ -13,7 +13,6 @@ class Dt_Pedidos:
         return querys
 
     def listarSoloUnPedido(id_pedido):
-        from Datos import Conexion
         cursor = Conexion.Conexion.obtenerConexion().cursor()
         sql_query = (f"SELECT * FROM pedidos WHERE id_pedido = {id_pedido}")
 

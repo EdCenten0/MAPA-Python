@@ -1,7 +1,7 @@
 import sys
 
 import vw_ventas
-import Datos.dt_Ventas
+import Proyecto.Datos.dt_Ventas
 
 import PyQt5.QtWidgets
 
@@ -14,19 +14,19 @@ class Vw_ventas_funciones(PyQt5.QtWidgets.QMainWindow, vw_ventas.Ui_Ventas):
         self.setupUi(self)
         self.limpiarCampos()
         self.llenarTablaVentas(dt_Ventas.Dt_Ventas.listarVentas())
-        self.obtenerDatosTablaVentas()
+        self.tb_Ventas.itemSelectionChanged.connect(self.obtenerDatosTablaVentas)
 
-        self.bt_Guardar_Ventas.clicked.connect(self.guardarVenta())
-        self.bt_Editar_Ventas.clicked.connect(self.editarVenta())
-        self.bt_Eliminar_Ventas.clicked.connect(self.eliminarVenta())
-        self.bt_Vaciar_Ventas.clicked.connect(self.limpiarCampos())
+        self.bt_Guardar_Ventas.clicked.connect(self.guardarVenta)
+        self.bt_Editar_Ventas.clicked.connect(self.editarVenta)
+        self.bt_Eliminar_Ventas.clicked.connect(self.eliminarVenta)
+        self.bt_Vaciar_Ventas.clicked.connect(self.limpiarCampos)
 
     def limpiarCampos(self):
         self.line_Ventas_Cantidad.setText("")
         self.line_Ventas_Descripcion.setText("")
         self.line_Ventas_Id.setText("")
-        self.line_Ventas_Nfactura("")
-        self.lineEdit("")
+        self.line_Ventas_Nfactura.setText("")
+        self.Ventas_idTienda_line.setText("")
 
     def obtenerDatosTablaVentas(self):
         filaActual =  self.tb_Ventas.currentRow()
@@ -38,7 +38,7 @@ class Vw_ventas_funciones(PyQt5.QtWidgets.QMainWindow, vw_ventas.Ui_Ventas):
         cantidad = self.tb_Ventas.item(filaActual, 4).text()
 
         self.line_Ventas_Id.setText(id)
-        self.lineEdit(idTienda)
+        self.Ventas_idTienda_line.setText(idTienda)
         self.line_Ventas_Nfactura.setText(noFactura)
         self.line_Ventas_Descripcion.setText(descripcion)
         self.line_Ventas_Cantidad.setText(cantidad)
@@ -60,15 +60,15 @@ class Vw_ventas_funciones(PyQt5.QtWidgets.QMainWindow, vw_ventas.Ui_Ventas):
         for row in datos:
             print(row)
 
-            self.tb_Ventas.setItem(tbRow, 0, PyQt5.QtWidgets.QTableWidgetItem(str(row["id_ventas"])))
+            self.tb_Ventas.setItem(tbRow, 0, PyQt5.QtWidgets.QTableWidgetItem(str(row["id_venta"])))
             self.tb_Ventas.setItem(tbRow, 1, PyQt5.QtWidgets.QTableWidgetItem(str(row["id_tienda"])))
             self.tb_Ventas.setItem(tbRow, 2, PyQt5.QtWidgets.QTableWidgetItem(str(row["id_factura"])))
             self.tb_Ventas.setItem(tbRow, 3, PyQt5.QtWidgets.QTableWidgetItem(row["descripcion"]))
-            self.tb_Ventas.setItem(tbRow, 4, PyQt5.QtWidgets.QTableWidgetItem(row["cantidad"]))
+            self.tb_Ventas.setItem(tbRow, 4, PyQt5.QtWidgets.QTableWidgetItem(str(row["cantidad"])))
             tbRow += 1
 
     def guardarVenta(self):
-        if(not self.line_Ventas_Id.text() == "" and not self.lineEdit == "" and not self.line_Ventas_Cantidad == "" and not self.line_Ventas_Nfactura =="" and not self.line_Ventas_Descripcion == ""):
+        if not self.line_Ventas_Id.text() == "" and not self.Ventas_idTienda_line == "" and not self.line_Ventas_Cantidad == "" and not self.line_Ventas_Nfactura == "" and not self.line_Ventas_Descripcion == "":
             if self.line_Ventas_Id == "":
                 try:
                     Ventas.id_venta = self.line_Ventas_Id.text()
@@ -82,16 +82,16 @@ class Vw_ventas_funciones(PyQt5.QtWidgets.QMainWindow, vw_ventas.Ui_Ventas):
                     PyQt5.QtWidgets.QMessageBox.about(self, "Se ha guardado la venta")
 
                     self.limpiarCampos()
-                    self.llenarTablaVentas( Datos.dt_Ventas.Dt_Ventas.listarVentas())
+                    self.llenarTablaVentas(Datos.dt_Ventas.Dt_Ventas.listarVentas())
 
 
 
                 except Exception as ex:
                     print(f"Error al guardar venta: {ex}")
 
-            else: PyQt5.QtWidgets.QMessageBox.about(self, "El id ya existe")
+            else: PyQt5.QtWidgets.QMessageBox.about(self, "Error", "El id ya existe")
 
-        else: PyQt5.QtWidgets.QMessageBox.about(self, "Todos los campos deben ser llenados")
+        else: PyQt5.QtWidgets.QMessageBox.about(self, "Error", "Todos los campos deben ser llenados")
 
     def editarVenta(self):
         if (not self.line_Ventas_Id.text() == "" and not self.lineEdit == "" and not self.line_Ventas_Cantidad == "" and not self.line_Ventas_Nfactura == "" and not self.line_Ventas_Descripcion == ""):
@@ -133,7 +133,7 @@ class Vw_ventas_funciones(PyQt5.QtWidgets.QMainWindow, vw_ventas.Ui_Ventas):
             print(f"Error al eliminar venta: {ex}")
 
 if __name__ == '__main__':
-    app = PyQt5.QApplication(sys.argv)
+    app = PyQt5.QtWidgets.QApplication(sys.argv)
     mw = Vw_ventas_funciones()
     mw.show()
     app.exec()

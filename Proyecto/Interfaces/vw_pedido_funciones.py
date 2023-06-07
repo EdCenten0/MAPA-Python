@@ -61,6 +61,7 @@ class pedido_Window(QMainWindow, vw_pedido.Ui_Pedidos):
         self.line_Id.setText(id)
         self.line_Descripcion.setText(descripcion)
         self.cb_cliente.setCurrentIndex(cliente)
+        self.dt_pedido.setDate(fecha)
 
     def notifMensaje(self, indicador, resultado):
         if indicador == True:  # Se hizo correctamente la consulta a la base de datos

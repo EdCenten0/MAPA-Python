@@ -1,4 +1,4 @@
-    # -*- coding: utf-8 -*-
+# -*- coding: utf-8 -*-
 
 # Form implementation generated from reading ui file 'Ventas.ui'
 #
@@ -100,7 +100,8 @@ class Ui_Ventas(object):
         self.line_Ventas_Descripcion = QtWidgets.QLineEdit(self.Ventas)
         self.line_Ventas_Descripcion.setGeometry(QtCore.QRect(130, 120, 231, 91))
         self.line_Ventas_Descripcion.setStyleSheet("background-color: rgb(246, 245, 244);")
-        self.line_Ventas_Descripcion.setEchoMode(QtWidgets.QLineEdit.Password)
+        self.line_Ventas_Descripcion.setInputMethodHints(QtCore.Qt.ImhNone)
+        self.line_Ventas_Descripcion.setEchoMode(QtWidgets.QLineEdit.Normal)
         self.line_Ventas_Descripcion.setObjectName("line_Ventas_Descripcion")
         self.label_5 = QtWidgets.QLabel(self.Ventas)
         self.label_5.setGeometry(QtCore.QRect(376, 70, 91, 20))
@@ -109,11 +110,11 @@ class Ui_Ventas(object):
         self.label_5.setFont(font)
         self.label_5.setStyleSheet("color: rgb(255, 255, 255);")
         self.label_5.setObjectName("label_5")
-        self.lineEdit = QtWidgets.QLineEdit(self.Ventas)
-        self.lineEdit.setGeometry(QtCore.QRect(470, 70, 171, 25))
-        self.lineEdit.setStyleSheet("\n"
+        self.Ventas_idTienda_line = QtWidgets.QLineEdit(self.Ventas)
+        self.Ventas_idTienda_line.setGeometry(QtCore.QRect(470, 70, 171, 25))
+        self.Ventas_idTienda_line.setStyleSheet("\n"
 "background-color: rgb(255, 255, 255);")
-        self.lineEdit.setObjectName("lineEdit")
+        self.Ventas_idTienda_line.setObjectName("Ventas_idTienda_line")
         self.tab_Ventas.addTab(self.Ventas, "")
         Ventas.setCentralWidget(self.centralwidget)
         self.statusbar = QtWidgets.QStatusBar(Ventas)
