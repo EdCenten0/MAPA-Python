@@ -10,6 +10,8 @@
 
 from PyQt5 import QtCore, QtGui, QtWidgets
 
+from Recursos import Recursos
+
 
 class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
@@ -34,8 +36,74 @@ class Ui_MainWindow(object):
         self.horizontalLayout.setSpacing(0)
         self.horizontalLayout.setObjectName("horizontalLayout")
         self.frame_3 = QtWidgets.QFrame(self.frame)
-        self.frame_3.setStyleSheet("font-size:15px;\n"
-"font-family:\"Inter\", sans-serif;\n"
+        self.frame_3.setStyleSheet("QFrame{\n"
+"    background-color: rgb(222, 221, 218);\n"
+"    border:none;\n"
+"}\n"
+"QPushButton {\n"
+"    background-color:rgb(255, 255, 255);\n"
+"    border:1px solid rgb(100,100,100);\n"
+"    color:rgb(50,50,50);\n"
+"    padding: 8px 16px;\n"
+"    border-radius: 6px;\n"
+"    font-size: 14px;\n"
+"}\n"
+"\n"
+"QPushButton:hover {\n"
+"    background-color: #D6D2D1;\n"
+"}\n"
+"\n"
+"QPushButton:pressed {\n"
+"    background-color: #52c7ff;\n"
+"}\n"
+"\n"
+"QLabel{\n"
+"        font-weight:500;\n"
+"}\n"
+"\n"
+"*{\n"
+"        font-family:\"Inter\", sans-serif;\n"
+"        \n"
+"}\n"
+"\n"
+"QFrame{\n"
+"        background-color: rgb(222, 221, 218);\n"
+"        border-radius:10%;\n"
+"}\n"
+"\n"
+"QLineEdit {\n"
+"    background-color: white;\n"
+"    border: 1px solid gray;\n"
+"    padding: 4px;\n"
+"    border-radius: 6px;\n"
+"    font-size: 12px;\n"
+"}\n"
+"\n"
+"QLineEdit:focus {\n"
+"    border-color: #3daee9;\n"
+"    outline: none;\n"
+"}\n"
+"\n"
+"QLineEdit::hover {\n"
+"    background-color: #f0f0f0;\n"
+"}\n"
+"\n"
+"QTextEdit {\n"
+"    background-color: white;\n"
+"    border: 1px solid gray;\n"
+"    padding: 4px;\n"
+"    border-radius: 6px;\n"
+"    font-size: 12px;\n"
+"}\n"
+"\n"
+"QTextEdit:focus {\n"
+"    border-color: #3daee9;\n"
+"    outline: none;\n"
+"}\n"
+"\n"
+"QTextEdit::hover {\n"
+"    background-color: #f0f0f0;\n"
+"}\n"
 "")
         self.frame_3.setFrameShape(QtWidgets.QFrame.StyledPanel)
         self.frame_3.setFrameShadow(QtWidgets.QFrame.Raised)
@@ -44,45 +112,119 @@ class Ui_MainWindow(object):
         self.formLayout.setObjectName("formLayout")
         self.label = QtWidgets.QLabel(self.frame_3)
         self.label.setObjectName("label")
-        self.formLayout.setWidget(0, QtWidgets.QFormLayout.LabelRole, self.label)
+        self.formLayout.setWidget(1, QtWidgets.QFormLayout.LabelRole, self.label)
         self.lb_id = QtWidgets.QLabel(self.frame_3)
         self.lb_id.setObjectName("lb_id")
-        self.formLayout.setWidget(0, QtWidgets.QFormLayout.FieldRole, self.lb_id)
+        self.formLayout.setWidget(1, QtWidgets.QFormLayout.FieldRole, self.lb_id)
         spacerItem = QtWidgets.QSpacerItem(20, 40, QtWidgets.QSizePolicy.Minimum, QtWidgets.QSizePolicy.Expanding)
-        self.formLayout.setItem(1, QtWidgets.QFormLayout.LabelRole, spacerItem)
+        self.formLayout.setItem(2, QtWidgets.QFormLayout.LabelRole, spacerItem)
         self.label_2 = QtWidgets.QLabel(self.frame_3)
         self.label_2.setObjectName("label_2")
-        self.formLayout.setWidget(2, QtWidgets.QFormLayout.LabelRole, self.label_2)
+        self.formLayout.setWidget(3, QtWidgets.QFormLayout.LabelRole, self.label_2)
         self.lb_nombre = QtWidgets.QLabel(self.frame_3)
         self.lb_nombre.setObjectName("lb_nombre")
-        self.formLayout.setWidget(2, QtWidgets.QFormLayout.FieldRole, self.lb_nombre)
+        self.formLayout.setWidget(3, QtWidgets.QFormLayout.FieldRole, self.lb_nombre)
         spacerItem1 = QtWidgets.QSpacerItem(20, 40, QtWidgets.QSizePolicy.Minimum, QtWidgets.QSizePolicy.Expanding)
-        self.formLayout.setItem(3, QtWidgets.QFormLayout.LabelRole, spacerItem1)
+        self.formLayout.setItem(4, QtWidgets.QFormLayout.LabelRole, spacerItem1)
         self.label_3 = QtWidgets.QLabel(self.frame_3)
         self.label_3.setObjectName("label_3")
-        self.formLayout.setWidget(4, QtWidgets.QFormLayout.LabelRole, self.label_3)
+        self.formLayout.setWidget(5, QtWidgets.QFormLayout.LabelRole, self.label_3)
         self.lb_direccion = QtWidgets.QLabel(self.frame_3)
         self.lb_direccion.setObjectName("lb_direccion")
-        self.formLayout.setWidget(4, QtWidgets.QFormLayout.FieldRole, self.lb_direccion)
+        self.formLayout.setWidget(5, QtWidgets.QFormLayout.FieldRole, self.lb_direccion)
         spacerItem2 = QtWidgets.QSpacerItem(20, 40, QtWidgets.QSizePolicy.Minimum, QtWidgets.QSizePolicy.Expanding)
-        self.formLayout.setItem(5, QtWidgets.QFormLayout.LabelRole, spacerItem2)
+        self.formLayout.setItem(6, QtWidgets.QFormLayout.LabelRole, spacerItem2)
         self.label_4 = QtWidgets.QLabel(self.frame_3)
         self.label_4.setObjectName("label_4")
-        self.formLayout.setWidget(6, QtWidgets.QFormLayout.LabelRole, self.label_4)
+        self.formLayout.setWidget(7, QtWidgets.QFormLayout.LabelRole, self.label_4)
         self.lb_telefono = QtWidgets.QLabel(self.frame_3)
         self.lb_telefono.setObjectName("lb_telefono")
-        self.formLayout.setWidget(6, QtWidgets.QFormLayout.FieldRole, self.lb_telefono)
+        self.formLayout.setWidget(7, QtWidgets.QFormLayout.FieldRole, self.lb_telefono)
         spacerItem3 = QtWidgets.QSpacerItem(20, 40, QtWidgets.QSizePolicy.Minimum, QtWidgets.QSizePolicy.Expanding)
-        self.formLayout.setItem(7, QtWidgets.QFormLayout.LabelRole, spacerItem3)
+        self.formLayout.setItem(8, QtWidgets.QFormLayout.LabelRole, spacerItem3)
         self.label_5 = QtWidgets.QLabel(self.frame_3)
         self.label_5.setObjectName("label_5")
-        self.formLayout.setWidget(8, QtWidgets.QFormLayout.LabelRole, self.label_5)
+        self.formLayout.setWidget(9, QtWidgets.QFormLayout.LabelRole, self.label_5)
         self.lb_email = QtWidgets.QLabel(self.frame_3)
         self.lb_email.setObjectName("lb_email")
-        self.formLayout.setWidget(8, QtWidgets.QFormLayout.FieldRole, self.lb_email)
+        self.formLayout.setWidget(9, QtWidgets.QFormLayout.FieldRole, self.lb_email)
+        self.label_6 = QtWidgets.QLabel(self.frame_3)
+        self.label_6.setStyleSheet("font-family:\"Inter\", sans-serif;\n"
+"font-size:30px;\n"
+"font-weight:500;")
+        self.label_6.setObjectName("label_6")
+        self.formLayout.setWidget(0, QtWidgets.QFormLayout.LabelRole, self.label_6)
         self.horizontalLayout.addWidget(self.frame_3)
         self.frame_4 = QtWidgets.QFrame(self.frame)
-        self.frame_4.setStyleSheet("")
+        self.frame_4.setStyleSheet("QFrame{\n"
+"    background-color: rgb(222, 221, 218);\n"
+"    border:none;\n"
+"}\n"
+"QPushButton {\n"
+"    background-color:rgb(255, 255, 255);\n"
+"    border:1px solid rgb(100,100,100);\n"
+"    color:rgb(50,50,50);\n"
+"    padding: 8px 16px;\n"
+"    border-radius: 6px;\n"
+"    font-size: 14px;\n"
+"}\n"
+"\n"
+"QPushButton:hover {\n"
+"    background-color: #D6D2D1;\n"
+"}\n"
+"\n"
+"QPushButton:pressed {\n"
+"    background-color: #52c7ff;\n"
+"}\n"
+"\n"
+"QLabel{\n"
+"        font-weight:500;\n"
+"}\n"
+"\n"
+"*{\n"
+"        font-family:\"Inter\", sans-serif;\n"
+"        \n"
+"}\n"
+"\n"
+"QFrame{\n"
+"        background-color: rgb(222, 221, 218);\n"
+"        border-radius:10%;\n"
+"}\n"
+"\n"
+"QLineEdit {\n"
+"    background-color: white;\n"
+"    border: 1px solid gray;\n"
+"    padding: 4px;\n"
+"    border-radius: 6px;\n"
+"    font-size: 12px;\n"
+"}\n"
+"\n"
+"QLineEdit:focus {\n"
+"    border-color: #3daee9;\n"
+"    outline: none;\n"
+"}\n"
+"\n"
+"QLineEdit::hover {\n"
+"    background-color: #f0f0f0;\n"
+"}\n"
+"\n"
+"QTextEdit {\n"
+"    background-color: white;\n"
+"    border: 1px solid gray;\n"
+"    padding: 4px;\n"
+"    border-radius: 6px;\n"
+"    font-size: 12px;\n"
+"}\n"
+"\n"
+"QTextEdit:focus {\n"
+"    border-color: #3daee9;\n"
+"    outline: none;\n"
+"}\n"
+"\n"
+"QTextEdit::hover {\n"
+"    background-color: #f0f0f0;\n"
+"}\n"
+"")
         self.frame_4.setFrameShape(QtWidgets.QFrame.StyledPanel)
         self.frame_4.setFrameShadow(QtWidgets.QFrame.Raised)
         self.frame_4.setObjectName("frame_4")
@@ -128,8 +270,74 @@ class Ui_MainWindow(object):
         self.horizontalLayout_2.setSpacing(0)
         self.horizontalLayout_2.setObjectName("horizontalLayout_2")
         self.fr_datos_1 = QtWidgets.QFrame(self.frame_2)
-        self.fr_datos_1.setStyleSheet("font-size:15px;\n"
-"font-family:\"Inter\", sans-serif;\n"
+        self.fr_datos_1.setStyleSheet("QFrame{\n"
+"    background-color: rgb(222, 221, 218);\n"
+"    border:none;\n"
+"}\n"
+"QPushButton {\n"
+"    background-color:rgb(255, 255, 255);\n"
+"    border:1px solid rgb(100,100,100);\n"
+"    color:rgb(50,50,50);\n"
+"    padding: 8px 16px;\n"
+"    border-radius: 6px;\n"
+"    font-size: 14px;\n"
+"}\n"
+"\n"
+"QPushButton:hover {\n"
+"    background-color: #D6D2D1;\n"
+"}\n"
+"\n"
+"QPushButton:pressed {\n"
+"    background-color: #52c7ff;\n"
+"}\n"
+"\n"
+"QLabel{\n"
+"        font-weight:500;\n"
+"}\n"
+"\n"
+"*{\n"
+"        font-family:\"Inter\", sans-serif;\n"
+"        \n"
+"}\n"
+"\n"
+"QFrame{\n"
+"        background-color: rgb(222, 221, 218);\n"
+"        border-radius:10%;\n"
+"}\n"
+"\n"
+"QLineEdit {\n"
+"    background-color: white;\n"
+"    border: 1px solid gray;\n"
+"    padding: 4px;\n"
+"    border-radius: 6px;\n"
+"    font-size: 12px;\n"
+"}\n"
+"\n"
+"QLineEdit:focus {\n"
+"    border-color: #3daee9;\n"
+"    outline: none;\n"
+"}\n"
+"\n"
+"QLineEdit::hover {\n"
+"    background-color: #f0f0f0;\n"
+"}\n"
+"\n"
+"QTextEdit {\n"
+"    background-color: white;\n"
+"    border: 1px solid gray;\n"
+"    padding: 4px;\n"
+"    border-radius: 6px;\n"
+"    font-size: 12px;\n"
+"}\n"
+"\n"
+"QTextEdit:focus {\n"
+"    border-color: #3daee9;\n"
+"    outline: none;\n"
+"}\n"
+"\n"
+"QTextEdit::hover {\n"
+"    background-color: #f0f0f0;\n"
+"}\n"
 "")
         self.fr_datos_1.setFrameShape(QtWidgets.QFrame.StyledPanel)
         self.fr_datos_1.setFrameShadow(QtWidgets.QFrame.Raised)
@@ -169,6 +377,7 @@ class Ui_MainWindow(object):
         spacerItem6 = QtWidgets.QSpacerItem(20, 40, QtWidgets.QSizePolicy.Minimum, QtWidgets.QSizePolicy.Expanding)
         self.formLayout_2.setItem(5, QtWidgets.QFormLayout.LabelRole, spacerItem6)
         self.line_direccion = QtWidgets.QTextEdit(self.fr_datos_1)
+        self.line_direccion.setMaximumSize(QtCore.QSize(16777215, 50))
         self.line_direccion.setStyleSheet("background-color: rgb(255, 255, 255);")
         self.line_direccion.setObjectName("line_direccion")
         self.formLayout_2.setWidget(2, QtWidgets.QFormLayout.FieldRole, self.line_direccion)
@@ -232,6 +441,7 @@ class Ui_MainWindow(object):
         self.lb_telefono.setText(_translate("MainWindow", "{telefono}"))
         self.label_5.setText(_translate("MainWindow", "Email:"))
         self.lb_email.setText(_translate("MainWindow", "{emaill}"))
+        self.label_6.setText(_translate("MainWindow", "Tienda"))
         self.bt_editar.setText(_translate("MainWindow", "Editar"))
         self.lb_nombre_2.setText(_translate("MainWindow", "Nombre:"))
         self.lb_direccion_2.setText(_translate("MainWindow", "Dirección:"))
@@ -239,6 +449,7 @@ class Ui_MainWindow(object):
         self.lb_email_2.setText(_translate("MainWindow", "Email:"))
         self.bt_guardar.setText(_translate("MainWindow", "Guardar"))
         self.bt_vaciar.setText(_translate("MainWindow", "Vaciar campos"))
+        Recursos
 
 
 if __name__ == "__main__":

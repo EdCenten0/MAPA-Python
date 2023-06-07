@@ -1,7 +1,7 @@
 # Francisco de Jesús Melendez Simplina
 
-from Proyecto.Datos import Conexion
-from Proyecto.Entidades import tienda
+from Datos import Conexion
+from Entidades import tienda
 
 
 class Dt_tienda:
