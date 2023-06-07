@@ -297,6 +297,20 @@ class Ui_MainWindow(object):
         self.verticalLayout.addWidget(self.bt_seguridad)
         spacerItem1 = QtWidgets.QSpacerItem(20, 48, QtWidgets.QSizePolicy.Minimum, QtWidgets.QSizePolicy.Expanding)
         self.verticalLayout.addItem(spacerItem1)
+        self.label_3 = QtWidgets.QLabel(self.frame_2)
+        self.label_3.setStyleSheet("font-family:\"Inter\", sans-serif;\n"
+"font-weight:300;\n"
+"color: rgb(42, 40, 40);\n"
+"font-size:17px;")
+        self.label_3.setObjectName("label_3")
+        self.verticalLayout.addWidget(self.label_3)
+        self.label_4 = QtWidgets.QLabel(self.frame_2)
+        self.label_4.setStyleSheet("font-family:\"Inter\", sans-serif;\n"
+"font-weight:300;\n"
+"color: rgb(154, 153, 150);\n"
+"font-size:13px;")
+        self.label_4.setObjectName("label_4")
+        self.verticalLayout.addWidget(self.label_4)
         self.gridLayout.addWidget(self.frame_2, 0, 0, 1, 1)
         self.gridLayout.setColumnStretch(0, 1)
         self.gridLayout.setColumnStretch(1, 5)
@@ -321,7 +335,10 @@ class Ui_MainWindow(object):
         self.bt_taller.setText(_translate("MainWindow", "Taller"))
         self.bt_tienda.setText(_translate("MainWindow", "Tienda"))
         self.bt_seguridad.setText(_translate("MainWindow", "Seguridad"))
+        self.label_3.setText(_translate("MainWindow", "Usuario"))
+        self.label_4.setText(_translate("MainWindow", "Rol"))
         Recursos
+
 
 
 if __name__ == "__main__":

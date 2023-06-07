@@ -22,7 +22,6 @@ class VistaPreviaFacturaFunciones(QtWidgets.QMainWindow, Ui_MainWindow):
         self.obtenerDatosDelPedido()
         self.lineEdit_3.textEdited.connect(lambda: self.setPrecioTotal())
         self.pushButton.clicked.connect(lambda: self.guardarFactura())
-        self.label_7.setText("")
 
     def obtenerDatosDelPedido(self):
         pedido = dt_Pedidos.Dt_Pedidos.listarSoloUnPedido(VistaPreviaFacturaFunciones.id_pedido)
