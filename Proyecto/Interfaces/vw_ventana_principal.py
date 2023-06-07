@@ -122,7 +122,7 @@ class Ui_MainWindow(object):
         self.label_2.setStyleSheet("border-image: url(:/Imagenes/mapalogo.ico);")
         self.label_2.setFrameShape(QtWidgets.QFrame.NoFrame)
         self.label_2.setText("")
-        self.label_2.setPixmap(QtGui.QPixmap("../../../../../../../../../../Recursos/Logo-MAPA.ico"))
+        self.label_2.setPixmap(QtGui.QPixmap("../../../../../../../../../../../../../../../../../../Recursos/Logo-MAPA.ico"))
         self.label_2.setAlignment(QtCore.Qt.AlignCenter)
         self.label_2.setObjectName("label_2")
         self.verticalLayout.addWidget(self.label_2)
@@ -255,6 +255,25 @@ class Ui_MainWindow(object):
         self.bt_taller.setFlat(False)
         self.bt_taller.setObjectName("bt_taller")
         self.verticalLayout.addWidget(self.bt_taller)
+        self.bt_tienda = QtWidgets.QPushButton(self.frame_2)
+        self.bt_tienda.setStyleSheet("QPushButton {\n"
+"    background-color:rgb(255, 255, 255);\n"
+"    border:1px solid rgb(100,100,100);\n"
+"    color:rgb(50,50,50);\n"
+"    padding: 8px 16px;\n"
+"    border-radius: 6px;\n"
+"    font-size: 14px;\n"
+"}\n"
+"\n"
+"QPushButton:hover {\n"
+"    background-color: #D6D2D1;\n"
+"}\n"
+"\n"
+"QPushButton:pressed {\n"
+"    background-color: #52c7ff;\n"
+"}")
+        self.bt_tienda.setObjectName("bt_tienda")
+        self.verticalLayout.addWidget(self.bt_tienda)
         self.bt_seguridad = QtWidgets.QPushButton(self.frame_2)
         self.bt_seguridad.setMinimumSize(QtCore.QSize(0, 44))
         self.bt_seguridad.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
@@ -314,10 +333,12 @@ class Ui_MainWindow(object):
         self.bt_facturas.setText(_translate("MainWindow", "Facturas"))
         self.bt_ventas.setText(_translate("MainWindow", "Ventas"))
         self.bt_taller.setText(_translate("MainWindow", "Taller"))
+        self.bt_tienda.setText(_translate("MainWindow", "Tienda"))
         self.bt_seguridad.setText(_translate("MainWindow", "Seguridad"))
         self.label_3.setText(_translate("MainWindow", "Usuario"))
         self.label_4.setText(_translate("MainWindow", "Rol"))
         Recursos
+
 
 
 if __name__ == "__main__":

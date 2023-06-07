@@ -116,7 +116,7 @@ QPushButton:pressed {
            <property name="frameShadow">
             <enum>QFrame::Raised</enum>
            </property>
-           <layout class="QVBoxLayout" name="verticalLayout" stretch="0,0,0,0,0,0,0,0,0,0,0,0,0,0,0">
+           <layout class="QVBoxLayout" name="verticalLayout" stretch="0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0">
             <item>
              <widget class="QLabel" name="label">
               <property name="maximumSize">
@@ -185,7 +185,7 @@ font-size:22px;</string>
                <string/>
               </property>
               <property name="pixmap">
-               <pixmap>../../../../../../../../../../Recursos/Logo-MAPA.ico</pixmap>
+               <pixmap>../../../../../../../../../../../../../../../../../../Recursos/Logo-MAPA.ico</pixmap>
               </property>
               <property name="alignment">
                <set>Qt::AlignCenter</set>
@@ -506,6 +506,31 @@ QPushButton:pressed {
               </property>
               <property name="flat">
                <bool>false</bool>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QPushButton" name="bt_tienda">
+              <property name="styleSheet">
+               <string notr="true">QPushButton {
+	background-color:rgb(255, 255, 255);
+	border:1px solid rgb(100,100,100);
+	color:rgb(50,50,50);
+    padding: 8px 16px;
+    border-radius: 6px;
+    font-size: 14px;
+}
+
+QPushButton:hover {
+    background-color: #D6D2D1;
+}
+
+QPushButton:pressed {
+    background-color: #52c7ff;
+}</string>
+              </property>
+              <property name="text">
+               <string>Tienda</string>
               </property>
              </widget>
             </item>

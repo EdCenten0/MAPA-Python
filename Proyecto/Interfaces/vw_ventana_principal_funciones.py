@@ -8,7 +8,7 @@ from vw_ventana_principal import Ui_MainWindow
 from PyQt5 import QtCore, QtGui, QtWidgets
 from Interfaces import vw_ventana_principal, vw_cliente_funciones, vw_proveedor_funciones, \
     vw_materiales_por_proveedor_funciones, vw_taller_funciones, vw_factura_funciones, vw_materiales, \
-    vw_seguridad_funciones, vw_ventas_funciones
+    vw_seguridad_funciones, vw_ventas_funciones, vw_tienda_funcionales
 from Interfaces import vw_vista_previa_pedido_funciones
 
 # Carlos Eduardo Chavarria Centeno (EdCenten0)
@@ -29,6 +29,7 @@ class VentanaPrincipal(QtWidgets.QMainWindow, vw_ventana_principal.Ui_MainWindow
         self.bt_materiales_por_proveedor.clicked.connect(lambda: self.mostrar_formularios(vw_materiales_por_proveedor_funciones.VwMaterialesPorProveedorFunciones()))
         self.bt_taller.clicked.connect(lambda: self.mostrar_formularios((vw_taller_funciones.vw_taller_funciones())))
         self.bt_ventas.clicked.connect(lambda: self.mostrar_formularios(vw_ventas_funciones.Vw_ventas_funciones()))
+        self.bt_tienda.clicked.connect(lambda: self.mostrar_formularios(vw_tienda_funcionales.VentanaTienda()))
         self.bt_seguridad.clicked.connect(lambda: self.mostrar_formularios(vw_seguridad_funciones.seguridad_Window()))
     # Para este metodo es obliga    torio pasar la clase del formulario, por
     # lo que se tiene que hacer referencia hasta llegar a la clase

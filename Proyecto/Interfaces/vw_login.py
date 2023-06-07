@@ -10,7 +10,7 @@
 
 from PyQt5 import QtCore, QtGui, QtWidgets
 
-from Proyecto.Recursos import Recursos
+from Recursos import Recursos
 
 
 class Ui_Login(object):

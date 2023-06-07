@@ -2,9 +2,9 @@ import sys
 
 from PyQt5.QtWidgets import QApplication, QMainWindow, QMessageBox
 
-from Proyecto.Interfaces import vw_tienda
-from Proyecto.Datos.dt_tienda import Dt_tienda
-from Proyecto.Entidades.tienda import Tienda
+from Interfaces import vw_tienda
+from Datos.dt_tienda import Dt_tienda
+from Entidades.tienda import Tienda
 
 
 class VentanaTienda(QMainWindow, vw_tienda.Ui_MainWindow):
