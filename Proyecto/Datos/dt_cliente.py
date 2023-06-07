@@ -1,18 +1,17 @@
-from Datos import Conexion
+import Proyecto.Datos.Conexion
 
 class Dt_Clientes:
 
     @classmethod
     def listarClientes(cls):
-        cursor = Conexion.Conexion.obtenerConexion().cursor()
+        cursor = Proyecto.Datos.Conexion.Conexion.obtenerConexion().cursor()
         cursor.execute("SELECT * FROM clientes")
         querys = cursor.fetchall()
         cursor.close()
         return querys
 
     def listarSoloUnCliente(id_cliente):
-        from Datos import Conexion
-        cursor = Conexion.Conexion.obtenerConexion().cursor()
+        cursor = Proyecto.Datos.Conexion.Conexion.obtenerConexion().cursor()
         sql_query = (f"SELECT * FROM clientes WHERE id_cliente = {id_cliente}")
         cursor.execute(sql_query)
         registro = cursor.fetchall()
@@ -23,9 +22,9 @@ class Dt_Clientes:
     @classmethod
     def guardarClientes(cls, cliente):
 
-
+        indicador = False
         try:
-            cursor = Conexion.Conexion.obtenerConexion().cursor()
+            cursor = Proyecto.Datos.Conexion.Conexion.obtenerConexion().cursor()
             sql = (f"INSERT INTO clientes ( id_tienda, nombre, apellido, cedula, email, telefono, estado) VALUES ( {1}, '{cliente.nombre}', '{cliente.apellido}', '{cliente.cedula}', '{cliente.email}', '{cliente.telefono}', '{1}')")
 
             cursor.execute(sql)
@@ -47,7 +46,7 @@ class Dt_Clientes:
         indicador = False
 
         try:
-            cursor = Conexion.Conexion.obtenerConexion().cursor()
+            cursor = Proyecto.Datos.Conexion.Conexion.obtenerConexion().cursor()
             sql = (f'''UPDATE clientes SET id_tienda = '{1}', nombre = '{cliente.nombre}', apellido = '{cliente.apellido}', email = '{cliente.email}', telefono = '{cliente.telefono}', cedula = '{cliente.cedula}', estado = '{2}' WHERE id_cliente = {cliente.id_cliente}''')
             cursor.execute(sql)
             cursor.connection.commit()
@@ -63,7 +62,7 @@ class Dt_Clientes:
 
     @classmethod
     def busqueda(cls, cliente):
-        cursor = Conexion.Conexion.obtenerConexion().cursor()
+        cursor = Proyecto.Datos.Conexion.Conexion.obtenerConexion().cursor()
         cursor.execute(f"SELECT * FROM clientes WHERE nombre like '%' '{cliente}' '%' ")
         querys = cursor.fetchall()
         cursor.close()
@@ -74,7 +73,7 @@ class Dt_Clientes:
         indicador = False
 
         try:
-            cursor = Conexion.Conexion.obtenerConexion().cursor()
+            cursor = Proyecto.Datos.Conexion.Conexion.obtenerConexion().cursor()
             sql = (f'''DELETE FROM clientes WHERE id_cliente = {cliente.id_cliente}''')
             cursor.execute(sql)
             cursor.connection.commit()
@@ -92,7 +91,7 @@ class Dt_Clientes:
         try:
 
             existe = False
-            cursor = Conexion.Conexion.obtenerConexion().cursor()
+            cursor = Proyecto.Datos.Conexion.Conexion.obtenerConexion().cursor()
             cursor.execute(f"Select * FROM clientes WHERE id_cliente = '{cliente.id_cliente}' ")
             consulta = cursor.fetchall()
 

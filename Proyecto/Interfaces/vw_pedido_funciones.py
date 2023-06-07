@@ -20,12 +20,12 @@ class pedido_Window(QMainWindow, vw_pedido.Ui_Pedidos):
 
         self.llenarComboCliente()
         self.limpiarCampos()
-        self.obtenerDatosTablaPedidos()
+        self.tb_Pedidos.itemSelectionChanged.connect(self.obtenerDatosTablaPedidos)
 
         self.bt_Guardar.clicked.connect(self.guardarPedido)
         self.bt_Editar.clicked.connect(self.editarPedido)
         self.bt_Eliminar.clicked.connect(self.editarPedido)
-        self.bt_Vaciar.clicked.connect(self.limpiarCampos())
+        self.bt_Vaciar.clicked.connect(self.limpiarCampos)
 
     def llenarComboCliente(self):
         self.cb_cliente.clear()
@@ -50,14 +50,14 @@ class pedido_Window(QMainWindow, vw_pedido.Ui_Pedidos):
     def obtenerDatosTablaPedidos(self):
         filaActual = self.tb_Pedidos.currentRow()
 
-        id_cliente = self.tb_Pedidos.item(filaActual, 1).text()
-        id = self.tb_Pedidos.setItem(filaActual, 0).text()
-        nombre = self.tb_Pedidos.setItem(filaActual, 2).text()
-        descripcion = self.tb_Pedidos.setItem(filaActual, 4).text()
-        fecha = self.tb_Pedidos.setItem(filaActual, 3).text()
-        cliente = dt_cliente.Dt_Clientes.buscarIndexCliente(int(id_cliente))
+        id_cliente = self.tb_Pedidos.item(filaActual, 1)
+        id = self.tb_Pedidos.item(filaActual, 0).text()
+        'nombre = self.tb_Pedidos.item(filaActual, 2).text()'
+        descripcion = self.tb_Pedidos.item(filaActual, 4).text()
+        fecha = self.tb_Pedidos.item(filaActual, 3).text()
+        cliente = int(dt_cliente.Dt_Clientes.buscarIndexCliente(id_cliente))
 
-        self.line_Nombre.setText(nombre)
+        'self.line_Nombre.setText(nombre)'
         self.line_Id.setText(id)
         self.line_Descripcion.setText(descripcion)
         self.cb_cliente.setCurrentIndex(cliente)
@@ -81,8 +81,8 @@ class pedido_Window(QMainWindow, vw_pedido.Ui_Pedidos):
 
             self.tb_Pedidos.setItem(tbRow, 0, QTableWidgetItem(str(row["id_pedido"])))
             self.tb_Pedidos.setItem(tbRow, 1, QTableWidgetItem(str(row["id_cliente"])))
-            self.tb_Pedidos.setItem(tbRow, 2, QTableWidgetItem(row["nombre"]))
-            self.tb_Pedidos.setItem(tbRow, 3, QTableWidgetItem(str(row["fecha"])))
+            """self.tb_Pedidos.setItem(tbRow, 2, QTableWidgetItem(row["nombre"]))"""
+            self.tb_Pedidos.setItem(tbRow, 3, QTableWidgetItem(str(row["fecha_pedido"])))
             self.tb_Pedidos.setItem(tbRow, 4, QTableWidgetItem(row["descripcion"]))
             tbRow += 1
 
@@ -95,7 +95,7 @@ class pedido_Window(QMainWindow, vw_pedido.Ui_Pedidos):
                 Pedido.id_cliente = self.cb_cliente.itemData(index)
                 Pedido.descripcion = self.line_Descripcion.text()
                 Pedido.fecha_Pedido = self.dt_pedido.text()
-                Pedido.nombre = self.line_Nombre.text()
+                'Pedido.nombre = self.line_Nombre.text()'
 
                 dt_Pedidos.Dt_Pedidos.guardarPedido(Pedido)
 
@@ -104,7 +104,7 @@ class pedido_Window(QMainWindow, vw_pedido.Ui_Pedidos):
                 print(f"Error al guardar pedido: {ex}")
 
         else:
-            QMessageBox.about("Todos los campos deben ser rellenados")
+            QMessageBox.about(self, "Error", "Todos los campos deben ser rellenados")
 
     def editarPedido(self, index):
 
@@ -116,14 +116,14 @@ class pedido_Window(QMainWindow, vw_pedido.Ui_Pedidos):
                 Pedido.id_cliente = self.cb_cliente.itemData(index)
                 Pedido.descripcion = self.line_Descripcion.text()
                 Pedido.fecha_Pedido = self.dt_pedido.text()
-                Pedido.nombre = self.line_Nombre.text()
+                'Pedido.nombre = self.line_Nombre.text()'
 
                 dt_Pedidos.Dt_Pedidos.editarPedido(Pedido)
 
             except Exception as ex:
                 print(f"Error al editar pedido: {ex}")
         else:
-            QMessageBox.about("Todos los campos deben ser rellenados")
+            QMessageBox.about(self, "Error", "Todos los campos deben ser rellenados")
 
     def eliminarPedido(self):
 
@@ -133,9 +133,9 @@ class pedido_Window(QMainWindow, vw_pedido.Ui_Pedidos):
 
                 dt_Pedidos.Dt_Pedidos.eliminarPedido(Pedido)
 
-                QMessageBox.about("El pedido se ha eliminado con exito")
+                QMessageBox.about(self, "Exito", "El pedido se ha eliminado")
                 self.limpiarCampos()
-                self.llenarTablaPedidos()
+                self.llenarTablaPedidos(dt_Pedidos.Dt_Pedidos.listarPedidos())
                 self.llenarComboCliente()
 
 

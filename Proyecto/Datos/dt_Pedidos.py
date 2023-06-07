@@ -1,5 +1,5 @@
-from Datos import Conexion
-from Entidades.pedidos import Pedido
+from Proyecto.Datos import Conexion
+from Proyecto.Entidades.pedidos import Pedido
 
 
 class Dt_Pedidos:
@@ -18,7 +18,7 @@ class Dt_Pedidos:
 
         cursor.execute(sql_query)
         registro = cursor.fetchall()
-        pedido : Pedido
+        pedido = Pedido
         for n in registro:
             id_pedido = n["id_pedido"]
             id_cliente = n["id_cliente"]
@@ -49,7 +49,7 @@ class Dt_Pedidos:
 
         try:
             cursor = Conexion.Conexion.obtenerConexion().cursor()
-            sql = (f'''UPDATE pedidos SET descripcion = {Pedido.descripcion}, fecha_pedido = {Pedido.fecha_Pedido}, id_cliente = {Pedido.id_cliente}, estado = 2''')
+            sql = f'''UPDATE pedidos SET descripcion = {Pedido.descripcion}, fecha_pedido = {Pedido.fecha_Pedido}, id_cliente = {Pedido.id_cliente}, estado = 2'''
             cursor.execute(sql)
             cursor.connection.commit()
             cursor.close()
@@ -65,7 +65,7 @@ class Dt_Pedidos:
         indicador = False
         try:
             cursor = Conexion.Conexion.obtenerConexion().cursor()
-            sql = (f'''DELETE FROM pedidos WHERE id_pedidos = {Pedido.idPedido}''')
+            sql = f'''DELETE FROM pedidos WHERE id_pedidos = {Pedido.idPedido}'''
             cursor.execute(sql)
             cursor.connection.commit()
             cursor.close()
