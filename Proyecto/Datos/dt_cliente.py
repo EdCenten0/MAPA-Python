@@ -107,12 +107,12 @@ class Dt_Clientes:
     @classmethod
     def buscarIndexCliente(cls, id):
         try:
-            listarVenta = cls.listarVentas()
+            listarCliente = cls.listarClientes()
             indice = 0
 
-            for row in listarVenta:
+            for row in listarCliente:
                 indice += 1
-                if row["id_venta"] == id:
+                if row["id_cliente"] == id:
                     break
 
             return indice
