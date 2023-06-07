@@ -1,0 +1,563 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>800</width>
+    <height>632</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>MainWindow</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">border-radius: 6px;
+font-family:&quot;Inter&quot;, sans-serif;</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <layout class="QVBoxLayout" name="verticalLayout_4" stretch="0,1">
+    <item>
+     <widget class="QLabel" name="label">
+      <property name="styleSheet">
+       <string notr="true">font-family:&quot;Inter&quot;, sans-serif;
+font-size:30px;
+font-weight:500;</string>
+      </property>
+      <property name="text">
+       <string>Facturas</string>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QFrame" name="frame">
+      <property name="styleSheet">
+       <string notr="true">QFrame{
+	background-color: rgb(222, 221, 218);
+	border:none;
+}
+QPushButton {
+	background-color:rgb(255, 255, 255);
+	border:1px solid rgb(100,100,100);
+	color:rgb(50,50,50);
+    padding: 8px 16px;
+    border-radius: 6px;
+    font-size: 14px;
+}
+
+QPushButton:hover {
+    background-color: #D6D2D1;
+}
+
+QPushButton:pressed {
+    background-color: #52c7ff;
+}
+
+QLabel{
+		font-weight:500;
+}
+
+*{
+		font-family:&quot;Inter&quot;, sans-serif;
+		
+}
+
+QFrame{
+		background-color: rgb(222, 221, 218);
+		border-radius:10%;
+}
+
+QLineEdit {
+    background-color: white;
+    border: 1px solid gray;
+    padding: 4px;
+    border-radius: 6px;
+    font-size: 12px;
+}
+
+QLineEdit:focus {
+    border-color: #3daee9;
+    outline: none;
+}
+
+QLineEdit::hover {
+    background-color: #f0f0f0;
+}
+
+QTextEdit {
+    background-color: white;
+    border: 1px solid gray;
+    padding: 4px;
+    border-radius: 6px;
+    font-size: 12px;
+}
+
+QTextEdit:focus {
+    border-color: #3daee9;
+    outline: none;
+}
+
+QTextEdit::hover {
+    background-color: #f0f0f0;
+}
+</string>
+      </property>
+      <property name="frameShape">
+       <enum>QFrame::StyledPanel</enum>
+      </property>
+      <property name="frameShadow">
+       <enum>QFrame::Raised</enum>
+      </property>
+      <layout class="QVBoxLayout" name="verticalLayout" stretch="1,1">
+       <item>
+        <widget class="QFrame" name="frame_2">
+         <property name="styleSheet">
+          <string notr="true"/>
+         </property>
+         <property name="frameShape">
+          <enum>QFrame::StyledPanel</enum>
+         </property>
+         <property name="frameShadow">
+          <enum>QFrame::Raised</enum>
+         </property>
+         <layout class="QHBoxLayout" name="horizontalLayout" stretch="5,1">
+          <property name="spacing">
+           <number>0</number>
+          </property>
+          <property name="leftMargin">
+           <number>0</number>
+          </property>
+          <property name="topMargin">
+           <number>0</number>
+          </property>
+          <property name="rightMargin">
+           <number>0</number>
+          </property>
+          <property name="bottomMargin">
+           <number>0</number>
+          </property>
+          <item>
+           <widget class="QFrame" name="frame_4">
+            <property name="styleSheet">
+             <string notr="true">QLabel{
+		font-weight:500;
+}
+</string>
+            </property>
+            <property name="frameShape">
+             <enum>QFrame::StyledPanel</enum>
+            </property>
+            <property name="frameShadow">
+             <enum>QFrame::Raised</enum>
+            </property>
+            <layout class="QGridLayout" name="gridLayout">
+             <item row="0" column="0">
+              <widget class="QLabel" name="label_2">
+               <property name="styleSheet">
+                <string notr="true">font-weight:500;</string>
+               </property>
+               <property name="text">
+                <string>ID:</string>
+               </property>
+              </widget>
+             </item>
+             <item row="0" column="2">
+              <widget class="QLineEdit" name="lineEdit">
+               <property name="enabled">
+                <bool>false</bool>
+               </property>
+               <property name="styleSheet">
+                <string notr="true">background-color: rgb(255, 255, 255);</string>
+               </property>
+              </widget>
+             </item>
+             <item row="1" column="0">
+              <widget class="QLabel" name="label_3">
+               <property name="styleSheet">
+                <string notr="true">font-weight:500;</string>
+               </property>
+               <property name="text">
+                <string>Pedido:</string>
+               </property>
+              </widget>
+             </item>
+             <item row="2" column="0">
+              <widget class="QLabel" name="label_4">
+               <property name="styleSheet">
+                <string notr="true">font-weight:500;</string>
+               </property>
+               <property name="text">
+                <string>Mano de obra:</string>
+               </property>
+              </widget>
+             </item>
+             <item row="3" column="0">
+              <widget class="QLabel" name="label_5">
+               <property name="styleSheet">
+                <string notr="true">font-weight:500;</string>
+               </property>
+               <property name="text">
+                <string>Precio de materiales:</string>
+               </property>
+              </widget>
+             </item>
+             <item row="2" column="2">
+              <widget class="QLineEdit" name="lineEdit_2">
+               <property name="styleSheet">
+                <string notr="true">background-color: rgb(255, 255, 255);</string>
+               </property>
+              </widget>
+             </item>
+             <item row="4" column="2">
+              <widget class="QLineEdit" name="lineEdit_4">
+               <property name="styleSheet">
+                <string notr="true">background-color: rgb(255, 255, 255);</string>
+               </property>
+              </widget>
+             </item>
+             <item row="3" column="2">
+              <widget class="QLineEdit" name="lineEdit_3">
+               <property name="styleSheet">
+                <string notr="true">background-color: rgb(255, 255, 255);</string>
+               </property>
+              </widget>
+             </item>
+             <item row="5" column="0">
+              <widget class="QLabel" name="label_7">
+               <property name="styleSheet">
+                <string notr="true">font-weight:500;</string>
+               </property>
+               <property name="text">
+                <string>Fecha:</string>
+               </property>
+              </widget>
+             </item>
+             <item row="4" column="0">
+              <widget class="QLabel" name="label_6">
+               <property name="styleSheet">
+                <string notr="true">font-weight:500;</string>
+               </property>
+               <property name="text">
+                <string>Precio Total:</string>
+               </property>
+              </widget>
+             </item>
+             <item row="5" column="2">
+              <widget class="QDateEdit" name="dateEdit">
+               <property name="styleSheet">
+                <string notr="true">background-color: rgb(255, 255, 255);</string>
+               </property>
+              </widget>
+             </item>
+             <item row="1" column="2">
+              <widget class="QTextEdit" name="textEdit">
+               <property name="maximumSize">
+                <size>
+                 <width>16777215</width>
+                 <height>50</height>
+                </size>
+               </property>
+               <property name="styleSheet">
+                <string notr="true">background-color: rgb(255, 255, 255);</string>
+               </property>
+              </widget>
+             </item>
+            </layout>
+           </widget>
+          </item>
+          <item>
+           <widget class="QFrame" name="frame_5">
+            <property name="styleSheet">
+             <string notr="true">QPushButton {
+	background-color:rgb(255, 255, 255);
+	border:1px solid rgb(100,100,100);
+	color:rgb(50,50,50);
+    padding: 8px 16px;
+    border-radius: 6px;
+    font-size: 14px;
+}
+
+QPushButton:hover {
+    background-color: #D6D2D1;
+}
+
+QPushButton:pressed {
+    background-color: #52c7ff;
+}
+</string>
+            </property>
+            <property name="frameShape">
+             <enum>QFrame::StyledPanel</enum>
+            </property>
+            <property name="frameShadow">
+             <enum>QFrame::Raised</enum>
+            </property>
+            <layout class="QVBoxLayout" name="verticalLayout_5">
+             <item>
+              <widget class="QPushButton" name="pushButton">
+               <property name="cursor">
+                <cursorShape>PointingHandCursor</cursorShape>
+               </property>
+               <property name="styleSheet">
+                <string notr="true">QPushButton {
+	background-color:rgb(255, 255, 255);
+	border:1px solid rgb(100,100,100);
+	color:rgb(50,50,50);
+    padding: 8px 16px;
+    border-radius: 6px;
+    font-size: 14px;
+}
+
+QPushButton:hover {
+    background-color: #D6D2D1;
+}
+
+QPushButton:pressed {
+    background-color: #52c7ff;
+}
+</string>
+               </property>
+               <property name="text">
+                <string>Guardar Ventas</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QPushButton" name="pushButton_2">
+               <property name="cursor">
+                <cursorShape>PointingHandCursor</cursorShape>
+               </property>
+               <property name="styleSheet">
+                <string notr="true">QPushButton {
+	background-color:rgb(255, 255, 255);
+	border:1px solid rgb(100,100,100);
+	color:rgb(50,50,50);
+    padding: 8px 16px;
+    border-radius: 6px;
+    font-size: 14px;
+}
+
+QPushButton:hover {
+    background-color: #D6D2D1;
+}
+
+QPushButton:pressed {
+    background-color: #52c7ff;
+}
+</string>
+               </property>
+               <property name="text">
+                <string>Eliminar</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QPushButton" name="pushButton_3">
+               <property name="cursor">
+                <cursorShape>PointingHandCursor</cursorShape>
+               </property>
+               <property name="styleSheet">
+                <string notr="true">QPushButton {
+	background-color:rgb(255, 255, 255);
+	border:1px solid rgb(100,100,100);
+	color:rgb(50,50,50);
+    padding: 8px 16px;
+    border-radius: 6px;
+    font-size: 14px;
+}
+
+QPushButton:hover {
+    background-color: #D6D2D1;
+}
+
+QPushButton:pressed {
+    background-color: #52c7ff;
+}
+</string>
+               </property>
+               <property name="text">
+                <string>Vaciar Campos</string>
+               </property>
+              </widget>
+             </item>
+            </layout>
+           </widget>
+          </item>
+         </layout>
+        </widget>
+       </item>
+       <item>
+        <widget class="QFrame" name="frame_3">
+         <property name="styleSheet">
+          <string notr="true"/>
+         </property>
+         <property name="frameShape">
+          <enum>QFrame::StyledPanel</enum>
+         </property>
+         <property name="frameShadow">
+          <enum>QFrame::Raised</enum>
+         </property>
+         <layout class="QVBoxLayout" name="verticalLayout_3">
+          <property name="spacing">
+           <number>0</number>
+          </property>
+          <property name="leftMargin">
+           <number>0</number>
+          </property>
+          <property name="topMargin">
+           <number>0</number>
+          </property>
+          <property name="rightMargin">
+           <number>0</number>
+          </property>
+          <property name="bottomMargin">
+           <number>0</number>
+          </property>
+          <item>
+           <layout class="QVBoxLayout" name="verticalLayout_2">
+            <item>
+             <widget class="QTableWidget" name="tableWidget">
+              <property name="styleSheet">
+               <string notr="true">QTableView QHeaderView::section {
+    font-size: 12px;
+    font-weight: bold;
+    background-color: lightgray;
+    padding: 4px;
+    border: none;
+    border-bottom: 1px solid gray;
+}
+
+QTableView {
+    background-color: white;
+    border: 1px solid gray;
+}
+
+QTableView QScrollBar:vertical {
+    width: 14px;
+    background-color: lightgray;
+}
+
+QTableView QScrollBar::handle:vertical {
+    background-color: gray;
+    border-radius: 7px;
+}
+
+QTableView QScrollBar::add-line:vertical,
+QTableView QScrollBar::sub-line:vertical {
+    background-color: transparent;
+}
+
+QTableView QScrollBar::add-page:vertical,
+QTableView QScrollBar::sub-page:vertical {
+    background-color: transparent;
+}
+
+QTableView QScrollBar:horizontal {
+    height: 14px;
+    background-color: lightgray;
+}
+
+QTableView QScrollBar::handle:horizontal {
+    background-color: gray;
+    border-radius: 7px;
+}
+
+QTableView QScrollBar::add-line:horizontal,
+QTableView QScrollBar::sub-line:horizontal {
+    background-color: transparent;
+}
+
+QTableView QScrollBar::add-page:horizontal,
+QTableView QScrollBar::sub-page:horizontal {
+    background-color: transparent;
+}
+</string>
+              </property>
+              <property name="lineWidth">
+               <number>0</number>
+              </property>
+              <property name="autoScroll">
+               <bool>true</bool>
+              </property>
+              <property name="tabKeyNavigation">
+               <bool>true</bool>
+              </property>
+              <property name="showDropIndicator" stdset="0">
+               <bool>true</bool>
+              </property>
+              <property name="dragDropOverwriteMode">
+               <bool>true</bool>
+              </property>
+              <property name="alternatingRowColors">
+               <bool>false</bool>
+              </property>
+              <attribute name="horizontalHeaderCascadingSectionResizes">
+               <bool>false</bool>
+              </attribute>
+              <attribute name="horizontalHeaderDefaultSectionSize">
+               <number>110</number>
+              </attribute>
+              <attribute name="horizontalHeaderShowSortIndicator" stdset="0">
+               <bool>false</bool>
+              </attribute>
+              <attribute name="horizontalHeaderStretchLastSection">
+               <bool>true</bool>
+              </attribute>
+              <attribute name="verticalHeaderCascadingSectionResizes">
+               <bool>false</bool>
+              </attribute>
+              <attribute name="verticalHeaderShowSortIndicator" stdset="0">
+               <bool>false</bool>
+              </attribute>
+              <attribute name="verticalHeaderStretchLastSection">
+               <bool>false</bool>
+              </attribute>
+              <column>
+               <property name="text">
+                <string>Factura ID</string>
+               </property>
+              </column>
+              <column>
+               <property name="text">
+                <string>Precio Material</string>
+               </property>
+              </column>
+              <column>
+               <property name="text">
+                <string>Mano de obra</string>
+               </property>
+              </column>
+              <column>
+               <property name="text">
+                <string>Precio total</string>
+               </property>
+              </column>
+              <column>
+               <property name="text">
+                <string>Fecha</string>
+               </property>
+              </column>
+              <column>
+               <property name="text">
+                <string>Pedido ID</string>
+               </property>
+              </column>
+             </widget>
+            </item>
+           </layout>
+          </item>
+         </layout>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QStatusBar" name="statusbar"/>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
