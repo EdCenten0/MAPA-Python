@@ -64,3 +64,4 @@ class Dt_Ventas:
 
 if __name__ == '__main__':
     print(Dt_Ventas.listarVentas())
+    Dt_Ventas.guardarVenta(Ventas.ventas(None, 1, 2, 100, "si"))

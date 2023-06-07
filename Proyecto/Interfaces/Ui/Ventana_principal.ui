@@ -116,7 +116,7 @@ QPushButton:pressed {
            <property name="frameShadow">
             <enum>QFrame::Raised</enum>
            </property>
-           <layout class="QVBoxLayout" name="verticalLayout" stretch="0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0">
+           <layout class="QVBoxLayout" name="verticalLayout" stretch="0,0,0,0,0,0,0,0,0,0,0,0,0,0">
             <item>
              <widget class="QLabel" name="label">
               <property name="maximumSize">
@@ -580,32 +580,6 @@ QPushButton:pressed {
                </size>
               </property>
              </spacer>
-            </item>
-            <item>
-             <widget class="QLabel" name="label_3">
-              <property name="styleSheet">
-               <string notr="true">font-family:&quot;Inter&quot;, sans-serif;
-font-weight:300;
-color: rgb(42, 40, 40);
-font-size:17px;</string>
-              </property>
-              <property name="text">
-               <string>Usuario</string>
-              </property>
-             </widget>
-            </item>
-            <item>
-             <widget class="QLabel" name="label_4">
-              <property name="styleSheet">
-               <string notr="true">font-family:&quot;Inter&quot;, sans-serif;
-font-weight:300;
-color: rgb(154, 153, 150);
-font-size:13px;</string>
-              </property>
-              <property name="text">
-               <string>Rol</string>
-              </property>
-             </widget>
             </item>
            </layout>
           </widget>
