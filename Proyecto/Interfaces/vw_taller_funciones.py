@@ -63,7 +63,9 @@ class vw_taller_funciones(QtWidgets.QMainWindow, vw_taller.Ui_mw_taller):
            Taller.email = self.txtEmail.text()
            #Taller.id_tienda = 1
 
-           if self.lblID.text() == "" and not self.txtNombre == "" and not self.txtDireccion.text() == "" and not self.txtTelefono.text() == "" and not self.txtEmail.text() == "":
+
+           if self.lblID.text() == "" and not self.txtNombre.text() == "" and not self.txtDireccion.text() == "" and not self.txtTelefono.text() == "" and not self.txtEmail.text() == "":
+
                indicador = dt_taller.Dt_taller.guardarTaller(Taller)
                self.notMensaje(indicador, "Taller guardado")
                self.limpiarCampos()

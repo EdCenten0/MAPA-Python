@@ -210,7 +210,7 @@ QTextEdit::hover {
                   <string notr="true">color: rgb(222, 221, 218);</string>
                  </property>
                  <property name="text">
-                  <string>TextLabel</string>
+                  <string/>
                  </property>
                 </widget>
                </item>
