@@ -25,6 +25,7 @@ class proveedor_Window(QMainWindow, vw_proveedor.Ui_Proveedores):
         self.bt_Vaciar.clicked.connect(self.limpiarCampos)
         self.bt_Editar.clicked.connect(self.editarProveedor)
         self.bt_Eliminar.clicked.connect(self.eliminarProveedor)
+        self.bt_Buscar_Proveedor.clicked.connect(self.buscarProveedor)
 
 
 
@@ -82,6 +83,23 @@ class proveedor_Window(QMainWindow, vw_proveedor.Ui_Proveedores):
             self.tb_Proveedor.setItem(tablerow, 5, QTableWidgetItem((row["telefono"])))
             self.tb_Proveedor.setItem(tablerow, 6, QTableWidgetItem(str(row["direccion"])))
             tablerow = tablerow + 1
+
+    def buscarProveedor(self):
+        datos = dt_proveedor.Dt_Proveedor.buscarProveedor(self.line_buscar_proveedores.text())
+        i = len(datos)
+        self.tb_Proveedor.setRowCount(i)
+        tablerow = 0
+
+        for row in datos:
+            self.tb_Proveedor.setItem(tablerow, 0, QTableWidgetItem(str(row["id_proveedor"])))
+            self.tb_Proveedor.setItem(tablerow, 1, QTableWidgetItem((row["nombre"])))
+            self.tb_Proveedor.setItem(tablerow, 2, QTableWidgetItem(str(row["ruc"])))
+            self.tb_Proveedor.setItem(tablerow, 3, QTableWidgetItem((row["email"])))
+            self.tb_Proveedor.setItem(tablerow, 4, QTableWidgetItem(str(row["catalogo"])))
+            self.tb_Proveedor.setItem(tablerow, 5, QTableWidgetItem((row["telefono"])))
+            self.tb_Proveedor.setItem(tablerow, 6, QTableWidgetItem(str(row["direccion"])))
+            tablerow = tablerow + 1
+
 
 
     def guardarProveedor(self):
