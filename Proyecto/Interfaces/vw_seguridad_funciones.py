@@ -197,6 +197,7 @@ class seguridad_Window(QMainWindow, vw_seguridad.Ui_Seguridad):
                     Usuarios.user = self.line_Usuario_User.text()
                     Usuarios.password = self.line_Usuario_Password.text()
                     Usuarios.fechaCreacion = self.line_Usuario_Fecha.text()
+                    
 
                     indicador = dt_usuario.Dt_Usuarios.guardarUsuario(Usuarios)  # Recoge los datos en los "Lines" de Qt Desinger para guardarlos en la base de datos
 
@@ -223,16 +224,16 @@ class seguridad_Window(QMainWindow, vw_seguridad.Ui_Seguridad):
             if self.validarUsuario():
                 try:
                     # Transformar fecha en formato "yyyy-MM-dd" para hacer la consulta al sql
-                    fecha = self.line_Usuario_Fecha.text()
-                    fecha_objeto = datetime.strptime(fecha, "%d/%m/%Y")
-                    # fechaTransformada = fecha_objeto.strftime("%Y-%m-%d")
+                    #fecha = self.line_Usuario_Fecha.text()
+                    #fecha_objeto = datetime.strptime(fecha, "%d-%m-%Y")
+                    #fechaTransformada = fecha_objeto.strftime("%YYYY-%MM-%dd")
 
                     Usuarios.id_usuario = self.line_Usuario_Id.text()
                     Usuarios.nombre = self.line_Usuario_Nombre.text()
                     Usuarios.apellido = self.line_Usuario_Apellido.text()
                     Usuarios.user = self.line_Usuario_User.text()
                     Usuarios.password = self.line_Usuario_Password.text()
-                    Usuarios.fechaCreacion = fecha_objeto
+                    #Usuarios.fechaCreacion = fecha_objeto
 
                     indicador = dt_usuario.Dt_Usuarios.editarUsuario(Usuarios)  # Recoge los datos en los "Lines" de Qt Desinger para editarlos en la base de datos
 

@@ -71,6 +71,7 @@ class registrar_Window(QMainWindow, vw_registrar.Ui_Registrar):
                     Usuario_rol.id_rol = self.cb_rol.itemData(self.cb_rol.currentIndex())
 
                     dt_usuario_rol.Dt_Usuario_rol.guardarUsuarioRol(Usuario_rol)
+                    QMessageBox.about(self, "Exito", f"El usuario {self.line_usuario.text()} fue registrado con exito!")
 
                     self.close()
 
