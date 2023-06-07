@@ -49,7 +49,7 @@ class Dt_Usuarios:
 
         try:
             cursor = Conexion.Conexion.obtenerConexion().cursor()
-            sql = (f'''UPDATE usuario SET nombre = "{Usuarios.nombre}" , apellido = "{Usuarios.apellido}" , user = "{Usuarios.user}", clave = "{Usuarios.password}", fecha_creacion = "{Usuarios.fechaCreacion}", estado = "{2}" WHERE id_usuario = {Usuarios.id_usuario}''')
+            sql = (f'''UPDATE usuario SET nombre = "{Usuarios.nombre}" , apellido = "{Usuarios.apellido}" , user = "{Usuarios.user}", clave = "{Usuarios.password}", estado = "{2}" WHERE id_usuario = {Usuarios.id_usuario}''')
             cursor.execute(sql)
             cursor.connection.commit()
             cursor.close()
@@ -88,7 +88,7 @@ class Dt_Usuarios:
 
             existe = False
             cursor = Conexion.Conexion.obtenerConexion().cursor()
-            cursor.execute(f'''Select * FROM usuario WHERE user = {Usuarios.user} AND clave = {Usuarios.password}''')
+            cursor.execute(f'''Select * FROM MAPA.usuario WHERE user = "{Usuarios.user}" AND clave = "{Usuarios.password}"''')
             consulta = cursor.fetchall()
             print(consulta)
 
