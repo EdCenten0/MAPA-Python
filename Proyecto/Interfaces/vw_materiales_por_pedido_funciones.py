@@ -49,12 +49,17 @@ class vw_materiales_por_pedido_funciones(QtWidgets.QMainWindow, vw_materiales_po
 
     def setPrecioTotal(self):
         if self.txtPrecioUnidadMedida.text() != "" and self.txtCantidad.text() != "":
-            try:
-                precio_total = float(self.txtCantidad.text()) * float(self.txtPrecioUnidadMedida.text())
-                self.txtPrecioTotal.setText(str(precio_total))
-                print(precio_total)
-            except Exception as e:
-                QMessageBox.about(self, f"Digítos inválidos", f"No puede ingresar letras a la cantidad ni al precio: {e}")
+            if  '-' not in self.txtPrecioUnidadMedida.text() and  '-' not in self.txtCantidad.text() :
+                try:
+                    precio_total = float(self.txtCantidad.text()) * float(self.txtPrecioUnidadMedida.text())
+                    self.txtPrecioTotal.setText(str(precio_total))
+                    print(precio_total)
+                except Exception as e:
+                    QMessageBox.about(self, f"Digítos inválidos", f"No puede ingresar letras a la cantidad ni al precio: {e}")
+            else:
+                QMessageBox.about(self, f"Digítos inválidos", f"No puede ingresar numeros menores a 0")
+                self.txtPrecioTotal.setText("")
+
 
 
 
