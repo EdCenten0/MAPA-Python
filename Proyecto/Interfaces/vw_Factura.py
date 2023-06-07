@@ -14,7 +14,7 @@ from PyQt5 import QtCore, QtGui, QtWidgets
 class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
         MainWindow.setObjectName("MainWindow")
-        MainWindow.resize(800, 600)
+        MainWindow.resize(800, 633)
         MainWindow.setStyleSheet("border-radius: 6px;\n"
 "font-family:\"Inter\", sans-serif;")
         self.centralwidget = QtWidgets.QWidget(MainWindow)
@@ -121,10 +121,6 @@ class Ui_MainWindow(object):
         self.frame_4.setObjectName("frame_4")
         self.gridLayout = QtWidgets.QGridLayout(self.frame_4)
         self.gridLayout.setObjectName("gridLayout")
-        self.textEdit = QtWidgets.QTextEdit(self.frame_4)
-        self.textEdit.setStyleSheet("background-color: rgb(255, 255, 255);")
-        self.textEdit.setObjectName("textEdit")
-        self.gridLayout.addWidget(self.textEdit, 1, 2, 1, 1)
         self.label_2 = QtWidgets.QLabel(self.frame_4)
         self.label_2.setStyleSheet("font-weight:500;")
         self.label_2.setObjectName("label_2")
@@ -170,6 +166,11 @@ class Ui_MainWindow(object):
         self.dateEdit.setStyleSheet("background-color: rgb(255, 255, 255);")
         self.dateEdit.setObjectName("dateEdit")
         self.gridLayout.addWidget(self.dateEdit, 5, 2, 1, 1)
+        self.textEdit = QtWidgets.QTextEdit(self.frame_4)
+        self.textEdit.setMaximumSize(QtCore.QSize(16777215, 50))
+        self.textEdit.setStyleSheet("background-color: rgb(255, 255, 255);")
+        self.textEdit.setObjectName("textEdit")
+        self.gridLayout.addWidget(self.textEdit, 1, 2, 1, 1)
         self.horizontalLayout.addWidget(self.frame_4)
         self.frame_5 = QtWidgets.QFrame(self.frame_2)
         self.frame_5.setStyleSheet("QPushButton {\n"

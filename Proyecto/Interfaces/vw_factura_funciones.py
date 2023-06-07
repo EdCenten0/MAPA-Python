@@ -2,8 +2,8 @@ import sys
 
 from PyQt5.QtCore import QDate
 from PyQt5.QtWidgets import QMainWindow, QApplication, QTableWidgetItem, QMessageBox
-from Datos import dt_facturas
-from Entidades import facturas
+from Datos import dt_facturas, dt_Pedidos, dt_Ventas
+from Entidades import facturas, Ventas
 from Interfaces import vw_Factura
 
 
@@ -18,7 +18,7 @@ class Ui_MainWindow(QMainWindow, vw_Factura.Ui_MainWindow):
         self.tableWidget.itemSelectionChanged.connect(self.obtenerDatosTablaFactura)
 
         #Botones
-        self.pushButton.clicked.connect(self.guardarFactura)
+        self.pushButton.clicked.connect(self.guardarVenta)
         self.pushButton_3.clicked.connect(self.limpiarCampos)
         self.pushButton_2.clicked.connect(self.eliminarFactura)
 
@@ -41,11 +41,13 @@ class Ui_MainWindow(QMainWindow, vw_Factura.Ui_MainWindow):
         fecha = self.tableWidget.item(filaSeleccionada, 4).text()
         id_pedido = self.tableWidget.item(filaSeleccionada, 5).text()
 
+        descripcion = dt_Pedidos.Dt_Pedidos.listarSoloUnPedido(id_pedido)
+
         # Tramsformar la fecha en formato "yyyy-MM-dd"
         fechaTransformada = QDate.fromString(fecha, "yyyy-MM-dd")
 
         self.lineEdit.setText(id_factura)
-        self.textEdit.setText(id_pedido)
+        self.textEdit.setText(descripcion.descripcion)
         self.dateEdit.setDate(fechaTransformada)
         self.lineEdit_3.setText(precio_materiales)
         self.lineEdit_2.setText(mano_de_obra)
@@ -122,7 +124,16 @@ class Ui_MainWindow(QMainWindow, vw_Factura.Ui_MainWindow):
         except Exception as e:
             print(f"Error en eliminarFactura: {e}")
 
+    def guardarVenta(self):
+        filaSeleccionada = self.tableWidget.currentRow()
+        id_tienda = 1
+        id_factura = self.tableWidget.item(filaSeleccionada, 0)
+        precio_total = self.tableWidget.item(filaSeleccionada,3)
+        descripcion = self.textEdit.toPlainText()
 
+        venta = Ventas.ventas(None, id_tienda, id_factura, precio_total, descripcion)
+        dt_Ventas.Dt_Ventas.guardarVenta(venta)
+        QMessageBox.about(self, "Venta Registrada", f"Se ha guardado la venta de la factura correspondiente a {descripcion}")
 
 if __name__ == '__main__':
     app = QApplication(sys.argv)

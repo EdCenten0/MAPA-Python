@@ -1,5 +1,6 @@
-import Proyecto
-from Proyecto.Datos import Conexion
+from Datos import Conexion
+from Entidades import Ventas
+
 
 class Dt_Ventas:
     @classmethod
@@ -11,27 +12,28 @@ class Dt_Ventas:
         return querys
 
     @classmethod
-    def guardarVenta(cls, Venta):
-        indicador = False
+    def guardarVenta(cls, venta: Ventas.ventas):
+
         try:
-            cursor = Proyecto.Conexion.Conexion.obtenerConexion().cursor()
-            sql = (f"INSERT INTO ventas (id_tienda, id_factura, cantidad, descripcion, estado) VALUES ({Venta.id_tienda}, {Venta.id_factura}, {Venta.cantidad}, {Venta.descripcion}, '{2}')")
-            cursor.execute(sql)
+            cursor = Conexion.Conexion.obtenerConexion().cursor()
+            sql = "INSERT INTO ventas(id_tienda, id_factura, cantidad, descripcion) VALUES (%s, %s, %s, %s)"
+            values = (venta.id_tienda, venta.id_factura, venta.cantidad, venta.descripcion)
+            cursor.execute(sql, values)
             cursor.connection.commit()
             cursor.close()
-            indicador = True
+
 
         except Exception as ex:
             print(ex)
-        return indicador
 
     @classmethod
     def editarVenta(cls, Venta):
         indicador = False
 
         try:
-            cursor = Proyecto.Conexion.Conexion.obtenerConexion().cursor()
-            sql = (f'''UPDATE ventas SET id_tienda = {Venta.id_tienda},  id_factura = {Venta.id_factura}, cantidad = {Venta.cantidad}, descripcion = "{Venta.descripcion}, estado = {2}"''')
+            cursor = Conexion.Conexion.obtenerConexion().cursor()
+            sql = (
+                f'''UPDATE ventas SET id_tienda = {Venta.id_tienda},  id_factura = {Venta.id_factura}, cantidad = {Venta.cantidad}, descripcion = "{Venta.descripcion}, estado = {2}"''')
             cursor.execute(sql)
             cursor.connection.commit()
             cursor.close()
@@ -46,8 +48,8 @@ class Dt_Ventas:
     def eliminarVenta(cls, Venta):
         indicador = False
         try:
-            cursor = Proyecto.Conexion.Conexion.obtenerConexion().cursor()
-            sql = (f'''DELETE FROM ventas WHERE id_venta = {Venta.id_Venta}''')
+            cursor = Conexion.Conexion.obtenerConexion().cursor()
+            sql = (f'''DELETE FROM ventas WHERE id_venta = {Venta.id_venta}''')
             cursor.execute(sql)
             cursor.connection.commit()
             cursor.close()
@@ -58,9 +60,6 @@ class Dt_Ventas:
             print(f"Error al eliminar Venta: {ex}")
 
         return indicador
-
-
-
 
 
 if __name__ == '__main__':

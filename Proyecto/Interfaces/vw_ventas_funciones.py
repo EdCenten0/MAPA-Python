@@ -1,10 +1,10 @@
 import sys
 
 import vw_ventas
-import Proyecto.Datos.dt_Ventas
+import Datos.dt_Ventas
 
 import PyQt5.QtWidgets
-
+from PyQt5.QtWidgets import QApplication, QAbstractItemView, QTableWidget, QMessageBox, QTableWidgetItem
 from Entidades import Ventas
 from Datos import dt_Ventas
 
@@ -68,7 +68,7 @@ class Vw_ventas_funciones(PyQt5.QtWidgets.QMainWindow, vw_ventas.Ui_Ventas):
             tbRow += 1
 
     def guardarVenta(self):
-        if not self.line_Ventas_Id.text() == "" and not self.Ventas_idTienda_line == "" and not self.line_Ventas_Cantidad == "" and not self.line_Ventas_Nfactura == "" and not self.line_Ventas_Descripcion == "":
+        if self.line_Ventas_Id.text() == "" and not self.Ventas_idTienda_line == "" and not self.line_Ventas_Cantidad == "" and not self.line_Ventas_Nfactura == "" and not self.line_Ventas_Descripcion == "":
             if self.line_Ventas_Id == "":
                 try:
                     Ventas.id_venta = self.line_Ventas_Id.text()
@@ -103,12 +103,12 @@ class Vw_ventas_funciones(PyQt5.QtWidgets.QMainWindow, vw_ventas.Ui_Ventas):
                     Ventas.descripcion = self.line_Ventas_Descripcion.text()
                     Ventas.id_factura = self.line_Ventas_Nfactura.text()
 
-                    Proyecto.Datos.dt_Ventas.Dt_Ventas.editarVenta(Ventas)
+                    Datos.dt_Ventas.Dt_Ventas.editarVenta(Ventas)
 
                     PyQt5.QMessageBox.about(self, "El registro de venta ha sido modificado con exito")
 
                     self.limpiarCampos()
-                    self.llenarTablaVentas(Proyecto.Datos.dt_Ventas.Dt_Ventas.listarVentas())
+                    self.llenarTablaVentas(Datos.dt_Ventas.Dt_Ventas.listarVentas())
 
 
                 except Exception as ex:
@@ -122,11 +122,11 @@ class Vw_ventas_funciones(PyQt5.QtWidgets.QMainWindow, vw_ventas.Ui_Ventas):
         try:
             if not self.line_Ventas_Id.text() == "":
                 Ventas.id_venta = self.line_Ventas_Id.text()
-                Proyecto.Datos.dt_Ventas.Dt_Ventas.eliminarVenta(Ventas)
+                Datos.dt_Ventas.Dt_Ventas.eliminarVenta(Ventas)
 
-                PyQt5.QtWidgets.QMessageBox.about(self, "Venta elimninada con exito")
+                QMessageBox.about(self, "Mensaje", "Venta elimninada con exito")
 
-                self.llenarTablaVentas(Proyecto.Datos.dt_Ventas.Dt_Ventas.listarVentas())
+                self.llenarTablaVentas(Datos.dt_Ventas.Dt_Ventas.listarVentas())
 
             else: PyQt5.QtWidgets.QMessageBox.about(self, "Seleccione un registro a eliminar")
         except Exception as ex:
