@@ -6,7 +6,7 @@ from Datos.dt_Pedidos import Dt_Pedidos
 from Datos.dt_cliente import Dt_Clientes
 from Entidades import materiales
 from Interfaces import vw_vista_previa_pedido, vw_materiales_funciones, vw_materiales_por_pedido_funciones, \
-    vw_vista_previa_factura, vw_vista_previa_factura_funciones
+    vw_vista_previa_factura, vw_vista_previa_factura_funciones, vw_pedido_funciones
 
 
 class VwVistaPreviaPedidosFunciones(QtWidgets.QMainWindow, vw_vista_previa_pedido.Ui_MainWindow):
@@ -21,6 +21,7 @@ class VwVistaPreviaPedidosFunciones(QtWidgets.QMainWindow, vw_vista_previa_pedid
         self.comboBox_2.currentIndexChanged.connect(self.setPedidoSeleccionado)
 
 
+
         print(f"self.id_pedido: {self.id_pedido}")
         self.llenarComboSeleccion(Dt_Pedidos.listarPedidos())
         self.comboBox_2.currentIndexChanged.connect(lambda: self.obtenerRegistroSeleccionadoComboBox())
@@ -28,7 +29,7 @@ class VwVistaPreviaPedidosFunciones(QtWidgets.QMainWindow, vw_vista_previa_pedid
         print(f"self.id_pedido: {self.id_pedido}")
         self.pushButton_2.clicked.connect(lambda: self.setMaterialesPorPedido(vw_materiales_por_pedido_funciones.vw_materiales_por_pedido_funciones()))
         print(f"materialesPorPedidido: id_pedido: {vw_materiales_por_pedido_funciones.vw_materiales_por_pedido_funciones.id}")
-
+        self.pushButton_5.clicked.connect(lambda: self.setMaterialesPorPedido(vw_pedido_funciones.pedido_Window()))
 
         self.pushButton.clicked.connect(lambda: self.mostrarCuadroFactura())
         self.comboBox_2.currentIndexChanged.connect(lambda: self.setValoresFactura())
