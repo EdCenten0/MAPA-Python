@@ -31,7 +31,7 @@ Estado = {self.estado}'''
         return self.id_tienda
 
     @id_tienda.setter
-    def if_tienda(self, id_tienda):
+    def id_tienda(self, id_tienda):
         self.id_tienda = id_tienda
 
     @property
