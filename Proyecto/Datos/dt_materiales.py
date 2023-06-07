@@ -122,6 +122,16 @@ class Dt_materiales:
 
         return cuenta
 
+    @classmethod
+    def sumarPrecioMateriales(cls, id_pedido : int):
+        cursor = Conexion.obtenerConexion().cursor()
+        cursor.execute(f"SELECT SUM(precio_total) AS suma FROM materiales WHERE id_pedido = {id_pedido}")
+        registro = cursor.fetchall()
+        cantidad : int
+        for n in registro:
+            cantidad = n["suma"]
+        cursor.close()
+        return cantidad
 
     #MATERIALES POR PEDIDO
 

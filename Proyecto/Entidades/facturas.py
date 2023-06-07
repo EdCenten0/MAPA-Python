@@ -1,7 +1,7 @@
 import copy
 
 
-class Cliente:
+class Facturas:
     def __init__(self, id_factura=None, id_pedido=None, fecha=None, precio_materiales=None, mano_de_obra=None, precio_total=None, estado=None):
         self._id_factura = id_factura
         self._id_pedido = id_pedido
@@ -74,7 +74,7 @@ class Cliente:
         return self._mano_de_obra
 
     @mano_de_obra.setter
-    def email(self, mano_de_obra):
+    def mano_de_obra(self, mano_de_obra):
         self._mano_de_obra = mano_de_obra
 
     @property
@@ -83,12 +83,4 @@ class Cliente:
     @precio_total.setter
     def precio_total(self, precio_total):
         self._precio_total = precio_total
-
-    @property
-    def estado(self):
-        return self.estado
-
-    @estado.setter
-    def estado(self, estado):
-        self.estado = estado
 
