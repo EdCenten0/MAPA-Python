@@ -3,13 +3,13 @@ import sys
 from PyQt5.QtCore import Qt
 from PyQt5.QtWidgets import QMainWindow
 
-from Proyecto.Interfaces.vw_materiales_funciones import vw_materiales_funciones
+from Interfaces.vw_materiales_funciones import vw_materiales_funciones
 from vw_ventana_principal import Ui_MainWindow
 from PyQt5 import QtCore, QtGui, QtWidgets
-from Proyecto.Interfaces import vw_ventana_principal, vw_cliente_funciones, vw_proveedor_funciones, \
+from Interfaces import vw_ventana_principal, vw_cliente_funciones, vw_proveedor_funciones, \
     vw_materiales_por_proveedor_funciones, vw_taller_funciones, vw_factura_funciones, vw_materiales, \
     vw_seguridad_funciones
-from Proyecto.Interfaces import vw_vista_previa_pedido_funciones
+from Interfaces import vw_vista_previa_pedido_funciones
 
 # Carlos Eduardo Chavarria Centeno (EdCenten0)
 # Universidad Centroamericana

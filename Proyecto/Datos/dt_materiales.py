@@ -1,4 +1,5 @@
-from Proyecto.Datos.Conexion import Conexion
+from Datos.Conexion import Conexion
+from Entidades import pedidos, materiales
 
 
 class Dt_materiales:
@@ -122,8 +123,47 @@ class Dt_materiales:
         return cuenta
 
 
+    #MATERIALES POR PEDIDO
+
+    @classmethod
+    def listarMaterialesPorPedido(cls, id_pedido):
+        cursor = Conexion.obtenerConexion().cursor()
+        id_pedido = id_pedido
+        print(id_pedido)
+        sentencia = f"SELECT * FROM materiales WHERE id_pedido = {id_pedido}"
+        cursor.execute(sentencia)
+        res = cursor.fetchall()
+        cursor.close()
+        return res
+
+    @classmethod
+    def buscarMateriaPorPedido(cls, nombre_material, id_pedido):
+
+        cursor = Conexion.obtenerConexion().cursor()
+        sentencia = (f"SELECT * FROM MAPA.materiales WHERE nombre_material like '%' '{nombre_material}' '%' AND id_pedido = {id_pedido}")
+        cursor.execute(sentencia)
+        resultado_materiales = cursor.fetchall()
+        cursor.connection.commit()
+        cursor.close()
+        return resultado_materiales
+
+    # def guardarMaterialPorPedido(self, Materiales : materiales.Materiales):
+    #     try:
+    #         cursor = Conexion.obtenerConexion().cursor()
+    #         sentencia = (
+    #             f'''INSERT INTO materiales(nombre_material, descripcion, cantidad, unidad_de_medida, precio_por_unidad, precio_total, id_pedido) VALUES('{Materiales.nombre_material}', '{Materiales.descripcion}', '{Materiales.cantidad}', '{Materiales.unidad_de_medida}', '{Materiales.precio_por_unidad}', '{Materiales.precio_total}', '{Materiales.id_pedido}')''')
+    #         cursor.execute(sentencia)
+    #         cursor.connection.commit()
+    #         cursor.close()
+    #         print("Material Guardado")
+    #         indicador = True
+    #
+    #     except Exception as e:
+    #         print(f"Error al guardar el material: {e}")
+
 if __name__ == '__main__':
     materiales1 = Dt_materiales.listarMateriales()
     for m in materiales1:
         print(m)
     Dt_materiales.contarMaterialesPorPedido(2)
+    print(Dt_materiales.listarMaterialesPorPedido(pedidos.Pedido(2, None, None, None, None)))

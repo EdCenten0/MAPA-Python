@@ -6,8 +6,8 @@ import pymysql.cursors
 class Conexion:
     #recolecta los datos de la BD
     _DATABASE = 'MAPA'
-    _USERNAME = 'francisco'
-    _PASSWORD = '1234'
+    _USERNAME = 'leonvane'
+    _PASSWORD = 'Leonidas25.'
     _HOST = 'localhost'
     _conexion = None
     _cursor = None

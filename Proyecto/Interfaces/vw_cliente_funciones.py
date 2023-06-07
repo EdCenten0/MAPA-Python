@@ -1,9 +1,11 @@
 import sys
 from PyQt5.QtWidgets import QMainWindow, QApplication, QTableWidgetItem, QMessageBox
-import vw_Cliente
 from Proyecto.Datos import dt_cliente
 from Proyecto.Entidades import clientes
-from Proyecto.Datos import Conexion
+from Proyecto.Interfaces import vw_Cliente
+from Proyecto.Datos import dt_cliente
+from Proyecto.Entidades.clientes import Cliente
+
 
 
 
@@ -84,57 +86,40 @@ class Cliente_Window(QMainWindow, vw_Cliente.Ui_MainWindow):
 
     def guardarCliente(self):
         try:
-            clientes.nombre = self.line_Cliente_Apellido_5.toPlainText()
-            clientes.apellido = self.line_Cliente_Apellido.toPlainText()
-            clientes.cedula = self.line_Cliente_Apellido_2.toPlainText()
-            clientes.email = self.line_Cliente_Apellido_3.toPlainText()
-            clientes.telefono = self.line_Cliente_Apellido_4.toPlainText()
+            clientes.nombre = self.line_Cliente_Apellido_5.text()
+            clientes.apellido = self.line_Cliente_Apellido.text()
+            clientes.cedula = self.line_Cliente_Apellido_2.text()
+            clientes.email = self.line_Cliente_Apellido_3.text()
+            clientes.telefono = self.line_Cliente_Apellido_4.text()
 
-            if self.line_Cliente_Nombre.toPlainText() == "" and not self.line_Cliente_Apellido_5.toPlainText() == "" and not self.line_Cliente_Apellido.toPlainText() == "" and not self.line_Cliente_Apellido_2.toPlainText() == "" and not self.line_Cliente_Apellido_3.toPlainText() == "" and not self.line_Cliente_Apellido_4.toPlainText() == "":
-                if len(self.line_Cliente_Apellido_5.toPlainText()) <= 50:
-                    if len(self.line_Cliente_Apellido.toPlainText()) <= 50:
-                        if len(self.line_Cliente_Apellido_2.toPlainText()) <= 15:
-                            if len(self.line_Cliente_Apellido_4.toPlainText()) <= 12:
-                                if len(self.line_Cliente_Apellido_3.toPlainText()) <= 50:
-                                    indicador = dt_cliente.Dt_Clientes.guardarClientes(clientes)
-                                    self.notifMensaje(indicador, "Guardados")
-                                    self.limpiarCampos()
-                                    self.llenarTablaCliente(dt_cliente.Dt_Clientes.listarClientes())
-                                else:
-                                    QMessageBox.about(self, "Error",
-                                                      "El correo electrónico debe tener menos de 50 caracteres")
-                            else:
-                                QMessageBox.about(self, "Error", "El teléfono debe tener exactamente 12 caracteres")
-                        else:
-                            QMessageBox.about(self, "Error", "La cédula debe tener exactamente de 15 caracteres")
-                    else:
-                        QMessageBox.about(self, "Error", "El apellido debe tener menos de 50 caracteres")
-                else:
-                    QMessageBox.about(self, "Error", "El nombre debe tener menos de 50 caracteres")
-            else:
-                self.notifMensaje(False, "")
+            if not self.line_Cliente_Apellido_5.text() == "" and not self.line_Cliente_Apellido.text() == "" and not self.line_Cliente_Apellido_2.text() == "" and not self.line_Cliente_Apellido_3.text() == "" and not self.line_Cliente_Apellido_4.text() == "" and not self.line_Cliente_Direccion.text() == "":
+
+                indicador = dt_cliente.Dt_Clientes.guardarClientes(clientes)
+                self.notifMensaje(indicador, "Guardados")
                 self.limpiarCampos()
+                self.llenarTablaCliente(dt_cliente.Dt_Clientes.listarClientes())
+
 
         except Exception as e:
-            print(f"Error en GuardarCliente: {e}")
+            print(f"Error en guardarCliente: {e}")
 
     def editarCliente(self):
         try:
-            clientes.id_tienda = self.line_Cliente_Nombre.toPlainText()
-            clientes.nombre = self.line_Cliente_Apellido_5.toPlainText()
-            clientes.apellido = self.line_Cliente_Apellido.toPlainText()
-            clientes.cedula = self.line_Cliente_Apellido_2.toPlainText()
-            clientes.email = self.line_Cliente_Apellido_3.toPlainText()
-            clientes.telefono = self.line_Cliente_Apellido_4.toPlainText()
-            clientes.id_tienda = self.line_Cliente_Direccion.toPlainText()
+            clientes.id_cliente = self.line_Cliente_Nombre.text()
+            clientes.nombre = self.line_Cliente_Apellido_5.text()
+            clientes.apellido = self.line_Cliente_Apellido.text()
+            clientes.cedula = self.line_Cliente_Apellido_2.text()
+            clientes.email = self.line_Cliente_Apellido_3.text()
+            clientes.telefono = self.line_Cliente_Apellido_4.text()
+            clientes.id_tienda = self.line_Cliente_Direccion.text()
 
-            if not self.line_Cliente_Nombre.toPlainText() == "" and not self.line_Cliente_Apellido_5.toPlainText() == "" and not self.line_Cliente_Apellido.toPlainText() == "" and not self.line_Cliente_Apellido_2.toPlainText() == "" and not self.line_Cliente_Apellido_3.toPlainText() == "" and not self.line_Cliente_Apellido_4.toPlainText() == "" and not self.line_Cliente_Direccion.toPlainText() == "":
-                if len(self.line_Cliente_Apellido_5.toPlainText()) <= 50:
-                    if len(self.line_Cliente_Apellido.toPlainText()) <= 50:
-                        if len(self.line_Cliente_Apellido_2.toPlainText()) <= 15:
-                            if len(self.line_Cliente_Apellido_4.toPlainText()) <= 12:
-                                if len(self.line_Cliente_Apellido_3.toPlainText()) <= 50:
-                                    if len(self.line_Cliente_Direccion.toPlainText()) <= 300:
+            if not self.line_Cliente_Nombre.text() == "" and not self.line_Cliente_Apellido_5.text() == "" and not self.line_Cliente_Apellido.text() == "" and not self.line_Cliente_Apellido_2.text() == "" and not self.line_Cliente_Apellido_3.text() == "" and not self.line_Cliente_Apellido_4.text() == "" and not self.line_Cliente_Direccion.text() == "":
+                if len(self.line_Cliente_Apellido_5.text()) <= 50:
+                    if len(self.line_Cliente_Apellido.text()) <= 50:
+                        if len(self.line_Cliente_Apellido_2.text()) <= 15:
+                            if len(self.line_Cliente_Apellido_4.text()) <= 12:
+                                if len(self.line_Cliente_Apellido_3.text()) <= 50:
+                                    if len(self.line_Cliente_Direccion.text()) <= 300:
                                         indicador = dt_cliente.Dt_Clientes.editarClientes(clientes)
                                         self.notifMensaje(indicador, "Editados")
                                         self.limpiarCampos()
