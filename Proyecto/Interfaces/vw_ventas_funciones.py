@@ -17,7 +17,7 @@ class Vw_ventas_funciones(PyQt5.QtWidgets.QMainWindow, vw_ventas.Ui_Ventas):
         self.tb_Ventas.itemSelectionChanged.connect(self.obtenerDatosTablaVentas)
 
         self.bt_Guardar_Ventas.clicked.connect(self.guardarVenta)
-        self.bt_Editar_Ventas.clicked.connect(self.editarVenta)
+        self.bt_Editar_Ventas.clicked.connect(lambda: self.editarVenta())
         self.bt_Eliminar_Ventas.clicked.connect(self.eliminarVenta)
         self.bt_Vaciar_Ventas.clicked.connect(self.limpiarCampos)
 
@@ -107,13 +107,12 @@ class Vw_ventas_funciones(PyQt5.QtWidgets.QMainWindow, vw_ventas.Ui_Ventas):
                     id_factura = self.line_Ventas_Nfactura.text()
                     venta = Ventas.ventas(id_venta, id_tienda, id_factura, cantidad, descripcion)
 
-                    indicador = dt_Ventas.Dt_Ventas.editarVenta(venta)
+                    dt_Ventas.Dt_Ventas.editarVenta(venta)
 
-                    if indicador:
-                        QMessageBox.about(self, "El registro de venta ha sido modificado con exito",
+
+                    QMessageBox.about(self, "El registro de venta ha sido modificado con exito",
                                           "El registro ha sido editado")
-                    else:
-                        QMessageBox.about(self, "Error", "No se pudo editar el registro de venta")
+
 
                     self.limpiarCampos()
                     self.llenarTablaVentas(Datos.dt_Ventas.Dt_Ventas.listarVentas())
