@@ -27,22 +27,20 @@ class Dt_Ventas:
             print(ex)
 
     @classmethod
-    def editarVenta(cls, Venta):
-        indicador = False
-
+    def editarVenta(cls, venta: Ventas.ventas):
         try:
             cursor = Conexion.Conexion.obtenerConexion().cursor()
-            sql = (
-                f'''UPDATE ventas SET id_tienda = {Venta.id_tienda},  id_factura = {Venta.id_factura}, cantidad = {Venta.cantidad}, descripcion = "{Venta.descripcion}, estado = {2}"''')
-            cursor.execute(sql)
+            sql = "UPDATE ventas SET id_tienda = %s, id_factura = %s, cantidad = %s, descripcion = %s WHERE id_venta = %s"
+            values = (venta.id_tienda, venta.id_factura, venta.cantidad, venta.descripcion, venta.id_venta)
+            cursor.execute(sql, values)
             cursor.connection.commit()
             cursor.close()
             print("Venta editada")
-            indicador = True
+
 
         except Exception as ex:
             print(f"Error al editar venta: {ex}")
-        return indicador
+
 
     @classmethod
     def eliminarVenta(cls, Venta):

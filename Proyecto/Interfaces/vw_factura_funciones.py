@@ -127,11 +127,13 @@ class Ui_MainWindow(QMainWindow, vw_Factura.Ui_MainWindow):
     def guardarVenta(self):
         filaSeleccionada = self.tableWidget.currentRow()
         id_tienda = 1
-        id_factura = self.tableWidget.item(filaSeleccionada, 0)
-        precio_total = self.tableWidget.item(filaSeleccionada,3)
+        id_factura = self.tableWidget.item(filaSeleccionada, 0).text()
+        precio_total = self.tableWidget.item(filaSeleccionada,3).text()
         descripcion = self.textEdit.toPlainText()
 
+
         venta = Ventas.ventas(None, id_tienda, id_factura, precio_total, descripcion)
+        print(venta)
         dt_Ventas.Dt_Ventas.guardarVenta(venta)
         QMessageBox.about(self, "Venta Registrada", f"Se ha guardado la venta de la factura correspondiente a {descripcion}")
 
