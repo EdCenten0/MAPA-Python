@@ -27,15 +27,16 @@ class Dt_Ventas:
             print(ex)
 
     @classmethod
-    def editarVenta(cls, Venta):
+    def editarVenta(cls, venta):
         indicador = False
 
         try:
             cursor = Conexion.Conexion.obtenerConexion().cursor()
-            sql = (
-                f'''UPDATE ventas SET id_tienda = {Venta.id_tienda},  id_factura = {Venta.id_factura}, cantidad = {Venta.cantidad}, descripcion = "{Venta.descripcion}, estado = {2}"''')
-            cursor.execute(sql)
+            sql = "UPDATE ventas SET id_tienda = %s, id_factura = %s, cantidad = %s, descripcion = %s WHERE id_venta = %s"
+            values = (venta.id_tienda, venta.id_factura, venta.cantidad, venta.descripcion, venta.id_venta)
+            cursor.execute(sql, values)
             cursor.connection.commit()
+            cursor.connection.autocommit(True)
             cursor.close()
             print("Venta editada")
             indicador = True
